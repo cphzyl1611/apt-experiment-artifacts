@@ -1,0 +1,22 @@
+{
+  "activation_transaction_id_recomputed": "bf4569d2116ac16a994feda733468faf2eeac92cc1f6eda46a77eac7312b718f",
+  "semantic_checks": {
+    "candidate_pin": {
+      "status": "PASS"
+    },
+    "exact_current86_scope": {
+      "status": "PASS"
+    },
+    "h2_provenance_binding": {
+      "status": "PASS"
+    },
+    "no_downstream_execution": {
+      "status": "PASS"
+    },
+    "old_lineage_preserved": {
+      "status": "PASS"
+    }
+  },
+  "status": "PASS",
+  "transaction_recomputed_exactly": true
+}

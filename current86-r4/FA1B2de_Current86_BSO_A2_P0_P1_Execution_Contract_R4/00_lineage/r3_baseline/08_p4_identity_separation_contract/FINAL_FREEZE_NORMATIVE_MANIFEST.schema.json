@@ -1,0 +1,30 @@
+{
+  "excluded_fields": [
+    "workload_summary_hash",
+    "decision_time_telemetry",
+    "idle_interruption_telemetry",
+    "ui_presentation_metrics",
+    "performance_only_metrics",
+    "human_packet_character_counts",
+    "candidate_universe_expansion_telemetry",
+    "other_NON_AUTHORITATIVE_WORKLOAD_EVIDENCE"
+  ],
+  "identity_field": "CURRENT86_A2_FINAL_FREEZE_ID",
+  "identity_inputs": [
+    "active authority",
+    "exact Current86 scope",
+    "execution contract",
+    "set ordering registry",
+    "current disposition heads",
+    "accepted terminal ledger",
+    "accepted terminal raw set",
+    "owner/escalation terminal sets",
+    "terminal lineage",
+    "normative conservation snapshot"
+  ],
+  "identity_rule": "CANONICAL_OBJECT_ID(normative manifest, CURRENT86_A2_FINAL_FREEZE_ID)",
+  "materialization_status": "SCHEMA_ONLY_NO_P4_FREEZE",
+  "schema": "FINAL_FREEZE_NORMATIVE_MANIFEST_SCHEMA_V1",
+  "schema_id": "a1211cdb6a8621e74086d54c588331b7a638f4f4ba006e37be7471c910e29de8",
+  "workload_excluded": true
+}

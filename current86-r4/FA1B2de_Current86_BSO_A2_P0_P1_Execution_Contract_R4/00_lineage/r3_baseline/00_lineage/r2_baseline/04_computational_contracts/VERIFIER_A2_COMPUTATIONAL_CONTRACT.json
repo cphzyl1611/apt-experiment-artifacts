@@ -1,0 +1,180 @@
+{
+  "canonicalization_contract": "PROJECT_CANONICAL_JSON_V1",
+  "computational_contract_id": "921d419ff055a22f904d3bf1f8c69e83c3c0f9db7cda6678334834bf8abc968b",
+  "execution_time_runtime_binding": {
+    "agent_or_cli_version": {
+      "field_status": "UNAVAILABLE_BY_RUNTIME_ALLOWED_IF_NOT_EXPOSED",
+      "value": null
+    },
+    "binding_status_before_invocation": "REQUIRED_NOT_YET_CAPTURED",
+    "capture_rule": "CAPTURE_EVERY_STABLE_FIELD_EXPOSED_AT_ACTUAL_INVOCATION_AND_FAIL_CLOSED_ON_MISSING_REQUIRED_FIELDS",
+    "context_identity": {
+      "field_status": "REQUIRED_AT_INVOCATION",
+      "value": null
+    },
+    "decoding_or_runtime_configuration": {
+      "field_status": "UNAVAILABLE_BY_RUNTIME_ALLOWED_IF_NOT_EXPOSED",
+      "value": null
+    },
+    "model_id": {
+      "field_status": "REQUIRED_AT_INVOCATION",
+      "value": null
+    },
+    "model_variant_or_snapshot": {
+      "field_status": "UNAVAILABLE_BY_RUNTIME_ALLOWED_IF_NOT_EXPOSED",
+      "value": null
+    },
+    "provider": {
+      "field_status": "REQUIRED_AT_INVOCATION",
+      "value": null
+    },
+    "run_identity": {
+      "field_status": "REQUIRED_AT_INVOCATION",
+      "value": null
+    },
+    "tool_mode": {
+      "field_status": "FROZEN",
+      "value": "A2_VERIFIER_ROLE_RUNTIME"
+    }
+  },
+  "historical_output_denylist_identity": {
+    "denylist_hash": "f2f48a3142bf192c08cfa2bffbb722e0131bfd4a1ba55623caf5af72748b94c7",
+    "scope_id": "34551e904bafa71fb2fb6db33162e94ad41a08eca6c747d429c83760e09c1306"
+  },
+  "input_schema_identity": {
+    "admissible_source_fact": "bba0af21f22cd0d839763027f2f25af543e0b3b86dc9547393b33b80d1262a9d",
+    "complete_candidate_universe": "3b4d54a667edf3f1f7f8e5039d15df4d53aa2fd234a41e28346b708f69efb60e",
+    "proposal_input_bundle": "554baacdf0ab2e639457894725b301eca212c05fe6db7bd257989b954c14edc5",
+    "raw_execution_unit": "0abc065ad48ca0292e0874ec79f66c4f892d482dab684243027b27064c2d85a2",
+    "source_fact_bundle": "47507d60676c9fcbd5fd3a2fe19344f2b8ea4fe7064fbf8e0fe164ecf491de58"
+  },
+  "isolation_contract_identity": {
+    "contract_schema": "A2_VERIFIER_ISOLATION_ENFORCEMENT_CONTRACT_V1",
+    "isolation_enforcement_id": "03625180e4b98cdf32ce04c6054f3fd92df771195da0a891bf1f367aba4c05b9"
+  },
+  "isolation_enforcement_identity": "03625180e4b98cdf32ce04c6054f3fd92df771195da0a891bf1f367aba4c05b9",
+  "isolation_launcher_configuration_hash": "c43585c923abe54f7d0c05f0424d20b86b1962e0565129e978035f7a614cac59",
+  "isolation_launcher_sha256": "c942c739f3db2075414743949ae9080e8f0e4388b03c3af78d4051517e76ae6a",
+  "model_runtime_identity": {
+    "context_policy_version_if_exposed": {
+      "field_status": "UNAVAILABLE_BY_RUNTIME",
+      "value": null
+    },
+    "decoding_parameters": {
+      "field_status": "UNAVAILABLE_BY_RUNTIME",
+      "value": null
+    },
+    "model_id": {
+      "field_status": "UNAVAILABLE_BY_RUNTIME",
+      "value": null
+    },
+    "model_variant_or_snapshot_if_exposed": {
+      "field_status": "UNAVAILABLE_BY_RUNTIME",
+      "value": null
+    },
+    "provider": {
+      "field_status": "UNAVAILABLE_BY_RUNTIME",
+      "value": null
+    },
+    "runtime_or_agent_version": {
+      "field_status": "UNAVAILABLE_BY_RUNTIME",
+      "value": null
+    },
+    "seed_if_supported": {
+      "field_status": "UNAVAILABLE_BY_RUNTIME",
+      "value": null
+    },
+    "tool_mode": "A2_VERIFIER_ROLE_RUNTIME"
+  },
+  "normative_source_profile_identity": {
+    "profile_hash": "e24746c96c5f741cc35df8d992d93936911dd1de2ce7f1a0f00035cda3b33deb",
+    "scope_id": "34551e904bafa71fb2fb6db33162e94ad41a08eca6c747d429c83760e09c1306"
+  },
+  "output_schema_identity": {
+    "primary_commitment": "53db06095959f90bf035c92c009171011c31324de2b5c1e88d7e5e9f2aa66251",
+    "proposer_verifier_comparison": "d1b4c3f20cc219d4eaaf6a2dbe74d2d86ec4a428ad46657aae11536f837fdeca",
+    "verifier_commitment": "f5896827f51c4a41090cd2e2b693ba9b71f673be9e75abb07f56c3fcfe2e3792"
+  },
+  "private_chain_of_thought_normative_artifact": false,
+  "prompt_template_identity": {
+    "dynamic_runtime_data_excluded": [
+      "raw_key",
+      "source_facts",
+      "candidate_universe"
+    ],
+    "normative_instructions": [
+      "machine output is NON_AUTHORITATIVE_MACHINE_PROPOSAL",
+      "consider complete candidate universe without hidden pruning or top-k truncation",
+      "evidence must be a subset of admissible normative source facts",
+      "do not use historical comparative relation outputs as normative evidence",
+      "do not record private chain-of-thought"
+    ],
+    "role": "VERIFIER",
+    "template_canonical_id": "b65fc5e4e08910886e64bf2dcd8e870da9dd25dca7cc8991ca4160b5bbd28f99",
+    "template_version": "A2_HUMAN_LIGHT_PROPOSER_VERIFIER_PROMPT_TEMPLATE_V1"
+  },
+  "role": "VERIFIER",
+  "schema": "A2_COMPUTATIONAL_CONTRACT_V1",
+  "set_ordering_registry_identity": "e87942896a6c5910635d6b72faa1a7a2dc1ec962a3635c8762a082e7d646211b",
+  "source_class_fact_type_registry_identity": {
+    "raw_file_sha256": "3df4262faa4137996d2ff8d163bcc665d5bed76b3d719e6ff66cf4154252d72f",
+    "registry_id": "8cef6206dfc3581c3e7b6358bde7a36e90f4ba99078176cc0e5aff4b238298a7"
+  },
+  "static_execution_implementation_identity": {
+    "agent_or_cli_version": "UNAVAILABLE_BY_RUNTIME",
+    "configuration_file_hashes": [
+      "c43585c923abe54f7d0c05f0424d20b86b1962e0565129e978035f7a614cac59"
+    ],
+    "dependency_lockfile_hashes": [],
+    "entrypoint": "tools/run_a2_verifier.py",
+    "implementation_files": [
+      {
+        "path": "tools/run_a2_verifier.py",
+        "raw_file_sha256": "b1d9d4f66cc6ac20531f36cb819800d70bf668b233b6adefeb4b2a67c6d24dd4"
+      },
+      {
+        "path": "tools/a2_role_runtime.py",
+        "raw_file_sha256": "457b10d5ce1c7f56f7f5f859d9c6517c6bfb8107f871f2b42360b429b3a54109"
+      },
+      {
+        "path": "tools/a2_bwrap_isolation.py",
+        "raw_file_sha256": "c942c739f3db2075414743949ae9080e8f0e4388b03c3af78d4051517e76ae6a"
+      }
+    ],
+    "interpreter_or_runtime_version": "3.13.13",
+    "repository_commit": "UNAVAILABLE_BY_RUNTIME"
+  },
+  "tool_permission_boundary": {
+    "allowed_tools": [
+      "tool:python-hashlib",
+      "tool:python-json-parser",
+      "tool:python-unicodedata"
+    ],
+    "denied_tools": [
+      "network",
+      "shell",
+      "primary_output_read",
+      "unfrozen_external_retrieval"
+    ],
+    "external_connector_access": false,
+    "filesystem_read_scope": [
+      "00_lineage/activation/current86_bso_a2_authority_activation_transaction.json",
+      "00_lineage/activation/h2_native_user_event_provenance_evidence.json",
+      "00_lineage/activation/independent_activation_transaction_verification.json",
+      "00_lineage/activation/independent_h2_provenance_verification.json",
+      "00_lineage/candidate_r2/03_exact_current86_scope.json",
+      "00_lineage/candidate_r2/04_complete_candidate_set_registry.json",
+      "00_lineage/reviewed_r2_design",
+      "00_lineage/source_registry/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json",
+      "01_canonicalization/PROJECT_CANONICAL_JSON_V1.json",
+      "02_set_ordering/SET_ORDERING_REGISTRY.json",
+      "05_schemas/schema_registry.json"
+    ],
+    "filesystem_write_scope": [
+      "runtime/verifier_workspace"
+    ],
+    "mutable_workspace_access": false,
+    "network_access": false,
+    "shell_execution": false
+  }
+}

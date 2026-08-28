@@ -1,0 +1,208 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "oneOf": [
+    {
+      "properties": {
+        "fresh_alternative_verification": {
+          "const": null
+        },
+        "fresh_alternative_verification_id": {
+          "const": null
+        },
+        "human_action": {
+          "const": "CONFIRM_PROPOSED_OWNER"
+        },
+        "human_selected_candidate_scoring_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "human_selected_relation_identity": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "selected_packet_option_id": {
+          "const": null
+        }
+      }
+    },
+    {
+      "properties": {
+        "fresh_alternative_verification": {
+          "enum": [
+            "PASS",
+            "FAIL"
+          ]
+        },
+        "fresh_alternative_verification_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "human_action": {
+          "const": "REJECT_PROPOSAL_AND_SELECT_OTHER_EXISTING_CANDIDATE"
+        },
+        "human_selected_candidate_scoring_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "human_selected_relation_identity": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "selected_packet_option_id": {
+          "minLength": 1,
+          "type": "string"
+        }
+      }
+    },
+    {
+      "properties": {
+        "fresh_alternative_verification": {
+          "const": null
+        },
+        "fresh_alternative_verification_id": {
+          "const": null
+        },
+        "human_action": {
+          "const": "NOT_SURE_ESCALATE"
+        },
+        "human_selected_candidate_scoring_id": {
+          "const": null
+        },
+        "human_selected_relation_identity": {
+          "const": null
+        },
+        "selected_packet_option_id": {
+          "const": null
+        }
+      }
+    }
+  ],
+  "properties": {
+    "decision_literal_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "fresh_alternative_verification": {
+      "enum": [
+        "PASS",
+        "FAIL",
+        null
+      ]
+    },
+    "fresh_alternative_verification_id": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "const": null
+        }
+      ]
+    },
+    "human_action": {
+      "enum": [
+        "CONFIRM_PROPOSED_OWNER",
+        "REJECT_PROPOSAL_AND_SELECT_OTHER_EXISTING_CANDIDATE",
+        "NOT_SURE_ESCALATE"
+      ]
+    },
+    "human_decision_record_id": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "const": null
+        }
+      ]
+    },
+    "human_origin_provenance_evidence_id": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "human_origin_provenance_verification": {
+      "const": "PASS"
+    },
+    "human_packet_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "human_packet_id": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "human_provenance": {
+      "minProperties": 1,
+      "type": "object"
+    },
+    "human_selected_candidate_scoring_id": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "const": null
+        }
+      ]
+    },
+    "human_selected_relation_identity": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "const": null
+        }
+      ]
+    },
+    "native_user_event_identity": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "raw_key": {
+      "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+      "type": "string"
+    },
+    "schema": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "selected_packet_option_id": {
+      "anyOf": [
+        {
+          "minLength": 1,
+          "type": "string"
+        },
+        {
+          "const": null
+        }
+      ]
+    }
+  },
+  "required": [
+    "schema",
+    "raw_key",
+    "human_packet_id",
+    "human_packet_hash",
+    "human_action",
+    "native_user_event_identity",
+    "decision_literal_hash",
+    "human_origin_provenance_evidence_id",
+    "human_origin_provenance_verification",
+    "human_provenance",
+    "human_selected_candidate_scoring_id",
+    "human_selected_relation_identity",
+    "selected_packet_option_id",
+    "fresh_alternative_verification",
+    "fresh_alternative_verification_id",
+    "human_decision_record_id"
+  ],
+  "schema_id": "978b3dc4113c7e4449c28b05dd335f0639484db6360b5e5ad3055745b21a4c24",
+  "title": "Native raw-level human decision record R2",
+  "type": "object"
+}

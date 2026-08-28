@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "binding_publication_performed": {
+      "const": false
+    },
+    "commitment_id": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "const": null
+        }
+      ]
+    },
+    "complete_candidate_universe_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "complete_relation_set_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "computational_contract_id": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "context_identity": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "evidence_fact_ids": {
+      "items": {
+        "pattern": "^[0-9a-f]{64}$",
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "evidence_set_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "execution_manifest_id": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "hard_gate_results": {
+      "type": "object"
+    },
+    "owner_freeze_performed": {
+      "const": false
+    },
+    "private_chain_of_thought_persisted": {
+      "const": false
+    },
+    "prompt_template_identity": {
+      "minProperties": 1,
+      "type": "object"
+    },
+    "proposal_input_bundle_id": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "raw_key": {
+      "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+      "type": "string"
+    },
+    "result_status": {
+      "enum": [
+        "UNIQUE_EXISTING_OWNER_PROPOSAL",
+        "ESCALATE_AMBIGUOUS",
+        "ESCALATE_STRUCTURE",
+        "ESCALATE_SCORING_AUTHORITY",
+        "ESCALATE_PROVENANCE",
+        "ESCALATE_IDENTITY",
+        "ESCALATE_PROPOSER_VERIFIER_DISAGREEMENT"
+      ]
+    },
+    "role": {
+      "enum": [
+        "PRIMARY",
+        "VERIFIER"
+      ]
+    },
+    "run_identity": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "runtime_binding": {
+      "minProperties": 1,
+      "type": "object"
+    },
+    "schema": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "selected_candidate_scoring_id": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "const": null
+        }
+      ]
+    },
+    "selected_relation_identity": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "const": null
+        }
+      ]
+    }
+  },
+  "required": [
+    "schema",
+    "role",
+    "raw_key",
+    "proposal_input_bundle_id",
+    "execution_manifest_id",
+    "computational_contract_id",
+    "complete_candidate_universe_hash",
+    "complete_relation_set_hash",
+    "result_status",
+    "selected_candidate_scoring_id",
+    "selected_relation_identity",
+    "evidence_fact_ids",
+    "evidence_set_hash",
+    "hard_gate_results",
+    "context_identity",
+    "run_identity",
+    "runtime_binding",
+    "prompt_template_identity",
+    "private_chain_of_thought_persisted",
+    "owner_freeze_performed",
+    "binding_publication_performed",
+    "commitment_id"
+  ],
+  "schema_id": "53db06095959f90bf035c92c009171011c31324de2b5c1e88d7e5e9f2aa66251",
+  "title": "Primary A2 commitment",
+  "type": "object",
+  "x-cross-field-constraints": [
+    "UNIQUE_EXISTING_OWNER_PROPOSAL requires both selected IDs non-null; every escalation status requires both null",
+    "private chain-of-thought is prohibited"
+  ]
+}

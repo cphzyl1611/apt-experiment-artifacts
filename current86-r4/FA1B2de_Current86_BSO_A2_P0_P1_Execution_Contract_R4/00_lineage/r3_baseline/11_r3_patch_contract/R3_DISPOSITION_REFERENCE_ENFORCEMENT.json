@@ -1,0 +1,23 @@
+{
+  "contract_id": "089ebe7e70ff2396496e98aa50ce4081e34e74e638f99a28f480268b46cb3aaa",
+  "pending_terminal_invalidated": [
+    "exact current pending terminal",
+    "exact substantive blocking review",
+    "allowed non-null reason class",
+    "same raw_key"
+  ],
+  "random_syntactically_valid_reference": "REJECT",
+  "remediation_restarted": [
+    "exact preceding blocked attempt/disposition",
+    "exact same-raw remediation",
+    "restart authorization binds exact blocked state"
+  ],
+  "schema": "A2_R3_DISPOSITION_REFERENCE_ENFORCEMENT_CONTRACT_V1",
+  "terminal_accepted": [
+    "exact current pending terminal",
+    "exact passing review",
+    "exact accepted terminal approved by review",
+    "same raw_key"
+  ],
+  "validation_mode": "AUTHENTICATED_REFERENCED_OBJECTS_REQUIRED"
+}

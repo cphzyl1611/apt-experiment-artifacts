@@ -1,0 +1,19 @@
+{
+  "all_required_for_normal_confirmation": true,
+  "gate_failure_result": "FAIL_CLOSED_ESCALATION",
+  "gates": [
+    "current86_exact_scope_membership_gate",
+    "candidate_set_equality_gate",
+    "relation_set_equality_gate",
+    "source_provenance_gate",
+    "identity_binding_gate",
+    "structure_applicability_gate",
+    "scoring_authority_applicability_gate",
+    "proposal_evidence_profile_gate",
+    "proposal_evidence_binding_gate",
+    "primary_verifier_isolation_gate",
+    "primary_verifier_commitment_order_gate",
+    "primary_verifier_agreement_gate"
+  ],
+  "schema_version": "FA1B2DE_CURRENT86_BSO_A2_HARD_GATE_REGISTRY_R1"
+}

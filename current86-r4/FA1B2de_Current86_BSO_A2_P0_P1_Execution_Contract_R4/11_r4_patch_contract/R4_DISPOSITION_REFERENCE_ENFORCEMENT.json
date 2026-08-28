@@ -1,0 +1,6 @@
+{
+  "contract_id": "6c1aced0cb63cdd8fc67f26c974077fa64dd9764ef502a2624cbc67296427c1b",
+  "random_syntactically_valid_reference": "REJECT",
+  "schema": "A2_R4_DISPOSITION_REFERENCE_ENFORCEMENT_CONTRACT_V1",
+  "validation_mode": "AUTHENTICATED_REFERENCED_OBJECTS_REQUIRED"
+}

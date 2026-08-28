@@ -1,0 +1,211 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "accepted_binding_change": {
+      "const": "NO"
+    },
+    "activation_transaction_id": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "active_bso_a2_authority_id": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "binding_authority_mutation": {
+      "const": "NO"
+    },
+    "binding_publication": {
+      "const": "NO"
+    },
+    "bso_p_executed": {
+      "const": "NO"
+    },
+    "bso_v_executed": {
+      "const": "NO"
+    },
+    "canonicalization_contract": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "denominator_change": {
+      "const": "NO"
+    },
+    "exact_current86_candidate_registry_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "exact_current86_raw_set_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "exact_current86_relation_set_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "exact_current86_scope_id": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "execution_manifest_id": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "const": null
+        }
+      ]
+    },
+    "former_human_eq_relation_count": {
+      "type": "integer"
+    },
+    "h2_provenance_evidence_id": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "hard_negative_count": {
+      "type": "integer"
+    },
+    "historical_output_denylist_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "human_decision_schema_id": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "human_packet_schema_id": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "independent_verifier_executed": {
+      "const": "NO"
+    },
+    "ledger_schema_id": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "p0_executed": {
+      "const": "NO"
+    },
+    "p0_status": {
+      "const": "PREPARED_NOT_ADJUDICATED"
+    },
+    "p1_executed": {
+      "const": "NO"
+    },
+    "p2_executed": {
+      "const": "NO"
+    },
+    "p3_executed": {
+      "const": "NO"
+    },
+    "p4_executed": {
+      "const": "NO"
+    },
+    "pilot_selection_rule": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "primary_computational_contract_id": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "primary_proposer_executed": {
+      "const": "NO"
+    },
+    "proposal_evidence_profile_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "raw_count": {
+      "type": "integer"
+    },
+    "raw_level_human_decisions": {
+      "const": 0
+    },
+    "relation_count": {
+      "type": "integer"
+    },
+    "scoring_authority_mutation": {
+      "const": "NO"
+    },
+    "set_ordering_registry_id": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "source_registry_id": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "state_partition_schema_id": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "terminal_record_schema_id": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "verifier_computational_contract_id": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "verifier_isolation_enforcement_contract_id": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    }
+  },
+  "required": [
+    "active_bso_a2_authority_id",
+    "activation_transaction_id",
+    "h2_provenance_evidence_id",
+    "exact_current86_scope_id",
+    "exact_current86_raw_set_hash",
+    "exact_current86_relation_set_hash",
+    "exact_current86_candidate_registry_hash",
+    "raw_count",
+    "relation_count",
+    "hard_negative_count",
+    "former_human_eq_relation_count",
+    "canonicalization_contract",
+    "set_ordering_registry_id",
+    "pilot_selection_rule",
+    "primary_computational_contract_id",
+    "verifier_computational_contract_id",
+    "verifier_isolation_enforcement_contract_id",
+    "proposal_evidence_profile_hash",
+    "historical_output_denylist_hash",
+    "source_registry_id",
+    "human_packet_schema_id",
+    "human_decision_schema_id",
+    "terminal_record_schema_id",
+    "ledger_schema_id",
+    "state_partition_schema_id",
+    "p0_status",
+    "p0_executed",
+    "p1_executed",
+    "p2_executed",
+    "p3_executed",
+    "p4_executed",
+    "primary_proposer_executed",
+    "independent_verifier_executed",
+    "bso_v_executed",
+    "bso_p_executed",
+    "raw_level_human_decisions",
+    "binding_publication",
+    "scoring_authority_mutation",
+    "binding_authority_mutation",
+    "accepted_binding_change",
+    "denominator_change",
+    "execution_manifest_id"
+  ],
+  "schema_id": "d9a318443abdc3f8bbe014998912a855f5b43bc45c157f445c334f8cbed79b3c",
+  "title": "Current86 A2 P0 execution manifest",
+  "type": "object",
+  "x-cross-field-constraints": [
+    "execution_manifest_id is omitted only for identity calculation; generated manifest carries its self-ID"
+  ]
+}

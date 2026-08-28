@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "disposition_id": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "const": null
+        }
+      ]
+    },
+    "disposition_sequence": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "disposition_type": {
+      "const": "TERMINAL_ACCEPTED"
+    },
+    "next_state": {
+      "const": "ACCEPTED_TERMINAL"
+    },
+    "prior_disposition_id": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "const": null
+        }
+      ]
+    },
+    "prior_state": {
+      "const": "PENDING_REVIEW"
+    },
+    "raw_key": {
+      "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+      "type": "string"
+    },
+    "reason_class": {
+      "anyOf": [
+        {
+          "minLength": 1,
+          "type": "string"
+        },
+        {
+          "const": null
+        }
+      ]
+    },
+    "referenced_accepted_terminal_id": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "referenced_attempt_id": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "const": null
+        }
+      ]
+    },
+    "referenced_pending_terminal_id": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "referenced_review_id": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "remediation_reference": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "const": null
+        }
+      ]
+    },
+    "schema": {
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema",
+    "raw_key",
+    "disposition_type",
+    "prior_state",
+    "next_state",
+    "disposition_sequence",
+    "prior_disposition_id",
+    "referenced_attempt_id",
+    "referenced_pending_terminal_id",
+    "referenced_review_id",
+    "referenced_accepted_terminal_id",
+    "remediation_reference",
+    "reason_class",
+    "disposition_id"
+  ],
+  "schema_id": "bd18eef4d36348aaf4957d5e493a357e35422b5d9729641231e37cdcda3518c9",
+  "title": "TERMINAL_ACCEPTED disposition",
+  "type": "object",
+  "x-cross-field-constraints": [
+    "prior_state=PENDING_REVIEW",
+    "next_state=ACCEPTED_TERMINAL",
+    "accepted terminal supersedes historical blocked/pending/incomplete rows"
+  ]
+}

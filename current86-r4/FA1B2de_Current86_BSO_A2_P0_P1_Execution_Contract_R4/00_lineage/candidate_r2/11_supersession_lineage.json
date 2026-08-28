@@ -1,0 +1,16 @@
+{
+  "accepted_r2_design_sha256": "5bef1445705e323115ce071f616f53e218202d1d5cfcac13d2febee295956ed4",
+  "h1_acceptance": "ACCEPTED",
+  "h1_provenance_evidence_file_sha256": "d7efbe2d014347dc9fc4fbad1c721ffc5e639f6fae6c6d87629d73fcb5a51752",
+  "h1_provenance_evidence_id": "22dbeb4700808e049ff001281caf1ae8ed5102fbcf2078991b27c0039e0dd6ba",
+  "h1_provenance_independent_verification_file_sha256": "c81e0fb89c9663d2f0f37dba14a478c97770f583bc72be97135ba48c5799d6f8",
+  "h1_provenance_independent_verification_status": "PASS",
+  "old_authority_remains_active_for_current86": true,
+  "old_final_freeze_handoff_sha256": "0af337acc731595167d75f922dd39bbbb48dd1b1b9d3b31723d01408501040de",
+  "old_freeze_precondition_verification_id": "80653cc96d1e3612d5809bd6a6a091f79fe5cd1081c769ec51366b99646faac1",
+  "old_scope_id": "34551e904bafa71fb2fb6db33162e94ad41a08eca6c747d429c83760e09c1306",
+  "old_workflow_architecture_authority_hash": "442b5aecd651b320b94eb47b190bf239ba0157634e0a635042ca4d252c65dc40",
+  "schema_version": "FA1B2DE_CURRENT86_BSO_A2_SUPERSESSION_LINEAGE_R1",
+  "separate_h2_activation_required": true,
+  "supersession_activation": false
+}

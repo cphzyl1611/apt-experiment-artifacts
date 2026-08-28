@@ -1,0 +1,67 @@
+{
+  "canonicalization_contract": "PROJECT_CANONICAL_JSON_V1",
+  "entries": [
+    {
+      "comparison_encoding": "UTF-8",
+      "comparison_rule": "BYTEWISE_ASCENDING_UTF8",
+      "element_identity_field_or_tuple": "canonical_raw_key",
+      "mathematical_set_type": "SET",
+      "schema_field_path": "exact_current86_raw_set"
+    },
+    {
+      "comparison_encoding": "UTF-8",
+      "comparison_rule": "BYTEWISE_ASCENDING_UTF8",
+      "element_identity_field_or_tuple": "relation_identity",
+      "mathematical_set_type": "SET",
+      "schema_field_path": "relation_set"
+    },
+    {
+      "comparison_encoding": "UTF-8",
+      "comparison_rule": "LEXICOGRAPHIC_UTF8_BYTES_FIRST_CANDIDATE_THEN_RELATION",
+      "element_identity_field_or_tuple": [
+        "candidate_scoring_id",
+        "relation_identity"
+      ],
+      "mathematical_set_type": "SET",
+      "schema_field_path": "per_raw_complete_candidate_universe_entries"
+    },
+    {
+      "comparison_encoding": "UTF-8",
+      "comparison_rule": "BYTEWISE_ASCENDING_UTF8",
+      "element_identity_field_or_tuple": "source_fact_id",
+      "mathematical_set_type": "SET",
+      "schema_field_path": "normative_evidence_fact_set"
+    },
+    {
+      "comparison_encoding": "UTF-8",
+      "comparison_rule": "BYTEWISE_ASCENDING_UTF8",
+      "element_identity_field_or_tuple": "canonical_raw_key",
+      "mathematical_set_type": "SET",
+      "schema_field_path": "owner_terminal_raw_set"
+    },
+    {
+      "comparison_encoding": "UTF-8",
+      "comparison_rule": "BYTEWISE_ASCENDING_UTF8",
+      "element_identity_field_or_tuple": "canonical_raw_key",
+      "mathematical_set_type": "SET",
+      "schema_field_path": "escalation_terminal_raw_set"
+    },
+    {
+      "comparison_encoding": "UTF-8",
+      "comparison_rule": "BYTEWISE_ASCENDING_UTF8",
+      "element_identity_field_or_tuple": "canonical_raw_key",
+      "mathematical_set_type": "SET_OF_RAW_KEYS",
+      "partition_names": [
+        "S_ACCEPTED_TERMINAL",
+        "S_PENDING_REVIEW",
+        "S_IN_PROGRESS_OR_INCOMPLETE",
+        "S_BLOCKED_ATTEMPT",
+        "S_NOT_STARTED_FOR_ADJUDICATION"
+      ],
+      "schema_field_path": "p3_current_state_partition_sets"
+    }
+  ],
+  "required_ordering_before_runtime_identity": true,
+  "schema": "A2_SET_ORDERING_REGISTRY_V1",
+  "set_ordering_registry_id": "e87942896a6c5910635d6b72faa1a7a2dc1ec962a3635c8762a082e7d646211b"
+}

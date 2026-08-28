@@ -1,0 +1,3432 @@
+{
+  "canonicalization_contract": "PROJECT_CANONICAL_JSON_V1",
+  "isolation_enforcement_id": "03625180e4b98cdf32ce04c6054f3fd92df771195da0a891bf1f367aba4c05b9",
+  "schema": "A2_P0_P1_SCHEMA_REGISTRY_V1",
+  "schema_registry_id": "b5176c5573bf139f1a499b4d2039dc62e2286a44f60fce85863788d6e743a8cc",
+  "schemas": {
+    "accepted_terminal_ledger_entry": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false,
+      "properties": {
+        "accepted_terminal_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "entry_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "independent_review_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "raw_key": {
+          "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+          "type": "string"
+        },
+        "schema": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "terminal_record_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "schema",
+        "raw_key",
+        "accepted_terminal_id",
+        "terminal_record_hash",
+        "independent_review_id",
+        "entry_id"
+      ],
+      "schema_id": "e9f125d1a231b51f9e8c1c4f792371bb227e68178d68d1e0b66a8486c86fcbd1",
+      "title": "Accepted terminal ledger entry",
+      "type": "object"
+    },
+    "admissible_source_fact": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false,
+      "oneOf": [
+        {
+          "properties": {
+            "candidate_scoring_id": {
+              "const": null
+            },
+            "raw_key": {
+              "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+              "type": "string"
+            },
+            "source_side": {
+              "const": "RAW"
+            }
+          }
+        },
+        {
+          "properties": {
+            "candidate_scoring_id": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            "raw_key": {
+              "const": null
+            },
+            "source_side": {
+              "const": "CANDIDATE"
+            }
+          }
+        }
+      ],
+      "properties": {
+        "admissible_source_fact_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "authenticated_value_canonical_json": {},
+        "authenticated_value_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "candidate_scoring_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "exact_field_path_or_claim_id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "raw_key": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "schema": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "source_artifact_identity": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "source_artifact_sha256_or_pinned_identity": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "source_fact_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "source_fact_type": {
+          "enum": [
+            "PINNED_CANONICAL_INTRINSIC_FIELD",
+            "PINNED_PROJECT_TAXONOMY_FIELD",
+            "PINNED_RAW_SOURCE_FIELD",
+            "PINNED_SCORING_ROW_FIELD"
+          ]
+        },
+        "source_provenance_identity": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "source_side": {
+          "enum": [
+            "RAW",
+            "CANDIDATE"
+          ]
+        }
+      },
+      "required": [
+        "schema",
+        "source_fact_id",
+        "source_artifact_identity",
+        "source_artifact_sha256_or_pinned_identity",
+        "source_provenance_identity",
+        "source_fact_type",
+        "source_side",
+        "raw_key",
+        "candidate_scoring_id",
+        "exact_field_path_or_claim_id",
+        "authenticated_value_canonical_json",
+        "authenticated_value_sha256",
+        "admissible_source_fact_id"
+      ],
+      "schema_id": "bba0af21f22cd0d839763027f2f25af543e0b3b86dc9547393b33b80d1262a9d",
+      "title": "Admissible source fact",
+      "type": "object"
+    },
+    "authoritative_disposition_record": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false,
+      "properties": {
+        "disposition_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "disposition_sequence": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "disposition_type": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "next_state": {
+          "enum": [
+            "NOT_STARTED_FOR_ADJUDICATION",
+            "IN_PROGRESS_OR_INCOMPLETE",
+            "PENDING_REVIEW",
+            "BLOCKED_ATTEMPT",
+            "ACCEPTED_TERMINAL"
+          ]
+        },
+        "prior_disposition_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "prior_state": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "raw_key": {
+          "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+          "type": "string"
+        },
+        "reason_class": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "referenced_accepted_terminal_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "referenced_attempt_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "referenced_pending_terminal_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "referenced_review_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "remediation_reference": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "schema": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "schema",
+        "raw_key",
+        "disposition_type",
+        "prior_state",
+        "next_state",
+        "disposition_sequence",
+        "prior_disposition_id",
+        "referenced_attempt_id",
+        "referenced_pending_terminal_id",
+        "referenced_review_id",
+        "referenced_accepted_terminal_id",
+        "remediation_reference",
+        "reason_class",
+        "disposition_id"
+      ],
+      "schema_id": "b23897b4af19134401113b10c9bfa7c70c9c5a031dbc58730239e5385075adae",
+      "title": "Authoritative disposition record",
+      "type": "object",
+      "x-cross-field-constraints": [
+        "each raw has one linear sequence starting at 0",
+        "every non-initial record references the immediately prior disposition_id",
+        "fork, duplicate sequence, missing parent, invalid transition, or multiple heads fail closed"
+      ]
+    },
+    "complete_candidate_universe": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false,
+      "properties": {
+        "candidate_relation_count": {
+          "type": "integer"
+        },
+        "candidate_relations": {
+          "items": {
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "complete_candidate_relation_set_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "complete_candidate_universe_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "complete_candidate_universe_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "complete_candidate_universe_preserved": {
+          "const": true
+        },
+        "hidden_pruning": {
+          "const": "PROHIBITED"
+        },
+        "materialization_status": {
+          "const": "PREPARED_NOT_ADJUDICATED"
+        },
+        "raw_key": {
+          "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+          "type": "string"
+        },
+        "schema": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "top_k_candidate_truncation": {
+          "const": "PROHIBITED"
+        }
+      },
+      "required": [
+        "schema",
+        "raw_key",
+        "candidate_relations",
+        "candidate_relation_count",
+        "complete_candidate_relation_set_hash",
+        "complete_candidate_universe_hash",
+        "complete_candidate_universe_preserved",
+        "hidden_pruning",
+        "top_k_candidate_truncation",
+        "materialization_status",
+        "complete_candidate_universe_id"
+      ],
+      "schema_id": "3b4d54a667edf3f1f7f8e5039d15df4d53aa2fd234a41e28346b708f69efb60e",
+      "title": "Complete candidate universe",
+      "type": "object"
+    },
+    "current86_a2_execution_manifest": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false,
+      "properties": {
+        "accepted_binding_change": {
+          "const": "NO"
+        },
+        "activation_transaction_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "active_bso_a2_authority_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "binding_authority_mutation": {
+          "const": "NO"
+        },
+        "binding_publication": {
+          "const": "NO"
+        },
+        "bso_p_executed": {
+          "const": "NO"
+        },
+        "bso_v_executed": {
+          "const": "NO"
+        },
+        "canonicalization_contract": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "denominator_change": {
+          "const": "NO"
+        },
+        "exact_current86_candidate_registry_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "exact_current86_raw_set_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "exact_current86_relation_set_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "exact_current86_scope_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "execution_manifest_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "former_human_eq_relation_count": {
+          "type": "integer"
+        },
+        "h2_provenance_evidence_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "hard_negative_count": {
+          "type": "integer"
+        },
+        "historical_output_denylist_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "human_decision_schema_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "human_packet_schema_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "independent_verifier_executed": {
+          "const": "NO"
+        },
+        "ledger_schema_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "p0_executed": {
+          "const": "NO"
+        },
+        "p0_status": {
+          "const": "PREPARED_NOT_ADJUDICATED"
+        },
+        "p1_executed": {
+          "const": "NO"
+        },
+        "p2_executed": {
+          "const": "NO"
+        },
+        "p3_executed": {
+          "const": "NO"
+        },
+        "p4_executed": {
+          "const": "NO"
+        },
+        "pilot_selection_rule": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "primary_computational_contract_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "primary_proposer_executed": {
+          "const": "NO"
+        },
+        "proposal_evidence_profile_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "raw_count": {
+          "type": "integer"
+        },
+        "raw_level_human_decisions": {
+          "const": 0
+        },
+        "relation_count": {
+          "type": "integer"
+        },
+        "scoring_authority_mutation": {
+          "const": "NO"
+        },
+        "set_ordering_registry_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "source_registry_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "state_partition_schema_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "terminal_record_schema_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "verifier_computational_contract_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "verifier_isolation_enforcement_contract_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "active_bso_a2_authority_id",
+        "activation_transaction_id",
+        "h2_provenance_evidence_id",
+        "exact_current86_scope_id",
+        "exact_current86_raw_set_hash",
+        "exact_current86_relation_set_hash",
+        "exact_current86_candidate_registry_hash",
+        "raw_count",
+        "relation_count",
+        "hard_negative_count",
+        "former_human_eq_relation_count",
+        "canonicalization_contract",
+        "set_ordering_registry_id",
+        "pilot_selection_rule",
+        "primary_computational_contract_id",
+        "verifier_computational_contract_id",
+        "verifier_isolation_enforcement_contract_id",
+        "proposal_evidence_profile_hash",
+        "historical_output_denylist_hash",
+        "source_registry_id",
+        "human_packet_schema_id",
+        "human_decision_schema_id",
+        "terminal_record_schema_id",
+        "ledger_schema_id",
+        "state_partition_schema_id",
+        "p0_status",
+        "p0_executed",
+        "p1_executed",
+        "p2_executed",
+        "p3_executed",
+        "p4_executed",
+        "primary_proposer_executed",
+        "independent_verifier_executed",
+        "bso_v_executed",
+        "bso_p_executed",
+        "raw_level_human_decisions",
+        "binding_publication",
+        "scoring_authority_mutation",
+        "binding_authority_mutation",
+        "accepted_binding_change",
+        "denominator_change",
+        "execution_manifest_id"
+      ],
+      "schema_id": "d9a318443abdc3f8bbe014998912a855f5b43bc45c157f445c334f8cbed79b3c",
+      "title": "Current86 A2 P0 execution manifest",
+      "type": "object",
+      "x-cross-field-constraints": [
+        "execution_manifest_id is omitted only for identity calculation; generated manifest carries its self-ID"
+      ]
+    },
+    "escalation_terminal": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false,
+      "oneOf": [
+        {
+          "properties": {
+            "fresh_alternative_verification": {
+              "const": null
+            },
+            "fresh_alternative_verification_id": {
+              "const": null
+            },
+            "human_action": {
+              "const": null
+            },
+            "human_decision_record_id": {
+              "const": null
+            },
+            "human_origin_provenance_evidence_id": {
+              "const": null
+            },
+            "human_origin_provenance_verification": {
+              "const": null
+            },
+            "human_provenance": {
+              "const": null
+            },
+            "human_selected_alternative_candidate_scoring_id": {
+              "const": null
+            },
+            "human_selected_alternative_relation_identity": {
+              "const": null
+            },
+            "selected_packet_option_id": {
+              "const": null
+            }
+          }
+        },
+        {
+          "properties": {
+            "fresh_alternative_verification": {
+              "const": null
+            },
+            "fresh_alternative_verification_id": {
+              "const": null
+            },
+            "human_action": {
+              "const": "NOT_SURE_ESCALATE"
+            },
+            "human_decision_record_id": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            "human_origin_provenance_evidence_id": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            "human_origin_provenance_verification": {
+              "const": "PASS"
+            },
+            "human_provenance": {
+              "minProperties": 1,
+              "type": "object"
+            },
+            "human_selected_alternative_candidate_scoring_id": {
+              "const": null
+            },
+            "human_selected_alternative_relation_identity": {
+              "const": null
+            },
+            "selected_packet_option_id": {
+              "const": null
+            }
+          }
+        },
+        {
+          "properties": {
+            "escalation_class": {
+              "const": "HUMAN_SELECTED_ALTERNATIVE_VERIFICATION_FAILED"
+            },
+            "fresh_alternative_verification": {
+              "const": "FAIL"
+            },
+            "fresh_alternative_verification_id": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            "human_action": {
+              "const": "REJECT_PROPOSAL_AND_SELECT_OTHER_EXISTING_CANDIDATE"
+            },
+            "human_decision_record_id": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            "human_origin_provenance_evidence_id": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            "human_origin_provenance_verification": {
+              "const": "PASS"
+            },
+            "human_provenance": {
+              "minProperties": 1,
+              "type": "object"
+            },
+            "human_selected_alternative_candidate_scoring_id": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            "human_selected_alternative_relation_identity": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            "selected_packet_option_id": {
+              "minLength": 1,
+              "type": "string"
+            }
+          }
+        }
+      ],
+      "properties": {
+        "all_hard_gates": {
+          "enum": [
+            "PASS",
+            "INDETERMINATE",
+            "FAIL_CLOSED"
+          ]
+        },
+        "authority_scope_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "authority_version_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "complete_candidate_relation_set_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "complete_candidate_universe_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "escalation_class": {
+          "enum": [
+            "HUMAN_NOT_SURE",
+            "HUMAN_SELECTED_ALTERNATIVE_VERIFICATION_FAILED",
+            "PRE_HUMAN_AMBIGUOUS",
+            "PRE_HUMAN_IDENTITY",
+            "PRE_HUMAN_PROPOSER_VERIFIER_DISAGREEMENT",
+            "PRE_HUMAN_PROVENANCE",
+            "PRE_HUMAN_SCORING_AUTHORITY",
+            "PRE_HUMAN_STRUCTURE"
+          ]
+        },
+        "fresh_alternative_verification": {
+          "anyOf": [
+            {
+              "enum": [
+                "PASS",
+                "FAIL"
+              ]
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "fresh_alternative_verification_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "hard_gate_results": {
+          "type": "object"
+        },
+        "human_action": {
+          "enum": [
+            "NOT_SURE_ESCALATE",
+            "REJECT_PROPOSAL_AND_SELECT_OTHER_EXISTING_CANDIDATE",
+            null
+          ]
+        },
+        "human_decision_record_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "human_origin_provenance_evidence_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "human_origin_provenance_verification": {
+          "enum": [
+            "PASS",
+            null
+          ]
+        },
+        "human_provenance": {
+          "anyOf": [
+            {
+              "minProperties": 1,
+              "type": "object"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "human_selected_alternative_candidate_scoring_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "human_selected_alternative_relation_identity": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "independent_commitment_comparison": {
+          "enum": [
+            "PASS",
+            "FAIL_CLOSED"
+          ]
+        },
+        "input_bundle_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "primary_derivation_commitment_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "primary_run_identity": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "proposal_evidence_set_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "proposal_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "raw_key": {
+          "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+          "type": "string"
+        },
+        "schema": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "selected_owner_candidate_scoring_id": {
+          "const": null
+        },
+        "selected_packet_option_id": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "selected_relation_identity": {
+          "const": null
+        },
+        "terminal_record_class": {
+          "const": "A2_ESCALATION_FROZEN"
+        },
+        "terminal_record_hash": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "unresolved_state": {
+          "const": true
+        },
+        "verifier_derivation_commitment_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "verifier_run_identity": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "schema",
+        "terminal_record_class",
+        "authority_version_id",
+        "authority_scope_id",
+        "raw_key",
+        "complete_candidate_universe_hash",
+        "complete_candidate_relation_set_hash",
+        "input_bundle_hash",
+        "proposal_hash",
+        "proposal_evidence_set_hash",
+        "primary_derivation_commitment_hash",
+        "primary_run_identity",
+        "verifier_derivation_commitment_hash",
+        "verifier_run_identity",
+        "independent_commitment_comparison",
+        "hard_gate_results",
+        "all_hard_gates",
+        "human_action",
+        "human_origin_provenance_evidence_id",
+        "human_origin_provenance_verification",
+        "selected_owner_candidate_scoring_id",
+        "selected_relation_identity",
+        "unresolved_state",
+        "escalation_class",
+        "terminal_record_hash",
+        "human_decision_record_id",
+        "human_provenance",
+        "selected_packet_option_id",
+        "human_selected_alternative_candidate_scoring_id",
+        "human_selected_alternative_relation_identity",
+        "fresh_alternative_verification",
+        "fresh_alternative_verification_id"
+      ],
+      "schema_id": "0c258c5becb97a9efd202ae0160c1c7903938aa2823824c82675322df468b151",
+      "title": "A2 escalation terminal R2",
+      "type": "object",
+      "x-cross-field-constraints": [
+        "selected owner is null",
+        "unresolved_state is true",
+        "pre-human escalation has null human fields",
+        "human escalation has NOT_SURE plus provenance"
+      ]
+    },
+    "execution_attempt_ledger_entry": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false,
+      "properties": {
+        "attempt_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "attempt_sequence": {
+          "type": "integer"
+        },
+        "entry_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "error_class": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "raw_key": {
+          "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+          "type": "string"
+        },
+        "schema": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "stage": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "status": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "schema",
+        "raw_key",
+        "attempt_id",
+        "attempt_sequence",
+        "stage",
+        "status",
+        "error_class",
+        "entry_id"
+      ],
+      "schema_id": "9b1db78a7afb3be5bfcbe83264663089c4cfea44b55a530f780ccd94226a309c",
+      "title": "Execution attempt ledger entry",
+      "type": "object"
+    },
+    "final_freeze_normative_manifest": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false,
+      "properties": {
+        "excluded_fields": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "identity_field": {
+          "const": "CURRENT86_A2_FINAL_FREEZE_ID"
+        },
+        "identity_inputs": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "identity_rule": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "materialization_status": {
+          "const": "SCHEMA_ONLY_NO_P4_FREEZE"
+        },
+        "schema": {
+          "const": "FINAL_FREEZE_NORMATIVE_MANIFEST_SCHEMA_V1"
+        },
+        "schema_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "workload_excluded": {
+          "const": true
+        }
+      },
+      "required": [
+        "schema",
+        "materialization_status",
+        "identity_field",
+        "identity_rule",
+        "workload_excluded",
+        "excluded_fields",
+        "identity_inputs",
+        "schema_id"
+      ],
+      "schema_id": "a1211cdb6a8621e74086d54c588331b7a638f4f4ba006e37be7471c910e29de8",
+      "title": "P4 normative final-freeze manifest schema",
+      "type": "object",
+      "x-cross-field-constraints": [
+        "No CURRENT86_A2_FINAL_FREEZE_ID is materialized in this contract-only turn",
+        "workload telemetry cannot be an identity input"
+      ]
+    },
+    "final_freeze_package_manifest": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false,
+      "properties": {
+        "identity_excludes_from_normative_freeze": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "identity_field": {
+          "const": "FINAL_FREEZE_PACKAGE_MANIFEST_ID"
+        },
+        "identity_rule": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "includes_workload_files": {
+          "const": true
+        },
+        "materialization_status": {
+          "const": "SCHEMA_ONLY_NO_P4_FREEZE"
+        },
+        "normative_identity_reference": {
+          "const": "CURRENT86_A2_FINAL_FREEZE_ID"
+        },
+        "package_identity_may_change_when_workload_files_change": {
+          "const": true
+        },
+        "schema": {
+          "const": "FINAL_FREEZE_PACKAGE_MANIFEST_SCHEMA_V1"
+        },
+        "schema_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "workload_summary": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "schema",
+        "materialization_status",
+        "identity_field",
+        "identity_rule",
+        "includes_workload_files",
+        "workload_summary",
+        "identity_excludes_from_normative_freeze",
+        "normative_identity_reference",
+        "package_identity_may_change_when_workload_files_change",
+        "schema_id"
+      ],
+      "schema_id": "c045fd52e5f5a6b3287a57192c025ef57688ea62ae3ab18516b8a1e41e08797d",
+      "title": "P4 package manifest schema",
+      "type": "object",
+      "x-cross-field-constraints": [
+        "Package identity may include workload files while normative identity excludes them"
+      ]
+    },
+    "human_decision_record": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false,
+      "oneOf": [
+        {
+          "properties": {
+            "fresh_alternative_verification": {
+              "const": null
+            },
+            "fresh_alternative_verification_id": {
+              "const": null
+            },
+            "human_action": {
+              "const": "CONFIRM_PROPOSED_OWNER"
+            },
+            "human_selected_candidate_scoring_id": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            "human_selected_relation_identity": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            "selected_packet_option_id": {
+              "const": null
+            }
+          }
+        },
+        {
+          "properties": {
+            "fresh_alternative_verification": {
+              "enum": [
+                "PASS",
+                "FAIL"
+              ]
+            },
+            "fresh_alternative_verification_id": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            "human_action": {
+              "const": "REJECT_PROPOSAL_AND_SELECT_OTHER_EXISTING_CANDIDATE"
+            },
+            "human_selected_candidate_scoring_id": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            "human_selected_relation_identity": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            "selected_packet_option_id": {
+              "minLength": 1,
+              "type": "string"
+            }
+          }
+        },
+        {
+          "properties": {
+            "fresh_alternative_verification": {
+              "const": null
+            },
+            "fresh_alternative_verification_id": {
+              "const": null
+            },
+            "human_action": {
+              "const": "NOT_SURE_ESCALATE"
+            },
+            "human_selected_candidate_scoring_id": {
+              "const": null
+            },
+            "human_selected_relation_identity": {
+              "const": null
+            },
+            "selected_packet_option_id": {
+              "const": null
+            }
+          }
+        }
+      ],
+      "properties": {
+        "decision_literal_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "fresh_alternative_verification": {
+          "enum": [
+            "PASS",
+            "FAIL",
+            null
+          ]
+        },
+        "fresh_alternative_verification_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "human_action": {
+          "enum": [
+            "CONFIRM_PROPOSED_OWNER",
+            "REJECT_PROPOSAL_AND_SELECT_OTHER_EXISTING_CANDIDATE",
+            "NOT_SURE_ESCALATE"
+          ]
+        },
+        "human_decision_record_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "human_origin_provenance_evidence_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "human_origin_provenance_verification": {
+          "const": "PASS"
+        },
+        "human_packet_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "human_packet_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "human_provenance": {
+          "minProperties": 1,
+          "type": "object"
+        },
+        "human_selected_candidate_scoring_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "human_selected_relation_identity": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "native_user_event_identity": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "raw_key": {
+          "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+          "type": "string"
+        },
+        "schema": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "selected_packet_option_id": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        }
+      },
+      "required": [
+        "schema",
+        "raw_key",
+        "human_packet_id",
+        "human_packet_hash",
+        "human_action",
+        "native_user_event_identity",
+        "decision_literal_hash",
+        "human_origin_provenance_evidence_id",
+        "human_origin_provenance_verification",
+        "human_provenance",
+        "human_selected_candidate_scoring_id",
+        "human_selected_relation_identity",
+        "selected_packet_option_id",
+        "fresh_alternative_verification",
+        "fresh_alternative_verification_id",
+        "human_decision_record_id"
+      ],
+      "schema_id": "978b3dc4113c7e4449c28b05dd335f0639484db6360b5e5ad3055745b21a4c24",
+      "title": "Native raw-level human decision record R2",
+      "type": "object"
+    },
+    "human_packet": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false,
+      "properties": {
+        "authenticated_raw_action_reference": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "candidate_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "candidate_side_evidence_fact_ids": {
+          "items": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "candidate_side_evidence_source_references": {
+          "items": {
+            "minProperties": 1,
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "comparison_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "comparison_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "complete_candidate_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "complete_candidate_universe_disclosed": {
+          "const": true
+        },
+        "complete_candidate_universe_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "complete_universe_expansion_audit": {
+          "additionalProperties": false,
+          "properties": {
+            "complete_candidate_count_exact_match": {
+              "const": true
+            },
+            "expanded_option_count": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "option_mapping_hash": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            }
+          },
+          "required": [
+            "option_mapping_hash",
+            "expanded_option_count",
+            "complete_candidate_count_exact_match"
+          ],
+          "type": "object"
+        },
+        "concise_source_grounded_basis": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "full_candidate_option_mapping": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "candidate_label_or_reference": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "candidate_scoring_id": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              },
+              "packet_local_human_option_id": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "relation_identity": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              }
+            },
+            "required": [
+              "packet_local_human_option_id",
+              "candidate_scoring_id",
+              "relation_identity",
+              "candidate_label_or_reference"
+            ],
+            "type": "object"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "hidden_pruning": {
+          "const": "NO"
+        },
+        "human_input_mode": {
+          "const": "PACKET_LOCAL_OPTION_ONLY_NO_MANUAL_ID_OR_HASH_ENTRY"
+        },
+        "human_packet_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "machine_proposal_label": {
+          "const": "NON_AUTHORITATIVE_MACHINE_PROPOSAL"
+        },
+        "normative_actions": {
+          "const": [
+            "CONFIRM_PROPOSED_OWNER",
+            "REJECT_PROPOSAL_AND_SELECT_OTHER_EXISTING_CANDIDATE",
+            "NOT_SURE_ESCALATE"
+          ]
+        },
+        "primary_commitment_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "primary_commitment_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "proposal_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "proposed_candidate_scoring_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "proposed_relation_identity": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "raw_action": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "raw_key": {
+          "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+          "type": "string"
+        },
+        "raw_side_evidence_fact_ids": {
+          "items": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "raw_side_evidence_source_references": {
+          "items": {
+            "minProperties": 1,
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "schema": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "top_k_truncation": {
+          "const": "NO"
+        },
+        "verifier_commitment_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "verifier_commitment_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "verifier_comparison_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "schema",
+        "raw_key",
+        "raw_action",
+        "authenticated_raw_action_reference",
+        "machine_proposal_label",
+        "proposed_candidate_scoring_id",
+        "proposed_relation_identity",
+        "primary_commitment_id",
+        "primary_commitment_hash",
+        "verifier_commitment_id",
+        "verifier_commitment_hash",
+        "comparison_id",
+        "comparison_hash",
+        "raw_side_evidence_fact_ids",
+        "candidate_side_evidence_fact_ids",
+        "raw_side_evidence_source_references",
+        "candidate_side_evidence_source_references",
+        "concise_source_grounded_basis",
+        "complete_candidate_universe_hash",
+        "complete_candidate_count",
+        "full_candidate_option_mapping",
+        "complete_universe_expansion_audit",
+        "human_input_mode",
+        "candidate_count",
+        "complete_candidate_universe_disclosed",
+        "hidden_pruning",
+        "top_k_truncation",
+        "normative_actions",
+        "proposal_hash",
+        "verifier_comparison_hash",
+        "human_packet_id"
+      ],
+      "schema_id": "dc980e557dae84afdd798fd5f3c3b24df4714f6948e5b52653aabbcf0491542e",
+      "title": "Immutable A2 human packet R2",
+      "type": "object"
+    },
+    "owner_terminal": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false,
+      "oneOf": [
+        {
+          "properties": {
+            "fresh_alternative_verification": {
+              "const": null
+            },
+            "fresh_alternative_verification_id": {
+              "const": null
+            },
+            "human_action": {
+              "const": "CONFIRM_PROPOSED_OWNER"
+            },
+            "selected_packet_option_id": {
+              "const": null
+            }
+          }
+        },
+        {
+          "properties": {
+            "fresh_alternative_verification": {
+              "const": "PASS"
+            },
+            "fresh_alternative_verification_id": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            "human_action": {
+              "const": "REJECT_PROPOSAL_AND_SELECT_OTHER_EXISTING_CANDIDATE"
+            },
+            "selected_packet_option_id": {
+              "minLength": 1,
+              "type": "string"
+            }
+          }
+        }
+      ],
+      "properties": {
+        "all_hard_gates": {
+          "const": "PASS"
+        },
+        "authority_scope_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "authority_version_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "complete_candidate_relation_set_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "complete_candidate_universe_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "escalation_class": {
+          "const": null
+        },
+        "fresh_alternative_verification": {
+          "anyOf": [
+            {
+              "const": "PASS"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "fresh_alternative_verification_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "hard_gate_results": {
+          "type": "object"
+        },
+        "human_action": {
+          "enum": [
+            "CONFIRM_PROPOSED_OWNER",
+            "REJECT_PROPOSAL_AND_SELECT_OTHER_EXISTING_CANDIDATE"
+          ]
+        },
+        "human_decision_record_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "human_origin_provenance_evidence_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "human_origin_provenance_verification": {
+          "const": "PASS"
+        },
+        "human_provenance": {
+          "minProperties": 1,
+          "type": "object"
+        },
+        "independent_commitment_comparison": {
+          "const": "PASS"
+        },
+        "input_bundle_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "primary_derivation_commitment_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "primary_run_identity": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "proposal_evidence_set_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "proposal_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "raw_key": {
+          "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+          "type": "string"
+        },
+        "schema": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "selected_owner_candidate_scoring_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "selected_packet_option_id": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "selected_relation_identity": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "terminal_record_class": {
+          "const": "A2_OWNER_ADJUDICATION_FROZEN"
+        },
+        "terminal_record_hash": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "unresolved_state": {
+          "const": false
+        },
+        "verifier_derivation_commitment_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "verifier_run_identity": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "schema",
+        "terminal_record_class",
+        "authority_version_id",
+        "authority_scope_id",
+        "raw_key",
+        "complete_candidate_universe_hash",
+        "complete_candidate_relation_set_hash",
+        "input_bundle_hash",
+        "proposal_hash",
+        "proposal_evidence_set_hash",
+        "primary_derivation_commitment_hash",
+        "primary_run_identity",
+        "verifier_derivation_commitment_hash",
+        "verifier_run_identity",
+        "independent_commitment_comparison",
+        "hard_gate_results",
+        "all_hard_gates",
+        "human_action",
+        "human_origin_provenance_evidence_id",
+        "human_origin_provenance_verification",
+        "selected_owner_candidate_scoring_id",
+        "selected_relation_identity",
+        "unresolved_state",
+        "escalation_class",
+        "terminal_record_hash",
+        "human_decision_record_id",
+        "human_provenance",
+        "selected_packet_option_id",
+        "fresh_alternative_verification",
+        "fresh_alternative_verification_id"
+      ],
+      "schema_id": "2ab837a8f38d71657a81a0e87a8c0d6e1968f3d9118a7330ffaa6c4fd9f5137a",
+      "title": "A2 owner terminal R2",
+      "type": "object",
+      "x-cross-field-constraints": [
+        "owner human_action is CONFIRM or REJECT_SELECT only",
+        "REJECT_SELECT requires fresh alternative verification PASS"
+      ]
+    },
+    "pending_terminal_invalidated": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false,
+      "properties": {
+        "disposition_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "disposition_sequence": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "disposition_type": {
+          "const": "PENDING_TERMINAL_INVALIDATED"
+        },
+        "next_state": {
+          "const": "BLOCKED_ATTEMPT"
+        },
+        "prior_disposition_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "prior_state": {
+          "const": "PENDING_REVIEW"
+        },
+        "raw_key": {
+          "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+          "type": "string"
+        },
+        "reason_class": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "referenced_accepted_terminal_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "referenced_attempt_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "referenced_pending_terminal_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "referenced_review_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "remediation_reference": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "schema": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "schema",
+        "raw_key",
+        "disposition_type",
+        "prior_state",
+        "next_state",
+        "disposition_sequence",
+        "prior_disposition_id",
+        "referenced_attempt_id",
+        "referenced_pending_terminal_id",
+        "referenced_review_id",
+        "referenced_accepted_terminal_id",
+        "remediation_reference",
+        "reason_class",
+        "disposition_id"
+      ],
+      "schema_id": "c06bd81f5915c2521523905aaaacb80953225c326fac81c643b78e41661000c1",
+      "title": "PENDING_TERMINAL_INVALIDATED disposition",
+      "type": "object",
+      "x-cross-field-constraints": [
+        "prior_state=PENDING_REVIEW",
+        "next_state=BLOCKED_ATTEMPT",
+        "pending terminal remains historical and stale for current pending membership"
+      ]
+    },
+    "pending_terminal_ledger_entry": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false,
+      "properties": {
+        "current_membership_derived_from_disposition_head": {
+          "const": true
+        },
+        "entry_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "pending_terminal_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "raw_key": {
+          "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+          "type": "string"
+        },
+        "schema": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "terminal_record_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "schema",
+        "raw_key",
+        "pending_terminal_id",
+        "terminal_record_hash",
+        "current_membership_derived_from_disposition_head",
+        "entry_id"
+      ],
+      "schema_id": "7e14b025bec3274caf2499c8d104b7a3f0d1644d2740b1222ca869ec289a2c0c",
+      "title": "Pending terminal ledger entry",
+      "type": "object"
+    },
+    "pilot_selection": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false,
+      "properties": {
+        "canonical_raw_key_format": {
+          "const": "{playbook_id}::S{stage:02d}::A{action:03d}"
+        },
+        "excluded_semantic_fields": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "ordering": {
+          "const": "BYTEWISE_ASCENDING_UTF8"
+        },
+        "p1_executed": {
+          "const": "NO"
+        },
+        "pilot_is_real_a2_adjudication": {
+          "const": "YES"
+        },
+        "pilot_raw_key": {
+          "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+          "type": "string"
+        },
+        "pilot_selection_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "schema": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "selection": {
+          "const": "MINIMUM_CANONICAL_RAW_KEY"
+        },
+        "selection_input_exact_current86": {
+          "const": true
+        },
+        "selection_input_scope_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "semantic_fields_influenced_selection": {
+          "const": []
+        }
+      },
+      "required": [
+        "schema",
+        "selection_input_scope_id",
+        "selection_input_exact_current86",
+        "canonical_raw_key_format",
+        "ordering",
+        "selection",
+        "pilot_is_real_a2_adjudication",
+        "semantic_fields_influenced_selection",
+        "excluded_semantic_fields",
+        "pilot_raw_key",
+        "p1_executed",
+        "pilot_selection_id"
+      ],
+      "schema_id": "128084c964dfa1985ad3190403ceef9fd14abdedf012cc1c8aa631784200c2c2",
+      "title": "Deterministic P1 pilot selection",
+      "type": "object"
+    },
+    "primary_commitment": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false,
+      "properties": {
+        "binding_publication_performed": {
+          "const": false
+        },
+        "commitment_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "complete_candidate_universe_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "complete_relation_set_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "computational_contract_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "context_identity": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "evidence_fact_ids": {
+          "items": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "evidence_set_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "execution_manifest_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "hard_gate_results": {
+          "type": "object"
+        },
+        "owner_freeze_performed": {
+          "const": false
+        },
+        "private_chain_of_thought_persisted": {
+          "const": false
+        },
+        "prompt_template_identity": {
+          "minProperties": 1,
+          "type": "object"
+        },
+        "proposal_input_bundle_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "raw_key": {
+          "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+          "type": "string"
+        },
+        "result_status": {
+          "enum": [
+            "UNIQUE_EXISTING_OWNER_PROPOSAL",
+            "ESCALATE_AMBIGUOUS",
+            "ESCALATE_STRUCTURE",
+            "ESCALATE_SCORING_AUTHORITY",
+            "ESCALATE_PROVENANCE",
+            "ESCALATE_IDENTITY",
+            "ESCALATE_PROPOSER_VERIFIER_DISAGREEMENT"
+          ]
+        },
+        "role": {
+          "enum": [
+            "PRIMARY",
+            "VERIFIER"
+          ]
+        },
+        "run_identity": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "runtime_binding": {
+          "minProperties": 1,
+          "type": "object"
+        },
+        "schema": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "selected_candidate_scoring_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "selected_relation_identity": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        }
+      },
+      "required": [
+        "schema",
+        "role",
+        "raw_key",
+        "proposal_input_bundle_id",
+        "execution_manifest_id",
+        "computational_contract_id",
+        "complete_candidate_universe_hash",
+        "complete_relation_set_hash",
+        "result_status",
+        "selected_candidate_scoring_id",
+        "selected_relation_identity",
+        "evidence_fact_ids",
+        "evidence_set_hash",
+        "hard_gate_results",
+        "context_identity",
+        "run_identity",
+        "runtime_binding",
+        "prompt_template_identity",
+        "private_chain_of_thought_persisted",
+        "owner_freeze_performed",
+        "binding_publication_performed",
+        "commitment_id"
+      ],
+      "schema_id": "53db06095959f90bf035c92c009171011c31324de2b5c1e88d7e5e9f2aa66251",
+      "title": "Primary A2 commitment",
+      "type": "object",
+      "x-cross-field-constraints": [
+        "UNIQUE_EXISTING_OWNER_PROPOSAL requires both selected IDs non-null; every escalation status requires both null",
+        "private chain-of-thought is prohibited"
+      ]
+    },
+    "promotion_record": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false,
+      "properties": {
+        "independent_review_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "independent_review_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "promotion_record_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "promotion_sequence": {
+          "type": "integer"
+        },
+        "schema": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "source_terminal_record_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "source_terminal_record_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "schema",
+        "source_terminal_record_id",
+        "source_terminal_record_hash",
+        "independent_review_id",
+        "independent_review_hash",
+        "promotion_sequence",
+        "promotion_record_id"
+      ],
+      "schema_id": "19b352eb9770ae38b9f17f666aa33d6b65ebeceb1aac276a1a5f3d867b0c8490",
+      "title": "Accepted terminal promotion record",
+      "type": "object"
+    },
+    "proposal_input_bundle": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false,
+      "properties": {
+        "active_authority_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "admissible_source_fact_set_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "authority_scope_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "candidate_source_bundle_hashes": {
+          "items": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "complete_candidate_relation_set_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "complete_candidate_universe_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "execution_manifest_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "historical_output_denylist_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "input_status": {
+          "const": "FROZEN_PREPARATION_ONLY"
+        },
+        "proposal_evidence_profile_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "proposal_input_bundle_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "raw_identity_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "raw_key": {
+          "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+          "type": "string"
+        },
+        "raw_source_bundle_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "schema": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "source_class_fact_type_registry_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "schema",
+        "authority_scope_id",
+        "raw_key",
+        "active_authority_id",
+        "execution_manifest_id",
+        "raw_identity_hash",
+        "raw_source_bundle_hash",
+        "complete_candidate_universe_hash",
+        "complete_candidate_relation_set_hash",
+        "candidate_source_bundle_hashes",
+        "admissible_source_fact_set_hash",
+        "proposal_evidence_profile_hash",
+        "source_class_fact_type_registry_id",
+        "historical_output_denylist_hash",
+        "input_status",
+        "proposal_input_bundle_id"
+      ],
+      "schema_id": "554baacdf0ab2e639457894725b301eca212c05fe6db7bd257989b954c14edc5",
+      "title": "A2 proposer/verifier common input bundle",
+      "type": "object"
+    },
+    "proposer_verifier_comparison": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false,
+      "properties": {
+        "comparison_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "context_identities_distinct": {
+          "const": true
+        },
+        "independent_commitment_comparison": {
+          "enum": [
+            "PASS",
+            "FAIL_CLOSED"
+          ]
+        },
+        "primary_commitment_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "raw_key": {
+          "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+          "type": "string"
+        },
+        "run_identities_distinct": {
+          "const": true
+        },
+        "same_candidate_universe": {
+          "const": true
+        },
+        "same_input_bundle": {
+          "const": true
+        },
+        "schema": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "verifier_commitment_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "schema",
+        "raw_key",
+        "primary_commitment_id",
+        "verifier_commitment_id",
+        "same_input_bundle",
+        "same_candidate_universe",
+        "context_identities_distinct",
+        "run_identities_distinct",
+        "independent_commitment_comparison",
+        "comparison_id"
+      ],
+      "schema_id": "d1b4c3f20cc219d4eaaf6a2dbe74d2d86ec4a428ad46657aae11536f837fdeca",
+      "title": "Proposer/verifier comparison",
+      "type": "object"
+    },
+    "raw_execution_unit": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false,
+      "properties": {
+        "adjudication_executed": {
+          "const": false
+        },
+        "authority_scope_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "complete_candidate_relation_set_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "complete_candidate_universe_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "execution_manifest_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "initial_current_state": {
+          "const": "NOT_STARTED_FOR_ADJUDICATION"
+        },
+        "p0_prepared": {
+          "const": true
+        },
+        "raw_execution_unit_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "raw_identity_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "raw_key": {
+          "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+          "type": "string"
+        },
+        "schema": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "source_bundle_status": {
+          "const": "FROZEN_REFERENCE_ONLY_NOT_RUNTIME_MATERIALIZED"
+        }
+      },
+      "required": [
+        "schema",
+        "raw_key",
+        "authority_scope_id",
+        "execution_manifest_id",
+        "raw_identity_hash",
+        "complete_candidate_universe_hash",
+        "complete_candidate_relation_set_hash",
+        "source_bundle_status",
+        "initial_current_state",
+        "p0_prepared",
+        "adjudication_executed",
+        "raw_execution_unit_id"
+      ],
+      "schema_id": "0abc065ad48ca0292e0874ec79f66c4f892d482dab684243027b27064c2d85a2",
+      "title": "Current86 raw execution unit",
+      "type": "object"
+    },
+    "remediation_restarted": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false,
+      "properties": {
+        "disposition_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "disposition_sequence": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "disposition_type": {
+          "const": "REMEDIATION_RESTARTED"
+        },
+        "next_state": {
+          "const": "IN_PROGRESS_OR_INCOMPLETE"
+        },
+        "prior_disposition_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "prior_state": {
+          "const": "BLOCKED_ATTEMPT"
+        },
+        "raw_key": {
+          "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+          "type": "string"
+        },
+        "reason_class": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "referenced_accepted_terminal_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "referenced_attempt_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "referenced_pending_terminal_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "referenced_review_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "remediation_reference": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "schema": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "schema",
+        "raw_key",
+        "disposition_type",
+        "prior_state",
+        "next_state",
+        "disposition_sequence",
+        "prior_disposition_id",
+        "referenced_attempt_id",
+        "referenced_pending_terminal_id",
+        "referenced_review_id",
+        "referenced_accepted_terminal_id",
+        "remediation_reference",
+        "reason_class",
+        "disposition_id"
+      ],
+      "schema_id": "61eca82f1a9fb36517e10cd13c15b935d640f5574717815dd40582f74c75906e",
+      "title": "REMEDIATION_RESTARTED disposition",
+      "type": "object",
+      "x-cross-field-constraints": [
+        "prior_state=BLOCKED_ATTEMPT",
+        "next_state=IN_PROGRESS_OR_INCOMPLETE"
+      ]
+    },
+    "resume_token": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false,
+      "properties": {
+        "accepted_count": {
+          "type": "integer"
+        },
+        "accepted_ledger_head_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "accepted_raw_set_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "active_authority_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "attempt_ledger_head_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "blocked_attempt_count": {
+          "type": "integer"
+        },
+        "blocked_attempt_raw_set_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "current_disposition_head_set_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "disposition_ledger_head_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "execution_contract_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "full_partition_object_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "in_progress_or_incomplete_count": {
+          "type": "integer"
+        },
+        "in_progress_or_incomplete_raw_set_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "last_checkpoint_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "not_started_count": {
+          "type": "integer"
+        },
+        "not_started_raw_set_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "pending_count": {
+          "type": "integer"
+        },
+        "pending_ledger_head_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "pending_raw_set_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "resume_token_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "schema": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "schema",
+        "active_authority_id",
+        "execution_contract_hash",
+        "current_disposition_head_set_hash",
+        "disposition_ledger_head_hash",
+        "accepted_raw_set_hash",
+        "pending_raw_set_hash",
+        "in_progress_or_incomplete_raw_set_hash",
+        "blocked_attempt_raw_set_hash",
+        "not_started_raw_set_hash",
+        "full_partition_object_hash",
+        "accepted_count",
+        "pending_count",
+        "in_progress_or_incomplete_count",
+        "blocked_attempt_count",
+        "not_started_count",
+        "last_checkpoint_id",
+        "accepted_ledger_head_hash",
+        "pending_ledger_head_hash",
+        "attempt_ledger_head_hash",
+        "resume_token_id"
+      ],
+      "schema_id": "64aa1c516842491928b55d177866487530e86d7d338b0af1d8c4894aa7c8a949",
+      "title": "P3 resume token",
+      "type": "object"
+    },
+    "source_fact_bundle": {
+      "$defs": {
+        "admissible_source_fact": {
+          "additionalProperties": false,
+          "oneOf": [
+            {
+              "properties": {
+                "candidate_scoring_id": {
+                  "const": null
+                },
+                "raw_key": {
+                  "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+                  "type": "string"
+                },
+                "source_side": {
+                  "const": "RAW"
+                }
+              }
+            },
+            {
+              "properties": {
+                "candidate_scoring_id": {
+                  "pattern": "^[0-9a-f]{64}$",
+                  "type": "string"
+                },
+                "raw_key": {
+                  "const": null
+                },
+                "source_side": {
+                  "const": "CANDIDATE"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "admissible_source_fact_id": {
+              "anyOf": [
+                {
+                  "pattern": "^[0-9a-f]{64}$",
+                  "type": "string"
+                },
+                {
+                  "const": null
+                }
+              ]
+            },
+            "authenticated_value_canonical_json": {},
+            "authenticated_value_sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            "candidate_scoring_id": {
+              "anyOf": [
+                {
+                  "pattern": "^[0-9a-f]{64}$",
+                  "type": "string"
+                },
+                {
+                  "const": null
+                }
+              ]
+            },
+            "exact_field_path_or_claim_id": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "raw_key": {
+              "anyOf": [
+                {
+                  "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+                  "type": "string"
+                },
+                {
+                  "const": null
+                }
+              ]
+            },
+            "schema": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_artifact_identity": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_artifact_sha256_or_pinned_identity": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_fact_id": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            "source_fact_type": {
+              "enum": [
+                "PINNED_CANONICAL_INTRINSIC_FIELD",
+                "PINNED_PROJECT_TAXONOMY_FIELD",
+                "PINNED_RAW_SOURCE_FIELD",
+                "PINNED_SCORING_ROW_FIELD"
+              ]
+            },
+            "source_provenance_identity": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            "source_side": {
+              "enum": [
+                "RAW",
+                "CANDIDATE"
+              ]
+            }
+          },
+          "required": [
+            "schema",
+            "source_fact_id",
+            "source_artifact_identity",
+            "source_artifact_sha256_or_pinned_identity",
+            "source_provenance_identity",
+            "source_fact_type",
+            "source_side",
+            "raw_key",
+            "candidate_scoring_id",
+            "exact_field_path_or_claim_id",
+            "authenticated_value_canonical_json",
+            "authenticated_value_sha256",
+            "admissible_source_fact_id"
+          ],
+          "type": "object"
+        }
+      },
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false,
+      "oneOf": [
+        {
+          "properties": {
+            "facts": {
+              "maxItems": 0
+            },
+            "source_bundle_status": {
+              "const": "FROZEN_REFERENCE_ONLY_NOT_RUNTIME_MATERIALIZED"
+            }
+          }
+        },
+        {
+          "properties": {
+            "facts": {
+              "minItems": 1
+            },
+            "source_bundle_status": {
+              "const": "RUNTIME_EXTRACTED"
+            }
+          }
+        }
+      ],
+      "properties": {
+        "authenticated_source_references": {
+          "items": {
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "facts": {
+          "items": {
+            "$ref": "#/$defs/admissible_source_fact"
+          },
+          "type": "array"
+        },
+        "normative_source_profile_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "raw_key": {
+          "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+          "type": "string"
+        },
+        "schema": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "source_bundle_hash": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "source_bundle_status": {
+          "enum": [
+            "FROZEN_REFERENCE_ONLY_NOT_RUNTIME_MATERIALIZED",
+            "RUNTIME_EXTRACTED"
+          ]
+        },
+        "source_registry_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "schema",
+        "raw_key",
+        "facts",
+        "source_registry_id",
+        "normative_source_profile_hash",
+        "source_bundle_status",
+        "authenticated_source_references",
+        "source_bundle_hash"
+      ],
+      "schema_id": "47507d60676c9fcbd5fd3a2fe19344f2b8ea4fe7064fbf8e0fe164ecf491de58",
+      "title": "Admissible source fact bundle",
+      "type": "object"
+    },
+    "state_partition_snapshot": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false,
+      "properties": {
+        "S_ACCEPTED_TERMINAL": {
+          "items": {
+            "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "S_BLOCKED_ATTEMPT": {
+          "items": {
+            "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "S_IN_PROGRESS_OR_INCOMPLETE": {
+          "items": {
+            "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "S_NOT_STARTED_FOR_ADJUDICATION": {
+          "items": {
+            "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "S_PENDING_REVIEW": {
+          "items": {
+            "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "exact_current86_raw_set_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "exhaustive_exact_current86": {
+          "const": true
+        },
+        "pairwise_disjoint": {
+          "const": true
+        },
+        "schema": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "state_partition_snapshot_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        }
+      },
+      "required": [
+        "schema",
+        "exact_current86_raw_set_hash",
+        "S_ACCEPTED_TERMINAL",
+        "S_PENDING_REVIEW",
+        "S_IN_PROGRESS_OR_INCOMPLETE",
+        "S_BLOCKED_ATTEMPT",
+        "S_NOT_STARTED_FOR_ADJUDICATION",
+        "pairwise_disjoint",
+        "exhaustive_exact_current86",
+        "state_partition_snapshot_id"
+      ],
+      "schema_id": "bc3a4dd2d4f79c824c4ab81b599aec68eee86da88541570e61e2ec5b21e7560d",
+      "title": "Current86 state partition snapshot",
+      "type": "object"
+    },
+    "terminal_accepted": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false,
+      "properties": {
+        "disposition_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "disposition_sequence": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "disposition_type": {
+          "const": "TERMINAL_ACCEPTED"
+        },
+        "next_state": {
+          "const": "ACCEPTED_TERMINAL"
+        },
+        "prior_disposition_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "prior_state": {
+          "const": "PENDING_REVIEW"
+        },
+        "raw_key": {
+          "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+          "type": "string"
+        },
+        "reason_class": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "referenced_accepted_terminal_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "referenced_attempt_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "referenced_pending_terminal_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "referenced_review_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "remediation_reference": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "schema": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "schema",
+        "raw_key",
+        "disposition_type",
+        "prior_state",
+        "next_state",
+        "disposition_sequence",
+        "prior_disposition_id",
+        "referenced_attempt_id",
+        "referenced_pending_terminal_id",
+        "referenced_review_id",
+        "referenced_accepted_terminal_id",
+        "remediation_reference",
+        "reason_class",
+        "disposition_id"
+      ],
+      "schema_id": "bd18eef4d36348aaf4957d5e493a357e35422b5d9729641231e37cdcda3518c9",
+      "title": "TERMINAL_ACCEPTED disposition",
+      "type": "object",
+      "x-cross-field-constraints": [
+        "prior_state=PENDING_REVIEW",
+        "next_state=ACCEPTED_TERMINAL",
+        "accepted terminal supersedes historical blocked/pending/incomplete rows"
+      ]
+    },
+    "verifier_commitment": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false,
+      "properties": {
+        "binding_publication_performed": {
+          "const": false
+        },
+        "commitment_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "complete_candidate_universe_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "complete_relation_set_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "computational_contract_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "context_identity": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "evidence_fact_ids": {
+          "items": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "evidence_set_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "execution_manifest_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "hard_gate_results": {
+          "type": "object"
+        },
+        "owner_freeze_performed": {
+          "const": false
+        },
+        "private_chain_of_thought_persisted": {
+          "const": false
+        },
+        "prompt_template_identity": {
+          "minProperties": 1,
+          "type": "object"
+        },
+        "proposal_input_bundle_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "raw_key": {
+          "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+          "type": "string"
+        },
+        "result_status": {
+          "enum": [
+            "UNIQUE_EXISTING_OWNER_PROPOSAL",
+            "ESCALATE_AMBIGUOUS",
+            "ESCALATE_STRUCTURE",
+            "ESCALATE_SCORING_AUTHORITY",
+            "ESCALATE_PROVENANCE",
+            "ESCALATE_IDENTITY",
+            "ESCALATE_PROPOSER_VERIFIER_DISAGREEMENT"
+          ]
+        },
+        "role": {
+          "enum": [
+            "PRIMARY",
+            "VERIFIER"
+          ]
+        },
+        "run_identity": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "runtime_binding": {
+          "minProperties": 1,
+          "type": "object"
+        },
+        "schema": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "selected_candidate_scoring_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "selected_relation_identity": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        }
+      },
+      "required": [
+        "schema",
+        "role",
+        "raw_key",
+        "proposal_input_bundle_id",
+        "execution_manifest_id",
+        "computational_contract_id",
+        "complete_candidate_universe_hash",
+        "complete_relation_set_hash",
+        "result_status",
+        "selected_candidate_scoring_id",
+        "selected_relation_identity",
+        "evidence_fact_ids",
+        "evidence_set_hash",
+        "hard_gate_results",
+        "context_identity",
+        "run_identity",
+        "runtime_binding",
+        "prompt_template_identity",
+        "private_chain_of_thought_persisted",
+        "owner_freeze_performed",
+        "binding_publication_performed",
+        "commitment_id"
+      ],
+      "schema_id": "f5896827f51c4a41090cd2e2b693ba9b71f673be9e75abb07f56c3fcfe2e3792",
+      "title": "Verifier A2 commitment",
+      "type": "object",
+      "x-cross-field-constraints": [
+        "Verifier commitment is frozen after an isolated derivation with no primary result context"
+      ]
+    },
+    "workload_metric": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false,
+      "properties": {
+        "decision_wall_clock_ms": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "const": null
+            }
+          ]
+        },
+        "known_interruption_events": {
+          "type": "array"
+        },
+        "manual_candidate_id_copy_count": {
+          "const": 0
+        },
+        "manual_evidence_id_copy_count": {
+          "const": 0
+        },
+        "manual_hash_copy_count": {
+          "const": 0
+        },
+        "manual_relation_id_copy_count": {
+          "const": 0
+        },
+        "measurement_interpretation": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "metric_status": {
+          "const": "NON_AUTHORITATIVE_WORKLOAD_EVIDENCE"
+        },
+        "raw_key": {
+          "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+          "type": "string"
+        },
+        "relation_level_manual_outcome_count": {
+          "const": 0
+        },
+        "schema": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "session_continuity_status": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "workload_metric_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": null
+            }
+          ]
+        }
+      },
+      "required": [
+        "schema",
+        "raw_key",
+        "metric_status",
+        "decision_wall_clock_ms",
+        "session_continuity_status",
+        "known_interruption_events",
+        "measurement_interpretation",
+        "manual_candidate_id_copy_count",
+        "manual_relation_id_copy_count",
+        "manual_evidence_id_copy_count",
+        "manual_hash_copy_count",
+        "relation_level_manual_outcome_count",
+        "workload_metric_id"
+      ],
+      "schema_id": "aefc78ceadc44fbd1fef88150098ee0d7ea85aa6d99c5059b85808087b7d18eb",
+      "title": "Non-authoritative workload metric",
+      "type": "object"
+    }
+  },
+  "set_ordering_registry_id": "e87942896a6c5910635d6b72faa1a7a2dc1ec962a3635c8762a082e7d646211b"
+}

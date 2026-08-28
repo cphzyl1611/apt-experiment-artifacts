@@ -1,0 +1,14 @@
+{
+  "identity_excludes_from_normative_freeze": [
+    "workload telemetry"
+  ],
+  "identity_field": "FINAL_FREEZE_PACKAGE_MANIFEST_ID",
+  "identity_rule": "CANONICAL_OBJECT_ID(package manifest, FINAL_FREEZE_PACKAGE_MANIFEST_ID)",
+  "includes_workload_files": true,
+  "materialization_status": "SCHEMA_ONLY_NO_P4_FREEZE",
+  "normative_identity_reference": "CURRENT86_A2_FINAL_FREEZE_ID",
+  "package_identity_may_change_when_workload_files_change": true,
+  "schema": "FINAL_FREEZE_PACKAGE_MANIFEST_SCHEMA_V1",
+  "schema_id": "c045fd52e5f5a6b3287a57192c025ef57688ea62ae3ab18516b8a1e41e08797d",
+  "workload_summary": "MAY_BE_INCLUDED_NON_AUTHORITATIVE"
+}

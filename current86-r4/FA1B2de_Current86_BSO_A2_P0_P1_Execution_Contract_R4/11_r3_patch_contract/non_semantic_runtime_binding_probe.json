@@ -1,0 +1,12 @@
+{
+  "backend": "dummy/mock local subprocess",
+  "caller_structured_commitment_injection": "REJECTED",
+  "execution_bound_model": "from frozen backend config and runtime output",
+  "execution_bound_provider": "from frozen backend config and runtime output",
+  "probe_id": "861e6abc8dc9ecb65ce50ac5df1c29aac507956e6d5613ebf1b59a3d66e613f9",
+  "probe_test": "tests.test_r3_contract_fixes.B2ExecutionBoundRuntimeR3Tests",
+  "schema": "A2_R3_NON_SEMANTIC_RUNTIME_BINDING_PROBE_V1",
+  "semantic_execution": false,
+  "spoofed_model": "REJECTED",
+  "spoofed_provider": "REJECTED"
+}

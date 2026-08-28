@@ -1,0 +1,85 @@
+{
+  "blockers": {
+    "B2": {
+      "green": {
+        "command": "python -m unittest tests.test_r3_contract_fixes.B2ExecutionBoundRuntimeR3Tests -v",
+        "exit_code": 0,
+        "proofs": [
+          "caller provider/model override rejected by API",
+          "caller structured commitment path is not accepted",
+          "backend/config identity mismatch fails closed",
+          "spoofed backend runtime identity fails closed"
+        ],
+        "tests_passed": 3
+      },
+      "red": {
+        "command": "python -m unittest tests.test_r3_contract_fixes -v",
+        "exit_code": 1,
+        "observed": [
+          "execute_role_with_backend missing",
+          "cross-object validator parameters missing",
+          "disposition authenticated-reference parameter missing"
+        ]
+      },
+      "status": "CLOSED"
+    },
+    "B3": {
+      "green": {
+        "command": "python -m unittest tests.test_r3_contract_fixes.B3CrossObjectR3Tests -v",
+        "exit_code": 0,
+        "proofs": [
+          "truncated mapping rejected",
+          "REJECT_SELECT original proposal rejected",
+          "unrelated owner candidate rejected"
+        ],
+        "tests_passed": 3
+      },
+      "red": {
+        "command": "python -m unittest tests.test_r3_contract_fixes -v",
+        "exit_code": 1,
+        "observed": [
+          "validate_human_packet/decision/owner_terminal accepted no authenticated referenced objects"
+        ]
+      },
+      "status": "CLOSED"
+    },
+    "B4": {
+      "green": {
+        "command": "python -m unittest tests.test_r3_contract_fixes.B4DispositionLineageR3Tests -v",
+        "exit_code": 0,
+        "proofs": [
+          "wrong pending/review and cross-raw references rejected",
+          "random remediation reference rejected"
+        ],
+        "tests_passed": 3
+      },
+      "red": {
+        "command": "python -m unittest tests.test_r3_contract_fixes -v",
+        "exit_code": 1,
+        "observed": [
+          "disposition validator trusted syntactically valid 64-hex references"
+        ]
+      },
+      "status": "CLOSED"
+    }
+  },
+  "full_suite": {
+    "command": "python -m unittest discover -s tests -v",
+    "exit_code": 1,
+    "known_unrelated_failure": "pre-existing root SHA256SUMS authority-candidate hash mismatch; no R3 cause",
+    "tests_failed": 1,
+    "tests_passed": 49
+  },
+  "non_regression": {
+    "b1_m1_unique_ordering": "PASS",
+    "binding_publication": "NO",
+    "m2_visibility_probe": "PASS",
+    "r1_r2_byte_preserved": "YES",
+    "raw_level_human_adjudication": false,
+    "semantic_proposer_or_verifier_execution": false
+  },
+  "schema": "R2_TO_R3_DEFECT_REPRODUCTION_AND_TDD_LOG_V1",
+  "source_r2_handoff_sha256": "c2a7fa6056fd914736f2a6c52c60b1bfc79707575e0cb680eb8665d381203dc5",
+  "test_method": "RED_REPRODUCTION_THEN_MINIMAL_IMPLEMENTATION_THEN_GREEN_THEN_FULL_SUITE",
+  "tests_weakened": false
+}

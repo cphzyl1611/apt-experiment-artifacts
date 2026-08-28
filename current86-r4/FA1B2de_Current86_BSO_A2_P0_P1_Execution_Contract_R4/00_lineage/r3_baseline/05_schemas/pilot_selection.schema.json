@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "canonical_raw_key_format": {
+      "const": "{playbook_id}::S{stage:02d}::A{action:03d}"
+    },
+    "excluded_semantic_fields": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "ordering": {
+      "const": "BYTEWISE_ASCENDING_UTF8"
+    },
+    "p1_executed": {
+      "const": "NO"
+    },
+    "pilot_is_real_a2_adjudication": {
+      "const": "YES"
+    },
+    "pilot_raw_key": {
+      "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+      "type": "string"
+    },
+    "pilot_selection_id": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "const": null
+        }
+      ]
+    },
+    "schema": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "selection": {
+      "const": "MINIMUM_CANONICAL_RAW_KEY"
+    },
+    "selection_input_exact_current86": {
+      "const": true
+    },
+    "selection_input_scope_id": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "semantic_fields_influenced_selection": {
+      "const": []
+    }
+  },
+  "required": [
+    "schema",
+    "selection_input_scope_id",
+    "selection_input_exact_current86",
+    "canonical_raw_key_format",
+    "ordering",
+    "selection",
+    "pilot_is_real_a2_adjudication",
+    "semantic_fields_influenced_selection",
+    "excluded_semantic_fields",
+    "pilot_raw_key",
+    "p1_executed",
+    "pilot_selection_id"
+  ],
+  "schema_id": "128084c964dfa1985ad3190403ceef9fd14abdedf012cc1c8aa631784200c2c2",
+  "title": "Deterministic P1 pilot selection",
+  "type": "object"
+}
