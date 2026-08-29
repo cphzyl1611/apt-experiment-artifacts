@@ -1,0 +1,74 @@
+{
+  "schema": "FA1B2DE_CURRENT86_EXACT317_SOURCE_AUTH_GOVERNANCE_R2_TARGET_CONSERVATION_V1",
+  "status": "PASS_DESIGN_ONLY",
+  "population_identity": {
+    "scope_name": "CURRENT86_CANONICAL_INTRINSIC_317_SOURCE_BINDING_RECONSTRUCTION_ONLY",
+    "audit_scope_id": "34551e904bafa71fb2fb6db33162e94ad41a08eca6c747d429c83760e09c1306",
+    "counting_unit": "UNIQUE_REQUIRED_CANONICAL_INTRINSIC_SOURCE_CLASS_SIDE_BINDING_TUPLE",
+    "exact_target_manifest_sha256": "d8d55d369fe433bf7b93a3c332b8ac9a517a9146b28fa223370ff3ec946955ac",
+    "raw_binding_identity_set_sha256": "dc97465eba0d2fb1235cb93e47d8be57221b85c4a75c24b5f34c087ed379a4ed",
+    "candidate_binding_identity_set_sha256": "3f70daaecfae52ea24bcef669d00e0ec788f88000da31e07c28db866826780c1",
+    "target_ordering_changed": false,
+    "target_ids_changed": false,
+    "side_identities_changed": false
+  },
+  "side_conservation": {
+    "RAW_SIDE_TARGET_COUNT": 86,
+    "CANDIDATE_SIDE_TARGET_COUNT": 231,
+    "SOURCE_AUTH_TARGET_COUNT": 317,
+    "equation": "86 + 231 = 317",
+    "machine_sum": 317,
+    "valid": true
+  },
+  "current_design_only_partition": {
+    "state_counts": {
+      "NOT_EXECUTED_PENDING_SOURCE_AUTH_GOVERNANCE": 317,
+      "SOURCE_AUTHENTICATED": 0,
+      "BLOCKED_NORMATIVE_ADMISSION": 0,
+      "BLOCKED_SOURCE_OBJECT": 0,
+      "BLOCKED_FIELD_PIN": 0,
+      "BLOCKED_PROVENANCE": 0,
+      "BLOCKED_INDEPENDENT_VERIFICATION": 0
+    },
+    "equation": "317 + 0 + 0 + 0 + 0 + 0 + 0 = 317",
+    "machine_sum": 317,
+    "exactly_one_design_snapshot_state_per_target_required": true,
+    "valid": true,
+    "execution_result": false
+  },
+  "future_execution_terminal_partition_contract": {
+    "allowed_terminal_readiness_states": [
+      "SOURCE_AUTHENTICATED",
+      "BLOCKED_NORMATIVE_ADMISSION",
+      "BLOCKED_SOURCE_OBJECT",
+      "BLOCKED_FIELD_PIN",
+      "BLOCKED_PROVENANCE",
+      "BLOCKED_INDEPENDENT_VERIFICATION"
+    ],
+    "exactly_one_terminal_readiness_state_per_target": true,
+    "not_executed_pending_count_must_equal_zero_after_atomic_execution": true,
+    "required_equation": "SOURCE_AUTHENTICATED + BLOCKED_NORMATIVE_ADMISSION + BLOCKED_SOURCE_OBJECT + BLOCKED_FIELD_PIN + BLOCKED_PROVENANCE + BLOCKED_INDEPENDENT_VERIFICATION = 317",
+    "failure_removes_target": false,
+    "partial_publication_allowed": false,
+    "downstream_only_unresolved_raw_insertion_allowed": false,
+    "denominator_change_allowed": false
+  },
+  "c0_partition_note": {
+    "c0_covered_raw_target_count": 60,
+    "c0_is_a_separate_target_side": false,
+    "c0_creates_additional_targets": false,
+    "c0_changes_raw_side_count": false,
+    "c0_role": "CANDIDATE_EVIDENCE_FOR_EXACT_60_EXISTING_RAW_SIDE_TARGETS_ONLY"
+  },
+  "boundary": {
+    "SOURCE_AUTH_EXECUTED": "NO",
+    "CURRENT86_P0_EXECUTED": "NO",
+    "CURRENT86_P1_EXECUTED": "NO",
+    "RAW_LEVEL_HUMAN_DECISIONS": 0,
+    "BINDING_PUBLICATION": "NO",
+    "SCORING_AUTHORITY_MUTATION": "NO",
+    "BINDING_AUTHORITY_MUTATION": "NO",
+    "DENOMINATOR_CHANGE": "NO",
+    "ACCEPTED_BINDING_COUNT_CHANGE": "NO"
+  }
+}

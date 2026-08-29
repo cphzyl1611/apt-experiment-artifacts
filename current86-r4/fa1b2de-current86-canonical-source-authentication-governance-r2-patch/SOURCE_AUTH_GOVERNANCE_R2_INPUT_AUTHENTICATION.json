@@ -1,0 +1,119 @@
+{
+  "schema": "FA1B2DE_CURRENT86_EXACT317_SOURCE_AUTH_GOVERNANCE_R2_INPUT_AUTHENTICATION_V1",
+  "authentication_date": "2026-08-29",
+  "SOURCE_AUTH_GOVERNANCE_R2_INPUT_AUTHENTICATION": "PASS",
+  "scope": {
+    "scope_name": "CURRENT86_CANONICAL_INTRINSIC_317_SOURCE_BINDING_RECONSTRUCTION_ONLY",
+    "audit_scope_id": "34551e904bafa71fb2fb6db33162e94ad41a08eca6c747d429c83760e09c1306",
+    "counting_unit": "UNIQUE_REQUIRED_CANONICAL_INTRINSIC_SOURCE_CLASS_SIDE_BINDING_TUPLE",
+    "not_a_317_raw_population": true,
+    "EXACT_TARGET_TOTAL": 317,
+    "RAW_SIDE_TOTAL": 86,
+    "CANDIDATE_SIDE_TOTAL": 231
+  },
+  "authoritative_r1_design": {
+    "path": "/home/cph/experiment-artifacts/fa1b2de-current86-canonical-source-authentication-r1/Design_FA1B2de_Current86_Canonical_Intrinsic_317_Source_Authentication_Governance.md",
+    "sha256": "185c1df2c1fa0e3e90060311c96e1aaf2ee606e2c04797b778be0d8f2d3e47c6",
+    "uniquely_selected_by_exact_user_pin": true,
+    "authentication": "PASS"
+  },
+  "exact_target_manifest": {
+    "path": "/home/cph/experiment-artifacts/fa1b2de-current86-canonical-intrinsic-317-r1/CURRENT86_Canonical_Intrinsic_317_Exact_Targets.json",
+    "sha256_expected": "d8d55d369fe433bf7b93a3c332b8ac9a517a9146b28fa223370ff3ec946955ac",
+    "sha256_observed": "d8d55d369fe433bf7b93a3c332b8ac9a517a9146b28fa223370ff3ec946955ac",
+    "sha256_match": true,
+    "schema_version": "CURRENT86_CANONICAL_INTRINSIC_317_EXACT_TARGETS_V1",
+    "audit_scope_id_observed": "34551e904bafa71fb2fb6db33162e94ad41a08eca6c747d429c83760e09c1306",
+    "target_count_observed": 317,
+    "raw_side_count_observed": 86,
+    "candidate_side_count_observed": 231,
+    "source_binding_target_ids_unique": true,
+    "bound_side_identities_unique": true,
+    "target_indices_exact_1_through_317": true,
+    "declared_order_recomputed_exact": true,
+    "all_317_target_ids_recomputed_from_declared_PROJECT_CANONICAL_JSON_V1_contract": true,
+    "target_id_recompute_mismatch_count": 0,
+    "raw_binding_identity_set_sha256": {
+      "frozen_value": "dc97465eba0d2fb1235cb93e47d8be57221b85c4a75c24b5f34c087ed379a4ed",
+      "authentication_mode": "MANIFEST_BOUND_VALUE_UNDER_VERIFIED_WHOLE_FILE_SHA256",
+      "independent_rederivation_rule_present_in_manifest": false
+    },
+    "candidate_binding_identity_set_sha256": {
+      "frozen_value": "3f70daaecfae52ea24bcef669d00e0ec788f88000da31e07c28db866826780c1",
+      "authentication_mode": "MANIFEST_BOUND_VALUE_UNDER_VERIFIED_WHOLE_FILE_SHA256",
+      "independent_rederivation_rule_present_in_manifest": false
+    },
+    "authentication": "PASS"
+  },
+  "corresponding_latest_independent_review": {
+    "artifact_kind": "CODEX_SESSION_RESPONSE_ITEM",
+    "session_artifact_path": "/home/cph/.codex/sessions/2026/08/28/rollout-2026-08-28T10-56-21-01a048df-3061-7723-9aed-7b5e400c25f9.jsonl",
+    "session_artifact_sha256": "5ed23882750ffbda38028e109606c46128b3b483e3e0d0fda13f7e6d5cd7cebf",
+    "response_item_ordinal": 212,
+    "response_message_id": "msg_06fa300574aab83c016a91a34cfdec87d0be2195c6fd83d93b",
+    "response_timestamp": "2026-08-28T15:03:47.396Z",
+    "correspondence_basis": {
+      "reviewed_design_path_is_exact": true,
+      "reviewed_scope_is_current86_exact317": true,
+      "reviewed_counts_are_317_86_231": true,
+      "review_findings_match_three_authorized_patch_defects": true,
+      "later_corresponding_review_found_in_existing_artifacts": false
+    },
+    "verdict": {
+      "SOURCE_AUTH_GOVERNANCE_DESIGN_REVIEW_VERDICT": "BLOCKED",
+      "EXACT317_SCOPE": "PASS",
+      "AUTHORITY_SEPARATION": "PASS",
+      "C0_ROLE": "PASS",
+      "FAIL_CLOSED_RULES": "PASS",
+      "SOURCE_OBJECT_AUTHENTICATION_RULE": "BLOCKED",
+      "FIELD_PIN_RULE": "BLOCKED",
+      "INDEPENDENT_VERIFICATION": "BLOCKED"
+    },
+    "authentication": "PASS"
+  },
+  "normative_source_class_fact_type_authority": {
+    "path": "/home/cph/fa1b2de-current86-p0-input-preflight-r1/03_frozen_lineage/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json",
+    "sha256": "3df4262faa4137996d2ff8d163bcc665d5bed76b3d719e6ff66cf4154252d72f",
+    "registry_id": "8cef6206dfc3581c3e7b6358bde7a36e90f4ba99078176cc0e5aff4b238298a7",
+    "authority_scope": "EXACT_CURRENT86_ONLY",
+    "required_mapping": {
+      "source_artifact_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "source_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD"
+    },
+    "parent_workflow_architecture_authority_hash": "442b5aecd651b320b94eb47b190bf239ba0157634e0a635042ca4d252c65dc40",
+    "authentication": "PASS"
+  },
+  "preserved_project_authorities": {
+    "authority_statement_path": "/home/cph/fa1b2de-current86-p0-input-preflight-r1/Design_FA1B2de_Current86_BSO_A2_HumanLight_Execution_P0_P4.md",
+    "authority_statement_sha256": "50bb2e17b2a3e71f3015125d20ce7b10381d9dec1cef9465b722171a9f467dd2",
+    "PROJECT_SCORING_AUTHORITY": "18fd70d4a57f07a3e06242d9f0e077a4e6838120",
+    "PROJECT_BINDING_AUTHORITY_BASELINE": "d309c01d6178a75cac88b6236d36179563a88239",
+    "PROJECT_ACCEPTED_BINDINGS": "1045/1796",
+    "mutation_by_this_patch": false
+  },
+  "c0_evidence_anchors_preserved_from_r1": {
+    "full_source_sha256": "0036c42fb02026182274a7ac2a33b103b03b1e527856eb33b5ad650ceddd5c32",
+    "exact_60_row_subset_sha256": "8273c9b241cab806adbc9452a4ce572c11277657760f2e6e7b6210357829f54a",
+    "affected_raw_target_count": 60,
+    "role": "PROVENANCE_AND_EXACT_BYTE_SOURCE_CANDIDATE_EVIDENCE_ONLY",
+    "canonical_admission_by_hash_or_membership_alone": false
+  },
+  "scope_authentication_result": {
+    "EXACT317_SCOPE": "PASS",
+    "SOURCE_AUTH_TARGET_COUNT": 317,
+    "RAW_SIDE_TARGET_COUNT": 86,
+    "CANDIDATE_SIDE_TARGET_COUNT": 231,
+    "input_conflict_count": 0,
+    "fail_closed_triggered": false
+  },
+  "execution_boundary": {
+    "SOURCE_AUTH_EXECUTED": "NO",
+    "CURRENT86_P0_EXECUTED": "NO",
+    "CURRENT86_P1_EXECUTED": "NO",
+    "RAW_LEVEL_HUMAN_DECISIONS": 0,
+    "BINDING_PUBLICATION": "NO",
+    "SCORING_AUTHORITY_MUTATION": "NO",
+    "BINDING_AUTHORITY_MUTATION": "NO",
+    "DENOMINATOR_CHANGE": "NO"
+  }
+}

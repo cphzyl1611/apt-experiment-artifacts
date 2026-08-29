@@ -1,0 +1,107 @@
+{
+  "schema": "FA1B2DE_CURRENT86_EXACT317_SOURCE_AUTH_GOVERNANCE_R1_TO_R2_PATCH_SUMMARY_V1",
+  "patch_date": "2026-08-29",
+  "patch_mode": "DESIGN_ONLY",
+  "scope": "CURRENT86_CANONICAL_INTRINSIC_317_SOURCE_BINDING_RECONSTRUCTION_ONLY",
+  "r1_basis": {
+    "file": "Design_FA1B2de_Current86_Canonical_Intrinsic_317_Source_Authentication_Governance.md",
+    "sha256": "185c1df2c1fa0e3e90060311c96e1aaf2ee606e2c04797b778be0d8f2d3e47c6"
+  },
+  "r2_design": {
+    "file": "Design_FA1B2de_Current86_Canonical_Intrinsic_317_Source_Authentication_Governance_R2_PATCHED.md",
+    "sha256": "e71bd2272438bff2feed4eef889f9a3fc9a231621826b7dae6ba3a2d25833c4b",
+    "relationship": "NARROW_NORMATIVE_DELTA_INCORPORATING_EXACT_R1_BY_HASH"
+  },
+  "independent_review_before_patch": {
+    "SOURCE_AUTH_GOVERNANCE_DESIGN_REVIEW_VERDICT": "BLOCKED",
+    "EXACT317_SCOPE": "PASS",
+    "AUTHORITY_SEPARATION": "PASS",
+    "C0_ROLE": "PASS",
+    "FAIL_CLOSED_RULES": "PASS",
+    "SOURCE_OBJECT_AUTHENTICATION_RULE": "BLOCKED",
+    "FIELD_PIN_RULE": "BLOCKED",
+    "INDEPENDENT_VERIFICATION": "BLOCKED"
+  },
+  "narrow_patches": {
+    "SA_B1_NORMATIVE_SOURCE_OBJECT_ADMISSION": {
+      "before": "BLOCKED",
+      "after": "CLOSED_CANDIDATE",
+      "r1_clause_replaced": "R1_SECTION_4_CANDIDATE_TO_CANONICAL_PROMOTION_PREDICATE",
+      "mechanical_closure": [
+        "frozen artifact identity, locator, extraction rule, canonical object representation, candidate_object_id, provenance, and fail-closed status",
+        "exact four-component normative decision tuple",
+        "exclusive authenticated authority paths: admission registry, deterministic corpus/schema rule, or gated human governance record",
+        "exact-one and conflict predicates",
+        "deterministic C0-60 branch with no raw-versus-C0 heuristic tie-break",
+        "machine evidence explicitly non-normative for admission"
+      ]
+    },
+    "SA_B2_EXACT_FIELD_PIN_AND_CANONICALIZATION": {
+      "before": "BLOCKED",
+      "after": "CLOSED_CANDIDATE",
+      "r1_clause_replaced": "R1_SECTION_8_EXACT_SCALAR_FIELD_POINTER_RULE",
+      "mechanical_closure": [
+        "pointer authority restricted to exact target, authenticated field-pin registry, or authenticated deterministic corpus/schema rule",
+        "strict RFC6901 UTF-8 bytes and tilde escaping",
+        "missing/null, boolean, arbitrary-precision integer, string, array index, object/array, float/non-finite, and duplicate-key policies",
+        "Unicode normalization NONE and strict UTF-8",
+        "domain-separated canonical scalar byte envelope",
+        "exact authenticated_value_sha256 and field_pin_id derivation",
+        "unpinable fields fail BLOCKED_FIELD_PIN"
+      ]
+    },
+    "SA_B3_INDEPENDENT_VERIFIER_ISOLATION": {
+      "before": "BLOCKED",
+      "after": "CLOSED_CANDIDATE",
+      "r1_clauses_replaced": [
+        "R1_SECTION_10_FRESH_VERIFIER_PROSE",
+        "R1_SECTION_15_FRESH_VERIFIER_PROSE",
+        "R1_SECTION_16_FRESH_VERIFIER_PROSE"
+      ],
+      "mechanical_closure": [
+        "frozen common, primary-private, and verifier-readable content-identity sets",
+        "exact mount roots, environment, network, cwd, argv, runtime/tool, process, and audit contracts",
+        "distinct implementation, context, run, process, namespace, and writable-root predicates",
+        "verifier cannot read primary selection, pointer, rationale, conclusion, intermediate outputs, results, audit log, or commitment",
+        "freeze-primary then isolated-verifier then comparator-only disclosure sequence",
+        "content-addressed primary, verifier, comparison, and isolation-audit commitments"
+      ]
+    }
+  },
+  "unchanged_reviewed_pass_areas": {
+    "EXACT317_SCOPE": "PRESERVED",
+    "AUTHORITY_SEPARATION": "PRESERVED",
+    "C0_ROLE": "PRESERVED",
+    "FAIL_CLOSED_RULES": "PRESERVED"
+  },
+  "population": {
+    "counting_unit": "UNIQUE_REQUIRED_CANONICAL_INTRINSIC_SOURCE_CLASS_SIDE_BINDING_TUPLE",
+    "SOURCE_AUTH_TARGET_COUNT": 317,
+    "RAW_SIDE_TARGET_COUNT": 86,
+    "CANDIDATE_SIDE_TARGET_COUNT": 231,
+    "target_ids_changed": false,
+    "target_order_changed": false,
+    "audit_scope_id_changed": false,
+    "denominator_changed": false
+  },
+  "terminal": {
+    "SOURCE_AUTH_GOVERNANCE_R2_PATCH_STATUS": "DESIGN_ONLY_COMPLETE",
+    "EXACT317_SCOPE": "PASS",
+    "SA_B1_NORMATIVE_SOURCE_OBJECT_ADMISSION": "CLOSED_CANDIDATE",
+    "SA_B2_EXACT_FIELD_PIN_AND_CANONICALIZATION": "CLOSED_CANDIDATE",
+    "SA_B3_INDEPENDENT_VERIFIER_ISOLATION": "CLOSED_CANDIDATE",
+    "SOURCE_AUTH_TARGET_COUNT": 317,
+    "RAW_SIDE_TARGET_COUNT": 86,
+    "CANDIDATE_SIDE_TARGET_COUNT": 231,
+    "SOURCE_AUTH_EXECUTED": "NO",
+    "CURRENT86_P0_EXECUTED": "NO",
+    "CURRENT86_P1_EXECUTED": "NO",
+    "RAW_LEVEL_HUMAN_DECISIONS": 0,
+    "BINDING_PUBLICATION": "NO",
+    "SCORING_AUTHORITY_MUTATION": "NO",
+    "BINDING_AUTHORITY_MUTATION": "NO",
+    "DENOMINATOR_CHANGE": "NO",
+    "ACCEPTED_BINDING_COUNT_CHANGE": "NO",
+    "NEXT_ACTION": "FRESH_TARGETED_INDEPENDENT_REVIEW_OF_CURRENT86_EXACT317_SOURCE_AUTH_GOVERNANCE_R2"
+  }
+}
