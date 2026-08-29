@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "accepted_terminal_id": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "entry_id": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "const": null
+        }
+      ]
+    },
+    "independent_review_id": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "raw_key": {
+      "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+      "type": "string"
+    },
+    "schema": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "terminal_record_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema",
+    "raw_key",
+    "accepted_terminal_id",
+    "terminal_record_hash",
+    "independent_review_id",
+    "entry_id"
+  ],
+  "schema_id": "e9f125d1a231b51f9e8c1c4f792371bb227e68178d68d1e0b66a8486c86fcbd1",
+  "title": "Accepted terminal ledger entry",
+  "type": "object"
+}

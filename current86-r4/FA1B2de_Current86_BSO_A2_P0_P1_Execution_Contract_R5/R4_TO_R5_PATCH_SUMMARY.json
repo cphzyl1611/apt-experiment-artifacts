@@ -1,0 +1,50 @@
+{
+  "blocker_status": {
+    "B1_M1_M2_NON_REGRESSION": "PASS",
+    "B2_VERIFIER_PRODUCTION_E2E": "PRESERVED",
+    "B3_MANDATORY_AUTHENTICATED_CROSS_OBJECT_VALIDATION": "CLOSED_CANDIDATE",
+    "B4_MANDATORY_EXACT_DISPOSITION_LINEAGE": "CLOSED_CANDIDATE"
+  },
+  "implementation_schema_test_package_files_changed_or_added": [
+    "tools/materialize_p0_p1_contract.py",
+    "tools/materialize_r5_contract.py",
+    "tests/test_p0_p1_contract.py",
+    "tests/test_r2_contract_fixes.py",
+    "tests/test_r4_contract_fixes.py",
+    "tests/test_r5_contract_fixes.py",
+    "09_tests/test_materialization_contract.py",
+    "09_tests/test_r2_contract_fixes.py",
+    "09_tests/test_r4_contract_fixes.py",
+    "09_tests/test_r5_contract_fixes.py",
+    "run_packaged_tests.py"
+  ],
+  "patch_status": "COMPLETE_CONTRACT_ONLY",
+  "r1_r2_r3_r4_lineage_byte_preserved": true,
+  "r4_handoff_sha256": "96680896198c8929dc33a8a4c1f45d4f4535b4197515816b7ed2f2eef52f7cec",
+  "r4_package_directory": "FA1B2de_Current86_BSO_A2_P0_P1_Execution_Contract_R4",
+  "r4_repository_reference_commit": "11b801b8ae04ae32cdd9f4940d4d8e87829a32c9",
+  "r5_package_directory": "FA1B2de_Current86_BSO_A2_P0_P1_Execution_Contract_R5",
+  "r5_review_handoff_sha256": null,
+  "required_terminal": {
+    "B2_VERIFIER_PRODUCTION_E2E": "PRESERVED",
+    "B3_MANDATORY_AUTHENTICATED_CROSS_OBJECT_VALIDATION": "CLOSED_CANDIDATE",
+    "B4_MANDATORY_EXACT_DISPOSITION_LINEAGE": "CLOSED_CANDIDATE",
+    "BINDING_AUTHORITY_MUTATION": "NO",
+    "BINDING_PUBLICATION": "NO",
+    "BSO_P_EXECUTED": "NO",
+    "BSO_V_EXECUTED": "NO",
+    "DENOMINATOR_CHANGE": "NO",
+    "GIT_REF_MUTATION": "NO",
+    "INDEPENDENT_VERIFIER_SEMANTIC_EXECUTION": "NO",
+    "NEXT_ACTION": "FRESH_TARGETED_INDEPENDENT_REVIEW_OF_R5_B3_B4_ONLY",
+    "P0_EXECUTED": "NO",
+    "P0_P1_EXECUTION_CONTRACT_R5_PATCH_STATUS": "COMPLETE_CONTRACT_ONLY",
+    "P1_EXECUTED": "NO",
+    "PRIMARY_PROPOSER_EXECUTED": "NO",
+    "RAW_LEVEL_HUMAN_DECISIONS": 0,
+    "SCORING_AUTHORITY_MUTATION": "NO"
+  },
+  "schema": "FA1B2DE_CURRENT86_BSO_A2_R4_TO_R5_PATCH_SUMMARY_V1",
+  "schemas_changed": [],
+  "scope": "MINIMAL_R4_TO_R5_REMEDIATION_OF_B3_AND_B4_ONLY"
+}

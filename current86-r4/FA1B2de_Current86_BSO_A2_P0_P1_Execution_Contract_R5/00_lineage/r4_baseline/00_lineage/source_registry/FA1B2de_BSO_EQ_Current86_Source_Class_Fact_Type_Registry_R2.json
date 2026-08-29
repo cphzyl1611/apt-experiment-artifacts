@@ -1,0 +1,134 @@
+{
+  "atomic_item_binding_contract": [
+    "atomic source_artifact_identity MUST equal exactly one manifest entry artifact_identity",
+    "atomic source_artifact_sha256_or_pinned_identity MUST equal that entry pinned_identity",
+    "atomic source_provenance_identity MUST equal that entry provenance_identity",
+    "atomic source_fact_type MUST equal that entry source_fact_type",
+    "atomic source_side MUST equal that entry source_side",
+    "RAW-side atomic raw_key MUST equal manifest bound_raw_key",
+    "CANDIDATE-side atomic candidate_scoring_id MUST equal manifest bound_candidate_scoring_id",
+    "atomic exact_field_path_or_claim_id MUST be the exact RFC6901 JSON Pointer of the emitted leaf",
+    "atomic authenticated_value_canonical_json MUST be the exact parsed scalar JSON value at that pointer"
+  ],
+  "authority_scope": "EXACT_CURRENT86_ONLY",
+  "class_to_type_mapping": [
+    {
+      "source_artifact_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "source_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD"
+    },
+    {
+      "source_artifact_class": "AUTHENTICATED_PINNED_PROJECT_TAXONOMY_SOURCE",
+      "source_fact_type": "PINNED_PROJECT_TAXONOMY_FIELD"
+    },
+    {
+      "source_artifact_class": "AUTHENTICATED_RAW_SOURCE_RECORD",
+      "source_fact_type": "PINNED_RAW_SOURCE_FIELD"
+    },
+    {
+      "source_artifact_class": "AUTHENTICATED_SCORING_ROW_SOURCE",
+      "source_fact_type": "PINNED_SCORING_ROW_FIELD"
+    }
+  ],
+  "deny_rule": {
+    "artifact_class_gate": "source_artifact_class MUST be exactly one of the four allowed V4 source_artifact_classes; all other artifact/output classes are rejected",
+    "comparative_or_historical_content": "no derived/comparative/historical class is generated; any authenticated artifact already classified outside the four allowed source classes is rejected as a whole",
+    "exact_field_name_gate": "before traversing an object member, decode/use its exact source key; if that exact key equals any V4 denylist exact_field_names member, reject that member's entire subtree",
+    "exact_field_names": [
+      "INSUFFICIENT_EVIDENCE",
+      "PLAUSIBLE_BUT_DOMINATED",
+      "SUPPORTED_COMPETITOR",
+      "candidate_state",
+      "core_action_relation",
+      "cve_relation",
+      "effect_relation",
+      "mechanism_relation",
+      "modifier_relation",
+      "object_relation",
+      "protocol_relation",
+      "stage_locality",
+      "strong_anchor",
+      "supported_semantics",
+      "tool_relation"
+    ],
+    "fuzzy_or_semantic_deny_matching": "PROHIBITED"
+  },
+  "disabled_source_fact_types": [
+    "PINNED_RAW_SOURCE_TEXT_CLAIM",
+    "PINNED_SCORING_ROW_TEXT_CLAIM"
+  ],
+  "enabled_source_fact_types": [
+    "PINNED_CANONICAL_INTRINSIC_FIELD",
+    "PINNED_PROJECT_TAXONOMY_FIELD",
+    "PINNED_RAW_SOURCE_FIELD",
+    "PINNED_SCORING_ROW_FIELD"
+  ],
+  "global_eq_scope_id": "34551e904bafa71fb2fb6db33162e94ad41a08eca6c747d429c83760e09c1306",
+  "mapping_rule": "EXACT_ONE_TO_ONE_BY_SOURCE_ARTIFACT_CLASS; no fallback and no model choice",
+  "parent_workflow_architecture_authority_hash": "442b5aecd651b320b94eb47b190bf239ba0157634e0a635042ca4d252c65dc40",
+  "registry_id": "8cef6206dfc3581c3e7b6358bde7a36e90f4ba99078176cc0e5aff4b238298a7",
+  "schema": "FA1B2DE_BSO_EQ_CURRENT86_SOURCE_CLASS_FACT_TYPE_REGISTRY_R2",
+  "source_artifact_manifest_entry_contract": {
+    "cross_constraints": [
+      "source_fact_type MUST equal the unique class_to_type_mapping value for source_artifact_class",
+      "RAW side requires non-null bound_raw_key and null bound_candidate_scoring_id",
+      "CANDIDATE side requires non-null bound_candidate_scoring_id and null bound_raw_key",
+      "artifact_identity MUST be unique within a source_artifact_manifest",
+      "provenance_identity MUST independently recompute from the exact manifest entry"
+    ],
+    "field_constraints": {
+      "artifact_identity": "NON_EMPTY_EXACT_AUTHENTICATED_ARTIFACT_IDENTITY",
+      "bound_candidate_scoring_id": "exact current candidate_scoring_id when source_side=CANDIDATE; JSON null otherwise",
+      "bound_raw_key": "exact current raw_key when source_side=RAW; JSON null otherwise",
+      "pinned_identity": "NON_EMPTY_EXACT_SHA256_OR_FROZEN_AUTHORITY_IDENTITY",
+      "provenance_identity": "sha256(canonical_json(all manifest-entry fields except provenance_identity))",
+      "source_artifact_class": [
+        "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+        "AUTHENTICATED_PINNED_PROJECT_TAXONOMY_SOURCE",
+        "AUTHENTICATED_RAW_SOURCE_RECORD",
+        "AUTHENTICATED_SCORING_ROW_SOURCE"
+      ],
+      "source_fact_type": [
+        "PINNED_CANONICAL_INTRINSIC_FIELD",
+        "PINNED_PROJECT_TAXONOMY_FIELD",
+        "PINNED_RAW_SOURCE_FIELD",
+        "PINNED_SCORING_ROW_FIELD"
+      ],
+      "source_side": [
+        "RAW",
+        "CANDIDATE"
+      ]
+    },
+    "required_fields": [
+      "artifact_identity",
+      "bound_candidate_scoring_id",
+      "bound_raw_key",
+      "pinned_identity",
+      "provenance_identity",
+      "source_artifact_class",
+      "source_fact_type",
+      "source_side"
+    ]
+  },
+  "status": "EXECUTION_CONTRACT_SUBORDINATE_REVIEW_REQUIRED",
+  "structured_source_rule": {
+    "array_index_token": "ZERO_BASED_BASE10_NO_LEADING_ZERO_EXCEPT_ZERO",
+    "extractable_nodes": [
+      "BOOLEAN",
+      "INTEGER",
+      "NULL",
+      "STRING"
+    ],
+    "input_representation": "AUTHENTICATED_JSON_ONLY",
+    "object_key_token_escape": "~ becomes ~0; / becomes ~1; no Unicode normalization",
+    "object_or_array_nodes": "TRAVERSE_ONLY_NOT_EMITTED_AS_ATOMIC_FACT",
+    "path_notation": "RFC6901_JSON_POINTER",
+    "root_scalar": "PROHIBITED; source artifact must provide an object or array root",
+    "string_handling": "ENTIRE_EXACT_STRING_VALUE_IS_ONE_FIELD_VALUE; no sentence split, token split, summary, paraphrase, claim extraction, or semantic normalization",
+    "value_hash_rule": "authenticated_value_sha256 = sha256(canonical_json(exact parsed scalar JSON value))"
+  },
+  "text_claim_rule": "TEXT_CLAIM_FACT_TYPES_PROHIBITED_FOR_CURRENT86_R2; no claim segmentation and no generated/pre-existing claim-ID extraction is used",
+  "v4_atomic_source_fact_item_schema_hash": "091d344a42ed42e8c4892e8932e8d360ad4d7da9d4788f8afab604e330e515ee",
+  "v4_historical_relation_output_denylist_hash": "f2f48a3142bf192c08cfa2bffbb722e0131bfd4a1ba55623caf5af72748b94c7",
+  "v4_normative_source_evidence_profile_hash": "e24746c96c5f741cc35df8d992d93936911dd1de2ce7f1a0f00035cda3b33deb",
+  "v4_source_fact_type_vocabulary_hash": "9dc9bdcbc876b138b323c8f01c8e9ddd37d13d852d0347f338037d5ee01ea7f5"
+}

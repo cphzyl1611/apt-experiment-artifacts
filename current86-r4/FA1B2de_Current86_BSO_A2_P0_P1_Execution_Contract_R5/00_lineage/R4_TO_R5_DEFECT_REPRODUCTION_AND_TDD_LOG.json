@@ -1,0 +1,84 @@
+{
+  "blockers": {
+    "B3": {
+      "green": {
+        "command": "python -m unittest tests.test_r5_contract_fixes.B3MandatoryCrossObjectR5Tests -v",
+        "exit_code": 0,
+        "proofs": [
+          "frozen universe, proposal bundle, primary, verifier, and comparison validate against their shipped schemas",
+          "semantic universe, relation-set, and proposal-bundle identities are exact across authenticated objects",
+          "comparison assertions and direct context/run identity distinction fail closed",
+          "complete packet option mapping remains exact with no pruning or top-k behavior"
+        ],
+        "tests_passed": 9
+      },
+      "red": {
+        "command": "python -m unittest tests.test_r5_contract_fixes.B3MandatoryCrossObjectR5Tests -v",
+        "exit_code": 1,
+        "observed": [
+          "R4 validate_human_packet rejected the mandatory authenticated proposal-input bundle API argument",
+          "therefore R4 could not mechanically authenticate the bundle or enforce the required five-way universe, four-way relation-set, and three-way bundle identities"
+        ],
+        "tests_run": 9
+      },
+      "status": "CLOSED_CANDIDATE"
+    },
+    "B4": {
+      "green": {
+        "command": "python -m unittest tests.test_r5_contract_fixes.B4DispositionReferenceGraphR5Tests -v",
+        "exit_code": 0,
+        "proofs": [
+          "invalidation, acceptance, and remediation restart resolve exact same-raw objects",
+          "partition reconstruction follows fully validated heads only",
+          "missing, wrong, stale, cross-raw, forked, duplicate, gap, missing-parent, and unauthorized references fail closed"
+        ],
+        "tests_passed": 5
+      },
+      "red": {
+        "command": "python -m unittest tests.test_r5_contract_fixes.B4DispositionReferenceGraphR5Tests -v",
+        "exit_code": 1,
+        "observed": [
+          "R4 chain validation could not resolve the raw/ID-keyed authenticated graph for valid exact transitions",
+          "R4 reconstruct_partitions did not accept the authenticated reference graph"
+        ],
+        "tests_run": 5
+      },
+      "status": "CLOSED_CANDIDATE"
+    }
+  },
+  "execution_boundary": {
+    "BINDING_AUTHORITY_MUTATION": "NO",
+    "BINDING_PUBLICATION": "NO",
+    "BSO_P_EXECUTED": "NO",
+    "BSO_V_EXECUTED": "NO",
+    "DENOMINATOR_CHANGE": "NO",
+    "GIT_REF_MUTATION": "NO",
+    "INDEPENDENT_VERIFIER_SEMANTIC_EXECUTION": "NO",
+    "P0_EXECUTED": "NO",
+    "P1_EXECUTED": "NO",
+    "PRIMARY_PROPOSER_EXECUTED": "NO",
+    "RAW_LEVEL_HUMAN_DECISIONS": 0,
+    "SCORING_AUTHORITY_MUTATION": "NO"
+  },
+  "non_regression": {
+    "b1_m1_m2_behavior": "PRESERVED",
+    "b2_verifier_production_e2e": "PRESERVED",
+    "r1_r2_r3_r4_lineage_byte_preserved": true,
+    "tests_weakened": false
+  },
+  "packaged_regression": {
+    "command": "python FA1B2de_Current86_BSO_A2_P0_P1_Execution_Contract_R5/run_packaged_tests.py",
+    "expected_exit_code": 0,
+    "runner_reason": "imports shipped R5 tools while exposing the already-authenticated repo-external source fixtures through a temporary read-only symlink view"
+  },
+  "schema": "R4_TO_R5_DEFECT_REPRODUCTION_AND_TDD_LOG_V1",
+  "source_r4_handoff_sha256": "96680896198c8929dc33a8a4c1f45d4f4535b4197515816b7ed2f2eef52f7cec",
+  "source_r4_repository_reference_commit": "11b801b8ae04ae32cdd9f4940d4d8e87829a32c9",
+  "source_regression": {
+    "command": "python -m unittest discover -s tests -v",
+    "expected_exit_code": 1,
+    "expected_known_unrelated_failure_count": 1,
+    "known_unrelated_failure": "pre-existing root SHA256SUMS authority-candidate hash mismatch; not changed or normalized by R5"
+  },
+  "test_method": "AUTHENTICATE_R4_THEN_GENUINE_RED_THEN_MINIMAL_GREEN_THEN_SOURCE_AND_PACKAGED_REGRESSION"
+}

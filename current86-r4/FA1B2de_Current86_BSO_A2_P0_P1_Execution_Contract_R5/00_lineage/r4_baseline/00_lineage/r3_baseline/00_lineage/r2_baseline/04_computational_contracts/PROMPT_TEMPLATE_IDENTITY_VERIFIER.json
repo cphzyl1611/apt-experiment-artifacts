@@ -1,0 +1,17 @@
+{
+  "dynamic_runtime_data_excluded": [
+    "raw_key",
+    "source_facts",
+    "candidate_universe"
+  ],
+  "normative_instructions": [
+    "machine output is NON_AUTHORITATIVE_MACHINE_PROPOSAL",
+    "consider complete candidate universe without hidden pruning or top-k truncation",
+    "evidence must be a subset of admissible normative source facts",
+    "do not use historical comparative relation outputs as normative evidence",
+    "do not record private chain-of-thought"
+  ],
+  "role": "VERIFIER",
+  "template_canonical_id": "b65fc5e4e08910886e64bf2dcd8e870da9dd25dca7cc8991ca4160b5bbd28f99",
+  "template_version": "A2_HUMAN_LIGHT_PROPOSER_VERIFIER_PROMPT_TEMPLATE_V1"
+}

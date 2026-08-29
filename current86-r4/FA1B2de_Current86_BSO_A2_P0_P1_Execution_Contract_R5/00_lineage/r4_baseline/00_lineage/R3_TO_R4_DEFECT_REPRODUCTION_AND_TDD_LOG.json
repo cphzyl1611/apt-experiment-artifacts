@@ -1,0 +1,79 @@
+{
+  "blockers": {
+    "B2": {
+      "green": {
+        "exit_code": 0,
+        "proofs": [
+          "wrapper, bubblewrap, shared runtime, frozen dummy backend, marker, structured output, and execution binding validated"
+        ],
+        "tests_passed": 1
+      },
+      "red": {
+        "exit_code": 1,
+        "observed": [
+          "verifier wrapper forwarded context/run arguments rejected by role runtime with exit code 2"
+        ]
+      },
+      "status": "CLOSED"
+    },
+    "B3": {
+      "green": {
+        "exit_code": 0,
+        "proofs": [
+          "complete authenticated graph passes; missing, truncated, extra, duplicate, mismatched, and wrong alternative objects fail closed"
+        ],
+        "tests_passed": 9
+      },
+      "red": {
+        "exit_code": 1,
+        "observed": [
+          "packet, decision, and owner validators accepted omitted authenticated references"
+        ]
+      },
+      "status": "CLOSED"
+    },
+    "B4": {
+      "green": {
+        "exit_code": 0,
+        "proofs": [
+          "exact current head, same-raw review/terminal/attempt/remediation linkage and substantive outcomes are mandatory"
+        ],
+        "tests_passed": 5
+      },
+      "red": {
+        "exit_code": 1,
+        "observed": [
+          "three exact disposition lineages accepted omitted references"
+        ]
+      },
+      "status": "CLOSED"
+    }
+  },
+  "complete_regression": {
+    "command": "python -m unittest discover -s tests -v",
+    "exit_code": 1,
+    "known_unrelated_failure": "pre-existing root SHA256SUMS authority-candidate hash mismatch; not caused by R4",
+    "tests_failed": 1,
+    "tests_passed": 64
+  },
+  "execution_boundary": {
+    "BINDING_PUBLICATION": "NO",
+    "INDEPENDENT_VERIFIER_SEMANTIC_EXECUTION": "NO",
+    "P0_EXECUTED": "NO",
+    "P1_EXECUTED": "NO",
+    "PRIMARY_PROPOSER_EXECUTED": "NO",
+    "RAW_LEVEL_HUMAN_DECISIONS": 0
+  },
+  "non_regression": {
+    "b1_m1_non_regression": "PASS",
+    "bubblewrap_sentinel_isolation": "PASS",
+    "known_unrelated_root_sha256sums_authority_candidate_test": "not fixed",
+    "r1_r2_r3_byte_preserved": true,
+    "relation_set_hash": "3d5c5c4e7f07130d85a55f39c450080c1c2fbc4d91fcf62721db86b2e10b8192",
+    "source_fact_id": "sole normative evidence-set identity"
+  },
+  "schema": "R3_TO_R4_DEFECT_REPRODUCTION_AND_TDD_LOG_V1",
+  "source_r3_handoff_sha256": "59d4215d5c150ca6814963f361188c620ff0cf8b22f49af4c3868556431da0f7",
+  "test_method": "ADVERSARIAL_RED_THEN_MINIMAL_FIX_THEN_GREEN_THEN_COMPLETE_REGRESSION",
+  "tests_weakened": false
+}

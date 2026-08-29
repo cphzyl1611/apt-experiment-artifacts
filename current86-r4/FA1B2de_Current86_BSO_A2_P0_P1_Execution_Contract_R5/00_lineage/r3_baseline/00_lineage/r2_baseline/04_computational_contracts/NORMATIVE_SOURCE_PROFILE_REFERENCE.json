@@ -1,0 +1,11 @@
+{
+  "authority_scope_id": "34551e904bafa71fb2fb6db33162e94ad41a08eca6c747d429c83760e09c1306",
+  "historical_output_denylist_hash": "f2f48a3142bf192c08cfa2bffbb722e0131bfd4a1ba55623caf5af72748b94c7",
+  "normative_source_profile_hash": "e24746c96c5f741cc35df8d992d93936911dd1de2ce7f1a0f00035cda3b33deb",
+  "profile_status": "AUTHENTICATED_PROFILE_ONLY_NO_RUNTIME_FACT_EXTRACTION",
+  "schema": "A2_NORMATIVE_SOURCE_PROFILE_REFERENCE_V1",
+  "source_class_fact_type_registry_id": "8cef6206dfc3581c3e7b6358bde7a36e90f4ba99078176cc0e5aff4b238298a7",
+  "source_class_fact_type_registry_sha256": "3df4262faa4137996d2ff8d163bcc665d5bed76b3d719e6ff66cf4154252d72f",
+  "source_profile_reference_id": "6b5cb5c0ad2bb10350490b709900a19b7bf5df3d3a71607499c81303385a89a2",
+  "text_claim_fact_types": "PROHIBITED"
+}

@@ -1,0 +1,74 @@
+{
+  "blockers": {
+    "B1": {
+      "blocker_id": "R1_M1_SET_ORDERING_REGISTRY_NOT_UNIQUELY_AND_CONSISTENTLY_APPLIED",
+      "green": {
+        "command": "python -m unittest tests.test_r2_contract_fixes.B1OrderingRegressionTests -v",
+        "exit_code": 0,
+        "tests_passed": 3
+      },
+      "red": {
+        "command": "python -m unittest tests.test_r2_contract_fixes -v",
+        "exit_code": 1,
+        "observed": [
+          "source_fact_id_or_canonical_fact_id != source_fact_id",
+          "hash_declared_set missing"
+        ]
+      }
+    },
+    "B2": {
+      "blocker_id": "R1_COMPUTATIONAL_RUNTIME_IDENTITY_AND_M2_ENFORCEMENT_NOT_EXECUTION_BOUND",
+      "green": {
+        "command": "python -m unittest tests.test_r2_contract_fixes.B2RuntimeIsolationRegressionTests -v",
+        "exit_code": 0,
+        "tests_passed": 3
+      },
+      "red": {
+        "command": "python -m unittest tests.test_r2_contract_fixes -v",
+        "exit_code": 1,
+        "observed": [
+          "entrypoint was tools/materialize_p0_p1_contract.py",
+          "run_isolation_probe missing",
+          "capture_execution_time_runtime_binding missing"
+        ]
+      }
+    },
+    "B3": {
+      "blocker_id": "R1_P1_HUMAN_DECISION_AND_TERMINAL_SCHEMAS_UNDERMODEL_REVIEWED_SEMANTICS",
+      "green": {
+        "command": "python -m unittest tests.test_r2_contract_fixes.B3HumanTerminalRegressionTests -v",
+        "exit_code": 0,
+        "tests_passed": 3
+      },
+      "red": {
+        "command": "python -m unittest tests.test_r2_contract_fixes -v",
+        "exit_code": 1,
+        "observed": [
+          "validate_human_decision missing",
+          "owner/escalation executable branch validators missing"
+        ]
+      }
+    },
+    "B4": {
+      "blocker_id": "R1_EVIDENCE_AND_DISPOSITION_SCHEMA_ENFORCEMENT_INCOMPLETE",
+      "green": {
+        "command": "python -m unittest tests.test_r2_contract_fixes.B4SchemaDispositionRegressionTests -v",
+        "exit_code": 0,
+        "tests_passed": 5
+      },
+      "red": {
+        "command": "python -m unittest tests.test_r2_contract_fixes.B4SchemaDispositionRegressionTests -v",
+        "exit_code": 1,
+        "observed": [
+          "Unresolvable: admissible_source_fact",
+          "validate_disposition_record missing"
+        ]
+      }
+    }
+  },
+  "raw_level_human_adjudication": false,
+  "schema": "R1_TO_R2_DEFECT_REPRODUCTION_AND_TDD_LOG_V1",
+  "semantic_proposer_or_verifier_execution": false,
+  "test_method": "FAIL_FIRST_THEN_MINIMUM_CORRECTION_THEN_GREEN",
+  "tests_weakened": false
+}

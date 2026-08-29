@@ -1,0 +1,15 @@
+{
+  "a2_escalation_frozen_counts_as_owner_closure": false,
+  "closed_escalation_classes": [
+    "ESCALATE_AMBIGUOUS",
+    "ESCALATE_STRUCTURE",
+    "ESCALATE_SCORING_AUTHORITY",
+    "ESCALATE_PROVENANCE",
+    "ESCALATE_IDENTITY",
+    "ESCALATE_PROPOSER_VERIFIER_DISAGREEMENT",
+    "HUMAN_NOT_SURE_ESCALATE"
+  ],
+  "default_or_timeout_escalation": "PROHIBITED_AS_HUMAN_DECISION",
+  "schema_version": "FA1B2DE_CURRENT86_BSO_A2_ESCALATION_REGISTRY_R1",
+  "unresolved_state_required": true
+}

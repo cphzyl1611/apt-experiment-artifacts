@@ -1,0 +1,57 @@
+{
+  "b1_semantics_touched": false,
+  "blocker_status": {
+    "B2": "CLOSED",
+    "B3": "CLOSED",
+    "B4": "CLOSED"
+  },
+  "changes": {
+    "B2": [
+      "production role runtime owns backend invocation",
+      "frozen backend configuration and implementation hashes are verified",
+      "provider/model/context/run identity is captured from invocation and bound atomically",
+      "caller structured commitment/provider/model arguments removed from production CLI",
+      "non-semantic local backend spoof probe added"
+    ],
+    "B3": [
+      "human packet mapping is compared with authenticated complete candidate universe",
+      "human decision is compared with packet proposal/comparison",
+      "owner terminal is compared with validated human decision, packet, proposal, comparison, and universe",
+      "REJECT_SELECT must select a non-proposal option and exact alternative PASS"
+    ],
+    "B4": [
+      "disposition references resolve to authenticated objects",
+      "pending/review/accepted/remediation lineage is exact and same-raw",
+      "review approval and restart authorization are checked"
+    ]
+  },
+  "exact_r2_package_sha256sums_file": "ee922904970aaad5999b329a98abe8046dc191f16574692522c3e57d4136840f",
+  "files_changed_or_added": [
+    "tools/a2_role_runtime.py",
+    "tools/run_a2_verifier.py",
+    "tools/materialize_p0_p1_contract.py",
+    "tools/materialize_r3_contract.py",
+    "tests/test_r3_contract_fixes.py",
+    "11_r3_patch_contract/R3_EXECUTION_BACKEND_ADAPTER_CONTRACT.json",
+    "11_r3_patch_contract/R3_CROSS_OBJECT_VALIDATION_CONTRACT.json",
+    "11_r3_patch_contract/R3_DISPOSITION_REFERENCE_ENFORCEMENT.json",
+    "11_r3_patch_contract/non_semantic_runtime_binding_probe.json"
+  ],
+  "non_regression": {
+    "binding_publication": "NO",
+    "independent_verifier_semantic_execution": "NO",
+    "p0_executed": "NO",
+    "p1_executed": "NO",
+    "primary_proposer_executed": "NO",
+    "raw_level_human_decisions": 0,
+    "relation_hash": "3d5c5c4e7f07130d85a55f39c450080c1c2fbc4d91fcf62721db86b2e10b8192",
+    "source_fact_id": "sole evidence-set identity field"
+  },
+  "r1_r2_byte_preserved": true,
+  "r2_handoff_sha256": "c2a7fa6056fd914736f2a6c52c60b1bfc79707575e0cb680eb8665d381203dc5",
+  "r2_package_directory": "FA1B2de_Current86_BSO_A2_P0_P1_Execution_Contract_R2",
+  "r3_package_directory": "FA1B2de_Current86_BSO_A2_P0_P1_Execution_Contract_R3",
+  "r3_review_handoff_sha256": null,
+  "schema": "FA1B2DE_CURRENT86_BSO_A2_P0_P1_EXECUTION_CONTRACT_R2_TO_R3_PATCH_SUMMARY_V1",
+  "scope": "ONLY_THREE_REMAINING_R2_CONTRACT_BLOCKERS"
+}

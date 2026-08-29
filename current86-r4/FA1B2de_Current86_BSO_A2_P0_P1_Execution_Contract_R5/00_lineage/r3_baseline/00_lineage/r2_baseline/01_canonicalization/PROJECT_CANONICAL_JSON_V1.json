@@ -1,0 +1,13 @@
+{
+  "arrays": "ORDER_SENSITIVE_UNLESS_SCHEMA_DECLARED_SET",
+  "declared_sets": "FIELD_SPECIFIC_ORDERING_REGISTRY_BEFORE_CANONICALIZATION",
+  "encoding": "UTF-8_WITHOUT_BOM",
+  "filesystem_locale_platform_independence": true,
+  "floating_point": "PROHIBITED",
+  "normative_numbers": "INTEGER_ONLY_EXPLICIT_SCHEMA_RANGE",
+  "object_key_order": "RFC8785_UTF16_CODE_UNIT_ORDER",
+  "raw_file_hash": "SHA256_EXACT_FILE_BYTES",
+  "rfc8785_semantics": true,
+  "schema": "PROJECT_CANONICAL_JSON_V1",
+  "unicode": "NFC_REQUIRED_AND_VALIDATED_NO_SILENT_REWRITE"
+}

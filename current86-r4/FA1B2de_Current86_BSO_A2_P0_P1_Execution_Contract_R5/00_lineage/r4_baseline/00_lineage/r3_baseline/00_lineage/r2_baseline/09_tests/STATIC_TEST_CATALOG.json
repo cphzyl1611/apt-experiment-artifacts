@@ -1,0 +1,12 @@
+{
+  "implementation_verification_only": true,
+  "runtime_adjudication_executed": false,
+  "schema": "A2_P0_P1_IMPLEMENTATION_TEST_CATALOG_V1",
+  "tests": {
+    "B1": "registry relation identity ordering, manifest recomputation, alternative tuple rejection, exact evidence identity, duplicate and unregistered set rejection",
+    "B2": "actual role entrypoints, execution-time runtime binding, and bubblewrap common/private/commitment sentinel isolation",
+    "B3": "human packet mapping, confirm/reject/not-sure actions, owner terminal paths, human/pre-human/alternative-failure escalations, technical defect exclusion",
+    "B4": "self-contained RAW/CANDIDATE source facts, invalid/empty facts, disposition lineage requirements, remediation reference, stale pending exclusion",
+    "NON_REGRESSION": "retained R1 canonicalization, authentication, disposition, pilot, P4 identity-separation, and no-execution tests"
+  }
+}

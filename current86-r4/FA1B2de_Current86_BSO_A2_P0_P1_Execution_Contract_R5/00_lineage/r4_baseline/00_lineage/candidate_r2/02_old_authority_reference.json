@@ -1,0 +1,12 @@
+{
+  "current86_critical_path_status": "ACTIVE_UNTIL_H2",
+  "final_freeze_handoff_sha256": "0af337acc731595167d75f922dd39bbbb48dd1b1b9d3b31723d01408501040de",
+  "freeze_precondition_verification_id": "80653cc96d1e3612d5809bd6a6a091f79fe5cd1081c769ec51366b99646faac1",
+  "historical_artifact_deletion": "PROHIBITED",
+  "historical_artifact_mutation": "PROHIBITED",
+  "historical_authority_status": "FROZEN_HISTORICAL",
+  "schema_version": "FA1B2DE_CURRENT86_BSO_A2_OLD_AUTHORITY_REFERENCE_R1",
+  "scope_id": "34551e904bafa71fb2fb6db33162e94ad41a08eca6c747d429c83760e09c1306",
+  "supersession_activation": false,
+  "workflow_architecture_authority_hash": "442b5aecd651b320b94eb47b190bf239ba0157634e0a635042ca4d252c65dc40"
+}

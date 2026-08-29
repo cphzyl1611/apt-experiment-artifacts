@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "accepted_count": {
+      "type": "integer"
+    },
+    "accepted_ledger_head_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "accepted_raw_set_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "active_authority_id": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "attempt_ledger_head_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "blocked_attempt_count": {
+      "type": "integer"
+    },
+    "blocked_attempt_raw_set_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "current_disposition_head_set_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "disposition_ledger_head_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "execution_contract_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "full_partition_object_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "in_progress_or_incomplete_count": {
+      "type": "integer"
+    },
+    "in_progress_or_incomplete_raw_set_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "last_checkpoint_id": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "not_started_count": {
+      "type": "integer"
+    },
+    "not_started_raw_set_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "pending_count": {
+      "type": "integer"
+    },
+    "pending_ledger_head_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "pending_raw_set_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "resume_token_id": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "const": null
+        }
+      ]
+    },
+    "schema": {
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema",
+    "active_authority_id",
+    "execution_contract_hash",
+    "current_disposition_head_set_hash",
+    "disposition_ledger_head_hash",
+    "accepted_raw_set_hash",
+    "pending_raw_set_hash",
+    "in_progress_or_incomplete_raw_set_hash",
+    "blocked_attempt_raw_set_hash",
+    "not_started_raw_set_hash",
+    "full_partition_object_hash",
+    "accepted_count",
+    "pending_count",
+    "in_progress_or_incomplete_count",
+    "blocked_attempt_count",
+    "not_started_count",
+    "last_checkpoint_id",
+    "accepted_ledger_head_hash",
+    "pending_ledger_head_hash",
+    "attempt_ledger_head_hash",
+    "resume_token_id"
+  ],
+  "schema_id": "64aa1c516842491928b55d177866487530e86d7d338b0af1d8c4894aa7c8a949",
+  "title": "P3 resume token",
+  "type": "object"
+}

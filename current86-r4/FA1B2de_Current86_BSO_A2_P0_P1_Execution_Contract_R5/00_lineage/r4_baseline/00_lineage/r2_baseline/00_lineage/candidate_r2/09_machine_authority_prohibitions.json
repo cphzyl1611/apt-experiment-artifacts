@@ -1,0 +1,22 @@
+{
+  "accepted_binding_change": "PROHIBITED",
+  "binding_authority_mutation": "PROHIBITED",
+  "complete_candidate_universe_preserved": true,
+  "denominator_change": "PROHIBITED",
+  "embedding_similarity_as_owner_authority": "PROHIBITED",
+  "hidden_pruning": "PROHIBITED",
+  "historical_comparative_relation_output_as_normative_proposal_evidence": "PROHIBITED",
+  "historical_occupancy_as_owner_authority": "PROHIBITED",
+  "llm_free_form_assertion_as_owner_authority": "PROHIBITED",
+  "new_binding_semantics": "PROHIBITED",
+  "new_ranking_semantics": "PROHIBITED",
+  "new_scoring_semantics": "PROHIBITED",
+  "popularity_as_owner_authority": "PROHIBITED",
+  "prior_relation_outcome_as_owner_authority": "PROHIBITED",
+  "proposal_rank_as_binding_signal": "PROHIBITED",
+  "proposal_score_as_normative_signal": "PROHIBITED",
+  "raw_positional_identity_mutation": "PROHIBITED",
+  "schema_version": "FA1B2DE_CURRENT86_BSO_A2_MACHINE_AUTHORITY_PROHIBITIONS_R1",
+  "silent_candidate_suppression": "PROHIBITED",
+  "top_k_candidate_truncation": "PROHIBITED"
+}

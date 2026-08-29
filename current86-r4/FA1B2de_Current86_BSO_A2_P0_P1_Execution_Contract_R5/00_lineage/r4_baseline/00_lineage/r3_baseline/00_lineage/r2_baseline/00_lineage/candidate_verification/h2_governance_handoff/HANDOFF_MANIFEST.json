@@ -1,0 +1,37 @@
+{
+  "schema_version": "FA1B2DE_CURRENT86_BSO_A2_H2_GOVERNANCE_HANDOFF_V1",
+  "handoff_purpose": "REQUEST_SEPARATE_EXPLICIT_H2_HUMAN_AUTHORITY_ACTIVATION_DECISION",
+  "self_contained": true,
+  "authority_candidate_verification_verdict": "PASS",
+  "authority_independently_verified": true,
+  "prospective_authority_candidate_id": "36831020b75a201420bd5cfce97a54ada12d44246f56a7812455bc21b99f9477",
+  "h1_evidence_id_recomputed": "22dbeb4700808e049ff001281caf1ae8ed5102fbcf2078991b27c0039e0dd6ba",
+  "verification_input_archive": {
+    "path": "fa1b2de-current86-bso-a2-prospective-authority-independent-verification-input.tar.gz",
+    "sha256": "024fde26cc71a4caf260772ac1fa908232e9ba03bbc7818616c6769db7e3240e"
+  },
+  "verification_reports": {
+    "markdown": {
+      "path": "FA1B2de_Current86_BSO_A2_Authority_Candidate_R2_Independent_Verification.md",
+      "sha256": "c4f238702d074324f3737b237d9ae4d32fb0ab34971b95d4afd92f78dbac944c"
+    },
+    "json": {
+      "path": "FA1B2de_Current86_BSO_A2_Authority_Candidate_R2_Independent_Verification.json",
+      "sha256": "2a4b1dfbf3b384c5a3db79d045c052a76836eb13cbeda3643a1dcdee4b165cfa"
+    }
+  },
+  "new_authority_activation": false,
+  "supersession_activation": false,
+  "binding_publication": false,
+  "accepted_binding_change": false,
+  "scoring_authority_mutation": false,
+  "binding_authority_mutation": false,
+  "denominator_change": false,
+  "bso_a2_raw_level_adjudication_execution": false,
+  "bso_v_execution": false,
+  "bso_p_execution": false,
+  "h2_performed": false,
+  "h2_acceptance_text_present": false,
+  "next_action": "REQUEST_H2_HUMAN_AUTHORITY_ACTIVATION",
+  "stop": "STOP_FOR_HUMAN_BSO_A2_AUTHORITY_H2_DECISION"
+}

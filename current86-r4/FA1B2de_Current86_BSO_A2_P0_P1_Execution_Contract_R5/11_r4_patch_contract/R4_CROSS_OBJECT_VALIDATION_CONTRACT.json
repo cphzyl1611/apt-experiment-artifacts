@@ -1,0 +1,6 @@
+{
+  "contract_id": "53bf84a2d1ecf0638fcc482f0cadac667528cad0545fe41642148f75983aaaa0",
+  "pre_human_escalation": "separate_validation_path",
+  "schema": "A2_R4_CROSS_OBJECT_VALIDATION_CONTRACT_V1",
+  "validation_mode": "AUTHENTICATED_REFERENCED_OBJECTS_REQUIRED"
+}

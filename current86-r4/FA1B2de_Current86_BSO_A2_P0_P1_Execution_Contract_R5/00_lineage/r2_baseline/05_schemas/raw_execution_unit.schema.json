@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "adjudication_executed": {
+      "const": false
+    },
+    "authority_scope_id": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "complete_candidate_relation_set_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "complete_candidate_universe_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "execution_manifest_id": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "initial_current_state": {
+      "const": "NOT_STARTED_FOR_ADJUDICATION"
+    },
+    "p0_prepared": {
+      "const": true
+    },
+    "raw_execution_unit_id": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "const": null
+        }
+      ]
+    },
+    "raw_identity_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "raw_key": {
+      "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+      "type": "string"
+    },
+    "schema": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "source_bundle_status": {
+      "const": "FROZEN_REFERENCE_ONLY_NOT_RUNTIME_MATERIALIZED"
+    }
+  },
+  "required": [
+    "schema",
+    "raw_key",
+    "authority_scope_id",
+    "execution_manifest_id",
+    "raw_identity_hash",
+    "complete_candidate_universe_hash",
+    "complete_candidate_relation_set_hash",
+    "source_bundle_status",
+    "initial_current_state",
+    "p0_prepared",
+    "adjudication_executed",
+    "raw_execution_unit_id"
+  ],
+  "schema_id": "0abc065ad48ca0292e0874ec79f66c4f892d482dab684243027b27064c2d85a2",
+  "title": "Current86 raw execution unit",
+  "type": "object"
+}

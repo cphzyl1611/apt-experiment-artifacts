@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "decision_wall_clock_ms": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "const": null
+        }
+      ]
+    },
+    "known_interruption_events": {
+      "type": "array"
+    },
+    "manual_candidate_id_copy_count": {
+      "const": 0
+    },
+    "manual_evidence_id_copy_count": {
+      "const": 0
+    },
+    "manual_hash_copy_count": {
+      "const": 0
+    },
+    "manual_relation_id_copy_count": {
+      "const": 0
+    },
+    "measurement_interpretation": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "metric_status": {
+      "const": "NON_AUTHORITATIVE_WORKLOAD_EVIDENCE"
+    },
+    "raw_key": {
+      "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+      "type": "string"
+    },
+    "relation_level_manual_outcome_count": {
+      "const": 0
+    },
+    "schema": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "session_continuity_status": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "workload_metric_id": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "const": null
+        }
+      ]
+    }
+  },
+  "required": [
+    "schema",
+    "raw_key",
+    "metric_status",
+    "decision_wall_clock_ms",
+    "session_continuity_status",
+    "known_interruption_events",
+    "measurement_interpretation",
+    "manual_candidate_id_copy_count",
+    "manual_relation_id_copy_count",
+    "manual_evidence_id_copy_count",
+    "manual_hash_copy_count",
+    "relation_level_manual_outcome_count",
+    "workload_metric_id"
+  ],
+  "schema_id": "aefc78ceadc44fbd1fef88150098ee0d7ea85aa6d99c5059b85808087b7d18eb",
+  "title": "Non-authoritative workload metric",
+  "type": "object"
+}

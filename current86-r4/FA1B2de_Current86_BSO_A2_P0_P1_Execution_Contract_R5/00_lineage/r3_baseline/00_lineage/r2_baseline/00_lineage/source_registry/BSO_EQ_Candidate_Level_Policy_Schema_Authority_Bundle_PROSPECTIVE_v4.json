@@ -1,0 +1,1871 @@
+{
+  "bso_a_adjudication_authorized": false,
+  "bundle_schema": "BSO_EQ_CANDIDATE_LEVEL_POLICY_SCHEMA_AUTHORITY_BUNDLE_PROSPECTIVE_V4",
+  "bundle_status": "DESIGN_ONLY_PROSPECTIVE_NOT_FROZEN_V4_HUMAN_ORIGIN_INTERFACE_PATCH",
+  "component_object_sha256": {
+    "BSO_EQ_ARRAY_CANONICALIZATION_REGISTRY": "8eb1ec6346258052fd7457cf8e9740f41fc63d296c317ac688a9bdfac48ab569",
+    "BSO_EQ_ATOMIC_SOURCE_FACT_ITEM_SCHEMA": "091d344a42ed42e8c4892e8932e8d360ad4d7da9d4788f8afab604e330e515ee",
+    "BSO_EQ_AUTHORITY_FREEZE_PRECONDITION_VERIFICATION_SCHEMA": "172f9edcbfdbac7e4ec76d8500ddda677c857df7b92d1ecaac6449f28cd98708",
+    "BSO_EQ_CANONICALIZATION_SPEC": "b1d57c05f790a3fe7b1c1dee447ab31dd369d19491bfe413fdb0887ff4648909",
+    "BSO_EQ_CODEX_NATIVE_SESSION_USER_EVENT_PROVENANCE_EVIDENCE_SCHEMA": "0201dc07ace5189b7ae9094910b0fff0fc173e2be374ec75e0b0a658dce42f64",
+    "BSO_EQ_CURRENT86_FINAL_CONSERVATION_CONTRACT": "ac06a02fc281ea1ade3136267d08bc001cbe5c4d80ee6fa8900243707045c258",
+    "BSO_EQ_CURRENT86_SCOPE_CONTRACT": "47d66c784b18e7db7dde15ca1cf26773e2c1b8e90c3eafb07e505dd8da30977c",
+    "BSO_EQ_CURRENT86_SCOPE_RUNTIME_SCHEMA": "1339ec614d2b5ba3e10497ec8cce2946c70ec0890e9615d95a2588f967d8bd70",
+    "BSO_EQ_HISTORICAL_RELATION_OUTPUT_DENYLIST": "f2f48a3142bf192c08cfa2bffbb722e0131bfd4a1ba55623caf5af72748b94c7",
+    "BSO_EQ_HUMAN_CANDIDATE_QUALIFICATION_POLICY": "bc33bb188b4c66815e513539d2c84f7e622feb92a85a1400bbbd49f387ad2e51",
+    "BSO_EQ_HUMAN_CANDIDATE_QUALIFICATION_RECORD_SCHEMA": "a8961cf0e9740e6654af40384e65f9ef8dd5abc76dac6d71d460e06259a3b863",
+    "BSO_EQ_HUMAN_ORIGIN_PROVENANCE_CONTRACT": "c1d92c96cc02495d4e4ddcc7686d0e489803a275e68bd009f2f8afab4f6a79dd",
+    "BSO_EQ_HUMAN_SUBMISSION_BATCH_SCHEMA": "89110e6cdea733362c08e644d13a0489592c2e2e5514234204e02e406eaa31e0",
+    "BSO_EQ_NORMATIVE_CANDIDATE_SOURCE_EVIDENCE_BUNDLE_SCHEMA": "252720ba9a5e9f44ca385c2563d51cbe655d4533921065957997eadb5e2af73e",
+    "BSO_EQ_NORMATIVE_EQ_REVIEW_VIEW_SCHEMA": "199c76ac23562c59e71cb8e2e4cc1dcb808a84b5efed3cd304541be5bf5c46a7",
+    "BSO_EQ_NORMATIVE_SOURCE_EVIDENCE_PROFILE": "e24746c96c5f741cc35df8d992d93936911dd1de2ce7f1a0f00035cda3b33deb",
+    "BSO_EQ_NORMATIVE_SOURCE_EVIDENCE_PROFILE_SCHEMA": "5c475a683b92216f7a836d80e25381a124d6026605d750fafd72dcf33dae9624",
+    "BSO_EQ_NORMATIVE_VIEW_FIELD_ALLOWLIST": "92b9ce407921d443fbde7a6b79f16bc776f9fe1fad7e604353840884a64d3241",
+    "BSO_EQ_POLICY_BASIS_CODE_VOCABULARY": "2927fb65ea7a63f7a455869a293b54c877c15f28be25c1bfbfc6cc5c6bb893b2",
+    "BSO_EQ_POLICY_SCHEMA_BUNDLE_ACCEPTANCE_BINDING_SCHEMA": "f15d180ff8e36874f8ec55d6081e0f8d45c0965fcd6a38eb343070c166eceb80",
+    "BSO_EQ_POSITIVE_BASIS_ITEM_SCHEMA": "a441e96aa7620959873a28cfa45f866422c01dbd53e2af04e00a43d6b8e48011",
+    "BSO_EQ_POSITIVE_SUPPORT_OVERLAY_SCHEMA": "ef28d6603d4ceab40e7372c6020f0856b5ded043abfcc8e6c5139ed8379058b0",
+    "BSO_EQ_POST_DECISION_AUDIT_CONTEXT_BUNDLE_SCHEMA": "138c16de093904e9dd666cb1fced07905ca7ba6578350f2061a89bddabaf7dc7",
+    "BSO_EQ_POST_DECISION_AUDIT_VIEW_SCHEMA": "e0677d1ea6cfae806918caa17c9813f276b7dfad0f2010f7bbe3094b7efe0f3e",
+    "BSO_EQ_PRE_SUBMISSION_APPLICABILITY_RECHECK_CONTRACT": "d6c3bd38e91e1ca7ec4178d6260da42fdf177749d4c7b425f1cf8112971efc92",
+    "BSO_EQ_PRE_SUBMISSION_APPLICABILITY_RECHECK_RECORD_SCHEMA": "218d27fe5ce79c20477a3fba5978f29e36e7ef1146d6aac93c3ae032b49caa99",
+    "BSO_EQ_PROGRESS_LEDGER_ENTRY_SCHEMA": "bd39d3ec581c6281292000669a1a635ccae8c7173a1600a20226e29a00bd1a97",
+    "BSO_EQ_PROGRESS_LEDGER_SNAPSHOT_SCHEMA": "0c366e6a8e12f6795146c1e1f333aada87bf36751bb9c3d2f640e3bbbe78858f",
+    "BSO_EQ_RAW_REVIEW_PACKET_SCHEMA": "e0e6184a5f4d7f5ccb6c2e8122785e8e8c2a44284ed9b92ce103d499d703d546",
+    "BSO_EQ_REFERRAL_BASIS_CODE_VOCABULARY": "2d14142824fa52ca14e38981cd941a29b95cbff594ffc8872372093ac7e202af",
+    "BSO_EQ_REFERRAL_CLASS_VOCABULARY": "2514c7898178c3c8d1d76a57b887332523b18bd5b80f550d6b4e8f3fe4c4480f",
+    "BSO_EQ_RELATION_IDENTITY_CONTRACT": "bec4d2fc45e7f594e46977b411422e974ba645593a66dc46c57b224c8f78f4b2",
+    "BSO_EQ_SOURCE_FACT_TYPE_VOCABULARY": "9dc9bdcbc876b138b323c8f01c8e9ddd37d13d852d0347f338037d5ee01ea7f5",
+    "BSO_EQ_SUBMISSION_INTENT_SCHEMA": "0378f40e16b32d41d1d2bd40dcb18aa8116ba457fa72d926a9a8b04f33fa976e",
+    "BSO_EQ_TYPED_IDENTITY_REFERENCE_SCHEMA": "5f960786051a6d9e18fede9b58b6622f9bdd9d225fa63dbcfade79e8d873a58c",
+    "BSO_EQ_WORKFLOW_ARCHITECTURE_ACCEPTANCE_BINDING_SCHEMA": "1fa80f32ad0c33fc6ce650ff89734a9beec65c56cb5df1ca1a9ec5ca8a78e625"
+  },
+  "component_objects": {
+    "BSO_EQ_ARRAY_CANONICALIZATION_REGISTRY": {
+      "rules": [
+        {
+          "array_type": "ASCII_STRING_SET",
+          "duplicates": "PROHIBITED",
+          "sort_key": [
+            "exact_string_unsigned_UTF8_byte_order"
+          ]
+        },
+        {
+          "array_type": "SHA256_HEX_SET",
+          "duplicates": "PROHIBITED",
+          "sort_key": [
+            "lowercase_hex_lexicographic"
+          ]
+        },
+        {
+          "array_type": "RAW_KEY_SET",
+          "duplicates": "PROHIBITED",
+          "sort_key": [
+            "playbook_numeric",
+            "stage_numeric",
+            "action_numeric"
+          ]
+        },
+        {
+          "array_type": "TYPED_IDENTITY_REFERENCE_SET",
+          "duplicates": "PROHIBITED_BY_PAIR",
+          "sort_key": [
+            "identity_type_ASCII",
+            "identity_value_UTF8"
+          ]
+        },
+        {
+          "array_type": "SOURCE_ARTIFACT_MANIFEST_SET",
+          "duplicates": "PROHIBITED_BY_ARTIFACT_IDENTITY; same artifact identity appearing twice is invalid even when other fields differ",
+          "sort_key": [
+            "artifact_identity_UTF8",
+            "pinned_identity_UTF8",
+            "provenance_identity_UTF8"
+          ]
+        },
+        {
+          "array_type": "POSITIVE_BASIS_ITEM_SET",
+          "duplicates": "PROHIBITED_BY_FULL_CANONICAL_ITEM",
+          "sort_key": [
+            "source_side_ordinal_RAW_0_CANDIDATE_1",
+            "source_evidence_item_id_lowercase_hex",
+            "policy_basis_code_ASCII",
+            "exact_field_path_or_claim_id_UTF8",
+            "exact_authenticated_value_or_claim_sha256_lowercase_hex"
+          ]
+        },
+        {
+          "array_type": "RELATION_MEMBERSHIP_SET",
+          "duplicates": "PROHIBITED_BY_RELATION_IDENTITY_AND_BY_RAW_CANDIDATE_PAIR",
+          "sort_key": [
+            "raw_key_tuple",
+            "candidate_scoring_id_lowercase_hex"
+          ]
+        },
+        {
+          "array_type": "CHECK_RESULT_SET",
+          "duplicates": "PROHIBITED_BY_CHECK_NAME",
+          "sort_key": [
+            "check_name_ASCII"
+          ]
+        },
+        {
+          "array_type": "LEDGER_RELATION_STATE_SET",
+          "duplicates": "PROHIBITED_BY_RELATION_IDENTITY",
+          "sort_key": [
+            "relation_identity_lowercase_hex"
+          ]
+        }
+      ],
+      "schema": "BSO_EQ_ARRAY_CANONICALIZATION_REGISTRY_V2",
+      "status": "PROSPECTIVE_NOT_FROZEN"
+    },
+    "BSO_EQ_ATOMIC_SOURCE_FACT_ITEM_SCHEMA": {
+      "constraints": {
+        "authenticated_value_type": [
+          "ARRAY",
+          "BOOLEAN",
+          "INTEGER",
+          "NULL",
+          "OBJECT",
+          "STRING"
+        ],
+        "raw_candidate_identity_contract_hash": "bec4d2fc45e7f594e46977b411422e974ba645593a66dc46c57b224c8f78f4b2",
+        "source_fact_admissibility_status": [
+          "ADMISSIBLE_NORMATIVE_SOURCE_FACT"
+        ],
+        "source_fact_type_vocabulary_hash": "9dc9bdcbc876b138b323c8f01c8e9ddd37d13d852d0347f338037d5ee01ea7f5",
+        "source_side": [
+          "CANDIDATE",
+          "RAW"
+        ]
+      },
+      "id_rule": "source_evidence_item_id = sha256(canonical_json(all fields except source_evidence_item_id))",
+      "profile_binding": "e24746c96c5f741cc35df8d992d93936911dd1de2ce7f1a0f00035cda3b33deb",
+      "required_fields": [
+        "authenticated_value_canonical_json",
+        "authenticated_value_sha256",
+        "authenticated_value_type",
+        "candidate_scoring_id",
+        "exact_field_path_or_claim_id",
+        "raw_key",
+        "schema_version",
+        "source_artifact_identity",
+        "source_artifact_sha256_or_pinned_identity",
+        "source_evidence_item_id",
+        "source_fact_admissibility_status",
+        "source_fact_type",
+        "source_provenance_identity",
+        "source_side"
+      ],
+      "schema": "BSO_EQ_ATOMIC_SOURCE_FACT_ITEM_SCHEMA_V2",
+      "status": "PROSPECTIVE_NOT_FROZEN",
+      "value_rule": "authenticated_value_sha256 = sha256(canonical UTF-8 bytes of authenticated_value_canonical_json); JSON null is used for null values and string \"NULL\" is never a null sentinel"
+    },
+    "BSO_EQ_AUTHORITY_FREEZE_PRECONDITION_VERIFICATION_SCHEMA": {
+      "array_rules": {
+        "precondition_checks": "CHECK_RESULT_SET"
+      },
+      "human_origin_constraints": [
+        "human_origin_contract_hash MUST equal the frozen V4 human-origin provenance contract hash",
+        "if human_origin_provenance_mode = CODEX_NATIVE_SESSION_USER_EVENT_PROVENANCE_V1, human_origin_provenance_evidence_id MUST reference one valid native-session evidence object",
+        "the verifier MUST independently reopen the original native Codex session record and recompute the exact ordered user-event pair and transcript prefix hash",
+        "architecture and policy/schema acceptance bindings MUST reference the same verified provenance mode/evidence ID when one dual-purpose re-attestation event explicitly contains both acceptance statements",
+        "any native-session evidence ambiguity or unavailable original source record blocks freeze"
+      ],
+      "id_rule": "verification_id = sha256(canonical_json(all fields except verification_id))",
+      "pass_rule": "every required check exactly once and result PASS",
+      "required_check_names": [
+        "ACCEPTED_ARCHITECTURE_ARTIFACT_INTEGRITY",
+        "ARCHITECTURE_HUMAN_ACCEPTANCE_PROVENANCE",
+        "CURRENT86_SCOPE_EXACT_SET_EQUALITY",
+        "CURRENT86_SCOPE_INDEPENDENT_RECOMPUTATION",
+        "FROZEN_A_BATCH_UNCHANGED",
+        "HUMAN_ORIGIN_NATIVE_SESSION_EVENT_PAIR_UNIQUENESS",
+        "HUMAN_ORIGIN_NATIVE_SESSION_PREFIX_INDEPENDENT_RECOMPUTATION",
+        "HUMAN_ORIGIN_PROVENANCE_EVIDENCE_INTEGRITY",
+        "NORMATIVE_SOURCE_PROFILE_INTEGRITY",
+        "NO_EQ_DECISIONS_EXIST",
+        "POLICY_SCHEMA_BUNDLE_HUMAN_ACCEPTANCE_PROVENANCE",
+        "STATIC_COMPONENT_HASH_RECOMPUTATION",
+        "STATIC_MANIFEST_HASH_RECOMPUTATION",
+        "UPSTREAM_AUTHORITY_APPLICABILITY"
+      ],
+      "required_fields": [
+        "architecture_acceptance_binding_id",
+        "current86_scope_id",
+        "human_origin_contract_hash",
+        "human_origin_provenance_evidence_id",
+        "human_origin_provenance_mode",
+        "normative_source_evidence_profile_hash",
+        "policy_schema_bundle_acceptance_binding_id",
+        "precondition_checks",
+        "schema_version",
+        "static_authority_manifest_sha256",
+        "verification_id"
+      ],
+      "schema": "BSO_EQ_AUTHORITY_FREEZE_PRECONDITION_VERIFICATION_SCHEMA_V4",
+      "status": "PROSPECTIVE_NOT_FROZEN_V4_INTERFACE_PATCH"
+    },
+    "BSO_EQ_CANONICALIZATION_SPEC": {
+      "failure_rules": [
+        "FAIL_ON_FLOAT",
+        "FAIL_ON_DUPLICATE_OBJECT_KEY",
+        "FAIL_ON_NON_ASCII_AUTHORITY_FIELD_NAME",
+        "FAIL_ON_UNDECLARED_SET_SEMANTIC_ARRAY_CANONICALIZATION",
+        "FAIL_ON_DUPLICATE_SET_MEMBER",
+        "FAIL_ON_STRING_NULL_SENTINEL_WHERE_NULL_IS_REQUIRED"
+      ],
+      "hash_rule": "sha256(exact UTF-8 canonical JSON bytes of object with its derived self-hash field omitted when its schema defines one)",
+      "schema": "FA1B2DE_BSO_EQ_CANONICAL_JSON_V2",
+      "serialization": {
+        "allowed_value_types": [
+          "ARRAY",
+          "BOOLEAN",
+          "INTEGER",
+          "NULL",
+          "OBJECT",
+          "STRING"
+        ],
+        "array_default_semantics": "ORDERED_SEQUENCE_IF_AND_ONLY_IF_SCHEMA_DOES_NOT_DECLARE_SET_SEMANTICS",
+        "bom": false,
+        "boolean_tokens": [
+          "false",
+          "true"
+        ],
+        "duplicate_object_keys": "PROHIBITED",
+        "encoding": "UTF-8",
+        "floating_point_values": "PROHIBITED",
+        "integer_format": "BASE10_NO_LEADING_ZERO_EXCEPT_ZERO",
+        "null_encoding": "JSON_NULL_ONLY",
+        "object_key_order": "ASCENDING_UNSIGNED_ASCII_BYTE_ORDER",
+        "object_key_rule": "ASCII_FIELD_NAMES_ONLY",
+        "set_semantic_array_rule": "MUST_HAVE_EXPLICIT_SORT_KEY_AND_DUPLICATE_RULE_IN_ARRAY_CANONICALIZATION_REGISTRY_OR_OBJECT_SCHEMA",
+        "string_escaping": "JSON escaping required for quotation mark, reverse solidus, and U+0000..U+001F; all other Unicode emitted as UTF-8",
+        "string_token_NULL": "PROHIBITED_AS_NULL_SENTINEL",
+        "string_unicode_normalization": "NONE",
+        "top_level": "JSON_OBJECT",
+        "whitespace_outside_strings": "NONE"
+      },
+      "status": "PROSPECTIVE_NOT_FROZEN"
+    },
+    "BSO_EQ_CODEX_NATIVE_SESSION_USER_EVENT_PROVENANCE_EVIDENCE_SCHEMA": {
+      "field_constraints": {
+        "invocation_event_ordinal": "INTEGER_GT_REATTESTATION_EVENT_ORDINAL",
+        "invocation_exact_match_count_after_reattestation": [
+          1
+        ],
+        "matching_session_file_count": [
+          1
+        ],
+        "native_session_id": "NON_EMPTY_UTF8_STRING_FROM_NATIVE_SESSION_METADATA",
+        "native_source_file_size_bytes_at_capture": "INTEGER_GT_0",
+        "provenance_mode": [
+          "CODEX_NATIVE_SESSION_USER_EVENT_PROVENANCE_V1"
+        ],
+        "provenance_strength": [
+          "OPERATIONAL_USER_CHANNEL_PROVENANCE_NOT_CRYPTOGRAPHIC_NON_REPUDIATION"
+        ],
+        "reattestation_event_ordinal": "INTEGER_GE_0",
+        "reattestation_exact_match_count_in_session": [
+          1
+        ]
+      },
+      "id_rule": "evidence_id = sha256(canonical_json(all fields except evidence_id))",
+      "independent_verification_rules": [
+        "A fresh verifier session MUST independently reopen the original native session record from the recorded native session store and locator.",
+        "The verifier MUST independently locate the same session ID and exact ordered user-event pair.",
+        "The verifier MUST recompute both native event-record hashes, both literal UTF-8 hashes, and transcript_prefix_sha256_through_invocation.",
+        "The verifier MUST prove the source record prefix through invocation is byte-identical to the materializer evidence.",
+        "If the native source record is unavailable, has a changed prefix, or yields zero/multiple matching sessions/events, provenance verification FAILS."
+      ],
+      "native_user_role_assertion_rule": "For each event, the parser MUST record the exact native field path and exact native value whose semantics identify the record as a USER-originated message. The accepted parser MAY recognize native Codex representations such as a role field equal to user or a native user_message event type, but it MUST NOT infer user origin merely from message text.",
+      "prohibitions": [
+        "ARBITRARY_USER_SUPPLIED_TEXT_FILE_AS_USER_CHANNEL_PROOF",
+        "ASSISTANT_OR_MODEL_SUMMARY_AS_USER_CHANNEL_PROOF",
+        "LITERAL_CONTENT_HASH_ALONE",
+        "MANUALLY_INVENTED_SESSION_ID",
+        "MODEL_GENERATED_EVENT_ID",
+        "UNAUTHENTICATED_TRANSCRIPT_COPY",
+        "WRITING_OR_PATCHING_NATIVE_SESSION_STORE_TO_CREATE_EVIDENCE"
+      ],
+      "provenance_mode": "CODEX_NATIVE_SESSION_USER_EVENT_PROVENANCE_V1",
+      "provenance_strength": "OPERATIONAL_USER_CHANNEL_PROVENANCE_NOT_CRYPTOGRAPHIC_NON_REPUDIATION",
+      "purpose": "Operationally prove that exact acceptance/authorization text entered through the native Codex user-message channel in one native local Codex session record.",
+      "required_fields": [
+        "accepted_architecture_artifact_sha256",
+        "accepted_policy_schema_bundle_file_sha256",
+        "accepted_static_authority_manifest_sha256",
+        "evidence_id",
+        "invocation_event_ordinal",
+        "invocation_exact_match_count_after_reattestation",
+        "invocation_literal_utf8",
+        "invocation_literal_utf8_length_bytes",
+        "invocation_literal_utf8_sha256",
+        "invocation_native_record_sha256",
+        "invocation_user_role_assertion_exact_value",
+        "invocation_user_role_assertion_field_path",
+        "matching_session_file_count",
+        "materializer_or_review_contract_sha256",
+        "native_session_candidate_file_count",
+        "native_session_id",
+        "native_session_id_exact_value",
+        "native_session_id_source_field_path",
+        "native_session_record_format",
+        "native_session_record_locator",
+        "native_session_store_root",
+        "native_source_file_sha256_at_capture",
+        "native_source_file_size_bytes_at_capture",
+        "provenance_mode",
+        "provenance_strength",
+        "reattestation_event_ordinal",
+        "reattestation_exact_match_count_in_session",
+        "reattestation_literal_utf8",
+        "reattestation_literal_utf8_length_bytes",
+        "reattestation_literal_utf8_sha256",
+        "reattestation_native_record_sha256",
+        "reattestation_user_role_assertion_exact_value",
+        "reattestation_user_role_assertion_field_path",
+        "schema_version",
+        "transcript_prefix_sha256_through_invocation"
+      ],
+      "schema": "BSO_EQ_CODEX_NATIVE_SESSION_USER_EVENT_PROVENANCE_EVIDENCE_SCHEMA_V1",
+      "session_discovery_algorithm": [
+        "Determine candidate native Codex session-store roots from runtime-native Codex configuration/state (for example an exposed CODEX_HOME and/or the native default session store), without accepting a user-supplied arbitrary directory as the authority substrate.",
+        "Enumerate native session/rollout records read-only and record native_session_candidate_file_count.",
+        "Parse records without modifying them and require a native session identifier sourced from metadata in the same record.",
+        "Find exact UTF-8 user-message content equal to the supplied re-attestation literal and exact UTF-8 user-message content equal to the supplied invocation literal.",
+        "Require the re-attestation event to be user-originated according to an explicit native role/type assertion and require exact literal hash equality.",
+        "Require the invocation event to be user-originated according to an explicit native role/type assertion, exact literal hash equality, and a strictly greater event ordinal in the same native session.",
+        "Require matching_session_file_count = 1.",
+        "Require exactly one re-attestation match in that session and exactly one qualifying invocation match after it.",
+        "Compute transcript_prefix_sha256_through_invocation over the exact native session-record bytes from the file start through and including the complete native record that contains the invocation event, including its terminating record delimiter when the native format uses one.",
+        "Record the whole native source-file SHA256 and byte size at capture for audit; independent verification relies on the immutable prefix hash through invocation so later append-only assistant/tool records do not invalidate the provenance.",
+        "Fail closed if parsing, user-role attribution, event ordering, uniqueness, or prefix byte boundaries are ambiguous."
+      ],
+      "status": "PROSPECTIVE_NOT_FROZEN",
+      "trust_scope": [
+        "The native Codex session/rollout store is treated as the operational authority for message-channel role attribution.",
+        "The materializer and verifier are contractually prohibited from creating, editing, rewriting, truncating, or replacing the source native session/rollout record.",
+        "This mode distinguishes native user-channel input from model-originated output for project governance; it does not assert legal identity or cryptographic signer non-repudiation."
+      ]
+    },
+    "BSO_EQ_CURRENT86_FINAL_CONSERVATION_CONTRACT": {
+      "constants": {
+        "human_review_required_relations": 4161,
+        "preexisting_authenticated_hard_negatives": 58,
+        "raw_count": 86,
+        "total_structurally_eligible_candidate_relations": 4219
+      },
+      "partition_rule": "58 hard negatives are outside the 4161 human outcome partition; no fourth hidden class",
+      "required_equalities": [
+        "4161 = POSITIVE + NOT_QUALIFIED + REVALIDATION_REQUIRED_AT_FINAL_COMPLETION",
+        "4219 = 58 + 4161",
+        "PENDING = 0 AT_FINAL_HUMAN_EQ_REVIEW_COMPLETION"
+      ],
+      "schema": "BSO_EQ_CURRENT86_FINAL_CONSERVATION_CONTRACT_V2",
+      "status": "PROSPECTIVE_NOT_FROZEN"
+    },
+    "BSO_EQ_CURRENT86_SCOPE_CONTRACT": {
+      "population_constants": {
+        "human_review_required_relations": 4161,
+        "preexisting_authenticated_hard_negatives": 58,
+        "raw_count": 86,
+        "structurally_eligible_candidate_relations": 4219
+      },
+      "relation_identity_contract_hash": "bec4d2fc45e7f594e46977b411422e974ba645593a66dc46c57b224c8f78f4b2",
+      "schema": "BSO_EQ_CURRENT86_SCOPE_CONTRACT_V2",
+      "scope_mutation": "PROHIBITED",
+      "status": "PROSPECTIVE_NOT_FROZEN",
+      "upstream_pins": {
+        "bso_r_handoff_sha256": "eb947f385acdf8275e44cacc20d31c95080c3b1e7f7840f9fa3996a56cc64ec6",
+        "c2r1_handoff_sha256": "29fa43904d40cb8e02466d2a7eb5437b21fb28065700386f464c54a8c3a74ea7",
+        "historical_bso_a_batch_scope_hash": "6be1fa70e771a66d8f0e6a70214a041428dbbd34c2a6b11fe91c29ac6ebe2225",
+        "project_binding_authority_baseline": "d309c01d6178a75cac88b6236d36179563a88239",
+        "project_scoring_authority": "18fd70d4a57f07a3e06242d9f0e077a4e6838120",
+        "semantic_owner_resume_cohort_hash": "9ac5b3ef81120be38c6b983809718fe270ee6c7140b4ad98fb0fbcc887b5cee8"
+      }
+    },
+    "BSO_EQ_CURRENT86_SCOPE_RUNTIME_SCHEMA": {
+      "array_rules": {
+        "human_review_required_relation_ids": "SHA256_HEX_SET",
+        "playbook_ids": "ASCII_STRING_SET",
+        "preexisting_hard_negative_relation_ids": "SHA256_HEX_SET",
+        "raw_keys": "RAW_KEY_SET",
+        "relation_membership": "RELATION_MEMBERSHIP_SET"
+      },
+      "cross_constraints": [
+        "len(raw_keys) = 86",
+        "len(relation_membership) = 4219",
+        "len(preexisting_hard_negative_relation_ids) = 58",
+        "len(human_review_required_relation_ids) = 4161",
+        "relation_membership relation_identity values are unique",
+        "every relation_identity recomputes from raw_key and candidate_scoring_id",
+        "preexisting_hard_negative_relation_ids exactly equal membership disposition PREEXISTING_AUTHENTICATED_HARD_NEGATIVE",
+        "human_review_required_relation_ids exactly equal membership disposition HUMAN_EQ_REVIEW_REQUIRED",
+        "58-set and 4161-set are disjoint and their union is all 4219 relation identities",
+        "raw_keys exactly equal unique raw_key values in relation_membership",
+        "all upstream pins exactly equal scope contract upstream pins"
+      ],
+      "id_rule": "scope_id = sha256(canonical_json(all fields except scope_id))",
+      "relation_membership_item_schema": {
+        "disposition_values": [
+          "HUMAN_EQ_REVIEW_REQUIRED",
+          "PREEXISTING_AUTHENTICATED_HARD_NEGATIVE"
+        ],
+        "required_fields": [
+          "candidate_scoring_id",
+          "disposition",
+          "raw_key",
+          "relation_identity"
+        ]
+      },
+      "required_fields": [
+        "binding_authority_baseline",
+        "bso_r_handoff_sha256",
+        "c2r1_handoff_sha256",
+        "historical_bso_a_batch_scope_hash",
+        "human_review_required_relation_ids",
+        "playbook_ids",
+        "preexisting_hard_negative_relation_ids",
+        "project_scoring_authority",
+        "raw_keys",
+        "relation_membership",
+        "schema_version",
+        "scope_contract_hash",
+        "scope_id",
+        "semantic_owner_resume_cohort_hash"
+      ],
+      "schema": "BSO_EQ_CURRENT86_SCOPE_RUNTIME_SCHEMA_V2",
+      "status": "PROSPECTIVE_NOT_FROZEN"
+    },
+    "BSO_EQ_HISTORICAL_RELATION_OUTPUT_DENYLIST": {
+      "denied_comparative_classes": [
+        "CANDIDATE_RANK",
+        "NEAREST_NEIGHBOUR",
+        "OCCUPANCY",
+        "POSITIVE_LIKELIHOOD",
+        "RECOMMENDED_CANDIDATE",
+        "RELATIVE_CANDIDATE_COMPARISON",
+        "SIMILARITY_SCORE"
+      ],
+      "denied_field_classes": [
+        "DERIVED_RAW_CANDIDATE_RELATION_JUDGEMENT",
+        "HISTORICAL_RELATION_OUTPUT",
+        "HISTORICAL_SEMANTIC_MATCH_CONCLUSION",
+        "SUMMARY_CLASSIFICATION"
+      ],
+      "exact_field_names": [
+        "INSUFFICIENT_EVIDENCE",
+        "PLAUSIBLE_BUT_DOMINATED",
+        "SUPPORTED_COMPETITOR",
+        "candidate_state",
+        "core_action_relation",
+        "cve_relation",
+        "effect_relation",
+        "mechanism_relation",
+        "modifier_relation",
+        "object_relation",
+        "protocol_relation",
+        "stage_locality",
+        "strong_anchor",
+        "supported_semantics",
+        "tool_relation"
+      ],
+      "positive_support_basis_eligibility": "PROHIBITED",
+      "pre_decision_visibility": "PROHIBITED",
+      "schema": "BSO_EQ_HISTORICAL_RELATION_OUTPUT_DENYLIST_V2",
+      "status": "PROSPECTIVE_NOT_FROZEN"
+    },
+    "BSO_EQ_HUMAN_CANDIDATE_QUALIFICATION_POLICY": {
+      "bound_authority_hashes": {
+        "normative_source_evidence_profile_hash": "e24746c96c5f741cc35df8d992d93936911dd1de2ce7f1a0f00035cda3b33deb",
+        "policy_basis_code_vocabulary_hash": "2927fb65ea7a63f7a455869a293b54c877c15f28be25c1bfbfc6cc5c6bb893b2",
+        "referral_basis_code_vocabulary_hash": "2d14142824fa52ca14e38981cd941a29b95cbff594ffc8872372093ac7e202af",
+        "referral_class_vocabulary_hash": "2514c7898178c3c8d1d76a57b887332523b18bd5b80f550d6b4e8f3fe4c4480f"
+      },
+      "candidate_local_semantics": {
+        "affirmative_relation": "CURRENT_RAW <-> CURRENT_CANDIDATE",
+        "relative_candidate_comparison_as_positive_basis": "PROHIBITED",
+        "single_positive_support_is_owner_adjudication": false
+      },
+      "historical_relation_output_policy": {
+        "eligible_as_positive_support_basis": false,
+        "post_decision_audit_only": true,
+        "visible_during_normative_eq_decision": false
+      },
+      "machine_role": {
+        "may_choose_positive_basis_items": false,
+        "may_execute_referral_decision": false,
+        "may_infer_unreviewed_outcomes": false,
+        "may_originate_human_outcome": false,
+        "may_validate_human_selection": true
+      },
+      "not_qualified_outcome_constraints": {
+        "positive_basis_items": [],
+        "referral_class": null,
+        "requires_explicit_human_selection": true
+      },
+      "positive_outcome_constraints": {
+        "minimum_candidate_side_positive_basis_items": 1,
+        "minimum_raw_side_positive_basis_items": 1,
+        "referral_class": null,
+        "requires_atomic_bilateral_basis": true,
+        "requires_explicit_human_selection": true
+      },
+      "revalidation_outcome_constraints": {
+        "minimum_referral_basis_codes": 1,
+        "positive_basis_items": [],
+        "referral_class": "NON_NULL_LEGAL_CLASS",
+        "referral_only": true,
+        "requires_explicit_human_selection": true
+      },
+      "schema": "BSO_EQ_HUMAN_CANDIDATE_QUALIFICATION_POLICY_V2",
+      "scope": {
+        "human_eq_normative_units": 4161,
+        "normative_unit": [
+          "raw_key",
+          "candidate_scoring_id"
+        ],
+        "population": "EXACT_CURRENT_FROZEN_86_RAW_CLOSURE_POPULATION",
+        "preexisting_authenticated_hard_negatives": 58,
+        "raw_count": 86,
+        "structurally_eligible_candidate_relations": 4219
+      },
+      "status": "PROSPECTIVE_NOT_FROZEN",
+      "top_level_outcomes": [
+        "DO_NOT_QUALIFY_POSITIVE_SUPPORT",
+        "QUALIFY_POSITIVE_SUPPORT",
+        "REVALIDATION_REQUIRED"
+      ]
+    },
+    "BSO_EQ_HUMAN_CANDIDATE_QUALIFICATION_RECORD_SCHEMA": {
+      "array_rules": {
+        "positive_basis_items": "POSITIVE_BASIS_ITEM_SET",
+        "referral_affected_identity_or_evidence_ids": "TYPED_IDENTITY_REFERENCE_SET",
+        "referral_basis_codes": "ASCII_STRING_SET"
+      },
+      "cross_constraints": [
+        "relation_identity MUST recompute from raw_key and candidate_scoring_id",
+        "normative source bundle MUST bind same global scope, raw, candidate, and relation",
+        "human_outcome QUALIFY_POSITIVE_SUPPORT requires >=1 RAW-side and >=1 CANDIDATE-side positive basis item",
+        "human_outcome QUALIFY_POSITIVE_SUPPORT requires referral_class = null and empty referral arrays",
+        "human_outcome DO_NOT_QUALIFY_POSITIVE_SUPPORT requires positive_basis_items = [] and referral_class = null and empty referral arrays",
+        "human_outcome REVALIDATION_REQUIRED requires positive_basis_items = [] and non-null legal referral_class and >=1 referral_basis_code",
+        "for REVALIDATION_REQUIRED every referral_basis_code MUST map to exactly record.referral_class",
+        "for non-REVALIDATION outcomes referral_affected_identity_or_evidence_ids MUST be []",
+        "positive basis items MUST belong to current normative source bundle and current relation only"
+      ],
+      "field_constraints": {
+        "human_outcome": [
+          "DO_NOT_QUALIFY_POSITIVE_SUPPORT",
+          "QUALIFY_POSITIVE_SUPPORT",
+          "REVALIDATION_REQUIRED"
+        ],
+        "record_created_from_literal_human_submission": true,
+        "referral_class": "JSON null or one exact referral class code; string \"NULL\" prohibited"
+      },
+      "id_rule": "record_id = sha256(canonical_json(all fields except record_id))",
+      "required_fields": [
+        "binding_authority_identity",
+        "bso_r_handoff_sha256",
+        "c2r1_handoff_sha256",
+        "candidate_scoring_id",
+        "eq_human_qualification_policy_hash",
+        "global_eq_scope_id",
+        "human_eq_qualification_event_id",
+        "human_outcome",
+        "normative_candidate_source_evidence_bundle_id",
+        "positive_basis_items",
+        "raw_key",
+        "raw_review_packet_id",
+        "record_created_from_literal_human_submission",
+        "record_id",
+        "referral_affected_identity_or_evidence_ids",
+        "referral_basis_codes",
+        "referral_class",
+        "relation_identity",
+        "schema_version",
+        "semantic_owner_resume_cohort_hash"
+      ],
+      "schema": "BSO_EQ_HUMAN_CANDIDATE_QUALIFICATION_RECORD_SCHEMA_V2",
+      "status": "PROSPECTIVE_NOT_FROZEN"
+    },
+    "BSO_EQ_HUMAN_ORIGIN_PROVENANCE_CONTRACT": {
+      "accepted_sources": [
+        "CODEX_NATIVE_SESSION_USER_EVENT_PROVENANCE_V1",
+        "DETERMINISTIC_ID_OVER_AUTHENTICATED_HUMAN_SUBMISSION_ENVELOPE_PLUS_LITERAL_SUBMISSION_HASH",
+        "NATIVE_IMMUTABLE_HUMAN_OR_USER_EVENT_ID"
+      ],
+      "codex_native_session_mode": {
+        "evidence_schema_hash": "0201dc07ace5189b7ae9094910b0fff0fc173e2be374ec75e0b0a658dce42f64",
+        "mode": "CODEX_NATIVE_SESSION_USER_EVENT_PROVENANCE_V1",
+        "provenance_id_rule": "human_acceptance_provenance_id = verified native-session evidence_id",
+        "required_strength_label": "OPERATIONAL_USER_CHANNEL_PROVENANCE_NOT_CRYPTOGRAPHIC_NON_REPUDIATION",
+        "sufficiency_statement": "Sufficient only for this project's operational separation of explicit human/user-channel decisions from model-originated decisions when all evidence-schema and independent-verification gates pass."
+      },
+      "failure_result": "BLOCKED_HUMAN_ORIGIN_NOT_VERIFIABLE",
+      "failure_results": [
+        "BLOCKED_HUMAN_ORIGIN_NOT_VERIFIABLE",
+        "BLOCKED_NATIVE_SESSION_PREFIX_MISMATCH",
+        "BLOCKED_NATIVE_SESSION_RECORD_UNAVAILABLE",
+        "BLOCKED_NATIVE_SESSION_USER_EVENT_NOT_UNIQUE",
+        "BLOCKED_NATIVE_SESSION_USER_ROLE_NOT_PROVABLE"
+      ],
+      "prohibited_sources": [
+        "LITERAL_CONTENT_HASH_ALONE",
+        "MODEL_GENERATED_EVENT_ID",
+        "NATIVE_SESSION_ID_WITHOUT_EXACT_USER_EVENT_PAIR",
+        "NATIVE_SESSION_TEXT_MATCH_WITHOUT_NATIVE_USER_ROLE_ASSERTION",
+        "SELF_GENERATED_FAKE_CODEX_SESSION_LOG",
+        "UNAUTHENTICATED_TRANSCRIPT_COPY"
+      ],
+      "schema": "BSO_EQ_HUMAN_ORIGIN_PROVENANCE_CONTRACT_V4",
+      "status": "PROSPECTIVE_NOT_FROZEN_V4_INTERFACE_PATCH"
+    },
+    "BSO_EQ_HUMAN_SUBMISSION_BATCH_SCHEMA": {
+      "array_rules": {
+        "candidate_qualification_record_ids": "SHA256_HEX_SET",
+        "complete_raw_packet_ids": "SHA256_HEX_SET"
+      },
+      "atomicity": "ALL_OR_NOTHING",
+      "cross_constraints": [
+        "final batch fields excluding recheck/batch IDs and pre_batch_progress_ledger_snapshot_id exactly match referenced submission intent",
+        "referenced applicability recheck MUST bind same submission_intent_id and overall_result PASS",
+        "pre_batch_progress_ledger_snapshot_id exactly equals referenced applicability recheck observed_pre_batch_progress_ledger_snapshot_id",
+        "referenced applicability recheck PRE_BATCH_PROGRESS_LEDGER_SNAPSHOT_CONFLICT result MUST be PASS",
+        "all candidate records have event ID equal to batch event ID",
+        "all candidate records have scope ID equal to batch scope ID",
+        "all candidate records have policy hash equal to batch policy hash",
+        "unique relation_identity across candidate records",
+        "complete_raw_packet_ids exactly equal unique raw_review_packet_id values referenced by candidate records",
+        "for each complete raw packet there is exactly one candidate record for every human_review_required relation and no additional relation",
+        "no included relation is frozen in the exact pre_batch_progress_ledger_snapshot_id bound through the passing applicability recheck"
+      ],
+      "field_constraints": {
+        "pre_batch_progress_ledger_snapshot_id": {
+          "identity_namespace": "BSO_EQ_PROGRESS_LEDGER_SNAPSHOT_ID",
+          "type": "SHA256_HEX_LOWERCASE"
+        }
+      },
+      "id_rule": "submission_batch_id = sha256(canonical_json(all fields except submission_batch_id))",
+      "required_fields": [
+        "candidate_qualification_record_ids",
+        "complete_raw_packet_ids",
+        "eq_human_qualification_policy_hash",
+        "global_eq_scope_id",
+        "human_eq_qualification_event_id",
+        "human_submission_envelope_identity",
+        "literal_submission_sha256",
+        "pre_batch_progress_ledger_snapshot_id",
+        "pre_submission_applicability_recheck_id",
+        "schema_version",
+        "submission_batch_id",
+        "submission_intent_id"
+      ],
+      "schema": "BSO_EQ_HUMAN_SUBMISSION_BATCH_SCHEMA_V3",
+      "status": "PROSPECTIVE_NOT_FROZEN"
+    },
+    "BSO_EQ_NORMATIVE_CANDIDATE_SOURCE_EVIDENCE_BUNDLE_SCHEMA": {
+      "array_rules": {
+        "candidate_side_atomic_source_fact_item_ids": "SHA256_HEX_SET",
+        "raw_side_atomic_source_fact_item_ids": "SHA256_HEX_SET",
+        "source_artifact_manifest": "SOURCE_ARTIFACT_MANIFEST_SET"
+      },
+      "cross_constraints": [
+        "relation_identity MUST recompute from raw_key and candidate_scoring_id",
+        "every RAW-side item belongs to current raw",
+        "every CANDIDATE-side item belongs to current candidate",
+        "no source item matches historical-output denylist",
+        "normative_source_evidence_profile_hash MUST equal frozen profile hash"
+      ],
+      "id_rule": "bundle_id = sha256(canonical_json(all fields except bundle_id))",
+      "required_fields": [
+        "binding_authority_baseline",
+        "bso_r_handoff_sha256",
+        "bundle_id",
+        "c2r1_handoff_sha256",
+        "candidate_scoring_id",
+        "candidate_side_atomic_source_fact_item_ids",
+        "global_eq_scope_id",
+        "historical_relation_output_denylist_hash",
+        "normative_source_evidence_profile_hash",
+        "normative_view_field_allowlist_hash",
+        "project_scoring_authority",
+        "raw_key",
+        "raw_side_atomic_source_fact_item_ids",
+        "relation_identity",
+        "schema_version",
+        "semantic_owner_resume_cohort_hash",
+        "source_artifact_manifest"
+      ],
+      "schema": "BSO_EQ_NORMATIVE_CANDIDATE_SOURCE_EVIDENCE_BUNDLE_SCHEMA_V2",
+      "status": "PROSPECTIVE_NOT_FROZEN"
+    },
+    "BSO_EQ_NORMATIVE_EQ_REVIEW_VIEW_SCHEMA": {
+      "access_control_rule": "post-decision audit context remains inaccessible until FROZEN_HUMAN_EQ_RECORD exists for exact relation_identity",
+      "historical_relation_output_denylist_hash": "f2f48a3142bf192c08cfa2bffbb722e0131bfd4a1ba55623caf5af72748b94c7",
+      "historical_relation_output_visible_during_normative_eq_decision": false,
+      "normative_source_evidence_profile_hash": "e24746c96c5f741cc35df8d992d93936911dd1de2ce7f1a0f00035cda3b33deb",
+      "normative_view_field_allowlist_hash": "92b9ce407921d443fbde7a6b79f16bc776f9fe1fad7e604353840884a64d3241",
+      "schema": "BSO_EQ_NORMATIVE_EQ_REVIEW_VIEW_SCHEMA_V2",
+      "status": "PROSPECTIVE_NOT_FROZEN"
+    },
+    "BSO_EQ_NORMATIVE_SOURCE_EVIDENCE_PROFILE": {
+      "admissibility_rules": [
+        "ATOMIC_FACT_MUST_MATCH_ALLOWED_SOURCE_FACT_TYPE",
+        "CANDIDATE_SIDE_FACT_MUST_BELONG_TO_CURRENT_CANDIDATE",
+        "HISTORICAL_RELATION_OUTPUT_NOT_ADMISSIBLE",
+        "RAW_SIDE_FACT_MUST_BELONG_TO_CURRENT_RAW",
+        "RELATIVE_CANDIDATE_COMPARISON_NOT_ADMISSIBLE"
+      ],
+      "allowed_source_fact_type_vocabulary_hash": "9dc9bdcbc876b138b323c8f01c8e9ddd37d13d852d0347f338037d5ee01ea7f5",
+      "atomic_fact_extraction_rules": [
+        "EXTRACT_ONLY_FROM_AUTHENTICATED_PINNED_SOURCE_ARTIFACT",
+        "BIND_EXACT_FIELD_PATH_OR_EXPLICIT_CLAIM_ID",
+        "BIND_EXACT_AUTHENTICATED_VALUE_OR_CLAIM",
+        "ASSIGN_EXACT_SOURCE_SIDE_RAW_OR_CANDIDATE",
+        "REJECT_ANY_DENYLIST_MATCH_OR_HISTORICAL_RELATION_OUTPUT_CLASS",
+        "REJECT_DERIVED_RELATIVE_CANDIDATE_COMPARISON",
+        "GENERATE_DETERMINISTIC_ATOMIC_SOURCE_EVIDENCE_ITEM_ID"
+      ],
+      "historical_relation_output_denylist_hash": "f2f48a3142bf192c08cfa2bffbb722e0131bfd4a1ba55623caf5af72748b94c7",
+      "normative_view_field_allowlist_hash": "92b9ce407921d443fbde7a6b79f16bc776f9fe1fad7e604353840884a64d3241",
+      "profile_id": "337746c9a4bf4900b6f1781c2bee2967d7bf6dd99ac4ebe179a1f4ecbbb75f7f",
+      "provenance_requirements": [
+        "EXACT_PINNED_ARTIFACT_HASH_OR_AUTHORITY_IDENTITY",
+        "EXACT_SOURCE_ARTIFACT_IDENTITY",
+        "EXACT_SOURCE_PROVENANCE_IDENTITY"
+      ],
+      "schema_version": "BSO_EQ_NORMATIVE_SOURCE_EVIDENCE_PROFILE_V2",
+      "scope_population": "EXACT_CURRENT_FROZEN_86_RAW_CLOSURE_POPULATION",
+      "source_artifact_classes": [
+        "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+        "AUTHENTICATED_PINNED_PROJECT_TAXONOMY_SOURCE",
+        "AUTHENTICATED_RAW_SOURCE_RECORD",
+        "AUTHENTICATED_SCORING_ROW_SOURCE"
+      ]
+    },
+    "BSO_EQ_NORMATIVE_SOURCE_EVIDENCE_PROFILE_SCHEMA": {
+      "array_rules": {
+        "admissibility_rules": "ASCII_STRING_SET",
+        "atomic_fact_extraction_rules": "ORDERED_SEQUENCE",
+        "provenance_requirements": "ASCII_STRING_SET",
+        "source_artifact_classes": "ASCII_STRING_SET"
+      },
+      "id_rule": "profile_id = sha256(canonical_json(all fields except profile_id))",
+      "required_fields": [
+        "schema_version",
+        "scope_population",
+        "allowed_source_fact_type_vocabulary_hash",
+        "normative_view_field_allowlist_hash",
+        "historical_relation_output_denylist_hash",
+        "source_artifact_classes",
+        "atomic_fact_extraction_rules",
+        "provenance_requirements",
+        "admissibility_rules",
+        "profile_id"
+      ],
+      "schema": "BSO_EQ_NORMATIVE_SOURCE_EVIDENCE_PROFILE_SCHEMA_V2",
+      "status": "PROSPECTIVE_NOT_FROZEN"
+    },
+    "BSO_EQ_NORMATIVE_VIEW_FIELD_ALLOWLIST": {
+      "allowed_content_classes": [
+        "ADMISSIBLE_CANDIDATE_SIDE_ATOMIC_SOURCE_FACT",
+        "ADMISSIBLE_RAW_SIDE_ATOMIC_SOURCE_FACT",
+        "CURRENT_CANDIDATE_IDENTITY",
+        "CURRENT_RAW_IDENTITY_AND_AUTHENTICATED_CONTEXT",
+        "CURRENT_WORKFLOW_STATE",
+        "PINNED_SOURCE_PROVENANCE",
+        "POLICY_BASIS_VOCABULARY"
+      ],
+      "rule": "content not matching an allowed class is absent from NORMATIVE_EQ_REVIEW_VIEW",
+      "schema": "BSO_EQ_NORMATIVE_VIEW_FIELD_ALLOWLIST_V2",
+      "status": "PROSPECTIVE_NOT_FROZEN"
+    },
+    "BSO_EQ_POLICY_BASIS_CODE_VOCABULARY": {
+      "codes": [
+        {
+          "allowed_source_sides": [
+            "CANDIDATE",
+            "RAW"
+          ],
+          "code": "ACTION_OR_OPERATION_SEMANTICS"
+        },
+        {
+          "allowed_source_sides": [
+            "CANDIDATE",
+            "RAW"
+          ],
+          "code": "EFFECT_OR_OUTCOME_SEMANTICS"
+        },
+        {
+          "allowed_source_sides": [
+            "CANDIDATE",
+            "RAW"
+          ],
+          "code": "MECHANISM_SEMANTICS"
+        },
+        {
+          "allowed_source_sides": [
+            "CANDIDATE",
+            "RAW"
+          ],
+          "code": "OBJECT_OR_RESOURCE_SEMANTICS"
+        },
+        {
+          "allowed_source_sides": [
+            "CANDIDATE",
+            "RAW"
+          ],
+          "code": "PROTOCOL_OR_SERVICE_SEMANTICS"
+        },
+        {
+          "allowed_source_sides": [
+            "CANDIDATE",
+            "RAW"
+          ],
+          "code": "PURPOSE_OR_INTENT_SEMANTICS"
+        },
+        {
+          "allowed_source_sides": [
+            "CANDIDATE",
+            "RAW"
+          ],
+          "code": "STAGE_OR_PHASE_CONTEXT"
+        },
+        {
+          "allowed_source_sides": [
+            "CANDIDATE",
+            "RAW"
+          ],
+          "code": "TARGET_OR_ASSET_SEMANTICS"
+        },
+        {
+          "allowed_source_sides": [
+            "CANDIDATE",
+            "RAW"
+          ],
+          "code": "TOOL_OR_SOFTWARE_IDENTITY"
+        },
+        {
+          "allowed_source_sides": [
+            "CANDIDATE",
+            "RAW"
+          ],
+          "code": "VICTIM_CONTROL_POINT_SEMANTICS"
+        },
+        {
+          "allowed_source_sides": [
+            "CANDIDATE",
+            "RAW"
+          ],
+          "code": "VULNERABILITY_OR_CVE_IDENTITY"
+        }
+      ],
+      "invariants": [
+        "NO_OPEN_ENDED_OTHER_CODE",
+        "POLICY_BASIS_CODE != RELATIVE_CANDIDATE_COMPARISON",
+        "POLICY_BASIS_CODE != SOURCE_EVIDENCE"
+      ],
+      "schema": "BSO_EQ_POLICY_BASIS_CODE_VOCABULARY_V2",
+      "status": "PROSPECTIVE_NOT_FROZEN"
+    },
+    "BSO_EQ_POLICY_SCHEMA_BUNDLE_ACCEPTANCE_BINDING_SCHEMA": {
+      "human_acceptance_decision_token": "ACCEPTED",
+      "human_origin_contract_hash": "c1d92c96cc02495d4e4ddcc7686d0e489803a275e68bd009f2f8afab4f6a79dd",
+      "id_rule": "acceptance_binding_id = sha256(canonical_json(all fields except acceptance_binding_id))",
+      "note": "this is separate from prior workflow architecture acceptance",
+      "provenance_constraints": [
+        "human_acceptance_provenance_mode MUST be one exact accepted source mode from the human-origin contract",
+        "for CODEX_NATIVE_SESSION_USER_EVENT_PROVENANCE_V1, human_acceptance_provenance_evidence_id MUST reference a valid evidence object under the frozen native-session evidence schema",
+        "for CODEX_NATIVE_SESSION_USER_EVENT_PROVENANCE_V1, human_acceptance_provenance_id MUST equal human_acceptance_provenance_evidence_id",
+        "the literal user re-attestation event used as evidence MUST explicitly accept the exact prospective bundle and static manifest recorded in this binding"
+      ],
+      "required_fields": [
+        "acceptance_binding_id",
+        "accepted_bundle_file_sha256",
+        "accepted_static_authority_manifest_sha256",
+        "human_acceptance_decision_token",
+        "human_acceptance_provenance_evidence_id",
+        "human_acceptance_provenance_id",
+        "human_acceptance_provenance_mode",
+        "schema_version"
+      ],
+      "schema": "BSO_EQ_POLICY_SCHEMA_BUNDLE_ACCEPTANCE_BINDING_SCHEMA_V4",
+      "status": "PROSPECTIVE_NOT_FROZEN_V4_INTERFACE_PATCH"
+    },
+    "BSO_EQ_POSITIVE_BASIS_ITEM_SCHEMA": {
+      "canonical_array_type": "POSITIVE_BASIS_ITEM_SET",
+      "constraints": {
+        "atomic_source_fact_schema_hash": "091d344a42ed42e8c4892e8932e8d360ad4d7da9d4788f8afab604e330e515ee",
+        "policy_basis_vocabulary_hash": "2927fb65ea7a63f7a455869a293b54c877c15f28be25c1bfbfc6cc5c6bb893b2",
+        "source_side": [
+          "CANDIDATE",
+          "RAW"
+        ]
+      },
+      "required_fields": [
+        "exact_authenticated_value_or_claim_sha256",
+        "exact_field_path_or_claim_id",
+        "policy_basis_code",
+        "source_artifact_identity",
+        "source_evidence_item_id",
+        "source_provenance_identity",
+        "source_side"
+      ],
+      "schema": "BSO_EQ_POSITIVE_BASIS_ITEM_SCHEMA_V2",
+      "status": "PROSPECTIVE_NOT_FROZEN",
+      "validation_rule": "exactly reference an atomic source fact in the current relation's normative source-evidence bundle; machine validates but never chooses"
+    },
+    "BSO_EQ_POSITIVE_SUPPORT_OVERLAY_SCHEMA": {
+      "array_rules": {
+        "positive_record_ids": "SHA256_HEX_SET"
+      },
+      "cross_constraints": [
+        "no semantic computation",
+        "no owner selection",
+        "every positive record retains atomic bilateral basis through record identity"
+      ],
+      "id_rule": "overlay_id = sha256(canonical_json(all fields except overlay_id))",
+      "projection_rule": "include exactly and only frozen records whose literal human_outcome == QUALIFY_POSITIVE_SUPPORT",
+      "required_fields": [
+        "global_eq_scope_id",
+        "human_qualification_set_hash",
+        "overlay_id",
+        "positive_record_ids",
+        "projection_rule",
+        "schema_version"
+      ],
+      "schema": "BSO_EQ_POSITIVE_SUPPORT_OVERLAY_SCHEMA_V2",
+      "status": "PROSPECTIVE_NOT_FROZEN"
+    },
+    "BSO_EQ_POST_DECISION_AUDIT_CONTEXT_BUNDLE_SCHEMA": {
+      "array_rules": {
+        "historical_artifact_manifest": "SOURCE_ARTIFACT_MANIFEST_SET",
+        "historical_relation_output_items": "TYPED_IDENTITY_REFERENCE_SET"
+      },
+      "id_rule": "bundle_id = sha256(canonical_json(all fields except bundle_id))",
+      "invariants": [
+        "NOT_ELIGIBLE_AS_POSITIVE_SUPPORT_BASIS",
+        "POST_DECISION_AUDIT_ONLY",
+        "VISIBLE_ONLY_AFTER_EXACT_CANDIDATE_FROZEN_HUMAN_EQ_RECORD_EXISTS"
+      ],
+      "required_fields": [
+        "bundle_id",
+        "candidate_scoring_id",
+        "historical_artifact_manifest",
+        "historical_relation_output_items",
+        "raw_key",
+        "relation_identity",
+        "schema_version"
+      ],
+      "schema": "BSO_EQ_POST_DECISION_AUDIT_CONTEXT_BUNDLE_SCHEMA_V2",
+      "status": "PROSPECTIVE_NOT_FROZEN"
+    },
+    "BSO_EQ_POST_DECISION_AUDIT_VIEW_SCHEMA": {
+      "audit_context_bundle_schema_hash": "138c16de093904e9dd666cb1fced07905ca7ba6578350f2061a89bddabaf7dc7",
+      "mutation_rule": "PROHIBITED_FROM_AMENDING_FROZEN_HUMAN_EQ_RECORD",
+      "required_labels": [
+        "HISTORICAL_RELATION_OUTPUT",
+        "NON_SOURCE_FOR_EQ_POSITIVE_SUPPORT",
+        "POST_DECISION_AUDIT_ONLY"
+      ],
+      "schema": "BSO_EQ_POST_DECISION_AUDIT_VIEW_SCHEMA_V2",
+      "status": "PROSPECTIVE_NOT_FROZEN",
+      "unlock_precondition": "FROZEN_HUMAN_EQ_RECORD_EXISTS_FOR_EXACT_RELATION_IDENTITY"
+    },
+    "BSO_EQ_PRE_SUBMISSION_APPLICABILITY_RECHECK_CONTRACT": {
+      "binding_drift_rule": "PASS only with PASS_EXACT_BASELINE or PASS_COMPATIBLE_WITH_MECHANICAL_PROOF",
+      "candidate_set_identity_rule": "candidate_set_identity = sha256(canonical_json({\"schema\":\"BSO_EQ_SUBMISSION_CANDIDATE_SET_IDENTITY_V1\",\"relation_ids\":<sorted unique relation_identity values from submission intent candidate records>}))",
+      "check_results": [
+        "BLOCKED",
+        "PASS",
+        "REVALIDATION_REQUIRED"
+      ],
+      "namespace_invariant": "applicability_recheck_result.REVALIDATION_REQUIRED is a machine workflow gate result and MUST NOT create or imply human_outcome.REVALIDATION_REQUIRED",
+      "observation_binding_requirement": "every required check name MUST have an explicit record-level observed_* field binding declared by the recheck record schema; check_results evidence_identity MUST be typed",
+      "overall_result_rule": "BLOCKED if any check BLOCKED; else REVALIDATION_REQUIRED if any check REVALIDATION_REQUIRED; else PASS",
+      "pre_batch_progress_rule": "PRE_BATCH_PROGRESS_LEDGER_SNAPSHOT_CONFLICT is PASS iff every relation_identity in the submission intent candidate set is PENDING_HUMAN_REVIEW in the exact observed pre-batch progress-ledger snapshot; any already-frozen relation is BLOCKED",
+      "required_check_names": [
+        "BINDING_AUTHORITY_BASELINE_COMPATIBILITY",
+        "BSO_R_HANDOFF_IDENTITY",
+        "C2R1_HANDOFF_IDENTITY",
+        "CANDIDATE_SET_IDENTITY",
+        "EQ_POLICY_HASH",
+        "GLOBAL_CURRENT86_EQ_SCOPE_ID",
+        "NORMATIVE_SOURCE_EVIDENCE_BUNDLE_IDS",
+        "POST_DECISION_AUDIT_CONTEXT_BUNDLE_IDS",
+        "PRE_BATCH_PROGRESS_LEDGER_SNAPSHOT_CONFLICT",
+        "PROJECT_SCORING_AUTHORITY",
+        "RAW_OPEN_STATUS",
+        "RAW_REVIEW_PACKET_IDS",
+        "SEMANTIC_OWNER_COHORT_IDENTITY",
+        "SUBMISSION_INTENT_INTEGRITY"
+      ],
+      "schema": "BSO_EQ_PRE_SUBMISSION_APPLICABILITY_RECHECK_CONTRACT_V3",
+      "scope_drift_rule": "NO_SILENT_SHRINK_REPLACEMENT_OR_CHERRY_PICK",
+      "status": "PROSPECTIVE_NOT_FROZEN"
+    },
+    "BSO_EQ_PRE_SUBMISSION_APPLICABILITY_RECHECK_RECORD_SCHEMA": {
+      "array_rules": {
+        "check_results": "CHECK_RESULT_SET",
+        "observed_normative_source_evidence_bundle_ids": "SHA256_HEX_SET",
+        "observed_post_decision_audit_context_bundle_ids": "SHA256_HEX_SET",
+        "observed_raw_review_packet_ids": "SHA256_HEX_SET"
+      },
+      "check_name_to_observation_fields": {
+        "BINDING_AUTHORITY_BASELINE_COMPATIBILITY": [
+          "observed_binding_authority_identity",
+          "binding_compatibility_proof_identity"
+        ],
+        "BSO_R_HANDOFF_IDENTITY": [
+          "observed_bso_r_handoff_sha256"
+        ],
+        "C2R1_HANDOFF_IDENTITY": [
+          "observed_c2r1_handoff_sha256"
+        ],
+        "CANDIDATE_SET_IDENTITY": [
+          "observed_candidate_set_identity"
+        ],
+        "EQ_POLICY_HASH": [
+          "observed_eq_policy_hash"
+        ],
+        "GLOBAL_CURRENT86_EQ_SCOPE_ID": [
+          "global_eq_scope_id"
+        ],
+        "NORMATIVE_SOURCE_EVIDENCE_BUNDLE_IDS": [
+          "observed_normative_source_evidence_bundle_ids"
+        ],
+        "POST_DECISION_AUDIT_CONTEXT_BUNDLE_IDS": [
+          "observed_post_decision_audit_context_bundle_ids"
+        ],
+        "PRE_BATCH_PROGRESS_LEDGER_SNAPSHOT_CONFLICT": [
+          "observed_pre_batch_progress_ledger_snapshot_id"
+        ],
+        "PROJECT_SCORING_AUTHORITY": [
+          "observed_project_scoring_authority"
+        ],
+        "RAW_OPEN_STATUS": [
+          "observed_raw_open_status_by_raw_key"
+        ],
+        "RAW_REVIEW_PACKET_IDS": [
+          "observed_raw_review_packet_ids"
+        ],
+        "SEMANTIC_OWNER_COHORT_IDENTITY": [
+          "observed_semantic_owner_cohort_hash"
+        ],
+        "SUBMISSION_INTENT_INTEGRITY": [
+          "submission_intent_id",
+          "observed_submission_intent_integrity_identity"
+        ]
+      },
+      "check_result_item_schema": {
+        "field_constraints": {
+          "check_name": {
+            "allowed_values_source": "BSO_EQ_PRE_SUBMISSION_APPLICABILITY_RECHECK_CONTRACT.required_check_names"
+          },
+          "evidence_identity": {
+            "must_conform_to_schema": "BSO_EQ_TYPED_IDENTITY_REFERENCE_SCHEMA_V2",
+            "required_identity_types_by_check": {
+              "BINDING_AUTHORITY_BASELINE_COMPATIBILITY": "BINDING_COMPATIBILITY_PROOF_ID",
+              "BSO_R_HANDOFF_IDENTITY": "BSO_R_HANDOFF_SHA256",
+              "C2R1_HANDOFF_IDENTITY": "C2R1_HANDOFF_SHA256",
+              "CANDIDATE_SET_IDENTITY": "BSO_EQ_SUBMISSION_CANDIDATE_SET_SHA256",
+              "EQ_POLICY_HASH": "BSO_EQ_HUMAN_QUALIFICATION_POLICY_SHA256",
+              "GLOBAL_CURRENT86_EQ_SCOPE_ID": "BSO_EQ_CURRENT86_SCOPE_ID",
+              "NORMATIVE_SOURCE_EVIDENCE_BUNDLE_IDS": "BSO_EQ_NORMATIVE_BUNDLE_SET_SHA256",
+              "POST_DECISION_AUDIT_CONTEXT_BUNDLE_IDS": "BSO_EQ_AUDIT_BUNDLE_SET_SHA256",
+              "PRE_BATCH_PROGRESS_LEDGER_SNAPSHOT_CONFLICT": "BSO_EQ_PROGRESS_LEDGER_SNAPSHOT_ID",
+              "PROJECT_SCORING_AUTHORITY": "PROJECT_SCORING_AUTHORITY_ID",
+              "RAW_OPEN_STATUS": "BSO_EQ_RAW_OPEN_STATUS_SET_SHA256",
+              "RAW_REVIEW_PACKET_IDS": "BSO_EQ_RAW_REVIEW_PACKET_SET_SHA256",
+              "SEMANTIC_OWNER_COHORT_IDENTITY": "SEMANTIC_OWNER_RESUME_COHORT_SHA256",
+              "SUBMISSION_INTENT_INTEGRITY": "BSO_EQ_SUBMISSION_INTENT_RECOMPUTED_ID"
+            },
+            "schema_hash": "5f960786051a6d9e18fede9b58b6622f9bdd9d225fa63dbcfade79e8d873a58c",
+            "type": "OBJECT"
+          },
+          "result": {
+            "allowed_values": [
+              "BLOCKED",
+              "PASS",
+              "REVALIDATION_REQUIRED"
+            ]
+          }
+        },
+        "required_fields": [
+          "check_name",
+          "evidence_identity",
+          "result"
+        ],
+        "result_values": [
+          "BLOCKED",
+          "PASS",
+          "REVALIDATION_REQUIRED"
+        ]
+      },
+      "cross_constraints": [
+        "check_results contain every and only required check name exactly once",
+        "every check_name_to_observation_fields key exactly equals one contract required check name and no other key exists",
+        "every field named by check_name_to_observation_fields is present in the runtime record",
+        "every check_results[].evidence_identity conforms to the typed identity schema and has the exact identity_type required for that check",
+        "overall_result exactly follows contract precedence rule",
+        "submission_intent_id references the exact validated submission intent",
+        "observed_submission_intent_integrity_identity.identity_value equals independently recomputed submission_intent_id",
+        "observed_candidate_set_identity.identity_value equals contract candidate_set_identity_rule over exact intent candidate relation IDs",
+        "observed_eq_policy_hash equals submission intent eq_human_qualification_policy_hash",
+        "observed_raw_review_packet_ids exactly equal submission intent complete_raw_packet_ids",
+        "observed_normative_source_evidence_bundle_ids exactly equal unique normative bundle IDs referenced by intent candidate records",
+        "observed_post_decision_audit_context_bundle_ids exactly equal unique audit-context bundle IDs corresponding to all intent candidate relations in included raw packets",
+        "observed_raw_open_status_by_raw_key key set exactly equals raw keys of submission intent complete raw packets",
+        "PRE_BATCH_PROGRESS_LEDGER_SNAPSHOT_CONFLICT check evidence_identity.identity_value equals observed_pre_batch_progress_ledger_snapshot_id",
+        "PRE_BATCH_PROGRESS_LEDGER_SNAPSHOT_CONFLICT PASS requires every intent relation PENDING_HUMAN_REVIEW in that exact snapshot",
+        "overall_result != PASS blocks final submission batch freeze",
+        "machine REVALIDATION_REQUIRED result never fabricates human_outcome.REVALIDATION_REQUIRED"
+      ],
+      "dynamic_object_rules": {
+        "observed_raw_open_status_by_raw_key": {
+          "canonicalization": "normal canonical JSON object-key ordering",
+          "key_rule": "each key MUST be one exact raw_key from submission intent included complete raw packets",
+          "set_equality_rule": "object key set exactly equals submitted raw_key set",
+          "value_rule": "one of OPEN | CLOSED | UNKNOWN | INAPPLICABLE"
+        }
+      },
+      "field_constraints": {
+        "binding_compatibility_proof_identity": {
+          "must_conform_to_schema": "BSO_EQ_TYPED_IDENTITY_REFERENCE_SCHEMA_V2",
+          "required_identity_type": "BINDING_COMPATIBILITY_PROOF_ID",
+          "type": "OBJECT"
+        },
+        "observed_candidate_set_identity": {
+          "must_conform_to_schema": "BSO_EQ_TYPED_IDENTITY_REFERENCE_SCHEMA_V2",
+          "required_identity_type": "BSO_EQ_SUBMISSION_CANDIDATE_SET_SHA256",
+          "type": "OBJECT"
+        },
+        "observed_eq_policy_hash": {
+          "type": "SHA256_HEX_LOWERCASE"
+        },
+        "observed_pre_batch_progress_ledger_snapshot_id": {
+          "identity_namespace": "BSO_EQ_PROGRESS_LEDGER_SNAPSHOT_ID",
+          "type": "SHA256_HEX_LOWERCASE"
+        },
+        "observed_submission_intent_integrity_identity": {
+          "must_conform_to_schema": "BSO_EQ_TYPED_IDENTITY_REFERENCE_SCHEMA_V2",
+          "required_identity_type": "BSO_EQ_SUBMISSION_INTENT_RECOMPUTED_ID",
+          "type": "OBJECT"
+        }
+      },
+      "id_rule": "recheck_id = sha256(canonical_json(all fields except recheck_id))",
+      "required_fields": [
+        "binding_compatibility_proof_identity",
+        "check_results",
+        "global_eq_scope_id",
+        "observed_binding_authority_identity",
+        "observed_bso_r_handoff_sha256",
+        "observed_c2r1_handoff_sha256",
+        "observed_candidate_set_identity",
+        "observed_eq_policy_hash",
+        "observed_normative_source_evidence_bundle_ids",
+        "observed_post_decision_audit_context_bundle_ids",
+        "observed_pre_batch_progress_ledger_snapshot_id",
+        "observed_project_scoring_authority",
+        "observed_raw_open_status_by_raw_key",
+        "observed_raw_review_packet_ids",
+        "observed_semantic_owner_cohort_hash",
+        "observed_submission_intent_integrity_identity",
+        "overall_result",
+        "recheck_contract_hash",
+        "recheck_id",
+        "schema_version",
+        "submission_intent_id"
+      ],
+      "schema": "BSO_EQ_PRE_SUBMISSION_APPLICABILITY_RECHECK_RECORD_SCHEMA_V3",
+      "status": "PROSPECTIVE_NOT_FROZEN"
+    },
+    "BSO_EQ_PROGRESS_LEDGER_ENTRY_SCHEMA": {
+      "array_rules": {
+        "newly_frozen_relation_records": "LEDGER_RELATION_STATE_SET"
+      },
+      "cross_constraints": [
+        "entry_sequence = 0 iff previous_entry_id = null",
+        "entry_sequence > 0 requires non-null previous_entry_id",
+        "newly_frozen relation IDs exactly equal relations in referenced submission batch",
+        "no newly_frozen relation_identity exists in prior ledger state",
+        "record outcome maps exactly to frozen_state"
+      ],
+      "id_rule": "entry_id = sha256(canonical_json(all fields except entry_id))",
+      "relation_state_item_schema": {
+        "frozen_state_values": [
+          "FROZEN_DO_NOT_QUALIFY_POSITIVE_SUPPORT",
+          "FROZEN_QUALIFY_POSITIVE_SUPPORT",
+          "FROZEN_REVALIDATION_REQUIRED"
+        ],
+        "required_fields": [
+          "frozen_state",
+          "record_id",
+          "relation_identity"
+        ]
+      },
+      "required_fields": [
+        "entry_id",
+        "entry_sequence",
+        "global_eq_scope_id",
+        "newly_frozen_relation_records",
+        "previous_entry_id",
+        "schema_version",
+        "submission_batch_id"
+      ],
+      "schema": "BSO_EQ_PROGRESS_LEDGER_ENTRY_SCHEMA_V2",
+      "status": "PROSPECTIVE_NOT_FROZEN"
+    },
+    "BSO_EQ_PROGRESS_LEDGER_SNAPSHOT_SCHEMA": {
+      "array_rules": {
+        "frozen_relation_states": "LEDGER_RELATION_STATE_SET",
+        "pending_relation_ids": "SHA256_HEX_SET"
+      },
+      "cross_constraints": [
+        "frozen relation IDs and pending_relation_ids are disjoint",
+        "union of frozen relation IDs and pending_relation_ids exactly equals 4161 scope human-review-required relation IDs",
+        "state_counts exactly equal arrays",
+        "snapshot reconstructs exactly from append-only ledger entries from genesis through latest_entry_id"
+      ],
+      "id_rule": "snapshot_id = sha256(canonical_json(all fields except snapshot_id))",
+      "required_fields": [
+        "frozen_relation_states",
+        "global_eq_scope_id",
+        "latest_entry_id",
+        "pending_relation_ids",
+        "schema_version",
+        "snapshot_id",
+        "state_counts"
+      ],
+      "schema": "BSO_EQ_PROGRESS_LEDGER_SNAPSHOT_SCHEMA_V2",
+      "state_counts_required_keys": [
+        "FROZEN_DO_NOT_QUALIFY_POSITIVE_SUPPORT",
+        "FROZEN_QUALIFY_POSITIVE_SUPPORT",
+        "FROZEN_REVALIDATION_REQUIRED",
+        "PENDING_HUMAN_REVIEW"
+      ],
+      "status": "PROSPECTIVE_NOT_FROZEN"
+    },
+    "BSO_EQ_RAW_REVIEW_PACKET_SCHEMA": {
+      "array_rules": {
+        "candidate_display_order": "ORDERED_SEQUENCE_BY_CANDIDATE_SCORING_ID_ASCENDING_CANONICAL_BYTEWISE",
+        "human_review_required_relation_ids": "SHA256_HEX_SET",
+        "normative_candidate_source_evidence_bundle_ids": "ORDERED_SEQUENCE_ALIGNED_TO_HUMAN_REVIEW_REQUIRED_RELATION_IDS",
+        "post_decision_audit_context_bundle_ids": "ORDERED_SEQUENCE_ALIGNED_TO_HUMAN_REVIEW_REQUIRED_RELATION_IDS",
+        "preexisting_hard_negative_relation_ids": "SHA256_HEX_SET",
+        "structurally_eligible_relation_ids": "SHA256_HEX_SET"
+      },
+      "cross_constraints": [
+        "packet raw_key exists in global scope",
+        "structurally_eligible_relation_ids exactly equal scope relation identities for raw",
+        "preexisting_hard_negative_relation_ids exactly equal scope hard-negative relations for raw",
+        "human_review_required_relation_ids exactly equal scope human-review-required relations for raw",
+        "normative and audit bundle arrays have exactly one entry aligned to each human-review-required relation",
+        "candidate_display_order covers all structurally eligible relations exactly once"
+      ],
+      "id_rule": "packet_id = sha256(canonical_json(all fields except packet_id))",
+      "required_fields": [
+        "candidate_display_order",
+        "global_eq_scope_id",
+        "human_review_required_relation_ids",
+        "normative_candidate_source_evidence_bundle_ids",
+        "normative_view_schema_hash",
+        "packet_id",
+        "playbook_id",
+        "post_decision_audit_context_bundle_ids",
+        "post_decision_audit_view_schema_hash",
+        "preexisting_hard_negative_relation_ids",
+        "raw_key",
+        "raw_source_identity",
+        "schema_version",
+        "stage_identity",
+        "structurally_eligible_relation_ids"
+      ],
+      "schema": "BSO_EQ_RAW_REVIEW_PACKET_SCHEMA_V2",
+      "status": "PROSPECTIVE_NOT_FROZEN"
+    },
+    "BSO_EQ_REFERRAL_BASIS_CODE_VOCABULARY": {
+      "codes": [
+        {
+          "allowed_referral_class": "SCOPE_APPLICABILITY_REFERRAL",
+          "code": "BINDING_BASELINE_COMPATIBILITY_UNPROVEN"
+        },
+        {
+          "allowed_referral_class": "IDENTITY_PROVENANCE_REFERRAL",
+          "code": "CANDIDATE_IDENTITY_MISMATCH"
+        },
+        {
+          "allowed_referral_class": "SCOPE_APPLICABILITY_REFERRAL",
+          "code": "CURRENT_SCOPE_MEMBERSHIP_MISMATCH"
+        },
+        {
+          "allowed_referral_class": "IDENTITY_PROVENANCE_REFERRAL",
+          "code": "RAW_IDENTITY_MISMATCH"
+        },
+        {
+          "allowed_referral_class": "SCOPE_APPLICABILITY_REFERRAL",
+          "code": "RAW_OPEN_STATUS_DRIFT"
+        },
+        {
+          "allowed_referral_class": "SCORING_AUTHORITY_REFERRAL",
+          "code": "SCORING_AUTHORITY_APPLICABILITY_UNCLEAR"
+        },
+        {
+          "allowed_referral_class": "SCORING_AUTHORITY_REFERRAL",
+          "code": "SCORING_ROW_IDENTITY_CONFLICT"
+        },
+        {
+          "allowed_referral_class": "SCORING_AUTHORITY_REFERRAL",
+          "code": "SCORING_ROW_SEMANTIC_COVERAGE_GAP"
+        },
+        {
+          "allowed_referral_class": "SOURCE_EVIDENCE_REVALIDATION",
+          "code": "SOURCE_FACT_CONFLICT"
+        },
+        {
+          "allowed_referral_class": "SOURCE_EVIDENCE_REVALIDATION",
+          "code": "SOURCE_FACT_MISSING"
+        },
+        {
+          "allowed_referral_class": "SOURCE_EVIDENCE_REVALIDATION",
+          "code": "SOURCE_FACT_NOT_ADMISSIBLE_UNDER_POLICY"
+        },
+        {
+          "allowed_referral_class": "SOURCE_EVIDENCE_REVALIDATION",
+          "code": "SOURCE_ITEM_INTEGRITY_MISMATCH"
+        },
+        {
+          "allowed_referral_class": "SOURCE_EVIDENCE_REVALIDATION",
+          "code": "SOURCE_PROVENANCE_UNVERIFIABLE"
+        },
+        {
+          "allowed_referral_class": "STRUCTURE_CARDINALITY_REFERRAL",
+          "code": "STRUCTURAL_CARDINALITY_NOT_RESOLVABLE_IN_EQ"
+        },
+        {
+          "allowed_referral_class": "STRUCTURE_CARDINALITY_REFERRAL",
+          "code": "STRUCTURAL_REPRESENTATION_GAP"
+        }
+      ],
+      "cross_constraint": "for every REVALIDATION_REQUIRED record, every referral_basis_code MUST map exactly to that record.referral_class; mixed-class basis codes are invalid",
+      "schema": "BSO_EQ_REFERRAL_BASIS_CODE_VOCABULARY_V2",
+      "status": "PROSPECTIVE_NOT_FROZEN",
+      "unknown_code_rule": "FAIL_CLOSED_STOP_FOR_POLICY_REVIEW"
+    },
+    "BSO_EQ_REFERRAL_CLASS_VOCABULARY": {
+      "classes": [
+        {
+          "code": "IDENTITY_PROVENANCE_REFERRAL",
+          "referral_only": true
+        },
+        {
+          "code": "SCORING_AUTHORITY_REFERRAL",
+          "referral_only": true
+        },
+        {
+          "code": "SCOPE_APPLICABILITY_REFERRAL",
+          "referral_only": true
+        },
+        {
+          "code": "SOURCE_EVIDENCE_REVALIDATION",
+          "referral_only": true
+        },
+        {
+          "code": "STRUCTURE_CARDINALITY_REFERRAL",
+          "referral_only": true
+        }
+      ],
+      "invariants": [
+        "REVALIDATION_REQUIRED != BINDING_PUBLICATION",
+        "REVALIDATION_REQUIRED != COHORT_RECLASSIFICATION",
+        "REVALIDATION_REQUIRED != OWNER_ADJUDICATION",
+        "REVALIDATION_REQUIRED != SCORING_AUTHORITY_CHANGE",
+        "REVALIDATION_REQUIRED != STRUCTURE_DECISION"
+      ],
+      "schema": "BSO_EQ_REFERRAL_CLASS_VOCABULARY_V2",
+      "status": "PROSPECTIVE_NOT_FROZEN"
+    },
+    "BSO_EQ_RELATION_IDENTITY_CONTRACT": {
+      "candidate_scoring_id_grammar": "^[0-9a-f]{64}$",
+      "equality_rule": "two relation identities are equal iff both canonical raw_key and canonical candidate_scoring_id are equal; the recomputed hash MUST also equal the stored relation_identity",
+      "identity_payload_schema": {
+        "required_fields": [
+          "candidate_scoring_id",
+          "raw_key"
+        ],
+        "schema": "BSO_EQ_RELATION_IDENTITY_PAYLOAD_V1"
+      },
+      "prohibitions": [
+        "VID_OR_UUID_CANNOT_REPLACE_POSITIONAL_RAW_KEY",
+        "RELATION_IDENTITY_CANNOT_BE_ASSIGNED_ARBITRARILY"
+      ],
+      "raw_key_grammar": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+      "relation_identity_rule": "relation_identity = sha256(canonical_json({\"schema\":\"BSO_EQ_RELATION_IDENTITY_PAYLOAD_V1\",\"raw_key\":raw_key,\"candidate_scoring_id\":candidate_scoring_id}))",
+      "schema": "BSO_EQ_RELATION_IDENTITY_CONTRACT_V2",
+      "status": "PROSPECTIVE_NOT_FROZEN"
+    },
+    "BSO_EQ_SOURCE_FACT_TYPE_VOCABULARY": {
+      "historical_relation_output_type_status": "PROHIBITED_FROM_NORMATIVE_SOURCE_EVIDENCE",
+      "schema": "BSO_EQ_SOURCE_FACT_TYPE_VOCABULARY_V2",
+      "status": "PROSPECTIVE_NOT_FROZEN",
+      "types": [
+        "PINNED_CANONICAL_INTRINSIC_FIELD",
+        "PINNED_PROJECT_TAXONOMY_FIELD",
+        "PINNED_RAW_SOURCE_FIELD",
+        "PINNED_RAW_SOURCE_TEXT_CLAIM",
+        "PINNED_SCORING_ROW_FIELD",
+        "PINNED_SCORING_ROW_TEXT_CLAIM"
+      ]
+    },
+    "BSO_EQ_SUBMISSION_INTENT_SCHEMA": {
+      "array_rules": {
+        "candidate_qualification_record_ids": "SHA256_HEX_SET",
+        "complete_raw_packet_ids": "SHA256_HEX_SET"
+      },
+      "cross_constraints": [
+        "all candidate records have identical human_eq_qualification_event_id equal to intent human_eq_qualification_event_id",
+        "all candidate records have global_eq_scope_id equal to intent global_eq_scope_id",
+        "all candidate records have eq_human_qualification_policy_hash equal to intent policy hash",
+        "unique relation_identity across candidate records",
+        "complete_raw_packet_ids exactly equal unique raw_review_packet_id values referenced by candidate records",
+        "for each included packet, candidate records exactly equal all packet human_review_required_relation_ids: one and only one record per normative unit",
+        "candidate records contain no relation from a packet not in complete_raw_packet_ids",
+        "human_submission_envelope_identity and literal_submission_sha256 authenticate the same human event payload"
+      ],
+      "id_rule": "intent_id = sha256(canonical_json(all fields except intent_id))",
+      "required_fields": [
+        "candidate_qualification_record_ids",
+        "complete_raw_packet_ids",
+        "eq_human_qualification_policy_hash",
+        "global_eq_scope_id",
+        "human_eq_qualification_event_id",
+        "human_submission_envelope_identity",
+        "intent_id",
+        "literal_submission_sha256",
+        "schema_version"
+      ],
+      "schema": "BSO_EQ_SUBMISSION_INTENT_SCHEMA_V2",
+      "status": "PROSPECTIVE_NOT_FROZEN"
+    },
+    "BSO_EQ_TYPED_IDENTITY_REFERENCE_SCHEMA": {
+      "canonical_array_type": "TYPED_IDENTITY_REFERENCE_SET",
+      "constraints": {
+        "identity_type": "NON_EMPTY_ASCII_UPPER_SNAKE_CASE",
+        "identity_value": "NON_EMPTY_UTF8_STRING"
+      },
+      "required_fields": [
+        "identity_type",
+        "identity_value"
+      ],
+      "schema": "BSO_EQ_TYPED_IDENTITY_REFERENCE_SCHEMA_V2",
+      "status": "PROSPECTIVE_NOT_FROZEN"
+    },
+    "BSO_EQ_WORKFLOW_ARCHITECTURE_ACCEPTANCE_BINDING_SCHEMA": {
+      "fixed_values": {
+        "accepted_architecture_name": "RAW_LOCAL_CANDIDATE_COMPLETE_EQ_REVIEW_WITH_MULTI_RAW_SUBMISSION",
+        "accepted_design_artifact_sha256": "9652ecae91575df9c11e1fe217a6f7082ee2fdd84b1ca80fd4b37bfa5b782524",
+        "accepted_scope_constants": {
+          "human_eq_normative_units": 4161,
+          "preexisting_authenticated_hard_negatives": 58,
+          "raw_count": 86,
+          "structurally_eligible_candidate_relations": 4219
+        },
+        "human_acceptance_decision_token": "ACCEPTED"
+      },
+      "human_origin_contract_hash": "c1d92c96cc02495d4e4ddcc7686d0e489803a275e68bd009f2f8afab4f6a79dd",
+      "id_rule": "acceptance_binding_id = sha256(canonical_json(all fields except acceptance_binding_id))",
+      "provenance_constraints": [
+        "human_acceptance_provenance_mode MUST be one exact accepted source mode from the human-origin contract",
+        "for CODEX_NATIVE_SESSION_USER_EVENT_PROVENANCE_V1, human_acceptance_provenance_evidence_id MUST reference a valid evidence object under the frozen native-session evidence schema",
+        "for CODEX_NATIVE_SESSION_USER_EVENT_PROVENANCE_V1, human_acceptance_provenance_id MUST equal human_acceptance_provenance_evidence_id",
+        "legacy native-immutable-ID or authenticated-envelope modes remain legal only when their original frozen requirements are independently satisfied"
+      ],
+      "required_fields": [
+        "acceptance_binding_id",
+        "accepted_architecture_name",
+        "accepted_design_artifact_sha256",
+        "accepted_scope_constants",
+        "human_acceptance_decision_token",
+        "human_acceptance_provenance_evidence_id",
+        "human_acceptance_provenance_id",
+        "human_acceptance_provenance_mode",
+        "schema_version"
+      ],
+      "schema": "BSO_EQ_WORKFLOW_ARCHITECTURE_ACCEPTANCE_BINDING_SCHEMA_V4",
+      "status": "PROSPECTIVE_NOT_FROZEN_V4_INTERFACE_PATCH"
+    }
+  },
+  "eq_execution_authorized": false,
+  "human_candidate_qualification_authorized": false,
+  "positive_support_creation_authorized": false,
+  "prospective_authority_index": {
+    "architecture_acceptance_binding_id": null,
+    "current86_scope_id": null,
+    "freeze_envelope_schema_sha256": "c09c4352610a8c0f4d677ff1ed11212307458e275a1b7c40d1b736595094f9a3",
+    "policy_schema_bundle_acceptance_binding_id": null,
+    "schema": "BSO_EQ_PROSPECTIVE_AUTHORITY_INDEX_V4",
+    "static_authority_manifest_sha256": "3a191ccc0a8798e5a86ebba4976aaf4c103d84ef197d0ee4936b2f789c58ba55",
+    "status": "PROSPECTIVE_NOT_FROZEN_V4_HUMAN_ORIGIN_INTERFACE_PATCH",
+    "upstream_accepted_architecture_artifact_sha256": "9652ecae91575df9c11e1fe217a6f7082ee2fdd84b1ca80fd4b37bfa5b782524",
+    "workflow_architecture_authority_hash": null
+  },
+  "prospective_authority_index_sha256": "d69ed9a0892e2369c53a3caa09181bef144ce378386376b812e91bc2e2b3c1fb",
+  "provenance_roles": {
+    "current_policy_schema_design": {
+      "role": "CURRENT_V2_DESIGN_DOCUMENT",
+      "sha256": "RECORDED_EXTERNALLY_IN_REVIEW_INPUT_MANIFEST_TO_AVOID_HASH_CYCLE"
+    },
+    "upstream_accepted_architecture_artifact": {
+      "file_name": "Design_FA1B2de_BSO_EQ_Candidate_Level_Human_Qualification_Workflow_CURRENT86_FINAL_PATCHED.md",
+      "role": "UPSTREAM_HUMAN_ACCEPTED_ARCHITECTURE",
+      "sha256": "9652ecae91575df9c11e1fe217a6f7082ee2fdd84b1ca80fd4b37bfa5b782524"
+    }
+  },
+  "runtime_authorities_not_materialized": [
+    "BSO_EQ_AUTHORITY_FREEZE_PRECONDITION_VERIFICATION",
+    "BSO_EQ_CURRENT86_SCOPE",
+    "BSO_EQ_POLICY_SCHEMA_BUNDLE_ACCEPTANCE_BINDING",
+    "BSO_EQ_WORKFLOW_ARCHITECTURE_ACCEPTANCE_BINDING",
+    "BSO_EQ_WORKFLOW_ARCHITECTURE_AUTHORITY_FREEZE_ENVELOPE"
+  ],
+  "static_policy_schema_authority_manifest": {
+    "array_canonicalization_registry_hash": "8eb1ec6346258052fd7457cf8e9740f41fc63d296c317ac688a9bdfac48ab569",
+    "canonicalization_spec_hash": "b1d57c05f790a3fe7b1c1dee447ab31dd369d19491bfe413fdb0887ff4648909",
+    "component_object_sha256": {
+      "BSO_EQ_ARRAY_CANONICALIZATION_REGISTRY": "8eb1ec6346258052fd7457cf8e9740f41fc63d296c317ac688a9bdfac48ab569",
+      "BSO_EQ_ATOMIC_SOURCE_FACT_ITEM_SCHEMA": "091d344a42ed42e8c4892e8932e8d360ad4d7da9d4788f8afab604e330e515ee",
+      "BSO_EQ_AUTHORITY_FREEZE_PRECONDITION_VERIFICATION_SCHEMA": "172f9edcbfdbac7e4ec76d8500ddda677c857df7b92d1ecaac6449f28cd98708",
+      "BSO_EQ_CANONICALIZATION_SPEC": "b1d57c05f790a3fe7b1c1dee447ab31dd369d19491bfe413fdb0887ff4648909",
+      "BSO_EQ_CODEX_NATIVE_SESSION_USER_EVENT_PROVENANCE_EVIDENCE_SCHEMA": "0201dc07ace5189b7ae9094910b0fff0fc173e2be374ec75e0b0a658dce42f64",
+      "BSO_EQ_CURRENT86_FINAL_CONSERVATION_CONTRACT": "ac06a02fc281ea1ade3136267d08bc001cbe5c4d80ee6fa8900243707045c258",
+      "BSO_EQ_CURRENT86_SCOPE_CONTRACT": "47d66c784b18e7db7dde15ca1cf26773e2c1b8e90c3eafb07e505dd8da30977c",
+      "BSO_EQ_CURRENT86_SCOPE_RUNTIME_SCHEMA": "1339ec614d2b5ba3e10497ec8cce2946c70ec0890e9615d95a2588f967d8bd70",
+      "BSO_EQ_HISTORICAL_RELATION_OUTPUT_DENYLIST": "f2f48a3142bf192c08cfa2bffbb722e0131bfd4a1ba55623caf5af72748b94c7",
+      "BSO_EQ_HUMAN_CANDIDATE_QUALIFICATION_POLICY": "bc33bb188b4c66815e513539d2c84f7e622feb92a85a1400bbbd49f387ad2e51",
+      "BSO_EQ_HUMAN_CANDIDATE_QUALIFICATION_RECORD_SCHEMA": "a8961cf0e9740e6654af40384e65f9ef8dd5abc76dac6d71d460e06259a3b863",
+      "BSO_EQ_HUMAN_ORIGIN_PROVENANCE_CONTRACT": "c1d92c96cc02495d4e4ddcc7686d0e489803a275e68bd009f2f8afab4f6a79dd",
+      "BSO_EQ_HUMAN_SUBMISSION_BATCH_SCHEMA": "89110e6cdea733362c08e644d13a0489592c2e2e5514234204e02e406eaa31e0",
+      "BSO_EQ_NORMATIVE_CANDIDATE_SOURCE_EVIDENCE_BUNDLE_SCHEMA": "252720ba9a5e9f44ca385c2563d51cbe655d4533921065957997eadb5e2af73e",
+      "BSO_EQ_NORMATIVE_EQ_REVIEW_VIEW_SCHEMA": "199c76ac23562c59e71cb8e2e4cc1dcb808a84b5efed3cd304541be5bf5c46a7",
+      "BSO_EQ_NORMATIVE_SOURCE_EVIDENCE_PROFILE": "e24746c96c5f741cc35df8d992d93936911dd1de2ce7f1a0f00035cda3b33deb",
+      "BSO_EQ_NORMATIVE_SOURCE_EVIDENCE_PROFILE_SCHEMA": "5c475a683b92216f7a836d80e25381a124d6026605d750fafd72dcf33dae9624",
+      "BSO_EQ_NORMATIVE_VIEW_FIELD_ALLOWLIST": "92b9ce407921d443fbde7a6b79f16bc776f9fe1fad7e604353840884a64d3241",
+      "BSO_EQ_POLICY_BASIS_CODE_VOCABULARY": "2927fb65ea7a63f7a455869a293b54c877c15f28be25c1bfbfc6cc5c6bb893b2",
+      "BSO_EQ_POLICY_SCHEMA_BUNDLE_ACCEPTANCE_BINDING_SCHEMA": "f15d180ff8e36874f8ec55d6081e0f8d45c0965fcd6a38eb343070c166eceb80",
+      "BSO_EQ_POSITIVE_BASIS_ITEM_SCHEMA": "a441e96aa7620959873a28cfa45f866422c01dbd53e2af04e00a43d6b8e48011",
+      "BSO_EQ_POSITIVE_SUPPORT_OVERLAY_SCHEMA": "ef28d6603d4ceab40e7372c6020f0856b5ded043abfcc8e6c5139ed8379058b0",
+      "BSO_EQ_POST_DECISION_AUDIT_CONTEXT_BUNDLE_SCHEMA": "138c16de093904e9dd666cb1fced07905ca7ba6578350f2061a89bddabaf7dc7",
+      "BSO_EQ_POST_DECISION_AUDIT_VIEW_SCHEMA": "e0677d1ea6cfae806918caa17c9813f276b7dfad0f2010f7bbe3094b7efe0f3e",
+      "BSO_EQ_PRE_SUBMISSION_APPLICABILITY_RECHECK_CONTRACT": "d6c3bd38e91e1ca7ec4178d6260da42fdf177749d4c7b425f1cf8112971efc92",
+      "BSO_EQ_PRE_SUBMISSION_APPLICABILITY_RECHECK_RECORD_SCHEMA": "218d27fe5ce79c20477a3fba5978f29e36e7ef1146d6aac93c3ae032b49caa99",
+      "BSO_EQ_PROGRESS_LEDGER_ENTRY_SCHEMA": "bd39d3ec581c6281292000669a1a635ccae8c7173a1600a20226e29a00bd1a97",
+      "BSO_EQ_PROGRESS_LEDGER_SNAPSHOT_SCHEMA": "0c366e6a8e12f6795146c1e1f333aada87bf36751bb9c3d2f640e3bbbe78858f",
+      "BSO_EQ_RAW_REVIEW_PACKET_SCHEMA": "e0e6184a5f4d7f5ccb6c2e8122785e8e8c2a44284ed9b92ce103d499d703d546",
+      "BSO_EQ_REFERRAL_BASIS_CODE_VOCABULARY": "2d14142824fa52ca14e38981cd941a29b95cbff594ffc8872372093ac7e202af",
+      "BSO_EQ_REFERRAL_CLASS_VOCABULARY": "2514c7898178c3c8d1d76a57b887332523b18bd5b80f550d6b4e8f3fe4c4480f",
+      "BSO_EQ_RELATION_IDENTITY_CONTRACT": "bec4d2fc45e7f594e46977b411422e974ba645593a66dc46c57b224c8f78f4b2",
+      "BSO_EQ_SOURCE_FACT_TYPE_VOCABULARY": "9dc9bdcbc876b138b323c8f01c8e9ddd37d13d852d0347f338037d5ee01ea7f5",
+      "BSO_EQ_SUBMISSION_INTENT_SCHEMA": "0378f40e16b32d41d1d2bd40dcb18aa8116ba457fa72d926a9a8b04f33fa976e",
+      "BSO_EQ_TYPED_IDENTITY_REFERENCE_SCHEMA": "5f960786051a6d9e18fede9b58b6622f9bdd9d225fa63dbcfade79e8d873a58c",
+      "BSO_EQ_WORKFLOW_ARCHITECTURE_ACCEPTANCE_BINDING_SCHEMA": "1fa80f32ad0c33fc6ce650ff89734a9beec65c56cb5df1ca1a9ec5ca8a78e625"
+    },
+    "dependency_edge_semantics": "static canonical component/schema authority dependencies; runtime instance references are bound by runtime IDs and cross-constraints and do not imply a static schema-reference edge unless the referring component explicitly binds or validates against the referenced static component",
+    "dependency_edges": [
+      {
+        "component": "BSO_EQ_ATOMIC_SOURCE_FACT_ITEM_SCHEMA",
+        "depends_on": "BSO_EQ_NORMATIVE_SOURCE_EVIDENCE_PROFILE"
+      },
+      {
+        "component": "BSO_EQ_ATOMIC_SOURCE_FACT_ITEM_SCHEMA",
+        "depends_on": "BSO_EQ_RELATION_IDENTITY_CONTRACT"
+      },
+      {
+        "component": "BSO_EQ_ATOMIC_SOURCE_FACT_ITEM_SCHEMA",
+        "depends_on": "BSO_EQ_SOURCE_FACT_TYPE_VOCABULARY"
+      },
+      {
+        "component": "BSO_EQ_AUTHORITY_FREEZE_PRECONDITION_VERIFICATION_SCHEMA",
+        "depends_on": "BSO_EQ_CODEX_NATIVE_SESSION_USER_EVENT_PROVENANCE_EVIDENCE_SCHEMA"
+      },
+      {
+        "component": "BSO_EQ_AUTHORITY_FREEZE_PRECONDITION_VERIFICATION_SCHEMA",
+        "depends_on": "BSO_EQ_CURRENT86_SCOPE_RUNTIME_SCHEMA"
+      },
+      {
+        "component": "BSO_EQ_AUTHORITY_FREEZE_PRECONDITION_VERIFICATION_SCHEMA",
+        "depends_on": "BSO_EQ_HUMAN_ORIGIN_PROVENANCE_CONTRACT"
+      },
+      {
+        "component": "BSO_EQ_AUTHORITY_FREEZE_PRECONDITION_VERIFICATION_SCHEMA",
+        "depends_on": "BSO_EQ_NORMATIVE_SOURCE_EVIDENCE_PROFILE"
+      },
+      {
+        "component": "BSO_EQ_AUTHORITY_FREEZE_PRECONDITION_VERIFICATION_SCHEMA",
+        "depends_on": "BSO_EQ_POLICY_SCHEMA_BUNDLE_ACCEPTANCE_BINDING_SCHEMA"
+      },
+      {
+        "component": "BSO_EQ_AUTHORITY_FREEZE_PRECONDITION_VERIFICATION_SCHEMA",
+        "depends_on": "BSO_EQ_WORKFLOW_ARCHITECTURE_ACCEPTANCE_BINDING_SCHEMA"
+      },
+      {
+        "component": "BSO_EQ_CURRENT86_SCOPE_CONTRACT",
+        "depends_on": "BSO_EQ_RELATION_IDENTITY_CONTRACT"
+      },
+      {
+        "component": "BSO_EQ_CURRENT86_SCOPE_RUNTIME_SCHEMA",
+        "depends_on": "BSO_EQ_CURRENT86_SCOPE_CONTRACT"
+      },
+      {
+        "component": "BSO_EQ_CURRENT86_SCOPE_RUNTIME_SCHEMA",
+        "depends_on": "BSO_EQ_RELATION_IDENTITY_CONTRACT"
+      },
+      {
+        "component": "BSO_EQ_HUMAN_CANDIDATE_QUALIFICATION_POLICY",
+        "depends_on": "BSO_EQ_NORMATIVE_SOURCE_EVIDENCE_PROFILE"
+      },
+      {
+        "component": "BSO_EQ_HUMAN_CANDIDATE_QUALIFICATION_POLICY",
+        "depends_on": "BSO_EQ_POLICY_BASIS_CODE_VOCABULARY"
+      },
+      {
+        "component": "BSO_EQ_HUMAN_CANDIDATE_QUALIFICATION_POLICY",
+        "depends_on": "BSO_EQ_REFERRAL_BASIS_CODE_VOCABULARY"
+      },
+      {
+        "component": "BSO_EQ_HUMAN_CANDIDATE_QUALIFICATION_POLICY",
+        "depends_on": "BSO_EQ_REFERRAL_CLASS_VOCABULARY"
+      },
+      {
+        "component": "BSO_EQ_HUMAN_CANDIDATE_QUALIFICATION_RECORD_SCHEMA",
+        "depends_on": "BSO_EQ_HUMAN_CANDIDATE_QUALIFICATION_POLICY"
+      },
+      {
+        "component": "BSO_EQ_HUMAN_CANDIDATE_QUALIFICATION_RECORD_SCHEMA",
+        "depends_on": "BSO_EQ_POSITIVE_BASIS_ITEM_SCHEMA"
+      },
+      {
+        "component": "BSO_EQ_HUMAN_CANDIDATE_QUALIFICATION_RECORD_SCHEMA",
+        "depends_on": "BSO_EQ_RAW_REVIEW_PACKET_SCHEMA"
+      },
+      {
+        "component": "BSO_EQ_HUMAN_CANDIDATE_QUALIFICATION_RECORD_SCHEMA",
+        "depends_on": "BSO_EQ_TYPED_IDENTITY_REFERENCE_SCHEMA"
+      },
+      {
+        "component": "BSO_EQ_HUMAN_ORIGIN_PROVENANCE_CONTRACT",
+        "depends_on": "BSO_EQ_CODEX_NATIVE_SESSION_USER_EVENT_PROVENANCE_EVIDENCE_SCHEMA"
+      },
+      {
+        "component": "BSO_EQ_HUMAN_SUBMISSION_BATCH_SCHEMA",
+        "depends_on": "BSO_EQ_PRE_SUBMISSION_APPLICABILITY_RECHECK_RECORD_SCHEMA"
+      },
+      {
+        "component": "BSO_EQ_HUMAN_SUBMISSION_BATCH_SCHEMA",
+        "depends_on": "BSO_EQ_SUBMISSION_INTENT_SCHEMA"
+      },
+      {
+        "component": "BSO_EQ_NORMATIVE_CANDIDATE_SOURCE_EVIDENCE_BUNDLE_SCHEMA",
+        "depends_on": "BSO_EQ_HISTORICAL_RELATION_OUTPUT_DENYLIST"
+      },
+      {
+        "component": "BSO_EQ_NORMATIVE_CANDIDATE_SOURCE_EVIDENCE_BUNDLE_SCHEMA",
+        "depends_on": "BSO_EQ_NORMATIVE_SOURCE_EVIDENCE_PROFILE"
+      },
+      {
+        "component": "BSO_EQ_NORMATIVE_CANDIDATE_SOURCE_EVIDENCE_BUNDLE_SCHEMA",
+        "depends_on": "BSO_EQ_NORMATIVE_VIEW_FIELD_ALLOWLIST"
+      },
+      {
+        "component": "BSO_EQ_NORMATIVE_CANDIDATE_SOURCE_EVIDENCE_BUNDLE_SCHEMA",
+        "depends_on": "BSO_EQ_RELATION_IDENTITY_CONTRACT"
+      },
+      {
+        "component": "BSO_EQ_NORMATIVE_EQ_REVIEW_VIEW_SCHEMA",
+        "depends_on": "BSO_EQ_HISTORICAL_RELATION_OUTPUT_DENYLIST"
+      },
+      {
+        "component": "BSO_EQ_NORMATIVE_EQ_REVIEW_VIEW_SCHEMA",
+        "depends_on": "BSO_EQ_NORMATIVE_SOURCE_EVIDENCE_PROFILE"
+      },
+      {
+        "component": "BSO_EQ_NORMATIVE_EQ_REVIEW_VIEW_SCHEMA",
+        "depends_on": "BSO_EQ_NORMATIVE_VIEW_FIELD_ALLOWLIST"
+      },
+      {
+        "component": "BSO_EQ_NORMATIVE_SOURCE_EVIDENCE_PROFILE",
+        "depends_on": "BSO_EQ_HISTORICAL_RELATION_OUTPUT_DENYLIST"
+      },
+      {
+        "component": "BSO_EQ_NORMATIVE_SOURCE_EVIDENCE_PROFILE",
+        "depends_on": "BSO_EQ_NORMATIVE_VIEW_FIELD_ALLOWLIST"
+      },
+      {
+        "component": "BSO_EQ_NORMATIVE_SOURCE_EVIDENCE_PROFILE",
+        "depends_on": "BSO_EQ_SOURCE_FACT_TYPE_VOCABULARY"
+      },
+      {
+        "component": "BSO_EQ_POLICY_SCHEMA_BUNDLE_ACCEPTANCE_BINDING_SCHEMA",
+        "depends_on": "BSO_EQ_HUMAN_ORIGIN_PROVENANCE_CONTRACT"
+      },
+      {
+        "component": "BSO_EQ_POSITIVE_BASIS_ITEM_SCHEMA",
+        "depends_on": "BSO_EQ_ATOMIC_SOURCE_FACT_ITEM_SCHEMA"
+      },
+      {
+        "component": "BSO_EQ_POSITIVE_BASIS_ITEM_SCHEMA",
+        "depends_on": "BSO_EQ_POLICY_BASIS_CODE_VOCABULARY"
+      },
+      {
+        "component": "BSO_EQ_POSITIVE_SUPPORT_OVERLAY_SCHEMA",
+        "depends_on": "BSO_EQ_HUMAN_CANDIDATE_QUALIFICATION_RECORD_SCHEMA"
+      },
+      {
+        "component": "BSO_EQ_POST_DECISION_AUDIT_CONTEXT_BUNDLE_SCHEMA",
+        "depends_on": "BSO_EQ_TYPED_IDENTITY_REFERENCE_SCHEMA"
+      },
+      {
+        "component": "BSO_EQ_POST_DECISION_AUDIT_VIEW_SCHEMA",
+        "depends_on": "BSO_EQ_POST_DECISION_AUDIT_CONTEXT_BUNDLE_SCHEMA"
+      },
+      {
+        "component": "BSO_EQ_PRE_SUBMISSION_APPLICABILITY_RECHECK_RECORD_SCHEMA",
+        "depends_on": "BSO_EQ_PRE_SUBMISSION_APPLICABILITY_RECHECK_CONTRACT"
+      },
+      {
+        "component": "BSO_EQ_PRE_SUBMISSION_APPLICABILITY_RECHECK_RECORD_SCHEMA",
+        "depends_on": "BSO_EQ_SUBMISSION_INTENT_SCHEMA"
+      },
+      {
+        "component": "BSO_EQ_PRE_SUBMISSION_APPLICABILITY_RECHECK_RECORD_SCHEMA",
+        "depends_on": "BSO_EQ_TYPED_IDENTITY_REFERENCE_SCHEMA"
+      },
+      {
+        "component": "BSO_EQ_PROGRESS_LEDGER_ENTRY_SCHEMA",
+        "depends_on": "BSO_EQ_HUMAN_SUBMISSION_BATCH_SCHEMA"
+      },
+      {
+        "component": "BSO_EQ_PROGRESS_LEDGER_SNAPSHOT_SCHEMA",
+        "depends_on": "BSO_EQ_CURRENT86_SCOPE_RUNTIME_SCHEMA"
+      },
+      {
+        "component": "BSO_EQ_PROGRESS_LEDGER_SNAPSHOT_SCHEMA",
+        "depends_on": "BSO_EQ_PROGRESS_LEDGER_ENTRY_SCHEMA"
+      },
+      {
+        "component": "BSO_EQ_RAW_REVIEW_PACKET_SCHEMA",
+        "depends_on": "BSO_EQ_CURRENT86_SCOPE_RUNTIME_SCHEMA"
+      },
+      {
+        "component": "BSO_EQ_RAW_REVIEW_PACKET_SCHEMA",
+        "depends_on": "BSO_EQ_NORMATIVE_EQ_REVIEW_VIEW_SCHEMA"
+      },
+      {
+        "component": "BSO_EQ_RAW_REVIEW_PACKET_SCHEMA",
+        "depends_on": "BSO_EQ_POST_DECISION_AUDIT_VIEW_SCHEMA"
+      },
+      {
+        "component": "BSO_EQ_SUBMISSION_INTENT_SCHEMA",
+        "depends_on": "BSO_EQ_HUMAN_CANDIDATE_QUALIFICATION_RECORD_SCHEMA"
+      },
+      {
+        "component": "BSO_EQ_SUBMISSION_INTENT_SCHEMA",
+        "depends_on": "BSO_EQ_RAW_REVIEW_PACKET_SCHEMA"
+      },
+      {
+        "component": "BSO_EQ_WORKFLOW_ARCHITECTURE_ACCEPTANCE_BINDING_SCHEMA",
+        "depends_on": "BSO_EQ_HUMAN_ORIGIN_PROVENANCE_CONTRACT"
+      }
+    ],
+    "dependency_graph": "ACYCLIC",
+    "explicit_non_equivalence": [
+      "STATIC_AUTHORITY_MANIFEST_SHA256 != WORKFLOW_ARCHITECTURE_AUTHORITY_HASH",
+      "UPSTREAM_ACCEPTED_ARCHITECTURE_ARTIFACT_SHA256 != CURRENT_POLICY_SCHEMA_DESIGN_FILE_SHA256",
+      "UPSTREAM_ACCEPTED_ARCHITECTURE_ARTIFACT_SHA256 != WORKFLOW_ARCHITECTURE_AUTHORITY_HASH"
+    ],
+    "human_qualification_policy_hash": "bc33bb188b4c66815e513539d2c84f7e622feb92a85a1400bbbd49f387ad2e51",
+    "normative_source_evidence_profile_hash": "e24746c96c5f741cc35df8d992d93936911dd1de2ce7f1a0f00035cda3b33deb",
+    "schema": "BSO_EQ_STATIC_POLICY_SCHEMA_AUTHORITY_MANIFEST_V4",
+    "scope_constants": {
+      "human_eq_normative_units": 4161,
+      "preexisting_authenticated_hard_negatives": 58,
+      "raw_count": 86,
+      "structurally_eligible_candidate_relations": 4219
+    },
+    "status": "PROSPECTIVE_NOT_FROZEN_V4_HUMAN_ORIGIN_INTERFACE_PATCH",
+    "upstream_accepted_architecture_artifact": {
+      "artifact_name": "Design_FA1B2de_BSO_EQ_Candidate_Level_Human_Qualification_Workflow_CURRENT86_FINAL_PATCHED.md",
+      "artifact_sha256": "9652ecae91575df9c11e1fe217a6f7082ee2fdd84b1ca80fd4b37bfa5b782524",
+      "role": "UPSTREAM_HUMAN_ACCEPTED_WORKFLOW_ARCHITECTURE"
+    },
+    "v3_targeted_patch": {
+      "added_dependency_edges": [
+        {
+          "component": "BSO_EQ_CURRENT86_SCOPE_CONTRACT",
+          "depends_on": "BSO_EQ_RELATION_IDENTITY_CONTRACT"
+        },
+        {
+          "component": "BSO_EQ_PRE_SUBMISSION_APPLICABILITY_RECHECK_RECORD_SCHEMA",
+          "depends_on": "BSO_EQ_TYPED_IDENTITY_REFERENCE_SCHEMA"
+        }
+      ],
+      "architecture_semantics_changed": false,
+      "changed_components": [
+        "BSO_EQ_HUMAN_SUBMISSION_BATCH_SCHEMA",
+        "BSO_EQ_PRE_SUBMISSION_APPLICABILITY_RECHECK_CONTRACT",
+        "BSO_EQ_PRE_SUBMISSION_APPLICABILITY_RECHECK_RECORD_SCHEMA"
+      ]
+    },
+    "v4_targeted_patch": {
+      "architecture_semantics_changed": false,
+      "changed_or_new_components": [
+        "BSO_EQ_AUTHORITY_FREEZE_PRECONDITION_VERIFICATION_SCHEMA",
+        "BSO_EQ_CODEX_NATIVE_SESSION_USER_EVENT_PROVENANCE_EVIDENCE_SCHEMA",
+        "BSO_EQ_HUMAN_ORIGIN_PROVENANCE_CONTRACT",
+        "BSO_EQ_POLICY_SCHEMA_BUNDLE_ACCEPTANCE_BINDING_SCHEMA",
+        "BSO_EQ_WORKFLOW_ARCHITECTURE_ACCEPTANCE_BINDING_SCHEMA"
+      ],
+      "eq_semantics_changed": false,
+      "new_component": "BSO_EQ_CODEX_NATIVE_SESSION_USER_EVENT_PROVENANCE_EVIDENCE_SCHEMA",
+      "new_provenance_mode": "CODEX_NATIVE_SESSION_USER_EVENT_PROVENANCE_V1",
+      "reason": "V3 human-origin mode was fail-closed but operationally unavailable in the observed Codex interface because no platform-exposed immutable per-message ID or authenticated envelope identity was available.",
+      "required_environment_probe_before_human_acceptance": true
+    }
+  },
+  "static_policy_schema_authority_manifest_sha256": "3a191ccc0a8798e5a86ebba4976aaf4c103d84ef197d0ee4936b2f789c58ba55",
+  "workflow_architecture_authority_freeze_envelope_schema": {
+    "cross_constraints": [
+      "architecture_acceptance_binding verifies upstream accepted architecture and human origin",
+      "policy_schema_bundle_acceptance_binding verifies exact static manifest and human origin",
+      "current86_scope_id references exact validated 86/4219/58/4161 runtime scope",
+      "freeze_precondition_verification passes every required check",
+      "no EQ human decision record exists before freeze",
+      "freeze_precondition_verification_id MUST reference a V4 precondition verification that independently validates the frozen human-origin provenance evidence mode"
+    ],
+    "fixed_or_bound_values": {
+      "canonicalization_spec_hash": "b1d57c05f790a3fe7b1c1dee447ab31dd369d19491bfe413fdb0887ff4648909",
+      "normative_source_evidence_profile_hash": "e24746c96c5f741cc35df8d992d93936911dd1de2ce7f1a0f00035cda3b33deb",
+      "static_authority_manifest_sha256": "3a191ccc0a8798e5a86ebba4976aaf4c103d84ef197d0ee4936b2f789c58ba55",
+      "upstream_accepted_architecture_artifact_sha256": "9652ecae91575df9c11e1fe217a6f7082ee2fdd84b1ca80fd4b37bfa5b782524"
+    },
+    "id_rule": "workflow_architecture_authority_hash = sha256(canonical_json(all fields except workflow_architecture_authority_hash))",
+    "required_fields": [
+      "architecture_acceptance_binding_id",
+      "canonicalization_spec_hash",
+      "current86_scope_id",
+      "freeze_precondition_verification_id",
+      "normative_source_evidence_profile_hash",
+      "policy_schema_bundle_acceptance_binding_id",
+      "schema_version",
+      "static_authority_manifest_sha256",
+      "upstream_accepted_architecture_artifact_sha256",
+      "workflow_architecture_authority_hash"
+    ],
+    "schema": "BSO_EQ_WORKFLOW_ARCHITECTURE_AUTHORITY_FREEZE_ENVELOPE_SCHEMA_V4",
+    "status": "PROSPECTIVE_NOT_FROZEN_V4_HUMAN_ORIGIN_INTERFACE_PATCH"
+  },
+  "workflow_architecture_authority_freeze_envelope_schema_sha256": "c09c4352610a8c0f4d677ff1ed11212307458e275a1b7c40d1b736595094f9a3",
+  "workflow_architecture_authority_hash": null
+}

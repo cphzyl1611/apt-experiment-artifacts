@@ -1,0 +1,8 @@
+{
+  "caller_trusted_identity_fields": false,
+  "contract_id": "71cf6e758264618c3c7e8cd7952bc4abb98d95c336148eb3b445da108abb75f7",
+  "execution_bound_identity_source": "frozen backend configuration plus backend runtime_identity output",
+  "schema": "A2_R4_EXECUTION_BACKEND_ADAPTER_CONTRACT_V1",
+  "semantic_execution_performed_during_materialization": false,
+  "shared_argument_contract": true
+}

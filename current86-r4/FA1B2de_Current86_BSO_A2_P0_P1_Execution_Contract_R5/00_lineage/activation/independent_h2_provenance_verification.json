@@ -1,0 +1,52 @@
+{
+  "exact_equal": true,
+  "field_equality": {
+    "binding_publication": true,
+    "bso_a2_raw_level_adjudication_execution": true,
+    "decision_fields": true,
+    "global_h2_exact_user_event_count": true,
+    "h2_activation_decision": true,
+    "h2_event_ordinal": true,
+    "h2_exact_match_count_in_session": true,
+    "h2_literal_utf8": true,
+    "h2_literal_utf8_length_bytes": true,
+    "h2_literal_utf8_sha256": true,
+    "h2_native_record_sha256": true,
+    "h2_user_role_assertion_exact_value": true,
+    "h2_user_role_assertion_field_path": true,
+    "matching_session_file_count": true,
+    "native_session_candidate_file_count": true,
+    "native_session_id": true,
+    "native_session_parse_failure_paths": true,
+    "native_session_record_locator": true,
+    "native_session_store_root": true,
+    "native_source_file_sha256_at_capture": true,
+    "native_source_file_size_bytes_at_capture": true,
+    "prospective_authority_candidate_id": true,
+    "provenance_mode": true,
+    "schema_version": true,
+    "transcript_prefix_sha256_through_h2": true
+  },
+  "independently_recomputed_evidence_id": "939cc0c72e77bc437f0ab436cdf61c276d0ba1959273bbe0f46344e77ddff99e",
+  "semantic_checks": {
+    "exact_candidate_pin": {
+      "status": "PASS"
+    },
+    "exact_current86_boundary": {
+      "status": "PASS"
+    },
+    "literal_integrity": {
+      "status": "PASS"
+    },
+    "native_user_role": {
+      "status": "PASS"
+    },
+    "no_downstream_execution": {
+      "status": "PASS"
+    },
+    "unique_ordered_native_event": {
+      "status": "PASS"
+    }
+  },
+  "status": "PASS"
+}

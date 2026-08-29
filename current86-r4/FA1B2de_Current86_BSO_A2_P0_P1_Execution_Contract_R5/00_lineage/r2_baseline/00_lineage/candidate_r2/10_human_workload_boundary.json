@@ -1,0 +1,18 @@
+{
+  "human_manual_evidence_id_copying_required": false,
+  "human_manual_tasks_prohibited": [
+    "CANDIDATE_RECONSTRUCTION",
+    "EVIDENCE_EXTRACTION",
+    "HASHING",
+    "IDENTITY_BINDING",
+    "PROVENANCE_PACKAGING",
+    "VERIFIER_COMPARISON"
+  ],
+  "human_normative_actions": [
+    "CONFIRM_PROPOSED_OWNER",
+    "REJECT_PROPOSAL_AND_SELECT_OTHER_EXISTING_CANDIDATE",
+    "NOT_SURE_ESCALATE"
+  ],
+  "human_normative_authority_does_not_imply_human_manual_data_processing": true,
+  "schema_version": "FA1B2DE_CURRENT86_BSO_A2_HUMAN_WORKLOAD_BOUNDARY_R1"
+}

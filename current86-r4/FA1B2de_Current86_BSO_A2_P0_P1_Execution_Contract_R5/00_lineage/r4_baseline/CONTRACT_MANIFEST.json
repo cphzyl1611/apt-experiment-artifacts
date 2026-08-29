@@ -1,0 +1,22 @@
+{
+  "b1_m1_non_regression": "PASS",
+  "b2_verifier_production_e2e": "CLOSED",
+  "b3_mandatory_authenticated_cross_object_validation": "CLOSED",
+  "b4_mandatory_exact_disposition_lineage": "CLOSED",
+  "binding_publication": "NO",
+  "contract_manifest_id": "63eeeb65b0f448c1a127a26e0e50c23845cf360f65a09077a47c1e4297d9c3a2",
+  "independent_verifier_semantic_execution": "NO",
+  "materialization_mode": "COMPLETE_CONTRACT_ONLY",
+  "next_action": "FRESH_TARGETED_INDEPENDENT_REVIEW_OF_R4_B2_B3_B4_ONLY",
+  "p0_executed": "NO",
+  "p1_executed": "NO",
+  "primary_proposer_executed": "NO",
+  "r3_baseline_tree_sha256": "5fe9d3ef3e9589acdb70c109cb62d8f37f28f6955a3fa60259f30d21ed982f63",
+  "r3_handoff_sha256": "59d4215d5c150ca6814963f361188c620ff0cf8b22f49af4c3868556431da0f7",
+  "r3_package_directory": "FA1B2de_Current86_BSO_A2_P0_P1_Execution_Contract_R3",
+  "r4_patch_summary": "R3_TO_R4_PATCH_SUMMARY.json",
+  "r4_tdd_log": "R3_TO_R4_DEFECT_REPRODUCTION_AND_TDD_LOG.json",
+  "raw_level_human_decisions": 0,
+  "runtime_adjudication_artifacts_generated": false,
+  "schema": "A2_P0_P1_EXECUTION_CONTRACT_R4_MANIFEST_V1"
+}

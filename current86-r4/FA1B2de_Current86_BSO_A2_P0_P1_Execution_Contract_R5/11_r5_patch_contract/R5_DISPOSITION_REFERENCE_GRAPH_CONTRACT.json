@@ -1,0 +1,18 @@
+{
+  "chain_validation_resolves_graph": true,
+  "collections": [
+    "pending_terminals",
+    "independent_reviews",
+    "accepted_terminals",
+    "blocked_attempts",
+    "remediation_records"
+  ],
+  "contract_id": "e63e2f64b3522f598c46b21f65fde3792278525c2a417a9c22ad7369d4b6da99",
+  "fail_closed": true,
+  "keyed_by": [
+    "raw_key",
+    "exact_object_id"
+  ],
+  "partition_reconstruction_requires_same_graph": true,
+  "schema": "A2_R5_DISPOSITION_REFERENCE_GRAPH_CONTRACT_V1"
+}

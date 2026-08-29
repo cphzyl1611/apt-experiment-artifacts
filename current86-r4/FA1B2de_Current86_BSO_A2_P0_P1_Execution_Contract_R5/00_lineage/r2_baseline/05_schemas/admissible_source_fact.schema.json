@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "oneOf": [
+    {
+      "properties": {
+        "candidate_scoring_id": {
+          "const": null
+        },
+        "raw_key": {
+          "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+          "type": "string"
+        },
+        "source_side": {
+          "const": "RAW"
+        }
+      }
+    },
+    {
+      "properties": {
+        "candidate_scoring_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "raw_key": {
+          "const": null
+        },
+        "source_side": {
+          "const": "CANDIDATE"
+        }
+      }
+    }
+  ],
+  "properties": {
+    "admissible_source_fact_id": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "const": null
+        }
+      ]
+    },
+    "authenticated_value_canonical_json": {},
+    "authenticated_value_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "candidate_scoring_id": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "const": null
+        }
+      ]
+    },
+    "exact_field_path_or_claim_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "raw_key": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+          "type": "string"
+        },
+        {
+          "const": null
+        }
+      ]
+    },
+    "schema": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "source_artifact_identity": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "source_artifact_sha256_or_pinned_identity": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "source_fact_id": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "source_fact_type": {
+      "enum": [
+        "PINNED_CANONICAL_INTRINSIC_FIELD",
+        "PINNED_PROJECT_TAXONOMY_FIELD",
+        "PINNED_RAW_SOURCE_FIELD",
+        "PINNED_SCORING_ROW_FIELD"
+      ]
+    },
+    "source_provenance_identity": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "source_side": {
+      "enum": [
+        "RAW",
+        "CANDIDATE"
+      ]
+    }
+  },
+  "required": [
+    "schema",
+    "source_fact_id",
+    "source_artifact_identity",
+    "source_artifact_sha256_or_pinned_identity",
+    "source_provenance_identity",
+    "source_fact_type",
+    "source_side",
+    "raw_key",
+    "candidate_scoring_id",
+    "exact_field_path_or_claim_id",
+    "authenticated_value_canonical_json",
+    "authenticated_value_sha256",
+    "admissible_source_fact_id"
+  ],
+  "schema_id": "bba0af21f22cd0d839763027f2f25af543e0b3b86dc9547393b33b80d1262a9d",
+  "title": "Admissible source fact",
+  "type": "object"
+}

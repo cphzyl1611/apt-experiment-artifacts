@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "S_ACCEPTED_TERMINAL": {
+      "items": {
+        "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "S_BLOCKED_ATTEMPT": {
+      "items": {
+        "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "S_IN_PROGRESS_OR_INCOMPLETE": {
+      "items": {
+        "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "S_NOT_STARTED_FOR_ADJUDICATION": {
+      "items": {
+        "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "S_PENDING_REVIEW": {
+      "items": {
+        "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "exact_current86_raw_set_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "exhaustive_exact_current86": {
+      "const": true
+    },
+    "pairwise_disjoint": {
+      "const": true
+    },
+    "schema": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "state_partition_snapshot_id": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "const": null
+        }
+      ]
+    }
+  },
+  "required": [
+    "schema",
+    "exact_current86_raw_set_hash",
+    "S_ACCEPTED_TERMINAL",
+    "S_PENDING_REVIEW",
+    "S_IN_PROGRESS_OR_INCOMPLETE",
+    "S_BLOCKED_ATTEMPT",
+    "S_NOT_STARTED_FOR_ADJUDICATION",
+    "pairwise_disjoint",
+    "exhaustive_exact_current86",
+    "state_partition_snapshot_id"
+  ],
+  "schema_id": "bc3a4dd2d4f79c824c4ab81b599aec68eee86da88541570e61e2ec5b21e7560d",
+  "title": "Current86 state partition snapshot",
+  "type": "object"
+}

@@ -1,0 +1,296 @@
+{
+  "candidate_relation_count": 47,
+  "candidate_relations": [
+    {
+      "candidate_scoring_id": "377c25094fe3ba152bf55f138238dc6a034e6d0803d0a982a131e3d168fdc886",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "01dc1db4e82a1f2927658e24366ce4aa4accc3c1ab13f5bc17e04fd25f03df3a"
+    },
+    {
+      "candidate_scoring_id": "795e65ed134b570376c02a10e7498f5b98a5548f3aba14f5fcfaa210592320e3",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "02e907df845dde889d1f6c1ba7e589b1bcd9e2af843bf13bd64386413dd9018c"
+    },
+    {
+      "candidate_scoring_id": "3f9ff53e2247f5e9f4503050b45be9d8d589060b44ba3a1525654526f178ad32",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "060be4f8d15816f8b66ebb18e3173aa5fd16cc7f4591fe7fc67993c6b2abddf4"
+    },
+    {
+      "candidate_scoring_id": "d9e77ef28c263e4a7f6cb93dc13d402119d712eeac12d954d320add014af8f77",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "084ea77c3fbca39308c5f9788d247a3384c58a0dae4b16cec97fbb26c8c7cc84"
+    },
+    {
+      "candidate_scoring_id": "6b16365abea5ca49c185d1c4a5a8c8cca8bbe2600158c4a54caebc0ed90cd284",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "0c5254285847d5c9bfc3b94239f8ff462b30bd9f871b40a65d60986022d5f980"
+    },
+    {
+      "candidate_scoring_id": "3d8af4aa8db2beb7a877d113f3d872b9d860fc4266394892fed78569ba61fb62",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "101bb0de355405d433f85877a3c440a1eca6279afdebed5f7e3d4bcc8c466af0"
+    },
+    {
+      "candidate_scoring_id": "bf955f215e158e67a5606f59528ad22540d189b02b3db9ca3dcdf998710ab1e7",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "141e9cc01a0611c230d9e880341f27e58f8c7fadc4bfd0e29526c60bfca76d5c"
+    },
+    {
+      "candidate_scoring_id": "7a90fd85d7e31389d1a1d1677a9a8f2fc73cd7d0471f370ce477f7f8f320983c",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "145c55b6c4b446f67949ad95bd04641182c686736f70c18e7db8eae02fe0ee70"
+    },
+    {
+      "candidate_scoring_id": "2463c7c95b33fd5217b623b42273b9843d7e0bceefc53f9fda92a2b10fb74f92",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "1d99ab9a3ab0b6b4c46b43e94a24ba156d45df21a18525728b082cf1a6764359"
+    },
+    {
+      "candidate_scoring_id": "3edc1c082ec50881dde120b44a4f0654e2151417cf3545bd0c75d1a36f1bf26a",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "1f67fe8a18840e5e1c07032aec4c6a42a7e15ffb0b1f99509c07dd60ceb5617f"
+    },
+    {
+      "candidate_scoring_id": "537fec6fc874b687a7f202d02e906a717c6d498521f898b472ac4818374af1ae",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "279a436e0001b03a949495e5b8e6a0f6a59289e48234635b693b5693ab82ced9"
+    },
+    {
+      "candidate_scoring_id": "c5a16f9dfd5deec38e26814f3443383bdff4f36ab4af8c662c153d6d9fc901fe",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "370e7c871eb2310e6f333bd338a6eee2a91698859f49f5c8edc1bd852fb48acf"
+    },
+    {
+      "candidate_scoring_id": "33c364cc9a7856d4a1957538323c9111d06a132339a94ceb76e506b00fc63406",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "46e5bf9c5ac88827bdf064ee989b79ec7c782baff4830bb3a6756ccdd84d9dd0"
+    },
+    {
+      "candidate_scoring_id": "e3601779464f0df11a5bd75ed74e90b380da6e3c109757fb3de94e3118a6d105",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "4fe28bc024838d856a052b6dc8e8f762ac84be110fa48324dab53d10c79986a2"
+    },
+    {
+      "candidate_scoring_id": "f41c2bd851a8c06c234de838ce7b46163dd75c07d6fe2c81328b3315198dac84",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "5561dc6c4165e2e29dd532fac1ed4ee13a763fd2be64776fadb0b46b59ca1f9d"
+    },
+    {
+      "candidate_scoring_id": "9bf5dd30c76a48fdfdbb30acccb17798598cc7376c2d30daef6e74524cea0145",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "61e5918eb1bf6403dc0162d6c406100a1909c348b6e3b5affe0b88f87a420cd7"
+    },
+    {
+      "candidate_scoring_id": "1fd818aee59f19b30d925ff6741250b77f06767764f91e682c7046a8ca4ece57",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "63129952636232b7f109f5ae018cb191e08150b8194c8702fa293f9cb62f0a38"
+    },
+    {
+      "candidate_scoring_id": "297013e64bb9082dd7cd493658db5d3c4a09172db8a99c580f8a15d3444d0358",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "6c41164c6df5fb3f1bfa977197ebfeaebc1331dd50b2a3000c59281073f187dd"
+    },
+    {
+      "candidate_scoring_id": "b0ef8bdf82a9b1c9666de892c8dff9bc1dc67abb10f5ed2389b8a2ad77781cf7",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "6dd7b6d466dd9064bb794cb4f46850852deacfc890216db8cba4ccef0274f34a"
+    },
+    {
+      "candidate_scoring_id": "7534f05526ac40e9c57a3f4b59ebf469fdf1e01d725ec75826a23fa172802161",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "6e5baabc97dc3ab13591eb542492dcc64031daa7c13b91f76b2d5b592260ad5a"
+    },
+    {
+      "candidate_scoring_id": "442a13c0e881ccaf6e4b8ce67e71a8a74b49f1ab28582d7b06801c62897c8735",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "71f7d0a6041ba09f5ba0120c9ffe8262a85ec521f09b7db86a66198fc07087ca"
+    },
+    {
+      "candidate_scoring_id": "2ab7719a498c37ae156a360a1636a7b200ec6fb4d56b9c4d0e3765070894d554",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "7596a6ec588364c5fdc4bf91c07c9b41caec8e80146342ccdff64c28bcdc5a32"
+    },
+    {
+      "candidate_scoring_id": "f455b12d7972b4b3caa1b5761111608911601f9ba9d3777b210101a3f1cf9a66",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "8b8fa5c6bb72e8536b52124be4805eb4b734ef5bb378862f649c533688a1b279"
+    },
+    {
+      "candidate_scoring_id": "c724ee63f87c87a56200ac4ab13d0bb846274e7213aa07470faf9ed32266a4fd",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "8c2333764a9244c635fd1f2385a4dc5be9ce4a56c47d02cf2b732e1de46c4de1"
+    },
+    {
+      "candidate_scoring_id": "008d4ab03cd28558a5fb2e22f509e55913ea9f7d4a0a40741d05409184345e6c",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "8fa55d4d650faadbcd9dea426c7f0e70ab821b4b06ad2036399829992d0b59f2"
+    },
+    {
+      "candidate_scoring_id": "261d155df7ca004ffc3ed40918b6ee0df9b519bd76236afb8ce95f985cadc2a7",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "9d7a9888e8c6dd23cf001924ef647c73dba7aed44bdd8c694f39284bb58c9cf1"
+    },
+    {
+      "candidate_scoring_id": "3a4cb8289d0db1dcbe8df56e73c1eadc20aba16fe4bcfcf2c0015f42b0d8400b",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "a8b2412d9400fe53d986b489d0adfc98b0b4b327dd63891bcf2aa21efe217c54"
+    },
+    {
+      "candidate_scoring_id": "3386c1c8309ba6b8a5f12ecc4e0bc1b67c0981d1081d99c524a51a94d5ea809b",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "aa6d55d66d6b1946ac9b86faf6116bef22f4b9e560cd7bffb67e8a6bad1c2884"
+    },
+    {
+      "candidate_scoring_id": "605955cdfecb55e41ebf8ce4fba77468fca161ef8cac30052a9aced8dd5352bc",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "ab60cdf411af6b0b50e405b69c7e4afb19dfa674dc6467b95ec3385ee4598fc0"
+    },
+    {
+      "candidate_scoring_id": "b1826a45ef94b29a7ff2dec7f47423816c388dcf8d2e75973c51f8c220bd7dc1",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "b717c194dfbd3d9350737cae238aedc4793f11725876a2579ad1078010871208"
+    },
+    {
+      "candidate_scoring_id": "e696d2c3deb554e27ff78d163f56d7a10d1610eaf1e8dedeb95fd3764b53a80e",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "bb20afd1497207f257817b13eb733a4fa25497f8189a4cdba5ddff667ae462ab"
+    },
+    {
+      "candidate_scoring_id": "2a6991fefd3e53543db8796b484cf3a669b3dd9e98c9d48d176faefe87148e27",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "c0319764cd4232880695672e4d0260af88727ce08fd16e68e422145f2d251f8a"
+    },
+    {
+      "candidate_scoring_id": "e30f51b286b53f217c92edef8d8070388357af564f3b75a6227969ffe7374c9d",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "c23f33a6f8a7250a9bc8dec2979bd1f6f0eb3dcebbd0c4622997c4f6df430992"
+    },
+    {
+      "candidate_scoring_id": "fba558d33b4654c2a8d80c1037394c501a3e42c294d314c9fa2e5ebf5381760e",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "c77f758e571aec89d9479e5316b45a6ace148df978527e473a97439924f9b7a4"
+    },
+    {
+      "candidate_scoring_id": "8033321eb684e9e70a39ea4896d97b3b17c521b5938f9ca3d6725f786de1c3fc",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "c95fa9ec591dbcd9731ca6d9c614ed9af41b42410e909836c7b6549018907015"
+    },
+    {
+      "candidate_scoring_id": "3ed4d5075ca5102ed7905a9c0915d960656e978cf728e4d81368067760a7f220",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "cc0b658812d4c408797e1c79cb7ecf3353de9a0299e3bae48b93a594a6815153"
+    },
+    {
+      "candidate_scoring_id": "80c927ae8588cf2e51c4ac0309382bd95489bb8ff60523a66d18c85bc300a37d",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "d68527a9f445a4db1de26ab949eafdf3cb4c02918cff14a804bf6514a2cdd457"
+    },
+    {
+      "candidate_scoring_id": "2a7b9c9971a6f3f800b57dd8588a26c79b3227fc6f8d070647726f0def24ada3",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "da9a2ee1adb34eeac9c7080c4d8c4834de0d4ec7331bdbb99fe033539a5b1daa"
+    },
+    {
+      "candidate_scoring_id": "b1c8977a8dcd56a8996efa65178352f7101502a93b986688b1778b2d9ef440c9",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "ded0d774ad7e63c60272a73bf83c3824cf7355ab895e873ab1f8ce78d5a61d7c"
+    },
+    {
+      "candidate_scoring_id": "61c350771b439e5359f8c6bd8b0ed5645c0c1a8f5dd85d2f1013ef259729e061",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "df412b7ebd4ae5d627b4e7173110c8110148e35d77558b14c217b2f372dcb4fc"
+    },
+    {
+      "candidate_scoring_id": "6ea0d619ecba6b32c1e2d896dc8abffe24e18527d8252f4f38c9a1c4ddb99ddb",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "e96a50ddcc8a0d8f237087b64a9161e5e80796110d2440456e1953bfac78dc95"
+    },
+    {
+      "candidate_scoring_id": "1ce5a1264f0f18b02b3bbd0520224224c6c7f9eb1ef977553b95856431dfcb1c",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "ebbef614a07c1a4fa6ce1532ccea3cb08d6edcb9a8dd5513c772b34732f2e3d3"
+    },
+    {
+      "candidate_scoring_id": "d7acb753ae96d6fecb177e348d5158d605c47b166ff957ef991dc70503244d85",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "f57fe9d3f28c4264dc075558a644494aa511e537e8486afecae1ea553334d432"
+    },
+    {
+      "candidate_scoring_id": "1ad6082010c56c287df7d90edf731f6f6c7fd47c91e085ddb40882f122f03960",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "f692f7bce129b0baa7582a1ab75a157f8815418e87da1f3ceb4498eb1e73ac32"
+    },
+    {
+      "candidate_scoring_id": "2f91d1cd9a9ec9107fe0162d02cfd1a07ab68cb1a1502594d67d75f4db284661",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "f882e00cf34ca9d470bf1dda0d837dff46aef47f816a1c0873f7a9792795a155"
+    },
+    {
+      "candidate_scoring_id": "b6ee2b47f36029237e1a9e934477287508f5a3a5837ff18440f1d26f6b1d02b2",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "fcc411e88150c69cb28f45bf81fabb188c4c64e542829deb069596872ed3f8dc"
+    },
+    {
+      "candidate_scoring_id": "4a993ef7e3cd03e658547cf5ff31adbd6f266c8b8797063c1253fb71f658f905",
+      "disposition": "HUMAN_EQ_REVIEW_REQUIRED",
+      "raw_key": "6000007::S11::A004",
+      "relation_identity": "fe83055fd0431e2eb75c3b7d697e4669000e33e56ab78a803bc2fd05b73cff71"
+    }
+  ],
+  "complete_candidate_relation_set_hash": "17bf14696a49cade57158fef47dba38ee6f7d451ef85b0d5b818ede0f1f6c4b1",
+  "complete_candidate_universe_hash": "ede9461d9de3b33b004a70ece32eeb4adb4ed2fd44ef49114838efe0a6cc1aaf",
+  "complete_candidate_universe_id": "4e701e6738be1c15f318d430ddccf7a4a8e4c5bac16b4ffbd5d2e9cf202dab31",
+  "complete_candidate_universe_preserved": true,
+  "hidden_pruning": "PROHIBITED",
+  "materialization_status": "PREPARED_NOT_ADJUDICATED",
+  "raw_key": "6000007::S11::A004",
+  "schema": "COMPLETE_CANDIDATE_UNIVERSE_CONTRACT_V1",
+  "top_k_candidate_truncation": "PROHIBITED"
+}

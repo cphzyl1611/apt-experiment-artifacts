@@ -1,0 +1,137 @@
+{
+  "authority_scope_id": "34551e904bafa71fb2fb6db33162e94ad41a08eca6c747d429c83760e09c1306",
+  "common_input_bundle_required_fields": [
+    "authority_scope_id",
+    "raw_key",
+    "raw_source_bundle_hash",
+    "complete_candidate_universe_hash",
+    "complete_candidate_relation_set_hash",
+    "candidate_source_bundle_hashes",
+    "proposal_evidence_profile_hash",
+    "source_class_fact_type_registry_id",
+    "historical_output_denylist_hash",
+    "input_bundle_hash"
+  ],
+  "derivation_commitment": {
+    "canonical_hash_rule": "derivation_commitment_hash=sha256(canonical_json(all commitment fields except derivation_commitment_hash))",
+    "chain_of_thought_recording": "PROHIBITED",
+    "required_fields": [
+      "schema_identifier",
+      "input_bundle_hash",
+      "complete_candidate_relation_set_hash",
+      "result_status",
+      "selected_candidate_scoring_id",
+      "selected_relation_identity",
+      "proposal_evidence_set_hash",
+      "hard_gate_results",
+      "run_identity",
+      "derivation_commitment_hash"
+    ]
+  },
+  "hard_gates_required_pass": [
+    "current86_exact_scope_membership_gate",
+    "candidate_set_equality_gate",
+    "relation_set_equality_gate",
+    "source_provenance_gate",
+    "identity_binding_gate",
+    "structure_applicability_gate",
+    "scoring_authority_applicability_gate",
+    "proposal_evidence_profile_gate",
+    "proposal_evidence_binding_gate",
+    "primary_verifier_isolation_gate",
+    "primary_verifier_commitment_order_gate",
+    "primary_verifier_agreement_gate"
+  ],
+  "isolation_order": [
+    "FREEZE_COMMON_INPUT_BUNDLE",
+    "ISOLATED_PRIMARY_DERIVATION",
+    "FREEZE_PRIMARY_COMMITMENT",
+    "ISOLATED_VERIFIER_DERIVATION_WITHOUT_PRIMARY_RESULT_CONTEXT",
+    "FREEZE_VERIFIER_COMMITMENT",
+    "COMPARE_COMMITMENTS"
+  ],
+  "isolation_order_record_schema": {
+    "context_identity_constraints": [
+      "primary_context_identity != verifier_context_identity",
+      "primary_run_identity != verifier_run_identity"
+    ],
+    "freeze_events_exact_order": [
+      "COMMON_INPUT_BUNDLE_FROZEN",
+      "PRIMARY_DERIVATION_STARTED",
+      "PRIMARY_COMMITMENT_FROZEN",
+      "VERIFIER_DERIVATION_STARTED_WITHOUT_PRIMARY_RESULT_CONTEXT",
+      "VERIFIER_COMMITMENT_FROZEN",
+      "COMMITMENTS_COMPARED"
+    ],
+    "id_rule": "isolation_order_record_hash=sha256(canonical_json(all isolation-order-record fields except isolation_order_record_hash))",
+    "required_fields": [
+      "schema_identifier",
+      "input_bundle_hash",
+      "primary_context_identity",
+      "primary_run_identity",
+      "primary_commitment_hash",
+      "verifier_context_identity",
+      "verifier_run_identity",
+      "verifier_commitment_hash",
+      "ordered_freeze_events",
+      "isolation_order_record_hash"
+    ],
+    "verifier_prohibited_precommitment_access": [
+      "PRIMARY_SELECTED_OWNER",
+      "PRIMARY_RATIONALE",
+      "PRIMARY_CANDIDATE_RANK",
+      "PRIMARY_PRUNING_STATE",
+      "PRIMARY_HIDDEN_INTERMEDIATE_SCORE",
+      "PRIMARY_MUTABLE_DERIVATION_OBJECT"
+    ]
+  },
+  "machine_proposal_authority": "NON_AUTHORITATIVE_MACHINE_PROPOSAL",
+  "normal_confirmation_rule": "IDENTICAL_UNIQUE_EXISTING_OWNER_PROPOSAL_AND_ALL_HARD_GATES_PASS",
+  "primary_and_verifier_context_isolation": "REQUIRED",
+  "proposal_evidence_constraints": {
+    "historical_comparative_relation_output_as_normative_evidence": "PROHIBITED",
+    "historical_output_denylist_hash": "f2f48a3142bf192c08cfa2bffbb722e0131bfd4a1ba55623caf5af72748b94c7",
+    "normative_source_profile_hash": "e24746c96c5f741cc35df8d992d93936911dd1de2ce7f1a0f00035cda3b33deb",
+    "proposal_evidence_set_subset_of_admissible_normative_source_fact_set": "REQUIRED",
+    "source_class_fact_type_registry_id": "8cef6206dfc3581c3e7b6358bde7a36e90f4ba99078176cc0e5aff4b238298a7",
+    "source_class_fact_type_registry_sha256": "3df4262faa4137996d2ff8d163bcc665d5bed76b3d719e6ff66cf4154252d72f"
+  },
+  "proposal_hash_rule": "proposal_hash=sha256(canonical_json(all proposal fields except proposal_hash))",
+  "proposal_status_values": [
+    "UNIQUE_EXISTING_OWNER_PROPOSAL",
+    "ESCALATE_AMBIGUOUS",
+    "ESCALATE_STRUCTURE",
+    "ESCALATE_SCORING_AUTHORITY",
+    "ESCALATE_PROVENANCE",
+    "ESCALATE_IDENTITY",
+    "ESCALATE_PROPOSER_VERIFIER_DISAGREEMENT"
+  ],
+  "proposer_verifier_disagreement": "FAIL_CLOSED_ESCALATION",
+  "required_proposal_fields": [
+    "authority_version_id",
+    "authority_scope_id",
+    "raw_key",
+    "raw_source_bundle_hash",
+    "complete_candidate_universe_hash",
+    "complete_candidate_relation_set_hash",
+    "input_bundle_hash",
+    "proposal_status",
+    "proposed_candidate_scoring_id",
+    "proposed_relation_identity",
+    "proposal_evidence_set_hash",
+    "candidate_source_bundle_hash",
+    "candidate_source_bundle_hashes",
+    "proposal_rationale_source_links",
+    "primary_proposer_identity",
+    "primary_proposer_run_identity",
+    "primary_derivation_commitment_hash",
+    "independent_verifier_identity",
+    "independent_verifier_run_identity",
+    "independent_verification_result",
+    "verifier_derivation_commitment_hash",
+    "isolation_order_record_hash",
+    "hard_gate_results",
+    "proposal_hash"
+  ],
+  "schema_version": "FA1B2DE_CURRENT86_BSO_A2_PROPOSAL_SCHEMA_R1"
+}

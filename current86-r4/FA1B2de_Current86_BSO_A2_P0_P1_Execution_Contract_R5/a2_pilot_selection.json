@@ -1,0 +1,25 @@
+{
+  "canonical_raw_key_format": "{playbook_id}::S{stage:02d}::A{action:03d}",
+  "excluded_semantic_fields": [
+    "candidate_count",
+    "model_confidence",
+    "evidence_richness",
+    "historical_disposition",
+    "historical_owner",
+    "historical_eq_result",
+    "proposal_agreement",
+    "candidate_popularity",
+    "embedding_similarity",
+    "semantic_difficulty"
+  ],
+  "ordering": "BYTEWISE_ASCENDING_UTF8",
+  "p1_executed": "NO",
+  "pilot_is_real_a2_adjudication": "YES",
+  "pilot_raw_key": "6000002::S02::A001",
+  "pilot_selection_id": "3c57a296de0b83d0408c84d6afb28e0bd706823ca3ebe37c14830b3d479cc205",
+  "schema": "A2_PILOT_SELECTION_V1",
+  "selection": "MINIMUM_CANONICAL_RAW_KEY",
+  "selection_input_exact_current86": true,
+  "selection_input_scope_id": "34551e904bafa71fb2fb6db33162e94ad41a08eca6c747d429c83760e09c1306",
+  "semantic_fields_influenced_selection": []
+}

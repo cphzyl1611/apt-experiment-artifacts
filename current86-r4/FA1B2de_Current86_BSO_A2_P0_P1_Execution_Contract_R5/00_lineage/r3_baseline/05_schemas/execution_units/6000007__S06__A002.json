@@ -1,0 +1,14 @@
+{
+  "adjudication_executed": false,
+  "authority_scope_id": "34551e904bafa71fb2fb6db33162e94ad41a08eca6c747d429c83760e09c1306",
+  "complete_candidate_relation_set_hash": "520fd34a8bf931256c451e639d238baf6d82d59072ef9e0cf07230c720182f66",
+  "complete_candidate_universe_hash": "748a27f60e5d44b9416d56c4c7de2eb72bb8e20b7e59416a03e8ad023ad50988",
+  "execution_manifest_id": "9a76ac35974fe15fcac5031dff26576ed4fedd28bdbb4aece6302f8a7515b589",
+  "initial_current_state": "NOT_STARTED_FOR_ADJUDICATION",
+  "p0_prepared": true,
+  "raw_execution_unit_id": "149206aaf410c6f49467061a018fa9a047c736d864c0920f67c3d3e2326839a1",
+  "raw_identity_hash": "551b9f8e417053a3f98931f73eaa3d94d7075a056d9aeca858bceb9084199a01",
+  "raw_key": "6000007::S06::A002",
+  "schema": "RAW_EXECUTION_UNIT_CONTRACT_V1",
+  "source_bundle_status": "FROZEN_REFERENCE_ONLY_NOT_RUNTIME_MATERIALIZED"
+}

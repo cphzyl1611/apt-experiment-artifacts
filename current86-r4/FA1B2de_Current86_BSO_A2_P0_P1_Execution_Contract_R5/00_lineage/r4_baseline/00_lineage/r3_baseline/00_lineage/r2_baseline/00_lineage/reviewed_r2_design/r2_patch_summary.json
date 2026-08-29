@@ -1,0 +1,92 @@
+{
+  "baseline": {
+    "byte_preserved": true,
+    "expected_sha256": "50bb2e17b2a3e71f3015125d20ce7b10381d9dec1cef9465b722171a9f467dd2",
+    "observed_sha256": "50bb2e17b2a3e71f3015125d20ce7b10381d9dec1cef9465b722171a9f467dd2",
+    "path": "Design_FA1B2de_Current86_BSO_A2_HumanLight_Execution_P0_P4.md"
+  },
+  "blockers": {
+    "B1": {
+      "id": "P3_CURRENT_STATE_DISPOSITION_AND_PENDING_INVALIDATION_UNDERSPECIFIED",
+      "minimal_correction": [
+        "append-only per-raw authoritative disposition chain",
+        "PENDING_TERMINAL_INVALIDATED object and stale-pending exclusion",
+        "review-infrastructure failure keeps PENDING_REVIEW plus GLOBAL_PAUSE",
+        "BLOCKED_ATTEMPT defined by current disposition, not historical failure existence",
+        "controlled remediation appends BLOCKED_ATTEMPT -> IN_PROGRESS_OR_INCOMPLETE transition",
+        "TERMINAL_ACCEPTED makes ACCEPTED_TERMINAL the unique current state",
+        "resume token binds exact current-disposition-head set and reconstructed partition"
+      ],
+      "status": "CLOSED_BY_DESIGN_PATCH"
+    },
+    "B2": {
+      "id": "P4_NONAUTHORITATIVE_WORKLOAD_MAY_CONTAMINATE_NORMATIVE_FINAL_FREEZE_ID",
+      "minimal_correction": [
+        "CURRENT86_A2_FINAL_FREEZE_ID derived only from FINAL_FREEZE_NORMATIVE_MANIFEST",
+        "non-authoritative workload telemetry explicitly excluded from normative manifest",
+        "separate FINAL_FREEZE_PACKAGE_MANIFEST_ID covers complete delivery including workload evidence",
+        "B-SO-V owner/binding verification pins workload-independent normative freeze identity"
+      ],
+      "status": "CLOSED_BY_DESIGN_PATCH"
+    }
+  },
+  "independent_review": {
+    "authenticated": true,
+    "expected_sha256": "a98a7a342d9c883976c8dddb2c04859774db6942d517efe14acffc8ea880d569",
+    "observed_sha256": "a98a7a342d9c883976c8dddb2c04859774db6942d517efe14acffc8ea880d569",
+    "path": "Independent_Design_Review_FA1B2de_Current86_BSO_A2_HumanLight_Execution_P0_P4.md"
+  },
+  "mandatory_p0_materialization_requirements": {
+    "M1": {
+      "requirement": "Freeze SET_ORDERING_REGISTRY before any runtime identity computation.",
+      "status": "PRESERVED_AND_EXPLICIT"
+    },
+    "M2": {
+      "requirement": "Mechanically enforce verifier precommit visibility isolation; unequal context/run identities alone are insufficient.",
+      "status": "PRESERVED_AND_EXPLICIT"
+    }
+  },
+  "non_regression": {
+    "A2_PROCESS_COMPLETE_DISTINCT_FROM_OWNER_RESOLUTION_COMPLETE": true,
+    "BSO_V_MUST_NOT_RE_ADJUDICATE_OWNER": true,
+    "CONTINUE_OLD_44_RELATION_EQ_PILOT": "NO",
+    "HUMAN_NORMATIVE_UNIT": "ONE_RAW",
+    "NO_MANUAL_EVIDENCE_ID_OR_HASH_COPYING": true,
+    "NO_RELATION_LEVEL_MANUAL_OUTCOMES": true,
+    "P0_P1_P2_P3_P4_ARCHITECTURE_UNCHANGED": true,
+    "P4_FREEZE_DISTINCT_FROM_BINDING_PUBLICATION": true,
+    "PILOT_IS_REAL_A2_ADJUDICATION": true,
+    "PILOT_RECORD_VALIDITY_DISTINCT_FROM_PILOT_SCALE_OUT_ELIGIBILITY": true,
+    "RETURN_TO_4161_RELATION_EQ": "NO"
+  },
+  "patch_mode": "DESIGN_ONLY_TWO_NARROW_BLOCKERS",
+  "r2_design": {
+    "path": "Design_FA1B2de_Current86_BSO_A2_HumanLight_Execution_P0_P4_R2_PATCHED.md",
+    "sha256": "5465c2047604b616c4966678b5fb1e823020be8011e655fb5582c556c04a837f",
+    "status": "PROPOSED_NOT_EXECUTED"
+  },
+  "schema": "FA1B2DE_CURRENT86_BSO_A2_HUMANLIGHT_EXECUTION_P0_P4_R2_PATCH_SUMMARY_V1",
+  "side_effects": {
+    "BINDING_AUTHORITY_MUTATION": "NO",
+    "BINDING_PUBLICATION": "NO",
+    "BSO_P_EXECUTED": "NO",
+    "BSO_V_EXECUTED": "NO",
+    "P0_EXECUTED": "NO",
+    "P1_EXECUTED": "NO",
+    "P2_EXECUTED": "NO",
+    "P3_EXECUTED": "NO",
+    "P4_EXECUTED": "NO",
+    "RAW_LEVEL_HUMAN_DECISIONS": 0,
+    "SCORING_AUTHORITY_MUTATION": "NO"
+  },
+  "terminal": {
+    "B1_CURRENT_STATE_DISPOSITION": "CLOSED_BY_DESIGN_PATCH",
+    "B2_NORMATIVE_FREEZE_IDENTITY_SEPARATION": "CLOSED_BY_DESIGN_PATCH",
+    "BINDING_PUBLICATION": "NO",
+    "NEXT_ACTION": "TARGETED_INDEPENDENT_DESIGN_REVIEW_OF_TWO_R2_PATCHES_ONLY",
+    "P0_EXECUTED": "NO",
+    "P1_EXECUTED": "NO",
+    "R2_PATCH_STATUS": "COMPLETE_DESIGN_ONLY",
+    "RAW_LEVEL_HUMAN_DECISIONS": 0
+  }
+}

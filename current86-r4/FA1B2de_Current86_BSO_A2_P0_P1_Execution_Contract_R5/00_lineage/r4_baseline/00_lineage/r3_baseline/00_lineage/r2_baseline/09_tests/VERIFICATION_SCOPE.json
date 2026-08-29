@@ -1,0 +1,10 @@
+{
+  "human_decision_capture": false,
+  "independent_verifier_run": false,
+  "independent_verifier_semantic_execution": false,
+  "ledger_append": false,
+  "non_semantic_m2_sentinel_probe": true,
+  "primary_proposer_run": false,
+  "real_p1_adjudication_run": false,
+  "tests_are_static_contract_verification": true
+}

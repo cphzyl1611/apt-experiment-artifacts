@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "independent_review_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "independent_review_id": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "promotion_record_id": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "const": null
+        }
+      ]
+    },
+    "promotion_sequence": {
+      "type": "integer"
+    },
+    "schema": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "source_terminal_record_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "source_terminal_record_id": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema",
+    "source_terminal_record_id",
+    "source_terminal_record_hash",
+    "independent_review_id",
+    "independent_review_hash",
+    "promotion_sequence",
+    "promotion_record_id"
+  ],
+  "schema_id": "19b352eb9770ae38b9f17f666aa33d6b65ebeceb1aac276a1a5f3d867b0c8490",
+  "title": "Accepted terminal promotion record",
+  "type": "object"
+}

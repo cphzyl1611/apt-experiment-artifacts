@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "comparison_id": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "const": null
+        }
+      ]
+    },
+    "context_identities_distinct": {
+      "const": true
+    },
+    "independent_commitment_comparison": {
+      "enum": [
+        "PASS",
+        "FAIL_CLOSED"
+      ]
+    },
+    "primary_commitment_id": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "raw_key": {
+      "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+      "type": "string"
+    },
+    "run_identities_distinct": {
+      "const": true
+    },
+    "same_candidate_universe": {
+      "const": true
+    },
+    "same_input_bundle": {
+      "const": true
+    },
+    "schema": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "verifier_commitment_id": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema",
+    "raw_key",
+    "primary_commitment_id",
+    "verifier_commitment_id",
+    "same_input_bundle",
+    "same_candidate_universe",
+    "context_identities_distinct",
+    "run_identities_distinct",
+    "independent_commitment_comparison",
+    "comparison_id"
+  ],
+  "schema_id": "d1b4c3f20cc219d4eaaf6a2dbe74d2d86ec4a428ad46657aae11536f837fdeca",
+  "title": "Proposer/verifier comparison",
+  "type": "object"
+}

@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "identity_excludes_from_normative_freeze": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "identity_field": {
+      "const": "FINAL_FREEZE_PACKAGE_MANIFEST_ID"
+    },
+    "identity_rule": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "includes_workload_files": {
+      "const": true
+    },
+    "materialization_status": {
+      "const": "SCHEMA_ONLY_NO_P4_FREEZE"
+    },
+    "normative_identity_reference": {
+      "const": "CURRENT86_A2_FINAL_FREEZE_ID"
+    },
+    "package_identity_may_change_when_workload_files_change": {
+      "const": true
+    },
+    "schema": {
+      "const": "FINAL_FREEZE_PACKAGE_MANIFEST_SCHEMA_V1"
+    },
+    "schema_id": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "const": null
+        }
+      ]
+    },
+    "workload_summary": {
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema",
+    "materialization_status",
+    "identity_field",
+    "identity_rule",
+    "includes_workload_files",
+    "workload_summary",
+    "identity_excludes_from_normative_freeze",
+    "normative_identity_reference",
+    "package_identity_may_change_when_workload_files_change",
+    "schema_id"
+  ],
+  "schema_id": "c045fd52e5f5a6b3287a57192c025ef57688ea62ae3ab18516b8a1e41e08797d",
+  "title": "P4 package manifest schema",
+  "type": "object",
+  "x-cross-field-constraints": [
+    "Package identity may include workload files while normative identity excludes them"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "implementation_verification_only": true,
+  "runtime_adjudication_executed": false,
+  "schema": "A2_R5_IMPLEMENTATION_TEST_CATALOG_V1",
+  "tests": {
+    "B1_M1_M2": "preserved regression tests",
+    "B2": "preserved non-semantic production verifier E2E",
+    "B3": "mandatory authenticated bundle/universe/commitment/comparison schema and invariant validation",
+    "B4": "raw/ID-keyed exact reference graph through chain and partition reconstruction"
+  }
+}

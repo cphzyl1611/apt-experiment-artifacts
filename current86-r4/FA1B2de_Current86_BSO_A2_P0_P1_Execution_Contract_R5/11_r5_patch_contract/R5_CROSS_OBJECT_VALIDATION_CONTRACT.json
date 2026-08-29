@@ -1,0 +1,11 @@
+{
+  "authenticated_proposal_input_bundle_mandatory": true,
+  "candidate_option_set_exact_equality": true,
+  "contract_id": "b7ed8ecab59e02e709896a4385d5d9bd7c15600efb214aafe4df978ac2fcee57",
+  "direct_context_and_run_distinction_mandatory": true,
+  "frozen_schema_validation_mandatory": true,
+  "proposal_input_bundle_id_equality_arity": 3,
+  "relation_set_hash_equality_arity": 4,
+  "schema": "A2_R5_CROSS_OBJECT_VALIDATION_CONTRACT_V1",
+  "semantic_universe_hash_equality_arity": 5
+}

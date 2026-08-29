@@ -1,0 +1,20 @@
+{
+  "contract_id": "78f1f96be16782b3ab3827ce7ab989806ddc808bdf7e5b76c06b4a225cbbb72f",
+  "human_decision": [
+    "CONFIRM equals packet proposal",
+    "REJECT_SELECT resolves in full mapping and differs from proposal",
+    "NOT_SURE candidate and relation are null"
+  ],
+  "human_packet": [
+    "exact full mapping equals authenticated candidate universe",
+    "proposal equals authenticated comparison result",
+    "option/candidate/relation identities unique"
+  ],
+  "owner_terminal": [
+    "bind terminal to validated human decision, packet, proposal/comparison, and exact universe",
+    "owner pair equals decision pair",
+    "REJECT_SELECT alternative verification PASS binds exact selected pair"
+  ],
+  "schema": "A2_R3_CROSS_OBJECT_VALIDATION_CONTRACT_V1",
+  "validation_mode": "AUTHENTICATED_REFERENCED_OBJECTS_REQUIRED"
+}

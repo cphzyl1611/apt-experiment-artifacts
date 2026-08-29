@@ -1,0 +1,21 @@
+{
+  "activation_transaction_id": "bf4569d2116ac16a994feda733468faf2eeac92cc1f6eda46a77eac7312b718f",
+  "active_authority_candidate_id": "36831020b75a201420bd5cfce97a54ada12d44246f56a7812455bc21b99f9477",
+  "active_authority_lineage_design_sha256_as_recorded_in_prior_activation": "5bef1445705e323115ce071f616f53e218202d1d5cfcac13d2febee295956ed4",
+  "authentication_record_id": "99b32ea75ce3315da5659c478c8fa5fcfca6098583a4f05b30ef1684d121795c",
+  "authentication_status": "PASS",
+  "candidate_checksums_sha256": "dc5ef34353243fbf6e23f1383d3f9fdd111b86080ae4e7b9b8d4140796d1c86f",
+  "candidate_manifest_sha256": "4810a1b5336d1672290e46f55eae056f0d1a963f4972548f5d097d1c7dd3baae",
+  "exact_candidate_universe_equality": true,
+  "exact_current86_scope_id": "34551e904bafa71fb2fb6db33162e94ad41a08eca6c747d429c83760e09c1306",
+  "exact_scope_object_equality_v4": true,
+  "former_human_eq_relation_count": 4161,
+  "h2_provenance_evidence_id": "939cc0c72e77bc437f0ab436cdf61c276d0ba1959273bbe0f46344e77ddff99e",
+  "hard_negative_count": 58,
+  "raw_count": 86,
+  "relation_count": 4219,
+  "reviewed_design_sha256": "5465c2047604b616c4966678b5fb1e823020be8011e655fb5582c556c04a837f",
+  "schema": "P0_P1_INPUT_AUTHENTICATION_RECORD_V1",
+  "source_registry_sha256": "3df4262faa4137996d2ff8d163bcc665d5bed76b3d719e6ff66cf4154252d72f",
+  "v4_archive_sha256": "0af337acc731595167d75f922dd39bbbb48dd1b1b9d3b31723d01408501040de"
+}

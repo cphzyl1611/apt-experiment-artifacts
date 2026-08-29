@@ -1,0 +1,19 @@
+{
+  "authenticated_source_references": [
+    {
+      "path": "00_lineage/source_registry/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json",
+      "raw_file_sha256": "3df4262faa4137996d2ff8d163bcc665d5bed76b3d719e6ff66cf4154252d72f"
+    },
+    {
+      "path": "00_lineage/candidate_r2/03_exact_current86_scope.json",
+      "raw_file_sha256": "411d2b2655ea435a6f32a64dddc9b5d3a64d2ef09d7861822125f66b6e64949f"
+    }
+  ],
+  "facts": [],
+  "normative_source_profile_hash": "e24746c96c5f741cc35df8d992d93936911dd1de2ce7f1a0f00035cda3b33deb",
+  "raw_key": "6000003::S06::A002",
+  "schema": "SOURCE_FACT_BUNDLE_CONTRACT_V1",
+  "source_bundle_hash": "ba83a148c61558f0549ac995d66befa5f893bca62d4bcd2a775689f4c2c55ff1",
+  "source_bundle_status": "FROZEN_REFERENCE_ONLY_NOT_RUNTIME_MATERIALIZED",
+  "source_registry_id": "8cef6206dfc3581c3e7b6358bde7a36e90f4ba99078176cc0e5aff4b238298a7"
+}

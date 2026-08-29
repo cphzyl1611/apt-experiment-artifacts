@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "disposition_id": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "const": null
+        }
+      ]
+    },
+    "disposition_sequence": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "disposition_type": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "next_state": {
+      "enum": [
+        "NOT_STARTED_FOR_ADJUDICATION",
+        "IN_PROGRESS_OR_INCOMPLETE",
+        "PENDING_REVIEW",
+        "BLOCKED_ATTEMPT",
+        "ACCEPTED_TERMINAL"
+      ]
+    },
+    "prior_disposition_id": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "const": null
+        }
+      ]
+    },
+    "prior_state": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "const": null
+        }
+      ]
+    },
+    "raw_key": {
+      "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+      "type": "string"
+    },
+    "reason_class": {
+      "anyOf": [
+        {
+          "minLength": 1,
+          "type": "string"
+        },
+        {
+          "const": null
+        }
+      ]
+    },
+    "referenced_accepted_terminal_id": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "const": null
+        }
+      ]
+    },
+    "referenced_attempt_id": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "const": null
+        }
+      ]
+    },
+    "referenced_pending_terminal_id": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "const": null
+        }
+      ]
+    },
+    "referenced_review_id": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "const": null
+        }
+      ]
+    },
+    "remediation_reference": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "const": null
+        }
+      ]
+    },
+    "schema": {
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema",
+    "raw_key",
+    "disposition_type",
+    "prior_state",
+    "next_state",
+    "disposition_sequence",
+    "prior_disposition_id",
+    "referenced_attempt_id",
+    "referenced_pending_terminal_id",
+    "referenced_review_id",
+    "referenced_accepted_terminal_id",
+    "remediation_reference",
+    "reason_class",
+    "disposition_id"
+  ],
+  "schema_id": "b23897b4af19134401113b10c9bfa7c70c9c5a031dbc58730239e5385075adae",
+  "title": "Authoritative disposition record",
+  "type": "object",
+  "x-cross-field-constraints": [
+    "each raw has one linear sequence starting at 0",
+    "every non-initial record references the immediately prior disposition_id",
+    "fork, duplicate sequence, missing parent, invalid transition, or multiple heads fail closed"
+  ]
+}

@@ -1,0 +1,192 @@
+{
+  "M2_EXECUTION_BOUND_ISOLATION": "VERIFIED",
+  "audit_method": [
+    "bytewise_set_normalization",
+    "readable_minus_whitelist_equals_frozen_common_input_set",
+    "readable_intersection_primary_private_or_commitment_is_empty",
+    "no_primary_result_fields_in_common_input_manifest"
+  ],
+  "common_frozen_input_root_identity": {
+    "authenticated_content_identities": {
+      "activation_transaction_sha256": "650a61ee3ab1ef3861e1b16cd159bb0b11e40895abc5ea4ea652447a27a04291",
+      "candidate_registry_sha256": "93e29df5901a895b79ccae1d19058036334744beb11addaf8279af982a3dfc3c",
+      "candidate_scope_sha256": "411d2b2655ea435a6f32a64dddc9b5d3a64d2ef09d7861822125f66b6e64949f",
+      "h2_provenance_evidence_sha256": "db6ffee692e1bb98bade8627c31263fb0d904b6e51052e12a1f4285fdf4b671d",
+      "reviewed_r2_design_sha256": "5465c2047604b616c4966678b5fb1e823020be8011e655fb5582c556c04a837f",
+      "source_registry_sha256": "3df4262faa4137996d2ff8d163bcc665d5bed76b3d719e6ff66cf4154252d72f",
+      "v4_lineage_archive_sha256": "0af337acc731595167d75f922dd39bbbb48dd1b1b9d3b31723d01408501040de"
+    },
+    "input_set_hash": "8fd305a0b753fe9081f9766e8a0b1f9063ee9a5ac7576724d3721dd4335d8770",
+    "logical_root": "00_lineage+01_canonicalization+02_set_ordering+05_schemas"
+  },
+  "container_or_sandbox_identity": {
+    "bubblewrap_executable": "/usr/bin/bwrap",
+    "bubblewrap_executable_sha256": "d78807229d616606e339c5988392b9e0ab4a6a6998fa51e4590837f426a12fca",
+    "bubblewrap_version": "bubblewrap 0.6.1",
+    "launcher_configuration": {
+      "common_input_mount": {
+        "destination": "/frozen-input",
+        "mode": "READ_ONLY"
+      },
+      "environment": "CLEARED_EXCEPT_FROZEN_PATH",
+      "host_root_mount": "ABSENT",
+      "identity": {
+        "gid": 65534,
+        "uid": 65534
+      },
+      "namespace_flags": [
+        "--unshare-all",
+        "--unshare-user-try",
+        "--new-session",
+        "--die-with-parent"
+      ],
+      "network_namespace": "UNSHARED_NO_HOST_NETWORK",
+      "role_output_mount": {
+        "destination": "/role-output",
+        "mode": "READ_WRITE"
+      },
+      "role_runtime_mount": {
+        "destination": "/role-runtime",
+        "mode": "READ_ONLY"
+      }
+    },
+    "launcher_configuration_hash": "c43585c923abe54f7d0c05f0424d20b86b1962e0565129e978035f7a614cac59",
+    "launcher_path": "tools/a2_bwrap_isolation.py",
+    "launcher_sha256": "c942c739f3db2075414743949ae9080e8f0e4388b03c3af78d4051517e76ae6a"
+  },
+  "enforcement_mechanism": "BUBBLEWRAP_MOUNT_NAMESPACE_CAPABILITY_ISOLATION",
+  "filesystem_acl_or_permission_snapshot_hash": null,
+  "frozen_common_verifier_input_set": [
+    "00_lineage/activation/current86_bso_a2_authority_activation_transaction.json",
+    "00_lineage/activation/h2_native_user_event_provenance_evidence.json",
+    "00_lineage/activation/independent_activation_transaction_verification.json",
+    "00_lineage/activation/independent_h2_provenance_verification.json",
+    "00_lineage/candidate_r2/03_exact_current86_scope.json",
+    "00_lineage/candidate_r2/04_complete_candidate_set_registry.json",
+    "00_lineage/reviewed_r2_design",
+    "00_lineage/source_registry/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json",
+    "01_canonicalization/PROJECT_CANONICAL_JSON_V1.json",
+    "02_set_ordering/SET_ORDERING_REGISTRY.json",
+    "05_schemas/schema_registry.json"
+  ],
+  "isolation_enforcement_id": "03625180e4b98cdf32ce04c6054f3fd92df771195da0a891bf1f367aba4c05b9",
+  "isolation_launcher_identity": {
+    "bubblewrap_executable": "/usr/bin/bwrap",
+    "bubblewrap_executable_sha256": "d78807229d616606e339c5988392b9e0ab4a6a6998fa51e4590837f426a12fca",
+    "bubblewrap_version": "bubblewrap 0.6.1",
+    "launcher_configuration": {
+      "common_input_mount": {
+        "destination": "/frozen-input",
+        "mode": "READ_ONLY"
+      },
+      "environment": "CLEARED_EXCEPT_FROZEN_PATH",
+      "host_root_mount": "ABSENT",
+      "identity": {
+        "gid": 65534,
+        "uid": 65534
+      },
+      "namespace_flags": [
+        "--unshare-all",
+        "--unshare-user-try",
+        "--new-session",
+        "--die-with-parent"
+      ],
+      "network_namespace": "UNSHARED_NO_HOST_NETWORK",
+      "role_output_mount": {
+        "destination": "/role-output",
+        "mode": "READ_WRITE"
+      },
+      "role_runtime_mount": {
+        "destination": "/role-runtime",
+        "mode": "READ_ONLY"
+      }
+    },
+    "launcher_configuration_hash": "c43585c923abe54f7d0c05f0424d20b86b1962e0565129e978035f7a614cac59",
+    "launcher_path": "tools/a2_bwrap_isolation.py",
+    "launcher_sha256": "c942c739f3db2075414743949ae9080e8f0e4388b03c3af78d4051517e76ae6a"
+  },
+  "non_semantic_isolation_probe": {
+    "common_frozen_sentinel_readable": true,
+    "primary_commitment_sentinel_readable": false,
+    "primary_private_sentinel_readable": false,
+    "probe_exit_code": 0,
+    "probe_kind": "NON_SEMANTIC_DUMMY_SENTINEL_CAPABILITY_PROBE",
+    "prohibited_read_failed_at_boundary": true,
+    "semantic_role_execution": false
+  },
+  "precommit_visibility_invariant": {
+    "intersection": [],
+    "readable_set_equals_common_except_whitelist": true
+  },
+  "primary_commitment_output_roots": [
+    "runtime/primary/commitment_output"
+  ],
+  "primary_private_or_commitment_output_set": [
+    "runtime/primary/commitment_output",
+    "runtime/primary/mutable_derivation_artifacts",
+    "runtime/primary/private_output"
+  ],
+  "primary_private_or_commitment_output_set_hash": "3179cb6bd3e5ec5832ab07591794a320f57fcd92c26c9c380f6c4cef5b749756",
+  "primary_private_output_roots": [
+    "runtime/primary/private_output",
+    "runtime/primary/mutable_derivation_artifacts"
+  ],
+  "runtime_tool_whitelist": [
+    "tool:python-hashlib",
+    "tool:python-json-parser",
+    "tool:python-unicodedata"
+  ],
+  "schema": "A2_VERIFIER_ISOLATION_ENFORCEMENT_CONTRACT_V1",
+  "set_ordering_registry_id": "e87942896a6c5910635d6b72faa1a7a2dc1ec962a3635c8762a082e7d646211b",
+  "tool_permission_boundary": {
+    "allowed_tools": [
+      "tool:python-hashlib",
+      "tool:python-json-parser",
+      "tool:python-unicodedata"
+    ],
+    "denied_tools": [
+      "network",
+      "shell",
+      "primary_output_read",
+      "unfrozen_external_retrieval"
+    ],
+    "external_connector_access": false,
+    "filesystem_read_scope": "FROZEN_COMMON_VERIFIER_INPUT_SET_ONLY",
+    "filesystem_write_scope": "VERIFIER_WORKSPACE_ONLY_AFTER_INPUT_FREEZE",
+    "mutable_workspace_access": false,
+    "network_access": false,
+    "shell_execution": false
+  },
+  "tool_permission_boundary_identity": "681731b33e22a7d865446fe8048d087bfb6cd089b9cd8dce5679ec1d3300db0a",
+  "verifier_precommit_read_roots": [
+    "00_lineage/activation/current86_bso_a2_authority_activation_transaction.json",
+    "00_lineage/activation/h2_native_user_event_provenance_evidence.json",
+    "00_lineage/activation/independent_activation_transaction_verification.json",
+    "00_lineage/activation/independent_h2_provenance_verification.json",
+    "00_lineage/candidate_r2/03_exact_current86_scope.json",
+    "00_lineage/candidate_r2/04_complete_candidate_set_registry.json",
+    "00_lineage/reviewed_r2_design",
+    "00_lineage/source_registry/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json",
+    "01_canonicalization/PROJECT_CANONICAL_JSON_V1.json",
+    "02_set_ordering/SET_ORDERING_REGISTRY.json",
+    "05_schemas/schema_registry.json"
+  ],
+  "verifier_precommit_readable_input_set": [
+    "00_lineage/activation/current86_bso_a2_authority_activation_transaction.json",
+    "00_lineage/activation/h2_native_user_event_provenance_evidence.json",
+    "00_lineage/activation/independent_activation_transaction_verification.json",
+    "00_lineage/activation/independent_h2_provenance_verification.json",
+    "00_lineage/candidate_r2/03_exact_current86_scope.json",
+    "00_lineage/candidate_r2/04_complete_candidate_set_registry.json",
+    "00_lineage/reviewed_r2_design",
+    "00_lineage/source_registry/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json",
+    "01_canonicalization/PROJECT_CANONICAL_JSON_V1.json",
+    "02_set_ordering/SET_ORDERING_REGISTRY.json",
+    "05_schemas/schema_registry.json",
+    "tool:python-hashlib",
+    "tool:python-json-parser",
+    "tool:python-unicodedata"
+  ],
+  "verifier_precommit_readable_input_set_hash": "860c0fde5e479f052c5bb148910c4941af9b3776febc753582702a1e4c29bd47",
+  "verifier_workspace_identity": "A2_VERIFIER_PRECOMMIT_WORKSPACE_V1"
+}

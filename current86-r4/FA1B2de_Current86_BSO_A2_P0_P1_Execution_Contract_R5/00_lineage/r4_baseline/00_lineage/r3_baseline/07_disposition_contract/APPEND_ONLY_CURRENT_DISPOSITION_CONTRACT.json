@@ -1,0 +1,13 @@
+{
+  "current_state_derived_only_from": "UNIQUE_VALIDATED_CURRENT_AUTHORITATIVE_DISPOSITION_HEAD",
+  "disposition_contract_id": "ac675a852e83059162f53b182db5fca7a3d44e8761936e72b7b8d05c5080c4c1",
+  "fork_duplicate_sequence_missing_parent_multiple_heads": "FAIL_CLOSED_GLOBAL_PAUSE",
+  "historical_row_existence_is_not_current_membership": true,
+  "schema": "A2_APPEND_ONLY_CURRENT_DISPOSITION_CONTRACT_V1",
+  "transitions": [
+    "PENDING_REVIEW -> PENDING_TERMINAL_INVALIDATED -> BLOCKED_ATTEMPT",
+    "PENDING_REVIEW + reviewer/infrastructure failure -> PENDING_REVIEW + GLOBAL_PAUSE",
+    "BLOCKED_ATTEMPT -> REMEDIATION_RESTARTED -> IN_PROGRESS_OR_INCOMPLETE",
+    "PENDING_REVIEW -> TERMINAL_ACCEPTED -> ACCEPTED_TERMINAL"
+  ]
+}

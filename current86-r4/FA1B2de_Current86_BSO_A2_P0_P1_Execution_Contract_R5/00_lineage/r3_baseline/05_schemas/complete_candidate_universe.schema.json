@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "candidate_relation_count": {
+      "type": "integer"
+    },
+    "candidate_relations": {
+      "items": {
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "complete_candidate_relation_set_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "complete_candidate_universe_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "complete_candidate_universe_id": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "const": null
+        }
+      ]
+    },
+    "complete_candidate_universe_preserved": {
+      "const": true
+    },
+    "hidden_pruning": {
+      "const": "PROHIBITED"
+    },
+    "materialization_status": {
+      "const": "PREPARED_NOT_ADJUDICATED"
+    },
+    "raw_key": {
+      "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+      "type": "string"
+    },
+    "schema": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "top_k_candidate_truncation": {
+      "const": "PROHIBITED"
+    }
+  },
+  "required": [
+    "schema",
+    "raw_key",
+    "candidate_relations",
+    "candidate_relation_count",
+    "complete_candidate_relation_set_hash",
+    "complete_candidate_universe_hash",
+    "complete_candidate_universe_preserved",
+    "hidden_pruning",
+    "top_k_candidate_truncation",
+    "materialization_status",
+    "complete_candidate_universe_id"
+  ],
+  "schema_id": "3b4d54a667edf3f1f7f8e5039d15df4d53aa2fd234a41e28346b708f69efb60e",
+  "title": "Complete candidate universe",
+  "type": "object"
+}

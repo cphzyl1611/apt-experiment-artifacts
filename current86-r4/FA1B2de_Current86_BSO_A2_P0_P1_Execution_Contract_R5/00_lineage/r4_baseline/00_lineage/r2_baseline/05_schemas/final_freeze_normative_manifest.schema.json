@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "excluded_fields": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "identity_field": {
+      "const": "CURRENT86_A2_FINAL_FREEZE_ID"
+    },
+    "identity_inputs": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "identity_rule": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "materialization_status": {
+      "const": "SCHEMA_ONLY_NO_P4_FREEZE"
+    },
+    "schema": {
+      "const": "FINAL_FREEZE_NORMATIVE_MANIFEST_SCHEMA_V1"
+    },
+    "schema_id": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "const": null
+        }
+      ]
+    },
+    "workload_excluded": {
+      "const": true
+    }
+  },
+  "required": [
+    "schema",
+    "materialization_status",
+    "identity_field",
+    "identity_rule",
+    "workload_excluded",
+    "excluded_fields",
+    "identity_inputs",
+    "schema_id"
+  ],
+  "schema_id": "a1211cdb6a8621e74086d54c588331b7a638f4f4ba006e37be7471c910e29de8",
+  "title": "P4 normative final-freeze manifest schema",
+  "type": "object",
+  "x-cross-field-constraints": [
+    "No CURRENT86_A2_FINAL_FREEZE_ID is materialized in this contract-only turn",
+    "workload telemetry cannot be an identity input"
+  ]
+}

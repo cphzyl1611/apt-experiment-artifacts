@@ -1,0 +1,39 @@
+{
+  "accepted_inputs": [
+    "frozen proposal input bundle",
+    "frozen backend configuration ID",
+    "expected execution manifest ID",
+    "computational contract ID"
+  ],
+  "atomic_persistence": "TEMPORARY_FILE_THEN_REPLACE",
+  "caller_supplied_identity_fields": "PROHIBITED",
+  "caller_supplied_structured_commitment": "PROHIBITED",
+  "contract_id": "9a43275d03bfed290bdfa09f52df84c7654b4a4de52145afe5844593897f2264",
+  "production_entrypoint": "tools/a2_role_runtime.py",
+  "required_frozen_configuration_fields": [
+    "backend_configuration_id",
+    "backend_implementation_hash",
+    "frozen_configuration",
+    "provider",
+    "model_id",
+    "context_identity",
+    "run_identity",
+    "tool_mode",
+    "capture_method",
+    "command"
+  ],
+  "required_runtime_binding_fields": [
+    "backend_implementation_hash",
+    "backend_configuration_id",
+    "provider_source",
+    "model_source",
+    "agent_or_cli_version_source",
+    "invocation_command_config_identity",
+    "tool_mode",
+    "context_identity",
+    "run_identity",
+    "capture_method"
+  ],
+  "schema": "A2_R3_EXECUTION_BACKEND_ADAPTER_CONTRACT_V1",
+  "semantic_execution_performed_during_materialization": false
+}

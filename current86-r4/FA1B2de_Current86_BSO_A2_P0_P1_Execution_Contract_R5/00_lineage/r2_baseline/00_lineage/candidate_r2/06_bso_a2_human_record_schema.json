@@ -1,0 +1,124 @@
+{
+  "authority_scope_id": "34551e904bafa71fb2fb6db33162e94ad41a08eca6c747d429c83760e09c1306",
+  "escalation_record": {
+    "escalation_class": "NON_NULL_CLOSED_VOCABULARY_VALUE",
+    "human_not_sure_mapping": {
+      "escalation_class": "HUMAN_NOT_SURE_ESCALATE",
+      "human_action": "NOT_SURE_ESCALATE"
+    },
+    "human_not_sure_non_null_fields": [
+      "human_action",
+      "human_origin_provenance_evidence_id",
+      "human_origin_provenance_verification"
+    ],
+    "machine_escalation_human_action": null,
+    "machine_escalation_null_fields": [
+      "human_action",
+      "human_origin_provenance_evidence_id",
+      "human_origin_provenance_verification"
+    ],
+    "required_fields": [
+      "schema_identifier",
+      "terminal_record_class",
+      "authority_version_id",
+      "authority_scope_id",
+      "raw_key",
+      "complete_candidate_universe_hash",
+      "complete_candidate_relation_set_hash",
+      "input_bundle_hash",
+      "proposal_hash",
+      "proposal_evidence_set_hash",
+      "primary_derivation_commitment_hash",
+      "primary_run_identity",
+      "verifier_derivation_commitment_hash",
+      "verifier_run_identity",
+      "independent_commitment_comparison",
+      "hard_gate_results",
+      "all_hard_gates",
+      "human_action",
+      "human_origin_provenance_evidence_id",
+      "human_origin_provenance_verification",
+      "selected_owner_candidate_scoring_id",
+      "selected_relation_identity",
+      "unresolved_state",
+      "escalation_class",
+      "terminal_record_hash"
+    ],
+    "selected_owner_candidate_scoring_id": null,
+    "selected_relation_identity": null,
+    "terminal_record_class": "A2_ESCALATION_FROZEN",
+    "unresolved_state": true
+  },
+  "human_actions": [
+    "CONFIRM_PROPOSED_OWNER",
+    "REJECT_PROPOSAL_AND_SELECT_OTHER_EXISTING_CANDIDATE",
+    "NOT_SURE_ESCALATE"
+  ],
+  "human_origin_contract_hash": "c1d92c96cc02495d4e4ddcc7686d0e489803a275e68bd009f2f8afab4f6a79dd",
+  "human_origin_provenance_mode": "CODEX_NATIVE_SESSION_USER_EVENT_PROVENANCE_V1",
+  "mutual_exclusion": "EXACTLY_ONE_TERMINAL_SCHEMA; MIXED_SHAPES_INVALID_FAIL_CLOSED",
+  "native_evidence_schema_hash": "0201dc07ace5189b7ae9094910b0fff0fc173e2be374ec75e0b0a658dce42f64",
+  "owner_record": {
+    "all_hard_gates": "PASS",
+    "escalation_class": null,
+    "hard_gate_results_constraint": "EXACT_HARD_GATE_REGISTRY_KEY_SET_AND_EVERY_VALUE_PASS",
+    "human_action_values": [
+      "CONFIRM_PROPOSED_OWNER",
+      "REJECT_PROPOSAL_AND_SELECT_OTHER_EXISTING_CANDIDATE"
+    ],
+    "human_origin_provenance_verification": "PASS",
+    "independent_commitment_comparison": "PASS",
+    "reject_select_other_additional_required_fields": [
+      "human_selected_candidate_scoring_id",
+      "fresh_input_bundle_hash",
+      "fresh_proposal_evidence_set_hash",
+      "fresh_primary_derivation_commitment_hash",
+      "fresh_primary_run_identity",
+      "fresh_verifier_derivation_commitment_hash",
+      "fresh_verifier_run_identity",
+      "fresh_independent_commitment_comparison",
+      "fresh_isolation_order_record_hash",
+      "fresh_proposal_hash",
+      "fresh_hard_gate_results"
+    ],
+    "required_fields": [
+      "schema_identifier",
+      "terminal_record_class",
+      "authority_version_id",
+      "authority_scope_id",
+      "raw_key",
+      "complete_candidate_universe_hash",
+      "complete_candidate_relation_set_hash",
+      "input_bundle_hash",
+      "proposal_hash",
+      "proposal_evidence_set_hash",
+      "primary_derivation_commitment_hash",
+      "primary_run_identity",
+      "verifier_derivation_commitment_hash",
+      "verifier_run_identity",
+      "independent_commitment_comparison",
+      "hard_gate_results",
+      "all_hard_gates",
+      "human_action",
+      "human_origin_provenance_evidence_id",
+      "human_origin_provenance_verification",
+      "selected_owner_candidate_scoring_id",
+      "selected_relation_identity",
+      "unresolved_state",
+      "escalation_class",
+      "terminal_record_hash"
+    ],
+    "selected_owner_candidate_scoring_id": "NON_NULL_EXISTING_CANDIDATE",
+    "selected_relation_identity": "NON_NULL",
+    "terminal_record_class": "A2_OWNER_ADJUDICATION_FROZEN",
+    "unresolved_state": false
+  },
+  "reject_select_other_rule": "SELECTED_CANDIDATE_MUST_BE_IN_EXACT_FROZEN_UNIVERSE_AND_PASS_FRESH_EVIDENCE_AND_ISOLATED_PRIMARY_VERIFIER_CYCLE",
+  "schema_version": "FA1B2DE_CURRENT86_BSO_A2_HUMAN_RECORD_SCHEMA_R1",
+  "terminal_record_hash_rule": "terminal_record_hash=sha256(canonical_json(all terminal-record fields except terminal_record_hash))",
+  "verification_publication_boundary": {
+    "a2_escalation_frozen_counts_as_owner_closure": false,
+    "bso_p_must_not_publish_escalation_as_owner_binding": true,
+    "bso_v_counts_only_valid_owner_records": true
+  }
+}

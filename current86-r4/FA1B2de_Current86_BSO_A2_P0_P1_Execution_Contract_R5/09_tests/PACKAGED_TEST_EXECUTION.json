@@ -1,0 +1,9 @@
+{
+  "command": "python FA1B2de_Current86_BSO_A2_P0_P1_Execution_Contract_R5/run_packaged_tests.py",
+  "discovers": "09_tests/test_*.py",
+  "imports_shipped_r5_tools": true,
+  "schema": "A2_R5_PACKAGED_TEST_EXECUTION_V1",
+  "semantic_execution_performed": false,
+  "temporary_fixture_view": "repo-external authenticated source inputs exposed read-only by symlink; shipped package tools and tests override source tools and tests",
+  "tests_omitted": false
+}

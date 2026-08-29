@@ -1,0 +1,21 @@
+{
+  "b1_m1_unique_ordering": "PASS",
+  "b2_status": "CLOSED",
+  "b3_status": "CLOSED",
+  "b4_status": "CLOSED",
+  "binding_publication": "NO",
+  "contract_manifest_id": "99966ac9207a2a798af049762613c6a1f4cf2981f89ef5016c4742daf2cf29ba",
+  "independent_verifier_semantic_execution": "NO",
+  "materialization_mode": "COMPLETE_CONTRACT_ONLY",
+  "next_action": "FRESH_TARGETED_REVIEW_OF_B2_B3_B4_R3_ONLY",
+  "p0_executed": "NO",
+  "p1_executed": "NO",
+  "primary_proposer_executed": "NO",
+  "r2_contract_manifest_id": "0d8432843324fe07f82591472d5004089f7a4bda45d65bf3f9580fc217259873",
+  "r2_handoff_sha256": "c2a7fa6056fd914736f2a6c52c60b1bfc79707575e0cb680eb8665d381203dc5",
+  "r3_patch_summary": "R2_TO_R3_PATCH_SUMMARY.json",
+  "r3_tdd_log": "R2_TO_R3_DEFECT_REPRODUCTION_AND_TDD_LOG.json",
+  "raw_level_human_decisions": 0,
+  "runtime_adjudication_artifacts_generated": false,
+  "schema": "A2_P0_P1_EXECUTION_CONTRACT_R3_MANIFEST_V1"
+}

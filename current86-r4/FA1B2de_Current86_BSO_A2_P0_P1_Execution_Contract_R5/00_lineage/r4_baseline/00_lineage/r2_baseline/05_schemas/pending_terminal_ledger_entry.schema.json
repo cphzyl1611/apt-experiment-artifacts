@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "current_membership_derived_from_disposition_head": {
+      "const": true
+    },
+    "entry_id": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "const": null
+        }
+      ]
+    },
+    "pending_terminal_id": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "raw_key": {
+      "pattern": "^[0-9]+::S[0-9]{2}::A[0-9]{3}$",
+      "type": "string"
+    },
+    "schema": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "terminal_record_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema",
+    "raw_key",
+    "pending_terminal_id",
+    "terminal_record_hash",
+    "current_membership_derived_from_disposition_head",
+    "entry_id"
+  ],
+  "schema_id": "7e14b025bec3274caf2499c8d104b7a3f0d1644d2740b1222ca869ec289a2c0c",
+  "title": "Pending terminal ledger entry",
+  "type": "object"
+}

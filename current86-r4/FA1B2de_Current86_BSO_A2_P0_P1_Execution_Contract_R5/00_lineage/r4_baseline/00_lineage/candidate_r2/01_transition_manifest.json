@@ -1,0 +1,35 @@
+{
+  "authority_candidate_status": "PROSPECTIVE_NOT_ACTIVE",
+  "authority_independently_verified": false,
+  "authority_materialized": true,
+  "authority_scope_id": "34551e904bafa71fb2fb6db33162e94ad41a08eca6c747d429c83760e09c1306",
+  "binding_publication": false,
+  "component_sha256": {
+    "02_old_authority_reference.json": "7b39f68fe1550285c9aaf3446904dd37a6e0cd32670a4adbfc66669aa05a3a47",
+    "03_exact_current86_scope.json": "411d2b2655ea435a6f32a64dddc9b5d3a64d2ef09d7861822125f66b6e64949f",
+    "04_complete_candidate_set_registry.json": "93e29df5901a895b79ccae1d19058036334744beb11addaf8279af982a3dfc3c",
+    "05_bso_a2_proposal_schema.json": "59a92b38f843f09442ccf1d0d53ae554bde7fd1db6cbf5c88ad33219002f0261",
+    "06_bso_a2_human_record_schema.json": "95121ed0342f7f1135d2dafd4aec8404c00179cc0763b281c4dfd5a8f6d8c307",
+    "07_hard_gate_registry.json": "685d764522d563f8edbe19d5becbc571bcc73a81c0f9c8bac77379cd05bc10bd",
+    "08_escalation_registry.json": "b8af7ccd11919dbe9f2076bc552e6d30e8ea7f8de90d6391f8e961c3da1ec6ef",
+    "09_machine_authority_prohibitions.json": "ab50d8e9fc4fa65d9272a4687ba0af538fe19a2e343cb3519e444d6d9d1fd981",
+    "10_human_workload_boundary.json": "7ae60225958858c98a082c8fc50bec8ed78de58a7dc9473a1f2514105d7aedfc",
+    "11_supersession_lineage.json": "dbd71bf1f01156f9be0f315fa23c986e44cfa14c0d0da1874809ea73fb5b9bd2"
+  },
+  "h1_provenance_evidence_id": "22dbeb4700808e049ff001281caf1ae8ed5102fbcf2078991b27c0039e0dd6ba",
+  "h1_provenance_verification_status": "PASS",
+  "input_authentication": {
+    "frozen_scope_source_member_sha256": "76f000c1b79875790310ff5ffcc02a956c07f454bc71f28a7c40ef0db72a7b97",
+    "r2_registry_sha256": "3df4262faa4137996d2ff8d163bcc665d5bed76b3d719e6ff66cf4154252d72f",
+    "reviewed_r2_design_sha256": "5bef1445705e323115ce071f616f53e218202d1d5cfcac13d2febee295956ed4",
+    "targeted_review_sha256": "20a1bedd97348201f2d0de5eb11af32e36aab072dd5e1208da729663c29c0808",
+    "v4_bundle_sha256": "7b0f71b7abdce1cc22cb584d76decb946da3fccf251b9c2c39eced7a65f5a6c9",
+    "v4_final_freeze_handoff_sha256": "0af337acc731595167d75f922dd39bbbb48dd1b1b9d3b31723d01408501040de"
+  },
+  "new_authority_activation": false,
+  "next_authorized_action": "INDEPENDENT_AUTHORITY_CANDIDATE_VERIFICATION_ONLY",
+  "prospective_authority_candidate_id": "36831020b75a201420bd5cfce97a54ada12d44246f56a7812455bc21b99f9477",
+  "raw_level_adjudication_execution": false,
+  "schema_version": "FA1B2DE_CURRENT86_BSO_A2_TRANSITION_MANIFEST_R1",
+  "supersession_activation": false
+}
