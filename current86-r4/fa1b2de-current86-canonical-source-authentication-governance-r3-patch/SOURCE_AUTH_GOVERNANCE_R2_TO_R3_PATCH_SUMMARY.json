@@ -1,0 +1,94 @@
+{
+  "schema": "FA1B2DE_CURRENT86_EXACT317_SOURCE_AUTH_GOVERNANCE_R2_TO_R3_PATCH_SUMMARY_V1",
+  "patch_date": "2026-08-29",
+  "patch_mode": "DESIGN_ONLY",
+  "patch_scope": "MINIMAL_R2_TO_R3_DESIGN_ONLY_PATCH_OF_SA_B2_HUMAN_FIELD_PIN_AUTHORITY_GAP",
+  "population_scope": "CURRENT86_CANONICAL_INTRINSIC_317_SOURCE_BINDING_RECONSTRUCTION_ONLY",
+  "reviewed_r2_basis": {
+    "repository": "cphzyl1611/apt-experiment-artifacts",
+    "commit": "38f913b52bcdcc289aa5507be0c6a67516d802f2",
+    "tree": "2540105e5adf477f7bfb168e5d7d21d4b4296071",
+    "file": "Design_FA1B2de_Current86_Canonical_Intrinsic_317_Source_Authentication_Governance_R2_PATCHED.md",
+    "git_blob": "d48f940ee68185e0219434e7f35b2d52ebf6749d",
+    "sha256": "e71bd2272438bff2feed4eef889f9a3fc9a231621826b7dae6ba3a2d25833c4b"
+  },
+  "r3_design": {
+    "file": "Design_FA1B2de_Current86_Canonical_Intrinsic_317_Source_Authentication_Governance_R3_PATCHED.md",
+    "sha256": "ca8f84d7a9f86713913a6c24960593a0b5771b04a920d2351290ae8d86d62d0f",
+    "relationship": "NARROW_R2_SECTION_5_1_AUTHORITY_PATH_DELTA_INCORPORATING_R1_AND_R2_BY_EXACT_HASH"
+  },
+  "fresh_targeted_review_before_patch": {
+    "SOURCE_AUTH_GOVERNANCE_R2_FRESH_TARGETED_REVIEW_VERDICT": "BLOCKED",
+    "EXACT317_SCOPE": "PASS_PRESERVED",
+    "SA_B1_NORMATIVE_SOURCE_OBJECT_ADMISSION": "PASS",
+    "SA_B2_EXACT_FIELD_PIN_AND_CANONICALIZATION": "BLOCKED",
+    "SA_B3_INDEPENDENT_VERIFIER_ISOLATION": "PASS",
+    "sole_authorized_root_cause": "R2_SECTION_5_1_HAS_NO_NORMATIVE_HUMAN_FIELD_PIN_GOVERNANCE_RECORD_PATH"
+  },
+  "minimal_patch": {
+    "replaced_clause": "R2_SECTION_5_1_FIELD_PIN_AUTHORITY_ONLY",
+    "clarified_clause": "R2_SECTION_8_HUMAN_FIELD_MAPPING_SENTENCE_ONLY",
+    "added_authority_path": "HUMAN_FIELD_PIN_GOVERNANCE_RECORD",
+    "eligibility_gate": "CURRENT_AUTHENTICATED_NO_MACHINE_FIELD_PIN_AUTHORITY_PROOF",
+    "proof_identity_derivation": "SHA256_OF_PROJECT_CANONICAL_JSON_V1_OVER_ALL_EXACT_PROOF_MEMBERS_EXCEPT_SELF_ID",
+    "human_record_identity_derivation": "SHA256_OF_PROJECT_CANONICAL_JSON_V1_OVER_ALL_EXACT_RECORD_MEMBERS_EXCEPT_SELF_ID",
+    "selection_logic": {
+      "one_nonconflicting_machine_tuple": "USE_MACHINE_TUPLE_AND_FORBID_HUMAN_FALLBACK",
+      "multiple_or_conflicting_machine_tuples": "BLOCKED_FIELD_PIN_AND_FORBID_HUMAN_FALLBACK",
+      "zero_machine_tuples": "REQUIRE_CURRENT_ZERO_MACHINE_PROOF_THEN_EXACTLY_ONE_AUTHENTICATED_NONCONFLICTING_HUMAN_RECORD",
+      "invalid_human_branch": "BLOCKED_FIELD_PIN"
+    },
+    "human_record_is_pointer_authority_only": true,
+    "existing_r2_pointer_and_scalar_validation_still_required": true,
+    "human_can_override_machine_authority": false,
+    "human_can_break_machine_tie": false
+  },
+  "unchanged_r2_rules": [
+    "RFC6901_UTF8_POINTER_BYTE_SEMANTICS",
+    "RFC6901_TILDE_0_TILDE_1_ESCAPING",
+    "MISSING_VERSUS_NULL",
+    "EXACT_ARRAY_INDEX_RULES",
+    "DUPLICATE_KEY_REJECTION",
+    "OBJECT_ARRAY_TERMINAL_VALUE_POLICY",
+    "FLOAT_AND_NONFINITE_REJECTION",
+    "ARBITRARY_PRECISION_INTEGER_POLICY",
+    "UNICODE_NORMALIZATION_NONE",
+    "FA1B2DE_CANONICAL_INTRINSIC_SCALAR_V1",
+    "AUTHENTICATED_VALUE_SHA256_DERIVATION",
+    "FIELD_PIN_ID_DERIVATION"
+  ],
+  "preserved_review_results": {
+    "EXACT317_SCOPE": "PASS_PRESERVED",
+    "SA_B1_NORMATIVE_SOURCE_OBJECT_ADMISSION": "PASS_PRESERVED",
+    "SA_B3_INDEPENDENT_VERIFIER_ISOLATION": "PASS_PRESERVED"
+  },
+  "human_workload": {
+    "machine_authority_paths_always_attempted_first": true,
+    "human_task_requires_valid_zero_machine_authority_proof": true,
+    "one_human_action_yields_at_most_one_exact_field_pin_record": true,
+    "human_transcribes_hashes_ids_provenance_or_target_metadata": false,
+    "bulk_manual_exact317_review_authorized": false,
+    "human_decisions_created_by_patch": 0
+  },
+  "terminal": {
+    "SOURCE_AUTH_GOVERNANCE_R3_PATCH_STATUS": "DESIGN_ONLY_COMPLETE",
+    "EXACT317_SCOPE": "PASS",
+    "SA_B1_NORMATIVE_SOURCE_OBJECT_ADMISSION": "PASS_PRESERVED",
+    "SA_B2_EXACT_FIELD_PIN_AND_CANONICALIZATION": "CLOSED_CANDIDATE",
+    "SA_B3_INDEPENDENT_VERIFIER_ISOLATION": "PASS_PRESERVED",
+    "SOURCE_AUTH_TARGET_COUNT": 317,
+    "RAW_SIDE_TARGET_COUNT": 86,
+    "CANDIDATE_SIDE_TARGET_COUNT": 231,
+    "SOURCE_AUTH_EXECUTED": "NO",
+    "CURRENT86_P0_EXECUTED": "NO",
+    "CURRENT86_P1_EXECUTED": "NO",
+    "RAW_LEVEL_HUMAN_DECISIONS": 0,
+    "BINDING_PUBLICATION": "NO",
+    "SCORING_AUTHORITY_MUTATION": "NO",
+    "BINDING_AUTHORITY_MUTATION": "NO",
+    "DENOMINATOR_CHANGE": "NO",
+    "ACCEPTED_BINDING_COUNT_CHANGE": "NO",
+    "GIT_REF_MUTATION": "NO",
+    "NEXT_ACTION": "FRESH_TARGETED_INDEPENDENT_REVIEW_OF_CURRENT86_EXACT317_SOURCE_AUTH_GOVERNANCE_R3"
+  }
+}

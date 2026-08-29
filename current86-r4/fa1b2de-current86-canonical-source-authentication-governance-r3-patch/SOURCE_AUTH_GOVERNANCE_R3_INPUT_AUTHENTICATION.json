@@ -1,0 +1,114 @@
+{
+  "schema": "FA1B2DE_CURRENT86_EXACT317_SOURCE_AUTH_GOVERNANCE_R3_INPUT_AUTHENTICATION_V1",
+  "authentication_date": "2026-08-29",
+  "SOURCE_AUTH_GOVERNANCE_R3_INPUT_AUTHENTICATION": "PASS",
+  "reviewed_repository_state": {
+    "repository": "cphzyl1611/apt-experiment-artifacts",
+    "authenticated_local_remote": "https://github.com/cphzyl1611/apt-experiment-artifacts.git",
+    "local_read_only_object_store": "/home/cph/fa1b2de-review-artifacts/.git",
+    "reviewed_commit_expected": "38f913b52bcdcc289aa5507be0c6a67516d802f2",
+    "reviewed_commit_observed": "38f913b52bcdcc289aa5507be0c6a67516d802f2",
+    "commit_object_exists": true,
+    "commit_tree": "2540105e5adf477f7bfb168e5d7d21d4b4296071",
+    "commit_parent": "67c39693d8b98c00a3c544582406fcb52a061a7e",
+    "commit_timestamp": "2026-08-29T03:32:10-04:00",
+    "commit_subject": "fa1b2de-current86-canonical-source-authentication-governance-r2-patch",
+    "checkout_or_ref_change_performed": false,
+    "authentication": "PASS"
+  },
+  "reviewed_r2_package": {
+    "tree_prefix": "current86-r4/fa1b2de-current86-canonical-source-authentication-governance-r2-patch",
+    "design": {
+      "file": "Design_FA1B2de_Current86_Canonical_Intrinsic_317_Source_Authentication_Governance_R2_PATCHED.md",
+      "git_blob": "d48f940ee68185e0219434e7f35b2d52ebf6749d",
+      "sha256_expected_by_package": "e71bd2272438bff2feed4eef889f9a3fc9a231621826b7dae6ba3a2d25833c4b",
+      "sha256_observed_from_commit_blob": "e71bd2272438bff2feed4eef889f9a3fc9a231621826b7dae6ba3a2d25833c4b",
+      "match": true
+    },
+    "patch_summary": {
+      "file": "SOURCE_AUTH_GOVERNANCE_R1_TO_R2_PATCH_SUMMARY.json",
+      "sha256_expected_by_package": "39e3a5df3c0ba358ca153e8d623e25475c70ea994d573af986699d6b5321fe36",
+      "sha256_observed_from_commit_blob": "39e3a5df3c0ba358ca153e8d623e25475c70ea994d573af986699d6b5321fe36",
+      "match": true
+    },
+    "input_authentication": {
+      "file": "SOURCE_AUTH_GOVERNANCE_R2_INPUT_AUTHENTICATION.json",
+      "sha256_expected_by_package": "7cf91ce21be8d6e3a2bde022901e5699c8644effe87c5364c686c3a652ffa2aa",
+      "sha256_observed_from_commit_blob": "7cf91ce21be8d6e3a2bde022901e5699c8644effe87c5364c686c3a652ffa2aa",
+      "match": true
+    },
+    "target_conservation": {
+      "file": "SOURCE_AUTH_GOVERNANCE_R2_TARGET_CONSERVATION.json",
+      "sha256_expected_by_package": "cb861e7770d709d52bf8809980192171767e7ceddfdee27022e2b7572bcb285f",
+      "sha256_observed_from_commit_blob": "cb861e7770d709d52bf8809980192171767e7ceddfdee27022e2b7572bcb285f",
+      "match": true
+    },
+    "checksum_inventory": {
+      "file": "SHA256SUMS.txt",
+      "sha256": "83c1bd0fd63beb6202ad81e6a4488c8fa8da35ae5f2d201e413d19df5e71e8ab",
+      "all_four_listed_content_hashes_recomputed_from_commit_blobs": true
+    },
+    "authentication": "PASS"
+  },
+  "fresh_targeted_review_pin": {
+    "authentication_mode": "CURRENT_NATIVE_USER_PINNED_REVIEW_RESULT",
+    "native_message_id": "msg_01a04c79-6c2f-7150-9651-5b76ecb91d5c",
+    "native_message_timestamp": "2026-08-29T07:43:41.104Z",
+    "native_message_utf8_sha256": "6d861fc71443a64b29c8a79ee7dc489c7acb1dd7bf8c3c3e579e4b2f13b7e219",
+    "native_message_utf8_byte_length": 6926,
+    "reviewed_repository_and_commit_are_exactly_pinned": true,
+    "verdict": {
+      "SOURCE_AUTH_GOVERNANCE_R2_FRESH_TARGETED_REVIEW_VERDICT": "BLOCKED",
+      "EXACT317_SCOPE": "PASS_PRESERVED",
+      "SA_B1_NORMATIVE_SOURCE_OBJECT_ADMISSION": "PASS",
+      "SA_B2_EXACT_FIELD_PIN_AND_CANONICALIZATION": "BLOCKED",
+      "SA_B3_INDEPENDENT_VERIFIER_ISOLATION": "PASS"
+    },
+    "sole_authorized_defect": "MISSING_NORMATIVE_HUMAN_FIELD_PIN_GOVERNANCE_RECORD_PATH_IN_R2_SECTION_5_1",
+    "authentication": "PASS"
+  },
+  "exact317_authority": {
+    "manifest_path": "/home/cph/experiment-artifacts/fa1b2de-current86-canonical-intrinsic-317-r1/CURRENT86_Canonical_Intrinsic_317_Exact_Targets.json",
+    "manifest_sha256_expected": "d8d55d369fe433bf7b93a3c332b8ac9a517a9146b28fa223370ff3ec946955ac",
+    "manifest_sha256_observed": "d8d55d369fe433bf7b93a3c332b8ac9a517a9146b28fa223370ff3ec946955ac",
+    "audit_scope_id": "34551e904bafa71fb2fb6db33162e94ad41a08eca6c747d429c83760e09c1306",
+    "counting_unit": "UNIQUE_REQUIRED_CANONICAL_INTRINSIC_SOURCE_CLASS_SIDE_BINDING_TUPLE",
+    "target_count_recomputed": 317,
+    "raw_side_count_recomputed": 86,
+    "candidate_side_count_recomputed": 231,
+    "all_target_ids_recomputed": true,
+    "target_id_mismatch_count": 0,
+    "target_order_recomputed_exact": true,
+    "authentication": "PASS"
+  },
+  "preserved_authorities": {
+    "source_class_fact_type_registry_id": "8cef6206dfc3581c3e7b6358bde7a36e90f4ba99078176cc0e5aff4b238298a7",
+    "source_class_fact_type_registry_sha256": "3df4262faa4137996d2ff8d163bcc665d5bed76b3d719e6ff66cf4154252d72f",
+    "source_artifact_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+    "source_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+    "PROJECT_SCORING_AUTHORITY": "18fd70d4a57f07a3e06242d9f0e077a4e6838120",
+    "PROJECT_BINDING_AUTHORITY_BASELINE": "d309c01d6178a75cac88b6236d36179563a88239",
+    "PROJECT_ACCEPTED_BINDINGS": "1045/1796",
+    "mutation_by_r3": false
+  },
+  "input_authentication_result": {
+    "input_conflict_count": 0,
+    "fail_closed_triggered": false,
+    "EXACT317_SCOPE": "PASS",
+    "SA_B1_REVIEW_RESULT": "PASS_AUTHENTICATED",
+    "SA_B2_REVIEW_BLOCKER": "AUTHENTICATED_FOR_NARROW_PATCH",
+    "SA_B3_REVIEW_RESULT": "PASS_AUTHENTICATED"
+  },
+  "hard_boundary": {
+    "SOURCE_AUTH_EXECUTED": "NO",
+    "CURRENT86_P0_EXECUTED": "NO",
+    "CURRENT86_P1_EXECUTED": "NO",
+    "RAW_LEVEL_HUMAN_DECISIONS": 0,
+    "BINDING_PUBLICATION": "NO",
+    "SCORING_AUTHORITY_MUTATION": "NO",
+    "BINDING_AUTHORITY_MUTATION": "NO",
+    "DENOMINATOR_CHANGE": "NO",
+    "ACCEPTED_BINDING_COUNT_CHANGE": "NO",
+    "GIT_REF_MUTATION": "NO"
+  }
+}
