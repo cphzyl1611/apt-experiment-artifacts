@@ -1,0 +1,112 @@
+{
+  "schema": "FA1B2DE_CURRENT86_EXACT317_SOURCE_AUTH_GOVERNANCE_R3_TO_R4_PATCH_SUMMARY_V1",
+  "patch_date": "2026-08-29",
+  "patch_mode": "DESIGN_ONLY",
+  "patch_scope": "MINIMAL_R3_TO_R4_DESIGN_ONLY_PATCH_OF_SA_B2_ADMISSION_FIELD_PIN_CROSS_BINDING_GAP",
+  "population_scope": "CURRENT86_CANONICAL_INTRINSIC_317_SOURCE_BINDING_RECONSTRUCTION_ONLY",
+  "reviewed_r3_basis": {
+    "repository": "cphzyl1611/apt-experiment-artifacts",
+    "commit": "bc54c0feea1a8af346e2c70b39679cd01f4f3577",
+    "tree": "d4c22f1e4310dc791e75fc15db4ba69c32e0997f",
+    "parent": "38f913b52bcdcc289aa5507be0c6a67516d802f2",
+    "file": "Design_FA1B2de_Current86_Canonical_Intrinsic_317_Source_Authentication_Governance_R3_PATCHED.md",
+    "git_blob": "05b41f34bcbab9d89e60d8ce8dc40966282eb737",
+    "sha256": "ca8f84d7a9f86713913a6c24960593a0b5771b04a920d2351290ae8d86d62d0f"
+  },
+  "r4_design": {
+    "file": "Design_FA1B2de_Current86_Canonical_Intrinsic_317_Source_Authentication_Governance_R4_PATCHED.md",
+    "sha256": "b499b4cfddd4f72e404dda72c423bfa3db98b0514af52773b9bbec5cce6e2cc0",
+    "relationship": "NARROW_ADMISSION_TO_FIELD_PIN_CROSS_BINDING_DELTA_INCORPORATING_R1_R2_R3_BY_EXACT_HASH"
+  },
+  "fresh_targeted_review_before_patch": {
+    "SOURCE_AUTH_GOVERNANCE_R3_FRESH_TARGETED_REVIEW_VERDICT": "BLOCKED",
+    "EXACT317_SCOPE": "PASS_PRESERVED",
+    "SA_B1_NORMATIVE_SOURCE_OBJECT_ADMISSION": "PASS_PRESERVED",
+    "SA_B2_EXACT_FIELD_PIN_AND_CANONICALIZATION": "BLOCKED",
+    "SA_B3_INDEPENDENT_VERIFIER_ISOLATION": "PASS_PRESERVED",
+    "sole_authorized_defect": "R3_FIELD_PIN_AUTHORITY_SELECTION_IS_NOT_EXPLICITLY_CROSS_BOUND_TO_THE_EXACT_AUTHENTICATED_SA_B1_ADMISSION_TUPLE"
+  },
+  "minimal_patch": {
+    "new_semantic_authority_layer_added": false,
+    "sa_b1_redesigned": false,
+    "sa_b3_redesigned": false,
+    "r2_canonicalization_changed": false,
+    "mandatory_precondition": "EXACTLY_ONE_AUTHENTICATED_SA_B1_ADMISSION_RECORD",
+    "admission_tuple_identity_basis_fields": [
+      "source_binding_target_id",
+      "candidate_object_id",
+      "canonical_intrinsic_field_semantics_id",
+      "exact_RFC6901_pointer"
+    ],
+    "admission_tuple_id_derivation": "LOWERCASE_HEX_SHA256_OF_PROJECT_CANONICAL_JSON_V1_OVER_EXACT_FOUR_MEMBER_ADMISSION_TUPLE_BASIS",
+    "mandatory_equality": "selected_field_pin_tuple_id == admission_tuple_id",
+    "pointer_equality": "EXACT_STRICT_UTF8_BYTES_WITH_UNICODE_NORMALIZATION_NONE",
+    "mismatch_terminal_state": "BLOCKED_FIELD_PIN",
+    "mismatch_reason": "ADMISSION_FIELD_PIN_TUPLE_MISMATCH",
+    "alternate_pointer_after_mismatch": "PROHIBITED",
+    "human_fallback_after_mismatch": "PROHIBITED"
+  },
+  "machine_authority_paths": {
+    "paths_preserved": 3,
+    "role_after_patch": "INDEPENDENT_AUTHORITY_OR_CONFIRMATION_FOR_EXACT_ALREADY_ADMITTED_TUPLE_ONLY",
+    "nonidentical_tuple_is_candidate_alternative": false,
+    "nonidentical_tuple_result": "BLOCKED_FIELD_PIN_ADMISSION_FIELD_PIN_TUPLE_MISMATCH",
+    "human_can_override_or_break_conflict": false
+  },
+  "no_machine_proof_extension": {
+    "schema": "FA1B2DE_CURRENT86_NO_MACHINE_FIELD_PIN_AUTHORITY_PROOF_V2",
+    "added_required_fields": [
+      "admission_record_id",
+      "admission_tuple_id",
+      "admitted_exact_RFC6901_pointer_utf8_sha256"
+    ],
+    "identity_derivation": "SELF_EXCLUDING_PROJECT_CANONICAL_JSON_V1_SHA256",
+    "admission_change_makes_proof_stale": true,
+    "nonidentical_machine_tuple_permits_proof": false
+  },
+  "human_record_extension": {
+    "schema": "FA1B2DE_CURRENT86_HUMAN_FIELD_PIN_GOVERNANCE_RECORD_V2",
+    "added_required_fields": [
+      "admission_record_id",
+      "admission_tuple_id",
+      "admitted_exact_RFC6901_pointer_utf8_sha256"
+    ],
+    "identity_derivation": "SELF_EXCLUDING_PROJECT_CANONICAL_JSON_V1_SHA256",
+    "native_action": "RATIFY_OR_DECLINE_EXACT_PREBOUND_ADMITTED_POINTER_ONLY",
+    "pointer_selection_or_substitution_allowed": false,
+    "exact_pointer_byte_equality_required": true
+  },
+  "preserved_rules": [
+    "SA_B1_NORMATIVE_SOURCE_OBJECT_ADMISSION",
+    "SA_B3_INDEPENDENT_VERIFIER_ISOLATION",
+    "RFC6901_BYTE_AND_TRAVERSAL_RULES",
+    "DUPLICATE_KEY_REJECTION",
+    "MISSING_NULL_DISTINCTION",
+    "SCALAR_TYPE_RULES",
+    "UNICODE_NORMALIZATION_NONE",
+    "FA1B2DE_CANONICAL_INTRINSIC_SCALAR_V1",
+    "AUTHENTICATED_VALUE_SHA256",
+    "FIELD_PIN_ID_INCLUDING_ADMISSION_RECORD_ID"
+  ],
+  "terminal": {
+    "SOURCE_AUTH_GOVERNANCE_R4_PATCH_STATUS": "DESIGN_ONLY_COMPLETE",
+    "EXACT317_SCOPE": "PASS",
+    "SA_B1_NORMATIVE_SOURCE_OBJECT_ADMISSION": "PASS_PRESERVED",
+    "SA_B2_EXACT_FIELD_PIN_AND_CANONICALIZATION": "CLOSED_CANDIDATE",
+    "SA_B3_INDEPENDENT_VERIFIER_ISOLATION": "PASS_PRESERVED",
+    "SOURCE_AUTH_TARGET_COUNT": 317,
+    "RAW_SIDE_TARGET_COUNT": 86,
+    "CANDIDATE_SIDE_TARGET_COUNT": 231,
+    "SOURCE_AUTH_EXECUTED": "NO",
+    "CURRENT86_P0_EXECUTED": "NO",
+    "CURRENT86_P1_EXECUTED": "NO",
+    "RAW_LEVEL_HUMAN_DECISIONS": 0,
+    "BINDING_PUBLICATION": "NO",
+    "SCORING_AUTHORITY_MUTATION": "NO",
+    "BINDING_AUTHORITY_MUTATION": "NO",
+    "DENOMINATOR_CHANGE": "NO",
+    "ACCEPTED_BINDING_COUNT_CHANGE": "NO",
+    "GIT_REF_MUTATION": "NO",
+    "NEXT_ACTION": "FRESH_TARGETED_INDEPENDENT_REVIEW_OF_CURRENT86_EXACT317_SOURCE_AUTH_GOVERNANCE_R4"
+  }
+}

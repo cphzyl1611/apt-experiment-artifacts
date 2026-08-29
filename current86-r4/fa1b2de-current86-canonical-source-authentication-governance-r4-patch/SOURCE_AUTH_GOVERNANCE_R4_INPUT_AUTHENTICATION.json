@@ -1,0 +1,124 @@
+{
+  "schema": "FA1B2DE_CURRENT86_EXACT317_SOURCE_AUTH_GOVERNANCE_R4_INPUT_AUTHENTICATION_V1",
+  "authentication_date": "2026-08-29",
+  "SOURCE_AUTH_GOVERNANCE_R4_INPUT_AUTHENTICATION": "PASS",
+  "reviewed_repository_state": {
+    "repository": "cphzyl1611/apt-experiment-artifacts",
+    "authenticated_local_remote": "https://github.com/cphzyl1611/apt-experiment-artifacts.git",
+    "local_read_only_object_store": "/home/cph/fa1b2de-review-artifacts/.git",
+    "r3_commit_expected": "bc54c0feea1a8af346e2c70b39679cd01f4f3577",
+    "r3_commit_observed": "bc54c0feea1a8af346e2c70b39679cd01f4f3577",
+    "r3_tree": "d4c22f1e4310dc791e75fc15db4ba69c32e0997f",
+    "r3_parent_expected": "38f913b52bcdcc289aa5507be0c6a67516d802f2",
+    "r3_parent_observed": "38f913b52bcdcc289aa5507be0c6a67516d802f2",
+    "commit_timestamp": "2026-08-29T03:57:28-04:00",
+    "commit_subject": "fa1b2de-current86-canonical-source-authentication-governance-r3-patch",
+    "checkout_or_ref_change_performed": false,
+    "authentication": "PASS"
+  },
+  "reviewed_r3_package": {
+    "tree_prefix": "current86-r4/fa1b2de-current86-canonical-source-authentication-governance-r3-patch",
+    "design": {
+      "file": "Design_FA1B2de_Current86_Canonical_Intrinsic_317_Source_Authentication_Governance_R3_PATCHED.md",
+      "git_blob": "05b41f34bcbab9d89e60d8ce8dc40966282eb737",
+      "sha256_expected_by_package": "ca8f84d7a9f86713913a6c24960593a0b5771b04a920d2351290ae8d86d62d0f",
+      "sha256_observed_from_commit_blob": "ca8f84d7a9f86713913a6c24960593a0b5771b04a920d2351290ae8d86d62d0f",
+      "match": true
+    },
+    "patch_summary": {
+      "file": "SOURCE_AUTH_GOVERNANCE_R2_TO_R3_PATCH_SUMMARY.json",
+      "sha256_expected_by_package": "96fd65586bc6b45b7116e3b1e9ce317e48686ef253bb3d46c918f912a5f2ca6e",
+      "sha256_observed_from_commit_blob": "96fd65586bc6b45b7116e3b1e9ce317e48686ef253bb3d46c918f912a5f2ca6e",
+      "match": true
+    },
+    "input_authentication": {
+      "file": "SOURCE_AUTH_GOVERNANCE_R3_INPUT_AUTHENTICATION.json",
+      "sha256_expected_by_package": "d6498d651dbeb1c06207c44f49930511bb94e4c7f227e4306539e0783320ccc9",
+      "sha256_observed_from_commit_blob": "d6498d651dbeb1c06207c44f49930511bb94e4c7f227e4306539e0783320ccc9",
+      "match": true
+    },
+    "target_conservation": {
+      "file": "SOURCE_AUTH_GOVERNANCE_R3_TARGET_CONSERVATION.json",
+      "sha256_expected_by_package": "65f04ad43654bf590afe39a7f8dbbc649ce4092ffcb19d1a741f876fd462b453",
+      "sha256_observed_from_commit_blob": "65f04ad43654bf590afe39a7f8dbbc649ce4092ffcb19d1a741f876fd462b453",
+      "match": true
+    },
+    "checksum_inventory": {
+      "file": "SHA256SUMS.txt",
+      "sha256": "181833079ca9ef589dee0f2708f0fc05c8101c8ae42f352651be6beba9a0daa7",
+      "all_four_listed_content_hashes_recomputed_from_commit_blobs": true
+    },
+    "authentication": "PASS"
+  },
+  "fresh_targeted_review_pin": {
+    "authentication_mode": "CURRENT_NATIVE_USER_PINNED_REVIEW_RESULT",
+    "native_message_id": "msg_01a04c8c-7cf7-73f2-b763-f6b9edab6afd",
+    "native_message_timestamp": "2026-08-29T08:04:30.583Z",
+    "native_message_utf8_sha256": "8f1fe244fae0191926a1991c9a3f031cbe5c41c1f6c3df15b04246774c920e88",
+    "native_message_utf8_byte_length": 6378,
+    "verdict": {
+      "SOURCE_AUTH_GOVERNANCE_R3_FRESH_TARGETED_REVIEW_VERDICT": "BLOCKED",
+      "EXACT317_SCOPE": "PASS_PRESERVED",
+      "SA_B1_NORMATIVE_SOURCE_OBJECT_ADMISSION": "PASS_PRESERVED",
+      "SA_B2_EXACT_FIELD_PIN_AND_CANONICALIZATION": "BLOCKED",
+      "SA_B3_INDEPENDENT_VERIFIER_ISOLATION": "PASS_PRESERVED"
+    },
+    "sole_authorized_defect": "MISSING_EXPLICIT_ADMISSION_RECORD_AND_TUPLE_CROSS_BINDING_IN_R3_FIELD_PIN_AUTHORITY_SELECTION",
+    "authentication": "PASS"
+  },
+  "r3_gap_reauthentication": {
+    "sa_b1_admission_unit_has_target_candidate_semantics_pointer": true,
+    "r3_no_machine_proof_has_admission_record_id": false,
+    "r3_no_machine_proof_has_admission_tuple_id": false,
+    "r3_no_machine_proof_has_admitted_pointer_sha256": false,
+    "r3_human_record_has_admission_record_id": false,
+    "r3_human_record_has_admission_tuple_id": false,
+    "r3_human_record_has_admitted_pointer_sha256": false,
+    "r3_requires_selected_field_pin_tuple_id_equal_admission_tuple_id": false,
+    "review_root_cause_confirmed": true
+  },
+  "exact317_authority": {
+    "manifest_path": "/home/cph/experiment-artifacts/fa1b2de-current86-canonical-intrinsic-317-r1/CURRENT86_Canonical_Intrinsic_317_Exact_Targets.json",
+    "manifest_sha256_expected": "d8d55d369fe433bf7b93a3c332b8ac9a517a9146b28fa223370ff3ec946955ac",
+    "manifest_sha256_observed": "d8d55d369fe433bf7b93a3c332b8ac9a517a9146b28fa223370ff3ec946955ac",
+    "audit_scope_id": "34551e904bafa71fb2fb6db33162e94ad41a08eca6c747d429c83760e09c1306",
+    "counting_unit": "UNIQUE_REQUIRED_CANONICAL_INTRINSIC_SOURCE_CLASS_SIDE_BINDING_TUPLE",
+    "target_count_recomputed": 317,
+    "raw_side_count_recomputed": 86,
+    "candidate_side_count_recomputed": 231,
+    "all_target_ids_recomputed": true,
+    "target_id_mismatch_count": 0,
+    "target_order_recomputed_exact": true,
+    "authentication": "PASS"
+  },
+  "preserved_authorities": {
+    "source_class_fact_type_registry_id": "8cef6206dfc3581c3e7b6358bde7a36e90f4ba99078176cc0e5aff4b238298a7",
+    "source_class_fact_type_registry_sha256": "3df4262faa4137996d2ff8d163bcc665d5bed76b3d719e6ff66cf4154252d72f",
+    "source_artifact_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+    "source_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+    "PROJECT_SCORING_AUTHORITY": "18fd70d4a57f07a3e06242d9f0e077a4e6838120",
+    "PROJECT_BINDING_AUTHORITY_BASELINE": "d309c01d6178a75cac88b6236d36179563a88239",
+    "PROJECT_ACCEPTED_BINDINGS": "1045/1796",
+    "mutation_by_r4": false
+  },
+  "input_authentication_result": {
+    "input_conflict_count": 0,
+    "fail_closed_triggered": false,
+    "EXACT317_SCOPE": "PASS",
+    "SA_B1_REVIEW_RESULT": "PASS_PRESERVED_AUTHENTICATED",
+    "SA_B2_REVIEW_BLOCKER": "AUTHENTICATED_FOR_NARROW_PATCH",
+    "SA_B3_REVIEW_RESULT": "PASS_PRESERVED_AUTHENTICATED"
+  },
+  "hard_boundary": {
+    "SOURCE_AUTH_EXECUTED": "NO",
+    "CURRENT86_P0_EXECUTED": "NO",
+    "CURRENT86_P1_EXECUTED": "NO",
+    "RAW_LEVEL_HUMAN_DECISIONS": 0,
+    "BINDING_PUBLICATION": "NO",
+    "SCORING_AUTHORITY_MUTATION": "NO",
+    "BINDING_AUTHORITY_MUTATION": "NO",
+    "DENOMINATOR_CHANGE": "NO",
+    "ACCEPTED_BINDING_COUNT_CHANGE": "NO",
+    "GIT_REF_MUTATION": "NO"
+  }
+}
