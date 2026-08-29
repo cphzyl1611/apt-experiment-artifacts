@@ -1,0 +1,48 @@
+{
+  "schema": "FA1B2DE_CURRENT86_EXACT317_EXEC_R4_PRODUCTION_DISPATCH_INTEGRATION_PATCH_CANDIDATE_R1",
+  "status": "NON_EXECUTABLE_REVIEW_CANDIDATE",
+  "base_contract": {
+    "path": "FA1B2de_Current86_Exact317_SourceAuth_Execution_Contract_R4/03_contracts/SOURCE_AUTH_EXECUTION_CONTRACT_R4.json",
+    "sha256": "ae7eb74eb9e7dc1f9f474bf52902d4d8d723f680f2c077b13926b331a46deb1c",
+    "schema_registry_path": "FA1B2de_Current86_Exact317_SourceAuth_Execution_Contract_R4/02_schemas/SCHEMA_REGISTRY_R4.json",
+    "schema_registry_sha256": "7f0af7acb019cb0a8f112116ca7a582e02a0219a5e55b0b77c8318799ac93818"
+  },
+  "purpose": "Narrowly add authenticated production authority dispatch identities after production roots are supplied; preserve EC-B1/B2/B3/B4 logic.",
+  "production_dispatch_key": ["authority_role", "schema_or_contract_id", "evaluator_configuration_id"],
+  "required_production_entries": [
+    {
+      "authority_role": "EXACT_TARGET_POINTER_AUTHORITY",
+      "schema_or_contract_id": null,
+      "evaluator_configuration_id": "FA1B2DE_MACHINE_AUTHORITY_EVALUATOR_CONFIG_R4",
+      "artifact_content_identity": null,
+      "tuple_schema": ["source_binding_target_id", "candidate_object_id", "canonical_intrinsic_field_semantics_id", "exact_RFC6901_pointer"],
+      "complete_evaluation_rule": "authenticated exact-root lookup; fail closed on missing, conflict, schema mismatch, or incomplete enumeration"
+    },
+    {
+      "authority_role": "FIELD_PIN_REGISTRY",
+      "schema_or_contract_id": null,
+      "evaluator_configuration_id": "FA1B2DE_MACHINE_AUTHORITY_EVALUATOR_CONFIG_R4",
+      "artifact_content_identity": null,
+      "tuple_schema": ["source_binding_target_id", "candidate_object_id", "canonical_intrinsic_field_semantics_id", "exact_RFC6901_pointer"],
+      "complete_evaluation_rule": "authenticated exact tuple registry expansion; fail closed on missing, conflict, schema mismatch, or incomplete enumeration"
+    },
+    {
+      "authority_role": "DETERMINISTIC_CORPUS_SCHEMA_FIELD_PIN_RULE",
+      "schema_or_contract_id": null,
+      "evaluator_configuration_id": "FA1B2DE_MACHINE_AUTHORITY_EVALUATOR_CONFIG_R4",
+      "artifact_content_identity": null,
+      "tuple_schema": ["source_binding_target_id", "candidate_object_id", "canonical_intrinsic_field_semantics_id", "exact_RFC6901_pointer"],
+      "complete_evaluation_rule": "authenticated deterministic corpus/schema expansion; fail closed on missing, conflict, schema mismatch, or incomplete enumeration"
+    }
+  ],
+  "unresolved_values_are_blockers": ["schema_or_contract_id", "artifact_content_identity"],
+  "integration_constraints": [
+    "Do not overwrite or rewrite EXEC-R4 history.",
+    "Do not accept synthetic-schema-r2 as a production identity.",
+    "Do not add heuristic ranking, nearest-neighbor selection, alternate pointer trial, or model choice.",
+    "Require fresh targeted EXEC-R4 production-dispatch integration review after exact production IDs, bytes, provenance, and evaluator mapping are supplied.",
+    "This candidate does not authorize source-auth execution."
+  ],
+  "TARGETED_EXEC_R4_PRODUCTION_DISPATCH_INTEGRATION_REVIEW_REQUIRED": "YES",
+  "production_roots_currently_available": false
+}

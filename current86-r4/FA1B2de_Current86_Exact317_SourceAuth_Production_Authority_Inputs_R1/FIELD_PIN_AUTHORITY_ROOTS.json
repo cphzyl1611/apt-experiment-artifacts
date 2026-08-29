@@ -1,0 +1,50 @@
+{
+  "schema": "FA1B2DE_CURRENT86_EXACT317_SOURCE_AUTH_FIELD_PIN_AUTHORITY_ROOTS_R1",
+  "authority_role": "SA-B2_FIELD_PIN",
+  "scope": "EXACT_CURRENT86_ONLY",
+  "cross_binding_required": [
+    "source_binding_target_id",
+    "candidate_object_id",
+    "canonical_intrinsic_field_semantics_id",
+    "exact_RFC6901_pointer",
+    "admission_record_id",
+    "admission_tuple_id"
+  ],
+  "allowed_machine_paths": [
+    {
+      "path_id": "EXACT_TARGET_POINTER_AUTHORITY",
+      "root_status": "MISSING",
+      "source": "exact pointer embedded in target authority",
+      "artifact_identity": null,
+      "schema_or_rule_id": null
+    },
+    {
+      "path_id": "FIELD_PIN_REGISTRY",
+      "root_status": "MISSING",
+      "source": "authenticated FIELD_PIN_REGISTRY exact tuple record",
+      "artifact_identity": null,
+      "schema_or_rule_id": null
+    },
+    {
+      "path_id": "DETERMINISTIC_CORPUS_SCHEMA_FIELD_PIN_RULE",
+      "root_status": "MISSING",
+      "source": "authenticated deterministic corpus/schema field-pin rule",
+      "artifact_identity": null,
+      "schema_or_rule_id": null
+    }
+  ],
+  "selection_rules": [
+    "authenticate exactly one SA-B1 admission record first",
+    "cross-check every machine tuple against the admitted tuple before deduplication",
+    "nonidentical tuple, conflict, missing, or unevaluated root yields BLOCKED_FIELD_PIN",
+    "alternate pointer trial, field-name inference, reviewer/model choice, and pointer drift are prohibited",
+    "human field-pin governance is unavailable in this package and cannot be created here"
+  ],
+  "r4_cross_binding_identity": {
+    "admission_tuple_id": "SHA256(PROJECT_CANONICAL_JSON_V1(exact four-member admission tuple))",
+    "admitted_exact_RFC6901_pointer_utf8_sha256": "SHA256(exact strict UTF-8 pointer bytes)",
+    "selected_field_pin_tuple_id_must_equal": "admission_tuple_id"
+  },
+  "authority_status": "NO_AUTHENTICATED_PRODUCTION_FIELD_PIN_ROOTS",
+  "execution_effect": "FAIL_CLOSED; field-pin processing cannot begin without exact authenticated admission and roots"
+}

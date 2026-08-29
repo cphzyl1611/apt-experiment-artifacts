@@ -1,0 +1,24 @@
+{
+  "schema": "FA1B2DE_CURRENT86_EXACT317_SOURCE_AUTH_PRODUCTION_EVALUATOR_DISPATCH_MAPPING_R1",
+  "dispatch_key": ["authority_role", "schema_or_contract_id", "evaluator_configuration_id"],
+  "evaluator_implementation_id": "FA1B2DE_FROZEN_MACHINE_AUTHORITY_EVALUATOR_R4",
+  "evaluator_configuration_id": "FA1B2DE_MACHINE_AUTHORITY_EVALUATOR_CONFIG_R4",
+  "current_exec_r4_dispatch": [
+    {"authority_role": "EXACT_TARGET_POINTER_AUTHORITY", "schema_or_contract_id": "synthetic-schema-r2", "evaluator_configuration_id": "FA1B2DE_MACHINE_AUTHORITY_EVALUATOR_CONFIG_R4", "status": "SYNTHETIC_FIXTURE_ONLY"},
+    {"authority_role": "FIELD_PIN_REGISTRY", "schema_or_contract_id": "synthetic-schema-r2", "evaluator_configuration_id": "FA1B2DE_MACHINE_AUTHORITY_EVALUATOR_CONFIG_R4", "status": "SYNTHETIC_FIXTURE_ONLY"},
+    {"authority_role": "DETERMINISTIC_CORPUS_SCHEMA_FIELD_PIN_RULE", "schema_or_contract_id": "synthetic-schema-r2", "evaluator_configuration_id": "FA1B2DE_MACHINE_AUTHORITY_EVALUATOR_CONFIG_R4", "status": "SYNTHETIC_FIXTURE_ONLY"}
+  ],
+  "production_dispatch_entries": [
+    {"authority_role": "EXACT_TARGET_POINTER_AUTHORITY", "schema_or_contract_id": null, "evaluator_configuration_id": "FA1B2DE_MACHINE_AUTHORITY_EVALUATOR_CONFIG_R4", "artifact_content_identity": null, "tuple_schema": "source_binding_target_id,candidate_object_id,canonical_intrinsic_field_semantics_id,exact_RFC6901_pointer", "complete_evaluation_rule": "MISSING_ROOT_FAIL_CLOSED"},
+    {"authority_role": "FIELD_PIN_REGISTRY", "schema_or_contract_id": null, "evaluator_configuration_id": "FA1B2DE_MACHINE_AUTHORITY_EVALUATOR_CONFIG_R4", "artifact_content_identity": null, "tuple_schema": "source_binding_target_id,candidate_object_id,canonical_intrinsic_field_semantics_id,exact_RFC6901_pointer", "complete_evaluation_rule": "MISSING_ROOT_FAIL_CLOSED"},
+    {"authority_role": "DETERMINISTIC_CORPUS_SCHEMA_FIELD_PIN_RULE", "schema_or_contract_id": null, "evaluator_configuration_id": "FA1B2DE_MACHINE_AUTHORITY_EVALUATOR_CONFIG_R4", "artifact_content_identity": null, "tuple_schema": "source_binding_target_id,candidate_object_id,canonical_intrinsic_field_semantics_id,exact_RFC6901_pointer", "complete_evaluation_rule": "MISSING_ROOT_FAIL_CLOSED"}
+  ],
+  "integration_decision": {
+    "TARGETED_EXEC_R4_PRODUCTION_DISPATCH_INTEGRATION_REVIEW_REQUIRED": "YES",
+    "reason": "EXEC-R4 only dispatches synthetic-schema-r2; production schema/rule IDs are absent and cannot be silently added to EXEC-R4",
+    "patch_candidate_directory": "FA1B2de_Current86_Exact317_SourceAuth_Production_Authority_Inputs_R1/EXEC_R4_PRODUCTION_DISPATCH_INTEGRATION_PATCH_CANDIDATE",
+    "patch_materialized": true,
+    "exec_r4_overwritten": false,
+    "ec_b1_b2_b3_b4_redesigned": false
+  }
+}

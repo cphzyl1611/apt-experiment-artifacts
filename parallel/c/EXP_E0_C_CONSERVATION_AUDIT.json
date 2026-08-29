@@ -1,0 +1,576 @@
+{
+  "binding_authority_mutation": "NO",
+  "conservation": {
+    "duplicate_raw_key_count": 0,
+    "extra_raw_count": 0,
+    "missing_raw_count": 0,
+    "raw_record_count": 1796,
+    "unique_raw_key_count": 1796
+  },
+  "denominator_change": "NO",
+  "exp_e0_c_conservation": "PASS_1796",
+  "exp_e0_c_raw_authority": "AUTHENTICATED_SOURCE_CORPUS_PLUS_VERIFIED_DERIVED_REGISTRY",
+  "failure_reasons": [],
+  "formal_experiment_executed": "NO",
+  "historical_protocol": {
+    "protocol_id": "FULL_ACTION_PROTOCOL_V2",
+    "raw_corpus_manifest_expected_sha256": "d52db285fc38deb0430ee32fad24b37e54e2f2b95f6f0ac35b96a42754725efa",
+    "raw_corpus_manifest_recomputation": "REPRODUCED_MATCH",
+    "raw_corpus_manifest_recomputed_sha256": "d52db285fc38deb0430ee32fad24b37e54e2f2b95f6f0ac35b96a42754725efa",
+    "scoring_metadata": "NOT_CURRENT_AUTHORITY"
+  },
+  "registry_verification": {
+    "extra_in_registry": [],
+    "inconsistent_registry_source_hash_files": [],
+    "missing_in_registry": [],
+    "raw_key_mismatch_count": 0,
+    "registry_duplicate_raw_keys": [],
+    "registry_invalid_raw_keys": [],
+    "registry_row_count": 1796,
+    "registry_unique_raw_keys": 1796,
+    "source_file_sha_mismatch_count": 0,
+    "source_locator_mismatch_count": 0,
+    "source_row_field_mismatch_counts": {}
+  },
+  "schema_version": "exp-e0-c-conservation-audit-v1",
+  "scoring_authority_mutation": "NO",
+  "source_corpus": {
+    "per_playbook": [
+      {
+        "playbook_id": "6000002",
+        "raw_action_count": 44,
+        "source_file": "APT数据集/playbooks/6000002.json",
+        "stage_count": 9
+      },
+      {
+        "playbook_id": "6000003",
+        "raw_action_count": 39,
+        "source_file": "APT数据集/playbooks/6000003.json",
+        "stage_count": 8
+      },
+      {
+        "playbook_id": "6000004",
+        "raw_action_count": 52,
+        "source_file": "APT数据集/playbooks/6000004.json",
+        "stage_count": 9
+      },
+      {
+        "playbook_id": "6000006",
+        "raw_action_count": 59,
+        "source_file": "APT数据集/playbooks/6000006.json",
+        "stage_count": 12
+      },
+      {
+        "playbook_id": "6000007",
+        "raw_action_count": 54,
+        "source_file": "APT数据集/playbooks/6000007.json",
+        "stage_count": 11
+      },
+      {
+        "playbook_id": "6000008",
+        "raw_action_count": 52,
+        "source_file": "APT数据集/playbooks/6000008.json",
+        "stage_count": 9
+      },
+      {
+        "playbook_id": "6000009",
+        "raw_action_count": 61,
+        "source_file": "APT数据集/playbooks/6000009.json",
+        "stage_count": 11
+      },
+      {
+        "playbook_id": "6000010",
+        "raw_action_count": 70,
+        "source_file": "APT数据集/playbooks/6000010.json",
+        "stage_count": 12
+      },
+      {
+        "playbook_id": "6000011",
+        "raw_action_count": 64,
+        "source_file": "APT数据集/playbooks/6000011.json",
+        "stage_count": 10
+      },
+      {
+        "playbook_id": "6000013",
+        "raw_action_count": 44,
+        "source_file": "APT数据集/playbooks/6000013.json",
+        "stage_count": 9
+      },
+      {
+        "playbook_id": "6000014",
+        "raw_action_count": 37,
+        "source_file": "APT数据集/playbooks/6000014.json",
+        "stage_count": 8
+      },
+      {
+        "playbook_id": "6000015",
+        "raw_action_count": 43,
+        "source_file": "APT数据集/playbooks/6000015.json",
+        "stage_count": 10
+      },
+      {
+        "playbook_id": "6000016",
+        "raw_action_count": 33,
+        "source_file": "APT数据集/playbooks/6000016.json",
+        "stage_count": 8
+      },
+      {
+        "playbook_id": "6000017",
+        "raw_action_count": 37,
+        "source_file": "APT数据集/playbooks/6000017.json",
+        "stage_count": 8
+      },
+      {
+        "playbook_id": "6000018",
+        "raw_action_count": 28,
+        "source_file": "APT数据集/playbooks/6000018.json",
+        "stage_count": 7
+      },
+      {
+        "playbook_id": "6000019",
+        "raw_action_count": 35,
+        "source_file": "APT数据集/playbooks/6000019.json",
+        "stage_count": 8
+      },
+      {
+        "playbook_id": "6000020",
+        "raw_action_count": 31,
+        "source_file": "APT数据集/playbooks/6000020.json",
+        "stage_count": 7
+      },
+      {
+        "playbook_id": "6000021",
+        "raw_action_count": 29,
+        "source_file": "APT数据集/playbooks/6000021.json",
+        "stage_count": 9
+      },
+      {
+        "playbook_id": "6000023",
+        "raw_action_count": 37,
+        "source_file": "APT数据集/playbooks/6000023.json",
+        "stage_count": 10
+      },
+      {
+        "playbook_id": "6000024",
+        "raw_action_count": 38,
+        "source_file": "APT数据集/playbooks/6000024.json",
+        "stage_count": 9
+      },
+      {
+        "playbook_id": "6000025",
+        "raw_action_count": 29,
+        "source_file": "APT数据集/playbooks/6000025.json",
+        "stage_count": 7
+      },
+      {
+        "playbook_id": "6000026",
+        "raw_action_count": 33,
+        "source_file": "APT数据集/playbooks/6000026.json",
+        "stage_count": 8
+      },
+      {
+        "playbook_id": "6000027",
+        "raw_action_count": 41,
+        "source_file": "APT数据集/playbooks/6000027.json",
+        "stage_count": 10
+      },
+      {
+        "playbook_id": "6000028",
+        "raw_action_count": 32,
+        "source_file": "APT数据集/playbooks/6000028.json",
+        "stage_count": 7
+      },
+      {
+        "playbook_id": "6000029",
+        "raw_action_count": 33,
+        "source_file": "APT数据集/playbooks/6000029.json",
+        "stage_count": 8
+      },
+      {
+        "playbook_id": "6000031",
+        "raw_action_count": 36,
+        "source_file": "APT数据集/playbooks/6000031.json",
+        "stage_count": 8
+      },
+      {
+        "playbook_id": "6000032",
+        "raw_action_count": 34,
+        "source_file": "APT数据集/playbooks/6000032.json",
+        "stage_count": 8
+      },
+      {
+        "playbook_id": "6000033",
+        "raw_action_count": 34,
+        "source_file": "APT数据集/playbooks/6000033.json",
+        "stage_count": 8
+      },
+      {
+        "playbook_id": "6000034",
+        "raw_action_count": 32,
+        "source_file": "APT数据集/playbooks/6000034.json",
+        "stage_count": 7
+      },
+      {
+        "playbook_id": "6000035",
+        "raw_action_count": 32,
+        "source_file": "APT数据集/playbooks/6000035.json",
+        "stage_count": 9
+      },
+      {
+        "playbook_id": "6000036",
+        "raw_action_count": 29,
+        "source_file": "APT数据集/playbooks/6000036.json",
+        "stage_count": 7
+      },
+      {
+        "playbook_id": "6000037",
+        "raw_action_count": 24,
+        "source_file": "APT数据集/playbooks/6000037.json",
+        "stage_count": 7
+      },
+      {
+        "playbook_id": "6000039",
+        "raw_action_count": 27,
+        "source_file": "APT数据集/playbooks/6000039.json",
+        "stage_count": 7
+      },
+      {
+        "playbook_id": "6000040",
+        "raw_action_count": 24,
+        "source_file": "APT数据集/playbooks/6000040.json",
+        "stage_count": 7
+      },
+      {
+        "playbook_id": "6000041",
+        "raw_action_count": 25,
+        "source_file": "APT数据集/playbooks/6000041.json",
+        "stage_count": 8
+      },
+      {
+        "playbook_id": "6000042",
+        "raw_action_count": 26,
+        "source_file": "APT数据集/playbooks/6000042.json",
+        "stage_count": 8
+      },
+      {
+        "playbook_id": "6000043",
+        "raw_action_count": 29,
+        "source_file": "APT数据集/playbooks/6000043.json",
+        "stage_count": 7
+      },
+      {
+        "playbook_id": "6000044",
+        "raw_action_count": 28,
+        "source_file": "APT数据集/playbooks/6000044.json",
+        "stage_count": 7
+      },
+      {
+        "playbook_id": "6000046",
+        "raw_action_count": 19,
+        "source_file": "APT数据集/playbooks/6000046.json",
+        "stage_count": 6
+      },
+      {
+        "playbook_id": "6000047",
+        "raw_action_count": 26,
+        "source_file": "APT数据集/playbooks/6000047.json",
+        "stage_count": 8
+      },
+      {
+        "playbook_id": "6000048",
+        "raw_action_count": 26,
+        "source_file": "APT数据集/playbooks/6000048.json",
+        "stage_count": 9
+      },
+      {
+        "playbook_id": "6000049",
+        "raw_action_count": 27,
+        "source_file": "APT数据集/playbooks/6000049.json",
+        "stage_count": 7
+      },
+      {
+        "playbook_id": "6000050",
+        "raw_action_count": 25,
+        "source_file": "APT数据集/playbooks/6000050.json",
+        "stage_count": 6
+      },
+      {
+        "playbook_id": "6000051",
+        "raw_action_count": 26,
+        "source_file": "APT数据集/playbooks/6000051.json",
+        "stage_count": 7
+      },
+      {
+        "playbook_id": "6000053",
+        "raw_action_count": 22,
+        "source_file": "APT数据集/playbooks/6000053.json",
+        "stage_count": 8
+      },
+      {
+        "playbook_id": "6000054",
+        "raw_action_count": 24,
+        "source_file": "APT数据集/playbooks/6000054.json",
+        "stage_count": 8
+      },
+      {
+        "playbook_id": "6000055",
+        "raw_action_count": 21,
+        "source_file": "APT数据集/playbooks/6000055.json",
+        "stage_count": 6
+      },
+      {
+        "playbook_id": "6000056",
+        "raw_action_count": 25,
+        "source_file": "APT数据集/playbooks/6000056.json",
+        "stage_count": 9
+      },
+      {
+        "playbook_id": "6000058",
+        "raw_action_count": 25,
+        "source_file": "APT数据集/playbooks/6000058.json",
+        "stage_count": 7
+      },
+      {
+        "playbook_id": "6000060",
+        "raw_action_count": 21,
+        "source_file": "APT数据集/playbooks/6000060.json",
+        "stage_count": 8
+      },
+      {
+        "playbook_id": "6000061",
+        "raw_action_count": 26,
+        "source_file": "APT数据集/playbooks/6000061.json",
+        "stage_count": 8
+      },
+      {
+        "playbook_id": "6000062",
+        "raw_action_count": 25,
+        "source_file": "APT数据集/playbooks/6000062.json",
+        "stage_count": 7
+      },
+      {
+        "playbook_id": "6000063",
+        "raw_action_count": 23,
+        "source_file": "APT数据集/playbooks/6000063.json",
+        "stage_count": 8
+      }
+    ],
+    "playbook_count": 53,
+    "raw_action_count": 1796,
+    "source_file_manifest": [
+      {
+        "sha256": "855ea7b3688eb23c26b6e5526c818da0deab66d312f76d94f5f28bc1ba9f5554",
+        "source_file": "APT数据集/playbooks/6000002.json"
+      },
+      {
+        "sha256": "36f5c7c07e043d3c72822e3fb8f708486111455bdcb03079b873a7d19b09e393",
+        "source_file": "APT数据集/playbooks/6000003.json"
+      },
+      {
+        "sha256": "8b75e353609f612da7621a1e57869ff590752c2c75410d3834a6d8673fc75439",
+        "source_file": "APT数据集/playbooks/6000004.json"
+      },
+      {
+        "sha256": "c801917cf23db412db586d330d6a2929ab3e89d48996fa64281ae95aac8ca84e",
+        "source_file": "APT数据集/playbooks/6000006.json"
+      },
+      {
+        "sha256": "9e7f336c1e66b8e526bd3b784671b46ae9621eb2f1e67ba938ac6e3d9ad7eb41",
+        "source_file": "APT数据集/playbooks/6000007.json"
+      },
+      {
+        "sha256": "efb55818c06d82ad5d9955eb0f023be029a36a3e2b78c81644e88d4177294547",
+        "source_file": "APT数据集/playbooks/6000008.json"
+      },
+      {
+        "sha256": "8ae4ceb81944486be6db1ae33b446242858cfae4fb7d473a3efb64eb39e258c7",
+        "source_file": "APT数据集/playbooks/6000009.json"
+      },
+      {
+        "sha256": "dfbdae92ef01a93bfa0b3437361f615603b54e6cf14d4ee912b15236d47854d0",
+        "source_file": "APT数据集/playbooks/6000010.json"
+      },
+      {
+        "sha256": "18a6930da2771664f3d5d8d1d037d84d07aa6fe4a53033301a6e1dfef09fa8e0",
+        "source_file": "APT数据集/playbooks/6000011.json"
+      },
+      {
+        "sha256": "a9e2476fd3268d15cb034dad4002c27e09c765995f33fcad6b73ac85828babfc",
+        "source_file": "APT数据集/playbooks/6000013.json"
+      },
+      {
+        "sha256": "e5a0060588117894808b1d745752fd85f8defe5eeb5b4dbbaf7913c540f5dedd",
+        "source_file": "APT数据集/playbooks/6000014.json"
+      },
+      {
+        "sha256": "211febb1a39bf9d9d15946006bc478d062f83337525b24a2eff8a4827d9941d5",
+        "source_file": "APT数据集/playbooks/6000015.json"
+      },
+      {
+        "sha256": "d4e5f21cdfac1eb691d18dca3e6de3fcfd00e321179f06923366824d82eca237",
+        "source_file": "APT数据集/playbooks/6000016.json"
+      },
+      {
+        "sha256": "878479d46051935ca08c754c27355b0198e905d5c1e91a5460cfdb91f10dfb7a",
+        "source_file": "APT数据集/playbooks/6000017.json"
+      },
+      {
+        "sha256": "8637830ec8f7f05ec1e3476802ec254dc74856be6e8816dabb9f0eccbc54ecb6",
+        "source_file": "APT数据集/playbooks/6000018.json"
+      },
+      {
+        "sha256": "e31af7a0b4d05e8d69b7e5ca14ec4cdd8b8a6b6f5ee3234f3ae5fff9132d086e",
+        "source_file": "APT数据集/playbooks/6000019.json"
+      },
+      {
+        "sha256": "59bec4157e757689e922187a64f74995305aaadded2cfd7b5f9f7e20548b5d48",
+        "source_file": "APT数据集/playbooks/6000020.json"
+      },
+      {
+        "sha256": "b8d7cbd8012971ba1e0c719ae0e94086c5a12116b5adcbfc9bbbe2103995fd47",
+        "source_file": "APT数据集/playbooks/6000021.json"
+      },
+      {
+        "sha256": "1ad59a729bf3ddb82d333e34afbacebfc28b92aff77e642169b63daf4a091cef",
+        "source_file": "APT数据集/playbooks/6000023.json"
+      },
+      {
+        "sha256": "bcee2184dd0d59dbe9fce4ae49fff6ae27bc1604a0fc24f8c2c6822a43ada173",
+        "source_file": "APT数据集/playbooks/6000024.json"
+      },
+      {
+        "sha256": "ecee91a9e581bbbfe76170c451c83b81616585d11a9e35f629d58fbbc73dbd79",
+        "source_file": "APT数据集/playbooks/6000025.json"
+      },
+      {
+        "sha256": "a31a049df78829905c8eb8dcaabb328ec1390d2ce17b0d4e969263a96e9e90d8",
+        "source_file": "APT数据集/playbooks/6000026.json"
+      },
+      {
+        "sha256": "7f594a339bb374d663a18edcb82591d820efb8f9fb3e9d4a426c2ae81f18ba84",
+        "source_file": "APT数据集/playbooks/6000027.json"
+      },
+      {
+        "sha256": "7eb3f746abfe2ae51f8dc83262870b11aca511d3c3fa83af49af53abe9fa7885",
+        "source_file": "APT数据集/playbooks/6000028.json"
+      },
+      {
+        "sha256": "f6c646e2166bbb6d4dba66a63200acc2875917a0dd33706a6cf517ef7e22db3f",
+        "source_file": "APT数据集/playbooks/6000029.json"
+      },
+      {
+        "sha256": "123cca89bde428088125eea4878d64187d686affbe6dc3a752aceb58944b92f1",
+        "source_file": "APT数据集/playbooks/6000031.json"
+      },
+      {
+        "sha256": "611895c323a7af7945d1f3a0cd6d1b6f70560d12a87423ea6128a337e228e2e5",
+        "source_file": "APT数据集/playbooks/6000032.json"
+      },
+      {
+        "sha256": "5c0c02c49755ff38f98fe76e443c1b00ac09f298080463e39f36a90507c8cf68",
+        "source_file": "APT数据集/playbooks/6000033.json"
+      },
+      {
+        "sha256": "4d64b5ae50729708754cab62b393715da64e5036af2068f9bafddf2c819aa29f",
+        "source_file": "APT数据集/playbooks/6000034.json"
+      },
+      {
+        "sha256": "64be1191af93a042469dc7493b9680cb69b44698e139fd8700cc4eaeeb357a4d",
+        "source_file": "APT数据集/playbooks/6000035.json"
+      },
+      {
+        "sha256": "2d13b4bbe0187bfafd72d70f6519105f10aaad5c4e84dcc9bcf919cede816658",
+        "source_file": "APT数据集/playbooks/6000036.json"
+      },
+      {
+        "sha256": "d0c350d9c5ba8fe6b2c285afd55b6a1fe8e72d36e9f26f4bbce1e92d6b495448",
+        "source_file": "APT数据集/playbooks/6000037.json"
+      },
+      {
+        "sha256": "ce41228c4931d5e248887a36077fb066849294359dab8c4030aa55fbfe89f5ef",
+        "source_file": "APT数据集/playbooks/6000039.json"
+      },
+      {
+        "sha256": "bc8f03d5e1e9c7fc3eb52f8fc9c44f5682783040c55907b013df2465dda1f64f",
+        "source_file": "APT数据集/playbooks/6000040.json"
+      },
+      {
+        "sha256": "d5da22164010ccf1c03167e64d90cbafe4e9c3b66ca58eb98bae78bd11c53a8b",
+        "source_file": "APT数据集/playbooks/6000041.json"
+      },
+      {
+        "sha256": "8957e88c2d333e9b81be8cdc47b72eae6e89820cd9908debd17398e446d8c9f1",
+        "source_file": "APT数据集/playbooks/6000042.json"
+      },
+      {
+        "sha256": "edae21d0bb90d0a1c83ef022879c9c5f1221829afd5b0568f02c2491e41da10d",
+        "source_file": "APT数据集/playbooks/6000043.json"
+      },
+      {
+        "sha256": "04f066cfa797b4bb8529a8c05da5ab9a36635d81c7f6216d23d8d0fa95fc0ea1",
+        "source_file": "APT数据集/playbooks/6000044.json"
+      },
+      {
+        "sha256": "f920450aca27f3a386773043ee2d3bff5f98670605d93066e5b116e80aa18707",
+        "source_file": "APT数据集/playbooks/6000046.json"
+      },
+      {
+        "sha256": "60fef2f0d6079247d97df82d69e4a0611331ed48a78f98e9af7f37deab18e0bf",
+        "source_file": "APT数据集/playbooks/6000047.json"
+      },
+      {
+        "sha256": "629a9bb82b9c73ad3c1f706e52bf997b28d2e7ca6bf3be7f27410654c301f0d2",
+        "source_file": "APT数据集/playbooks/6000048.json"
+      },
+      {
+        "sha256": "bb19b8e5f2014ec83102ae80128502a015113108f163f2ce30461e3be89b61e7",
+        "source_file": "APT数据集/playbooks/6000049.json"
+      },
+      {
+        "sha256": "1bbbe314b926a1028766831eb3cd250f3d7a12c88bfc914a26de89bef2fbf34e",
+        "source_file": "APT数据集/playbooks/6000050.json"
+      },
+      {
+        "sha256": "2206e880fab05065d397fc3d5a2db2fdc341a2af23f33b45d9603462f2e6c43d",
+        "source_file": "APT数据集/playbooks/6000051.json"
+      },
+      {
+        "sha256": "883aa30077b6a60176dfbaeb90ca27b7c34b52d023b39147171bc691c966a502",
+        "source_file": "APT数据集/playbooks/6000053.json"
+      },
+      {
+        "sha256": "847536edca78b0fd4c4dbeccbd5a12c896087fe2659dc69df1a8d38c7a82d7d6",
+        "source_file": "APT数据集/playbooks/6000054.json"
+      },
+      {
+        "sha256": "318fba1fd9b6fac4435c30e39c2b8056c85e6ac883c6192416fe3484369ee19a",
+        "source_file": "APT数据集/playbooks/6000055.json"
+      },
+      {
+        "sha256": "0dc14b827833ee6c314c85fff03d7aabf2cc52632436d50d408f76e8bedd0932",
+        "source_file": "APT数据集/playbooks/6000056.json"
+      },
+      {
+        "sha256": "3f3d509c418f5a4f0a94151d42749a44c3b834df055b03bc97f912ab54313a12",
+        "source_file": "APT数据集/playbooks/6000058.json"
+      },
+      {
+        "sha256": "41a59710b0752a22af03840b78f61b6c59ce276d3d9556fde81d6cd56624de09",
+        "source_file": "APT数据集/playbooks/6000060.json"
+      },
+      {
+        "sha256": "ec94d4824ec013a2148ef10b0c388f66c2bd665cb0bfe4e530a860d36038b1b2",
+        "source_file": "APT数据集/playbooks/6000061.json"
+      },
+      {
+        "sha256": "e59bd06eddda8d40dc75ceae3b3c4c7fe1bbd18c3a579bb2be856e5891bc5fda",
+        "source_file": "APT数据集/playbooks/6000062.json"
+      },
+      {
+        "sha256": "96a70caf6fffc3c88e7ce5e6c04316cfab3677154c176d2073c3233d9c9e5cd0",
+        "source_file": "APT数据集/playbooks/6000063.json"
+      }
+    ],
+    "stage_count": 434
+  }
+}

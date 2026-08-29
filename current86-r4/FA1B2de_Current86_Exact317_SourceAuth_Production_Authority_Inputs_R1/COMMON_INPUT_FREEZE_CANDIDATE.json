@@ -1,0 +1,36 @@
+{
+  "schema": "FA1B2DE_CURRENT86_EXACT317_SOURCE_AUTH_COMMON_INPUT_FREEZE_CANDIDATE_R1",
+  "freeze_status": "CANDIDATE_BLOCKED_MISSING_PRODUCTION_AUTHORITY",
+  "freeze_id": null,
+  "scope": "CURRENT86_CANONICAL_INTRINSIC_317_SOURCE_BINDING_RECONSTRUCTION_ONLY",
+  "audit_scope_id": "34551e904bafa71fb2fb6db33162e94ad41a08eca6c747d429c83760e09c1306",
+  "exact_target_manifest": {"path": "/home/cph/experiment-artifacts/fa1b2de-current86-canonical-intrinsic-317-r1/CURRENT86_Canonical_Intrinsic_317_Exact_Targets.json", "sha256": "d8d55d369fe433bf7b93a3c332b8ac9a517a9146b28fa223370ff3ec946955ac", "byte_length": 234895, "provenance_id": "exact317_source_auth_r1_target_authority", "read_only_mount": "/sa/common/exact317_target_manifest.json"},
+  "source_class_fact_type_authority": {"path": "03_frozen_lineage/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json", "sha256": "3df4262faa4137996d2ff8d163bcc665d5bed76b3d719e6ff66cf4154252d72f", "byte_length": 6583, "provenance_id": "8cef6206dfc3581c3e7b6358bde7a36e90f4ba99078176cc0e5aff4b238298a7", "read_only_mount": "/sa/common/source_class_fact_type_registry.json"},
+  "candidate_corpora": [
+    {"path": "/home/cph/experiment-artifacts/fa1b2de-bso-r-20260825T100958Z/inputs/project_snapshots/raw_action_registry.jsonl", "sha256": "53c85157f9fd0849ae19b1cf403333ad0d0af2a7d761b0498540dd92d66c1e93", "byte_length": 2025927, "provenance_id": "BSO_R_HANDOFF_SHA256:eb947f385acdf8275e44cacc20d31c95080c3b1e7f7840f9fa3996a56cc64ec6", "read_only_mount": "/sa/common/raw_action_registry.jsonl", "authority_status": "NONCANONICAL_CANDIDATE"},
+    {"path": "/home/cph/experiment-artifacts/fa1b2de-bso-r-20260825T100958Z/inputs/c2/c2_scoring_snapshot_post_c1.jsonl", "sha256": "748a3808290f9e78f71c18d4553c77ae208517fd31d163fc2b3008cfcb57f1bb", "byte_length": 1348627, "provenance_id": "BSO_R_HANDOFF_SHA256:eb947f385acdf8275e44cacc20d31c95080c3b1e7f7840f9fa3996a56cc64ec6", "read_only_mount": "/sa/common/c2_scoring_snapshot_post_c1.jsonl", "authority_status": "NONCANONICAL_CANDIDATE"},
+    {"path": "/home/cph/experiment-artifacts/tier-de1c0-handoff-20260823-083725/tier_de1c0_typed_operation_semantics.jsonl", "sha256": "0036c42fb02026182274a7ac2a33b103b03b1e527856eb33b5ad650ceddd5c32", "byte_length": 2484224, "provenance_id": "C0_HANDOFF_ARCHIVE_SHA256:339a8d04a767bb69ea24c2b772c2519420a778555aaede34c799bc0242112f27", "read_only_mount": "/sa/common/c0_typed_operation_semantics.jsonl", "authority_status": "RECOVERED_EVIDENCE_ONLY"}
+  ],
+  "extraction_schemas": [
+    {"role": "SOURCE_CLASS_FACT_TYPE_RULE", "path": "03_frozen_lineage/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json", "sha256": "3df4262faa4137996d2ff8d163bcc665d5bed76b3d719e6ff66cf4154252d72f", "schema_or_rule_id": "FA1B2DE_BSO_EQ_CURRENT86_SOURCE_CLASS_FACT_TYPE_REGISTRY_R2", "provenance_id": "8cef6206dfc3581c3e7b6358bde7a36e90f4ba99078176cc0e5aff4b238298a7"},
+    {"role": "STRUCTURED_SOURCE_EXTRACTION_RULE", "path": "03_frozen_lineage/BSO_EQ_Candidate_Level_Policy_Schema_Authority_Bundle_PROSPECTIVE_v4.json", "sha256": "7b0f71b7abdce1cc22cb584d76decb946da3fccf251b9c2c39eced7a65f5a6c9", "schema_or_rule_id": "BSO_EQ_ATOMIC_SOURCE_FACT_ITEM_SCHEMA_V2", "provenance_id": "V4_AUTHORITY_BUNDLE_LINEAGE", "authority_status": "AUTHENTICATED_LINEAGE_RULE_NOT_PRODUCTION_ADMISSION"}
+  ],
+  "source_admission_authorities": {"candidate_path": "SOURCE_ADMISSION_AUTHORITY_ROOTS.json", "candidate_sha256": null, "status": "MISSING_REQUIRED_ROOT"},
+  "field_pin_authorities": {"candidate_path": "FIELD_PIN_AUTHORITY_ROOTS.json", "candidate_sha256": null, "status": "MISSING_REQUIRED_ROOT"},
+  "runtime_whitelist": {"candidate_path": "RUNTIME_WHITELIST_CANDIDATE.json", "candidate_sha256": "5eccd63f50f74544e197086c13bb71f03cd373d3de893ac408b76ce6d1e75344", "byte_length": 3423, "status": "CANDIDATE_BLOCKED_UNTIL_PRODUCTION_FREEZE"},
+  "required_missing_roots": ["SOURCE_ADMISSION_REGISTRY_ROOT", "SOURCE_ADMISSION_CORPUS_SCHEMA_RULE_ROOT", "FIELD_PIN_REGISTRY_AND_POINTER_RULE_ROOTS", "SOURCE_AUTH_COMMON_INPUT_FREEZE_AND_RUNTIME_WHITELIST"],
+  "reviewed_contracts": [
+    {"role": "SOURCE_AUTH_GOVERNANCE_R4", "path": "fa1b2de-current86-canonical-source-authentication-governance-r4-patch/Design_FA1B2de_Current86_Canonical_Intrinsic_317_Source_Authentication_Governance_R4_PATCHED.md", "sha256": "b499b4cfddd4f72e404dda72c423bfa3db98b0514af52773b9bbec5cce6e2cc0", "byte_length": 16265, "provenance_id": "git:9cec0141fb9599ca879d5d992005921585f24cbb:blob:b4fa8104643c12ed35f1de7128b19aa11f7184eb", "read_only_mount": "/sa/common/gov-r4.md"},
+    {"role": "EXEC_R4", "path": "FA1B2de_Current86_Exact317_SourceAuth_Execution_Contract_R4/03_contracts/SOURCE_AUTH_EXECUTION_CONTRACT_R4.json", "sha256": "ae7eb74eb9e7dc1f9f474bf52902d4d8d723f680f2c077b13926b331a46deb1c", "byte_length": 2050, "provenance_id": "review_commit:31665f10daf42dd2044b292a443f88bd773f2dd9", "read_only_mount": "/sa/common/exec-r4.json"}
+  ],
+  "reviewer_pins": [
+    {"path": "review_inputs/FA1B2de_Current86_Exact317_SourceAuth_Execution_Contract_R4_Fresh_Targeted_Independent_Review.json", "sha256": "48e17cb2604ef320367046fcee3e7b1462387b1e99f3fe243a5a722c095dafdf", "byte_length": 1245},
+    {"path": "review_inputs/FA1B2de_Current86_Exact317_SourceAuth_Execution_Contract_R4_Fresh_Targeted_Independent_Review.md", "sha256": "5adbddc164e2bff9e1a242314ca082fa876dcfef4ef27f47c41cf8a265e8534a", "byte_length": 5003}
+  ],
+  "freeze_invariants": [
+    "all artifact identities are exact SHA256 plus byte length",
+    "all paths are read-only logical mounts; no mutable latest reference is an authority identity",
+    "freeze cannot become executable while any required root is missing",
+    "no source-auth result, human decision, binding, scoring mutation, or denominator mutation is included"
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "experiment": "FA1B2de",
+  "EXP_E0_B_DEFENSE_SYSTEM": "PROVX_FIXED_BY_SUPERVISOR",
+  "defense_system": "PROVX",
+  "defense_system_selection": "PROVX_FIXED_BY_SUPERVISOR",
+  "task_scope": "paper_artifact_runtime_reproduction_preparation_only",
+  "formal_runs": {
+    "playbooks": 53,
+    "raw_actions": 1796,
+    "executed_in_this_task": false
+  },
+  "sources": {
+    "paper": {
+      "path": "sec26cycle2-final500(2).pdf",
+      "present_locally": true,
+      "sha256": "74f2f0dca2f3deeb76f414358adecbf4268f4d8c2fe1ef5b1cfcd27ab159409d",
+      "pages": 18
+    },
+    "artifact": {
+      "name": "ProvX Artifact",
+      "zenodo_record": "20310415",
+      "doi": "10.5281/zenodo.20310415",
+      "present_locally": false,
+      "download_attempted": false
+    }
+  },
+  "paper_contract": {
+    "phase_i": {
+      "graph": "G_host=(V,E) from host audit records; nodes are system entities/events and edges are causal dependencies",
+      "evaluation_subgraphs": "Louvain community partitioning; hub nodes may be repeated for context",
+      "detectors": ["GCN", "GAT", "GraphSAGE"],
+      "input": "G_k=(A_k,X_k), with binary adjacency A_k and node feature matrix X_k",
+      "output": "P(c|G_k), c in {0,1}; Y_hat_k=argmax_c P(c|G_k)",
+      "semantics": {"0": "all subgraph entities benign", "1": "at least one malicious entity or attack stage"}
+    },
+    "phase_ii": {
+      "mask": "M_hat_k; soft retain mask sigmoid(M_hat_k); A_tilde_k=A_k elementwise-multiplied by sigmoid(M_hat_k)",
+      "objective": "minimize structural distance subject to detector prediction flip",
+      "losses": ["L_pred minimizes probability of original threat prediction", "L_dist=BCE(sigmoid(M_hat_k),A_k)", "L_CFX=alpha*L_pred+(1-alpha)*L_dist", "L_PROVX=L_CFX+gamma_S*L_S"],
+      "solidification": {"R_S": 0.6, "gamma_S": 0.5, "tau_low": 0.05, "tau_high": 0.95},
+      "output": "top-K edges ranked by 1-sigmoid(M_hat_k*)",
+      "intervention": "remove selected edges and suppress features of incident endpoints before fixed-detector evaluation",
+      "mer": "mean indicator that intervention flips f(G_k)"
+    },
+    "boundary": "MODEL_LEVEL_INTERVENTION_FLIP != REAL_WORLD_PREVENTED/BLOCKED"
+  },
+  "paper_parameters": {
+    "detector_architecture": "2-layer GNN + ReLU/Dropout + average pooling + 2-layer MLP",
+    "detector_training_epochs": 50,
+    "detector_optimizer": "Adam",
+    "detector_learning_rate": 0.001,
+    "phase_ii_mask_epochs": 200,
+    "phase_ii_learning_rate": 0.01,
+    "datasets": ["DARPA TC E3", "DARPA OpTC"],
+    "split_ratio_train_validation_test": "7:1:2",
+    "negative_sampling": "random negative sampling for scarce OpTC malicious behavior subgraphs"
+  },
+  "local_inventory": {
+    "source_code": [],
+    "artifact": [],
+    "preprocessing": [],
+    "trained_models": [],
+    "datasets": [],
+    "processed_graphs": [],
+    "configs": [],
+    "logs_results": [],
+    "git_identity": null,
+    "note": "Only the prompt and local paper were present during read-only inventory."
+  },
+  "runtime_contract": {
+    "python": "UNAVAILABLE_LOCALLY",
+    "pytorch": "UNAVAILABLE_LOCALLY",
+    "graph_framework": "UNAVAILABLE_LOCALLY",
+    "networkx_or_related": "UNAVAILABLE_LOCALLY",
+    "cpu_gpu": "paper reports CPU-only evaluation; exact artifact requirement unresolved",
+    "entry_points": {"model_data": null, "training": null, "inference": null, "phase_ii": null},
+    "configs": [],
+    "random_seed": "UNAVAILABLE_LOCALLY",
+    "output_formats": "UNAVAILABLE_LOCALLY",
+    "paper_overhead_note": "Reported peak memory is approximately 1.4-1.6 GB for listed stages; not a complete preprocessing bound."
+  },
+  "mininet_gap": {
+    "original_input_mode": "offline/preprocessed provenance subgraph input in the paper evaluation path; live SOC acquisition is explicitly not fully reproduced",
+    "live_adapters_required": [
+      "APT raw action to controlled Mininet host execution",
+      "host audit/provenance collection",
+      "normalization of process/file/socket causal events",
+      "graph node/edge typing and feature construction",
+      "alert association and subgraph expansion",
+      "serialization to exact artifact graph input schema",
+      "mapping top-K model edges back to host actions for analyst review"
+    ],
+    "implemented_in_this_task": false
+  },
+  "training_test_separation": {
+    "formal_test_set": "53 playbooks/1796 raw actions remain untouched until frozen evaluation",
+    "calibration": "separate labeled calibration partition or predeclared paper/artifact calibration only; no formal-test tuning",
+    "freeze_before_formal": ["artifact/code hash", "dependency environment", "preprocessing", "split manifest", "model checkpoint", "random seeds", "alpha", "K", "solidification controls", "output schema"]
+  },
+  "reproduction_readiness": "BLOCKED_MISSING_PAPER_OR_ARTIFACT_INPUT",
+  "EXP_E0_B_REPRODUCTION_READINESS": "BLOCKED_MISSING_PAPER_OR_ARTIFACT_INPUT",
+  "readiness_reason": "Paper is local; Zenodo artifact is not local and cannot be downloaded during E0, so R0 authentication and runtime verification are pending.",
+  "formal_experiment_executed": "NO",
+  "binding_authority_mutation": "NO",
+  "scoring_authority_mutation": "NO",
+  "EXP_E0_B_FORMAL_EXPERIMENT_EXECUTED": "NO",
+  "EXP_E0_B_BINDING_AUTHORITY_MUTATION": "NO",
+  "EXP_E0_B_SCORING_AUTHORITY_MUTATION": "NO",
+  "FORMAL_EXPERIMENT_EXECUTED": "NO",
+  "BINDING_AUTHORITY_MUTATION": "NO",
+  "SCORING_AUTHORITY_MUTATION": "NO",
+  "stop": true,
+  "STOP": true
+}

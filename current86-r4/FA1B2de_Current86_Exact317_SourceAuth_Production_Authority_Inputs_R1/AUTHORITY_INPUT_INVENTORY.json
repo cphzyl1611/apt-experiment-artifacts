@@ -1,0 +1,186 @@
+{
+  "schema": "FA1B2DE_CURRENT86_EXACT317_SOURCE_AUTH_PRODUCTION_AUTHORITY_INPUT_INVENTORY_R1",
+  "package": "FA1B2de_Current86_Exact317_SourceAuth_Production_Authority_Inputs_R1",
+  "materialization_mode": "PREPARATION_ONLY_NO_SOURCE_AUTH_EXECUTION",
+  "audit_date": "2026-08-29",
+  "scope": "CURRENT86_CANONICAL_INTRINSIC_317_SOURCE_BINDING_RECONSTRUCTION_ONLY",
+  "audit_scope_id": "34551e904bafa71fb2fb6db33162e94ad41a08eca6c747d429c83760e09c1306",
+  "target_population": {
+    "source_auth_target_count": 317,
+    "raw_side_target_count": 86,
+    "candidate_side_target_count": 231,
+    "equation": "86 + 231 = 317",
+    "target_manifest": {
+      "path": "/home/cph/experiment-artifacts/fa1b2de-current86-canonical-intrinsic-317-r1/CURRENT86_Canonical_Intrinsic_317_Exact_Targets.json",
+      "sha256": "d8d55d369fe433bf7b93a3c332b8ac9a517a9146b28fa223370ff3ec946955ac",
+      "byte_length": 234895,
+      "status": "AUTHENTICATED_FROZEN_TARGET_AUTHORITY"
+    }
+  },
+  "fresh_exec_r4_review_outputs": {
+    "checksum_source_present": false,
+    "checksum_source_note": "No separate checksum manifest for these two fresh outputs was found; hashes below were recomputed directly from the exact local bytes.",
+    "producer_claims_are_reviewer_evidence": false,
+    "reviewer_outputs": [
+      {
+        "path": "review_inputs/FA1B2de_Current86_Exact317_SourceAuth_Execution_Contract_R4_Fresh_Targeted_Independent_Review.json",
+        "sha256": "48e17cb2604ef320367046fcee3e7b1462387b1e99f3fe243a5a722c095dafdf",
+        "byte_length": 1245,
+        "content_identity_basis": "direct SHA256 of exact local file bytes",
+        "verdict": "PASS",
+        "review_commit": "31665f10daf42dd2044b292a443f88bd773f2dd9",
+        "reviewer_full_test_suite_reexecuted": false
+      },
+      {
+        "path": "review_inputs/FA1B2de_Current86_Exact317_SourceAuth_Execution_Contract_R4_Fresh_Targeted_Independent_Review.md",
+        "sha256": "5adbddc164e2bff9e1a242314ca082fa876dcfef4ef27f47c41cf8a265e8534a",
+        "byte_length": 5003,
+        "content_identity_basis": "direct SHA256 of exact local file bytes",
+        "verdict": "PASS",
+        "review_commit": "31665f10daf42dd2044b292a443f88bd773f2dd9",
+        "reviewer_full_test_suite_reexecuted": false
+      }
+    ]
+  },
+  "lineage_inputs": [
+    {
+      "role": "SOURCE_AUTH_GOVERNANCE_R4",
+      "path": "fa1b2de-current86-canonical-source-authentication-governance-r4-patch/Design_FA1B2de_Current86_Canonical_Intrinsic_317_Source_Authentication_Governance_R4_PATCHED.md",
+      "sha256": "b499b4cfddd4f72e404dda72c423bfa3db98b0514af52773b9bbec5cce6e2cc0",
+      "byte_length": 16265,
+      "authority_status": "AUTHENTICATED_REVIEWED_GOVERNANCE"
+    },
+    {
+      "role": "SOURCE_AUTH_GOVERNANCE_R4_INPUT_AUTHENTICATION",
+      "path": "fa1b2de-current86-canonical-source-authentication-governance-r4-patch/SOURCE_AUTH_GOVERNANCE_R4_INPUT_AUTHENTICATION.json",
+      "sha256": "ac2323ea0ad559a36ab23e64bcdd1f1e9720f2adbee62528a202cd076b3cdd70",
+      "byte_length": 6462,
+      "authority_status": "AUTHENTICATED_GOVERNANCE_INPUT_AUTHENTICATION"
+    },
+    {
+      "role": "SOURCE_AUTH_GOVERNANCE_R4_TARGET_CONSERVATION",
+      "path": "fa1b2de-current86-canonical-source-authentication-governance-r4-patch/SOURCE_AUTH_GOVERNANCE_R4_TARGET_CONSERVATION.json",
+      "sha256": "9c8d0052e0724ff592e7facee91ed375dba9329925faac12fb2d468dbe382cbf",
+      "byte_length": 3456,
+      "authority_status": "AUTHENTICATED_GOVERNANCE_TARGET_CONSERVATION"
+    },
+    {
+      "role": "EXEC_R4_CONTRACT",
+      "path": "FA1B2de_Current86_Exact317_SourceAuth_Execution_Contract_R4/03_contracts/SOURCE_AUTH_EXECUTION_CONTRACT_R4.json",
+      "sha256": "ae7eb74eb9e7dc1f9f474bf52902d4d8d723f680f2c077b13926b331a46deb1c",
+      "byte_length": 2050,
+      "authority_status": "AUTHENTICATED_REVIEWED_PASS_CONTRACT_ONLY"
+    },
+    {
+      "role": "EXEC_R4_SCHEMA_REGISTRY",
+      "path": "FA1B2de_Current86_Exact317_SourceAuth_Execution_Contract_R4/02_schemas/SCHEMA_REGISTRY_R4.json",
+      "sha256": "7f0af7acb019cb0a8f112116ca7a582e02a0219a5e55b0b77c8318799ac93818",
+      "byte_length": 865,
+      "authority_status": "AUTHENTICATED_CONTRACT_SCHEMA_ONLY"
+    },
+    {
+      "role": "SOURCE_CLASS_FACT_TYPE_AUTHORITY",
+      "path": "03_frozen_lineage/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json",
+      "sha256": "3df4262faa4137996d2ff8d163bcc665d5bed76b3d719e6ff66cf4154252d72f",
+      "byte_length": 6583,
+      "registry_id": "8cef6206dfc3581c3e7b6358bde7a36e90f4ba99078176cc0e5aff4b238298a7",
+      "authority_status": "EXISTING_AUTHENTICATED_AUTHORITY"
+    },
+    {
+      "role": "EXACT317_SOURCE_AUTHENTICATION_LINEAGE",
+      "path": "/home/cph/experiment-artifacts/fa1b2de-current86-canonical-source-authentication-r1/CURRENT86_Canonical_Source_Authentication_Targets.jsonl",
+      "sha256": "8452b088d547e039d492f299f147cf100d512c11b438cb5eefa2a4416b09709c",
+      "byte_length": 2730413,
+      "authority_status": "AUTHENTICATED_RECOVERY_LINEAGE; NO_CANONICAL_AUTHORITY"
+    },
+    {
+      "role": "C0_SOURCE_MATERIAL",
+      "path": "/home/cph/experiment-artifacts/fa1b2de-current86-canonical-source-authentication-r1/CURRENT86_C0_Typed_Operation_Semantics_60_Recovered.jsonl",
+      "sha256": "8273c9b241cab806adbc9452a4ce572c11277657760f2e6e7b6210357829f54a",
+      "byte_length": 77064,
+      "role_status": "RECOVERED_C0_EVIDENCE_ONLY; NOT_CANONICAL_SOURCE_AUTHORITY"
+    }
+  ],
+  "candidate_corpora": [
+    {
+      "role": "RAW_CANDIDATE_CORPUS",
+      "path": "/home/cph/experiment-artifacts/fa1b2de-bso-r-20260825T100958Z/inputs/project_snapshots/raw_action_registry.jsonl",
+      "sha256": "53c85157f9fd0849ae19b1cf403333ad0d0af2a7d761b0498540dd92d66c1e93",
+      "byte_length": 2025927,
+      "coverage": "86 exact RAW target rows; 1796 file rows",
+      "authority_status": "CANDIDATE_EVIDENCE_NOT_NORMATIVE"
+    },
+    {
+      "role": "CANDIDATE_SIDE_CORPUS",
+      "path": "/home/cph/experiment-artifacts/fa1b2de-bso-r-20260825T100958Z/inputs/c2/c2_scoring_snapshot_post_c1.jsonl",
+      "sha256": "748a3808290f9e78f71c18d4553c77ae208517fd31d163fc2b3008cfcb57f1bb",
+      "byte_length": 1348627,
+      "coverage": "231 exact CANDIDATE target rows; 1773 file rows",
+      "authority_status": "CANDIDATE_EVIDENCE_NOT_NORMATIVE"
+    },
+    {
+      "role": "C0_COVERAGE_CORPUS",
+      "path": "/home/cph/experiment-artifacts/tier-de1c0-handoff-20260823-083725/tier_de1c0_typed_operation_semantics.jsonl",
+      "sha256": "0036c42fb02026182274a7ac2a33b103b03b1e527856eb33b5ad650ceddd5c32",
+      "byte_length": 2484224,
+      "coverage": "60 recovered RAW source rows",
+      "authority_status": "CANDIDATE_EVIDENCE_NOT_NORMATIVE"
+    },
+    {
+      "role": "DERIVED_COMPARATIVE_PROFILE_CORPUS",
+      "path": "/home/cph/experiment-artifacts/fa1b2de-bso-r-20260825T100958Z/inputs/c2r1/c2r1_de_candidate_evidence_profiles.jsonl",
+      "sha256": "f5f1a0d831f1a48f460b0516f070427f81b40a407b569ec1ce9eb7ad0c8193c1",
+      "authority_status": "REJECTED_DERIVED_COMPARATIVE_NOT_SOURCE_AUTHORITY"
+    }
+  ],
+  "prior_recovery_and_dependency_inventories": [
+    {
+      "role": "SOURCE_RECOVERY_INVENTORY",
+      "path": "/home/cph/experiment-artifacts/fa1b2de-current86-canonical-intrinsic-source-recovery-r1/CURRENT86_Canonical_Intrinsic_Source_Candidate_Inventory.json",
+      "sha256": "09a185991dff4817816cf6bda402e04be0084cf0824d9313032fe7d65289c783",
+      "authority_status": "AUTHENTICATED_RECOVERY_INVENTORY_NOT_AUTHORITY"
+    },
+    {
+      "role": "SOURCE_RECOVERY_GAP_REPORT",
+      "path": "/home/cph/experiment-artifacts/fa1b2de-current86-canonical-intrinsic-source-recovery-r1/CURRENT86_Canonical_Intrinsic_Source_Gap_Report.json",
+      "sha256": "03547d8b0ca11d6a5c712258383c30521e1c46b95ee0f16ce6b638401c2635f5",
+      "authority_status": "AUTHENTICATED_MISSING_SOURCE_REPORT"
+    },
+    {
+      "role": "SOURCE_AUTHENTICATION_VERDICT",
+      "path": "/home/cph/experiment-artifacts/fa1b2de-current86-canonical-source-authentication-r1/CURRENT86_Canonical_Source_Authentication_Verdict.json",
+      "sha256": "3d40a60546e0ac1ceb0602cb6ce6d3ab6342161e554d5450c1a0e117d57eef5b",
+      "authority_status": "AUTHENTICATED_BLOCKED_RECOVERY_VERDICT"
+    },
+    {
+      "role": "R2_DEPENDENCY_INVENTORY",
+      "path": "FA1B2de_Current86_Exact317_SourceAuth_Execution_Contract_R4/SOURCE_AUTH_EXECUTION_CONTRACT_R2_DEPENDENCY_INVENTORY.json",
+      "sha256": "c349edec6d561b655ec7e9d06de9612074578fbee589217149fd961413618b6a",
+      "authority_status": "AUTHENTICATED_BLOCKED_PRODUCTION_DEPENDENCY_INVENTORY"
+    },
+    {
+      "role": "SOURCE_RECOVERY_TARGET_TO_SOURCE_MAP",
+      "path": "/home/cph/experiment-artifacts/fa1b2de-current86-canonical-intrinsic-source-recovery-r1/CURRENT86_Canonical_Intrinsic_317_Target_to_Source_Map.jsonl",
+      "sha256": "3c279d7ba09eb93a43b5402fd149c102aa4aa41bc390a44c94052af53d94fb75",
+      "authority_status": "AUTHENTICATED_NONCANONICAL_CANDIDATE_MAP"
+    }
+  ],
+  "required_production_classes": [
+    "SOURCE_ADMISSION_REGISTRY_ROOT",
+    "SOURCE_ADMISSION_CORPUS_SCHEMA_RULE_ROOT",
+    "FIELD_PIN_REGISTRY_AND_POINTER_RULE_ROOTS",
+    "SOURCE_AUTH_COMMON_INPUT_FREEZE_AND_RUNTIME_WHITELIST"
+  ],
+  "closure_candidate_metadata": [
+    {"path": "AUTHORITY_RECOVERY_AND_CLASSIFICATION.json", "sha256": "25d8064544d03d476f9c2aab03c8f6dc7fd37912814f65cdf17fa2000df1f311", "byte_length": 4335},
+    {"path": "SOURCE_ADMISSION_AUTHORITY_ROOTS.json", "sha256": "7afd9d180c7f6ce015f70e078c8610abf7d3e032f5279b38663e4c553a1e053d", "byte_length": 2077},
+    {"path": "FIELD_PIN_AUTHORITY_ROOTS.json", "sha256": "cfbf6be8cb2a781bffc071036d06fa50eb21ec95e107159cb1ca1bfb3f7dfdb0", "byte_length": 2060},
+    {"path": "RUNTIME_WHITELIST_CANDIDATE.json", "sha256": "5eccd63f50f74544e197086c13bb71f03cd373d3de893ac408b76ce6d1e75344", "byte_length": 3423},
+    {"path": "PRODUCTION_EVALUATOR_DISPATCH_MAPPING.json", "sha256": "8ddbc4a3318bfb8b15acd7d694d98f9795503b18a154ba92796e50fdb7127eab", "byte_length": 2763},
+    {"path": "EXACT317_MACHINE_VS_HUMAN_ROUTE_COUNTS.json", "sha256": "3040660b0600a99af9a28c3321ba490feee26c864ca393b4f6d270ab51c1d974", "byte_length": 1765}
+  ],
+  "global_readiness": "BLOCKED_MISSING_AUTHORITY_INPUTS",
+  "fabricated_authority_roots": 0,
+  "real_source_auth_targets_executed": 0,
+  "source_auth_executed": "NO"
+}

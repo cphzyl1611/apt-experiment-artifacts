@@ -1,0 +1,40 @@
+{
+  "schema": "FA1B2DE_CURRENT86_EXACT317_SOURCE_ADMISSION_AUTHORITY_ROOTS_R1",
+  "authority_role": "SA-B1_SOURCE_ADMISSION",
+  "scope": "EXACT_CURRENT86_ONLY",
+  "required_tuple_schema": [
+    "source_binding_target_id",
+    "candidate_object_id",
+    "canonical_intrinsic_field_semantics_id",
+    "exact_RFC6901_pointer"
+  ],
+  "tuple_identity": "SHA256(PROJECT_CANONICAL_JSON_V1(exact four-member tuple identity basis))",
+  "required_roots": {
+    "SOURCE_ADMISSION_REGISTRY_ROOT": {
+      "status": "MISSING",
+      "exact_artifact_identity": null,
+      "schema_or_rule_id": null,
+      "provenance_id": null,
+      "scope_membership": null,
+      "conflict_check": "REQUIRED_BEFORE_EXECUTION",
+      "heuristic_selection": "PROHIBITED"
+    },
+    "SOURCE_ADMISSION_CORPUS_SCHEMA_RULE_ROOT": {
+      "status": "MISSING",
+      "exact_artifact_identity": null,
+      "schema_or_rule_id": null,
+      "provenance_id": null,
+      "expansion_algorithm": null,
+      "output_sort_order": null,
+      "fail_closed": true,
+      "scope_membership": null
+    }
+  },
+  "candidate_evidence_not_authority": [
+    {"path": "/home/cph/experiment-artifacts/fa1b2de-bso-r-20260825T100958Z/inputs/project_snapshots/raw_action_registry.jsonl", "sha256": "53c85157f9fd0849ae19b1cf403333ad0d0af2a7d761b0498540dd92d66c1e93", "class": "AUTHENTICATED_RAW_SOURCE_RECORD"},
+    {"path": "/home/cph/experiment-artifacts/fa1b2de-bso-r-20260825T100958Z/inputs/c2/c2_scoring_snapshot_post_c1.jsonl", "sha256": "748a3808290f9e78f71c18d4553c77ae208517fd31d163fc2b3008cfcb57f1bb", "class": "AUTHENTICATED_SCORING_ROW_SOURCE"},
+    {"path": "/home/cph/experiment-artifacts/fa1b2de-bso-r-20260825T100958Z/inputs/c2r1/c2r1_de_candidate_evidence_profiles.jsonl", "sha256": "f5f1a0d831f1a48f460b0516f070427f81b40a407b569ec1ce9eb7ad0c8193c1", "class": "DERIVED_C2R1_COMPARATIVE_INTRINSIC_REFERENCE"}
+  ],
+  "admission_authority_status": "NO_AUTHENTICATED_PRODUCTION_TUPLES",
+  "execution_effect": "FAIL_CLOSED; all target admission processing remains blocked until a complete authenticated root is frozen"
+}

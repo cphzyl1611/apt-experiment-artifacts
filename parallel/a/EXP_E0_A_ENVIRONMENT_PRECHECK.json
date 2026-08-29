@@ -1,0 +1,89 @@
+{
+  "task": "EXP-E0-A",
+  "scope": "read-only Mininet and PROVX environment preflight",
+  "observed_at": "2026-08-29",
+  "timezone": "America/New_York",
+  "hostname": "UBU-MONITOR01",
+  "boot_id": "b5116b9e-9bef-4c8b-a02a-be618de984de",
+  "system": {
+    "os": "Ubuntu 22.04.5 LTS (Jammy)",
+    "kernel": "6.8.0-138-generic x86_64",
+    "hypervisor": "VMware full virtualization",
+    "cpu": "4 online CPUs, Intel Core Ultra 5 230F, 2 sockets x 2 cores",
+    "ram": {"total": "7.7 GiB", "available": "3.5 GiB", "swap_total": "3.1 GiB", "swap_free": "1.7 GiB"},
+    "disk": {"filesystem": "root ext4", "size": "78.1 GiB", "available": "18.2 GiB", "used_percent": 76},
+    "identity": "uid=1000(cph), groups include sudo and lxd",
+    "sudo_passwordless": false
+  },
+  "runtime": {
+    "python_path": "3.13.13 (Conda base)",
+    "python_system": "3.10.12 (/usr/bin/python3)",
+    "python_dd37": "3.7.16",
+    "conda_envs": ["base (active)", "dd37"],
+    "project_venvs": [],
+    "mininet": {"installed": true, "version": "2.3.0", "system_python_import": true, "conda_import": false},
+    "openvswitch": {"installed": true, "version": "2.17.9", "service": "active", "unprivileged_db_access": false, "daemons_observed": ["ovsdb-server", "ovs-vswitchd"]},
+    "java": {"openjdk8_package": "8u502", "java_default": "11.0.32", "javac": "1.8.0_502"},
+    "ant": "1.10.12",
+    "maven": "3.6.3",
+    "iproute2": "5.15.0",
+    "tcpdump": "4.99.1",
+    "tshark": null,
+    "docker": null,
+    "podman": null,
+    "lxc": null,
+    "virsh": null,
+    "virtualbox_cli": null
+  },
+  "network": {
+    "interfaces": ["lo", "ens33 (192.168.93.128/24, VMware NAT)"],
+    "named_namespaces": [],
+    "veth_or_mininet_remnants_observed": false,
+    "unshare_net_allowed": false,
+    "existing_topologies": [
+      {"path": "/home/cph/apt-defense-mininet/topology/g3_minimal_topology.py", "nodes": ["h1", "h2"], "switches": ["s1"], "controller": "127.0.0.1:6653", "addresses": ["10.0.0.1/24", "10.0.0.2/24"], "protocol": "OpenFlow10", "fail_mode": "secure", "nat_or_external_attachment": false},
+      {"path": "/home/cph/apt-defense-mininet/topology/g4_blacklist_topology.py", "nodes": ["h1", "h2"], "switches": ["s1"], "controller": "127.0.0.1:6653", "addresses": ["10.0.0.1/24", "10.0.0.2/24"], "protocol": "OpenFlow10", "fail_mode": "secure", "nat_or_external_attachment": false}
+    ],
+    "pcap_files_found": 0,
+    "cleanup_scripts": ["/home/cph/apt-defense-mininet/scripts/g3_stop_all.sh", "/home/cph/apt-defense-mininet/scripts/g4_stop_all.sh"],
+    "stale_markers": {"present": true, "marker_boot_id": "9b3a0d12-6fdc-4662-a379-1e3abd69bbef", "matches_current_boot": false}
+  },
+  "provenance": {
+    "auditd_or_auditctl": false,
+    "camflow": false,
+    "bpftool_binary": true,
+    "bpftrace": false,
+    "persistent_process_file_socket_telemetry": false,
+    "wazuh_services": ["wazuh-manager", "wazuh-indexer", "wazuh-dashboard"],
+    "windows_sysmon_etw_assets": false,
+    "darpa_tc_optc_preprocessing": false,
+    "provx_source_or_artifact": false,
+    "plain_mininet_isolation": "network namespace only by default; shared host PID/mount/IPC/UTS context and host kernel",
+    "host_attribution_unambiguous": false,
+    "recommended_isolation": "one VM or microVM per provenance-bearing logical host; validate container alternative separately"
+  },
+  "telemetry_time": {
+    "clock_synchronized": true,
+    "timesync_service": "systemd-timesyncd active",
+    "stable_run_markers": "historical FRESCO metadata.env and boot IDs only",
+    "structured_logs": ["FRESCO evidence manifests", "metadata.env", "REST JSON", "flow dumps"],
+    "cross_source_binding": false,
+    "persistent_audit_logs": false,
+    "pcap_capture": false
+  },
+  "storage_repeatability": {
+    "experiment_size": "1.3 GiB",
+    "apt_defense_mininet_size": "235 MiB",
+    "free_disk": "18.2 GiB",
+    "retention_quota_or_rotation": false,
+    "vm_snapshot_workflow": false,
+    "existing_repeatability": ["Git source trees", "deterministic Mininet topology", "historical evidence manifests", "controller/topology cleanup scripts"]
+  },
+  "verdict": "BLOCKED_MISSING_BASE_CAPABILITY",
+  "provx_live_provenance_input_ready": "NO",
+  "plain_mininet_sufficient_for_provx": "NO",
+  "formal_experiment_executed": false,
+  "binding_authority_mutation": false,
+  "scoring_authority_mutation": false,
+  "stop": true
+}

@@ -1,0 +1,33 @@
+{
+  "schema": "FA1B2DE_CURRENT86_EXACT317_SOURCE_AUTH_RUNTIME_WHITELIST_CANDIDATE_R1",
+  "whitelist_status": "CANDIDATE_BLOCKED_UNTIL_PRODUCTION_FREEZE",
+  "runtime_identity": {
+    "invocation_path": "/usr/bin/python3",
+    "resolved_interpreter": "/usr/bin/python3.10",
+    "interpreter_sha256": "7d51cd6b48b521277f5caa4610a82126e315fa2be4df069823a8b1eeb5bd4a86",
+    "interpreter_byte_length": 5917224,
+    "version_observed": "Python 3.10.12",
+    "implementation": "CPython",
+    "exactness_rule": "absolute path plus SHA256 and byte length; no latest or mutable environment alias"
+  },
+  "isolation_runtime": {
+    "tool": "/usr/bin/bwrap",
+    "sha256": "d78807229d616606e339c5988392b9e0ab4a6a6998fa51e4590837f426a12fca",
+    "byte_length": 72160,
+    "version_observed": "bubblewrap 0.6.1",
+    "required_for": ["PRIMARY", "VERIFIER", "COMPARATOR"]
+  },
+  "contract_implementation": [
+    {"role": "CANONICALIZATION", "path": "FA1B2de_Current86_Exact317_SourceAuth_Execution_Contract_R4/tools/canonical.py", "sha256": "5f7d130a1ce4178203ae7f8f0d6ccf6ee80488134ed93f185e2cf84e2df77381", "byte_length": 3794},
+    {"role": "RECORDS", "path": "FA1B2de_Current86_Exact317_SourceAuth_Execution_Contract_R4/tools/records.py", "sha256": "134a7b0f360d2b43f984c7be9aeea805f4fa56677798e45ea8fdbb0d8b897699", "byte_length": 20719},
+    {"role": "AUTHORITY_GRAPH", "path": "FA1B2de_Current86_Exact317_SourceAuth_Execution_Contract_R4/tools/authority.py", "sha256": "ab485c68c39e5ab35cfae76e28ff713ce5897a070e1c2c5ed7455cd22e35e6b4", "byte_length": 12754},
+    {"role": "ADMISSION", "path": "FA1B2de_Current86_Exact317_SourceAuth_Execution_Contract_R4/tools/admission.py", "sha256": "44a235218ba51990f39d2c8fe68795a17a75727115bdf1c30cbf095279e34086", "byte_length": 3603},
+    {"role": "SOURCE_AUTHORITY_EVALUATOR", "path": "FA1B2de_Current86_Exact317_SourceAuth_Execution_Contract_R4/tools/frozen_authority_evaluator.py", "sha256": "441bbf782d16f3e99ec612908164324966395a8617fd6a9741a0299666737df7", "byte_length": 3601, "implementation_id": "FA1B2DE_FROZEN_MACHINE_AUTHORITY_EVALUATOR_R4", "configuration_id": "FA1B2DE_MACHINE_AUTHORITY_EVALUATOR_CONFIG_R4"},
+    {"role": "TARGET_UNIVERSE", "path": "FA1B2de_Current86_Exact317_SourceAuth_Execution_Contract_R4/tools/target_universe.py", "sha256": "911592f60209129b2f9f1182a654c6df93dbae8d56bf1588415200edf97baf54", "byte_length": 4411},
+    {"role": "TRANSACTION_COMPARATOR", "path": "FA1B2de_Current86_Exact317_SourceAuth_Execution_Contract_R4/tools/transaction.py", "sha256": "653b1028ef70060ad7604b589999eb9157aaa8e79d23e90f503f36d692de9b55", "byte_length": 5407},
+    {"role": "ISOLATION_LAUNCHER", "path": "FA1B2de_Current86_Exact317_SourceAuth_Execution_Contract_R4/tools/isolation.py", "sha256": "decfd16454256797e073ff3e914c3e4bbd8feb409371f1784ada7cfba866d733", "byte_length": 3968}
+  ],
+  "parser_and_canonicalization": {"implementation_id": "FA1B2DE_PROJECT_CANONICAL_JSON_V1_INHERITED", "contract": "EXEC-R4 canonical.py exact bytes; strict UTF-8, duplicate-key rejection, nonfinite rejection, no Unicode normalization"},
+  "runtime_policy": ["network unavailable to roles", "all authority inputs mounted read-only", "primary private state isolated from verifier", "verifier starts only after primary commitment is frozen", "comparator runs only after both commitments are frozen"],
+  "production_status": "NOT_EXECUTABLE; whitelist is a candidate until common-input freeze and production dispatch integration review"
+}

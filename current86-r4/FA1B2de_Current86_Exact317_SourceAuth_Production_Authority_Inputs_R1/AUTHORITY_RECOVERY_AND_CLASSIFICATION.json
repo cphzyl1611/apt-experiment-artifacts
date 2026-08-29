@@ -1,0 +1,93 @@
+{
+  "schema": "FA1B2DE_CURRENT86_EXACT317_SOURCE_AUTH_AUTHORITY_RECOVERY_AND_CLASSIFICATION_R1",
+  "mode": "READ_ONLY_SEARCH_RECOVER_BEFORE_GOVERNANCE",
+  "audit_scope_id": "34551e904bafa71fb2fb6db33162e94ad41a08eca6c747d429c83760e09c1306",
+  "required_classes": [
+    {
+      "class": "SOURCE_ADMISSION_REGISTRY_ROOT",
+      "classification": "MISSING_SOURCE_ARTIFACT",
+      "authoritative_artifact_found": false,
+      "recoverable_existing_authority": false,
+      "mechanically_derivable_from_authenticated_rule": false,
+      "requires_new_normative_governance": true,
+      "candidate_evidence_rejected_as_authority": ["raw_action_registry.jsonl", "c2_scoring_snapshot_post_c1.jsonl", "C2R1 derived comparative profiles"],
+      "reason": "No authenticated registry authorizing exact target, candidate object, semantics, and RFC6901 pointer tuples was found. Candidate rows do not become admission authority."
+    },
+    {
+      "class": "SOURCE_ADMISSION_CORPUS_SCHEMA_RULE_ROOT",
+      "classification": "MISSING_SOURCE_ARTIFACT",
+      "authoritative_artifact_found": false,
+      "recoverable_existing_authority": false,
+      "mechanically_derivable_from_authenticated_rule": false,
+      "requires_new_normative_governance": true,
+      "reason": "No authenticated complete corpus/schema expansion rule with pinned inputs, schema ID, deterministic algorithm, sort order, scope, and fail-closed semantics was found."
+    },
+    {
+      "class": "FIELD_PIN_REGISTRY_AND_POINTER_RULE_ROOTS",
+      "classification": "MISSING_SOURCE_ARTIFACT",
+      "authoritative_artifact_found": false,
+      "recoverable_existing_authority": false,
+      "mechanically_derivable_from_authenticated_rule": false,
+      "requires_new_normative_governance": true,
+      "reason": "The exact target manifest contains no embedded canonical pointer authority, and no authenticated FIELD_PIN_REGISTRY or deterministic field-pin rule root was found."
+    },
+    {
+      "class": "SOURCE_AUTH_COMMON_INPUT_FREEZE_AND_RUNTIME_WHITELIST",
+      "classification": "MISSING_SOURCE_ARTIFACT",
+      "authoritative_artifact_found": false,
+      "recoverable_existing_authority": false,
+      "mechanically_derivable_from_authenticated_rule": false,
+      "requires_new_normative_governance": true,
+      "reason": "EXEC-R4 synthetic transaction fixtures and mutable workspace paths are not a production pre-run freeze or runtime authority."
+    }
+  ],
+  "already_authenticated_but_subordinate_inputs": [
+    {
+      "artifact": "SOURCE_AUTH_GOVERNANCE_R4",
+      "classification": "EXISTING_AUTHENTICATED_AUTHORITY",
+      "status": "AUTHENTICATED_REVIEWED_GOVERNANCE"
+    },
+    {
+      "artifact": "EXEC-R4",
+      "classification": "EXISTING_AUTHENTICATED_AUTHORITY",
+      "status": "INDEPENDENTLY_REVIEWED_PASS_CONTRACT_ONLY"
+    },
+    {
+      "artifact": "SOURCE_CLASS_FACT_TYPE_REGISTRY_R2",
+      "classification": "EXISTING_AUTHENTICATED_AUTHORITY",
+      "status": "AUTHENTICATED_EXISTING_NORMATIVE_REGISTRY"
+    },
+    {
+      "artifact": "EXACT317_TARGET_MANIFEST",
+      "classification": "EXISTING_AUTHENTICATED_AUTHORITY",
+      "status": "AUTHENTICATED_FROZEN_TARGET_AUTHORITY"
+    },
+    {
+      "artifact": "RAW_AND_CANDIDATE_CORPORA",
+      "classification": "EXISTING_AUTHENTICATED_AUTHORITY",
+      "status": "AUTHENTICATED_FOR_DECLARED_NONCANONICAL_CLASSES_ONLY"
+    },
+    {
+      "artifact": "C0_SOURCE_MATERIAL",
+      "classification": "RECOVERABLE_EXISTING_AUTHORITY",
+      "status": "RECOVERED_EVIDENCE_ONLY_NOT_CANONICAL_AUTHORITY"
+    }
+  ],
+  "negative_search_result": {
+    "search_roots": [
+      "/home/cph/fa1b2de-bso-a2-transition-r2-design-patch",
+      "/home/cph/experiment-artifacts",
+      "/home/cph/fa1b2de-review-artifacts"
+    ],
+    "filename_alone_used": false,
+    "exact_production_registry_or_rule_found": false,
+    "exact_production_common_input_freeze_found": false,
+    "source_auth_execution_readiness": "BLOCKED_MISSING_AUTHORITY_INPUTS"
+  },
+  "prohibited_inferences": [
+    "producer claims in the EXEC-R4 reviewer output are not reviewer evidence",
+    "candidate evidence is not normative admission",
+    "missing authority is not an empty authority set",
+    "heuristic ranking, nearest-neighbor choice, occupancy, similarity, model choice, and alternate pointer trial are prohibited"
+  ]
+}

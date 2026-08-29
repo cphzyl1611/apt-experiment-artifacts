@@ -1,0 +1,32 @@
+{
+  "inventory_scope": "existing local assets relevant to PROVX plus Mininet network experiments",
+  "observed_at": "2026-08-29",
+  "assets": [
+    {"path": "/home/cph/apt-defense-mininet", "kind": "git_repository", "status": "present", "notes": "FRESCO/Floodlight reproduction repository; historical G1-G4 evidence; not PROVX"},
+    {"path": "/home/cph/apt-defense-mininet/topology/g3_minimal_topology.py", "kind": "mininet_topology", "status": "present", "notes": "one OVS switch s1, h1/h2, 10.0.0.0/24, remote controller 127.0.0.1:6653, OpenFlow10 secure"},
+    {"path": "/home/cph/apt-defense-mininet/topology/g4_blacklist_topology.py", "kind": "mininet_topology", "status": "present", "notes": "same deterministic two-host substrate for FRESCO A/B/C states"},
+    {"path": "/home/cph/apt-defense-mininet/scripts/g3_run_topology.sh", "kind": "launcher", "status": "present", "notes": "requires sudo and active run marker"},
+    {"path": "/home/cph/apt-defense-mininet/scripts/g3_stop_all.sh", "kind": "cleanup_script", "status": "present", "notes": "contains destructive sudo mn -c and controller stop; not executed"},
+    {"path": "/home/cph/apt-defense-mininet/scripts/g4_stop_all.sh", "kind": "cleanup_script", "status": "present", "notes": "contains destructive cleanup; not executed"},
+    {"path": "/home/cph/apt-defense-mininet/evidence", "kind": "historical_evidence", "status": "present", "notes": "G1-G4 text logs, flow dumps, REST JSON, manifests; no PCAP"},
+    {"path": "/home/cph/apt-defense-mininet/controller/fresco-adapted/fresco_apps", "kind": "defense_artifacts", "status": "present", "notes": "released FRESCO .fre applications including blacklist.fre; no PROVX"},
+    {"path": "/home/cph/experiment", "kind": "git_repository", "status": "present", "notes": "dataset, feasibility, audit, and run-plan assets; no Mininet topology or PROVX implementation"},
+    {"path": "/home/cph/experiment/data/run_plans", "kind": "experiment_planning", "status": "present", "notes": "CSV/Markdown run plans; no host telemetry or packet captures"},
+    {"path": "/home/cph/experiment/data/audit", "kind": "dataset_audit", "status": "present", "notes": "dataset lineage and denominator audit outputs; unrelated to live provenance capture"},
+    {"path": "/home/cph/apt-defense-mininet/evidence/g4-blacklist-20260719T065006Z", "kind": "historical_run", "status": "stale_for_current_boot", "notes": "authoritative historical FRESCO run; marker boot ID differs from current host boot"},
+    {"path": "/var/ossec", "kind": "endpoint_telemetry_service", "status": "present_but_not_PROVX_ready", "notes": "Wazuh services active; protected configuration and provenance graph feed not available to this user"},
+    {"path": "/usr/sbin/bpftool", "kind": "kernel_tool", "status": "present", "notes": "binary only; no collector or PROVX conversion pipeline found"},
+    {"path": "/usr/bin/tcpdump", "kind": "packet_capture_tool", "status": "present", "notes": "usable later with root; no existing capture corpus or capture script"},
+    {"path": "/home/cph/experiment-artifacts", "kind": "provenance_related_artifacts", "status": "present_but_not_PROVX_ready", "notes": "FA1B2de governance/provenance JSON packages; no Mininet-linked PROVX graph input"}
+  ],
+  "missing_assets": [
+    "PROVX source/model/released runtime",
+    "auditd/auditctl or CamFlow/eBPF provenance collector",
+    "persistent process, file, and socket event schema",
+    "DARPA TC/OpTC to PROVX graph conversion",
+    "packet capture orchestration and PCAP corpus",
+    "VM/container host-isolation substrate with validated attribution",
+    "cross-source run manifest and correlation validator",
+    "storage quota, rotation, and VM snapshot/reset workflow"
+  ]
+}

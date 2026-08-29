@@ -1,0 +1,39 @@
+{
+  "schema": "FA1B2DE_CURRENT86_EXACT317_SOURCE_AUTH_MACHINE_VS_HUMAN_ROUTE_COUNTS_R1",
+  "scope": "CURRENT86_EXACT317",
+  "source_auth_target_count": 317,
+  "raw_side_target_count": 86,
+  "candidate_side_target_count": 231,
+  "current_authenticated_route_counts": {
+    "MACHINE_ADMISSION_RESOLVABLE": 0,
+    "MACHINE_FIELD_PIN_RESOLVABLE": 0,
+    "HUMAN_NORMATIVE_ADMISSION_REQUIRED": 0,
+    "HUMAN_FIELD_PIN_GOVERNANCE_REQUIRED": 0,
+    "BLOCKED_SOURCE_OBJECT": 0,
+    "BLOCKED_PROVENANCE": 0,
+    "BLOCKED_MISSING_AUTHORITY": 317
+  },
+  "conditional_routeability_after_complete_authenticated_production_roots": {
+    "MACHINE_ADMISSION_RESOLVABLE": 317,
+    "MACHINE_FIELD_PIN_RESOLVABLE": 317,
+    "HUMAN_NORMATIVE_ADMISSION_REQUIRED": 0,
+    "HUMAN_FIELD_PIN_GOVERNANCE_REQUIRED": 0,
+    "BLOCKED_SOURCE_OBJECT": 0,
+    "BLOCKED_PROVENANCE": 0,
+    "BLOCKED_MISSING_AUTHORITY": 0,
+    "interpretation": "Conditional capacity only; no root is authenticated here and no target was evaluated. A target may instead terminate in a blocked state after real fail-closed evaluation."
+  },
+  "non_additive_projection_note": "The conditional routeability rows are projections, not current execution results and are intentionally not added to the current terminal partition.",
+  "current_terminal_partition": {
+    "BLOCKED_MISSING_AUTHORITY": 317,
+    "other_terminal_states": 0,
+    "equation": "317 = 317",
+    "readiness": "BLOCKED_MISSING_AUTHORITY_INPUTS"
+  },
+  "human_workload": {
+    "raw_level_human_decisions_created": 0,
+    "human_records_created": 0,
+    "normative_workload_records_created": 0,
+    "human_workload_minimization_rule": "Do not assume 317 targets imply 317 human decisions; complete authenticated machine roots are evaluated first."
+  }
+}
