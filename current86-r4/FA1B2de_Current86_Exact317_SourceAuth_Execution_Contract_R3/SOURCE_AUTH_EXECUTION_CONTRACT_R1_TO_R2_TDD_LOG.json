@@ -1,0 +1,22 @@
+{
+  "schema": "FA1B2DE_CURRENT86_EXACT317_SOURCE_AUTH_EXECUTION_CONTRACT_R1_TO_R2_TDD_LOG_V1",
+  "method": "RED_BEFORE_GREEN",
+  "synthetic_only": true,
+  "red_evidence": [
+    {"gate":"EC_B1","command":"PYTHONDONTWRITEBYTECODE=1 python3 run_packaged_tests.py","exit_code":1,"output_sha256":"f243d433e7754774ef84adf27cb0dcc0bafd4c1eb33e6583996025614b24cf28","failure":"R2_RECORDS_NOT_IMPLEMENTED / No module named tools","tests":7},
+    {"gate":"EC_B2","command":"PYTHONDONTWRITEBYTECODE=1 python3 -m unittest tests.test_ec_b2_authority_graph -v","exit_code":1,"output_sha256":"a28323a4209ec577a7a84da84c87893f232bf32846c37557966aba4722c2f5f6","failure":"R2_AUTHORITY_GRAPH_NOT_IMPLEMENTED / No module named tools.authority","tests":8},
+    {"gate":"EC_B3","command":"PYTHONDONTWRITEBYTECODE=1 python3 -m unittest tests.test_ec_b3_zero_proof -v","exit_code":1,"failure":"R2_ADMISSION_NOT_IMPLEMENTED / No module named tools.admission","tests":3},
+    {"gate":"EC_B4","command":"PYTHONDONTWRITEBYTECODE=1 python3 -m unittest tests.test_ec_b4_transaction -v","exit_code":1,"output_sha256":"cfc6e29114229ac3321ccc15f43093039def1f21a80723dc62a864e499fddd75","failure":"R2_TRANSACTION_NOT_IMPLEMENTED / No module named tools.transaction","tests":7},
+    {"gate":"EC_B4_INTEGRATION","command":"PYTHONDONTWRITEBYTECODE=1 python3 -m unittest tests.test_ec_b4_transaction.CommitmentComparatorTests.test_bwrap_transaction_emits_and_compares_frozen_commitments -v","exit_code":1,"failure":"R2_TRANSACTION_NOT_IMPLEMENTED / No module named tools.isolation","tests":1}
+  ],
+  "green_evidence": [
+    {"gate":"EC_B1","exit_code":0,"tests":7,"output_sha256":"5423097b3eaca3e703f1f5cbbd3c9f65024e46dd8f57e724ef0d3c03c59379b2"},
+    {"gate":"EC_B2","exit_code":0,"tests":15,"output_sha256":"139d7b513e52844585874357c26ced0f192f5872d9380499b553aa10f846d318","note":"cumulative R2 run through EC-B4"},
+    {"gate":"EC_B3","exit_code":0,"tests":18,"output_sha256":"139d7b513e52844585874357c26ced0f192f5872d9380499b553aa10f846d318","note":"cumulative R2 run through EC-B4"},
+    {"gate":"EC_B4","exit_code":0,"tests":8,"output_sha256":"0098c8353a494357b240a3bab6d773d37c6e2c6ef87ed6618aed45f82fa21fb7","bwrap_transaction":"PASS","note":"final cumulative R2 run reported 26 tests"}
+  ],
+  "non_regression": {"r1_packaged_tests": {"exit_code": 0, "tests": 18, "output_sha256": "d9864378380c866f85bff627730e980974c7625891548589da2bee5a041474ef"}, "r5_packaged_tests": {"exit_code": 0, "tests": 69, "output_sha256": "566acd4db75d500b7c574260541cf18c276540834914495e4b5e196e1d93a294"}},
+  "coverage": {"wrong_schema":true,"substantive_cross_object_validators":true,"caller_boolean_rejection":true,"authority_hash_role_provenance_membership":true,"incomplete_expansion":true,"missing_root_not_zero":true,"both_zero_proof_freshness_families":true,"human_conflict_forbidden":true,"commitment_comparator_adversarial":true,"bwrap_commitment_transaction":true},
+  "real_source_auth_targets_executed": 0,
+  "real_human_records_created": 0
+}

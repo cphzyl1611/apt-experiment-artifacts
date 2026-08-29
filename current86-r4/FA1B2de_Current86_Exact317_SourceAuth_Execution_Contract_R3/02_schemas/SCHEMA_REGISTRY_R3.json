@@ -1,0 +1,19 @@
+{
+  "schema": "FA1B2DE_CURRENT86_SOURCE_AUTH_SCHEMA_REGISTRY_R3",
+  "additional_properties": false,
+  "exact_discriminator_rule": "record.schema == EXACT_SCHEMA_NAME[kind]",
+  "substantive_validator_module": "tools/records.py",
+  "authority_derivation_module": "tools/authority.py",
+  "admission_freshness_module": "tools/admission.py",
+  "transaction_module": "tools/transaction.py",
+  "record_kinds": ["common_input_entry","common_input_manifest","authenticated_frozen_authority_record","candidate_source_object_commitment","admission_record","source_admission_machine_zero_proof","human_normative_admission_record","no_machine_field_pin_authority_proof_v2","human_field_pin_governance_record_v2","field_pin_record","primary_commitment","verifier_commitment","comparison_record","per_target_readiness_record","terminal_conservation_record","machine_authority_expansion_record","machine_authority_evaluation_evidence"],
+  "unknown_fields": "REJECT",
+  "machine_authority_expansion_binding": ["common_input_entry_id","artifact_content_identity","evaluator_implementation_id","evaluator_implementation_sha256","evaluator_configuration_id","evaluation_contract_id","evaluation_run_input_identity","evaluation_evidence_id","ordered_tuple_ids","ordered_set_commitment_id"],
+  "machine_authority_evidence_required": true,
+  "result_vector_comparator_derives_affected_targets": true,
+  "r3_record_schema_versions": {"machine_authority_expansion_record": "FA1B2DE_CURRENT86_MACHINE_AUTHORITY_EXPANSION_RECORD_R3", "machine_authority_evaluation_evidence": "FA1B2DE_CURRENT86_MACHINE_AUTHORITY_EVALUATION_EVIDENCE_R3", "primary_commitment": "FA1B2DE_CURRENT86_SOURCE_AUTH_PRIMARY_COMMITMENT_R3", "verifier_commitment": "FA1B2DE_CURRENT86_SOURCE_AUTH_VERIFIER_COMMITMENT_R3", "comparison_record": "FA1B2DE_CURRENT86_SOURCE_AUTH_COMPARISON_RECORD_R3"},
+  "missing_fields": "REJECT",
+  "wrong_types": "REJECT",
+  "duplicate_json_keys": "REJECT_BEFORE_SCHEMA",
+  "stale_identity": "REJECT"
+}
