@@ -1,0 +1,9 @@
+{
+  "schema": "FA1B2DE_CURRENT86_SOURCE_AUTH_COMMITMENT_COMPARATOR_TRANSACTION_R2",
+  "sequence": ["freeze common input","isolated primary","freeze primary commitment","tear down primary","isolated verifier without primary outputs or commitment","freeze verifier commitment","compare"],
+  "commitment_schema_kinds": ["primary_commitment","verifier_commitment"],
+  "comparator_requirements": ["both commitments schema-valid","same common_input_set_id","different implementation/context/run IDs","exact target set hash equality","ordered result vector and terminal map comparison","affected-target list consistency","comparison self-ID"],
+  "early_compare": "REJECT",
+  "synthetic_backend_only": true,
+  "production_derivation": false
+}
