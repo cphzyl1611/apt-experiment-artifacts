@@ -1,0 +1,42 @@
+{
+  "schema": "FA1B2DE_CURRENT86_EXACT317_SOURCE_AUTH_EXECUTION_CONTRACT_R1",
+  "mode": "CONTRACT_ONLY_NO_REAL_EXECUTION",
+  "scope": "CURRENT86_CANONICAL_INTRINSIC_317_SOURCE_BINDING_RECONSTRUCTION_ONLY",
+  "audit_scope_id": "34551e904bafa71fb2fb6db33162e94ad41a08eca6c747d429c83760e09c1306",
+  "governance_r4": {
+    "commit": "9cec0141fb9599ca879d5d992005921585f24cbb",
+    "design_sha256": "b499b4cfddd4f72e404dda72c423bfa3db98b0514af52773b9bbec5cce6e2cc0"
+  },
+  "sa_b1": {
+    "candidate_object_authentication": "exact artifact + extraction rule + locator + provenance recomputation",
+    "normative_paths": ["SOURCE_ADMISSION_REGISTRY", "SOURCE_ADMISSION_CORPUS_SCHEMA_RULE", "HUMAN_NORMATIVE_ADMISSION_RECORD_AFTER_VALID_MACHINE_ZERO_PROOF"],
+    "evidence_never_creates_admission": ["byte_equality", "hash", "provenance", "membership", "occupancy", "similarity", "prior_relation_outcome", "model_assertion"],
+    "missing_authority_root_is_zero": false
+  },
+  "sa_b2": {
+    "mandatory_cross_binding": "selected_field_pin_tuple_id == admission_tuple_id",
+    "exact_equality_components": ["source_binding_target_id", "candidate_object_id", "canonical_intrinsic_field_semantics_id", "exact_RFC6901_pointer UTF-8 bytes"],
+    "mismatch_state": "BLOCKED_FIELD_PIN",
+    "mismatch_reason": "ADMISSION_FIELD_PIN_TUPLE_MISMATCH",
+    "alternate_pointer_allowed": false,
+    "human_override_allowed": false,
+    "machine_authority_paths": ["EXACT_TARGET_POINTER_AUTHORITY", "FIELD_PIN_REGISTRY", "DETERMINISTIC_CORPUS_SCHEMA_FIELD_PIN_RULE"],
+    "zero_requires_complete_authenticated_enumeration": true,
+    "human_field_pin_role": "RATIFY_OR_DECLINE_ALREADY_ADMITTED_POINTER_ONLY"
+  },
+  "sa_b3": {
+    "sequence": ["freeze_common_input", "isolated_primary", "freeze_primary_commitment", "tear_down_primary", "isolated_verifier_without_primary_outputs_or_commitment", "freeze_verifier_commitment", "compare_after_both_frozen"],
+    "set_predicate": "VERIFIER_READABLE_SET intersect PRIMARY_PRIVATE_OUTPUT_SET = empty",
+    "distinct_identities": ["implementation_id", "context_id", "run_id"],
+    "dummy_backend_only_in_tests": true,
+    "real_source_auth_backend_present": false
+  },
+  "conservation": {
+    "source_auth_target_count": 317,
+    "raw_side_target_count": 86,
+    "candidate_side_target_count": 231,
+    "current_contract_only_partition": {"NOT_EXECUTED_PENDING_SOURCE_AUTH_GOVERNANCE": 317},
+    "future_terminal_states": ["SOURCE_AUTHENTICATED", "BLOCKED_NORMATIVE_ADMISSION", "BLOCKED_SOURCE_OBJECT", "BLOCKED_FIELD_PIN", "BLOCKED_PROVENANCE", "BLOCKED_INDEPENDENT_VERIFICATION"],
+    "exactly_one_terminal_state_per_target": true
+  }
+}

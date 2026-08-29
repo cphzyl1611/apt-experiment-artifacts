@@ -1,0 +1,24 @@
+{
+  "schema": "FA1B2DE_CURRENT86_SOURCE_AUTH_VERIFIER_ISOLATION_CONTRACT_R1",
+  "filesystem_roots": {
+    "/sa/common": {"primary": "READ_ONLY", "verifier": "READ_ONLY", "comparator": "READ_ONLY"},
+    "/sa/runtime-primary": {"primary": "READ_ONLY", "verifier": "ABSENT", "comparator": "ABSENT"},
+    "/sa/runtime-verifier": {"primary": "ABSENT", "verifier": "READ_ONLY", "comparator": "ABSENT"},
+    "/sa/primary-private": {"primary": "READ_WRITE", "verifier": "ABSENT", "comparator": "ABSENT"},
+    "/sa/verifier-private": {"primary": "ABSENT", "verifier": "READ_WRITE", "comparator": "ABSENT"},
+    "/sa/commitments/primary": {"primary": "WRITE_ONCE_FREEZE_HANDOFF", "verifier": "ABSENT", "comparator": "READ_ONLY_AFTER_BOTH_FROZEN"},
+    "/sa/commitments/verifier": {"primary": "ABSENT", "verifier": "WRITE_ONCE_FREEZE_HANDOFF", "comparator": "READ_ONLY_AFTER_BOTH_FROZEN"},
+    "/sa/compare": {"primary": "ABSENT", "verifier": "ABSENT", "comparator": "READ_WRITE"}
+  },
+  "working_directories": {"primary": "/work/primary", "verifier": "/work/verifier", "comparator": "/work/compare"},
+  "set_predicate": "VERIFIER_READABLE_SET intersection PRIMARY_PRIVATE_OUTPUT_SET = empty",
+  "common_input_set_excludes_primary_outputs": true,
+  "verifier_forbidden_inputs": ["primary selected source object", "primary selected field pointer", "primary rationale", "primary ranking", "primary admission conclusion", "primary intermediate outputs", "primary audit log", "primary commitment"],
+  "environment": {"base": "EMPTY", "allowlist": {"LANG": "C.UTF-8", "LC_ALL": "C.UTF-8", "TZ": "UTC", "PATH": "/usr/bin"}, "home_proxy_credentials_session_variables": "ABSENT"},
+  "network": "DISTINCT_UNSHARED_NAMESPACE_NO_EXTERNAL_INTERFACE_OR_ROUTE",
+  "process": {"shell_evaluation": false, "umask": "077", "inherited_descriptors": "STANDARD_STREAMS_ONLY", "capabilities": "DROP_ALL", "primary_and_verifier_separate_processes": true},
+  "identity_inequalities": ["PRIMARY_IMPLEMENTATION_ID != VERIFIER_IMPLEMENTATION_ID", "PRIMARY_CONTEXT_ID != VERIFIER_CONTEXT_ID", "PRIMARY_RUN_ID != VERIFIER_RUN_ID"],
+  "audit_evidence": ["content identity manifests", "mount namespace and resolved mount table", "process tree and role identities", "environment and argv", "network namespace", "read/write visibility probe", "commitment freeze order"],
+  "synthetic_probe_implementation": "tools/sourceauth_isolation.py",
+  "production_runtime_tool_whitelist_status": "MISSING_UNAUTHENTICATED_DEPENDENCY_BLOCKER"
+}

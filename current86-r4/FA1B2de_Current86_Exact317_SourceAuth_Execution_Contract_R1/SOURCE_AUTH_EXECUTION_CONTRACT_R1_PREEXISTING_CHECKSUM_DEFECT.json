@@ -1,0 +1,15 @@
+{
+  "schema": "FA1B2DE_CURRENT86_SOURCE_AUTH_EXECUTION_CONTRACT_R1_PREEXISTING_CHECKSUM_DEFECT_V1",
+  "classification": "PRE_EXISTING_UNRELATED_REPOSITORY_CHECKSUM_DEFECT",
+  "affected_old_workflow": "BSO_A2_PROSPECTIVE_AUTHORITY_CANDIDATE_MATERIALIZATION_TEST",
+  "failed_test": "tests.test_materialize_bso_a2_authority.CandidateMaterializationTests.test_materialize_emits_exact_candidate_only_package",
+  "affected_locator": "/home/cph/fa1b2de-bso-a2-transition-r2-design-patch/SHA256SUMS.txt",
+  "expected_sha256_from_frozen_H1_targeted_review_pin": "913a661016f0a26910ad233e3a2cb8df980e7bae03b30b3e5d0febec84cd932f",
+  "observed_sha256": "73ccea92152cea80bc0868f44ee34d6e4e099043a5562b13901e126c92d67553",
+  "source_auth_contract_package_tests_affected": false,
+  "r5_packaged_tests_affected": false,
+  "r5_packaged_tests_result": "PASS_69_OF_69",
+  "repaired_by_this_task": false,
+  "old_r5_modified": false,
+  "reason_not_repaired": "Outside source-auth contract materialization scope; silently changing the frozen old-workflow checksum pin is prohibited."
+}

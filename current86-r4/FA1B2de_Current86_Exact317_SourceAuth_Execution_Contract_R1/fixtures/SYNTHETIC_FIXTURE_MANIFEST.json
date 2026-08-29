@@ -1,0 +1,14 @@
+{
+  "schema": "FA1B2DE_CURRENT86_SOURCE_AUTH_SYNTHETIC_FIXTURE_MANIFEST_R1",
+  "fixture_authority": "NON_AUTHORITATIVE_SYNTHETIC_ONLY",
+  "synthetic_target_ids": ["synthetic-non-production-target-0001"],
+  "synthetic_candidate_ids": ["synthetic-non-production-candidate-0001"],
+  "production_target_id_grammar": "64 lowercase hexadecimal bytes",
+  "synthetic_ids_match_production_target_id_grammar": false,
+  "production_target_manifest": "/home/cph/experiment-artifacts/fa1b2de-current86-canonical-intrinsic-317-r1/CURRENT86_Canonical_Intrinsic_317_Exact_Targets.json",
+  "production_target_manifest_sha256": "d8d55d369fe433bf7b93a3c332b8ac9a517a9146b28fa223370ff3ec946955ac",
+  "synthetic_production_target_intersection_count": 0,
+  "real_source_auth_targets_executed": 0,
+  "creates_normative_authority": false,
+  "creates_human_governance_record": false
+}

@@ -1,0 +1,72 @@
+{
+  "schema": "FA1B2DE_CURRENT86_SOURCE_AUTH_EXECUTION_CONTRACT_R1_TDD_LOG_V1",
+  "method": "RED_BEFORE_GREEN",
+  "execution_scope": "SYNTHETIC_NON_SEMANTIC_CONTRACT_TESTS_ONLY",
+  "red_evidence": [
+    {
+      "phase": "RED_1_CORE_CONTRACT",
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 FA1B2de_Current86_Exact317_SourceAuth_Execution_Contract_R1/run_packaged_tests.py",
+      "exit_code": 1,
+      "output_sha256": "a6dd5b3344fd2a6b68ceb3d5e45519b01ac4633fd4b3e366093e2098e37a8092",
+      "expected_failure": "ModuleNotFoundError: No module named 'tools'",
+      "production_implementation_present": false
+    },
+    {
+      "phase": "RED_2_MECHANICAL_ISOLATION",
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 FA1B2de_Current86_Exact317_SourceAuth_Execution_Contract_R1/run_packaged_tests.py",
+      "exit_code": 1,
+      "output_sha256": "42c707d80f6fed32fbc6aae4e987ede4bf749d302976553a711594c48bcdf6dd",
+      "expected_failure": "ModuleNotFoundError: No module named 'tools.sourceauth_isolation'",
+      "core_tests_already_green": 16
+    },
+    {
+      "phase": "RED_3_EXACT_PLAIN_FIELD_TYPES",
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 run_packaged_tests.py",
+      "exit_code": 1,
+      "output_sha256": "725e62d367d049558d313de4c8f142377bceec168d7fd2d255e9eccb6670b285",
+      "expected_failure": "wrong integer candidate_object_id was not rejected by the generic schema gate",
+      "tests_run": 18
+    }
+  ],
+  "green_evidence": [
+    {
+      "phase": "GREEN_1_CORE_CONTRACT",
+      "exit_code": 0,
+      "tests_run": 16,
+      "output_sha256": "35e44ff8cb19b84e4d51173b01ab50b046499763a04fab42c2c185a42ce487b7"
+    },
+    {
+      "phase": "GREEN_2_MECHANICAL_ISOLATION",
+      "exit_code": 0,
+      "tests_run": 17,
+      "output_sha256": "14b12abac3f1f02695e5e3ca047acf7d5414eb326016af944e08ac4569dc8de0",
+      "bubblewrap_probe": "PASS",
+      "verifier_primary_private_visible": false,
+      "verifier_primary_commitment_visible": false
+    },
+    {
+      "phase": "GREEN_3_EXACT_PLAIN_FIELD_TYPES",
+      "exit_code": 0,
+      "tests_run": 18,
+      "output_sha256": "b638147939b98d817ff205821b948496cf6a767abe1ff31f648ad66675f8bf64",
+      "generic_exact_type_gate": "PASS"
+    }
+  ],
+  "required_adversarial_coverage": {
+    "admission_P1_machine_P2": "PASS_FAIL_CLOSED",
+    "admission_P1_human_P2": "PASS_FAIL_CLOSED",
+    "wrong_admission_record_id": "PASS_FAIL_CLOSED",
+    "wrong_admission_tuple_id": "PASS_FAIL_CLOSED",
+    "stale_zero_proof_after_admission_change": "PASS_FAIL_CLOSED",
+    "missing_authority_root_not_zero": "PASS_FAIL_CLOSED",
+    "machine_conflict_forbids_human": "PASS_FAIL_CLOSED",
+    "identical_machine_confirmation": "PASS_SYNTHETIC_VALID",
+    "zero_plus_exact_human_ratification": "PASS_SYNTHETIC_VALID",
+    "verifier_primary_roots_absent": "PASS_MECHANICALLY_PROBED",
+    "equal_role_identities": "PASS_FAIL_CLOSED",
+    "duplicate_or_missing_terminal_state": "PASS_FAIL_CLOSED",
+    "synthetic_outside_production": "PASS"
+  },
+  "real_source_auth_targets_executed": 0,
+  "real_human_decisions_created": 0
+}

@@ -1,0 +1,57 @@
+{
+  "schema": "FA1B2DE_CURRENT86_EXACT317_SOURCE_AUTH_EXECUTION_CONTRACT_R1_INPUT_AUTHENTICATION_V1",
+  "SOURCE_AUTH_EXECUTION_CONTRACT_R1_INPUT_AUTHENTICATION": "PASS",
+  "repository": "cphzyl1611/apt-experiment-artifacts",
+  "authenticated_remote": "https://github.com/cphzyl1611/apt-experiment-artifacts.git",
+  "read_only_git_object_store": "/home/cph/fa1b2de-review-artifacts/.git",
+  "git_ref_mutation": "NO",
+  "r4_repository_state": {
+    "commit": "9cec0141fb9599ca879d5d992005921585f24cbb",
+    "tree": "b1cca46922be1d6779aaf4b0282254bb2533959e",
+    "parent_expected": "bc54c0feea1a8af346e2c70b39679cd01f4f3577",
+    "parent_observed": "bc54c0feea1a8af346e2c70b39679cd01f4f3577",
+    "commit_timestamp": "2026-08-29T04:14:09-04:00",
+    "commit_subject": "fa1b2de-current86-canonical-source-authentication-governance-r4-patch",
+    "authentication": "PASS"
+  },
+  "r4_design": {
+    "path": "current86-r4/fa1b2de-current86-canonical-source-authentication-governance-r4-patch/Design_FA1B2de_Current86_Canonical_Intrinsic_317_Source_Authentication_Governance_R4_PATCHED.md",
+    "git_blob": "b4fa8104643c12ed35f1de7128b19aa11f7184eb",
+    "sha256_expected": "b499b4cfddd4f72e404dda72c423bfa3db98b0514af52773b9bbec5cce6e2cc0",
+    "sha256_observed": "b499b4cfddd4f72e404dda72c423bfa3db98b0514af52773b9bbec5cce6e2cc0",
+    "authentication": "PASS"
+  },
+  "incorporated_lineage": {
+    "r3": {"commit": "bc54c0feea1a8af346e2c70b39679cd01f4f3577", "tree": "d4c22f1e4310dc791e75fc15db4ba69c32e0997f", "parent": "38f913b52bcdcc289aa5507be0c6a67516d802f2", "design_git_blob": "05b41f34bcbab9d89e60d8ce8dc40966282eb737", "design_sha256": "ca8f84d7a9f86713913a6c24960593a0b5771b04a920d2351290ae8d86d62d0f", "authentication": "PASS"},
+    "r2": {"commit": "38f913b52bcdcc289aa5507be0c6a67516d802f2", "tree": "2540105e5adf477f7bfb168e5d7d21d4b4296071", "parent": "67c39693d8b98c00a3c544582406fcb52a061a7e", "design_git_blob": "d48f940ee68185e0219434e7f35b2d52ebf6749d", "design_sha256": "e71bd2272438bff2feed4eef889f9a3fc9a231621826b7dae6ba3a2d25833c4b", "authentication": "PASS"},
+    "r1": {"design_path": "/home/cph/experiment-artifacts/fa1b2de-current86-canonical-source-authentication-r1/Design_FA1B2de_Current86_Canonical_Intrinsic_317_Source_Authentication_Governance.md", "design_sha256": "185c1df2c1fa0e3e90060311c96e1aaf2ee606e2c04797b778be0d8f2d3e47c6", "authentication": "PASS"}
+  },
+  "exact317": {
+    "manifest_path": "/home/cph/experiment-artifacts/fa1b2de-current86-canonical-intrinsic-317-r1/CURRENT86_Canonical_Intrinsic_317_Exact_Targets.json",
+    "manifest_sha256": "d8d55d369fe433bf7b93a3c332b8ac9a517a9146b28fa223370ff3ec946955ac",
+    "audit_scope_id": "34551e904bafa71fb2fb6db33162e94ad41a08eca6c747d429c83760e09c1306",
+    "counting_unit": "UNIQUE_REQUIRED_CANONICAL_INTRINSIC_SOURCE_CLASS_SIDE_BINDING_TUPLE",
+    "source_auth_target_count": 317,
+    "raw_side_target_count": 86,
+    "candidate_side_target_count": 231,
+    "raw_binding_identity_set_sha256": "dc97465eba0d2fb1235cb93e47d8be57221b85c4a75c24b5f34c087ed379a4ed",
+    "candidate_binding_identity_set_sha256": "3f70daaecfae52ea24bcef669d00e0ec788f88000da31e07c28db866826780c1",
+    "all_target_ids_recomputed": true,
+    "target_order_recomputed_exact": true,
+    "authentication": "PASS"
+  },
+  "authority_identities_preserved": {
+    "source_class_fact_type_registry_id": "8cef6206dfc3581c3e7b6358bde7a36e90f4ba99078176cc0e5aff4b238298a7",
+    "source_class_fact_type_registry_sha256": "3df4262faa4137996d2ff8d163bcc665d5bed76b3d719e6ff66cf4154252d72f",
+    "project_scoring_authority": "18fd70d4a57f07a3e06242d9f0e077a4e6838120",
+    "project_binding_authority_baseline": "d309c01d6178a75cac88b6236d36179563a88239",
+    "project_accepted_bindings": "1045/1796"
+  },
+  "pre_existing_unrelated_checksum_observation": {
+    "artifact": "/home/cph/experiment-artifacts/fa1b2de-current86-canonical-source-authentication-r1/SHA256SUMS.txt",
+    "artifact_sha256": "b03e902734ff9b99d9d6cace5d1abe74db062d8988be1bde76f2ef30b86ef7fd",
+    "observation": "The R1 checksum inventory does not enumerate the later governance design file Design_FA1B2de_Current86_Canonical_Intrinsic_317_Source_Authentication_Governance.md.",
+    "effect_on_input_authentication": "NONE_R1_DESIGN_IS_EXACTLY_HASH_PINNED_BY_INCORPORATED_R2_R3_R4_LINEAGE",
+    "repaired_by_this_task": false
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "schema": "FA1B2DE_CURRENT86_EXACT317_SOURCE_AUTH_EXECUTION_CONTRACT_R1_DEPENDENCY_INVENTORY_V1",
+  "inventory_mode": "READ_ONLY_NO_AUTHORITY_CREATION",
+  "missing_is_empty_authority_set": false,
+  "dependencies": [
+    {
+      "logical_artifact_role": "R4_GOVERNANCE_DESIGN",
+      "exact_locator": "git:9cec0141fb9599ca879d5d992005921585f24cbb:current86-r4/fa1b2de-current86-canonical-source-authentication-governance-r4-patch/Design_FA1B2de_Current86_Canonical_Intrinsic_317_Source_Authentication_Governance_R4_PATCHED.md",
+      "content_or_pinned_identity": "sha256:b499b4cfddd4f72e404dda72c423bfa3db98b0514af52773b9bbec5cce6e2cc0;git_blob:b4fa8104643c12ed35f1de7128b19aa11f7184eb",
+      "authority_status": "AUTHENTICATED_REVIEWED_GOVERNANCE_DESIGN",
+      "provenance_status": "PINNED_COMMIT_PARENT_TREE_BLOB_AND_CONTENT_HASH",
+      "available": true,
+      "reason": "Exact user-pinned R4 commit/blob authenticated read-only."
+    },
+    {
+      "logical_artifact_role": "EXACT317_TARGET_MANIFEST",
+      "exact_locator": "/home/cph/experiment-artifacts/fa1b2de-current86-canonical-intrinsic-317-r1/CURRENT86_Canonical_Intrinsic_317_Exact_Targets.json",
+      "content_or_pinned_identity": "sha256:d8d55d369fe433bf7b93a3c332b8ac9a517a9146b28fa223370ff3ec946955ac",
+      "authority_status": "AUTHENTICATED_FROZEN_TARGET_AUTHORITY",
+      "provenance_status": "R4_INCORPORATED_EXACT317_LINEAGE",
+      "available": true,
+      "reason": "317 ordered target identities, 86 RAW plus 231 CANDIDATE, exact scope and side hashes recomputed."
+    },
+    {
+      "logical_artifact_role": "SOURCE_CLASS_FACT_TYPE_REGISTRY",
+      "exact_locator": "/home/cph/fa1b2de-current86-p0-input-preflight-r1/03_frozen_lineage/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json",
+      "content_or_pinned_identity": "sha256:3df4262faa4137996d2ff8d163bcc665d5bed76b3d719e6ff66cf4154252d72f;registry_id:8cef6206dfc3581c3e7b6358bde7a36e90f4ba99078176cc0e5aff4b238298a7",
+      "authority_status": "AUTHENTICATED_EXISTING_NORMATIVE_REGISTRY",
+      "provenance_status": "R4_PRESERVED_AUTHORITY_IDENTITY",
+      "available": true,
+      "reason": "Defines AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE and PINNED_CANONICAL_INTRINSIC_FIELD roles; not mutated."
+    },
+    {
+      "logical_artifact_role": "RAW_CANDIDATE_CORPUS",
+      "exact_locator": "/home/cph/experiment-artifacts/fa1b2de-bso-r-20260825T100958Z/inputs/project_snapshots/raw_action_registry.jsonl",
+      "content_or_pinned_identity": "sha256:53c85157f9fd0849ae19b1cf403333ad0d0af2a7d761b0498540dd92d66c1e93",
+      "authority_status": "AUTHENTICATED_CANDIDATE_CORPUS_NOT_NORMATIVE_ADMISSION",
+      "provenance_status": "BSO_R_INPUT_PACKAGE_PRESENT",
+      "available": true,
+      "reason": "Candidate bytes can be located; their presence, hash, occupancy, or similarity does not create canonical admission."
+    },
+    {
+      "logical_artifact_role": "CANDIDATE_SIDE_CORPUS",
+      "exact_locator": "/home/cph/experiment-artifacts/fa1b2de-bso-r-20260825T100958Z/inputs/c2/c2_scoring_snapshot_post_c1.jsonl",
+      "content_or_pinned_identity": "sha256:748a3808290f9e78f71c18d4553c77ae208517fd31d163fc2b3008cfcb57f1bb",
+      "authority_status": "AUTHENTICATED_CANDIDATE_CORPUS_NOT_NORMATIVE_ADMISSION",
+      "provenance_status": "BSO_R_C2_INPUT_PACKAGE_PRESENT",
+      "available": true,
+      "reason": "Candidate bytes can be located; no source-admission authority role is inferred."
+    },
+    {
+      "logical_artifact_role": "C0_COVERAGE_CANDIDATE_CORPUS",
+      "exact_locator": "/home/cph/experiment-artifacts/tier-de1c0-handoff-20260823-083725/tier_de1c0_typed_operation_semantics.jsonl",
+      "content_or_pinned_identity": "sha256:0036c42fb02026182274a7ac2a33b103b03b1e527856eb33b5ad650ceddd5c32;exact60_subset_sha256:8273c9b241cab806adbc9452a4ce572c11277657760f2e6e7b6210357829f54a",
+      "authority_status": "AUTHENTICATED_CANDIDATE_EVIDENCE_NOT_NORMATIVE_ADMISSION",
+      "provenance_status": "manifest_sha256:d18053e55fb1ee7bb538476c6e4ebaa863181fbbc5a6990c09beb4b450ea672f;producer_sha256:c988283ad4b9288555c01870ae9b12029a74a2e8c60a05cfc2eb5fa31160c6af",
+      "available": true,
+      "reason": "Exact C0 coverage remains evidence only; no heuristic raw-versus-C0 tie-break is authorized."
+    },
+    {
+      "logical_artifact_role": "CANDIDATE_OBJECT_LOCATOR_MAP",
+      "exact_locator": "/home/cph/experiment-artifacts/fa1b2de-current86-canonical-source-authentication-r1/CURRENT86_Canonical_Source_Authentication_Targets.jsonl",
+      "content_or_pinned_identity": "sha256:8452b088d547e039d492f299f147cf100d512c11b438cb5eefa2a4416b09709c",
+      "authority_status": "LOCATOR_EVIDENCE_ONLY_CANONICAL_AUTHENTICATION_CLOSED_FALSE",
+      "provenance_status": "R1_ARTIFACT_PRESENT",
+      "available": true,
+      "reason": "May assist deterministic locating but is explicitly not canonical source truth or admission authority."
+    },
+    {
+      "logical_artifact_role": "DETERMINISTIC_CANDIDATE_OBJECT_EXTRACTION_SCHEMA_RULE_ROOT",
+      "exact_locator": null,
+      "content_or_pinned_identity": null,
+      "authority_status": "MISSING_UNAUTHENTICATED_REQUIRED_PRODUCTION_ROOT",
+      "provenance_status": "NO_SCOPE_AUTHORIZING_GOVERNANCE_FREEZE_FOUND",
+      "available": false,
+      "reason": "No uniquely authenticated exact-317 extraction-rule root with role, complete input set, expansion identity, and scope-authorizing freeze was found; file absence is not zero evidence."
+    },
+    {
+      "logical_artifact_role": "SOURCE_ADMISSION_REGISTRY_ROOT",
+      "exact_locator": null,
+      "content_or_pinned_identity": null,
+      "authority_status": "MISSING_UNAUTHENTICATED_REQUIRED_PRODUCTION_ROOT",
+      "provenance_status": "NO_SCOPE_AUTHORIZING_GOVERNANCE_FREEZE_FOUND",
+      "available": false,
+      "reason": "Design declarations were found but no activated exact tuple registry artifact was found; NOT FOUND is not an empty registry."
+    },
+    {
+      "logical_artifact_role": "SOURCE_ADMISSION_CORPUS_SCHEMA_RULE_ROOT",
+      "exact_locator": null,
+      "content_or_pinned_identity": null,
+      "authority_status": "MISSING_UNAUTHENTICATED_REQUIRED_PRODUCTION_ROOT",
+      "provenance_status": "NO_SCOPE_AUTHORIZING_GOVERNANCE_FREEZE_FOUND",
+      "available": false,
+      "reason": "No authenticated deterministic rule expanding the complete frozen input set to exact admission tuples was found."
+    },
+    {
+      "logical_artifact_role": "EXACT_TARGET_POINTER_AUTHORITY_ROOT",
+      "exact_locator": null,
+      "content_or_pinned_identity": null,
+      "authority_status": "MISSING_UNAUTHENTICATED_REQUIRED_PRODUCTION_ROOT",
+      "provenance_status": "TARGET_MANIFEST_HAS_NO_AUTHORIZED_EXACT_POINTER_FIELD",
+      "available": false,
+      "reason": "The target manifest authenticates population identity but does not embed an exact RFC6901 field pointer authority."
+    },
+    {
+      "logical_artifact_role": "FIELD_PIN_REGISTRY_ROOT",
+      "exact_locator": null,
+      "content_or_pinned_identity": null,
+      "authority_status": "MISSING_UNAUTHENTICATED_REQUIRED_PRODUCTION_ROOT",
+      "provenance_status": "NO_SCOPE_AUTHORIZING_GOVERNANCE_FREEZE_FOUND",
+      "available": false,
+      "reason": "No activated exact-317 field-pin registry was found; absence is not a valid zero-machine proof."
+    },
+    {
+      "logical_artifact_role": "DETERMINISTIC_CORPUS_SCHEMA_FIELD_PIN_RULE_ROOT",
+      "exact_locator": null,
+      "content_or_pinned_identity": null,
+      "authority_status": "MISSING_UNAUTHENTICATED_REQUIRED_PRODUCTION_ROOT",
+      "provenance_status": "NO_SCOPE_AUTHORIZING_GOVERNANCE_FREEZE_FOUND",
+      "available": false,
+      "reason": "No complete authenticated expansion rule for exact field-pin tuples was found."
+    },
+    {
+      "logical_artifact_role": "SOURCE_AUTH_COMMON_INPUT_GOVERNANCE_FREEZE_ROOT",
+      "exact_locator": null,
+      "content_or_pinned_identity": null,
+      "authority_status": "MISSING_UNAUTHENTICATED_REQUIRED_PRODUCTION_ROOT",
+      "provenance_status": "NO_PRE_RUN_SCOPE_AUTHORIZING_FREEZE_FOUND",
+      "available": false,
+      "reason": "This contract defines the future manifest schema but does not fabricate or activate a production governance freeze."
+    },
+    {
+      "logical_artifact_role": "SOURCE_AUTH_DETERMINISTIC_RUNTIME_TOOL_WHITELIST",
+      "exact_locator": null,
+      "content_or_pinned_identity": null,
+      "authority_status": "MISSING_UNAUTHENTICATED_REQUIRED_PRODUCTION_ROOT",
+      "provenance_status": "EXISTING_BSO_A2_R5_RUNTIME_CONTRACT_NOT_TRANSFERABLE_TO_SOURCE_AUTH",
+      "available": false,
+      "reason": "Synthetic package tests pin their local tools, but no production source-auth shared-runtime whitelist authorized for this audit scope exists."
+    },
+    {
+      "logical_artifact_role": "SOURCE_AUTH_HUMAN_ORIGIN_PROVENANCE_MODE_REGISTRY",
+      "exact_locator": null,
+      "content_or_pinned_identity": null,
+      "authority_status": "MISSING_UNAUTHENTICATED_OPTIONAL_UNTIL_HUMAN_FALLBACK",
+      "provenance_status": "BSO_A2_H1_H2_MODE_EVIDENCE_EXISTS_BUT_ROLE_AND_SCOPE_NOT_TRANSFERABLE",
+      "available": false,
+      "reason": "No source-auth-specific activated allowed-mode registry was found; the contract can validate structure but no real human record is authorized."
+    },
+    {
+      "logical_artifact_role": "SOURCE_AUTH_INDEPENDENT_CAPTURE_VERIFICATION_CONTRACT",
+      "exact_locator": null,
+      "content_or_pinned_identity": null,
+      "authority_status": "MISSING_UNAUTHENTICATED_OPTIONAL_UNTIL_HUMAN_FALLBACK",
+      "provenance_status": "BSO_A2_H1_H2_CAPTURE_ARTIFACTS_EXIST_BUT_ROLE_AND_SCOPE_NOT_TRANSFERABLE",
+      "available": false,
+      "reason": "No exact source-auth capture-verification authority is activated; synthetic fixtures do not create one."
+    }
+  ],
+  "execution_readiness": "BLOCKED_MISSING_AUTHORITY_INPUTS",
+  "contract_materialization_can_represent_blockers_fail_closed": true,
+  "fabricated_authority_artifacts": 0,
+  "real_zero_machine_proofs_created": 0,
+  "real_human_records_created": 0
+}

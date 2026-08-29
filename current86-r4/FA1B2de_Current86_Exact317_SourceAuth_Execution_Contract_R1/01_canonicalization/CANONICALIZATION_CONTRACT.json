@@ -1,0 +1,25 @@
+{
+  "schema": "FA1B2DE_CURRENT86_SOURCE_AUTH_CANONICALIZATION_CONTRACT_R1",
+  "project_canonical_json": "PROJECT_CANONICAL_JSON_V1",
+  "object_key_order": "BYTEWISE_ASCENDING_UTF8",
+  "array_order": "PRESERVE",
+  "json_encoding": "COMPACT_STRICT_UTF8",
+  "duplicate_json_keys": "REJECT_COMPLETE_DOCUMENT",
+  "float_and_nonfinite": "REJECT",
+  "integer_source_grammar": "0|-?[1-9][0-9]*",
+  "integer_precision": "ARBITRARY",
+  "unicode_normalization": "NONE",
+  "rfc6901": {
+    "form": "STRING_FORM_ONLY",
+    "tilde_escaping": "~1_TO_SLASH_AND_~0_TO_TILDE_EXACTLY_ONCE",
+    "array_index_grammar": "0|[1-9][0-9]*",
+    "missing_is_null": false,
+    "wildcards_or_alternates": "PROHIBITED"
+  },
+  "allowed_scalar_types": ["null", "boolean", "integer", "string"],
+  "composite_terminal_policy": "REJECT_UNLESS_SEPARATELY_AUTHORIZED;NO_COMPOSITE_CANONICALIZER_WHITELISTED",
+  "canonical_scalar_format_id": "FA1B2DE_CANONICAL_INTRINSIC_SCALAR_V1",
+  "authenticated_value_sha256": "lowercase_hex(SHA256(canonical_scalar_bytes))",
+  "deterministic_identity": "lowercase_hex(SHA256(PROJECT_CANONICAL_JSON_V1(all exact members except identity member)))",
+  "implementation": "tools/sourceauth_contract.py"
+}

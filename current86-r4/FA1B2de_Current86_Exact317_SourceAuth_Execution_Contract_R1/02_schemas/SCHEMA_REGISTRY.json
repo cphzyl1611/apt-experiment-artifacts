@@ -1,0 +1,34 @@
+{
+  "schema": "FA1B2DE_CURRENT86_SOURCE_AUTH_SCHEMA_REGISTRY_R1",
+  "additional_properties": false,
+  "strict_rules": [
+    "reject unknown fields",
+    "reject missing required fields",
+    "reject wrong JSON types",
+    "reject duplicate JSON keys before schema evaluation",
+    "recompute every deterministic self-excluding identity",
+    "reject wrong audit scope and stale or cross-object identity"
+  ],
+  "record_kinds": [
+    "common_input_manifest",
+    "authenticated_frozen_authority_record",
+    "candidate_source_object_commitment",
+    "admission_record",
+    "source_admission_machine_zero_proof",
+    "human_normative_admission_record",
+    "no_machine_field_pin_authority_proof_v2",
+    "human_field_pin_governance_record_v2",
+    "field_pin_record",
+    "primary_commitment",
+    "verifier_commitment",
+    "comparison_record",
+    "per_target_readiness_record",
+    "terminal_conservation_record"
+  ],
+  "exact_field_registry_implementation": "tools/sourceauth_contract.py:SCHEMAS",
+  "exact_identity_field_registry_implementation": "tools/sourceauth_contract.py:IDENTITY_FIELDS",
+  "r4_exact_schema_names": {
+    "no_machine_field_pin_authority_proof_v2": "FA1B2DE_CURRENT86_NO_MACHINE_FIELD_PIN_AUTHORITY_PROOF_V2",
+    "human_field_pin_governance_record_v2": "FA1B2DE_CURRENT86_HUMAN_FIELD_PIN_GOVERNANCE_RECORD_V2"
+  }
+}
