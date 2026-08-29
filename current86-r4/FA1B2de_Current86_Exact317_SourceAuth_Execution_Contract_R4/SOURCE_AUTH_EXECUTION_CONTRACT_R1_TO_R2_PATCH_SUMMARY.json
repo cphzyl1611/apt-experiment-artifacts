@@ -1,0 +1,16 @@
+{
+  "schema": "FA1B2DE_CURRENT86_EXACT317_SOURCE_AUTH_EXECUTION_CONTRACT_R1_TO_R2_PATCH_SUMMARY_V1",
+  "patch_scope": "MINIMAL_R1_TO_R2_CONTRACT_ONLY_REMEDIATION_OF_EC_B1_B2_B3_B4",
+  "r1_preserved_by_exact_lineage": true,
+  "ec_b1": {"status":"CLOSED_CANDIDATE","changes":["exact schema discriminator registry","substantive validators for required records","cross-object identity and conservation checks"]},
+  "ec_b2": {"status":"CLOSED_CANDIDATE","changes":["derive authority status from authenticated common-input records","ordered machine input-set identity","missing root is never zero"]},
+  "ec_b3": {"status":"CLOSED_CANDIDATE","changes":["bind SA-B1 and SA-B2 zero proofs to current evaluation contract/evidence/input-set identities","stable stale fail-closed reasons"]},
+  "ec_b4": {"status":"CLOSED_CANDIDATE","changes":["schema-valid synthetic primary/verifier commitments","freeze-order comparator","affected-target consistency","bwrap end-to-end transaction"]},
+  "preserved": ["GOVERNANCE_R4_INPUT_AUTHENTICATION=PASS","EXACT317_SCOPE=PASS","317=86+231","DEPENDENCY_INVENTORY_FAIL_CLOSED=PASS","DOWNSTREAM_R5_COMPATIBILITY_ASSESSMENT=PASS","R5_UNMODIFIED"],
+  "production_authority_roots_created": 0,
+  "real_source_auth_targets_executed": 0,
+  "real_human_records_created": 0,
+  "accepted_binding_count_changed": false,
+  "denominator_changed": false,
+  "git_ref_mutation": "NO"
+}

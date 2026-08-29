@@ -1,0 +1,19 @@
+{
+  "schema": "FA1B2DE_CURRENT86_EXACT317_SOURCE_AUTH_EXECUTION_CONTRACT_R2_TO_R3_PATCH_SUMMARY_V1",
+  "patch_scope": "PATCH_ONLY_EC_B2_EC_B3_EC_B4_SOURCE_AUTH_EXECUTION_CONTRACT_R2_DEFECTS",
+  "r1_and_r2_byte_for_byte_preserved": true,
+  "ec_b1": "PASS_PRESERVED",
+  "ec_b2": {"status": "CLOSED_CANDIDATE", "minimum_fix": "authenticated artifact bytes, frozen evaluator/configuration/run identity, deterministic recomputation, evidence graph binding"},
+  "ec_b3": {"status": "CLOSED_CANDIDATE", "minimum_fix": "zero-proof validators require mechanically validated current derivation and evidence object"},
+  "ec_b4": {"status": "CLOSED_CANDIDATE", "minimum_fix": "ordered per-target result vectors and exact comparator-derived affected set"},
+  "new_regression_and_adversarial_test_count": 8,
+  "r3_full_packaged_test_count": 34,
+  "source_auth_execution_readiness": "BLOCKED_MISSING_AUTHORITY_INPUTS",
+  "production_authority_roots_created": 0,
+  "real_source_auth_targets_executed": 0,
+  "real_human_records_created": 0,
+  "accepted_binding_count_changed": false,
+  "denominator_changed": false,
+  "git_ref_mutation": "NO",
+  "next_action": "FRESH_TARGETED_INDEPENDENT_REVIEW_OF_CURRENT86_EXACT317_SOURCE_AUTH_EXECUTION_CONTRACT_R3"
+}

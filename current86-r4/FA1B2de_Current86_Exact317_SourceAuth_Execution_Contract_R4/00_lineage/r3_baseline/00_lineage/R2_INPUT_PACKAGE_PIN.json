@@ -1,0 +1,11 @@
+{
+  "schema": "FA1B2DE_CURRENT86_SOURCE_AUTH_R2_TO_R3_LINEAGE_PIN_V1",
+  "r2_package": "FA1B2de_Current86_Exact317_SourceAuth_Execution_Contract_R2",
+  "r2_sha256sums_sha256": "58d64c04023b757f964e43535e65fe294cf75039ac9039beacf43f560f81b47d",
+  "r2_file_list_sha256": "0f7f485db210fc3b336c35c39fb0b121eb8217564e79d5b9fb667a2653700fb0",
+  "r2_contract_manifest_sha256": "4501f4966dee882567b17b845c2c8f143b3ed7a90101fc0399be010010d34311",
+  "r2_r1_lineage_pin_sha256": "282c648857105eded5be046807e99bdad4204d5b714024c91e208d9d8ef714cd",
+  "r2_internal_sha256sums_verified": true,
+  "r1_and_r2_byte_for_byte_preserved": true,
+  "git_ref_mutation": "NO"
+}

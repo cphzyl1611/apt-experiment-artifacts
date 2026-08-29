@@ -1,0 +1,9 @@
+{
+  "schema": "FA1B2DE_CURRENT86_EXACT317_SOURCE_AUTH_EXECUTION_CONTRACT_R3_TO_R4_DETERMINISTIC_REGENERATION_V1",
+  "metadata_script": "tools/regenerate_metadata.py",
+  "commands": ["python tools/regenerate_metadata.py", "python tools/regenerate_metadata.py"],
+  "repeat_comparison": "PASS",
+  "file_list_and_sha256sums_generated_from_sorted_package_files": true,
+  "pycache_excluded": true,
+  "package_verifier_after_regeneration": "PASS"
+}

@@ -1,0 +1,78 @@
+{
+  "schema": "FA1B2DE_CURRENT86_EXACT317_SOURCE_AUTH_EXECUTION_CONTRACT_R3_TO_R4_TDD_LOG_V1",
+  "test_method": "R3_DEFECT_REPRODUCTION_GENUINE_RED_THEN_MINIMUM_FIX_GREEN_RETAINED_REGRESSION",
+  "review_input_authentication": {
+    "directory": "review_inputs/sourceauth-exec-r3-fresh-review",
+    "review_json_sha256": "9207fdd887ec34edf3709ff0648476750f4aab84c32088611a63ecee2d53fb47",
+    "review_markdown_sha256": "7934ff18a582ad98388f78af5232f8dcc049124cc0a3bb6dd8d6c5c63cfac64d",
+    "prompt_sha256": "6844a302e0fee3cb40cb30ff8c6fbe79f3e9a6be349ee1f325f4a0992c4316d7",
+    "status": "PASS"
+  },
+  "cycles": {
+    "EC_B2": {
+      "status": "CLOSED_CANDIDATE",
+      "red": {
+        "command": "python -m unittest tests.test_r4_contract_fixes.EC_B2FailClosedRedTests -v",
+        "observed": "R3 evaluator accepted malformed/non-list/unsupported/wrong-schema artifacts as zero tuples or lacked authenticated dispatch API",
+        "exit_code": 1
+      },
+      "green": {
+        "command": "python -m unittest tests.test_r4_contract_fixes.EC_B2FailClosedRedTests tests.test_ec_b2_authority_graph.AuthenticatedAuthorityGraphTests -v",
+        "observed": "invalid UTF-8, invalid JSON, non-list, unsupported role/schema, invalid tuple, and incomplete enumeration fail closed; supported empty list passes",
+        "exit_code": 0,
+        "tests_passed": 15
+      }
+    },
+    "EC_B3": {
+      "status": "CLOSED_CANDIDATE",
+      "red": {
+        "command": "python -m unittest tests.test_r4_contract_fixes.EC_B3RevalidationRedTests -v",
+        "observed": "R3 private constructor fabricated contexts, mutable context state, and evidence replacement was accepted",
+        "exit_code": 1
+      },
+      "green": {
+        "command": "python -m unittest tests.test_r4_contract_fixes.EC_B3RevalidationRedTests tests.test_ec_b3_zero_proof.ZeroProofFreshnessTests -v",
+        "observed": "sealed immutable context revalidates EC-B2 graph and derives proof identities from that graph",
+        "exit_code": 0,
+        "tests_passed": 7
+      }
+    },
+    "EC_B4": {
+      "status": "CLOSED_CANDIDATE",
+      "red": {
+        "command": "python -m unittest tests.test_r4_contract_fixes.EC_B4Exact317UniverseRedTests -v",
+        "observed": "R3 comparator accepted truncated/substituted/extra/duplicate/reordered target universes shared by both roles",
+        "exit_code": 1
+      },
+      "green": {
+        "command": "python -m unittest tests.test_r4_contract_fixes.EC_B4Exact317UniverseRedTests tests.test_ec_b4_transaction.CommitmentComparatorTests -v",
+        "observed": "only authenticated frozen exact317 order is accepted; affected IDs remain mechanically derived",
+        "exit_code": 0,
+        "tests_passed": 13
+      }
+    }
+  },
+  "complete_regression": {
+    "command": "python run_packaged_tests.py",
+    "exit_code": 0,
+    "tests_passed": 47,
+    "tests_failed": 0
+  },
+  "non_regression": {
+    "ec_b1": "PASS_PRESERVED",
+    "r3_baseline_byte_preserved": true,
+    "exact317": {"total": 317, "raw": 86, "candidate": 231},
+    "real_source_auth_targets_executed": 0,
+    "source_auth_executed": "NO",
+    "current86_p0_executed": "NO",
+    "current86_p1_executed": "NO",
+    "raw_level_human_decisions": 0,
+    "binding_publication": "NO",
+    "scoring_authority_mutation": "NO",
+    "binding_authority_mutation": "NO",
+    "denominator_change": "NO",
+    "accepted_binding_count_change": "NO",
+    "git_ref_mutation": "NO"
+  },
+  "tests_weakened": false
+}

@@ -1,0 +1,13 @@
+{
+  "schema": "FA1B2DE_CURRENT86_SOURCE_AUTH_COMMITMENT_COMPARATOR_TRANSACTION_R4",
+  "inherits": "04_isolation/COMMITMENT_COMPARATOR_TRANSACTION_CONTRACT_R3.json",
+  "frozen_target_manifest": "00_lineage/EXACT317_TARGET_MANIFEST.json",
+  "frozen_target_manifest_sha256": "d8d55d369fe433bf7b93a3c332b8ac9a517a9146b28fa223370ff3ec946955ac",
+  "frozen_target_order": "RAW before CANDIDATE; each side BYTEWISE_ASCENDING_UTF8 binding identity",
+  "primary_vector_must_equal_frozen_exact317": true,
+  "verifier_vector_must_equal_frozen_exact317": true,
+  "same_wrong_universe_rejected": true,
+  "comparator_derived_affected_target_ids": true,
+  "synthetic_backend_only": true,
+  "production_derivation": false
+}

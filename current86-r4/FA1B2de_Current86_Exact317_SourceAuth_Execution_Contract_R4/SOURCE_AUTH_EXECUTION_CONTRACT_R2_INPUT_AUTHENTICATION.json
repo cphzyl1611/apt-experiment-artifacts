@@ -1,0 +1,45 @@
+{
+  "schema": "FA1B2DE_CURRENT86_EXACT317_SOURCE_AUTH_EXECUTION_CONTRACT_R2_INPUT_AUTHENTICATION_V1",
+  "SOURCE_AUTH_EXECUTION_CONTRACT_R2_INPUT_AUTHENTICATION": "PASS",
+  "repository": "cphzyl1611/apt-experiment-artifacts",
+  "read_only_object_store": "/home/cph/fa1b2de-review-artifacts/.git",
+  "r1": {
+    "commit": "4a3f0d8e36029fa82572a79a4c8817a31184d82a",
+    "parent": "9cec0141fb9599ca879d5d992005921585f24cbb",
+    "tree": "14c1d6916b4d58f588e62505276e0ceaed3ef995",
+    "package_tree": "46f10444d5acb2ae94f3c78b9093a7447b0d9f46",
+    "package_internal_checksums": "PASS",
+    "package_sha256sums_sha256": "9bd56b17fc5b4a6fee01108a61026392e0db92982210db472d6de0129a5ea140"
+  },
+  "r4_governance": {
+    "commit": "9cec0141fb9599ca879d5d992005921585f24cbb",
+    "parent": "bc54c0feea1a8af346e2c70b39679cd01f4f3577",
+    "tree": "b1cca46922be1d6779aaf4b0282254bb2533959e",
+    "design_path": "current86-r4/fa1b2de-current86-canonical-source-authentication-governance-r4-patch/Design_FA1B2de_Current86_Canonical_Intrinsic_317_Source_Authentication_Governance_R4_PATCHED.md",
+    "design_blob": "b4fa8104643c12ed35f1de7128b19aa11f7184eb",
+    "design_sha256": "b499b4cfddd4f72e404dda72c423bfa3db98b0514af52773b9bbec5cce6e2cc0",
+    "authentication": "PASS"
+  },
+  "exact317": {
+    "audit_scope_id": "34551e904bafa71fb2fb6db33162e94ad41a08eca6c747d429c83760e09c1306",
+    "manifest_path": "/home/cph/experiment-artifacts/fa1b2de-current86-canonical-intrinsic-317-r1/CURRENT86_Canonical_Intrinsic_317_Exact_Targets.json",
+    "manifest_sha256": "d8d55d369fe433bf7b93a3c332b8ac9a517a9146b28fa223370ff3ec946955ac",
+    "source_auth_target_count": 317,
+    "raw_side_target_count": 86,
+    "candidate_side_target_count": 231,
+    "raw_binding_identity_set_sha256": "dc97465eba0d2fb1235cb93e47d8be57221b85c4a75c24b5f34c087ed379a4ed",
+    "candidate_binding_identity_set_sha256": "3f70daaecfae52ea24bcef669d00e0ec788f88000da31e07c28db866826780c1",
+    "target_ids_recomputed": true,
+    "target_order_recomputed_exact": true,
+    "population_identity_mutated": false
+  },
+  "preserved_authority": {
+    "source_class_fact_type_registry_id": "8cef6206dfc3581c3e7b6358bde7a36e90f4ba99078176cc0e5aff4b238298a7",
+    "source_class_fact_type_registry_sha256": "3df4262faa4137996d2ff8d163bcc665d5bed76b3d719e6ff66cf4154252d72f",
+    "project_scoring_authority": "18fd70d4a57f07a3e06242d9f0e077a4e6838120",
+    "project_binding_authority_baseline": "d309c01d6178a75cac88b6236d36179563a88239",
+    "project_accepted_bindings": "1045/1796"
+  },
+  "fresh_review_verdict": "BLOCKED",
+  "git_ref_mutation": "NO"
+}

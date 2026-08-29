@@ -1,0 +1,9 @@
+{
+  "schema": "FA1B2DE_CURRENT86_EXACT317_EC_B2_FAIL_CLOSED_AUTHORITY_EVALUATION_V1",
+  "dispatch_key": ["authority_role", "schema_or_contract_id", "evaluator_configuration_id"],
+  "supported_evaluator": "tools/frozen_authority_evaluator.py",
+  "parse_requirements": ["strict UTF-8", "strict JSON", "top-level list"],
+  "tuple_validation": "exact schema per dispatch key",
+  "invalid_or_unsupported_result": "FAIL_CLOSED",
+  "empty_result": "valid only after complete deterministic evaluation"
+}

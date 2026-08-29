@@ -1,0 +1,18 @@
+{
+  "schema": "FA1B2DE_CURRENT86_EXACT317_SOURCE_AUTH_EXECUTION_CONTRACT_R2_TO_R3_TDD_LOG_V1",
+  "authenticated_review_inputs": {
+    "manifest": "review_inputs/sourceauth-r2-fresh-review/SHA256SUMS.txt",
+    "review_markdown_sha256": "d3f9df3785c84c86a45b86337f072c62d577b2126c9085450a9983d58d9ec3ba",
+    "review_json_sha256": "041bd457c87487edb1bd050be6c294cbfc3d3cc7892a9673ebe8b1726380c16f",
+    "sha256sum_verification": "PASS"
+  },
+  "r2_baseline": {"retained_tests": 26, "retained_tests_status": "PASS", "r2_package_untouched": true},
+  "cycles": [
+    {"ec": "EC_B2", "defect_reproduction": "caller-injected self-hashed tuple accepted", "red": "R2_EC_B2_DEFECT_ACCEPTED 1", "root_boundary": "derive_machine_authority_context accepted expansion.tuples as normative", "green": "injected, omitted, extra, evaluator, artifact, stale, and no-evidence cases rejected"},
+    {"ec": "EC_B3", "defect_reproduction": "proof accepted against free-form synthetic context", "red": "R2_EC_B3_DEFECT_ACCEPTED True", "root_boundary": "zero-proof validators compared caller mapping", "green": "validated current derivation/evidence graph required; stale and mismatched proofs rejected"},
+    {"ec": "EC_B4", "defect_reproduction": "wrong singleton affected target accepted", "red": "R2_EC_B4_DEFECT_ACCEPTED ['wrong-target']", "root_boundary": "comparator only checked non-empty disagreement list", "green": "exact target/result vector comparison derives and requires canonical affected set"}
+  ],
+  "r3_regression_tests": {"count": 34, "status": "PASS"},
+  "deterministic_regeneration": {"command": "python3 tools/regenerate_metadata.py", "repeat_comparison": "PASS", "file_list_sha256": "d1636d13da23218516d278b4f0202478b7b2c4c09d70c76650cb117a85eba94b", "sha256sums_sha256": "3f7d2f083f124fbf785e961ce5caa660d382b2d275f089ce976976388dba583a"},
+  "execution_boundaries": {"real_source_auth_targets_executed": 0, "source_auth_executed": "NO", "current86_p0_executed": "NO", "current86_p1_executed": "NO", "raw_level_human_decisions": 0, "binding_publication": "NO"}
+}

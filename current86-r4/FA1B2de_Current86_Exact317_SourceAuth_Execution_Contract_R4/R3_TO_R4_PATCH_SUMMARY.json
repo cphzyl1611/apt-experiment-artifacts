@@ -1,0 +1,54 @@
+{
+  "schema": "FA1B2DE_CURRENT86_EXACT317_SOURCE_AUTH_EXECUTION_CONTRACT_R3_TO_R4_PATCH_SUMMARY_V1",
+  "r3_review_commit": "4654e59aac56b91687e4968ed3405024d9265c68",
+  "r2_parent_commit": "366603b98cc1cc082ce3a74e63243400c9e5c1c5",
+  "r3_package_directory": "FA1B2de_Current86_Exact317_SourceAuth_Execution_Contract_R3",
+  "r4_package_directory": "FA1B2de_Current86_Exact317_SourceAuth_Execution_Contract_R4",
+  "scope": "CURRENT86_EXACT317_SOURCE_AUTH_EXECUTION_CONTRACT_ONLY",
+  "changes": {
+    "EC_B2": ["strict UTF-8/JSON parsing", "exact role/schema/config dispatch", "schema-specific tuple validation", "zero-tuple success only after complete evaluation"],
+    "EC_B3": ["sealed immutable derivation context", "exact graph inputs retained", "freshness re-runs EC-B2 derivation", "proof IDs derived only from revalidated graph"],
+    "EC_B4": ["authenticated exact317 target manifest bundled", "both vectors equal frozen ordered IDs", "missing/extra/substituted/duplicate/reordered universes rejected", "affected IDs remain comparator-derived"]
+  },
+  "preserved": {
+    "ec_b1": "PASS_PRESERVED",
+    "r1_r2_r3_byte_for_byte_in_lineage": true,
+    "source_auth_target_count": 317,
+    "raw_side_target_count": 86,
+    "candidate_side_target_count": 231,
+    "governance_r4_redesign": false,
+    "p0_p1_contract_modified": false
+  },
+  "terminal": {
+    "source_auth_execution_contract_r4_status": "COMPLETE_CONTRACT_ONLY",
+    "ec_b1_exact_schema_and_cross_object_validation": "PASS_PRESERVED",
+    "ec_b2_fail_closed_schema_bound_authority_evaluation": "CLOSED_CANDIDATE",
+    "ec_b3_revalidated_immutable_current_derivation": "CLOSED_CANDIDATE",
+    "ec_b4_frozen_exact317_target_universe_binding": "CLOSED_CANDIDATE",
+    "source_auth_execution_readiness": "BLOCKED_MISSING_AUTHORITY_INPUTS",
+    "next_action": "FRESH_TARGETED_INDEPENDENT_REVIEW_OF_CURRENT86_EXACT317_SOURCE_AUTH_EXECUTION_CONTRACT_R4"
+  },
+  "required_terminal": {
+    "SOURCE_AUTH_EXECUTION_CONTRACT_R4_STATUS": "COMPLETE_CONTRACT_ONLY",
+    "EC_B1_EXACT_SCHEMA_AND_CROSS_OBJECT_VALIDATION": "PASS_PRESERVED",
+    "EC_B2_FAIL_CLOSED_SCHEMA_BOUND_AUTHORITY_EVALUATION": "CLOSED_CANDIDATE",
+    "EC_B3_REVALIDATED_IMMUTABLE_CURRENT_DERIVATION": "CLOSED_CANDIDATE",
+    "EC_B4_FROZEN_EXACT317_TARGET_UNIVERSE_BINDING": "CLOSED_CANDIDATE",
+    "SOURCE_AUTH_EXECUTION_READINESS": "BLOCKED_MISSING_AUTHORITY_INPUTS",
+    "NEXT_ACTION": "FRESH_TARGETED_INDEPENDENT_REVIEW_OF_CURRENT86_EXACT317_SOURCE_AUTH_EXECUTION_CONTRACT_R4",
+    "STOP": true
+  },
+  "hard_boundaries": {
+    "real_source_auth_targets_executed": 0,
+    "source_auth_executed": "NO",
+    "current86_p0_executed": "NO",
+    "current86_p1_executed": "NO",
+    "raw_level_human_decisions": 0,
+    "binding_publication": "NO",
+    "scoring_authority_mutation": "NO",
+    "binding_authority_mutation": "NO",
+    "denominator_change": "NO",
+    "accepted_binding_count_change": "NO",
+    "git_ref_mutation": "NO"
+  }
+}

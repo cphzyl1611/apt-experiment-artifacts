@@ -1,0 +1,20 @@
+{
+  "schema": "FA1B2DE_CURRENT86_EXACT317_SOURCE_AUTH_EXECUTION_CONTRACT_R2_TARGET_CONSERVATION_V1",
+  "status": "PASS_CONTRACT_ONLY",
+  "audit_scope_id": "34551e904bafa71fb2fb6db33162e94ad41a08eca6c747d429c83760e09c1306",
+  "exact_target_manifest_sha256": "d8d55d369fe433bf7b93a3c332b8ac9a517a9146b28fa223370ff3ec946955ac",
+  "source_auth_target_count": 317,
+  "raw_side_target_count": 86,
+  "candidate_side_target_count": 231,
+  "equation": "86 + 231 = 317",
+  "raw_binding_identity_set_sha256": "dc97465eba0d2fb1235cb93e47d8be57221b85c4a75c24b5f34c087ed379a4ed",
+  "candidate_binding_identity_set_sha256": "3f70daaecfae52ea24bcef669d00e0ec788f88000da31e07c28db866826780c1",
+  "target_ids_changed": false,
+  "target_order_changed": false,
+  "current_contract_only_partition": {"NOT_EXECUTED_PENDING_SOURCE_AUTH_GOVERNANCE": 317},
+  "future_terminal_states": ["SOURCE_AUTHENTICATED","BLOCKED_NORMATIVE_ADMISSION","BLOCKED_SOURCE_OBJECT","BLOCKED_FIELD_PIN","BLOCKED_PROVENANCE","BLOCKED_INDEPENDENT_VERIFICATION"],
+  "future_terminal_sum": "SOURCE_AUTHENTICATED + BLOCKED_NORMATIVE_ADMISSION + BLOCKED_SOURCE_OBJECT + BLOCKED_FIELD_PIN + BLOCKED_PROVENANCE + BLOCKED_INDEPENDENT_VERIFICATION = 317",
+  "exactly_one_terminal_state_per_target": true,
+  "real_target_terminal_records_materialized": 0,
+  "real_source_auth_targets_executed": 0
+}

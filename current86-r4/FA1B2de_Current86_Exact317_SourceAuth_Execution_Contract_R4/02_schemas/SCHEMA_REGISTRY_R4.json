@@ -1,0 +1,16 @@
+{
+  "schema": "FA1B2DE_CURRENT86_EXACT317_SOURCE_AUTH_SCHEMA_REGISTRY_R4",
+  "base_registry": "02_schemas/SCHEMA_REGISTRY_R3.json",
+  "additional_properties": false,
+  "authority_dispatch": "exact authenticated authority_role + schema_or_contract_id + evaluator_configuration_id",
+  "authority_artifact_failures": ["INVALID_UTF8", "INVALID_JSON", "AUTHORITY_TOP_LEVEL_NOT_LIST", "UNSUPPORTED_AUTHORITY_ROLE_OR_SCHEMA", "AUTHORITY_TUPLE_SCHEMA_INVALID", "INCOMPLETE_AUTHORITY_ENUMERATION"],
+  "current_derivation": "EC_B2_GRAPH_REVALIDATED_FROM_SEALED_IMMUTABLE_INPUTS",
+  "target_universe": {
+    "manifest": "00_lineage/EXACT317_TARGET_MANIFEST.json",
+    "manifest_sha256": "d8d55d369fe433bf7b93a3c332b8ac9a517a9146b28fa223370ff3ec946955ac",
+    "ordered_count": 317,
+    "raw_count": 86,
+    "candidate_count": 231
+  },
+  "r4_status": "COMPLETE_CONTRACT_ONLY"
+}

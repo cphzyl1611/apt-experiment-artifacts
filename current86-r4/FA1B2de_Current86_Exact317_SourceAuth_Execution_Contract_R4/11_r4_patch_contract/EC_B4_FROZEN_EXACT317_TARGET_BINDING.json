@@ -1,0 +1,12 @@
+{
+  "schema": "FA1B2DE_CURRENT86_EXACT317_EC_B4_FROZEN_TARGET_BINDING_V1",
+  "authenticated_manifest": "00_lineage/EXACT317_TARGET_MANIFEST.json",
+  "manifest_sha256": "d8d55d369fe433bf7b93a3c332b8ac9a517a9146b28fa223370ff3ec946955ac",
+  "ordered_target_count": 317,
+  "raw_side_count": 86,
+  "candidate_side_count": 231,
+  "primary_vector": "EXACT_AUTHENTICATED_ORDER_REQUIRED",
+  "verifier_vector": "EXACT_AUTHENTICATED_ORDER_REQUIRED",
+  "missing_extra_substituted_duplicate_reordered": "REJECT",
+  "affected_target_ids": "DERIVE_ONLY_FROM_PRIMARY_VERIFIER_RESULT_COMPARISON"
+}

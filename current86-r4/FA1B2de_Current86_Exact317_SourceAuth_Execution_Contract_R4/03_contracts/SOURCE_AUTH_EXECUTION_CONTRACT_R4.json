@@ -1,0 +1,41 @@
+{
+  "schema": "FA1B2DE_CURRENT86_EXACT317_SOURCE_AUTH_EXECUTION_CONTRACT_R4",
+  "mode": "COMPLETE_CONTRACT_ONLY",
+  "scope": "CURRENT86_CANONICAL_INTRINSIC_317_SOURCE_BINDING_RECONSTRUCTION_ONLY",
+  "audit_scope_id": "34551e904bafa71fb2fb6db33162e94ad41a08eca6c747d429c83760e09c1306",
+  "exact_target_manifest_sha256": "d8d55d369fe433bf7b93a3c332b8ac9a517a9146b28fa223370ff3ec946955ac",
+  "target_population": {
+    "source_auth_target_count": 317,
+    "raw_side_target_count": 86,
+    "candidate_side_target_count": 231,
+    "ordered_target_ids_source": "00_lineage/EXACT317_TARGET_MANIFEST.json"
+  },
+  "ec_b1_exact_schema_and_cross_object_validation": "PASS_PRESERVED",
+  "ec_b2_fail_closed_schema_bound_authority_evaluation": "CLOSED_CANDIDATE",
+  "ec_b3_revalidated_immutable_current_derivation": "CLOSED_CANDIDATE",
+  "ec_b4_frozen_exact317_target_universe_binding": "CLOSED_CANDIDATE",
+  "machine_authority_evaluator": {
+    "implementation_id": "FA1B2DE_FROZEN_MACHINE_AUTHORITY_EVALUATOR_R4",
+    "implementation_module": "tools/frozen_authority_evaluator.py",
+    "configuration_id": "FA1B2DE_MACHINE_AUTHORITY_EVALUATOR_CONFIG_R4",
+    "dispatch_key": ["authority_role", "schema_or_contract_id", "evaluator_configuration_id"],
+    "malformed_artifact": "FAIL_CLOSED",
+    "zero_tuple_requires_complete_supported_evaluation": true
+  },
+  "current_derivation": {
+    "graph_revalidation": "REEXECUTE_EC_B2_FROM_SEALED_GRAPH_INPUTS",
+    "context_mutability": "IMMUTABLE",
+    "proof_identity_source": "REVALIDATED_GRAPH_ONLY"
+  },
+  "commitment_transaction": {
+    "target_universe_binding": "AUTHENTICATED_FROZEN_EXACT317_ORDER",
+    "primary_and_verifier_vectors": "MUST_EQUAL_EXACT317_ORDER",
+    "affected_target_ids": "DERIVED_FROM_VECTOR_RESULT_COMPARISON"
+  },
+  "production_authority_roots": "MISSING_AND_FAIL_CLOSED",
+  "source_auth_execution_readiness": "BLOCKED_MISSING_AUTHORITY_INPUTS",
+  "real_source_auth_targets_executed": 0,
+  "source_auth_executed": "NO",
+  "current86_p0_executed": "NO",
+  "current86_p1_executed": "NO"
+}

@@ -1,0 +1,9 @@
+{
+  "schema": "FA1B2DE_CURRENT86_EXACT317_EC_B3_IMMUTABLE_CURRENT_DERIVATION_V1",
+  "context": "sealed read-only mapping",
+  "graph_inputs": ["manifest", "authority_records", "expansion_records", "required_roles", "evaluation_contract_id", "evaluation_evidence", "admission_record"],
+  "freshness_validation": "re-run EC-B2 using exact sealed graph inputs",
+  "proof_identity_source": "revalidated graph",
+  "private_constructor_fabrication": "REJECT",
+  "post_derivation_mutation": "REJECT"
+}

@@ -1,0 +1,22 @@
+{
+  "schema": "FA1B2DE_CURRENT86_EXACT317_SOURCE_AUTH_EXECUTION_CONTRACT_R3_REVIEW_INPUT_AUTHENTICATION_V1",
+  "review_input_directory": "review_inputs/sourceauth-exec-r3-fresh-review",
+  "directory_included_in_r4_package": false,
+  "required_files": [
+    {
+      "relative_path": "FA1B2de_Current86_Exact317_SourceAuth_Execution_Contract_R3_Fresh_Targeted_Independent_Review.json",
+      "sha256": "9207fdd887ec34edf3709ff0648476750f4aab84c32088611a63ecee2d53fb47"
+    },
+    {
+      "relative_path": "FA1B2de_Current86_Exact317_SourceAuth_Execution_Contract_R3_Fresh_Targeted_Independent_Review.md",
+      "sha256": "7934ff18a582ad98388f78af5232f8dcc049124cc0a3bb6dd8d6c5c63cfac64d"
+    },
+    {
+      "relative_path": "Prompt_FA1B2de_Current86_Exact317_SourceAuth_Execution_Contract_R3_to_R4_Minimal_Remediation.md",
+      "sha256": "6844a302e0fee3cb40cb30ff8c6fbe79f3e9a6be349ee1f325f4a0992c4316d7"
+    }
+  ],
+  "authentication": "PASS",
+  "review_verdict": "BLOCKED",
+  "next_action": "PATCH_ONLY_THE_THREE_REMAINING_R3_SOURCE_AUTH_EXECUTION_CONTRACT_DEFECTS_AND_MATERIALIZE_R4_CONTRACT_ONLY"
+}

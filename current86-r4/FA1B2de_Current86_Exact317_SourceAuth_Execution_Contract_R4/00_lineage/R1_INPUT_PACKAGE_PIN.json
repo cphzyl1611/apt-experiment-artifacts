@@ -1,0 +1,21 @@
+{
+  "schema": "FA1B2DE_CURRENT86_SOURCE_AUTH_R1_TO_R2_LINEAGE_PIN_V1",
+  "repository": "cphzyl1611/apt-experiment-artifacts",
+  "r1_commit": "4a3f0d8e36029fa82572a79a4c8817a31184d82a",
+  "r1_parent": "9cec0141fb9599ca879d5d992005921585f24cbb",
+  "r1_tree": "14c1d6916b4d58f588e62505276e0ceaed3ef995",
+  "r1_package_tree": "46f10444d5acb2ae94f3c78b9093a7447b0d9f46",
+  "r1_package_path": "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Execution_Contract_R1",
+  "r1_file_count": 25,
+  "r1_checksum_entry_count": 24,
+  "r1_internal_checksum_mismatch_count": 0,
+  "r1_sha256sums_sha256": "9bd56b17fc5b4a6fee01108a61026392e0db92982210db472d6de0129a5ea140",
+  "r1_file_list_sha256": "b06c297e4850cea23ffe170daebce52c3a7cf963c0a2e32880c78a611469136b",
+  "r4_governance_commit": "9cec0141fb9599ca879d5d992005921585f24cbb",
+  "r4_governance_parent": "bc54c0feea1a8af346e2c70b39679cd01f4f3577",
+  "r4_tree": "b1cca46922be1d6779aaf4b0282254bb2533959e",
+  "r4_design_blob": "b4fa8104643c12ed35f1de7128b19aa11f7184eb",
+  "r4_design_sha256": "b499b4cfddd4f72e404dda72c423bfa3db98b0514af52773b9bbec5cce6e2cc0",
+  "r1_package_preserved_by_exact_lineage": true,
+  "git_ref_mutation": "NO"
+}

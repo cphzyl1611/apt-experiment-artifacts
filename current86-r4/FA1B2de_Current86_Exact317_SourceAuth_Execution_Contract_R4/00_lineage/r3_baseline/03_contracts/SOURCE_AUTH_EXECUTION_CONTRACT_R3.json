@@ -1,0 +1,21 @@
+{
+  "schema": "FA1B2DE_CURRENT86_EXACT317_SOURCE_AUTH_EXECUTION_CONTRACT_R3",
+  "mode": "COMPLETE_CONTRACT_ONLY",
+  "scope": "CURRENT86_CANONICAL_INTRINSIC_317_SOURCE_BINDING_RECONSTRUCTION_ONLY",
+  "audit_scope_id": "34551e904bafa71fb2fb6db33162e94ad41a08eca6c747d429c83760e09c1306",
+  "ec_b1_exact_schema_and_cross_object_validation": "CLOSED_CANDIDATE",
+  "ec_b2_machine_authority_root_authentication": "CLOSED_CANDIDATE",
+  "ec_b3_no_machine_proof_freshness_binding": "CLOSED_CANDIDATE",
+  "ec_b4_sa_b3_commitment_comparator": "CLOSED_CANDIDATE",
+  "sa_b1_executable_contract": "CLOSED_CANDIDATE",
+  "sa_b2_executable_contract": "CLOSED_CANDIDATE",
+  "sa_b3_executable_isolation": "CLOSED_CANDIDATE",
+  "machine_authority_interface": "authenticated artifact bytes plus frozen evaluator/configuration/run identity; supplied expansions are independently recomputed",
+  "machine_authority_evaluator": {"implementation_id": "FA1B2DE_FROZEN_MACHINE_AUTHORITY_EVALUATOR_R3", "implementation_module": "tools/frozen_authority_evaluator.py", "configuration_id": "FA1B2DE_MACHINE_AUTHORITY_EVALUATOR_CONFIG_R3", "artifact_bytes_required": true},
+  "zero_proof_freshness": ["machine_field_pin_authority_input_set_id","field_pin_authority_evaluation_contract_id","machine_authority_evaluation_evidence_id","admission_record_id","admission_tuple_id","admitted_exact_RFC6901_pointer_utf8_sha256"],
+  "commitment_transaction": ["primary commitment frozen","primary teardown","verifier without primary private roots","verifier commitment frozen","comparator derives exact affected target set from ordered vectors"],
+  "production_authority_roots": "MISSING_AND_FAIL_CLOSED",
+  "real_source_auth_targets_executed": 0,
+  "real_human_records_created": 0,
+  "source_auth_execution_readiness": "BLOCKED_MISSING_AUTHORITY_INPUTS"
+}

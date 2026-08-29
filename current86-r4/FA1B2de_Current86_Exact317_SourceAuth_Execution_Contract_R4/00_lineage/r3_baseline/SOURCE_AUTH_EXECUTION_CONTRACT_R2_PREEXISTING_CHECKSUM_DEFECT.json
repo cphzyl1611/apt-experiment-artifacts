@@ -1,0 +1,10 @@
+{
+  "schema": "FA1B2DE_CURRENT86_SOURCE_AUTH_R2_PREEXISTING_CHECKSUM_DEFECT_V1",
+  "classification": "UNRELATED_HISTORICAL_CHECKSUM_DEFECT",
+  "affected_workflow": "prior_BSO_A2_candidate_materialization",
+  "expected_sha256": "913a661016f0a26910ad233e3a2cb8df980e7bae03b30b3e5d0febec84cd932f",
+  "observed_sha256": "73ccea92152cea80bc0868f44ee34d6e4e099043a5562b13901e126c92d67553",
+  "repaired": false,
+  "reason": "Outside source-auth R2 scope; frozen old workflow was not modified.",
+  "r2_package_affected": false
+}

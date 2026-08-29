@@ -1,0 +1,12 @@
+{
+  "schema": "FA1B2DE_CURRENT86_SOURCE_AUTH_CANONICALIZATION_R2_INHERITED",
+  "project_canonical_json": "PROJECT_CANONICAL_JSON_V1",
+  "object_key_order": "BYTEWISE_ASCENDING_UTF8",
+  "array_order": "PRESERVE",
+  "unicode_normalization": "NONE",
+  "rfc6901": "inherited R1 exact string-form parsing/traversal with ~0/~1 and strict array index",
+  "scalar_format": "FA1B2DE_CANONICAL_INTRINSIC_SCALAR_V1",
+  "duplicate_json_keys": "REJECT",
+  "float_nonfinite": "REJECT",
+  "identity": "lowercase_hex(SHA256(PROJECT_CANONICAL_JSON_V1(all exact members except identity member)))"
+}
