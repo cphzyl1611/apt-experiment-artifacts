@@ -1,0 +1,59 @@
+{
+  "operation": "PROVX_R0_OFFICIAL_ARTIFACT_ACQUISITION_AND_AUTHENTICATION",
+  "record_id": 20310415,
+  "doi": "10.5281/zenodo.20310415",
+  "canonical_record_url": "https://zenodo.org/records/20310415",
+  "doi_resolution_url": "https://doi.org/10.5281/zenodo.20310415",
+  "metadata_url": "https://zenodo.org/api/records/20310415",
+  "metadata_capture": {
+    "path": "PROVX_R0_ZENODO_RECORD_METADATA.json",
+    "sha256": "b42f8ec92ca6c6d99f4692929994af71aa1e9fdd6a8aabd073889c22d2a8d052",
+    "bytes": 4380,
+    "captured_utc": "2026-08-29T15:07:25Z"
+  },
+  "record_identity": {
+    "title": "Artifact for Paper \"Cutting the Fuse: Actionable APT Attack Blocking in Provenance-based IDS\"",
+    "publication_date": "2026-05-20",
+    "modified": "2026-05-31T08:28:58.404925+00:00",
+    "version": "record 20310415; concept record 20310414; version index 0; latest true",
+    "creators": [{"name": "Wu, Weiheng", "orcid": "0009-0001-3114-7422"}],
+    "license": "MIT (mit-license)",
+    "access_right": "open",
+    "resource_type": "Software",
+    "identity_check": "PASS: title and description identify the ProvX artifact accompanying the cited paper"
+  },
+  "files": [
+    {
+      "key": "ProvX-USENIX-artifact.zip",
+      "download_url": "https://zenodo.org/records/20310415/files/ProvX-USENIX-artifact.zip",
+      "path": "downloads/ProvX-USENIX-artifact.zip",
+      "published_bytes": 11549911,
+      "downloaded_bytes": 11549911,
+      "published_checksum": "md5:72467df3c22ba706cb33adfbd87a0681",
+      "downloaded_md5": "72467df3c22ba706cb33adfbd87a0681",
+      "downloaded_sha256": "a46fe7dec840ea28d9f8acf8771879af7204e0d622e24d12a99ad95f4187e3ff",
+      "checksum_comparison": "PASS: published MD5 matches downloaded MD5",
+      "byte_comparison": "PASS: published byte length matches downloaded byte length"
+    }
+  ],
+  "download_policy": {
+    "only_cited_record": true,
+    "only_published_files": true,
+    "darpa_dataset_downloaded": false,
+    "dependencies_installed": false,
+    "artifact_executed": false,
+    "existing_files_overwritten": false
+  },
+  "extraction_state_at_manifest_creation": "MANIFEST CREATED BEFORE EXTRACTION; state subsequently completed",
+  "extraction": {
+    "directory": "extracted/",
+    "archive_member_count": 68,
+    "extracted_regular_file_count": 57,
+    "project_regular_file_count_excluding_macos_metadata": 23,
+    "uncompressed_bytes_from_archive_audit": 167058031,
+    "completed": true,
+    "safety_audit": "PROVX_R0_ARCHIVE_SAFETY_AUDIT.json",
+    "file_list": "PROVX_R0_EXTRACTED_FILE_LIST.txt",
+    "sha256sums": "PROVX_R0_EXTRACTED_SHA256SUMS.txt"
+  }
+}

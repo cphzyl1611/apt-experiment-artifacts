@@ -1,0 +1,12 @@
+{
+  "captured_at_utc": "2026-08-29T15:05:47.368161+00:00",
+  "hostname": "UBU-MONITOR01",
+  "boot_id": "b5116b9e-9bef-4c8b-a02a-be618de984de",
+  "interfaces": [{"name": "lo", "flags": ["LOOPBACK", "UP", "LOWER_UP"], "addresses": [{"family": "inet", "local": "127.0.0.1", "prefixlen": 8}, {"family": "inet6", "local": "::1", "prefixlen": 128}]},{"name": "ens33", "flags": ["BROADCAST", "MULTICAST", "UP", "LOWER_UP"], "addresses": [{"family": "inet", "local": "192.168.93.128", "prefixlen": 24}, {"family": "inet6", "local": "fe80::e8dc:18d0:c68f:330a", "prefixlen": 64}]}],
+  "named_netns": [],
+  "mininet_or_test_processes": ["    841       1 root     S<s  ovsdb-server    ovsdb-server /etc/openvswitch/conf.db -vconsole:emer -vsyslog:err -vfile:info --remote=punix:/var/run/openvswitch/db.sock --private-key=db:Open_vSwitch,SSL,private_key --certificate=db:Open_vSwitch,SSL,certificate --bootstrap-ca-cert=db:Open_vSwitch,SSL,ca_cert --no-chdir --log-file=/var/log/openvswitch/ovsdb-server.log --pidfile=/var/run/openvswitch/ovsdb-server.pid --detach","    907       1 root     S<Ls ovs-vswitchd    ovs-vswitchd unix:/var/run/openvswitch/db.sock -vconsole:emer -vsyslog:err -vfile:info --mlockall --no-chdir --log-file=/var/log/openvswitch/ovs-vswitchd.log --pidfile=/var/run/openvswitch/ovs-vswitchd.pid --detach"],
+  "ovs_bridge_state": "ovs-vsctl: unix:/var/run/openvswitch/db.sock: database connection failed (Permission denied)\n",
+  "run_result": {"events": [], "run_id": "e1a-run-20260829", "status": "not_started", "topology": {"actions": ["echo", "temp-file create/read/delete", "ping", "loopback TCP socket"], "controller": null, "hosts": ["h1", "h2"], "ips": {"h1": "10.0.0.1/24", "h2": "10.0.0.2/24"}, "macs": {"h1": "00:00:00:00:01:01", "h2": "00:00:00:00:01:02"}, "nat_or_external_attachment": false, "switches": ["s1"]}},
+  "broad_cleanup_executed": false,
+  "stale_run_state_created": false
+}

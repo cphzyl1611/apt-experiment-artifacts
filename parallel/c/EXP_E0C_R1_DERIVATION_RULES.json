@@ -1,0 +1,117 @@
+{
+  "provenance_contract": "Every non-UNKNOWN r1_enrichment field has planning_field_provenance entries containing source_field_path, exact_source_value, and derivation_rule_id.",
+  "rules": [
+    {
+      "fields": [
+        "named_protocols_or_services"
+      ],
+      "id": "R1-NAMED-PROTOCOL-TOKEN",
+      "rule": "Match an allow-listed protocol/service token in exact source wording; return canonical token.",
+      "source_fields": [
+        "name",
+        "desc"
+      ]
+    },
+    {
+      "fields": [
+        "explicit_tool_or_malware_names"
+      ],
+      "id": "R1-EXPLICIT-NAMED-SOFTWARE-MARKER",
+      "rule": "Retain only visibly named uppercase/mixed software terms adjacent to explicit tool/malware marker wording; otherwise UNKNOWN.",
+      "source_fields": [
+        "name",
+        "desc"
+      ]
+    },
+    {
+      "fields": [
+        "primary_execution_archetype"
+      ],
+      "id": "R1-ARCHETYPE-*",
+      "rule": "Apply deterministic action_type branch and conservative lexical precedence; do not create scoring units.",
+      "source_fields": [
+        "action_type",
+        "name",
+        "desc"
+      ]
+    },
+    {
+      "fields": [
+        "behavior_scope"
+      ],
+      "id": "R1-BEHAVIOR-*",
+      "rule": "Classify host-local, network, or mixed scope only from source action type and exact network/command lexemes.",
+      "source_fields": [
+        "action_type",
+        "name",
+        "desc"
+      ]
+    },
+    {
+      "fields": [
+        "resource_classes"
+      ],
+      "id": "R1-RESOURCE-ACTION-TYPE-OR-LEXEME",
+      "rule": "Add only resource classes indicated by action type or exact source lexemes.",
+      "source_fields": [
+        "action_type",
+        "name",
+        "desc"
+      ]
+    },
+    {
+      "fields": [
+        "requires_*"
+      ],
+      "id": "R1-FLAG-*",
+      "rule": "Set conservative planning booleans from source type, explicit OS, and exact lexical indicators; flags are requirements, not observations.",
+      "source_fields": [
+        "action_type",
+        "os",
+        "name",
+        "desc"
+      ]
+    },
+    {
+      "fields": [
+        "secondary_prerequisite_tags"
+      ],
+      "id": "R1-SECONDARY-TAG-*",
+      "rule": "Project true planning flags and explicit protocol tokens into reusable prerequisite tags.",
+      "source_fields": [
+        "action_type",
+        "os",
+        "name"
+      ]
+    },
+    {
+      "fields": [
+        "candidate_execution_mode_for_design",
+        "candidate_execution_rationale",
+        "defensive_equivalence_constraints",
+        "telemetry_equivalence_constraints"
+      ],
+      "id": "R1-CANDIDATE-*",
+      "rule": "Select native, emulated, synthetic, manual, or UNKNOWN design candidate by source action type and safety markers; never authorize execution.",
+      "source_fields": [
+        "action_type",
+        "name",
+        "desc"
+      ]
+    },
+    {
+      "fields": [
+        "provx_candidate_observation_surface"
+      ],
+      "id": "R1-PROVX-CANDIDATE-SURFACE-FROM-SOURCE-TYPE",
+      "rule": "List candidate telemetry surface labels without asserting PROVX detectability, localization, or causal edges.",
+      "source_fields": [
+        "action_type",
+        "name",
+        "desc"
+      ]
+    }
+  ],
+  "schema_version": "exp-e0c-r1-derivation-rules-v1",
+  "unsupported_value": "UNKNOWN"
+}

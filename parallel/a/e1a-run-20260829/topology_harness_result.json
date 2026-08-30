@@ -1,0 +1,30 @@
+{
+  "events": [],
+  "run_id": "e1a-run-20260829",
+  "status": "not_started",
+  "topology": {
+    "actions": [
+      "echo",
+      "temp-file create/read/delete",
+      "ping",
+      "loopback TCP socket"
+    ],
+    "controller": null,
+    "hosts": [
+      "h1",
+      "h2"
+    ],
+    "ips": {
+      "h1": "10.0.0.1/24",
+      "h2": "10.0.0.2/24"
+    },
+    "macs": {
+      "h1": "00:00:00:00:01:01",
+      "h2": "00:00:00:00:01:02"
+    },
+    "nat_or_external_attachment": false,
+    "switches": [
+      "s1"
+    ]
+  }
+}

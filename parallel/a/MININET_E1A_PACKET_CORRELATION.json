@@ -1,0 +1,11 @@
+{
+  "run_id": "e1a-run-20260829",
+  "capture_available": false,
+  "capture_attempted": false,
+  "tcpdump": {"installed": true, "version": "4.99.1"},
+  "reason": "The topology could not start because Mininet requires root and sudo needs an interactive password; no packet evidence is fabricated.",
+  "fields_to_bind_when_privileged": ["logical_host_id", "interface", "IP", "MAC", "socket_tuple", "packet_timestamp", "run_id"],
+  "exact_human_topology_command": "sudo /usr/bin/python3 /home/cph/experiment-parallel/e0-a/e1a-run-20260829/e1a_benign_topology.py",
+  "exact_human_capture_command": "sudo timeout 20s tcpdump -i any -nn -tttt -w /home/cph/experiment-parallel/e0-a/e1a-run-20260829/benign-topology.pcap '(net 10.0.0.0/24 or (host 127.0.0.1 and tcp))'",
+  "capture_scope": "benign E1A topology traffic only; do not use for attack or benchmark scoring"
+}

@@ -1,0 +1,19 @@
+{
+  "run_id": "e1a-run-20260829",
+  "captured_at_utc": "2026-08-29T15:05:47.368161+00:00",
+  "run_status": "blocked_before_topology_creation",
+  "topology_processes_created": 0,
+  "topology_namespaces_created": 0,
+  "topology_interfaces_created": 0,
+  "interfaces_after": ["lo", "ens33 (192.168.93.128/24, VMware NAT)"],
+  "named_netns_after": [],
+  "mininet_or_test_processes_after": ["pre-existing ovsdb-server PID 841", "pre-existing ovs-vswitchd PID 907"],
+  "ovs_bridge_state_after": {"status": "unreadable_unprivileged", "stderr": "ovs-vsctl: unix:/var/run/openvswitch/db.sock: database connection failed (Permission denied)"},
+  "pre_post_state_comparison": "No topology state change observed; interfaces and named namespace list remain at baseline.",
+  "run_process_cleanup": "not_required; no run process was created",
+  "broad_cleanup_executed": false,
+  "mn_c_executed": false,
+  "stale_run_state_created": false,
+  "historical_stale_markers_used_as_live_evidence": false,
+  "post_state_source": "e1a-run-20260829/post_cleanup_state.json"
+}

@@ -1,0 +1,28 @@
+{
+  "run_id": "e1a-run-20260829",
+  "run_directory": "/home/cph/experiment-parallel/e0-a/e1a-run-20260829",
+  "captured_at_utc": "2026-08-29T15:03:10.877997+00:00",
+  "hostname": "UBU-MONITOR01",
+  "boot_id": "b5116b9e-9bef-4c8b-a02a-be618de984de",
+  "identity": "uid=1000(cph) gid=1000(cph) groups include sudo and lxd",
+  "sudo_noninteractive": false,
+  "interfaces": [
+    {"name": "lo", "addresses": ["127.0.0.1/8", "::1/128"]},
+    {"name": "ens33", "addresses": ["192.168.93.128/24", "fe80::e8dc:18d0:c68f:330a/64"], "dependency": "VMware NAT"}
+  ],
+  "named_netns": [],
+  "mininet_or_test_processes": [
+    {"pid": 841, "user": "root", "command": "ovsdb-server", "scope": "pre-existing"},
+    {"pid": 907, "user": "root", "command": "ovs-vswitchd", "scope": "pre-existing"}
+  ],
+  "ovs_bridge_state": {"status": "unreadable_unprivileged", "stderr": "ovs-vsctl: unix:/var/run/openvswitch/db.sock: database connection failed (Permission denied)"},
+  "git_status": {
+    "experiment": "feature/s1-empirical-subset-protocol; pre-existing local modifications/untracked files",
+    "apt_defense_mininet": "main; pre-existing untracked controller/upstream content"
+  },
+  "historical_markers_ignored": [
+    "/home/cph/apt-defense-mininet/.active_g2_run",
+    "/home/cph/apt-defense-mininet/.active_g3_run",
+    "/home/cph/apt-defense-mininet/.active_g4_run"
+  ]
+}

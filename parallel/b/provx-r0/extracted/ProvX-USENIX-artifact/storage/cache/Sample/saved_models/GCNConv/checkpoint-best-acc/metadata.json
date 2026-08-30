@@ -1,0 +1,27 @@
+{
+  "detector_config": {
+    "gnn_model": "GCNConv",
+    "gnn_hidden_size": 64,
+    "gnn_feature_dim_size": 256,
+    "num_gnn_layers": 2,
+    "graph_pooling": "mean",
+    "dropout_rate": 0.1,
+    "num_classes": 2,
+    "residual": false,
+    "gat_heads": 8,
+    "graphsage_aggr": "mean"
+  },
+  "train_config": {
+    "epochs": 50,
+    "batch_size": 32,
+    "learning_rate": 0.005,
+    "weight_decay": 0.0,
+    "adam_epsilon": 1e-08,
+    "max_grad_norm": 1.0,
+    "seed": 1,
+    "use_weighted_sampler": true,
+    "sampler_multiplier": 3,
+    "limit_train_batches": 0,
+    "limit_eval_batches": 0
+  }
+}

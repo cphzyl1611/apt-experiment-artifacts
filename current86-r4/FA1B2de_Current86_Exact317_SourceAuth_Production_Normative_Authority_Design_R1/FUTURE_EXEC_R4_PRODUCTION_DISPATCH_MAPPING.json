@@ -1,0 +1,32 @@
+{
+  "schema": "FA1B2DE_CURRENT86_FUTURE_EXEC_R4_PRODUCTION_DISPATCH_MAPPING_R1",
+  "status": "NON_EXECUTABLE_UNTIL_HUMAN_GOVERNANCE_APPROVAL",
+  "base_exec_r4_contract": {
+    "path": "FA1B2de_Current86_Exact317_SourceAuth_Execution_Contract_R4/03_contracts/SOURCE_AUTH_EXECUTION_CONTRACT_R4.json",
+    "sha256": "ae7eb74eb9e7dc1f9f474bf52902d4d8d723f680f2c077b13926b331a46deb1c",
+    "schema_registry_path": "FA1B2de_Current86_Exact317_SourceAuth_Execution_Contract_R4/02_schemas/SCHEMA_REGISTRY_R4.json",
+    "schema_registry_sha256": "7f0af7acb019cb0a8f112116ca7a582e02a0219a5e55b0b77c8318799ac93818"
+  },
+  "evaluator_implementation_id": "FA1B2DE_FROZEN_MACHINE_AUTHORITY_EVALUATOR_R4",
+  "evaluator_configuration_id": "FA1B2DE_MACHINE_AUTHORITY_EVALUATOR_CONFIG_R4",
+  "dispatch_key": [
+    "authority_role",
+    "schema_or_contract_id",
+    "evaluator_configuration_id"
+  ],
+  "exact_proposed_rule_entries": [],
+  "pending_group_ids": [
+    "e2cc647191b6a196e450ad5a1c096d688feb0c3ae5cd623def218f2ef512d663",
+    "bcf1da5d5b3e21911f2e9fa506932f80b2aee743ff5a02f32f1af6c135de8bce",
+    "4bede54ca814a6b6d44ddf4139e22fa5f3976cc10f7f9e19a8c250128844f389"
+  ],
+  "integration_requirements": [
+    "after exact human-approved production schema/rule IDs and artifact hashes exist, add only those exact entries",
+    "fresh targeted EXEC-R4 production-dispatch integration review required",
+    "do not overwrite EXEC-R4",
+    "do not treat synthetic-schema-r2 as production",
+    "all unresolved identity values remain blockers"
+  ],
+  "current_exec_r4_untouched": true,
+  "source_auth_authorized": false
+}

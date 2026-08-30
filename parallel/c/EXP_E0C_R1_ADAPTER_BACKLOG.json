@@ -1,0 +1,1236 @@
+{
+  "adapter_families": [
+    {
+      "adapter_family_id": "adapter::process_command_execution",
+      "candidate_execution_modes": {
+        "NATIVE_CANDIDATE": 373,
+        "REQUIRES_MANUAL_DESIGN": 339
+      },
+      "os_or_host_prerequisites": {
+        "linux": 20,
+        "windows": 692
+      },
+      "planning_metrics": {
+        "manual_design_rows": 339,
+        "mininet_candidate_rows": 373,
+        "playbook_reuse": 53,
+        "provx_candidate_surface_rows": 712,
+        "raw_coverage": 712
+      },
+      "playbooks_covered": [
+        "6000002",
+        "6000003",
+        "6000004",
+        "6000006",
+        "6000007",
+        "6000008",
+        "6000009",
+        "6000010",
+        "6000011",
+        "6000013",
+        "6000014",
+        "6000015",
+        "6000016",
+        "6000017",
+        "6000018",
+        "6000019",
+        "6000020",
+        "6000021",
+        "6000023",
+        "6000024",
+        "6000025",
+        "6000026",
+        "6000027",
+        "6000028",
+        "6000029",
+        "6000031",
+        "6000032",
+        "6000033",
+        "6000034",
+        "6000035",
+        "6000036",
+        "6000037",
+        "6000039",
+        "6000040",
+        "6000041",
+        "6000042",
+        "6000043",
+        "6000044",
+        "6000046",
+        "6000047",
+        "6000048",
+        "6000049",
+        "6000050",
+        "6000051",
+        "6000053",
+        "6000054",
+        "6000055",
+        "6000056",
+        "6000058",
+        "6000060",
+        "6000061",
+        "6000062",
+        "6000063"
+      ],
+      "primary_execution_archetype": "PROCESS_COMMAND_EXECUTION",
+      "priority_basis": [
+        "raw coverage",
+        "playbook reuse",
+        "Mininet candidate compatibility",
+        "future PROVX candidate observation surface",
+        "lower manual-design burden"
+      ],
+      "priority_rank": 1,
+      "raw_count": 712,
+      "representative_raw_keys": [
+        "6000002::S02::A003",
+        "6000002::S05::A001",
+        "6000002::S05::A002",
+        "6000002::S05::A003",
+        "6000002::S05::A006",
+        "6000002::S06::A001",
+        "6000002::S07::A001",
+        "6000002::S07::A005"
+      ],
+      "service_or_protocol_prerequisites": {
+        "DNS": 1,
+        "FTP": 12,
+        "HTTP": 23,
+        "HTTPS": 11,
+        "MSSQL": 1,
+        "MYSQL": 2,
+        "RDP": 5,
+        "SMB": 10,
+        "SSH": 4,
+        "TCP": 5,
+        "TLS": 1,
+        "UDP": 2,
+        "UNKNOWN": 656
+      },
+      "telemetry_requirements": [
+        "PROCESS",
+        "requires_external_service_emulation",
+        "requires_host_process_telemetry"
+      ],
+      "unresolved_design_questions": [
+        "Define a controlled stimulus, action-success criterion, cleanup, and reset evidence before execution.",
+        "Resolve service/protocol prerequisites from an approved local design; UNKNOWN is retained for unsupported source wording.",
+        "Complete manual safety and defensive/telemetry-equivalence review for high-risk source wording."
+      ]
+    },
+    {
+      "adapter_family_id": "adapter::network_service_interaction",
+      "candidate_execution_modes": {
+        "EMULATED_CANDIDATE": 232
+      },
+      "os_or_host_prerequisites": {
+        "any": 232
+      },
+      "planning_metrics": {
+        "manual_design_rows": 0,
+        "mininet_candidate_rows": 232,
+        "playbook_reuse": 45,
+        "provx_candidate_surface_rows": 232,
+        "raw_coverage": 232
+      },
+      "playbooks_covered": [
+        "6000002",
+        "6000004",
+        "6000006",
+        "6000007",
+        "6000008",
+        "6000009",
+        "6000010",
+        "6000011",
+        "6000013",
+        "6000014",
+        "6000015",
+        "6000016",
+        "6000017",
+        "6000018",
+        "6000019",
+        "6000020",
+        "6000021",
+        "6000023",
+        "6000024",
+        "6000025",
+        "6000026",
+        "6000027",
+        "6000028",
+        "6000029",
+        "6000031",
+        "6000032",
+        "6000033",
+        "6000034",
+        "6000035",
+        "6000037",
+        "6000039",
+        "6000040",
+        "6000044",
+        "6000046",
+        "6000047",
+        "6000048",
+        "6000049",
+        "6000053",
+        "6000054",
+        "6000055",
+        "6000056",
+        "6000058",
+        "6000061",
+        "6000062",
+        "6000063"
+      ],
+      "primary_execution_archetype": "NETWORK_SERVICE_INTERACTION",
+      "priority_basis": [
+        "raw coverage",
+        "playbook reuse",
+        "Mininet candidate compatibility",
+        "future PROVX candidate observation surface",
+        "lower manual-design burden"
+      ],
+      "priority_rank": 2,
+      "raw_count": 232,
+      "representative_raw_keys": [
+        "6000002::S01::A001",
+        "6000002::S01::A002",
+        "6000002::S01::A004",
+        "6000004::S01::A001",
+        "6000004::S06::A001",
+        "6000004::S06::A004",
+        "6000004::S06::A005",
+        "6000004::S06::A006"
+      ],
+      "service_or_protocol_prerequisites": {
+        "DNS": 1,
+        "FTP": 16,
+        "HTTP": 51,
+        "HTTPS": 45,
+        "LDAP": 1,
+        "MODBUS": 3,
+        "MSSQL": 1,
+        "MYSQL": 1,
+        "RDP": 11,
+        "SFTP": 7,
+        "SMB": 4,
+        "SMTP": 13,
+        "SSH": 11,
+        "TCP": 5,
+        "TLS": 3,
+        "UNKNOWN": 45,
+        "WEB_APPLICATION_SERVICE": 133,
+        "WINRM": 1
+      },
+      "telemetry_requirements": [
+        "FILE",
+        "OTHER_NETWORK_METADATA_ONLY",
+        "requires_external_service_emulation",
+        "requires_file_telemetry",
+        "requires_network_fabric",
+        "requires_socket_telemetry"
+      ],
+      "unresolved_design_questions": [
+        "Define a controlled stimulus, action-success criterion, cleanup, and reset evidence before execution.",
+        "Resolve service/protocol prerequisites from an approved local design; UNKNOWN is retained for unsupported source wording.",
+        "Determine whether host provenance is intentionally unavailable; never fabricate a causal edge."
+      ]
+    },
+    {
+      "adapter_family_id": "adapter::transfer_download_upload",
+      "candidate_execution_modes": {
+        "SYNTHETIC_CANDIDATE": 166
+      },
+      "os_or_host_prerequisites": {
+        "any": 166
+      },
+      "planning_metrics": {
+        "manual_design_rows": 0,
+        "mininet_candidate_rows": 166,
+        "playbook_reuse": 41,
+        "provx_candidate_surface_rows": 166,
+        "raw_coverage": 166
+      },
+      "playbooks_covered": [
+        "6000002",
+        "6000003",
+        "6000006",
+        "6000007",
+        "6000008",
+        "6000009",
+        "6000010",
+        "6000011",
+        "6000013",
+        "6000014",
+        "6000015",
+        "6000016",
+        "6000018",
+        "6000021",
+        "6000023",
+        "6000024",
+        "6000025",
+        "6000026",
+        "6000027",
+        "6000029",
+        "6000031",
+        "6000032",
+        "6000033",
+        "6000035",
+        "6000036",
+        "6000039",
+        "6000043",
+        "6000044",
+        "6000046",
+        "6000047",
+        "6000048",
+        "6000050",
+        "6000051",
+        "6000053",
+        "6000054",
+        "6000055",
+        "6000056",
+        "6000058",
+        "6000060",
+        "6000061",
+        "6000063"
+      ],
+      "primary_execution_archetype": "TRANSFER_DOWNLOAD_UPLOAD",
+      "priority_basis": [
+        "raw coverage",
+        "playbook reuse",
+        "Mininet candidate compatibility",
+        "future PROVX candidate observation surface",
+        "lower manual-design burden"
+      ],
+      "priority_rank": 3,
+      "raw_count": 166,
+      "representative_raw_keys": [
+        "6000002::S04::A001",
+        "6000002::S04::A002",
+        "6000002::S04::A003",
+        "6000002::S04::A004",
+        "6000003::S02::A001",
+        "6000003::S02::A002",
+        "6000003::S02::A003",
+        "6000003::S05::A001"
+      ],
+      "service_or_protocol_prerequisites": {
+        "DNS": 4,
+        "FTP": 14,
+        "HTTP": 153,
+        "HTTPS": 12,
+        "ICMP": 1,
+        "MYSQL": 2,
+        "RDP": 1,
+        "SMB": 15,
+        "SMTP": 3,
+        "SSH": 4,
+        "TCP": 7,
+        "TLS": 1
+      },
+      "telemetry_requirements": [
+        "FILE",
+        "requires_external_service_emulation",
+        "requires_file_telemetry",
+        "requires_network_fabric",
+        "requires_socket_telemetry"
+      ],
+      "unresolved_design_questions": [
+        "Define a controlled stimulus, action-success criterion, cleanup, and reset evidence before execution."
+      ]
+    },
+    {
+      "adapter_family_id": "adapter::email_delivery",
+      "candidate_execution_modes": {
+        "SYNTHETIC_CANDIDATE": 105
+      },
+      "os_or_host_prerequisites": {
+        "any": 105
+      },
+      "planning_metrics": {
+        "manual_design_rows": 0,
+        "mininet_candidate_rows": 105,
+        "playbook_reuse": 40,
+        "provx_candidate_surface_rows": 105,
+        "raw_coverage": 105
+      },
+      "playbooks_covered": [
+        "6000002",
+        "6000003",
+        "6000004",
+        "6000006",
+        "6000007",
+        "6000008",
+        "6000009",
+        "6000010",
+        "6000011",
+        "6000013",
+        "6000014",
+        "6000015",
+        "6000016",
+        "6000018",
+        "6000019",
+        "6000020",
+        "6000021",
+        "6000023",
+        "6000025",
+        "6000026",
+        "6000027",
+        "6000029",
+        "6000032",
+        "6000033",
+        "6000035",
+        "6000036",
+        "6000041",
+        "6000042",
+        "6000043",
+        "6000044",
+        "6000046",
+        "6000047",
+        "6000048",
+        "6000049",
+        "6000050",
+        "6000051",
+        "6000053",
+        "6000054",
+        "6000058",
+        "6000060"
+      ],
+      "primary_execution_archetype": "EMAIL_DELIVERY",
+      "priority_basis": [
+        "raw coverage",
+        "playbook reuse",
+        "Mininet candidate compatibility",
+        "future PROVX candidate observation surface",
+        "lower manual-design burden"
+      ],
+      "priority_rank": 4,
+      "raw_count": 105,
+      "representative_raw_keys": [
+        "6000002::S01::A003",
+        "6000003::S01::A001",
+        "6000003::S01::A002",
+        "6000003::S01::A003",
+        "6000004::S01::A002",
+        "6000006::S01::A001",
+        "6000006::S01::A002",
+        "6000006::S01::A003"
+      ],
+      "service_or_protocol_prerequisites": {
+        "DNS": 6,
+        "EMAIL_SERVICE": 105,
+        "FTP": 9,
+        "HTTP": 13,
+        "HTTPS": 9,
+        "SMB": 1,
+        "SMTP": 1,
+        "TCP": 3,
+        "TLS": 2
+      },
+      "telemetry_requirements": [
+        "FILE",
+        "OTHER_EMAIL_MESSAGE",
+        "requires_file_telemetry",
+        "requires_network_fabric",
+        "requires_socket_telemetry"
+      ],
+      "unresolved_design_questions": [
+        "Define a controlled stimulus, action-success criterion, cleanup, and reset evidence before execution.",
+        "Resolve service/protocol prerequisites from an approved local design; UNKNOWN is retained for unsupported source wording."
+      ]
+    },
+    {
+      "adapter_family_id": "adapter::network_c2_beacon",
+      "candidate_execution_modes": {
+        "EMULATED_CANDIDATE": 22,
+        "NATIVE_CANDIDATE": 47,
+        "REQUIRES_MANUAL_DESIGN": 34
+      },
+      "os_or_host_prerequisites": {
+        "any": 22,
+        "linux": 1,
+        "windows": 80
+      },
+      "planning_metrics": {
+        "manual_design_rows": 34,
+        "mininet_candidate_rows": 69,
+        "playbook_reuse": 44,
+        "provx_candidate_surface_rows": 103,
+        "raw_coverage": 103
+      },
+      "playbooks_covered": [
+        "6000002",
+        "6000003",
+        "6000006",
+        "6000007",
+        "6000008",
+        "6000009",
+        "6000010",
+        "6000011",
+        "6000013",
+        "6000014",
+        "6000015",
+        "6000016",
+        "6000017",
+        "6000018",
+        "6000019",
+        "6000020",
+        "6000023",
+        "6000024",
+        "6000025",
+        "6000026",
+        "6000027",
+        "6000029",
+        "6000031",
+        "6000032",
+        "6000034",
+        "6000035",
+        "6000036",
+        "6000037",
+        "6000039",
+        "6000041",
+        "6000042",
+        "6000043",
+        "6000044",
+        "6000046",
+        "6000048",
+        "6000049",
+        "6000050",
+        "6000051",
+        "6000055",
+        "6000056",
+        "6000058",
+        "6000060",
+        "6000061",
+        "6000062"
+      ],
+      "primary_execution_archetype": "NETWORK_C2_BEACON",
+      "priority_basis": [
+        "raw coverage",
+        "playbook reuse",
+        "Mininet candidate compatibility",
+        "future PROVX candidate observation surface",
+        "lower manual-design burden"
+      ],
+      "priority_rank": 5,
+      "raw_count": 103,
+      "representative_raw_keys": [
+        "6000002::S02::A001",
+        "6000002::S05::A008",
+        "6000002::S05::A009",
+        "6000002::S08::A003",
+        "6000002::S08::A004",
+        "6000002::S08::A005",
+        "6000003::S08::A001",
+        "6000003::S08::A002"
+      ],
+      "service_or_protocol_prerequisites": {
+        "DNS": 15,
+        "FTP": 15,
+        "HTTP": 28,
+        "RDP": 8,
+        "SMB": 13,
+        "SMTP": 2,
+        "SSH": 8,
+        "TCP": 3,
+        "UNKNOWN": 31
+      },
+      "telemetry_requirements": [
+        "FILE",
+        "OTHER_NETWORK_METADATA_ONLY",
+        "PROCESS",
+        "SOCKET",
+        "requires_external_service_emulation",
+        "requires_file_telemetry",
+        "requires_host_process_telemetry",
+        "requires_network_fabric",
+        "requires_socket_telemetry"
+      ],
+      "unresolved_design_questions": [
+        "Define a controlled stimulus, action-success criterion, cleanup, and reset evidence before execution.",
+        "Resolve service/protocol prerequisites from an approved local design; UNKNOWN is retained for unsupported source wording.",
+        "Complete manual safety and defensive/telemetry-equivalence review for high-risk source wording.",
+        "Determine whether host provenance is intentionally unavailable; never fabricate a causal edge."
+      ]
+    },
+    {
+      "adapter_family_id": "adapter::persistence_configuration",
+      "candidate_execution_modes": {
+        "NATIVE_CANDIDATE": 52,
+        "REQUIRES_MANUAL_DESIGN": 49
+      },
+      "os_or_host_prerequisites": {
+        "linux": 4,
+        "windows": 97
+      },
+      "planning_metrics": {
+        "manual_design_rows": 49,
+        "mininet_candidate_rows": 52,
+        "playbook_reuse": 45,
+        "provx_candidate_surface_rows": 101,
+        "raw_coverage": 101
+      },
+      "playbooks_covered": [
+        "6000002",
+        "6000003",
+        "6000004",
+        "6000006",
+        "6000007",
+        "6000008",
+        "6000009",
+        "6000010",
+        "6000011",
+        "6000013",
+        "6000014",
+        "6000015",
+        "6000016",
+        "6000017",
+        "6000018",
+        "6000019",
+        "6000020",
+        "6000021",
+        "6000023",
+        "6000024",
+        "6000025",
+        "6000027",
+        "6000028",
+        "6000029",
+        "6000033",
+        "6000034",
+        "6000035",
+        "6000037",
+        "6000041",
+        "6000042",
+        "6000043",
+        "6000046",
+        "6000047",
+        "6000048",
+        "6000049",
+        "6000050",
+        "6000051",
+        "6000053",
+        "6000054",
+        "6000055",
+        "6000056",
+        "6000058",
+        "6000060",
+        "6000062",
+        "6000063"
+      ],
+      "primary_execution_archetype": "PERSISTENCE_CONFIGURATION",
+      "priority_basis": [
+        "raw coverage",
+        "playbook reuse",
+        "Mininet candidate compatibility",
+        "future PROVX candidate observation surface",
+        "lower manual-design burden"
+      ],
+      "priority_rank": 6,
+      "raw_count": 101,
+      "representative_raw_keys": [
+        "6000002::S03::A003",
+        "6000002::S06::A002",
+        "6000003::S08::A003",
+        "6000004::S05::A001",
+        "6000004::S05::A002",
+        "6000004::S05::A003",
+        "6000004::S07::A002",
+        "6000006::S06::A001"
+      ],
+      "service_or_protocol_prerequisites": {
+        "FTP": 8,
+        "HTTP": 9,
+        "HTTPS": 2,
+        "SMB": 1,
+        "SMTP": 3,
+        "TCP": 5,
+        "TLS": 1,
+        "UNKNOWN": 77
+      },
+      "telemetry_requirements": [
+        "FILE",
+        "PROCESS",
+        "requires_external_service_emulation",
+        "requires_file_telemetry",
+        "requires_host_process_telemetry"
+      ],
+      "unresolved_design_questions": [
+        "Define a controlled stimulus, action-success criterion, cleanup, and reset evidence before execution.",
+        "Resolve service/protocol prerequisites from an approved local design; UNKNOWN is retained for unsupported source wording.",
+        "Complete manual safety and defensive/telemetry-equivalence review for high-risk source wording."
+      ]
+    },
+    {
+      "adapter_family_id": "adapter::discovery_enumeration",
+      "candidate_execution_modes": {
+        "NATIVE_CANDIDATE": 56,
+        "REQUIRES_MANUAL_DESIGN": 34
+      },
+      "os_or_host_prerequisites": {
+        "linux": 6,
+        "windows": 84
+      },
+      "planning_metrics": {
+        "manual_design_rows": 34,
+        "mininet_candidate_rows": 56,
+        "playbook_reuse": 39,
+        "provx_candidate_surface_rows": 90,
+        "raw_coverage": 90
+      },
+      "playbooks_covered": [
+        "6000002",
+        "6000003",
+        "6000004",
+        "6000006",
+        "6000007",
+        "6000008",
+        "6000009",
+        "6000010",
+        "6000011",
+        "6000014",
+        "6000015",
+        "6000017",
+        "6000018",
+        "6000019",
+        "6000020",
+        "6000023",
+        "6000024",
+        "6000025",
+        "6000026",
+        "6000027",
+        "6000028",
+        "6000029",
+        "6000031",
+        "6000032",
+        "6000033",
+        "6000034",
+        "6000035",
+        "6000036",
+        "6000037",
+        "6000040",
+        "6000042",
+        "6000043",
+        "6000046",
+        "6000047",
+        "6000048",
+        "6000050",
+        "6000051",
+        "6000061",
+        "6000062"
+      ],
+      "primary_execution_archetype": "DISCOVERY_ENUMERATION",
+      "priority_basis": [
+        "raw coverage",
+        "playbook reuse",
+        "Mininet candidate compatibility",
+        "future PROVX candidate observation surface",
+        "lower manual-design burden"
+      ],
+      "priority_rank": 7,
+      "raw_count": 90,
+      "representative_raw_keys": [
+        "6000002::S02::A002",
+        "6000002::S02::A004",
+        "6000002::S02::A005",
+        "6000002::S03::A004",
+        "6000002::S07::A002",
+        "6000002::S07::A003",
+        "6000002::S07::A004",
+        "6000003::S04::A002"
+      ],
+      "service_or_protocol_prerequisites": {
+        "UNKNOWN": 90
+      },
+      "telemetry_requirements": [
+        "FILE",
+        "PROCESS",
+        "requires_external_service_emulation",
+        "requires_file_telemetry",
+        "requires_host_process_telemetry"
+      ],
+      "unresolved_design_questions": [
+        "Define a controlled stimulus, action-success criterion, cleanup, and reset evidence before execution.",
+        "Resolve service/protocol prerequisites from an approved local design; UNKNOWN is retained for unsupported source wording.",
+        "Complete manual safety and defensive/telemetry-equivalence review for high-risk source wording."
+      ]
+    },
+    {
+      "adapter_family_id": "adapter::privilege_account_action",
+      "candidate_execution_modes": {
+        "NATIVE_CANDIDATE": 51,
+        "REQUIRES_MANUAL_DESIGN": 29
+      },
+      "os_or_host_prerequisites": {
+        "linux": 4,
+        "windows": 76
+      },
+      "planning_metrics": {
+        "manual_design_rows": 29,
+        "mininet_candidate_rows": 51,
+        "playbook_reuse": 36,
+        "provx_candidate_surface_rows": 80,
+        "raw_coverage": 80
+      },
+      "playbooks_covered": [
+        "6000002",
+        "6000003",
+        "6000004",
+        "6000006",
+        "6000007",
+        "6000008",
+        "6000009",
+        "6000010",
+        "6000011",
+        "6000013",
+        "6000014",
+        "6000015",
+        "6000016",
+        "6000017",
+        "6000018",
+        "6000020",
+        "6000021",
+        "6000023",
+        "6000024",
+        "6000025",
+        "6000026",
+        "6000027",
+        "6000028",
+        "6000029",
+        "6000032",
+        "6000033",
+        "6000035",
+        "6000037",
+        "6000039",
+        "6000040",
+        "6000042",
+        "6000043",
+        "6000049",
+        "6000050",
+        "6000051",
+        "6000061"
+      ],
+      "primary_execution_archetype": "PRIVILEGE_ACCOUNT_ACTION",
+      "priority_basis": [
+        "raw coverage",
+        "playbook reuse",
+        "Mininet candidate compatibility",
+        "future PROVX candidate observation surface",
+        "lower manual-design burden"
+      ],
+      "priority_rank": 8,
+      "raw_count": 80,
+      "representative_raw_keys": [
+        "6000002::S03::A001",
+        "6000002::S03::A002",
+        "6000003::S03::A004",
+        "6000003::S03::A005",
+        "6000003::S03::A006",
+        "6000004::S02::A009",
+        "6000004::S02::A011",
+        "6000004::S07::A001"
+      ],
+      "service_or_protocol_prerequisites": {
+        "HTTP": 5,
+        "HTTPS": 2,
+        "SSH": 1,
+        "UNKNOWN": 73
+      },
+      "telemetry_requirements": [
+        "FILE",
+        "PROCESS",
+        "requires_file_telemetry",
+        "requires_host_process_telemetry"
+      ],
+      "unresolved_design_questions": [
+        "Define a controlled stimulus, action-success criterion, cleanup, and reset evidence before execution.",
+        "Resolve service/protocol prerequisites from an approved local design; UNKNOWN is retained for unsupported source wording.",
+        "Complete manual safety and defensive/telemetry-equivalence review for high-risk source wording."
+      ]
+    },
+    {
+      "adapter_family_id": "adapter::credential_store_access",
+      "candidate_execution_modes": {
+        "NATIVE_CANDIDATE": 7,
+        "REQUIRES_MANUAL_DESIGN": 60
+      },
+      "os_or_host_prerequisites": {
+        "linux": 1,
+        "windows": 66
+      },
+      "planning_metrics": {
+        "manual_design_rows": 60,
+        "mininet_candidate_rows": 7,
+        "playbook_reuse": 31,
+        "provx_candidate_surface_rows": 67,
+        "raw_coverage": 67
+      },
+      "playbooks_covered": [
+        "6000002",
+        "6000003",
+        "6000004",
+        "6000006",
+        "6000008",
+        "6000009",
+        "6000010",
+        "6000011",
+        "6000013",
+        "6000017",
+        "6000019",
+        "6000020",
+        "6000021",
+        "6000024",
+        "6000026",
+        "6000027",
+        "6000029",
+        "6000031",
+        "6000032",
+        "6000034",
+        "6000035",
+        "6000036",
+        "6000040",
+        "6000043",
+        "6000048",
+        "6000053",
+        "6000055",
+        "6000056",
+        "6000058",
+        "6000062",
+        "6000063"
+      ],
+      "primary_execution_archetype": "CREDENTIAL_STORE_ACCESS",
+      "priority_basis": [
+        "raw coverage",
+        "playbook reuse",
+        "Mininet candidate compatibility",
+        "future PROVX candidate observation surface",
+        "lower manual-design burden"
+      ],
+      "priority_rank": 9,
+      "raw_count": 67,
+      "representative_raw_keys": [
+        "6000002::S05::A004",
+        "6000002::S05::A005",
+        "6000002::S08::A006",
+        "6000003::S06::A003",
+        "6000003::S06::A004",
+        "6000003::S06::A006",
+        "6000004::S08::A003",
+        "6000004::S08::A004"
+      ],
+      "service_or_protocol_prerequisites": {
+        "FTP": 6,
+        "MSSQL": 3,
+        "MYSQL": 3,
+        "RDP": 3,
+        "SFTP": 3,
+        "SMB": 3,
+        "SSH": 6,
+        "UNKNOWN": 61
+      },
+      "telemetry_requirements": [
+        "FILE",
+        "PROCESS",
+        "requires_file_telemetry",
+        "requires_host_process_telemetry"
+      ],
+      "unresolved_design_questions": [
+        "Define a controlled stimulus, action-success criterion, cleanup, and reset evidence before execution.",
+        "Resolve service/protocol prerequisites from an approved local design; UNKNOWN is retained for unsupported source wording.",
+        "Complete manual safety and defensive/telemetry-equivalence review for high-risk source wording."
+      ]
+    },
+    {
+      "adapter_family_id": "adapter::file_resource_operation",
+      "candidate_execution_modes": {
+        "NATIVE_CANDIDATE": 20,
+        "REQUIRES_MANUAL_DESIGN": 44
+      },
+      "os_or_host_prerequisites": {
+        "linux": 4,
+        "windows": 60
+      },
+      "planning_metrics": {
+        "manual_design_rows": 44,
+        "mininet_candidate_rows": 20,
+        "playbook_reuse": 33,
+        "provx_candidate_surface_rows": 64,
+        "raw_coverage": 64
+      },
+      "playbooks_covered": [
+        "6000002",
+        "6000004",
+        "6000006",
+        "6000007",
+        "6000008",
+        "6000009",
+        "6000010",
+        "6000013",
+        "6000014",
+        "6000015",
+        "6000018",
+        "6000020",
+        "6000021",
+        "6000025",
+        "6000026",
+        "6000027",
+        "6000028",
+        "6000029",
+        "6000033",
+        "6000035",
+        "6000036",
+        "6000037",
+        "6000041",
+        "6000042",
+        "6000043",
+        "6000046",
+        "6000048",
+        "6000049",
+        "6000050",
+        "6000054",
+        "6000055",
+        "6000061",
+        "6000062"
+      ],
+      "primary_execution_archetype": "FILE_RESOURCE_OPERATION",
+      "priority_basis": [
+        "raw coverage",
+        "playbook reuse",
+        "Mininet candidate compatibility",
+        "future PROVX candidate observation surface",
+        "lower manual-design burden"
+      ],
+      "priority_rank": 10,
+      "raw_count": 64,
+      "representative_raw_keys": [
+        "6000002::S05::A007",
+        "6000004::S04::A009",
+        "6000004::S04::A010",
+        "6000006::S07::A001",
+        "6000007::S07::A003",
+        "6000007::S09::A003",
+        "6000008::S02::A006",
+        "6000008::S05::A007"
+      ],
+      "service_or_protocol_prerequisites": {
+        "FTP": 12,
+        "HTTP": 1,
+        "HTTPS": 1,
+        "SMB": 1,
+        "UNKNOWN": 49
+      },
+      "telemetry_requirements": [
+        "FILE",
+        "PROCESS",
+        "requires_file_telemetry",
+        "requires_host_process_telemetry"
+      ],
+      "unresolved_design_questions": [
+        "Define a controlled stimulus, action-success criterion, cleanup, and reset evidence before execution.",
+        "Resolve service/protocol prerequisites from an approved local design; UNKNOWN is retained for unsupported source wording.",
+        "Complete manual safety and defensive/telemetry-equivalence review for high-risk source wording."
+      ]
+    },
+    {
+      "adapter_family_id": "adapter::network_scan_enumeration",
+      "candidate_execution_modes": {
+        "EMULATED_CANDIDATE": 62
+      },
+      "os_or_host_prerequisites": {
+        "any": 62
+      },
+      "planning_metrics": {
+        "manual_design_rows": 0,
+        "mininet_candidate_rows": 62,
+        "playbook_reuse": 27,
+        "provx_candidate_surface_rows": 62,
+        "raw_coverage": 62
+      },
+      "playbooks_covered": [
+        "6000004",
+        "6000008",
+        "6000009",
+        "6000010",
+        "6000011",
+        "6000013",
+        "6000014",
+        "6000015",
+        "6000017",
+        "6000018",
+        "6000023",
+        "6000024",
+        "6000026",
+        "6000027",
+        "6000028",
+        "6000029",
+        "6000031",
+        "6000032",
+        "6000033",
+        "6000034",
+        "6000037",
+        "6000039",
+        "6000040",
+        "6000044",
+        "6000056",
+        "6000058",
+        "6000061"
+      ],
+      "primary_execution_archetype": "NETWORK_SCAN_ENUMERATION",
+      "priority_basis": [
+        "raw coverage",
+        "playbook reuse",
+        "Mininet candidate compatibility",
+        "future PROVX candidate observation surface",
+        "lower manual-design burden"
+      ],
+      "priority_rank": 11,
+      "raw_count": 62,
+      "representative_raw_keys": [
+        "6000004::S06::A002",
+        "6000004::S06::A003",
+        "6000008::S01::A005",
+        "6000008::S01::A006",
+        "6000008::S01::A007",
+        "6000009::S09::A003",
+        "6000010::S01::A005",
+        "6000010::S01::A006"
+      ],
+      "service_or_protocol_prerequisites": {
+        "FTP": 3,
+        "HTTP": 29,
+        "HTTPS": 1,
+        "MSSQL": 1,
+        "MYSQL": 1,
+        "RDP": 3,
+        "SMB": 8,
+        "SSH": 2,
+        "TCP": 6,
+        "UDP": 1,
+        "UNKNOWN": 11
+      },
+      "telemetry_requirements": [
+        "FILE",
+        "OTHER_NETWORK_METADATA_ONLY",
+        "requires_external_service_emulation",
+        "requires_file_telemetry",
+        "requires_network_fabric",
+        "requires_socket_telemetry"
+      ],
+      "unresolved_design_questions": [
+        "Define a controlled stimulus, action-success criterion, cleanup, and reset evidence before execution.",
+        "Resolve service/protocol prerequisites from an approved local design; UNKNOWN is retained for unsupported source wording.",
+        "Determine whether host provenance is intentionally unavailable; never fabricate a causal edge."
+      ]
+    },
+    {
+      "adapter_family_id": "adapter::archive_compression",
+      "candidate_execution_modes": {
+        "NATIVE_CANDIDATE": 9
+      },
+      "os_or_host_prerequisites": {
+        "windows": 9
+      },
+      "planning_metrics": {
+        "manual_design_rows": 0,
+        "mininet_candidate_rows": 9,
+        "playbook_reuse": 8,
+        "provx_candidate_surface_rows": 9,
+        "raw_coverage": 9
+      },
+      "playbooks_covered": [
+        "6000028",
+        "6000041",
+        "6000042",
+        "6000046",
+        "6000051",
+        "6000058",
+        "6000061",
+        "6000062"
+      ],
+      "primary_execution_archetype": "ARCHIVE_COMPRESSION",
+      "priority_basis": [
+        "raw coverage",
+        "playbook reuse",
+        "Mininet candidate compatibility",
+        "future PROVX candidate observation surface",
+        "lower manual-design burden"
+      ],
+      "priority_rank": 12,
+      "raw_count": 9,
+      "representative_raw_keys": [
+        "6000028::S06::A002",
+        "6000041::S08::A001",
+        "6000042::S07::A001",
+        "6000046::S05::A002",
+        "6000051::S07::A001",
+        "6000058::S07::A003",
+        "6000061::S08::A001",
+        "6000062::S07::A001"
+      ],
+      "service_or_protocol_prerequisites": {
+        "UNKNOWN": 9
+      },
+      "telemetry_requirements": [
+        "PROCESS",
+        "requires_host_process_telemetry"
+      ],
+      "unresolved_design_questions": [
+        "Define a controlled stimulus, action-success criterion, cleanup, and reset evidence before execution.",
+        "Resolve service/protocol prerequisites from an approved local design; UNKNOWN is retained for unsupported source wording."
+      ]
+    },
+    {
+      "adapter_family_id": "adapter::dns_interaction",
+      "candidate_execution_modes": {
+        "EMULATED_CANDIDATE": 5
+      },
+      "os_or_host_prerequisites": {
+        "any": 5
+      },
+      "planning_metrics": {
+        "manual_design_rows": 0,
+        "mininet_candidate_rows": 5,
+        "playbook_reuse": 2,
+        "provx_candidate_surface_rows": 5,
+        "raw_coverage": 5
+      },
+      "playbooks_covered": [
+        "6000021",
+        "6000054"
+      ],
+      "primary_execution_archetype": "DNS_INTERACTION",
+      "priority_basis": [
+        "raw coverage",
+        "playbook reuse",
+        "Mininet candidate compatibility",
+        "future PROVX candidate observation surface",
+        "lower manual-design burden"
+      ],
+      "priority_rank": 13,
+      "raw_count": 5,
+      "representative_raw_keys": [
+        "6000021::S04::A001",
+        "6000021::S04::A002",
+        "6000021::S04::A003",
+        "6000054::S04::A001",
+        "6000054::S04::A002"
+      ],
+      "service_or_protocol_prerequisites": {
+        "DNS": 5,
+        "HTTPS": 1,
+        "LDAP": 1
+      },
+      "telemetry_requirements": [
+        "OTHER_NETWORK_METADATA_ONLY",
+        "requires_external_service_emulation",
+        "requires_network_fabric",
+        "requires_socket_telemetry"
+      ],
+      "unresolved_design_questions": [
+        "Define a controlled stimulus, action-success criterion, cleanup, and reset evidence before execution.",
+        "Determine whether host provenance is intentionally unavailable; never fabricate a causal edge."
+      ]
+    }
+  ],
+  "adapter_family_count": 13,
+  "prioritization_policy": "Sort by descending raw coverage, playbook reuse, Mininet candidate compatibility, candidate PROVX surface coverage, then ascending manual-design burden; ties use adapter_family_id. This is not scoring-weight prioritization.",
+  "raw_record_count": 1796,
+  "schema_version": "exp-e0c-r1-adapter-backlog-v1"
+}

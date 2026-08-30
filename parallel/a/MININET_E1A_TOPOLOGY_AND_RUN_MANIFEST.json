@@ -1,0 +1,48 @@
+{
+  "run_id": "e1a-run-20260829",
+  "run_directory": "/home/cph/experiment-parallel/e0-a/e1a-run-20260829",
+  "purpose": "benign non-scored logical-host provenance attribution feasibility smoke test",
+  "observed_at_utc": "2026-08-29",
+  "topology": {
+    "switches": [{"name": "s1", "type": "OVSSwitch", "protocol": "OpenFlow10", "fail_mode": "standalone"}],
+    "hosts": [
+      {"name": "h1", "ip": "10.0.0.1/24", "mac": "00:00:00:00:01:01"},
+      {"name": "h2", "ip": "10.0.0.2/24", "mac": "00:00:00:00:01:02"}
+    ],
+    "links": ["h1-s1", "h2-s1"],
+    "controller": null,
+    "nat": false,
+    "external_interface_attachment": false
+  },
+  "benign_actions": [
+    "echo/process PID marker",
+    "create/read/delete /tmp/mininet-e1a-h1 and /tmp/mininet-e1a-h2",
+    "h1/h2 pingAll",
+    "one-second loopback TCP listener per host"
+  ],
+  "attack_actions_executed": 0,
+  "provx_executed": false,
+  "formal_experiment_executed": false,
+  "harness": {
+    "path": "e1a-run-20260829/e1a_benign_topology.py",
+    "sha256": "d9f0b5a337f633e4f426784668e4c4db75d048a640b68104dc36e6f4f8bdd8e3",
+    "command_attempted": "/usr/bin/python3 /home/cph/experiment-parallel/e0-a/e1a-run-20260829/e1a_benign_topology.py",
+    "exit_code": 1,
+    "result": "not_started",
+    "stderr": "*** Mininet must run as root."
+  },
+  "source_inspection": {
+    "mininet_host_default_inNamespace": true,
+    "host_shell_anchor": "Node.startShell starts mnexec with -n and records self.pid",
+    "descendant_anchor": "Node.popen prefixes mnexec -da <host.pid>",
+    "privateDirs_supported": true,
+    "privateDirs_behavior": "mount --bind or mount tmpfs inside the host namespace",
+    "privateDirs_privilege": "requires mount privilege; not exercised",
+    "filesystem_isolation_claimed": false
+  },
+  "root_blocker": {
+    "sudo_noninteractive": false,
+    "exact_human_topology_command": "sudo /usr/bin/python3 /home/cph/experiment-parallel/e0-a/e1a-run-20260829/e1a_benign_topology.py",
+    "reason": "Mininet.init calls ensureRoot before topology construction; no host/switch namespace can be created in this session"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "schema": "FA1B2DE_CURRENT86_PROPOSED_SOURCE_ADMISSION_RULES_R1",
+  "design_status": "NO_RULES_PROPOSED",
+  "authority_role": "SA-B1_SOURCE_ADMISSION",
+  "required_tuple_schema": [
+    "source_binding_target_id",
+    "candidate_object_id",
+    "canonical_intrinsic_field_semantics_id",
+    "exact_RFC6901_pointer"
+  ],
+  "rules": [],
+  "not_proposable_group_refs": [
+    {
+      "group_id": "e2cc647191b6a196e450ad5a1c096d688feb0c3ae5cd623def218f2ef512d663",
+      "group_label": "RAW_REGISTRY_ONLY",
+      "covered_target_count": 26,
+      "reason": "No authenticated canonical-intrinsic source object, candidate_object_id provenance chain, canonical_intrinsic_field_semantics_id, or exact pointer is present for this group."
+    },
+    {
+      "group_id": "bcf1da5d5b3e21911f2e9fa506932f80b2aee743ff5a02f32f1af6c135de8bce",
+      "group_label": "RAW_C0_EVIDENCE",
+      "covered_target_count": 60,
+      "reason": "No authenticated canonical-intrinsic source object, candidate_object_id provenance chain, canonical_intrinsic_field_semantics_id, or exact pointer is present for this group."
+    },
+    {
+      "group_id": "4bede54ca814a6b6d44ddf4139e22fa5f3976cc10f7f9e19a8c250128844f389",
+      "group_label": "CANDIDATE_SCORING",
+      "covered_target_count": 231,
+      "reason": "No authenticated canonical-intrinsic source object, candidate_object_id provenance chain, canonical_intrinsic_field_semantics_id, or exact pointer is present for this group."
+    }
+  ],
+  "all_targets_remain_blocked": true,
+  "fail_closed_requirements": [
+    "missing root",
+    "missing canonical object",
+    "missing provenance",
+    "zero or multiple matches",
+    "conflict",
+    "incomplete enumeration"
+  ]
+}

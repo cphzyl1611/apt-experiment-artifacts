@@ -1,0 +1,192 @@
+{
+  "artifact_root": "provx-r0/extracted/ProvX-USENIX-artifact",
+  "inventory_basis": "read-only source, metadata, and filesystem inspection; no artifact import or CLI execution",
+  "source_identity": {
+    "record": "20310415",
+    "archive": "provx-r0/downloads/ProvX-USENIX-artifact.zip",
+    "archive_sha256": "a46fe7dec840ea28d9f8acf8771879af7204e0d622e24d12a99ad95f4187e3ff",
+    "archive_md5": "72467df3c22ba706cb33adfbd87a0681",
+    "archive_bytes": 11549911,
+    "project_regular_files": 23,
+    "extracted_regular_files_including_macos_metadata": 57
+  },
+  "documentation_locations": {
+    "readme": "ProvX-USENIX-artifact/README.md",
+    "license": "ProvX-USENIX-artifact/LICENSE",
+    "requirements": "ProvX-USENIX-artifact/requirements.txt",
+    "python_package": "ProvX-USENIX-artifact/provx_usenix/",
+    "scripts": "ProvX-USENIX-artifact/scripts/",
+    "checkpoint_metadata": "ProvX-USENIX-artifact/storage/cache/Sample/saved_models/GCNConv/checkpoint-best-acc/metadata.json",
+    "checkpoint_weights": "ProvX-USENIX-artifact/storage/cache/Sample/saved_models/GCNConv/checkpoint-best-acc/model.bin"
+  },
+  "runtime_dependencies": {
+    "python": {
+      "declared_version": null,
+      "source_syntax_floor_inferred": ">=3.10 because source uses PEP 604 union annotations such as Path | None",
+      "status": "UNPINNED"
+    },
+    "requirements_exact": [
+      "torch==2.8.0",
+      "torch-geometric==2.6.1",
+      "numpy==2.0.2",
+      "scikit-learn==1.6.1"
+    ],
+    "graph_learning": "PyTorch Geometric 2.6.1; GCNConv, GATConv, SAGEConv, MessagePassing, PyG DataLoader and utility functions",
+    "networkx": "not listed and no networkx import found",
+    "os_environment": "no Dockerfile, Conda environment, pyproject.toml, setup.py, setup.cfg, lockfile, or OS declaration found",
+    "device": "scripts default to --device cpu; source uses torch device placement and can accept another device string; no GPU requirement declared",
+    "paper_host_context": "paper reports Ubuntu 22.04.5 LTS and CPU-only evaluation, but the artifact does not declare an OS image"
+  },
+  "data_and_schema": {
+    "included_partitions": [
+      "ProvX-USENIX-artifact/Datasets/Sample/train_100nodes.pt",
+      "ProvX-USENIX-artifact/Datasets/Sample/val_100nodes.pt",
+      "ProvX-USENIX-artifact/Datasets/Sample/test_100nodes.pt"
+    ],
+    "included_labels": "ProvX-USENIX-artifact/Datasets/Sample/sample_labels_all.pkl",
+    "format": "README states each .pt is a Python list of PyTorch Geometric Data objects",
+    "fields_consumed": {
+      "x": "node feature matrix",
+      "edge_index": "PyG COO graph connectivity",
+      "_VULN": "node-level vulnerability/attack label; graph label is any positive node",
+      "_LINE": "original node identifiers used for line-based localization",
+      "_SAMPLE": "subgraph sample identifier"
+    },
+    "auxiliary_label_file": "pickle keyed by sample identifier with line-label information",
+    "edge_features": "none referenced by the package code; edge_weight is generated only as an explanation score",
+    "raw_audit_logs": "not included; README says original DARPA TC data remains subject to provider terms",
+    "graph_construction_or_louvain": "no raw-to-graph or Louvain preprocessing implementation found in the archive",
+    "self_loop_behavior": "detector/evaluation add remaining self-loops and coalesce; explainer removes existing self-loops, adds remaining self-loops for optimization, then removes them from output",
+    "feature_dimension": "not inspected by torch deserialization in R0; runtime scripts infer graph x.size(1) and compare it with checkpoint state"
+  },
+  "model": {
+    "config_class": "provx_usenix.detector.DetectorConfig",
+    "architecture": "input Linear -> ReLU -> Linear to gnn_feature_dim_size; Linear -> ReLU -> Dropout; num_gnn_layers message-passing layers; ReLU/Dropout after each; configured global add/mean/max pool; 2-layer Linear/ReLU/Dropout/Linear classifier",
+    "defaults": {
+      "gnn_model": "GCNConv",
+      "gnn_hidden_size": 64,
+      "gnn_feature_dim_size": 256,
+      "num_gnn_layers": 2,
+      "graph_pooling": "mean",
+      "dropout_rate": 0.1,
+      "num_classes": 2,
+      "residual": false,
+      "gat_heads": 8,
+      "graphsage_aggr": "mean"
+    },
+    "supported_backbones": ["GCNConv", "GAT", "GraphSAGE"],
+    "packaged_checkpoints": [
+      {
+        "backbone": "GCNConv",
+        "path": "ProvX-USENIX-artifact/storage/cache/Sample/saved_models/GCNConv/checkpoint-best-acc/model.bin",
+        "metadata": "ProvX-USENIX-artifact/storage/cache/Sample/saved_models/GCNConv/checkpoint-best-acc/metadata.json",
+        "model_sha256": "d1307de5ad2b8410eca6b964f48e0afc9e9fdb0655e1702f9c85d6dfd07399f0",
+        "model_bytes": 193297,
+        "checkpoint_metadata": {
+          "gnn_hidden_size": 64,
+          "gnn_feature_dim_size": 256,
+          "num_gnn_layers": 2,
+          "graph_pooling": "mean",
+          "dropout_rate": 0.1,
+          "num_classes": 2,
+          "seed": 1,
+          "epochs": 50,
+          "batch_size": 32,
+          "learning_rate": 0.005,
+          "use_weighted_sampler": true,
+          "sampler_multiplier": 3
+        }
+      }
+    ],
+    "gat_checkpoint": "not packaged",
+    "graphsage_checkpoint": "not packaged"
+  },
+  "training": {
+    "module": "provx_usenix.training.train_detector",
+    "script": "scripts/train_detector.py",
+    "entry_arguments": {
+      "dataset": "Sample",
+      "train_partition": "train_100nodes",
+      "val_partition": "val_100nodes",
+      "test_partition": "test_100nodes",
+      "gnn_model": "GCNConv",
+      "epochs_script_default": 1,
+      "epochs_library_default": 50,
+      "batch_size": 32,
+      "learning_rate_script_and_library_default": 0.005,
+      "seed": 1,
+      "device": "cpu",
+      "weighted_sampler": true
+    },
+    "optimizer": "torch.optim.AdamW",
+    "loss": "cross_entropy on graph labels from global max pooling of _VULN",
+    "checkpoint_outputs": "model.bin and metadata.json under output-dir/dataset/gnn-model/checkpoint-best-acc and checkpoint-last",
+    "evaluation_during_training": "each epoch evaluates validation and test partitions; best checkpoint selected by validation accuracy",
+    "seed_handling": "random, PYTHONHASHSEED, numpy, torch.manual_seed, and torch.cuda.manual_seed are set in train_detector; deterministic algorithms are not enabled",
+    "formal_execution_in_r0": false
+  },
+  "phase_ii": {
+    "module": "provx_usenix.provx.ProvXExplainer.explain",
+    "script": "scripts/run_provx.py",
+    "config_defaults": {
+      "epochs": 200,
+      "lr": 0.05,
+      "alpha": 0.9,
+      "solidification_factor": 0.6,
+      "solidification_stage_start_ratio": 0.6,
+      "confident_threshold_low": 0.05,
+      "confident_threshold_high": 0.95,
+      "use_l1_distance": false
+    },
+    "optimizer": "torch.optim.Adam on a randomly initialized per-edge mask",
+    "mask_mechanics": "PyG MessagePassing explain masks are attached to message-passing modules; edge weight output is 1 - sigmoid(mask)",
+    "prediction_loss": "relu(logits[:, target_label]).sum(), not a probability term as written in the paper",
+    "distance_loss": "binary_cross_entropy(mask, ones_like(mask)) by default, or L1 norm of 1-mask; it is not BCE(mask, A_k) in the source",
+    "solidification": "snapshot at int(epochs * stage_start_ratio); penalizes squared deviation for values below low or above high thresholds",
+    "target_label": "defaults to the model's original predicted class; caller may override",
+    "output": "PyTorch-saved list of graph_index, sample_id, edge_index, edge_weight, pred, and target_label",
+    "formal_execution_in_r0": false
+  },
+  "evaluation": {
+    "module": "provx_usenix.evaluation.evaluate_pairs",
+    "script": "scripts/evaluate_explanations.py",
+    "localization": "edge hit metrics from _VULN, or line-based metrics from optional sample_labels_all.pkl",
+    "mer_intervention": "remove selected top-K edges, zero x features of incident nodes, add self-loops, run the same detector without retraining, and compare argmax",
+    "outputs": "count, accuracy, precision, recall, f1, mer printed to stdout",
+    "formal_execution_in_r0": false
+  },
+  "entry_points": {
+    "package_inspection": {
+      "path": "scripts/check_package.py",
+      "purpose": "loads sample data/checkpoint and performs a detector forward pass",
+      "r0_status": "not executed"
+    },
+    "training": {
+      "path": "scripts/train_detector.py",
+      "purpose": "trains and saves detector checkpoints",
+      "r0_status": "not executed"
+    },
+    "phase_ii": {
+      "path": "scripts/run_provx.py",
+      "purpose": "loads a checkpoint, explains malicious graphs, and saves explanation tensors",
+      "r0_status": "not executed"
+    },
+    "evaluation": {
+      "path": "scripts/evaluate_explanations.py",
+      "purpose": "evaluates saved explanations and MER",
+      "r0_status": "not executed"
+    },
+    "pipeline": {
+      "path": "scripts/run_pipeline.py",
+      "purpose": "subprocesses train -> explain -> evaluate; defaults are a tiny smoke run",
+      "r0_status": "not executed"
+    }
+  },
+  "configs": {
+    "standalone_config_files": [],
+    "configuration_sources": ["dataclass defaults", "CLI arguments", "checkpoint metadata.json"],
+    "random_seed_cli": "training script exposes --seed; Phase-II script has no seed argument"
+  },
+  "directory_tree_source": "provx-r0/PROVX_R0_EXTRACTED_FILE_LIST.txt plus filesystem tree under provx-r0/extracted/",
+  "status": "R0 inventory complete without dependency installation or artifact execution"
+}

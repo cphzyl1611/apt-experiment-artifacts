@@ -1,0 +1,1049 @@
+{
+  "archetypes": {
+    "ARCHIVE_COMPRESSION": {
+      "action_types": {
+        "host_cli": 9
+      },
+      "behavior_scopes": {
+        "HOST_LOCAL": 9
+      },
+      "candidate_execution_modes": {
+        "NATIVE_CANDIDATE": 9
+      },
+      "named_protocols_or_services": {
+        "UNKNOWN": 9
+      },
+      "os_platform_hints": {
+        "windows": 9
+      },
+      "playbooks": [
+        "6000028",
+        "6000041",
+        "6000042",
+        "6000046",
+        "6000051",
+        "6000058",
+        "6000061",
+        "6000062"
+      ],
+      "raw_count": 9,
+      "representative_raw_keys": [
+        "6000028::S06::A002",
+        "6000041::S08::A001",
+        "6000042::S07::A001",
+        "6000046::S05::A002",
+        "6000051::S07::A001",
+        "6000058::S07::A003",
+        "6000061::S08::A001",
+        "6000062::S07::A001"
+      ],
+      "resource_classes": {
+        "ARCHIVE": 9,
+        "PROCESS": 9
+      },
+      "source_rule_ids": [
+        "R1-ARCHETYPE-HOST-ARCHIVE-LEXEME"
+      ]
+    },
+    "CREDENTIAL_STORE_ACCESS": {
+      "action_types": {
+        "host_cli": 67
+      },
+      "behavior_scopes": {
+        "HOST_LOCAL": 67
+      },
+      "candidate_execution_modes": {
+        "NATIVE_CANDIDATE": 7,
+        "REQUIRES_MANUAL_DESIGN": 60
+      },
+      "named_protocols_or_services": {
+        "FTP": 6,
+        "MSSQL": 3,
+        "MYSQL": 3,
+        "RDP": 3,
+        "SFTP": 3,
+        "SMB": 3,
+        "SSH": 6,
+        "UNKNOWN": 61
+      },
+      "os_platform_hints": {
+        "linux": 1,
+        "windows": 66
+      },
+      "playbooks": [
+        "6000002",
+        "6000003",
+        "6000004",
+        "6000006",
+        "6000008",
+        "6000009",
+        "6000010",
+        "6000011",
+        "6000013",
+        "6000017",
+        "6000019",
+        "6000020",
+        "6000021",
+        "6000024",
+        "6000026",
+        "6000027",
+        "6000029",
+        "6000031",
+        "6000032",
+        "6000034",
+        "6000035",
+        "6000036",
+        "6000040",
+        "6000043",
+        "6000048",
+        "6000053",
+        "6000055",
+        "6000056",
+        "6000058",
+        "6000062",
+        "6000063"
+      ],
+      "raw_count": 67,
+      "representative_raw_keys": [
+        "6000002::S05::A004",
+        "6000002::S05::A005",
+        "6000002::S08::A006",
+        "6000003::S06::A003",
+        "6000003::S06::A004",
+        "6000003::S06::A006",
+        "6000004::S08::A003",
+        "6000004::S08::A004"
+      ],
+      "resource_classes": {
+        "CREDENTIAL": 67,
+        "FILE": 5,
+        "PROCESS": 67
+      },
+      "source_rule_ids": [
+        "R1-ARCHETYPE-HOST-CREDENTIAL-LEXEME"
+      ]
+    },
+    "DISCOVERY_ENUMERATION": {
+      "action_types": {
+        "host_cli": 90
+      },
+      "behavior_scopes": {
+        "HOST_LOCAL": 90
+      },
+      "candidate_execution_modes": {
+        "NATIVE_CANDIDATE": 56,
+        "REQUIRES_MANUAL_DESIGN": 34
+      },
+      "named_protocols_or_services": {
+        "UNKNOWN": 90
+      },
+      "os_platform_hints": {
+        "linux": 6,
+        "windows": 84
+      },
+      "playbooks": [
+        "6000002",
+        "6000003",
+        "6000004",
+        "6000006",
+        "6000007",
+        "6000008",
+        "6000009",
+        "6000010",
+        "6000011",
+        "6000014",
+        "6000015",
+        "6000017",
+        "6000018",
+        "6000019",
+        "6000020",
+        "6000023",
+        "6000024",
+        "6000025",
+        "6000026",
+        "6000027",
+        "6000028",
+        "6000029",
+        "6000031",
+        "6000032",
+        "6000033",
+        "6000034",
+        "6000035",
+        "6000036",
+        "6000037",
+        "6000040",
+        "6000042",
+        "6000043",
+        "6000046",
+        "6000047",
+        "6000048",
+        "6000050",
+        "6000051",
+        "6000061",
+        "6000062"
+      ],
+      "raw_count": 90,
+      "representative_raw_keys": [
+        "6000002::S02::A002",
+        "6000002::S02::A004",
+        "6000002::S02::A005",
+        "6000002::S03::A004",
+        "6000002::S07::A002",
+        "6000002::S07::A003",
+        "6000002::S07::A004",
+        "6000003::S04::A002"
+      ],
+      "resource_classes": {
+        "CONFIGURATION": 2,
+        "FILE": 1,
+        "PROCESS": 90
+      },
+      "source_rule_ids": [
+        "R1-ARCHETYPE-HOST-DISCOVERY-LEXEME"
+      ]
+    },
+    "DNS_INTERACTION": {
+      "action_types": {
+        "dns": 5
+      },
+      "behavior_scopes": {
+        "NETWORK_INTERACTION": 5
+      },
+      "candidate_execution_modes": {
+        "EMULATED_CANDIDATE": 5
+      },
+      "named_protocols_or_services": {
+        "DNS": 5,
+        "HTTPS": 1,
+        "LDAP": 1
+      },
+      "os_platform_hints": {
+        "any": 5
+      },
+      "playbooks": [
+        "6000021",
+        "6000054"
+      ],
+      "raw_count": 5,
+      "representative_raw_keys": [
+        "6000021::S04::A001",
+        "6000021::S04::A002",
+        "6000021::S04::A003",
+        "6000054::S04::A001",
+        "6000054::S04::A002"
+      ],
+      "resource_classes": {
+        "NETWORK": 5
+      },
+      "source_rule_ids": [
+        "R1-ARCHETYPE-ACTION-TYPE-DNS"
+      ]
+    },
+    "EMAIL_DELIVERY": {
+      "action_types": {
+        "email": 105
+      },
+      "behavior_scopes": {
+        "NETWORK_INTERACTION": 105
+      },
+      "candidate_execution_modes": {
+        "SYNTHETIC_CANDIDATE": 105
+      },
+      "named_protocols_or_services": {
+        "DNS": 6,
+        "FTP": 9,
+        "HTTP": 13,
+        "HTTPS": 9,
+        "SMB": 1,
+        "SMTP": 1,
+        "TCP": 3,
+        "TLS": 2,
+        "UNKNOWN": 80
+      },
+      "os_platform_hints": {
+        "any": 105
+      },
+      "playbooks": [
+        "6000002",
+        "6000003",
+        "6000004",
+        "6000006",
+        "6000007",
+        "6000008",
+        "6000009",
+        "6000010",
+        "6000011",
+        "6000013",
+        "6000014",
+        "6000015",
+        "6000016",
+        "6000018",
+        "6000019",
+        "6000020",
+        "6000021",
+        "6000023",
+        "6000025",
+        "6000026",
+        "6000027",
+        "6000029",
+        "6000032",
+        "6000033",
+        "6000035",
+        "6000036",
+        "6000041",
+        "6000042",
+        "6000043",
+        "6000044",
+        "6000046",
+        "6000047",
+        "6000048",
+        "6000049",
+        "6000050",
+        "6000051",
+        "6000053",
+        "6000054",
+        "6000058",
+        "6000060"
+      ],
+      "raw_count": 105,
+      "representative_raw_keys": [
+        "6000002::S01::A003",
+        "6000003::S01::A001",
+        "6000003::S01::A002",
+        "6000003::S01::A003",
+        "6000004::S01::A002",
+        "6000006::S01::A001",
+        "6000006::S01::A002",
+        "6000006::S01::A003"
+      ],
+      "resource_classes": {
+        "EMAIL": 105,
+        "NETWORK": 105
+      },
+      "source_rule_ids": [
+        "R1-ARCHETYPE-ACTION-TYPE-EMAIL"
+      ]
+    },
+    "FILE_RESOURCE_OPERATION": {
+      "action_types": {
+        "host_cli": 64
+      },
+      "behavior_scopes": {
+        "HOST_LOCAL": 64
+      },
+      "candidate_execution_modes": {
+        "NATIVE_CANDIDATE": 20,
+        "REQUIRES_MANUAL_DESIGN": 44
+      },
+      "named_protocols_or_services": {
+        "FTP": 12,
+        "HTTP": 1,
+        "HTTPS": 1,
+        "SMB": 1,
+        "UNKNOWN": 49
+      },
+      "os_platform_hints": {
+        "linux": 4,
+        "windows": 60
+      },
+      "playbooks": [
+        "6000002",
+        "6000004",
+        "6000006",
+        "6000007",
+        "6000008",
+        "6000009",
+        "6000010",
+        "6000013",
+        "6000014",
+        "6000015",
+        "6000018",
+        "6000020",
+        "6000021",
+        "6000025",
+        "6000026",
+        "6000027",
+        "6000028",
+        "6000029",
+        "6000033",
+        "6000035",
+        "6000036",
+        "6000037",
+        "6000041",
+        "6000042",
+        "6000043",
+        "6000046",
+        "6000048",
+        "6000049",
+        "6000050",
+        "6000054",
+        "6000055",
+        "6000061",
+        "6000062"
+      ],
+      "raw_count": 64,
+      "representative_raw_keys": [
+        "6000002::S05::A007",
+        "6000004::S04::A009",
+        "6000004::S04::A010",
+        "6000006::S07::A001",
+        "6000007::S07::A003",
+        "6000007::S09::A003",
+        "6000008::S02::A006",
+        "6000008::S05::A007"
+      ],
+      "resource_classes": {
+        "FILE": 64,
+        "PROCESS": 64
+      },
+      "source_rule_ids": [
+        "R1-ARCHETYPE-HOST-FILE-LEXEME"
+      ]
+    },
+    "NETWORK_C2_BEACON": {
+      "action_types": {
+        "captive_ioc_url": 2,
+        "host_cli": 81,
+        "pcap": 15,
+        "socket": 5
+      },
+      "behavior_scopes": {
+        "MIXED_HOST_AND_NETWORK": 81,
+        "NETWORK_INTERACTION": 22
+      },
+      "candidate_execution_modes": {
+        "EMULATED_CANDIDATE": 22,
+        "NATIVE_CANDIDATE": 47,
+        "REQUIRES_MANUAL_DESIGN": 34
+      },
+      "named_protocols_or_services": {
+        "DNS": 15,
+        "FTP": 15,
+        "HTTP": 28,
+        "RDP": 8,
+        "SMB": 13,
+        "SMTP": 2,
+        "SSH": 8,
+        "TCP": 3,
+        "UNKNOWN": 31
+      },
+      "os_platform_hints": {
+        "any": 22,
+        "linux": 1,
+        "windows": 80
+      },
+      "playbooks": [
+        "6000002",
+        "6000003",
+        "6000006",
+        "6000007",
+        "6000008",
+        "6000009",
+        "6000010",
+        "6000011",
+        "6000013",
+        "6000014",
+        "6000015",
+        "6000016",
+        "6000017",
+        "6000018",
+        "6000019",
+        "6000020",
+        "6000023",
+        "6000024",
+        "6000025",
+        "6000026",
+        "6000027",
+        "6000029",
+        "6000031",
+        "6000032",
+        "6000034",
+        "6000035",
+        "6000036",
+        "6000037",
+        "6000039",
+        "6000041",
+        "6000042",
+        "6000043",
+        "6000044",
+        "6000046",
+        "6000048",
+        "6000049",
+        "6000050",
+        "6000051",
+        "6000055",
+        "6000056",
+        "6000058",
+        "6000060",
+        "6000061",
+        "6000062"
+      ],
+      "raw_count": 103,
+      "representative_raw_keys": [
+        "6000002::S02::A001",
+        "6000002::S05::A008",
+        "6000002::S05::A009",
+        "6000002::S08::A003",
+        "6000002::S08::A004",
+        "6000002::S08::A005",
+        "6000003::S08::A001",
+        "6000003::S08::A002"
+      ],
+      "resource_classes": {
+        "CONFIGURATION": 15,
+        "FILE": 15,
+        "NETWORK": 103,
+        "PROCESS": 81
+      },
+      "source_rule_ids": [
+        "R1-ARCHETYPE-ACTION-TYPE-CAPTURED-IOC",
+        "R1-ARCHETYPE-HOST-NETWORK-LEXEME",
+        "R1-ARCHETYPE-PCAP-C2-LEXEME",
+        "R1-ARCHETYPE-SOCKET-NETWORK-LEXEME"
+      ]
+    },
+    "NETWORK_SCAN_ENUMERATION": {
+      "action_types": {
+        "pcap": 57,
+        "port_scan": 5
+      },
+      "behavior_scopes": {
+        "NETWORK_INTERACTION": 62
+      },
+      "candidate_execution_modes": {
+        "EMULATED_CANDIDATE": 62
+      },
+      "named_protocols_or_services": {
+        "FTP": 3,
+        "HTTP": 29,
+        "HTTPS": 1,
+        "MSSQL": 1,
+        "MYSQL": 1,
+        "RDP": 3,
+        "SMB": 8,
+        "SSH": 2,
+        "TCP": 6,
+        "UDP": 1,
+        "UNKNOWN": 11
+      },
+      "os_platform_hints": {
+        "any": 62
+      },
+      "playbooks": [
+        "6000004",
+        "6000008",
+        "6000009",
+        "6000010",
+        "6000011",
+        "6000013",
+        "6000014",
+        "6000015",
+        "6000017",
+        "6000018",
+        "6000023",
+        "6000024",
+        "6000026",
+        "6000027",
+        "6000028",
+        "6000029",
+        "6000031",
+        "6000032",
+        "6000033",
+        "6000034",
+        "6000037",
+        "6000039",
+        "6000040",
+        "6000044",
+        "6000056",
+        "6000058",
+        "6000061"
+      ],
+      "raw_count": 62,
+      "representative_raw_keys": [
+        "6000004::S06::A002",
+        "6000004::S06::A003",
+        "6000008::S01::A005",
+        "6000008::S01::A006",
+        "6000008::S01::A007",
+        "6000009::S09::A003",
+        "6000010::S01::A005",
+        "6000010::S01::A006"
+      ],
+      "resource_classes": {
+        "NETWORK": 62
+      },
+      "source_rule_ids": [
+        "R1-ARCHETYPE-ACTION-TYPE-PORT-SCAN",
+        "R1-ARCHETYPE-PCAP-SCAN-LEXEME"
+      ]
+    },
+    "NETWORK_SERVICE_INTERACTION": {
+      "action_types": {
+        "pcap": 99,
+        "website": 133
+      },
+      "behavior_scopes": {
+        "NETWORK_INTERACTION": 232
+      },
+      "candidate_execution_modes": {
+        "EMULATED_CANDIDATE": 232
+      },
+      "named_protocols_or_services": {
+        "DNS": 1,
+        "FTP": 16,
+        "HTTP": 51,
+        "HTTPS": 45,
+        "LDAP": 1,
+        "MODBUS": 3,
+        "MSSQL": 1,
+        "MYSQL": 1,
+        "RDP": 11,
+        "SFTP": 7,
+        "SMB": 4,
+        "SMTP": 13,
+        "SSH": 11,
+        "TCP": 5,
+        "TLS": 3,
+        "UNKNOWN": 106,
+        "WINRM": 1
+      },
+      "os_platform_hints": {
+        "any": 232
+      },
+      "playbooks": [
+        "6000002",
+        "6000004",
+        "6000006",
+        "6000007",
+        "6000008",
+        "6000009",
+        "6000010",
+        "6000011",
+        "6000013",
+        "6000014",
+        "6000015",
+        "6000016",
+        "6000017",
+        "6000018",
+        "6000019",
+        "6000020",
+        "6000021",
+        "6000023",
+        "6000024",
+        "6000025",
+        "6000026",
+        "6000027",
+        "6000028",
+        "6000029",
+        "6000031",
+        "6000032",
+        "6000033",
+        "6000034",
+        "6000035",
+        "6000037",
+        "6000039",
+        "6000040",
+        "6000044",
+        "6000046",
+        "6000047",
+        "6000048",
+        "6000049",
+        "6000053",
+        "6000054",
+        "6000055",
+        "6000056",
+        "6000058",
+        "6000061",
+        "6000062",
+        "6000063"
+      ],
+      "raw_count": 232,
+      "representative_raw_keys": [
+        "6000002::S01::A001",
+        "6000002::S01::A002",
+        "6000002::S01::A004",
+        "6000004::S01::A001",
+        "6000004::S06::A001",
+        "6000004::S06::A004",
+        "6000004::S06::A005",
+        "6000004::S06::A006"
+      ],
+      "resource_classes": {
+        "NETWORK": 232
+      },
+      "source_rule_ids": [
+        "R1-ARCHETYPE-ACTION-TYPE-PCAP",
+        "R1-ARCHETYPE-ACTION-TYPE-WEBSITE"
+      ]
+    },
+    "PERSISTENCE_CONFIGURATION": {
+      "action_types": {
+        "host_cli": 101
+      },
+      "behavior_scopes": {
+        "HOST_LOCAL": 101
+      },
+      "candidate_execution_modes": {
+        "NATIVE_CANDIDATE": 52,
+        "REQUIRES_MANUAL_DESIGN": 49
+      },
+      "named_protocols_or_services": {
+        "FTP": 8,
+        "HTTP": 9,
+        "HTTPS": 2,
+        "SMB": 1,
+        "SMTP": 3,
+        "TCP": 5,
+        "TLS": 1,
+        "UNKNOWN": 77
+      },
+      "os_platform_hints": {
+        "linux": 4,
+        "windows": 97
+      },
+      "playbooks": [
+        "6000002",
+        "6000003",
+        "6000004",
+        "6000006",
+        "6000007",
+        "6000008",
+        "6000009",
+        "6000010",
+        "6000011",
+        "6000013",
+        "6000014",
+        "6000015",
+        "6000016",
+        "6000017",
+        "6000018",
+        "6000019",
+        "6000020",
+        "6000021",
+        "6000023",
+        "6000024",
+        "6000025",
+        "6000027",
+        "6000028",
+        "6000029",
+        "6000033",
+        "6000034",
+        "6000035",
+        "6000037",
+        "6000041",
+        "6000042",
+        "6000043",
+        "6000046",
+        "6000047",
+        "6000048",
+        "6000049",
+        "6000050",
+        "6000051",
+        "6000053",
+        "6000054",
+        "6000055",
+        "6000056",
+        "6000058",
+        "6000060",
+        "6000062",
+        "6000063"
+      ],
+      "raw_count": 101,
+      "representative_raw_keys": [
+        "6000002::S03::A003",
+        "6000002::S06::A002",
+        "6000003::S08::A003",
+        "6000004::S05::A001",
+        "6000004::S05::A002",
+        "6000004::S05::A003",
+        "6000004::S07::A002",
+        "6000006::S06::A001"
+      ],
+      "resource_classes": {
+        "CONFIGURATION": 93,
+        "FILE": 26,
+        "PROCESS": 101
+      },
+      "source_rule_ids": [
+        "R1-ARCHETYPE-HOST-PERSISTENCE-LEXEME"
+      ]
+    },
+    "PRIVILEGE_ACCOUNT_ACTION": {
+      "action_types": {
+        "host_cli": 80
+      },
+      "behavior_scopes": {
+        "HOST_LOCAL": 80
+      },
+      "candidate_execution_modes": {
+        "NATIVE_CANDIDATE": 51,
+        "REQUIRES_MANUAL_DESIGN": 29
+      },
+      "named_protocols_or_services": {
+        "HTTP": 5,
+        "HTTPS": 2,
+        "SSH": 1,
+        "UNKNOWN": 73
+      },
+      "os_platform_hints": {
+        "linux": 4,
+        "windows": 76
+      },
+      "playbooks": [
+        "6000002",
+        "6000003",
+        "6000004",
+        "6000006",
+        "6000007",
+        "6000008",
+        "6000009",
+        "6000010",
+        "6000011",
+        "6000013",
+        "6000014",
+        "6000015",
+        "6000016",
+        "6000017",
+        "6000018",
+        "6000020",
+        "6000021",
+        "6000023",
+        "6000024",
+        "6000025",
+        "6000026",
+        "6000027",
+        "6000028",
+        "6000029",
+        "6000032",
+        "6000033",
+        "6000035",
+        "6000037",
+        "6000039",
+        "6000040",
+        "6000042",
+        "6000043",
+        "6000049",
+        "6000050",
+        "6000051",
+        "6000061"
+      ],
+      "raw_count": 80,
+      "representative_raw_keys": [
+        "6000002::S03::A001",
+        "6000002::S03::A002",
+        "6000003::S03::A004",
+        "6000003::S03::A005",
+        "6000003::S03::A006",
+        "6000004::S02::A009",
+        "6000004::S02::A011",
+        "6000004::S07::A001"
+      ],
+      "resource_classes": {
+        "FILE": 5,
+        "PROCESS": 80
+      },
+      "source_rule_ids": [
+        "R1-ARCHETYPE-HOST-PRIVILEGE-LEXEME"
+      ]
+    },
+    "PROCESS_COMMAND_EXECUTION": {
+      "action_types": {
+        "host_cli": 712
+      },
+      "behavior_scopes": {
+        "HOST_LOCAL": 712
+      },
+      "candidate_execution_modes": {
+        "NATIVE_CANDIDATE": 373,
+        "REQUIRES_MANUAL_DESIGN": 339
+      },
+      "named_protocols_or_services": {
+        "DNS": 1,
+        "FTP": 12,
+        "HTTP": 23,
+        "HTTPS": 11,
+        "MSSQL": 1,
+        "MYSQL": 2,
+        "RDP": 5,
+        "SMB": 10,
+        "SSH": 4,
+        "TCP": 5,
+        "TLS": 1,
+        "UDP": 2,
+        "UNKNOWN": 656
+      },
+      "os_platform_hints": {
+        "linux": 20,
+        "windows": 692
+      },
+      "playbooks": [
+        "6000002",
+        "6000003",
+        "6000004",
+        "6000006",
+        "6000007",
+        "6000008",
+        "6000009",
+        "6000010",
+        "6000011",
+        "6000013",
+        "6000014",
+        "6000015",
+        "6000016",
+        "6000017",
+        "6000018",
+        "6000019",
+        "6000020",
+        "6000021",
+        "6000023",
+        "6000024",
+        "6000025",
+        "6000026",
+        "6000027",
+        "6000028",
+        "6000029",
+        "6000031",
+        "6000032",
+        "6000033",
+        "6000034",
+        "6000035",
+        "6000036",
+        "6000037",
+        "6000039",
+        "6000040",
+        "6000041",
+        "6000042",
+        "6000043",
+        "6000044",
+        "6000046",
+        "6000047",
+        "6000048",
+        "6000049",
+        "6000050",
+        "6000051",
+        "6000053",
+        "6000054",
+        "6000055",
+        "6000056",
+        "6000058",
+        "6000060",
+        "6000061",
+        "6000062",
+        "6000063"
+      ],
+      "raw_count": 712,
+      "representative_raw_keys": [
+        "6000002::S02::A003",
+        "6000002::S05::A001",
+        "6000002::S05::A002",
+        "6000002::S05::A003",
+        "6000002::S05::A006",
+        "6000002::S06::A001",
+        "6000002::S07::A001",
+        "6000002::S07::A005"
+      ],
+      "resource_classes": {
+        "CONFIGURATION": 9,
+        "DATABASE": 1,
+        "PROCESS": 712
+      },
+      "source_rule_ids": [
+        "R1-ARCHETYPE-HOST-ACTION-TYPE",
+        "R1-ARCHETYPE-HOST-COMMAND-LEXEME"
+      ]
+    },
+    "TRANSFER_DOWNLOAD_UPLOAD": {
+      "action_types": {
+        "file_transfer": 166
+      },
+      "behavior_scopes": {
+        "NETWORK_INTERACTION": 166
+      },
+      "candidate_execution_modes": {
+        "SYNTHETIC_CANDIDATE": 166
+      },
+      "named_protocols_or_services": {
+        "DNS": 4,
+        "FTP": 14,
+        "HTTP": 153,
+        "HTTPS": 12,
+        "ICMP": 1,
+        "MYSQL": 2,
+        "RDP": 1,
+        "SMB": 15,
+        "SMTP": 3,
+        "SSH": 4,
+        "TCP": 7,
+        "TLS": 1
+      },
+      "os_platform_hints": {
+        "any": 166
+      },
+      "playbooks": [
+        "6000002",
+        "6000003",
+        "6000006",
+        "6000007",
+        "6000008",
+        "6000009",
+        "6000010",
+        "6000011",
+        "6000013",
+        "6000014",
+        "6000015",
+        "6000016",
+        "6000018",
+        "6000021",
+        "6000023",
+        "6000024",
+        "6000025",
+        "6000026",
+        "6000027",
+        "6000029",
+        "6000031",
+        "6000032",
+        "6000033",
+        "6000035",
+        "6000036",
+        "6000039",
+        "6000043",
+        "6000044",
+        "6000046",
+        "6000047",
+        "6000048",
+        "6000050",
+        "6000051",
+        "6000053",
+        "6000054",
+        "6000055",
+        "6000056",
+        "6000058",
+        "6000060",
+        "6000061",
+        "6000063"
+      ],
+      "raw_count": 166,
+      "representative_raw_keys": [
+        "6000002::S04::A001",
+        "6000002::S04::A002",
+        "6000002::S04::A003",
+        "6000002::S04::A004",
+        "6000003::S02::A001",
+        "6000003::S02::A002",
+        "6000003::S02::A003",
+        "6000003::S05::A001"
+      ],
+      "resource_classes": {
+        "FILE": 166,
+        "NETWORK": 166
+      },
+      "source_rule_ids": [
+        "R1-ARCHETYPE-ACTION-TYPE-FILE-TRANSFER"
+      ]
+    }
+  },
+  "derivation_basis": "Primary archetype is assigned mechanically from authenticated action_type and exact action name/description lexemes; no scoring or binding identity is created.",
+  "execution_archetype_count": 13,
+  "raw_record_count": 1796,
+  "schema_version": "exp-e0c-r1-execution-archetype-catalog-v1"
+}

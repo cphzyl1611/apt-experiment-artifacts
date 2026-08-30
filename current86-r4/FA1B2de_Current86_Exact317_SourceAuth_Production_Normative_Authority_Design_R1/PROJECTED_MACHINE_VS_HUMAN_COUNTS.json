@@ -1,0 +1,28 @@
+{
+  "schema": "FA1B2DE_CURRENT86_EXACT317_PROJECTED_MACHINE_VS_HUMAN_COUNTS_R1",
+  "design_status": "DESIGN_ONLY",
+  "exact_target_count": 317,
+  "group_count": 3,
+  "current_terminal_partition": {
+    "BLOCKED_MISSING_AUTHORITY": 317
+  },
+  "projected_governance_capacity_if_authority_inputs_remain_missing": {
+    "MACHINE_ADMISSION_RESOLVABLE": 0,
+    "MACHINE_FIELD_PIN_RESOLVABLE": 0,
+    "HUMAN_NORMATIVE_ADMISSION_REQUIRED": 317,
+    "HUMAN_FIELD_PIN_GOVERNANCE_REQUIRED": 317,
+    "BLOCKED_MISSING_AUTHORITY": 317
+  },
+  "governance_workload": {
+    "SCHEMA_RULE_APPROVAL_UNITS": 0,
+    "EXACT_REGISTRY_APPROVAL_UNITS": 0,
+    "TARGET_LEVEL_HUMAN_ADMISSION_UNITS": 317,
+    "TARGET_LEVEL_HUMAN_FIELD_PIN_UNITS": 317,
+    "UNRESOLVED_SOURCE_OR_PROVENANCE_UNITS": 317,
+    "GROUP_REVIEW_PACKET_COUNT": 3
+  },
+  "projection_is_non_additive": true,
+  "interpretation": "No machine route is claimed. The 317 human units are target-level because no exact schema rule or authenticated registry tuple can supply candidate object identity, semantics, and pointer. Human-route counts are future governance capacity only and are not added to the current terminal partition.",
+  "human_decisions_created": 0,
+  "raw_level_human_decisions": 0
+}
