@@ -1,0 +1,30 @@
+{
+  "authority_boundary": {
+    "active_source_authority_created": false,
+    "binding_authority_mutated": false,
+    "binding_publication": false,
+    "field_pins_created": 0,
+    "git_ref_mutation": false,
+    "p0_executed": false,
+    "p1_executed": false,
+    "scoring_authority_mutated": false,
+    "source_auth_executed": false
+  },
+  "consumer_pointer": {
+    "exists_before_activation": false,
+    "path": "authority_store/r7-activation-consumer-pointer.json",
+    "sha256_before_activation": null
+  },
+  "exec_r4_base_package_sha256sums_sha256": "06722fddd39d4d55a0cd1e4834bb63491112d13442aec1cc067219fb5bd232f6",
+  "newer_conflicting_transactions": [],
+  "production_authority_visible": false,
+  "root_ids": {
+    "EXEC_R4_PRODUCTION_DISPATCH_INTEGRATION": "EXEC_R4_BASELINE_SYNTHETIC_ONLY",
+    "SOURCE_ADMISSION_CORPUS_SCHEMA_RULE_ROOT": "ABSENT_NO_ACTIVE_PRODUCTION_ROOT",
+    "SOURCE_ADMISSION_REGISTRY_ROOT": "ABSENT_NO_ACTIVE_PRODUCTION_ROOT",
+    "SOURCE_AUTH_COMMON_INPUT_FREEZE_AND_RUNTIME_WHITELIST": "ABSENT_NO_EXECUTABLE_FREEZE"
+  },
+  "schema": "FA1B2DE_CURRENT86_BINDING_R7_PRE_ACTIVATION_STATE_V1",
+  "state_status": "AUTHENTICATED_PRE_ACTIVATION",
+  "transaction_id": "e8a0a97a33d47ac68c8ded4af1af109fa010d979acf9736fd5dffdebf96c5208"
+}

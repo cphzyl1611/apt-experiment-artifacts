@@ -1,0 +1,99 @@
+{
+  "activation_scope": "EXACT_R6_TRANSACTION_ONLY",
+  "approved_r6_root_ids": {
+    "EXEC_R4_PRODUCTION_DISPATCH_INTEGRATION": "3f1f169c1ada9fbddd381727114b5b4a0a422b1bd4016c6ec5ff5b6461a02aa8",
+    "SOURCE_ADMISSION_CORPUS_SCHEMA_RULE_ROOT": "f88d911080e97e8e1e58010fd5e551f91127ec6b1ae77d2a3d28af07f71ef52f",
+    "SOURCE_ADMISSION_REGISTRY_ROOT": "8f9596729361f8c6620c98c18344c8cf31073e35085b3eb408fc5212ebd41d6a",
+    "SOURCE_AUTH_COMMON_INPUT_FREEZE_AND_RUNTIME_WHITELIST": "5d868125294dcd4d5f643f2fef820b89b056925a925d0b0f98fcf7408c41009d"
+  },
+  "authenticated": true,
+  "authentication_status": "PASS",
+  "authority_boundary": {
+    "active_source_authority_created": false,
+    "binding_authority_mutated": false,
+    "binding_publication": false,
+    "field_pins_created": 0,
+    "git_ref_mutation": false,
+    "p0_executed": false,
+    "p1_executed": false,
+    "scoring_authority_mutated": false,
+    "source_auth_executed": false
+  },
+  "decision": "APPROVE_EXACT_PRODUCTION_SOURCE_AUTHORITY_ACTIVATION",
+  "exact317_manifest": {
+    "candidate_side_total": 231,
+    "path": "/home/cph/fa1b2de-bso-a2-transition-r2-design-patch/FA1B2de_Current86_Exact317_SourceAuth_Execution_Contract_R4/00_lineage/EXACT317_TARGET_MANIFEST.json",
+    "raw_side_total": 86,
+    "sha256": "d8d55d369fe433bf7b93a3c332b8ac9a517a9146b28fa223370ff3ec946955ac",
+    "target_total": 317
+  },
+  "frozen_r6_transaction_design_sha256": "a89cf9a3218f4e9029b42a5dada352e5bc0af0e199da4d1f006492db52708c41",
+  "r5_pinned_review": {
+    "commit": "90513ab76a2d392398fefd0456ad53a4660a3e8a",
+    "tree": "fc67b7dcc66284ea2b8be4bb52d2fc3f3d1ebef5",
+    "repository": "/home/cph/fa1b2de-review-artifacts",
+    "commit_type": "commit",
+    "package_prefix": "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_R5_Wrapper_Materialization",
+    "review_commit_authentication": "PASS"
+  },
+  "r6_artifact_hashes": {
+    "input_authentication": "e8f96de45994ad070ca5adc95dff800895095e326274e163302b062d52f30e02",
+    "activation_preconditions": "bf4e02380b08858d045007ed24b5dea45f89444f9014a34fe86b0028e690d06e",
+    "atomicity_contract": "5918a8802e16e06a81b35055952762eb9f489dd67c2e719e7a0ea267c19200a6",
+    "independent_activation_verifier_contract": "42279299c161c372c6fbedf776cbb1e0a21e0ceb611b13190e63ba70cd3e877c",
+    "independent_design_verification": "8cf3892484afe3f6684aa9bc2551fe668f14478c91fa909ba06843bd427a8856"
+  },
+  "r6_independent_design_verification": {
+    "path": "R6/R6_INDEPENDENT_DESIGN_VERIFICATION.json",
+    "sha256": "8cf3892484afe3f6684aa9bc2551fe668f14478c91fa909ba06843bd427a8856",
+    "status": "PASS"
+  },
+  "human_origin": "USER_EXPLICIT_APPROVAL",
+  "newer_conflicting_transaction_count": 0,
+  "protected_hashes": {
+    "exec_r4_sha256sums_sha256": "06722fddd39d4d55a0cd1e4834bb63491112d13442aec1cc067219fb5bd232f6",
+    "gov_r4_sha256sums_sha256": "233cfbda4676d447b82273d8defaf40a66b2d8bf0a8b3e1e58f5c471cd12fd63",
+    "production_authority_inputs_sha256sums_sha256": "d00c3bb53f423b4379c659a760d89060d881967802a2aa163ceef26f52e5013c",
+    "r4_sha256sums_sha256": "9aaa523bd7dce92bf865ee8283ddf61e339d6a804f90b264fa87e700dde2e2cd"
+  },
+  "r5_package_sha256sums_sha256": "5f1746499c2ca5ba966b3f716e6b8ca87844cf4cd0a1316ec215b25cc092fdc1",
+  "r6_decision_packet": {
+    "path": "R6/R6_HUMAN_ACTIVATION_DECISION_PACKET.json",
+    "prior_decision": null,
+    "prior_status": "PENDING_NO_DEFAULT",
+    "sha256": "4c3768aaede7bcf05dae64a1541a019565bfcfa42f6e043fd4de022b593e5210"
+  },
+  "r6_package": {
+    "file_count": 14,
+    "file_hashes": {
+      "FILE_LIST.txt": "b82de3c0fd304e0789f65d3e914b9485d4a938cab9265c134788069f03c80a8b",
+      "R6_ACTIVATION_PRECONDITIONS.json": "bf4e02380b08858d045007ed24b5dea45f89444f9014a34fe86b0028e690d06e",
+      "R6_ATOMICITY_AND_ROLLBACK_CONTRACT.json": "5918a8802e16e06a81b35055952762eb9f489dd67c2e719e7a0ea267c19200a6",
+      "R6_EXACT317_FIELD_PIN_PACKET_SKELETONS.jsonl": "d55bc015d21b3fb4a6edc7ef9aa0caf5abca1da177da2df232f1dd97bd6f8573",
+      "R6_FIELD_PIN_GOVERNANCE_BRIDGE.json": "1c31084acba607089b57b8de4c0080081da456f717770da2638bfa594688f6cc",
+      "R6_HUMAN_ACTIVATION_DECISION_PACKET.json": "4c3768aaede7bcf05dae64a1541a019565bfcfa42f6e043fd4de022b593e5210",
+      "R6_INDEPENDENT_ACTIVATION_VERIFIER_CONTRACT.json": "42279299c161c372c6fbedf776cbb1e0a21e0ceb611b13190e63ba70cd3e877c",
+      "R6_INDEPENDENT_DESIGN_VERIFICATION.json": "8cf3892484afe3f6684aa9bc2551fe668f14478c91fa909ba06843bd427a8856",
+      "R6_INPUT_AUTHENTICATION.json": "e8f96de45994ad070ca5adc95dff800895095e326274e163302b062d52f30e02",
+      "R6_PRODUCTION_ACTIVATION_GOVERNANCE_REPORT.md": "7844dcd99d82fceeaddbfb3c77c6c2234568590cf2a0f4ebb37a6365be686a54",
+      "R6_PRODUCTION_ACTIVATION_TRANSACTION_DESIGN.json": "a89cf9a3218f4e9029b42a5dada352e5bc0af0e199da4d1f006492db52708c41",
+      "tests/test_r6_design.py": "24e89189dba6160fc73d7a25ecd61ecac6ce3f9826433066107240e79740b603",
+      "tools/materialize_r6.py": "61da84264cff18c4823c04676af0b7297ed3618ed6f3c13e420090a9ec832377",
+      "tools/verify_r6.py": "e9e0da4d10e0576f5a573c0c9e9abb948ed58fe36cc962edabe92c2530d2f68a"
+    },
+    "path": "/home/cph/fa1b2de-bso-a2-transition-r2-design-patch/FA1B2de_Current86_Exact317_SourceAuth_Binding_R6_Production_Activation_Governance_Design",
+    "sha256sums_sha256": "7abdd9630ce53d0b457b5111c4c071d4bee2b99b1d436ee57808128f38c38c62"
+  },
+  "r6_pinned_review": {
+    "authentication": "PASS",
+    "commit": "ef9cc3cf7566cbe2280c29fcc1dde958cebf12d9",
+    "commit_type": "commit",
+    "committed_file_count": 14,
+    "committed_file_mismatches": 0,
+    "package_prefix": "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_R6_Production_Activation_Governance_Design",
+    "repository": "/home/cph/fa1b2de-review-artifacts",
+    "tree": "d72a4884fd6ebb956ef2da61ebde83fa9d0921ca"
+  },
+  "schema": "FA1B2DE_CURRENT86_BINDING_R7_HUMAN_ACTIVATION_APPROVAL_AUTHENTICATION_V1",
+  "transaction_id": "e8a0a97a33d47ac68c8ded4af1af109fa010d979acf9736fd5dffdebf96c5208"
+}

@@ -1,0 +1,50 @@
+{
+  "activation_lock_acquired": true,
+  "artifact_sha256s": {
+    "EXEC_R4_PRODUCTION_DISPATCH_INTEGRATION": {
+      "artifact_sha256": "24fafe7dc36c3f04b73fee413a6cabb66bbbb2bcafa0a460e8a2d6516027099b",
+      "byte_length": 1829,
+      "committed_path": "authority_store/committed/e8a0a97a33d47ac68c8ded4af1af109fa010d979acf9736fd5dffdebf96c5208/roots/EXEC_R4_PRODUCTION_DISPATCH_INTEGRATION.json",
+      "root_id": "3f1f169c1ada9fbddd381727114b5b4a0a422b1bd4016c6ec5ff5b6461a02aa8"
+    },
+    "SOURCE_ADMISSION_CORPUS_SCHEMA_RULE_ROOT": {
+      "artifact_sha256": "3eb4a78f6487286a6321e466d5a3cc2f6f645be959c51a33dd0046e3a4007346",
+      "byte_length": 1723,
+      "committed_path": "authority_store/committed/e8a0a97a33d47ac68c8ded4af1af109fa010d979acf9736fd5dffdebf96c5208/roots/SOURCE_ADMISSION_CORPUS_SCHEMA_RULE_ROOT.json",
+      "root_id": "f88d911080e97e8e1e58010fd5e551f91127ec6b1ae77d2a3d28af07f71ef52f"
+    },
+    "SOURCE_ADMISSION_REGISTRY_ROOT": {
+      "artifact_sha256": "e1f20c4a4352997e3a969a1d281e8ff0aa4314a6748edd82ad2b0a6eee013d1c",
+      "byte_length": 27215,
+      "committed_path": "authority_store/committed/e8a0a97a33d47ac68c8ded4af1af109fa010d979acf9736fd5dffdebf96c5208/roots/SOURCE_ADMISSION_REGISTRY_ROOT.json",
+      "root_id": "8f9596729361f8c6620c98c18344c8cf31073e35085b3eb408fc5212ebd41d6a"
+    },
+    "SOURCE_AUTH_COMMON_INPUT_FREEZE_AND_RUNTIME_WHITELIST": {
+      "artifact_sha256": "98f4f42b4014f3f06f3a2ba823ff70fb13e0dffa15083b7ab8ba8c4bc647ac3d",
+      "byte_length": 1761,
+      "committed_path": "authority_store/committed/e8a0a97a33d47ac68c8ded4af1af109fa010d979acf9736fd5dffdebf96c5208/roots/SOURCE_AUTH_COMMON_INPUT_FREEZE_AND_RUNTIME_WHITELIST.json",
+      "root_id": "5d868125294dcd4d5f643f2fef820b89b056925a925d0b0f98fcf7408c41009d"
+    }
+  },
+  "atomic_replace_performed": true,
+  "commit_point": "ATOMIC_REPLACE_SINGLE_AUTHORITY_CONSUMER_POINTER_AFTER_VERIFIER_PASS",
+  "commit_status": "COMMITTED",
+  "consumer_pointer_path": "authority_store/r7-activation-consumer-pointer.json",
+  "consumer_pointer_sha256": "02394a7fc7c5f337dfbfff521467759f80e14f8d5d27ca9e01653eec3f0d592c",
+  "partial_state_exposed": false,
+  "post_state_root_ids": {
+    "EXEC_R4_PRODUCTION_DISPATCH_INTEGRATION": "3f1f169c1ada9fbddd381727114b5b4a0a422b1bd4016c6ec5ff5b6461a02aa8",
+    "SOURCE_ADMISSION_CORPUS_SCHEMA_RULE_ROOT": "f88d911080e97e8e1e58010fd5e551f91127ec6b1ae77d2a3d28af07f71ef52f",
+    "SOURCE_ADMISSION_REGISTRY_ROOT": "8f9596729361f8c6620c98c18344c8cf31073e35085b3eb408fc5212ebd41d6a",
+    "SOURCE_AUTH_COMMON_INPUT_FREEZE_AND_RUNTIME_WHITELIST": "5d868125294dcd4d5f643f2fef820b89b056925a925d0b0f98fcf7408c41009d"
+  },
+  "pre_state_root_ids": {
+    "EXEC_R4_PRODUCTION_DISPATCH_INTEGRATION": "EXEC_R4_BASELINE_SYNTHETIC_ONLY",
+    "SOURCE_ADMISSION_CORPUS_SCHEMA_RULE_ROOT": "ABSENT_NO_ACTIVE_PRODUCTION_ROOT",
+    "SOURCE_ADMISSION_REGISTRY_ROOT": "ABSENT_NO_ACTIVE_PRODUCTION_ROOT",
+    "SOURCE_AUTH_COMMON_INPUT_FREEZE_AND_RUNTIME_WHITELIST": "ABSENT_NO_EXECUTABLE_FREEZE"
+  },
+  "production_sees": "FULLY_COMMITTED_POST_STATE",
+  "schema": "FA1B2DE_CURRENT86_BINDING_R7_COMMIT_POINT_V1",
+  "transaction_id": "e8a0a97a33d47ac68c8ded4af1af109fa010d979acf9736fd5dffdebf96c5208"
+}

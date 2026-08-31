@@ -1,0 +1,51 @@
+{
+  "activation_status": "NOT_ACTIVE",
+  "active_canonical_source_authority_created": false,
+  "authority_role": "EXEC_R4_PRODUCTION_DISPATCH_INTEGRATION",
+  "authority_status": "NON_ACTIVE_CANDIDATE",
+  "binding_publication": false,
+  "dispatch_entries": [
+    {
+      "entrypoint": {
+        "path": "04_extractors/c0_exact_row_extractor.py",
+        "sha256": "ec84d8007b4e7c9e3e029ce84723c8b27427d9b35ddc1dd3b83582db5deb4a5b",
+        "spec_id": "R4_C0_IMMUTABLE_JSONL_WRAPPER_EXTRACTOR_V1"
+      },
+      "rule_id": "R4_WRAPPER_C0_60",
+      "status": "PROSPECTIVE_NOT_REGISTERED"
+    },
+    {
+      "entrypoint": {
+        "path": "04_extractors/raw_positional_extractor.py",
+        "sha256": "4b1943320ea3bdc4132a38792bfada6d5b05a657254205cbb36eea2fc4444ae9",
+        "spec_id": "R4_RAW_PLAYBOOK_POSITIONAL_EXTRACTOR_V1"
+      },
+      "rule_id": "R4_WRAPPER_RAW_LEGACY_26",
+      "status": "PROSPECTIVE_NOT_REGISTERED"
+    },
+    {
+      "entrypoint": {
+        "path": "04_extractors/scoring_exact_id_row_extractor.py",
+        "sha256": "d7c46ac740b21d8e788016a416a6c68ef99fb94a169282fcbfecedfbdd13e531",
+        "spec_id": "R4_SCORING_ID_JSONL_WRAPPER_EXTRACTOR_V1"
+      },
+      "rule_id": "R4_WRAPPER_SCORING_231",
+      "status": "PROSPECTIVE_NOT_REGISTERED"
+    }
+  ],
+  "exec_r4_mutated": false,
+  "field_pins_created": 0,
+  "git_ref_mutation": false,
+  "registered_in_exec_r4": false,
+  "schema": "FA1B2DE_CURRENT86_EXEC_R4_PRODUCTION_DISPATCH_INTEGRATION_PATCH_R5_CANDIDATE",
+  "scope": "EXACT317_ONLY",
+  "scoring_authority_mutated": false,
+  "source_auth_executed": false,
+  "target_count": 317,
+  "target_manifest_sha256": "d8d55d369fe433bf7b93a3c332b8ac9a517a9146b28fa223370ff3ec946955ac",
+  "wrapper_rule_ids": [
+    "R4_WRAPPER_C0_60",
+    "R4_WRAPPER_RAW_LEGACY_26",
+    "R4_WRAPPER_SCORING_231"
+  ]
+}

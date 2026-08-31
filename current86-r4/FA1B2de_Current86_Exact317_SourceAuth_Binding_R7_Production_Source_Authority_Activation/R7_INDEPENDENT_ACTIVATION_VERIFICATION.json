@@ -1,0 +1,51 @@
+{
+  "active_source_authority_created": true,
+  "binding_authority_mutated": false,
+  "binding_publication": false,
+  "checks": {
+    "atomic_pointer_commit": "PASS",
+    "downstream_zero_state": "PASS",
+    "exact317_conservation": "PASS",
+    "protected_hashes": "PASS",
+    "r6_decision_authenticated": "PASS",
+    "r6_transaction_exact": "PASS",
+    "staged_roots": "PASS"
+  },
+  "consumer_pointer_sha256": "02394a7fc7c5f337dfbfff521467759f80e14f8d5d27ca9e01653eec3f0d592c",
+  "exact317": {
+    "candidate": 231,
+    "cross_route_substitution": 0,
+    "duplicates": 0,
+    "raw": 86,
+    "route_counts": {
+      "R4_WRAPPER_C0_60": 60,
+      "R4_WRAPPER_RAW_LEGACY_26": 26,
+      "R4_WRAPPER_SCORING_231": 231
+    },
+    "target_manifest_sha256": "d8d55d369fe433bf7b93a3c332b8ac9a517a9146b28fa223370ff3ec946955ac",
+    "total": 317,
+    "union": "Exact317"
+  },
+  "failure_policy": "FAIL_CLOSED_NO_ACTIVATION",
+  "field_pins_created": 0,
+  "git_ref_mutation": false,
+  "independent": true,
+  "next_action": "FRESH_INDEPENDENT_REVIEW_OF_BINDING_R7_PRODUCTION_SOURCE_AUTHORITY_ACTIVATION",
+  "p0_executed": false,
+  "p1_executed": false,
+  "r5_package_sha256sums_sha256": "5f1746499c2ca5ba966b3f716e6b8ca87844cf4cd0a1316ec215b25cc092fdc1",
+  "r6_package_sha256sums_sha256": "7abdd9630ce53d0b457b5111c4c071d4bee2b99b1d436ee57808128f38c38c62",
+  "r6_review_commit": "ef9cc3cf7566cbe2280c29fcc1dde958cebf12d9",
+  "r6_review_tree": "d72a4884fd6ebb956ef2da61ebde83fa9d0921ca",
+  "recomputed_root_ids": {
+    "EXEC_R4_PRODUCTION_DISPATCH_INTEGRATION": "3f1f169c1ada9fbddd381727114b5b4a0a422b1bd4016c6ec5ff5b6461a02aa8",
+    "SOURCE_ADMISSION_CORPUS_SCHEMA_RULE_ROOT": "f88d911080e97e8e1e58010fd5e551f91127ec6b1ae77d2a3d28af07f71ef52f",
+    "SOURCE_ADMISSION_REGISTRY_ROOT": "8f9596729361f8c6620c98c18344c8cf31073e35085b3eb408fc5212ebd41d6a",
+    "SOURCE_AUTH_COMMON_INPUT_FREEZE_AND_RUNTIME_WHITELIST": "5d868125294dcd4d5f643f2fef820b89b056925a925d0b0f98fcf7408c41009d"
+  },
+  "schema": "FA1B2DE_CURRENT86_BINDING_R7_INDEPENDENT_ACTIVATION_VERIFICATION_V1",
+  "scoring_authority_mutated": false,
+  "source_auth_executed": false,
+  "transaction_id": "e8a0a97a33d47ac68c8ded4af1af109fa010d979acf9736fd5dffdebf96c5208",
+  "verification_status": "PASS"
+}

@@ -1,0 +1,71 @@
+{
+  "field_pin_root_present": false,
+  "production_mount": "FORBIDDEN_UNTIL_POINTER_COMMIT",
+  "root_count": 4,
+  "roots": {
+    "EXEC_R4_PRODUCTION_DISPATCH_INTEGRATION": {
+      "byte_length": 1829,
+      "committed_artifact_sha256": "24fafe7dc36c3f04b73fee413a6cabb66bbbb2bcafa0a460e8a2d6516027099b",
+      "committed_path": "authority_store/committed/e8a0a97a33d47ac68c8ded4af1af109fa010d979acf9736fd5dffdebf96c5208/roots/EXEC_R4_PRODUCTION_DISPATCH_INTEGRATION.json",
+      "immutable": true,
+      "root_id": "3f1f169c1ada9fbddd381727114b5b4a0a422b1bd4016c6ec5ff5b6461a02aa8",
+      "source_artifact": {
+        "byte_length": 1829,
+        "path": "R5/06_non_active_candidates/EXEC_R4_PRODUCTION_DISPATCH_INTEGRATION_PATCH_CANDIDATE.json",
+        "sha256": "24fafe7dc36c3f04b73fee413a6cabb66bbbb2bcafa0a460e8a2d6516027099b"
+      },
+      "staged_artifact_sha256": "24fafe7dc36c3f04b73fee413a6cabb66bbbb2bcafa0a460e8a2d6516027099b",
+      "staging_path": "authority_store/r6-activation-staging/e8a0a97a33d47ac68c8ded4af1af109fa010d979acf9736fd5dffdebf96c5208/roots/EXEC_R4_PRODUCTION_DISPATCH_INTEGRATION.json",
+      "status": "STAGED_AND_COMMITTED_VERIFIED"
+    },
+    "SOURCE_ADMISSION_CORPUS_SCHEMA_RULE_ROOT": {
+      "byte_length": 1723,
+      "committed_artifact_sha256": "3eb4a78f6487286a6321e466d5a3cc2f6f645be959c51a33dd0046e3a4007346",
+      "committed_path": "authority_store/committed/e8a0a97a33d47ac68c8ded4af1af109fa010d979acf9736fd5dffdebf96c5208/roots/SOURCE_ADMISSION_CORPUS_SCHEMA_RULE_ROOT.json",
+      "immutable": true,
+      "root_id": "f88d911080e97e8e1e58010fd5e551f91127ec6b1ae77d2a3d28af07f71ef52f",
+      "source_artifact": {
+        "byte_length": 1723,
+        "path": "R5/06_non_active_candidates/SOURCE_ADMISSION_CORPUS_SCHEMA_RULE_ROOT_CANDIDATE.json",
+        "sha256": "3eb4a78f6487286a6321e466d5a3cc2f6f645be959c51a33dd0046e3a4007346"
+      },
+      "staged_artifact_sha256": "3eb4a78f6487286a6321e466d5a3cc2f6f645be959c51a33dd0046e3a4007346",
+      "staging_path": "authority_store/r6-activation-staging/e8a0a97a33d47ac68c8ded4af1af109fa010d979acf9736fd5dffdebf96c5208/roots/SOURCE_ADMISSION_CORPUS_SCHEMA_RULE_ROOT.json",
+      "status": "STAGED_AND_COMMITTED_VERIFIED"
+    },
+    "SOURCE_ADMISSION_REGISTRY_ROOT": {
+      "byte_length": 27215,
+      "committed_artifact_sha256": "e1f20c4a4352997e3a969a1d281e8ff0aa4314a6748edd82ad2b0a6eee013d1c",
+      "committed_path": "authority_store/committed/e8a0a97a33d47ac68c8ded4af1af109fa010d979acf9736fd5dffdebf96c5208/roots/SOURCE_ADMISSION_REGISTRY_ROOT.json",
+      "immutable": true,
+      "root_id": "8f9596729361f8c6620c98c18344c8cf31073e35085b3eb408fc5212ebd41d6a",
+      "source_artifact": {
+        "byte_length": 27215,
+        "path": "R5/06_non_active_candidates/SOURCE_ADMISSION_REGISTRY_ROOT_CANDIDATE.json",
+        "sha256": "e1f20c4a4352997e3a969a1d281e8ff0aa4314a6748edd82ad2b0a6eee013d1c"
+      },
+      "staged_artifact_sha256": "e1f20c4a4352997e3a969a1d281e8ff0aa4314a6748edd82ad2b0a6eee013d1c",
+      "staging_path": "authority_store/r6-activation-staging/e8a0a97a33d47ac68c8ded4af1af109fa010d979acf9736fd5dffdebf96c5208/roots/SOURCE_ADMISSION_REGISTRY_ROOT.json",
+      "status": "STAGED_AND_COMMITTED_VERIFIED"
+    },
+    "SOURCE_AUTH_COMMON_INPUT_FREEZE_AND_RUNTIME_WHITELIST": {
+      "byte_length": 1761,
+      "committed_artifact_sha256": "98f4f42b4014f3f06f3a2ba823ff70fb13e0dffa15083b7ab8ba8c4bc647ac3d",
+      "committed_path": "authority_store/committed/e8a0a97a33d47ac68c8ded4af1af109fa010d979acf9736fd5dffdebf96c5208/roots/SOURCE_AUTH_COMMON_INPUT_FREEZE_AND_RUNTIME_WHITELIST.json",
+      "immutable": true,
+      "root_id": "5d868125294dcd4d5f643f2fef820b89b056925a925d0b0f98fcf7408c41009d",
+      "source_artifact": {
+        "byte_length": 1761,
+        "path": "R5/06_non_active_candidates/COMMON_INPUT_FREEZE_ADDITIONS_CANDIDATE.json",
+        "sha256": "98f4f42b4014f3f06f3a2ba823ff70fb13e0dffa15083b7ab8ba8c4bc647ac3d"
+      },
+      "staged_artifact_sha256": "98f4f42b4014f3f06f3a2ba823ff70fb13e0dffa15083b7ab8ba8c4bc647ac3d",
+      "staging_path": "authority_store/r6-activation-staging/e8a0a97a33d47ac68c8ded4af1af109fa010d979acf9736fd5dffdebf96c5208/roots/SOURCE_AUTH_COMMON_INPUT_FREEZE_AND_RUNTIME_WHITELIST.json",
+      "status": "STAGED_AND_COMMITTED_VERIFIED"
+    }
+  },
+  "schema": "FA1B2DE_CURRENT86_BINDING_R7_STAGED_AUTHORITY_ROOTS_V1",
+  "staging_namespace": "authority_store/r6-activation-staging/e8a0a97a33d47ac68c8ded4af1af109fa010d979acf9736fd5dffdebf96c5208",
+  "staging_status": "STAGED_VERIFIED_NOT_VISIBLE",
+  "transaction_id": "e8a0a97a33d47ac68c8ded4af1af109fa010d979acf9736fd5dffdebf96c5208"
+}

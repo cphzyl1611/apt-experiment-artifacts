@@ -1,0 +1,71 @@
+{
+  "all_preconditions_pass": true,
+  "decision_gate": {
+    "decision": "APPROVE_EXACT_PRODUCTION_SOURCE_AUTHORITY_ACTIVATION",
+    "status": "PASS"
+  },
+  "exact317": {
+    "candidate": 231,
+    "cross_route_substitution": 0,
+    "duplicates": 0,
+    "raw": 86,
+    "route_counts": {
+      "R4_WRAPPER_C0_60": 60,
+      "R4_WRAPPER_RAW_LEGACY_26": 26,
+      "R4_WRAPPER_SCORING_231": 231
+    },
+    "target_manifest_sha256": "d8d55d369fe433bf7b93a3c332b8ac9a517a9146b28fa223370ff3ec946955ac",
+    "total": 317,
+    "union": "Exact317"
+  },
+  "failure_mode": "FAIL_CLOSED_NO_ACTIVATION",
+  "human_origin": "USER_EXPLICIT_APPROVAL",
+  "newer_conflicting_transaction_count": 0,
+  "observed_status": "PASS",
+  "protected_source_state": {
+    "raw_git": {
+      "commit": "a699ebe4fa14cf25768fd0e5475b994a72b60dec",
+      "repository": "/home/cph/experiment",
+      "tree": "5ccafffe7e7785535fc276d352487b1d680947e9"
+    },
+    "source_artifacts": {
+      "c0_source": {
+        "byte_length": 2484224,
+        "path": "/home/cph/experiment-artifacts/tier-de1c0-handoff-20260823-083725/tier_de1c0_typed_operation_semantics.jsonl",
+        "sha256": "0036c42fb02026182274a7ac2a33b103b03b1e527856eb33b5ad650ceddd5c32"
+      },
+      "raw_registry": {
+        "byte_length": 2025927,
+        "path": "/home/cph/experiment-artifacts/fa1b2de-bso-r-20260825T100958Z/inputs/project_snapshots/raw_action_registry.jsonl",
+        "sha256": "53c85157f9fd0849ae19b1cf403333ad0d0af2a7d761b0498540dd92d66c1e93"
+      },
+      "scoring_snapshot": {
+        "byte_length": 1348627,
+        "path": "/home/cph/experiment-artifacts/fa1b2de-bso-r-20260825T100958Z/inputs/c2/c2_scoring_snapshot_post_c1.jsonl",
+        "sha256": "748a3808290f9e78f71c18d4553c77ae208517fd31d163fc2b3008cfcb57f1bb"
+      }
+    }
+  },
+  "r5_package_sha256sums_sha256": "5f1746499c2ca5ba966b3f716e6b8ca87844cf4cd0a1316ec215b25cc092fdc1",
+  "r6_independent_design_verification_sha256": "8cf3892484afe3f6684aa9bc2551fe668f14478c91fa909ba06843bd427a8856",
+  "r6_precondition_count": 10,
+  "r6_precondition_ids_rechecked": [
+    "OUTER_PACKAGE_HASHES",
+    "EXACT317_MANIFEST",
+    "APPROVED_RULE_IDS",
+    "EXACT_R4_WRAPPER_C0_60_MATERIALIZATION",
+    "EXACT_R4_WRAPPER_RAW_LEGACY_26_MATERIALIZATION",
+    "EXACT_R4_WRAPPER_SCORING_231_MATERIALIZATION",
+    "DRY_RUN_CONSERVATION",
+    "AUTHORITY_ZERO_STATE",
+    "NO_NEWER_CONFLICTING_ROOTS",
+    "PROTECTED_INPUT_STATE_NO_DRIFT"
+  ],
+  "r6_package_sha256sums_sha256": "7abdd9630ce53d0b457b5111c4c071d4bee2b99b1d436ee57808128f38c38c62",
+  "r6_preconditions_rechecked": true,
+  "r6_preconditions_sha256": "bf4e02380b08858d045007ed24b5dea45f89444f9014a34fe86b0028e690d06e",
+  "required_decision": "APPROVE_EXACT_PRODUCTION_SOURCE_AUTHORITY_ACTIVATION",
+  "same_role_different_hash_count": 0,
+  "schema": "FA1B2DE_CURRENT86_BINDING_R7_ACTIVATION_PRECONDITION_VERIFICATION_V1",
+  "transaction_id": "e8a0a97a33d47ac68c8ded4af1af109fa010d979acf9736fd5dffdebf96c5208"
+}

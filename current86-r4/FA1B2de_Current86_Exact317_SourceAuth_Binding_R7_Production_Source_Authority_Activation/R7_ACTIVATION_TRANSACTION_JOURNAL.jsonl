@@ -1,0 +1,9 @@
+{"event":"PRE_STATE_READ","pointer_exists":false,"pre_state_root_ids":{"EXEC_R4_PRODUCTION_DISPATCH_INTEGRATION":"EXEC_R4_BASELINE_SYNTHETIC_ONLY","SOURCE_ADMISSION_CORPUS_SCHEMA_RULE_ROOT":"ABSENT_NO_ACTIVE_PRODUCTION_ROOT","SOURCE_ADMISSION_REGISTRY_ROOT":"ABSENT_NO_ACTIVE_PRODUCTION_ROOT","SOURCE_AUTH_COMMON_INPUT_FREEZE_AND_RUNTIME_WHITELIST":"ABSENT_NO_EXECUTABLE_FREEZE"},"sequence":1,"status":"PASS"}
+{"event":"PROTECTED_HASH_RECHECK","exact317_manifest_sha256":"d8d55d369fe433bf7b93a3c332b8ac9a517a9146b28fa223370ff3ec946955ac","r5_package_sha256sums_sha256":"5f1746499c2ca5ba966b3f716e6b8ca87844cf4cd0a1316ec215b25cc092fdc1","r6_package_sha256sums_sha256":"7abdd9630ce53d0b457b5111c4c071d4bee2b99b1d436ee57808128f38c38c62","sequence":2,"status":"PASS"}
+{"event":"CONFLICT_ENUMERATION","newer_conflicting_transaction_count":0,"same_role_different_hash_count":0,"sequence":3,"status":"PASS"}
+{"event":"IMMUTABLE_ROOT_STAGING","partial_root_visibility":"FORBIDDEN","root_count":4,"sequence":4,"staging_namespace":"authority_store/r6-activation-staging/e8a0a97a33d47ac68c8ded4af1af109fa010d979acf9736fd5dffdebf96c5208","status":"PASS"}
+{"event":"R6_INDEPENDENT_VERIFIER_AGAINST_STAGING","exact_root_count":4,"field_pin_root_present":false,"human_decision_authenticated":true,"sequence":5,"status":"PASS"}
+{"event":"STAGED_FILES_FSYNC_AND_READ_ONLY","read_only_after_write":true,"sequence":6,"status":"PASS"}
+{"commit_point":"ATOMIC_REPLACE_SINGLE_AUTHORITY_CONSUMER_POINTER_AFTER_VERIFIER_PASS","event":"COMMIT_RECORD_FSYNC","sequence":7,"status":"PASS"}
+{"consumer_pointer_sha256":"02394a7fc7c5f337dfbfff521467759f80e14f8d5d27ca9e01653eec3f0d592c","event":"ATOMIC_CONSUMER_POINTER_REPLACE","partial_state_exposed":false,"sequence":8,"status":"PASS"}
+{"event":"POST_POINTER_READ","sequence":9,"status":"PASS","status_value":"COMMITTED","transaction_id":"e8a0a97a33d47ac68c8ded4af1af109fa010d979acf9736fd5dffdebf96c5208"}
