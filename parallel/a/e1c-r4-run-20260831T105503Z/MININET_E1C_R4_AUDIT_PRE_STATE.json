@@ -1,0 +1,333 @@
+{
+  "auditctl_list": {
+    "argv": [
+      "/usr/sbin/auditctl",
+      "-l"
+    ],
+    "returncode": 0,
+    "stderr": {
+      "__type__": "bytes",
+      "base64": "",
+      "encoding": "base64",
+      "length": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "utf8": ""
+    },
+    "stdout": {
+      "__type__": "bytes",
+      "base64": "LWEgYWx3YXlzLGV4aXQgLUYgYXJjaD1iNjQgLVMgY2xvbmUsZm9yayx2Zm9yayxleGVjdmUsZXhlY3ZlYXQgLUYgcHBpZD01NzU3NzYgLUYga2V5PWUxYzkwMmY3NGY1ODMKLWEgYWx3YXlzLGV4aXQgLUYgYXJjaD1iNjQgLVMgZXhpdF9ncm91cCAtRiBwcGlkPTU3NTc3NiAtRiBrZXk9ZTFjOTAyZjc0ZjU4MwotYSBhbHdheXMsZXhpdCAtRiBhcmNoPWI2NCAtUyBvcGVuYXQsb3BlbmF0MiAtRiBkaXI9L2hvbWUvY3BoL2V4cGVyaW1lbnQtcGFyYWxsZWwvZTAtYS9lMWMtcnVuLTIwMjYwODMxVDA1MDAyOFovdGVtcC1ldmVudHMgLUYgcHBpZD01NzU3NzYgLUYga2V5PWUxYzkwMmY3NGY1ODMKLWEgYWx3YXlzLGV4aXQgLUYgYXJjaD1iNjQgLVMgdW5saW5rLHVubGlua2F0LHJlbmFtZWF0IC1GIGRpcj0vaG9tZS9jcGgvZXhwZXJpbWVudC1wYXJhbGxlbC9lMC1hL2UxYy1ydW4tMjAyNjA4MzFUMDUwMDI4Wi90ZW1wLWV2ZW50cyAtRiBwcGlkPTU3NTc3NiAtRiBrZXk9ZTFjOTAyZjc0ZjU4MwotYSBhbHdheXMsZXhpdCAtRiBhcmNoPWI2NCAtUyBjb25uZWN0LGFjY2VwdCxiaW5kLGFjY2VwdDQgLUYgcHBpZD01NzU3NzYgLUYga2V5PWUxYzkwMmY3NGY1ODMKLWEgYWx3YXlzLGV4aXQgLUYgYXJjaD1iNjQgLVMgY2xvbmUsZm9yayx2Zm9yayxleGVjdmUsZXhlY3ZlYXQgLUYgcHBpZD01NzU3NzcgLUYga2V5PWUxYzkwMmY3NGY1ODMKLWEgYWx3YXlzLGV4aXQgLUYgYXJjaD1iNjQgLVMgZXhpdF9ncm91cCAtRiBwcGlkPTU3NTc3NyAtRiBrZXk9ZTFjOTAyZjc0ZjU4MwotYSBhbHdheXMsZXhpdCAtRiBhcmNoPWI2NCAtUyBvcGVuYXQsb3BlbmF0MiAtRiBkaXI9L2hvbWUvY3BoL2V4cGVyaW1lbnQtcGFyYWxsZWwvZTAtYS9lMWMtcnVuLTIwMjYwODMxVDA1MDAyOFovdGVtcC1ldmVudHMgLUYgcHBpZD01NzU3NzcgLUYga2V5PWUxYzkwMmY3NGY1ODMKLWEgYWx3YXlzLGV4aXQgLUYgYXJjaD1iNjQgLVMgdW5saW5rLHVubGlua2F0LHJlbmFtZWF0IC1GIGRpcj0vaG9tZS9jcGgvZXhwZXJpbWVudC1wYXJhbGxlbC9lMC1hL2UxYy1ydW4tMjAyNjA4MzFUMDUwMDI4Wi90ZW1wLWV2ZW50cyAtRiBwcGlkPTU3NTc3NyAtRiBrZXk9ZTFjOTAyZjc0ZjU4MwotYSBhbHdheXMsZXhpdCAtRiBhcmNoPWI2NCAtUyBjb25uZWN0LGFjY2VwdCxiaW5kLGFjY2VwdDQgLUYgcHBpZD01NzU3NzcgLUYga2V5PWUxYzkwMmY3NGY1ODMK",
+      "encoding": "base64",
+      "length": 1200,
+      "sha256": "1fb44fe1092e290e878f5e437fd5d2961803b551f52a656d4e4e93956ac95ad0",
+      "utf8": "-a always,exit -F arch=b64 -S clone,fork,vfork,execve,execveat -F ppid=575776 -F key=e1c902f74f583\n-a always,exit -F arch=b64 -S exit_group -F ppid=575776 -F key=e1c902f74f583\n-a always,exit -F arch=b64 -S openat,openat2 -F dir=/home/cph/experiment-parallel/e0-a/e1c-run-20260831T050028Z/temp-events -F ppid=575776 -F key=e1c902f74f583\n-a always,exit -F arch=b64 -S unlink,unlinkat,renameat -F dir=/home/cph/experiment-parallel/e0-a/e1c-run-20260831T050028Z/temp-events -F ppid=575776 -F key=e1c902f74f583\n-a always,exit -F arch=b64 -S connect,accept,bind,accept4 -F ppid=575776 -F key=e1c902f74f583\n-a always,exit -F arch=b64 -S clone,fork,vfork,execve,execveat -F ppid=575777 -F key=e1c902f74f583\n-a always,exit -F arch=b64 -S exit_group -F ppid=575777 -F key=e1c902f74f583\n-a always,exit -F arch=b64 -S openat,openat2 -F dir=/home/cph/experiment-parallel/e0-a/e1c-run-20260831T050028Z/temp-events -F ppid=575777 -F key=e1c902f74f583\n-a always,exit -F arch=b64 -S unlink,unlinkat,renameat -F dir=/home/cph/experiment-parallel/e0-a/e1c-run-20260831T050028Z/temp-events -F ppid=575777 -F key=e1c902f74f583\n-a always,exit -F arch=b64 -S connect,accept,bind,accept4 -F ppid=575777 -F key=e1c902f74f583\n"
+    }
+  },
+  "auditctl_status": {
+    "argv": [
+      "/usr/sbin/auditctl",
+      "-s"
+    ],
+    "parsed": {
+      "backlog": 0,
+      "backlog_limit": 8192,
+      "backlog_wait_time": 60000,
+      "backlog_wait_time_actual": 0,
+      "enabled": 1,
+      "lost": 0,
+      "raw": "enabled 1\nfailure 1\npid 573176\nrate_limit 0\nbacklog_limit 8192\nlost 0\nbacklog 0\nbacklog_wait_time 60000\nbacklog_wait_time_actual 0\nloginuid_immutable 0 unlocked\n"
+    },
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "enabled 1\nfailure 1\npid 573176\nrate_limit 0\nbacklog_limit 8192\nlost 0\nbacklog 0\nbacklog_wait_time 60000\nbacklog_wait_time_actual 0\nloginuid_immutable 0 unlocked\n"
+  },
+  "auditd_package": {
+    "argv": [
+      "/usr/bin/dpkg-query",
+      "-W",
+      "-f=${Package}=${Version}\n",
+      "auditd"
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "auditd=1:3.0.7-1build1\n"
+  },
+  "baseline_rule_dump_sha256": "1fb44fe1092e290e878f5e437fd5d2961803b551f52a656d4e4e93956ac95ad0",
+  "canonical_rule_lines": [
+    {
+      "canonical": [
+        "always,exit",
+        [
+          "clone",
+          "execve",
+          "execveat",
+          "fork",
+          "vfork"
+        ],
+        [
+          [
+            "arch",
+            "b64"
+          ],
+          [
+            "key",
+            "e1c902f74f583"
+          ],
+          [
+            "ppid",
+            "575776"
+          ]
+        ]
+      ],
+      "line": "-a always,exit -F arch=b64 -S clone,fork,vfork,execve,execveat -F ppid=575776 -F key=e1c902f74f583"
+    },
+    {
+      "canonical": [
+        "always,exit",
+        [
+          "exit_group"
+        ],
+        [
+          [
+            "arch",
+            "b64"
+          ],
+          [
+            "key",
+            "e1c902f74f583"
+          ],
+          [
+            "ppid",
+            "575776"
+          ]
+        ]
+      ],
+      "line": "-a always,exit -F arch=b64 -S exit_group -F ppid=575776 -F key=e1c902f74f583"
+    },
+    {
+      "canonical": [
+        "always,exit",
+        [
+          "openat",
+          "openat2"
+        ],
+        [
+          [
+            "arch",
+            "b64"
+          ],
+          [
+            "dir",
+            "/home/cph/experiment-parallel/e0-a/e1c-run-20260831T050028Z/temp-events"
+          ],
+          [
+            "key",
+            "e1c902f74f583"
+          ],
+          [
+            "ppid",
+            "575776"
+          ]
+        ]
+      ],
+      "line": "-a always,exit -F arch=b64 -S openat,openat2 -F dir=/home/cph/experiment-parallel/e0-a/e1c-run-20260831T050028Z/temp-events -F ppid=575776 -F key=e1c902f74f583"
+    },
+    {
+      "canonical": [
+        "always,exit",
+        [
+          "renameat",
+          "unlink",
+          "unlinkat"
+        ],
+        [
+          [
+            "arch",
+            "b64"
+          ],
+          [
+            "dir",
+            "/home/cph/experiment-parallel/e0-a/e1c-run-20260831T050028Z/temp-events"
+          ],
+          [
+            "key",
+            "e1c902f74f583"
+          ],
+          [
+            "ppid",
+            "575776"
+          ]
+        ]
+      ],
+      "line": "-a always,exit -F arch=b64 -S unlink,unlinkat,renameat -F dir=/home/cph/experiment-parallel/e0-a/e1c-run-20260831T050028Z/temp-events -F ppid=575776 -F key=e1c902f74f583"
+    },
+    {
+      "canonical": [
+        "always,exit",
+        [
+          "accept",
+          "accept4",
+          "bind",
+          "connect"
+        ],
+        [
+          [
+            "arch",
+            "b64"
+          ],
+          [
+            "key",
+            "e1c902f74f583"
+          ],
+          [
+            "ppid",
+            "575776"
+          ]
+        ]
+      ],
+      "line": "-a always,exit -F arch=b64 -S connect,accept,bind,accept4 -F ppid=575776 -F key=e1c902f74f583"
+    },
+    {
+      "canonical": [
+        "always,exit",
+        [
+          "clone",
+          "execve",
+          "execveat",
+          "fork",
+          "vfork"
+        ],
+        [
+          [
+            "arch",
+            "b64"
+          ],
+          [
+            "key",
+            "e1c902f74f583"
+          ],
+          [
+            "ppid",
+            "575777"
+          ]
+        ]
+      ],
+      "line": "-a always,exit -F arch=b64 -S clone,fork,vfork,execve,execveat -F ppid=575777 -F key=e1c902f74f583"
+    },
+    {
+      "canonical": [
+        "always,exit",
+        [
+          "exit_group"
+        ],
+        [
+          [
+            "arch",
+            "b64"
+          ],
+          [
+            "key",
+            "e1c902f74f583"
+          ],
+          [
+            "ppid",
+            "575777"
+          ]
+        ]
+      ],
+      "line": "-a always,exit -F arch=b64 -S exit_group -F ppid=575777 -F key=e1c902f74f583"
+    },
+    {
+      "canonical": [
+        "always,exit",
+        [
+          "openat",
+          "openat2"
+        ],
+        [
+          [
+            "arch",
+            "b64"
+          ],
+          [
+            "dir",
+            "/home/cph/experiment-parallel/e0-a/e1c-run-20260831T050028Z/temp-events"
+          ],
+          [
+            "key",
+            "e1c902f74f583"
+          ],
+          [
+            "ppid",
+            "575777"
+          ]
+        ]
+      ],
+      "line": "-a always,exit -F arch=b64 -S openat,openat2 -F dir=/home/cph/experiment-parallel/e0-a/e1c-run-20260831T050028Z/temp-events -F ppid=575777 -F key=e1c902f74f583"
+    },
+    {
+      "canonical": [
+        "always,exit",
+        [
+          "renameat",
+          "unlink",
+          "unlinkat"
+        ],
+        [
+          [
+            "arch",
+            "b64"
+          ],
+          [
+            "dir",
+            "/home/cph/experiment-parallel/e0-a/e1c-run-20260831T050028Z/temp-events"
+          ],
+          [
+            "key",
+            "e1c902f74f583"
+          ],
+          [
+            "ppid",
+            "575777"
+          ]
+        ]
+      ],
+      "line": "-a always,exit -F arch=b64 -S unlink,unlinkat,renameat -F dir=/home/cph/experiment-parallel/e0-a/e1c-run-20260831T050028Z/temp-events -F ppid=575777 -F key=e1c902f74f583"
+    },
+    {
+      "canonical": [
+        "always,exit",
+        [
+          "accept",
+          "accept4",
+          "bind",
+          "connect"
+        ],
+        [
+          [
+            "arch",
+            "b64"
+          ],
+          [
+            "key",
+            "e1c902f74f583"
+          ],
+          [
+            "ppid",
+            "575777"
+          ]
+        ]
+      ],
+      "line": "-a always,exit -F arch=b64 -S connect,accept,bind,accept4 -F ppid=575777 -F key=e1c902f74f583"
+    }
+  ],
+  "captured_at_utc": "2026-08-31T11:07:09.930329+00:00",
+  "installed_auditd_version": "auditd=1:3.0.7-1build1",
+  "persistent_rules_files": {
+    "files": {
+      "/etc/audit/rules.d/audit.rules": {
+        "sha256": "54c2cebdaadfb928f7327cc066218e38743f0ff94d02fe162a7a415e148d23a8",
+        "size": 244
+      }
+    }
+  }
+}

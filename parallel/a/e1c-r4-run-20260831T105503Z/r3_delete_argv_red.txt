@@ -1,0 +1,8 @@
+R3 delete argv defect reproduction (RED)
+Command: /usr/bin/python3 -m unittest -v test_e1c_r4_harness.py
+Result: FAIL (expected before repair)
+Exact failure:
+  AssertionError: '-d' != '/usr/sbin/auditctl'
+  R3 mutation received argv[0] = '-d' when the source rule came from
+  auditctl -l and therefore began with '-a'.
+Pinned R3 journal evidence: FileNotFoundError: [Errno 2] No such file or directory: '-d'

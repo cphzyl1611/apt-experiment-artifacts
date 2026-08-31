@@ -1,0 +1,49 @@
+{
+  "schema": "MININET_E1C_R4_LINEAGE_V1",
+  "created_at_utc": "2026-08-31T11:05:30Z",
+  "run_id": "e1c-r4-run-20260831T105503Z",
+  "pinned_review_commit": "90513ab76a2d392398fefd0456ad53a4660a3e8a",
+  "prior_runs": {
+    "r1": {
+      "run_id": "e1c-run-20260831T050028Z",
+      "audit_key": "e1c902f74f583",
+      "harness_path": "/home/cph/experiment-parallel/e0-a/e1c-run-20260831T050028Z/mininet_e1c_auditd_bounded_smoke.py",
+      "harness_sha256": "1af1f3b9e4213f214dad74e02c8a422152654e772dc670b1ba444fb5542fd417",
+      "historical_baseline": "No rules",
+      "historical_baseline_sha256": "61501e69a61dbbc1a41605ea15c34807e6b1d3992bee195dde36a7ebdd95dd87"
+    },
+    "r2": {
+      "run_id": "e1c-r2-run-20260831T061204Z",
+      "harness_path": "/home/cph/experiment-parallel/e0-a/e1c-r2-run-20260831T061204Z/mininet_e1c_r2_corrected_smoke.py",
+      "harness_sha256": "f299142d5ed365042e46cd240c559cbcea3644a23e34b24f7eb76bc514276464",
+      "test_path": "/home/cph/experiment-parallel/e0-a/e1c-r2-run-20260831T061204Z/test_mininet_e1c_r2_corrected_smoke.py",
+      "test_sha256": "ad1598806026ffedb8ce796899d6f2f15c6245c32b6fb617170715f8cfd38d8f",
+      "privileged_result_sha256": "f0834a0b658e0073bec5613dfe3e24ccca69bc962c34c31e7b322c04abf90b90",
+      "failure": "TypeError: Object of type bytes is not JSON serializable"
+    },
+    "r3": {
+      "run_id": "e1c-r3-run-20260831T075356Z",
+      "harness_path": "/home/cph/experiment-parallel/e0-a/e1c-r3-run-20260831T075356Z/mininet_e1c_r3_auditd_bounded_smoke.py",
+      "harness_sha256": "4dcc55d5c2cff633da4617b34f246790e274b4d22599fb9a404a68fd59c988f3",
+      "test_path": "/home/cph/experiment-parallel/e0-a/e1c-r3-run-20260831T075356Z/test_e1c_r3_harness.py",
+      "test_sha256": "a388bee70431d9e7896f734c02f24332567d1927a5697c7dc37efd30816b6842",
+      "privileged_result_sha256": "d106d84cc191c702c50538521754b7af8003288dc69c2afef83ffc1d5df206f4",
+      "failure": "FileNotFoundError: [Errno 2] No such file or directory: '-d'",
+      "r1_residual_rules_found": 10,
+      "r1_residual_rules_removed": 0,
+      "historical_baseline_restored_before_r3": false,
+      "historical_baseline_restored_after_r3": false
+    }
+  },
+  "r4": {
+    "harness_path": "/home/cph/experiment-parallel/e0-a/e1c-r4-run-20260831T105503Z/mininet_e1c_r4_delete_argv_fixed_smoke.py",
+    "harness_sha256": "134d87efefe5b465f1dd6b0e1df51161a1367e80d19301e2d75aa8666c948925",
+    "test_path": "/home/cph/experiment-parallel/e0-a/e1c-r4-run-20260831T105503Z/test_e1c_r4_harness.py",
+    "test_sha256": "2a1d6f603affb8f8cbe9ddcc10e2cd0f9703b7a29c2a70b67225b3636685c2c4",
+    "red_reproduction": true,
+    "delete_argv_fix": true,
+    "cli_exit_semantics_fix": true
+  },
+  "formal_experiment_executed": false,
+  "no_prior_run_artifact_overwrite": true
+}

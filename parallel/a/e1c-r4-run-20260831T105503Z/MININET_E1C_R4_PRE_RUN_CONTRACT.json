@@ -1,0 +1,83 @@
+{
+  "schema": "MININET_E1C_R4_PRE_RUN_CONTRACT_V1",
+  "created_at_utc": "2026-08-31T11:06:30Z",
+  "run_id": "e1c-r4-run-20260831T105503Z",
+  "prior_state": {
+    "r3_run_id": "e1c-r3-run-20260831T075356Z",
+    "r3_collector_verdict": "BLOCKED",
+    "r1_residual_rules_found": 10,
+    "r2_residual_rules_found": 0,
+    "exact_residual_rules_removed_by_r3": 0,
+    "audit_baseline_restored_before_r3": false,
+    "audit_baseline_restored_after_r3": false,
+    "r3_delete_failure": "FileNotFoundError: [Errno 2] No such file or directory: '-d'",
+    "audit_lost_events": 0,
+    "backlog": 0
+  },
+  "repair": {
+    "r3_delete_argv_defect_reproduced": true,
+    "r3_delete_argv_defect_fixed": true,
+    "mutation_argv_invariant": ["argv[0] == /usr/sbin/auditctl", "argv[1] in {-a, -d}"],
+    "cli_exit_semantics": {
+      "PASS_READY_FOR_GRAPH_NORMALIZATION": 0,
+      "PARTIAL_MISSING_REQUIRED_EVENT_CLASS": 3,
+      "BLOCKED": 2,
+      "unexpected_exception": 1
+    },
+    "recursive_json_safe_bytes_policy_preserved": true,
+    "fsync_journals_preserved": true
+  },
+  "audit_baseline": {
+    "historical_rules": "No rules",
+    "historical_sha256": "61501e69a61dbbc1a41605ea15c34807e6b1d3992bee195dde36a7ebdd95dd87",
+    "required_before_mininet": true,
+    "required_after_cleanup": true,
+    "residual_policy": "inventory all current rules; delete only exact known prior-run identities; fail closed on unrelated rules"
+  },
+  "collector": {
+    "auditd_package": "auditd=1:3.0.7-1build1",
+    "audit_key_prefix": "e1c4",
+    "probe_key_prefix": "e1c4probe",
+    "required_event_classes": ["PROCESS_START_OR_EXEC", "PROCESS_EXIT", "FILE_CREATE_OR_OPEN", "FILE_READ_OR_WRITE", "FILE_DELETE", "SOCKET_BIND", "SOCKET_CONNECT", "SOCKET_ACCEPT"],
+    "missing_class_policy": "record bounded audit limitation; never infer from strace or tcpdump"
+  },
+  "topology": {
+    "hosts": ["h1", "h2"],
+    "switch": "s1",
+    "network": "10.0.0.0/24",
+    "same_tcp_port": 18080,
+    "listener_ready_barrier": true,
+    "blocking_connect_accept": true,
+    "nat": false,
+    "external_links": false,
+    "tcpdump_bounded_to_topology_lifetime": true
+  },
+  "boundaries": {
+    "no_automatic_sudo": true,
+    "no_r1_r2_r3_rerun": true,
+    "no_auditctl_dash_D": true,
+    "no_mn_dash_c": true,
+    "no_apt_actions": true,
+    "no_provx_execution": true,
+    "no_formal_experiment": true,
+    "no_persistent_audit_rule_file_edits": true,
+    "no_external_or_nat_attachment": true,
+    "preexisting_ovs_daemons_not_run_owned": true
+  },
+  "artifacts": {
+    "corrected_harness": "mininet_e1c_r4_delete_argv_fixed_smoke.py",
+    "tests": "test_e1c_r4_harness.py",
+    "red_record": "r3_delete_argv_red.txt",
+    "lineage": "MININET_E1C_R4_LINEAGE.json",
+    "static_audit": "MININET_E1C_R4_STATIC_AUDIT.json"
+  },
+  "terminal": {
+    "MININET_E1C_R4_PREPARATION": "PASS",
+    "R3_DELETE_ARGV_DEFECT_REPRODUCED": "YES",
+    "R3_DELETE_ARGV_DEFECT_FIXED": "YES",
+    "CLI_EXIT_SEMANTICS_FIXED": "YES",
+    "HUMAN_PRIVILEGED_RUN_REQUIRED": "YES",
+    "NEXT_ACTION": "HUMAN_RUN_EXACT_SUDO_COMMAND",
+    "STOP": true
+  }
+}

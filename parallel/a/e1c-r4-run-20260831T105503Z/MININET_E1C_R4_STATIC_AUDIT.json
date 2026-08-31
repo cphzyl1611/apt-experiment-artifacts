@@ -1,0 +1,57 @@
+{
+  "schema": "MININET_E1C_R4_STATIC_AUDIT_V1",
+  "audited_at_utc": "2026-08-31T11:06:00Z",
+  "harness_path": "/home/cph/experiment-parallel/e0-a/e1c-r4-run-20260831T105503Z/mininet_e1c_r4_delete_argv_fixed_smoke.py",
+  "harness_sha256": "134d87efefe5b465f1dd6b0e1df51161a1367e80d19301e2d75aa8666c948925",
+  "test_path": "/home/cph/experiment-parallel/e0-a/e1c-r4-run-20260831T105503Z/test_e1c_r4_harness.py",
+  "test_sha256": "2a1d6f603affb8f8cbe9ddcc10e2cd0f9703b7a29c2a70b67225b3636685c2c4",
+  "fresh_validation": {
+    "r3_delete_argv_red": {
+      "result": "PASS_REPRODUCED",
+      "failure": "AssertionError: '-d' != '/usr/sbin/auditctl'",
+      "against": "/home/cph/experiment-parallel/e0-a/e1c-r3-run-20260831T075356Z/mininet_e1c_r3_auditd_bounded_smoke.py:mutation"
+    },
+    "unit_tests": {"tests_run": 7, "failures": 0, "errors": 0, "exit_code": 0, "result": "PASS"},
+    "cli_exit_tests": {"pass_exit": 0, "partial_exit": 3, "blocked_exit": 2, "unexpected_exception_exit": 1, "result": "PASS"},
+    "py_compile": {"exit_code": 0, "result": "PASS"},
+    "static_self_check": {"exit_code": 0, "result": "PASS"}
+  },
+  "static_checks": {
+    "python_ast_parse": true,
+    "mutation_argv_executable_invariant": true,
+    "mutation_argv_action_invariant": true,
+    "pid_rule_tested": true,
+    "ppid_rule_tested": true,
+    "dir_scoped_rule_tested": true,
+    "socket_rule_tested": true,
+    "r1_residual_rule_tested": true,
+    "known_prior_run_rule_tested": true,
+    "recursive_json_safe_bytes_policy": true,
+    "base64_hash_and_utf8_views": true,
+    "journal_fsync_present": true,
+    "exact_prior_rule_classification": true,
+    "fail_closed_unrelated_rules": true,
+    "historical_empty_baseline_gate": true,
+    "per_syscall_probe_present": true,
+    "blocking_ready_handshake": true,
+    "live_pid_netns_cgroup_socket_persistence": true,
+    "all_four_namespace_assertions": true,
+    "exact_finally_cleanup": true,
+    "cli_exit_semantics": true,
+    "no_auditctl_dash_D": true,
+    "no_mn_dash_c": true,
+    "no_nat_or_external_network": true,
+    "no_apt_actions": true,
+    "no_provx_execution": true,
+    "no_persistent_rule_file_edits": true,
+    "strace_not_primary_collector": true
+  },
+  "boundaries": {
+    "no_automatic_sudo": true,
+    "no_r1_r2_r3_harness_rerun": true,
+    "no_audit_mutation_during_preparation": true,
+    "no_formal_experiment": true,
+    "preexisting_ovs_daemons_not_run_owned": true
+  },
+  "pass": true
+}

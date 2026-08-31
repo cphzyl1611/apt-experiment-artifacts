@@ -1,0 +1,11 @@
+{
+  "classification": "BLOCKED",
+  "formal_experiment_executed": false,
+  "run_id": "e1c-r4-run-20260831T105503Z",
+  "runtime_error": {
+    "message": "h2 emitted FINISHED before READY",
+    "type": "RuntimeError"
+  },
+  "schema": "MININET_E1C_R4_PRIVILEGED_RUN_RESULT_V1",
+  "status": "FAILED"
+}
