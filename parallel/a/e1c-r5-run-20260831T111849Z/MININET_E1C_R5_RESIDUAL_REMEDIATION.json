@@ -1,11 +1,141 @@
 {
-  "schema": "MININET_E1C_R5_RESIDUAL_REMEDIATION_V1",
-  "run_id": "e1c-r5-run-20260831T111849Z",
-  "status": "DEFERRED_TO_ROOT_PREFLIGHT",
-  "root_policy": "require clean historical baseline; fail closed on any non-empty rule set",
+  "AUDIT_BASELINE_RESTORED_BEFORE_R5": "YES",
+  "audit_baseline_restored_after_probe": true,
+  "audit_baseline_restored_before_r5": true,
+  "baseline": {
+    "auditctl_list": {
+      "argv": [
+        "/usr/sbin/auditctl",
+        "-l"
+      ],
+      "returncode": 0,
+      "stderr": {
+        "__type__": "bytes",
+        "base64": "",
+        "encoding": "base64",
+        "length": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "utf8": ""
+      },
+      "stdout": {
+        "__type__": "bytes",
+        "base64": "Tm8gcnVsZXMK",
+        "encoding": "base64",
+        "length": 9,
+        "sha256": "61501e69a61dbbc1a41605ea15c34807e6b1d3992bee195dde36a7ebdd95dd87",
+        "utf8": "No rules\n"
+      }
+    },
+    "auditctl_status": {
+      "argv": [
+        "/usr/sbin/auditctl",
+        "-s"
+      ],
+      "parsed": {
+        "backlog": 0,
+        "backlog_limit": 8192,
+        "backlog_wait_time": 60000,
+        "backlog_wait_time_actual": 0,
+        "enabled": 1,
+        "lost": 0,
+        "raw": "enabled 1\nfailure 1\npid 573176\nrate_limit 0\nbacklog_limit 8192\nlost 0\nbacklog 0\nbacklog_wait_time 60000\nbacklog_wait_time_actual 0\nloginuid_immutable 0 unlocked\n"
+      },
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "enabled 1\nfailure 1\npid 573176\nrate_limit 0\nbacklog_limit 8192\nlost 0\nbacklog 0\nbacklog_wait_time 60000\nbacklog_wait_time_actual 0\nloginuid_immutable 0 unlocked\n"
+    },
+    "auditd_package": {
+      "argv": [
+        "/usr/bin/dpkg-query",
+        "-W",
+        "-f=${Package}=${Version}\n",
+        "auditd"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "auditd=1:3.0.7-1build1\n"
+    },
+    "baseline_rule_dump_sha256": "61501e69a61dbbc1a41605ea15c34807e6b1d3992bee195dde36a7ebdd95dd87",
+    "canonical_rule_lines": [],
+    "captured_at_utc": "2026-08-31T12:11:20.063579+00:00",
+    "installed_auditd_version": "auditd=1:3.0.7-1build1",
+    "persistent_rules_files": {
+      "files": {
+        "/etc/audit/rules.d/audit.rules": {
+          "sha256": "54c2cebdaadfb928f7327cc066218e38743f0ff94d02fe162a7a415e148d23a8",
+          "size": 244
+        }
+      }
+    }
+  },
   "legacy_cleanup_performed": false,
   "old_run_residual_rules_found": 0,
   "old_run_residual_rules_removed": 0,
-  "historical_empty_baseline_hash": "61501e69a61dbbc1a41605ea15c34807e6b1d3992bee195dde36a7ebdd95dd87",
-  "no_audit_mutation_during_preparation": true
+  "probe_baseline": {
+    "auditctl_list": {
+      "argv": [
+        "/usr/sbin/auditctl",
+        "-l"
+      ],
+      "returncode": 0,
+      "stderr": {
+        "__type__": "bytes",
+        "base64": "",
+        "encoding": "base64",
+        "length": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "utf8": ""
+      },
+      "stdout": {
+        "__type__": "bytes",
+        "base64": "Tm8gcnVsZXMK",
+        "encoding": "base64",
+        "length": 9,
+        "sha256": "61501e69a61dbbc1a41605ea15c34807e6b1d3992bee195dde36a7ebdd95dd87",
+        "utf8": "No rules\n"
+      }
+    },
+    "auditctl_status": {
+      "argv": [
+        "/usr/sbin/auditctl",
+        "-s"
+      ],
+      "parsed": {
+        "backlog": 0,
+        "backlog_limit": 8192,
+        "backlog_wait_time": 60000,
+        "backlog_wait_time_actual": 0,
+        "enabled": 1,
+        "lost": 0,
+        "raw": "enabled 1\nfailure 1\npid 573176\nrate_limit 0\nbacklog_limit 8192\nlost 0\nbacklog 0\nbacklog_wait_time 60000\nbacklog_wait_time_actual 0\nloginuid_immutable 0 unlocked\n"
+      },
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "enabled 1\nfailure 1\npid 573176\nrate_limit 0\nbacklog_limit 8192\nlost 0\nbacklog 0\nbacklog_wait_time 60000\nbacklog_wait_time_actual 0\nloginuid_immutable 0 unlocked\n"
+    },
+    "auditd_package": {
+      "argv": [
+        "/usr/bin/dpkg-query",
+        "-W",
+        "-f=${Package}=${Version}\n",
+        "auditd"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "auditd=1:3.0.7-1build1\n"
+    },
+    "baseline_rule_dump_sha256": "61501e69a61dbbc1a41605ea15c34807e6b1d3992bee195dde36a7ebdd95dd87",
+    "canonical_rule_lines": [],
+    "captured_at_utc": "2026-08-31T12:11:20.346962+00:00",
+    "installed_auditd_version": "auditd=1:3.0.7-1build1",
+    "persistent_rules_files": {
+      "files": {
+        "/etc/audit/rules.d/audit.rules": {
+          "sha256": "54c2cebdaadfb928f7327cc066218e38743f0ff94d02fe162a7a415e148d23a8",
+          "size": 244
+        }
+      }
+    }
+  },
+  "status": "PASS"
 }

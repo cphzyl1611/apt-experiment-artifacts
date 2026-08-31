@@ -1,13 +1,6322 @@
 {
-  "schema": "MININET_E1C_R5_TRANSIENT_RULE_CONTRACT_V1",
+  "audit_key": "e1c5a8449bebc66c",
+  "probe_key": "e1c5probe2aa7c62ae4",
+  "removal": [
+    {
+      "name": "h2_ppid_socket_bind_connect_accept_accept4",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "accept4",
+          "-F",
+          "ppid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h2_ppid_socket_bind_connect_accept_accept",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "accept",
+          "-F",
+          "ppid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h2_ppid_socket_bind_connect_accept_connect",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "connect",
+          "-F",
+          "ppid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h2_ppid_socket_bind_connect_accept_bind",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "bind",
+          "-F",
+          "ppid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h2_ppid_file_delete_renameat",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "renameat",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "ppid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h2_ppid_file_delete_unlinkat",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "unlinkat",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "ppid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h2_ppid_file_delete_unlink",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "unlink",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "ppid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h2_ppid_file_read_or_write_pwritev2",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "pwritev2",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "ppid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h2_ppid_file_read_or_write_writev",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "writev",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "ppid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h2_ppid_file_read_or_write_readv",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "readv",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "ppid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h2_ppid_file_read_or_write_write",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "write",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "ppid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h2_ppid_file_read_or_write_read",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "read",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "ppid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h2_ppid_file_create_or_open_openat2",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "openat2",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "ppid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h2_ppid_file_create_or_open_openat",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "openat",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "ppid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h2_ppid_process_exit_exit_group",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "exit_group",
+          "-F",
+          "ppid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h2_ppid_process_start_or_exec_vfork",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "vfork",
+          "-F",
+          "ppid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h2_ppid_process_start_or_exec_fork",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "fork",
+          "-F",
+          "ppid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h2_ppid_process_start_or_exec_clone",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "clone",
+          "-F",
+          "ppid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h2_ppid_process_start_or_exec_execveat",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "execveat",
+          "-F",
+          "ppid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h2_ppid_process_start_or_exec_execve",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "execve",
+          "-F",
+          "ppid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h1_ppid_socket_bind_connect_accept_accept4",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "accept4",
+          "-F",
+          "ppid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h1_ppid_socket_bind_connect_accept_accept",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "accept",
+          "-F",
+          "ppid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h1_ppid_socket_bind_connect_accept_connect",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "connect",
+          "-F",
+          "ppid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h1_ppid_socket_bind_connect_accept_bind",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "bind",
+          "-F",
+          "ppid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h1_ppid_file_delete_renameat",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "renameat",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "ppid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h1_ppid_file_delete_unlinkat",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "unlinkat",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "ppid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h1_ppid_file_delete_unlink",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "unlink",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "ppid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h1_ppid_file_read_or_write_pwritev2",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "pwritev2",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "ppid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h1_ppid_file_read_or_write_writev",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "writev",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "ppid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h1_ppid_file_read_or_write_readv",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "readv",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "ppid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h1_ppid_file_read_or_write_write",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "write",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "ppid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h1_ppid_file_read_or_write_read",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "read",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "ppid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h1_ppid_file_create_or_open_openat2",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "openat2",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "ppid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h1_ppid_file_create_or_open_openat",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "openat",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "ppid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h1_ppid_process_exit_exit_group",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "exit_group",
+          "-F",
+          "ppid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h1_ppid_process_start_or_exec_vfork",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "vfork",
+          "-F",
+          "ppid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h1_ppid_process_start_or_exec_fork",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "fork",
+          "-F",
+          "ppid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h1_ppid_process_start_or_exec_clone",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "clone",
+          "-F",
+          "ppid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h1_ppid_process_start_or_exec_execveat",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "execveat",
+          "-F",
+          "ppid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h1_ppid_process_start_or_exec_execve",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "execve",
+          "-F",
+          "ppid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h2_pid_socket_bind_connect_accept_accept4",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "accept4",
+          "-F",
+          "pid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h2_pid_socket_bind_connect_accept_accept",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "accept",
+          "-F",
+          "pid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h2_pid_socket_bind_connect_accept_connect",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "connect",
+          "-F",
+          "pid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h2_pid_socket_bind_connect_accept_bind",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "bind",
+          "-F",
+          "pid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h2_pid_file_delete_renameat",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "renameat",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "pid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h2_pid_file_delete_unlinkat",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "unlinkat",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "pid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h2_pid_file_delete_unlink",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "unlink",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "pid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h2_pid_file_read_or_write_pwritev2",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "pwritev2",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "pid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h2_pid_file_read_or_write_writev",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "writev",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "pid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h2_pid_file_read_or_write_readv",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "readv",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "pid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h2_pid_file_read_or_write_write",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "write",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "pid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h2_pid_file_read_or_write_read",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "read",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "pid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h2_pid_file_create_or_open_openat2",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "openat2",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "pid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h2_pid_file_create_or_open_openat",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "openat",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "pid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h2_pid_process_exit_exit_group",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "exit_group",
+          "-F",
+          "pid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h2_pid_process_start_or_exec_vfork",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "vfork",
+          "-F",
+          "pid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h2_pid_process_start_or_exec_fork",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "fork",
+          "-F",
+          "pid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h2_pid_process_start_or_exec_clone",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "clone",
+          "-F",
+          "pid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h2_pid_process_start_or_exec_execveat",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "execveat",
+          "-F",
+          "pid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h2_pid_process_start_or_exec_execve",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "execve",
+          "-F",
+          "pid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h1_pid_socket_bind_connect_accept_accept4",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "accept4",
+          "-F",
+          "pid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h1_pid_socket_bind_connect_accept_accept",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "accept",
+          "-F",
+          "pid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h1_pid_socket_bind_connect_accept_connect",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "connect",
+          "-F",
+          "pid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h1_pid_socket_bind_connect_accept_bind",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "bind",
+          "-F",
+          "pid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h1_pid_file_delete_renameat",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "renameat",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "pid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h1_pid_file_delete_unlinkat",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "unlinkat",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "pid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h1_pid_file_delete_unlink",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "unlink",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "pid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h1_pid_file_read_or_write_pwritev2",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "pwritev2",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "pid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h1_pid_file_read_or_write_writev",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "writev",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "pid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h1_pid_file_read_or_write_readv",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "readv",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "pid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h1_pid_file_read_or_write_write",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "write",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "pid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h1_pid_file_read_or_write_read",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "read",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "pid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h1_pid_file_create_or_open_openat2",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "openat2",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "pid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h1_pid_file_create_or_open_openat",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "openat",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "pid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h1_pid_process_exit_exit_group",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "exit_group",
+          "-F",
+          "pid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h1_pid_process_start_or_exec_vfork",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "vfork",
+          "-F",
+          "pid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h1_pid_process_start_or_exec_fork",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "fork",
+          "-F",
+          "pid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h1_pid_process_start_or_exec_clone",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "clone",
+          "-F",
+          "pid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h1_pid_process_start_or_exec_execveat",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "execveat",
+          "-F",
+          "pid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    },
+    {
+      "name": "h1_pid_process_start_or_exec_execve",
+      "result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "execve",
+          "-F",
+          "pid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "returncode": 0
+    }
+  ],
+  "rule_specs": [
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "execve",
+        "-F",
+        "pid=604947",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "execve",
+          "-F",
+          "pid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h1",
+      "name": "h1_pid_process_start_or_exec_execve",
+      "scope": "pid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "pid=604947"
+      ],
+      "syscall": "execve"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "execveat",
+        "-F",
+        "pid=604947",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "execveat",
+          "-F",
+          "pid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h1",
+      "name": "h1_pid_process_start_or_exec_execveat",
+      "scope": "pid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "pid=604947"
+      ],
+      "syscall": "execveat"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "clone",
+        "-F",
+        "pid=604947",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "clone",
+          "-F",
+          "pid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h1",
+      "name": "h1_pid_process_start_or_exec_clone",
+      "scope": "pid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "pid=604947"
+      ],
+      "syscall": "clone"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "fork",
+        "-F",
+        "pid=604947",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "fork",
+          "-F",
+          "pid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h1",
+      "name": "h1_pid_process_start_or_exec_fork",
+      "scope": "pid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "pid=604947"
+      ],
+      "syscall": "fork"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "vfork",
+        "-F",
+        "pid=604947",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "vfork",
+          "-F",
+          "pid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h1",
+      "name": "h1_pid_process_start_or_exec_vfork",
+      "scope": "pid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "pid=604947"
+      ],
+      "syscall": "vfork"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "exit_group",
+        "-F",
+        "pid=604947",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "exit_group",
+          "-F",
+          "pid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h1",
+      "name": "h1_pid_process_exit_exit_group",
+      "scope": "pid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "pid=604947"
+      ],
+      "syscall": "exit_group"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "openat",
+        "-F",
+        "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+        "-F",
+        "pid=604947",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "openat",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "pid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h1",
+      "name": "h1_pid_file_create_or_open_openat",
+      "scope": "pid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "pid=604947"
+      ],
+      "syscall": "openat"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "openat2",
+        "-F",
+        "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+        "-F",
+        "pid=604947",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "openat2",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "pid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h1",
+      "name": "h1_pid_file_create_or_open_openat2",
+      "scope": "pid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "pid=604947"
+      ],
+      "syscall": "openat2"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "read",
+        "-F",
+        "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+        "-F",
+        "pid=604947",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "read",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "pid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h1",
+      "name": "h1_pid_file_read_or_write_read",
+      "scope": "pid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "pid=604947"
+      ],
+      "syscall": "read"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "write",
+        "-F",
+        "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+        "-F",
+        "pid=604947",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "write",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "pid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h1",
+      "name": "h1_pid_file_read_or_write_write",
+      "scope": "pid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "pid=604947"
+      ],
+      "syscall": "write"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "readv",
+        "-F",
+        "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+        "-F",
+        "pid=604947",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "readv",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "pid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h1",
+      "name": "h1_pid_file_read_or_write_readv",
+      "scope": "pid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "pid=604947"
+      ],
+      "syscall": "readv"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "writev",
+        "-F",
+        "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+        "-F",
+        "pid=604947",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "writev",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "pid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h1",
+      "name": "h1_pid_file_read_or_write_writev",
+      "scope": "pid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "pid=604947"
+      ],
+      "syscall": "writev"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "pwritev2",
+        "-F",
+        "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+        "-F",
+        "pid=604947",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "pwritev2",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "pid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h1",
+      "name": "h1_pid_file_read_or_write_pwritev2",
+      "scope": "pid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "pid=604947"
+      ],
+      "syscall": "pwritev2"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "unlink",
+        "-F",
+        "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+        "-F",
+        "pid=604947",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "unlink",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "pid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h1",
+      "name": "h1_pid_file_delete_unlink",
+      "scope": "pid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "pid=604947"
+      ],
+      "syscall": "unlink"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "unlinkat",
+        "-F",
+        "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+        "-F",
+        "pid=604947",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "unlinkat",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "pid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h1",
+      "name": "h1_pid_file_delete_unlinkat",
+      "scope": "pid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "pid=604947"
+      ],
+      "syscall": "unlinkat"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "renameat",
+        "-F",
+        "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+        "-F",
+        "pid=604947",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "renameat",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "pid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h1",
+      "name": "h1_pid_file_delete_renameat",
+      "scope": "pid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "pid=604947"
+      ],
+      "syscall": "renameat"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "bind",
+        "-F",
+        "pid=604947",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "bind",
+          "-F",
+          "pid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h1",
+      "name": "h1_pid_socket_bind_connect_accept_bind",
+      "scope": "pid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "pid=604947"
+      ],
+      "syscall": "bind"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "connect",
+        "-F",
+        "pid=604947",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "connect",
+          "-F",
+          "pid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h1",
+      "name": "h1_pid_socket_bind_connect_accept_connect",
+      "scope": "pid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "pid=604947"
+      ],
+      "syscall": "connect"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "accept",
+        "-F",
+        "pid=604947",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "accept",
+          "-F",
+          "pid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h1",
+      "name": "h1_pid_socket_bind_connect_accept_accept",
+      "scope": "pid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "pid=604947"
+      ],
+      "syscall": "accept"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "accept4",
+        "-F",
+        "pid=604947",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "accept4",
+          "-F",
+          "pid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h1",
+      "name": "h1_pid_socket_bind_connect_accept_accept4",
+      "scope": "pid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "pid=604947"
+      ],
+      "syscall": "accept4"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "execve",
+        "-F",
+        "pid=604948",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "execve",
+          "-F",
+          "pid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h2",
+      "name": "h2_pid_process_start_or_exec_execve",
+      "scope": "pid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "pid=604948"
+      ],
+      "syscall": "execve"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "execveat",
+        "-F",
+        "pid=604948",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "execveat",
+          "-F",
+          "pid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h2",
+      "name": "h2_pid_process_start_or_exec_execveat",
+      "scope": "pid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "pid=604948"
+      ],
+      "syscall": "execveat"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "clone",
+        "-F",
+        "pid=604948",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "clone",
+          "-F",
+          "pid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h2",
+      "name": "h2_pid_process_start_or_exec_clone",
+      "scope": "pid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "pid=604948"
+      ],
+      "syscall": "clone"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "fork",
+        "-F",
+        "pid=604948",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "fork",
+          "-F",
+          "pid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h2",
+      "name": "h2_pid_process_start_or_exec_fork",
+      "scope": "pid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "pid=604948"
+      ],
+      "syscall": "fork"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "vfork",
+        "-F",
+        "pid=604948",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "vfork",
+          "-F",
+          "pid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h2",
+      "name": "h2_pid_process_start_or_exec_vfork",
+      "scope": "pid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "pid=604948"
+      ],
+      "syscall": "vfork"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "exit_group",
+        "-F",
+        "pid=604948",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "exit_group",
+          "-F",
+          "pid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h2",
+      "name": "h2_pid_process_exit_exit_group",
+      "scope": "pid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "pid=604948"
+      ],
+      "syscall": "exit_group"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "openat",
+        "-F",
+        "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+        "-F",
+        "pid=604948",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "openat",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "pid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h2",
+      "name": "h2_pid_file_create_or_open_openat",
+      "scope": "pid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "pid=604948"
+      ],
+      "syscall": "openat"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "openat2",
+        "-F",
+        "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+        "-F",
+        "pid=604948",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "openat2",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "pid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h2",
+      "name": "h2_pid_file_create_or_open_openat2",
+      "scope": "pid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "pid=604948"
+      ],
+      "syscall": "openat2"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "read",
+        "-F",
+        "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+        "-F",
+        "pid=604948",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "read",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "pid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h2",
+      "name": "h2_pid_file_read_or_write_read",
+      "scope": "pid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "pid=604948"
+      ],
+      "syscall": "read"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "write",
+        "-F",
+        "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+        "-F",
+        "pid=604948",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "write",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "pid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h2",
+      "name": "h2_pid_file_read_or_write_write",
+      "scope": "pid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "pid=604948"
+      ],
+      "syscall": "write"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "readv",
+        "-F",
+        "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+        "-F",
+        "pid=604948",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "readv",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "pid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h2",
+      "name": "h2_pid_file_read_or_write_readv",
+      "scope": "pid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "pid=604948"
+      ],
+      "syscall": "readv"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "writev",
+        "-F",
+        "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+        "-F",
+        "pid=604948",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "writev",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "pid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h2",
+      "name": "h2_pid_file_read_or_write_writev",
+      "scope": "pid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "pid=604948"
+      ],
+      "syscall": "writev"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "pwritev2",
+        "-F",
+        "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+        "-F",
+        "pid=604948",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "pwritev2",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "pid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h2",
+      "name": "h2_pid_file_read_or_write_pwritev2",
+      "scope": "pid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "pid=604948"
+      ],
+      "syscall": "pwritev2"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "unlink",
+        "-F",
+        "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+        "-F",
+        "pid=604948",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "unlink",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "pid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h2",
+      "name": "h2_pid_file_delete_unlink",
+      "scope": "pid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "pid=604948"
+      ],
+      "syscall": "unlink"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "unlinkat",
+        "-F",
+        "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+        "-F",
+        "pid=604948",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "unlinkat",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "pid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h2",
+      "name": "h2_pid_file_delete_unlinkat",
+      "scope": "pid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "pid=604948"
+      ],
+      "syscall": "unlinkat"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "renameat",
+        "-F",
+        "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+        "-F",
+        "pid=604948",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "renameat",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "pid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h2",
+      "name": "h2_pid_file_delete_renameat",
+      "scope": "pid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "pid=604948"
+      ],
+      "syscall": "renameat"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "bind",
+        "-F",
+        "pid=604948",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "bind",
+          "-F",
+          "pid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h2",
+      "name": "h2_pid_socket_bind_connect_accept_bind",
+      "scope": "pid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "pid=604948"
+      ],
+      "syscall": "bind"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "connect",
+        "-F",
+        "pid=604948",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "connect",
+          "-F",
+          "pid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h2",
+      "name": "h2_pid_socket_bind_connect_accept_connect",
+      "scope": "pid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "pid=604948"
+      ],
+      "syscall": "connect"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "accept",
+        "-F",
+        "pid=604948",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "accept",
+          "-F",
+          "pid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h2",
+      "name": "h2_pid_socket_bind_connect_accept_accept",
+      "scope": "pid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "pid=604948"
+      ],
+      "syscall": "accept"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "accept4",
+        "-F",
+        "pid=604948",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "accept4",
+          "-F",
+          "pid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h2",
+      "name": "h2_pid_socket_bind_connect_accept_accept4",
+      "scope": "pid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "pid=604948"
+      ],
+      "syscall": "accept4"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "execve",
+        "-F",
+        "ppid=604947",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "execve",
+          "-F",
+          "ppid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h1",
+      "name": "h1_ppid_process_start_or_exec_execve",
+      "scope": "ppid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "ppid=604947"
+      ],
+      "syscall": "execve"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "execveat",
+        "-F",
+        "ppid=604947",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "execveat",
+          "-F",
+          "ppid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h1",
+      "name": "h1_ppid_process_start_or_exec_execveat",
+      "scope": "ppid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "ppid=604947"
+      ],
+      "syscall": "execveat"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "clone",
+        "-F",
+        "ppid=604947",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "clone",
+          "-F",
+          "ppid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h1",
+      "name": "h1_ppid_process_start_or_exec_clone",
+      "scope": "ppid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "ppid=604947"
+      ],
+      "syscall": "clone"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "fork",
+        "-F",
+        "ppid=604947",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "fork",
+          "-F",
+          "ppid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h1",
+      "name": "h1_ppid_process_start_or_exec_fork",
+      "scope": "ppid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "ppid=604947"
+      ],
+      "syscall": "fork"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "vfork",
+        "-F",
+        "ppid=604947",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "vfork",
+          "-F",
+          "ppid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h1",
+      "name": "h1_ppid_process_start_or_exec_vfork",
+      "scope": "ppid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "ppid=604947"
+      ],
+      "syscall": "vfork"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "exit_group",
+        "-F",
+        "ppid=604947",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "exit_group",
+          "-F",
+          "ppid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h1",
+      "name": "h1_ppid_process_exit_exit_group",
+      "scope": "ppid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "ppid=604947"
+      ],
+      "syscall": "exit_group"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "openat",
+        "-F",
+        "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+        "-F",
+        "ppid=604947",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "openat",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "ppid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h1",
+      "name": "h1_ppid_file_create_or_open_openat",
+      "scope": "ppid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "ppid=604947"
+      ],
+      "syscall": "openat"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "openat2",
+        "-F",
+        "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+        "-F",
+        "ppid=604947",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "openat2",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "ppid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h1",
+      "name": "h1_ppid_file_create_or_open_openat2",
+      "scope": "ppid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "ppid=604947"
+      ],
+      "syscall": "openat2"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "read",
+        "-F",
+        "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+        "-F",
+        "ppid=604947",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "read",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "ppid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h1",
+      "name": "h1_ppid_file_read_or_write_read",
+      "scope": "ppid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "ppid=604947"
+      ],
+      "syscall": "read"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "write",
+        "-F",
+        "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+        "-F",
+        "ppid=604947",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "write",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "ppid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h1",
+      "name": "h1_ppid_file_read_or_write_write",
+      "scope": "ppid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "ppid=604947"
+      ],
+      "syscall": "write"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "readv",
+        "-F",
+        "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+        "-F",
+        "ppid=604947",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "readv",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "ppid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h1",
+      "name": "h1_ppid_file_read_or_write_readv",
+      "scope": "ppid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "ppid=604947"
+      ],
+      "syscall": "readv"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "writev",
+        "-F",
+        "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+        "-F",
+        "ppid=604947",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "writev",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "ppid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h1",
+      "name": "h1_ppid_file_read_or_write_writev",
+      "scope": "ppid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "ppid=604947"
+      ],
+      "syscall": "writev"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "pwritev2",
+        "-F",
+        "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+        "-F",
+        "ppid=604947",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "pwritev2",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "ppid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h1",
+      "name": "h1_ppid_file_read_or_write_pwritev2",
+      "scope": "ppid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "ppid=604947"
+      ],
+      "syscall": "pwritev2"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "unlink",
+        "-F",
+        "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+        "-F",
+        "ppid=604947",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "unlink",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "ppid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h1",
+      "name": "h1_ppid_file_delete_unlink",
+      "scope": "ppid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "ppid=604947"
+      ],
+      "syscall": "unlink"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "unlinkat",
+        "-F",
+        "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+        "-F",
+        "ppid=604947",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "unlinkat",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "ppid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h1",
+      "name": "h1_ppid_file_delete_unlinkat",
+      "scope": "ppid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "ppid=604947"
+      ],
+      "syscall": "unlinkat"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "renameat",
+        "-F",
+        "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+        "-F",
+        "ppid=604947",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "renameat",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "ppid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h1",
+      "name": "h1_ppid_file_delete_renameat",
+      "scope": "ppid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "ppid=604947"
+      ],
+      "syscall": "renameat"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "bind",
+        "-F",
+        "ppid=604947",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "bind",
+          "-F",
+          "ppid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h1",
+      "name": "h1_ppid_socket_bind_connect_accept_bind",
+      "scope": "ppid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "ppid=604947"
+      ],
+      "syscall": "bind"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "connect",
+        "-F",
+        "ppid=604947",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "connect",
+          "-F",
+          "ppid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h1",
+      "name": "h1_ppid_socket_bind_connect_accept_connect",
+      "scope": "ppid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "ppid=604947"
+      ],
+      "syscall": "connect"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "accept",
+        "-F",
+        "ppid=604947",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "accept",
+          "-F",
+          "ppid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h1",
+      "name": "h1_ppid_socket_bind_connect_accept_accept",
+      "scope": "ppid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "ppid=604947"
+      ],
+      "syscall": "accept"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "accept4",
+        "-F",
+        "ppid=604947",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "accept4",
+          "-F",
+          "ppid=604947",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h1",
+      "name": "h1_ppid_socket_bind_connect_accept_accept4",
+      "scope": "ppid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "ppid=604947"
+      ],
+      "syscall": "accept4"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "execve",
+        "-F",
+        "ppid=604948",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "execve",
+          "-F",
+          "ppid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h2",
+      "name": "h2_ppid_process_start_or_exec_execve",
+      "scope": "ppid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "ppid=604948"
+      ],
+      "syscall": "execve"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "execveat",
+        "-F",
+        "ppid=604948",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "execveat",
+          "-F",
+          "ppid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h2",
+      "name": "h2_ppid_process_start_or_exec_execveat",
+      "scope": "ppid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "ppid=604948"
+      ],
+      "syscall": "execveat"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "clone",
+        "-F",
+        "ppid=604948",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "clone",
+          "-F",
+          "ppid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h2",
+      "name": "h2_ppid_process_start_or_exec_clone",
+      "scope": "ppid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "ppid=604948"
+      ],
+      "syscall": "clone"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "fork",
+        "-F",
+        "ppid=604948",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "fork",
+          "-F",
+          "ppid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h2",
+      "name": "h2_ppid_process_start_or_exec_fork",
+      "scope": "ppid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "ppid=604948"
+      ],
+      "syscall": "fork"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "vfork",
+        "-F",
+        "ppid=604948",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "vfork",
+          "-F",
+          "ppid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h2",
+      "name": "h2_ppid_process_start_or_exec_vfork",
+      "scope": "ppid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "ppid=604948"
+      ],
+      "syscall": "vfork"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "exit_group",
+        "-F",
+        "ppid=604948",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "exit_group",
+          "-F",
+          "ppid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h2",
+      "name": "h2_ppid_process_exit_exit_group",
+      "scope": "ppid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "ppid=604948"
+      ],
+      "syscall": "exit_group"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "openat",
+        "-F",
+        "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+        "-F",
+        "ppid=604948",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "openat",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "ppid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h2",
+      "name": "h2_ppid_file_create_or_open_openat",
+      "scope": "ppid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "ppid=604948"
+      ],
+      "syscall": "openat"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "openat2",
+        "-F",
+        "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+        "-F",
+        "ppid=604948",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "openat2",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "ppid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h2",
+      "name": "h2_ppid_file_create_or_open_openat2",
+      "scope": "ppid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "ppid=604948"
+      ],
+      "syscall": "openat2"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "read",
+        "-F",
+        "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+        "-F",
+        "ppid=604948",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "read",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "ppid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h2",
+      "name": "h2_ppid_file_read_or_write_read",
+      "scope": "ppid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "ppid=604948"
+      ],
+      "syscall": "read"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "write",
+        "-F",
+        "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+        "-F",
+        "ppid=604948",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "write",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "ppid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h2",
+      "name": "h2_ppid_file_read_or_write_write",
+      "scope": "ppid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "ppid=604948"
+      ],
+      "syscall": "write"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "readv",
+        "-F",
+        "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+        "-F",
+        "ppid=604948",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "readv",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "ppid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h2",
+      "name": "h2_ppid_file_read_or_write_readv",
+      "scope": "ppid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "ppid=604948"
+      ],
+      "syscall": "readv"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "writev",
+        "-F",
+        "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+        "-F",
+        "ppid=604948",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "writev",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "ppid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h2",
+      "name": "h2_ppid_file_read_or_write_writev",
+      "scope": "ppid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "ppid=604948"
+      ],
+      "syscall": "writev"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "pwritev2",
+        "-F",
+        "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+        "-F",
+        "ppid=604948",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "pwritev2",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "ppid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h2",
+      "name": "h2_ppid_file_read_or_write_pwritev2",
+      "scope": "ppid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "ppid=604948"
+      ],
+      "syscall": "pwritev2"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "unlink",
+        "-F",
+        "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+        "-F",
+        "ppid=604948",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "unlink",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "ppid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h2",
+      "name": "h2_ppid_file_delete_unlink",
+      "scope": "ppid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "ppid=604948"
+      ],
+      "syscall": "unlink"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "unlinkat",
+        "-F",
+        "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+        "-F",
+        "ppid=604948",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "unlinkat",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "ppid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h2",
+      "name": "h2_ppid_file_delete_unlinkat",
+      "scope": "ppid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "ppid=604948"
+      ],
+      "syscall": "unlinkat"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "renameat",
+        "-F",
+        "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+        "-F",
+        "ppid=604948",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "renameat",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events",
+          "-F",
+          "ppid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h2",
+      "name": "h2_ppid_file_delete_renameat",
+      "scope": "ppid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "ppid=604948"
+      ],
+      "syscall": "renameat"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "bind",
+        "-F",
+        "ppid=604948",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "bind",
+          "-F",
+          "ppid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h2",
+      "name": "h2_ppid_socket_bind_connect_accept_bind",
+      "scope": "ppid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "ppid=604948"
+      ],
+      "syscall": "bind"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "connect",
+        "-F",
+        "ppid=604948",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "connect",
+          "-F",
+          "ppid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h2",
+      "name": "h2_ppid_socket_bind_connect_accept_connect",
+      "scope": "ppid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "ppid=604948"
+      ],
+      "syscall": "connect"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "accept",
+        "-F",
+        "ppid=604948",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "accept",
+          "-F",
+          "ppid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h2",
+      "name": "h2_ppid_socket_bind_connect_accept_accept",
+      "scope": "ppid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "ppid=604948"
+      ],
+      "syscall": "accept"
+    },
+    {
+      "add_argv": [
+        "/usr/sbin/auditctl",
+        "-a",
+        "always,exit",
+        "-F",
+        "arch=b64",
+        "-S",
+        "accept4",
+        "-F",
+        "ppid=604948",
+        "-k",
+        "e1c5a8449bebc66c"
+      ],
+      "add_result": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "accept4",
+          "-F",
+          "ppid=604948",
+          "-k",
+          "e1c5a8449bebc66c"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "installed": true,
+      "logical_host_id": "h2",
+      "name": "h2_ppid_socket_bind_connect_accept_accept4",
+      "scope": "ppid",
+      "source": "R5_SMOKE",
+      "subject": [
+        "-F",
+        "ppid=604948"
+      ],
+      "syscall": "accept4"
+    }
+  ],
   "run_id": "e1c-r5-run-20260831T111849Z",
-  "status": "NOT_STARTED_UNTIL_PRIVILEGED_RUN",
-  "audit_key_prefix": "e1c5",
-  "probe_key_prefix": "e1c5probe",
-  "scope": "per-syscall, per-child PID and PPID, bounded temp-event dir",
-  "required_classes": ["PROCESS_START_OR_EXEC", "PROCESS_EXIT", "FILE_CREATE_OR_OPEN", "FILE_READ_OR_WRITE", "FILE_DELETE", "SOCKET_BIND", "SOCKET_CONNECT", "SOCKET_ACCEPT"],
-  "support_probe": "each candidate syscall is added and exactly deleted before topology start",
-  "cleanup": "delete only exact recorded successful R5/probe argv; no auditctl -D",
-  "persistent_rules_files_modified": false,
-  "formal_experiment_executed": false
+  "schema": "MININET_E1C_R5_TRANSIENT_RULE_CONTRACT_V1",
+  "status": "REMOVED",
+  "successful_add_count": 80,
+  "supported_syscalls": [
+    "accept",
+    "accept4",
+    "bind",
+    "clone",
+    "connect",
+    "execve",
+    "execveat",
+    "exit_group",
+    "fork",
+    "openat",
+    "openat2",
+    "pwritev2",
+    "read",
+    "readv",
+    "renameat",
+    "unlink",
+    "unlinkat",
+    "vfork",
+    "write",
+    "writev"
+  ],
+  "syscall_probes": [
+    {
+      "add": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "execve",
+          "-F",
+          "pid=604678",
+          "-k",
+          "e1c5probe2aa7c62ae4"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "remove": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "execve",
+          "-F",
+          "pid=604678",
+          "-k",
+          "e1c5probe2aa7c62ae4"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "supported": true,
+      "syscall": "execve"
+    },
+    {
+      "add": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "execveat",
+          "-F",
+          "pid=604678",
+          "-k",
+          "e1c5probe2aa7c62ae4"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "remove": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "execveat",
+          "-F",
+          "pid=604678",
+          "-k",
+          "e1c5probe2aa7c62ae4"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "supported": true,
+      "syscall": "execveat"
+    },
+    {
+      "add": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "clone",
+          "-F",
+          "pid=604678",
+          "-k",
+          "e1c5probe2aa7c62ae4"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "remove": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "clone",
+          "-F",
+          "pid=604678",
+          "-k",
+          "e1c5probe2aa7c62ae4"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "supported": true,
+      "syscall": "clone"
+    },
+    {
+      "add": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "fork",
+          "-F",
+          "pid=604678",
+          "-k",
+          "e1c5probe2aa7c62ae4"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "remove": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "fork",
+          "-F",
+          "pid=604678",
+          "-k",
+          "e1c5probe2aa7c62ae4"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "supported": true,
+      "syscall": "fork"
+    },
+    {
+      "add": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "vfork",
+          "-F",
+          "pid=604678",
+          "-k",
+          "e1c5probe2aa7c62ae4"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "remove": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "vfork",
+          "-F",
+          "pid=604678",
+          "-k",
+          "e1c5probe2aa7c62ae4"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "supported": true,
+      "syscall": "vfork"
+    },
+    {
+      "add": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "exit_group",
+          "-F",
+          "pid=604678",
+          "-k",
+          "e1c5probe2aa7c62ae4"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "remove": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "exit_group",
+          "-F",
+          "pid=604678",
+          "-k",
+          "e1c5probe2aa7c62ae4"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "supported": true,
+      "syscall": "exit_group"
+    },
+    {
+      "add": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "openat",
+          "-F",
+          "pid=604678",
+          "-k",
+          "e1c5probe2aa7c62ae4"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "remove": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "openat",
+          "-F",
+          "pid=604678",
+          "-k",
+          "e1c5probe2aa7c62ae4"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "supported": true,
+      "syscall": "openat"
+    },
+    {
+      "add": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "openat2",
+          "-F",
+          "pid=604678",
+          "-k",
+          "e1c5probe2aa7c62ae4"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "remove": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "openat2",
+          "-F",
+          "pid=604678",
+          "-k",
+          "e1c5probe2aa7c62ae4"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "supported": true,
+      "syscall": "openat2"
+    },
+    {
+      "add": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "read",
+          "-F",
+          "pid=604678",
+          "-k",
+          "e1c5probe2aa7c62ae4"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "remove": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "read",
+          "-F",
+          "pid=604678",
+          "-k",
+          "e1c5probe2aa7c62ae4"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "supported": true,
+      "syscall": "read"
+    },
+    {
+      "add": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "write",
+          "-F",
+          "pid=604678",
+          "-k",
+          "e1c5probe2aa7c62ae4"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "remove": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "write",
+          "-F",
+          "pid=604678",
+          "-k",
+          "e1c5probe2aa7c62ae4"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "supported": true,
+      "syscall": "write"
+    },
+    {
+      "add": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "pread64",
+          "-F",
+          "pid=604678",
+          "-k",
+          "e1c5probe2aa7c62ae4"
+        ],
+        "returncode": 255,
+        "stderr": "Syscall name unknown: pread64\n",
+        "stdout": ""
+      },
+      "remove": null,
+      "supported": false,
+      "syscall": "pread64"
+    },
+    {
+      "add": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "pwrite64",
+          "-F",
+          "pid=604678",
+          "-k",
+          "e1c5probe2aa7c62ae4"
+        ],
+        "returncode": 255,
+        "stderr": "Syscall name unknown: pwrite64\n",
+        "stdout": ""
+      },
+      "remove": null,
+      "supported": false,
+      "syscall": "pwrite64"
+    },
+    {
+      "add": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "readv",
+          "-F",
+          "pid=604678",
+          "-k",
+          "e1c5probe2aa7c62ae4"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "remove": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "readv",
+          "-F",
+          "pid=604678",
+          "-k",
+          "e1c5probe2aa7c62ae4"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "supported": true,
+      "syscall": "readv"
+    },
+    {
+      "add": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "writev",
+          "-F",
+          "pid=604678",
+          "-k",
+          "e1c5probe2aa7c62ae4"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "remove": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "writev",
+          "-F",
+          "pid=604678",
+          "-k",
+          "e1c5probe2aa7c62ae4"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "supported": true,
+      "syscall": "writev"
+    },
+    {
+      "add": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "pwritev2",
+          "-F",
+          "pid=604678",
+          "-k",
+          "e1c5probe2aa7c62ae4"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "remove": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "pwritev2",
+          "-F",
+          "pid=604678",
+          "-k",
+          "e1c5probe2aa7c62ae4"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "supported": true,
+      "syscall": "pwritev2"
+    },
+    {
+      "add": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "unlink",
+          "-F",
+          "pid=604678",
+          "-k",
+          "e1c5probe2aa7c62ae4"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "remove": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "unlink",
+          "-F",
+          "pid=604678",
+          "-k",
+          "e1c5probe2aa7c62ae4"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "supported": true,
+      "syscall": "unlink"
+    },
+    {
+      "add": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "unlinkat",
+          "-F",
+          "pid=604678",
+          "-k",
+          "e1c5probe2aa7c62ae4"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "remove": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "unlinkat",
+          "-F",
+          "pid=604678",
+          "-k",
+          "e1c5probe2aa7c62ae4"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "supported": true,
+      "syscall": "unlinkat"
+    },
+    {
+      "add": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "renameat",
+          "-F",
+          "pid=604678",
+          "-k",
+          "e1c5probe2aa7c62ae4"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "remove": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "renameat",
+          "-F",
+          "pid=604678",
+          "-k",
+          "e1c5probe2aa7c62ae4"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "supported": true,
+      "syscall": "renameat"
+    },
+    {
+      "add": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "bind",
+          "-F",
+          "pid=604678",
+          "-k",
+          "e1c5probe2aa7c62ae4"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "remove": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "bind",
+          "-F",
+          "pid=604678",
+          "-k",
+          "e1c5probe2aa7c62ae4"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "supported": true,
+      "syscall": "bind"
+    },
+    {
+      "add": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "connect",
+          "-F",
+          "pid=604678",
+          "-k",
+          "e1c5probe2aa7c62ae4"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "remove": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "connect",
+          "-F",
+          "pid=604678",
+          "-k",
+          "e1c5probe2aa7c62ae4"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "supported": true,
+      "syscall": "connect"
+    },
+    {
+      "add": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "accept",
+          "-F",
+          "pid=604678",
+          "-k",
+          "e1c5probe2aa7c62ae4"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "remove": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "accept",
+          "-F",
+          "pid=604678",
+          "-k",
+          "e1c5probe2aa7c62ae4"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "supported": true,
+      "syscall": "accept"
+    },
+    {
+      "add": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "accept4",
+          "-F",
+          "pid=604678",
+          "-k",
+          "e1c5probe2aa7c62ae4"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "remove": {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-d",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "accept4",
+          "-F",
+          "pid=604678",
+          "-k",
+          "e1c5probe2aa7c62ae4"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "supported": true,
+      "syscall": "accept4"
+    }
+  ]
 }

@@ -1,12 +1,66 @@
 {
-  "schema": "MININET_E1C_R5_AUDIT_PRE_STATE_V1",
-  "run_id": "e1c-r5-run-20260831T111849Z",
-  "status": "PENDING_PRIVILEGED_ROOT_PREFLIGHT",
-  "derived_from_pinned_r4_post_cleanup": true,
-  "historical_rule_dump": "No rules\\n",
+  "auditctl_list": {
+    "argv": [
+      "/usr/sbin/auditctl",
+      "-l"
+    ],
+    "returncode": 0,
+    "stderr": {
+      "__type__": "bytes",
+      "base64": "",
+      "encoding": "base64",
+      "length": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "utf8": ""
+    },
+    "stdout": {
+      "__type__": "bytes",
+      "base64": "Tm8gcnVsZXMK",
+      "encoding": "base64",
+      "length": 9,
+      "sha256": "61501e69a61dbbc1a41605ea15c34807e6b1d3992bee195dde36a7ebdd95dd87",
+      "utf8": "No rules\n"
+    }
+  },
+  "auditctl_status": {
+    "argv": [
+      "/usr/sbin/auditctl",
+      "-s"
+    ],
+    "parsed": {
+      "backlog": 0,
+      "backlog_limit": 8192,
+      "backlog_wait_time": 60000,
+      "backlog_wait_time_actual": 0,
+      "enabled": 1,
+      "lost": 0,
+      "raw": "enabled 1\nfailure 1\npid 573176\nrate_limit 0\nbacklog_limit 8192\nlost 0\nbacklog 0\nbacklog_wait_time 60000\nbacklog_wait_time_actual 0\nloginuid_immutable 0 unlocked\n"
+    },
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "enabled 1\nfailure 1\npid 573176\nrate_limit 0\nbacklog_limit 8192\nlost 0\nbacklog 0\nbacklog_wait_time 60000\nbacklog_wait_time_actual 0\nloginuid_immutable 0 unlocked\n"
+  },
+  "auditd_package": {
+    "argv": [
+      "/usr/bin/dpkg-query",
+      "-W",
+      "-f=${Package}=${Version}\n",
+      "auditd"
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "auditd=1:3.0.7-1build1\n"
+  },
   "baseline_rule_dump_sha256": "61501e69a61dbbc1a41605ea15c34807e6b1d3992bee195dde36a7ebdd95dd87",
   "canonical_rule_lines": [],
+  "captured_at_utc": "2026-08-31T12:11:20.063579+00:00",
   "installed_auditd_version": "auditd=1:3.0.7-1build1",
-  "direct_root_capture_performed": false,
-  "root_start_action": "capture auditctl -l/-s and fail closed unless exact clean baseline"
+  "persistent_rules_files": {
+    "files": {
+      "/etc/audit/rules.d/audit.rules": {
+        "sha256": "54c2cebdaadfb928f7327cc066218e38743f0ff94d02fe162a7a415e148d23a8",
+        "size": 244
+      }
+    }
+  }
 }

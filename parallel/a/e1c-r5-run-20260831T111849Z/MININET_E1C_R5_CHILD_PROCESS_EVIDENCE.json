@@ -1,0 +1,161 @@
+{
+  "children": [
+    {
+      "captured_at_utc": "2026-08-31T12:11:23.858430+00:00",
+      "child_pid": 604947,
+      "logical_host_id": "h1",
+      "popen_pid": 604947,
+      "process_liveness": false,
+      "returncode": 0,
+      "state_file": "/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/child-h1-states.jsonl",
+      "stderr": "",
+      "stdout_history": [
+        {
+          "event": "READY",
+          "file_operations": [
+            "create",
+            "write",
+            "read"
+          ],
+          "listen": [
+            "10.0.0.1",
+            18080
+          ],
+          "listener_diagnostics": {
+            "actual_child_netns": "net:[4026532669]",
+            "bind_result": "PASS",
+            "getsockname": [
+              "10.0.0.1",
+              18080
+            ],
+            "interface_addresses": {
+              "argv": [
+                "/usr/sbin/ip",
+                "-o",
+                "addr",
+                "show"
+              ],
+              "returncode": 0,
+              "stderr": "",
+              "stdout": "1: lo    inet 127.0.0.1/8 scope host lo\\       valid_lft forever preferred_lft forever\n1: lo    inet6 ::1/128 scope host \\       valid_lft forever preferred_lft forever\n2: h1-eth0    inet 10.0.0.1/24 brd 10.0.0.255 scope global h1-eth0\\       valid_lft forever preferred_lft forever\n2: h1-eth0    inet6 fe80::200:ff:fe00:101/64 scope link tentative \\       valid_lft forever preferred_lft forever\n"
+            },
+            "requested_bind_address": "10.0.0.1",
+            "requested_port": 18080
+          },
+          "logical_host_id": "h1",
+          "netns": "net:[4026532669]",
+          "pid": 604947,
+          "ppid": 604678,
+          "temp_file": "/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events/h1.txt"
+        },
+        {
+          "event": "WORKER_STARTED",
+          "logical_host_id": "h1",
+          "pid": 605276,
+          "ppid": 604947
+        },
+        {
+          "ack": "ACK:h2",
+          "event": "NETWORK",
+          "logical_host_id": "h1",
+          "mode": "connect",
+          "peer": [
+            "10.0.0.2",
+            18080
+          ],
+          "port": 18080
+        },
+        {
+          "event": "FINISHED",
+          "file_operations": [
+            "create",
+            "write",
+            "read",
+            "delete"
+          ],
+          "logical_host_id": "h1",
+          "pid": 604947
+        }
+      ]
+    },
+    {
+      "captured_at_utc": "2026-08-31T12:11:23.858454+00:00",
+      "child_pid": 604948,
+      "logical_host_id": "h2",
+      "popen_pid": 604948,
+      "process_liveness": false,
+      "returncode": 0,
+      "state_file": "/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/child-h2-states.jsonl",
+      "stderr": "",
+      "stdout_history": [
+        {
+          "event": "READY",
+          "file_operations": [
+            "create",
+            "write",
+            "read"
+          ],
+          "listen": [
+            "10.0.0.2",
+            18080
+          ],
+          "listener_diagnostics": {
+            "actual_child_netns": "net:[4026533351]",
+            "bind_result": "PASS",
+            "getsockname": [
+              "10.0.0.2",
+              18080
+            ],
+            "interface_addresses": {
+              "argv": [
+                "/usr/sbin/ip",
+                "-o",
+                "addr",
+                "show"
+              ],
+              "returncode": 0,
+              "stderr": "",
+              "stdout": "1: lo    inet 127.0.0.1/8 scope host lo\\       valid_lft forever preferred_lft forever\n1: lo    inet6 ::1/128 scope host \\       valid_lft forever preferred_lft forever\n2: h2-eth0    inet 10.0.0.2/24 brd 10.0.0.255 scope global h2-eth0\\       valid_lft forever preferred_lft forever\n2: h2-eth0    inet6 fe80::200:ff:fe00:102/64 scope link tentative \\       valid_lft forever preferred_lft forever\n"
+            },
+            "requested_bind_address": "10.0.0.2",
+            "requested_port": 18080
+          },
+          "logical_host_id": "h2",
+          "netns": "net:[4026533351]",
+          "pid": 604948,
+          "ppid": 604678,
+          "temp_file": "/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/temp-events/h2.txt"
+        },
+        {
+          "event": "WORKER_STARTED",
+          "logical_host_id": "h2",
+          "pid": 605277,
+          "ppid": 604948
+        },
+        {
+          "event": "NETWORK",
+          "logical_host_id": "h2",
+          "mode": "accept",
+          "payload": "benign-h1",
+          "peer": [
+            "10.0.0.1",
+            41712
+          ],
+          "port": 18080
+        },
+        {
+          "event": "FINISHED",
+          "file_operations": [
+            "create",
+            "write",
+            "read",
+            "delete"
+          ],
+          "logical_host_id": "h2",
+          "pid": 604948
+        }
+      ]
+    }
+  ],
+  "schema": "MININET_E1C_R5_CHILD_PROCESS_EVIDENCE_V1"
+}

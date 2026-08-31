@@ -1,0 +1,8 @@
+{
+  "classification": "PARTIAL_MISSING_REQUIRED_EVENT_CLASS",
+  "formal_experiment_executed": false,
+  "run_id": "e1c-r5-run-20260831T111849Z",
+  "runtime_error": null,
+  "schema": "MININET_E1C_R5_PRIVILEGED_RUN_RESULT_V1",
+  "status": "COMPLETED"
+}
