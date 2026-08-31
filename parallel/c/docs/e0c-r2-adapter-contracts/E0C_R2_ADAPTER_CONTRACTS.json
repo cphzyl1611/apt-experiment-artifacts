@@ -1,0 +1,336 @@
+{
+  "contracts": {
+    "EMAIL_DELIVERY": {
+      "adapter_id": "adapter::email_delivery",
+      "adapter_version": "0.1.0-design",
+      "applicable_raw_key_set_commitment": {
+        "algorithm": "SHA256",
+        "canonicalization": "sorted UTF-8 raw_key array",
+        "raw_count": 105,
+        "raw_keys_sha256": "3ce3a1cb599a3dc886ecd9c3d0acf35906c9dd91dca6e01032386af0d6d28a7c"
+      },
+      "cleanup_reset": [
+        "fixture-specific teardown",
+        "process/socket/file cleanup evidence",
+        "pre/post state hashes",
+        "fail closed on incomplete reset"
+      ],
+      "environment_service_fixtures": [
+        "versioned local fixture",
+        "dummy service or offline fixture selected by human design",
+        "no public endpoint"
+      ],
+      "evidence_artifacts": [
+        "run manifest",
+        "stdout/stderr where applicable",
+        "process/file/socket/packet records as applicable",
+        "reset audit"
+      ],
+      "execution_result_schema": {
+        "action_success": "UNKNOWN_UNTIL_IMPLEMENTED_AND_VALIDATED",
+        "enforcement_result": "NOT_DEFINED_IN_THIS_DESIGN",
+        "observed_effects": "structured evidence only",
+        "status": [
+          "NOT_RUN",
+          "PASS",
+          "FAIL",
+          "TIMEOUT",
+          "BLOCKED"
+        ]
+      },
+      "fail_closed_behavior": "Missing fixture, ambiguous source requirement, attribution failure, or reset failure must not emit a successful candidate result.",
+      "formal_execution_authorized": false,
+      "implementation_status": "DESIGN_ONLY_NOT_IMPLEMENTED",
+      "input_parameters": [
+        "run_id",
+        "raw_key",
+        "isolated_fixture_id",
+        "bounded_timeout",
+        "candidate_mode"
+      ],
+      "mininet_compatibility": "REQUIRES_HOST_PROVENANCE_VALIDATION",
+      "preconditions": [
+        "authenticated raw row",
+        "approved fixture manifest",
+        "isolated private fabric",
+        "reset evidence plan"
+      ],
+      "priority_rank": 4,
+      "raw_count": 105,
+      "required_source_target_roles": [
+        "source_host",
+        "target_host_or_service",
+        "telemetry_collector"
+      ],
+      "run_id_raw_key_binding": "Every future run record must carry exactly one run_id and one raw_key; no cross-row reuse.",
+      "timeout_error_semantics": "Bounded timeout produces TIMEOUT with partial evidence retained; infrastructure errors produce BLOCKED; neither is success.",
+      "unresolved_prerequisites_policy": "UNKNOWN source prerequisites remain explicit inputs for human design and are never silently defaulted."
+    },
+    "NETWORK_C2_BEACON": {
+      "adapter_id": "adapter::network_c2_beacon",
+      "adapter_version": "0.1.0-design",
+      "applicable_raw_key_set_commitment": {
+        "algorithm": "SHA256",
+        "canonicalization": "sorted UTF-8 raw_key array",
+        "raw_count": 103,
+        "raw_keys_sha256": "e8cb559197759e9e110698851d8249546201b7a47676a9eb9b0d4204f4342672"
+      },
+      "cleanup_reset": [
+        "fixture-specific teardown",
+        "process/socket/file cleanup evidence",
+        "pre/post state hashes",
+        "fail closed on incomplete reset"
+      ],
+      "environment_service_fixtures": [
+        "versioned local fixture",
+        "dummy service or offline fixture selected by human design",
+        "no public endpoint"
+      ],
+      "evidence_artifacts": [
+        "run manifest",
+        "stdout/stderr where applicable",
+        "process/file/socket/packet records as applicable",
+        "reset audit"
+      ],
+      "execution_result_schema": {
+        "action_success": "UNKNOWN_UNTIL_IMPLEMENTED_AND_VALIDATED",
+        "enforcement_result": "NOT_DEFINED_IN_THIS_DESIGN",
+        "observed_effects": "structured evidence only",
+        "status": [
+          "NOT_RUN",
+          "PASS",
+          "FAIL",
+          "TIMEOUT",
+          "BLOCKED"
+        ]
+      },
+      "fail_closed_behavior": "Missing fixture, ambiguous source requirement, attribution failure, or reset failure must not emit a successful candidate result.",
+      "formal_execution_authorized": false,
+      "implementation_status": "DESIGN_ONLY_NOT_IMPLEMENTED",
+      "input_parameters": [
+        "run_id",
+        "raw_key",
+        "isolated_fixture_id",
+        "bounded_timeout",
+        "candidate_mode"
+      ],
+      "mininet_compatibility": "PLAIN_MININET_CANDIDATE",
+      "preconditions": [
+        "authenticated raw row",
+        "approved fixture manifest",
+        "isolated private fabric",
+        "reset evidence plan"
+      ],
+      "priority_rank": 5,
+      "raw_count": 103,
+      "required_source_target_roles": [
+        "source_host",
+        "target_host_or_service",
+        "telemetry_collector"
+      ],
+      "run_id_raw_key_binding": "Every future run record must carry exactly one run_id and one raw_key; no cross-row reuse.",
+      "timeout_error_semantics": "Bounded timeout produces TIMEOUT with partial evidence retained; infrastructure errors produce BLOCKED; neither is success.",
+      "unresolved_prerequisites_policy": "UNKNOWN source prerequisites remain explicit inputs for human design and are never silently defaulted."
+    },
+    "NETWORK_SERVICE_INTERACTION": {
+      "adapter_id": "adapter::network_service_interaction",
+      "adapter_version": "0.1.0-design",
+      "applicable_raw_key_set_commitment": {
+        "algorithm": "SHA256",
+        "canonicalization": "sorted UTF-8 raw_key array",
+        "raw_count": 232,
+        "raw_keys_sha256": "551770d24f0f345ba6a5d7a5f6fa88b1dcbbe47da9707f4aa2a4f7a1547bed48"
+      },
+      "cleanup_reset": [
+        "fixture-specific teardown",
+        "process/socket/file cleanup evidence",
+        "pre/post state hashes",
+        "fail closed on incomplete reset"
+      ],
+      "environment_service_fixtures": [
+        "versioned local fixture",
+        "dummy service or offline fixture selected by human design",
+        "no public endpoint"
+      ],
+      "evidence_artifacts": [
+        "run manifest",
+        "stdout/stderr where applicable",
+        "process/file/socket/packet records as applicable",
+        "reset audit"
+      ],
+      "execution_result_schema": {
+        "action_success": "UNKNOWN_UNTIL_IMPLEMENTED_AND_VALIDATED",
+        "enforcement_result": "NOT_DEFINED_IN_THIS_DESIGN",
+        "observed_effects": "structured evidence only",
+        "status": [
+          "NOT_RUN",
+          "PASS",
+          "FAIL",
+          "TIMEOUT",
+          "BLOCKED"
+        ]
+      },
+      "fail_closed_behavior": "Missing fixture, ambiguous source requirement, attribution failure, or reset failure must not emit a successful candidate result.",
+      "formal_execution_authorized": false,
+      "implementation_status": "DESIGN_ONLY_NOT_IMPLEMENTED",
+      "input_parameters": [
+        "run_id",
+        "raw_key",
+        "isolated_fixture_id",
+        "bounded_timeout",
+        "candidate_mode"
+      ],
+      "mininet_compatibility": "PLAIN_MININET_CANDIDATE",
+      "preconditions": [
+        "authenticated raw row",
+        "approved fixture manifest",
+        "isolated private fabric",
+        "reset evidence plan"
+      ],
+      "priority_rank": 2,
+      "raw_count": 232,
+      "required_source_target_roles": [
+        "source_host",
+        "target_host_or_service",
+        "telemetry_collector"
+      ],
+      "run_id_raw_key_binding": "Every future run record must carry exactly one run_id and one raw_key; no cross-row reuse.",
+      "timeout_error_semantics": "Bounded timeout produces TIMEOUT with partial evidence retained; infrastructure errors produce BLOCKED; neither is success.",
+      "unresolved_prerequisites_policy": "UNKNOWN source prerequisites remain explicit inputs for human design and are never silently defaulted."
+    },
+    "PROCESS_COMMAND_EXECUTION": {
+      "adapter_id": "adapter::process_command_execution",
+      "adapter_version": "0.1.0-design",
+      "applicable_raw_key_set_commitment": {
+        "algorithm": "SHA256",
+        "canonicalization": "sorted UTF-8 raw_key array",
+        "raw_count": 712,
+        "raw_keys_sha256": "79d217c896558a90e5047800dc4c8fd78f9fd1624089465236e83c31d477ebbc"
+      },
+      "cleanup_reset": [
+        "fixture-specific teardown",
+        "process/socket/file cleanup evidence",
+        "pre/post state hashes",
+        "fail closed on incomplete reset"
+      ],
+      "environment_service_fixtures": [
+        "versioned local fixture",
+        "dummy service or offline fixture selected by human design",
+        "no public endpoint"
+      ],
+      "evidence_artifacts": [
+        "run manifest",
+        "stdout/stderr where applicable",
+        "process/file/socket/packet records as applicable",
+        "reset audit"
+      ],
+      "execution_result_schema": {
+        "action_success": "UNKNOWN_UNTIL_IMPLEMENTED_AND_VALIDATED",
+        "enforcement_result": "NOT_DEFINED_IN_THIS_DESIGN",
+        "observed_effects": "structured evidence only",
+        "status": [
+          "NOT_RUN",
+          "PASS",
+          "FAIL",
+          "TIMEOUT",
+          "BLOCKED"
+        ]
+      },
+      "fail_closed_behavior": "Missing fixture, ambiguous source requirement, attribution failure, or reset failure must not emit a successful candidate result.",
+      "formal_execution_authorized": false,
+      "implementation_status": "DESIGN_ONLY_NOT_IMPLEMENTED",
+      "input_parameters": [
+        "run_id",
+        "raw_key",
+        "isolated_fixture_id",
+        "bounded_timeout",
+        "candidate_mode"
+      ],
+      "mininet_compatibility": "REQUIRES_HOST_PROVENANCE_VALIDATION",
+      "preconditions": [
+        "authenticated raw row",
+        "approved fixture manifest",
+        "isolated private fabric",
+        "reset evidence plan"
+      ],
+      "priority_rank": 1,
+      "raw_count": 712,
+      "required_source_target_roles": [
+        "source_host",
+        "target_host_or_service",
+        "telemetry_collector"
+      ],
+      "run_id_raw_key_binding": "Every future run record must carry exactly one run_id and one raw_key; no cross-row reuse.",
+      "timeout_error_semantics": "Bounded timeout produces TIMEOUT with partial evidence retained; infrastructure errors produce BLOCKED; neither is success.",
+      "unresolved_prerequisites_policy": "UNKNOWN source prerequisites remain explicit inputs for human design and are never silently defaulted."
+    },
+    "TRANSFER_DOWNLOAD_UPLOAD": {
+      "adapter_id": "adapter::transfer_download_upload",
+      "adapter_version": "0.1.0-design",
+      "applicable_raw_key_set_commitment": {
+        "algorithm": "SHA256",
+        "canonicalization": "sorted UTF-8 raw_key array",
+        "raw_count": 166,
+        "raw_keys_sha256": "847269f179f0f8366f03e4297152bf2918e19a5c15adfb951480331c4f390748"
+      },
+      "cleanup_reset": [
+        "fixture-specific teardown",
+        "process/socket/file cleanup evidence",
+        "pre/post state hashes",
+        "fail closed on incomplete reset"
+      ],
+      "environment_service_fixtures": [
+        "versioned local fixture",
+        "dummy service or offline fixture selected by human design",
+        "no public endpoint"
+      ],
+      "evidence_artifacts": [
+        "run manifest",
+        "stdout/stderr where applicable",
+        "process/file/socket/packet records as applicable",
+        "reset audit"
+      ],
+      "execution_result_schema": {
+        "action_success": "UNKNOWN_UNTIL_IMPLEMENTED_AND_VALIDATED",
+        "enforcement_result": "NOT_DEFINED_IN_THIS_DESIGN",
+        "observed_effects": "structured evidence only",
+        "status": [
+          "NOT_RUN",
+          "PASS",
+          "FAIL",
+          "TIMEOUT",
+          "BLOCKED"
+        ]
+      },
+      "fail_closed_behavior": "Missing fixture, ambiguous source requirement, attribution failure, or reset failure must not emit a successful candidate result.",
+      "formal_execution_authorized": false,
+      "implementation_status": "DESIGN_ONLY_NOT_IMPLEMENTED",
+      "input_parameters": [
+        "run_id",
+        "raw_key",
+        "isolated_fixture_id",
+        "bounded_timeout",
+        "candidate_mode"
+      ],
+      "mininet_compatibility": "REQUIRES_HOST_PROVENANCE_VALIDATION",
+      "preconditions": [
+        "authenticated raw row",
+        "approved fixture manifest",
+        "isolated private fabric",
+        "reset evidence plan"
+      ],
+      "priority_rank": 3,
+      "raw_count": 166,
+      "required_source_target_roles": [
+        "source_host",
+        "target_host_or_service",
+        "telemetry_collector"
+      ],
+      "run_id_raw_key_binding": "Every future run record must carry exactly one run_id and one raw_key; no cross-row reuse.",
+      "timeout_error_semantics": "Bounded timeout produces TIMEOUT with partial evidence retained; infrastructure errors produce BLOCKED; neither is success.",
+      "unresolved_prerequisites_policy": "UNKNOWN source prerequisites remain explicit inputs for human design and are never silently defaulted."
+    }
+  },
+  "non_executable": true,
+  "schema": "E0C_R2_ADAPTER_CONTRACTS_V1"
+}

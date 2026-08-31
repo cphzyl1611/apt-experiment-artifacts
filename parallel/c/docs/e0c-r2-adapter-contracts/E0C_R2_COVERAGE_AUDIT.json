@@ -1,0 +1,16 @@
+{
+  "addressable_candidate_rows_excluding_unresolved_prerequisites": 941,
+  "contract_covered_candidate_rows": 945,
+  "contract_covered_rows_are_executable": false,
+  "denominator_change": "NO",
+  "formal_experiment_executed": "NO",
+  "manual_design_rows": 589,
+  "next_action": "FRESH_REVIEW_OF_E0C_R2_ADAPTER_CONTRACTS",
+  "prioritized_family_raw_rows": 1318,
+  "raw_denominator": 1796,
+  "schema": "E0C_R2_COVERAGE_AUDIT_V1",
+  "stop": true,
+  "target_family_member_conservation": "PASS",
+  "unresolved_prerequisite_interpretation": "Four contract-covered candidate rows retain unresolved source prerequisites and are excluded from the addressable planning subtotal. No row is promoted to executable status.",
+  "unresolved_prerequisite_rows": 4
+}

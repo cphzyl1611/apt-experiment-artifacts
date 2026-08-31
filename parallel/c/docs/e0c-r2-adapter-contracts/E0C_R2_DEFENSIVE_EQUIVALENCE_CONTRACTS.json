@@ -1,0 +1,111 @@
+{
+  "contracts": {
+    "EMAIL_DELIVERY": {
+      "candidate_modes": {
+        "EMULATED_CANDIDATE": "Preserve protocol direction, endpoint/service class, timing envelope, and observable response shape.",
+        "NATIVE_CANDIDATE": "Preserve source-visible host/process semantics and event ordering; use only an isolated fixture.",
+        "REQUIRES_MANUAL_DESIGN": "No candidate is permitted until a human specifies defensible equivalence and safety controls.",
+        "SYNTHETIC_CANDIDATE": "Preserve inert artifact/message/file/socket class and causality labels without executing payload content."
+      },
+      "equivalence_status": "DESIGN_REQUIRES_HUMAN_REVIEW",
+      "must_remain_equivalent": [
+        "process ancestry and actor role where source exposes a process",
+        "file/socket/network entity classes and direction",
+        "timing and sequence constraints relevant to the defensive decision point",
+        "observable causality and run_id/raw_key provenance",
+        "side effects required for the same defensive telemetry decision point"
+      ],
+      "what_may_safely_differ": [
+        "payload bytes, credentials, destinations, and identifiers may be inert fixture values",
+        "implementation language and internal fixture mechanics may differ",
+        "real malware, public services, destructive state, and external C2 must differ by being absent"
+      ]
+    },
+    "NETWORK_C2_BEACON": {
+      "candidate_modes": {
+        "EMULATED_CANDIDATE": "Preserve protocol direction, endpoint/service class, timing envelope, and observable response shape.",
+        "NATIVE_CANDIDATE": "Preserve source-visible host/process semantics and event ordering; use only an isolated fixture.",
+        "REQUIRES_MANUAL_DESIGN": "No candidate is permitted until a human specifies defensible equivalence and safety controls.",
+        "SYNTHETIC_CANDIDATE": "Preserve inert artifact/message/file/socket class and causality labels without executing payload content."
+      },
+      "equivalence_status": "DESIGN_REQUIRES_HUMAN_REVIEW",
+      "must_remain_equivalent": [
+        "process ancestry and actor role where source exposes a process",
+        "file/socket/network entity classes and direction",
+        "timing and sequence constraints relevant to the defensive decision point",
+        "observable causality and run_id/raw_key provenance",
+        "side effects required for the same defensive telemetry decision point"
+      ],
+      "what_may_safely_differ": [
+        "payload bytes, credentials, destinations, and identifiers may be inert fixture values",
+        "implementation language and internal fixture mechanics may differ",
+        "real malware, public services, destructive state, and external C2 must differ by being absent"
+      ]
+    },
+    "NETWORK_SERVICE_INTERACTION": {
+      "candidate_modes": {
+        "EMULATED_CANDIDATE": "Preserve protocol direction, endpoint/service class, timing envelope, and observable response shape.",
+        "NATIVE_CANDIDATE": "Preserve source-visible host/process semantics and event ordering; use only an isolated fixture.",
+        "REQUIRES_MANUAL_DESIGN": "No candidate is permitted until a human specifies defensible equivalence and safety controls.",
+        "SYNTHETIC_CANDIDATE": "Preserve inert artifact/message/file/socket class and causality labels without executing payload content."
+      },
+      "equivalence_status": "DESIGN_REQUIRES_HUMAN_REVIEW",
+      "must_remain_equivalent": [
+        "process ancestry and actor role where source exposes a process",
+        "file/socket/network entity classes and direction",
+        "timing and sequence constraints relevant to the defensive decision point",
+        "observable causality and run_id/raw_key provenance",
+        "side effects required for the same defensive telemetry decision point"
+      ],
+      "what_may_safely_differ": [
+        "payload bytes, credentials, destinations, and identifiers may be inert fixture values",
+        "implementation language and internal fixture mechanics may differ",
+        "real malware, public services, destructive state, and external C2 must differ by being absent"
+      ]
+    },
+    "PROCESS_COMMAND_EXECUTION": {
+      "candidate_modes": {
+        "EMULATED_CANDIDATE": "Preserve protocol direction, endpoint/service class, timing envelope, and observable response shape.",
+        "NATIVE_CANDIDATE": "Preserve source-visible host/process semantics and event ordering; use only an isolated fixture.",
+        "REQUIRES_MANUAL_DESIGN": "No candidate is permitted until a human specifies defensible equivalence and safety controls.",
+        "SYNTHETIC_CANDIDATE": "Preserve inert artifact/message/file/socket class and causality labels without executing payload content."
+      },
+      "equivalence_status": "DESIGN_REQUIRES_HUMAN_REVIEW",
+      "must_remain_equivalent": [
+        "process ancestry and actor role where source exposes a process",
+        "file/socket/network entity classes and direction",
+        "timing and sequence constraints relevant to the defensive decision point",
+        "observable causality and run_id/raw_key provenance",
+        "side effects required for the same defensive telemetry decision point"
+      ],
+      "what_may_safely_differ": [
+        "payload bytes, credentials, destinations, and identifiers may be inert fixture values",
+        "implementation language and internal fixture mechanics may differ",
+        "real malware, public services, destructive state, and external C2 must differ by being absent"
+      ]
+    },
+    "TRANSFER_DOWNLOAD_UPLOAD": {
+      "candidate_modes": {
+        "EMULATED_CANDIDATE": "Preserve protocol direction, endpoint/service class, timing envelope, and observable response shape.",
+        "NATIVE_CANDIDATE": "Preserve source-visible host/process semantics and event ordering; use only an isolated fixture.",
+        "REQUIRES_MANUAL_DESIGN": "No candidate is permitted until a human specifies defensible equivalence and safety controls.",
+        "SYNTHETIC_CANDIDATE": "Preserve inert artifact/message/file/socket class and causality labels without executing payload content."
+      },
+      "equivalence_status": "DESIGN_REQUIRES_HUMAN_REVIEW",
+      "must_remain_equivalent": [
+        "process ancestry and actor role where source exposes a process",
+        "file/socket/network entity classes and direction",
+        "timing and sequence constraints relevant to the defensive decision point",
+        "observable causality and run_id/raw_key provenance",
+        "side effects required for the same defensive telemetry decision point"
+      ],
+      "what_may_safely_differ": [
+        "payload bytes, credentials, destinations, and identifiers may be inert fixture values",
+        "implementation language and internal fixture mechanics may differ",
+        "real malware, public services, destructive state, and external C2 must differ by being absent"
+      ]
+    }
+  },
+  "non_executable": true,
+  "schema": "E0C_R2_DEFENSIVE_EQUIVALENCE_CONTRACTS_V1"
+}

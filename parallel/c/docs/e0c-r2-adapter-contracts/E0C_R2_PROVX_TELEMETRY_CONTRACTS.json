@@ -1,0 +1,141 @@
+{
+  "contracts": {
+    "EMAIL_DELIVERY": {
+      "file_events": [
+        "create/read/write/delete, path class, pid, timestamps where applicable"
+      ],
+      "logical_host_attribution": [
+        "host shell PID, child PID, netns/cgroup or equivalent, interface mapping"
+      ],
+      "packet_events": [
+        "bounded packet metadata, direction, protocol, timestamps, fixture interfaces"
+      ],
+      "process_events": [
+        "exec/exit, pid/ppid, command-line or equivalent source-visible identity where applicable"
+      ],
+      "provenance_nodes_edges": [
+        "run node",
+        "raw_key node",
+        "process/file/socket/packet nodes as observed",
+        "causal edges only when emitted by collector"
+      ],
+      "provx_claim_status": "UNEXECUTED_NOT_OBSERVED",
+      "provx_phase1_observable": "UNKNOWN",
+      "provx_phase2_core_edge_localizable": "UNKNOWN",
+      "raw_key_run_id_reversible_mapping": "A unique reversible map from every telemetry record to run_id and raw_key is mandatory.",
+      "socket_events": [
+        "bind/connect/listen/accept, local/remote endpoint, pid, protocol"
+      ]
+    },
+    "NETWORK_C2_BEACON": {
+      "file_events": [
+        "create/read/write/delete, path class, pid, timestamps where applicable"
+      ],
+      "logical_host_attribution": [
+        "host shell PID, child PID, netns/cgroup or equivalent, interface mapping"
+      ],
+      "packet_events": [
+        "bounded packet metadata, direction, protocol, timestamps, fixture interfaces"
+      ],
+      "process_events": [
+        "exec/exit, pid/ppid, command-line or equivalent source-visible identity where applicable"
+      ],
+      "provenance_nodes_edges": [
+        "run node",
+        "raw_key node",
+        "process/file/socket/packet nodes as observed",
+        "causal edges only when emitted by collector"
+      ],
+      "provx_claim_status": "UNEXECUTED_NOT_OBSERVED",
+      "provx_phase1_observable": "UNKNOWN",
+      "provx_phase2_core_edge_localizable": "UNKNOWN",
+      "raw_key_run_id_reversible_mapping": "A unique reversible map from every telemetry record to run_id and raw_key is mandatory.",
+      "socket_events": [
+        "bind/connect/listen/accept, local/remote endpoint, pid, protocol"
+      ]
+    },
+    "NETWORK_SERVICE_INTERACTION": {
+      "file_events": [
+        "create/read/write/delete, path class, pid, timestamps where applicable"
+      ],
+      "logical_host_attribution": [
+        "host shell PID, child PID, netns/cgroup or equivalent, interface mapping"
+      ],
+      "packet_events": [
+        "bounded packet metadata, direction, protocol, timestamps, fixture interfaces"
+      ],
+      "process_events": [
+        "exec/exit, pid/ppid, command-line or equivalent source-visible identity where applicable"
+      ],
+      "provenance_nodes_edges": [
+        "run node",
+        "raw_key node",
+        "process/file/socket/packet nodes as observed",
+        "causal edges only when emitted by collector"
+      ],
+      "provx_claim_status": "UNEXECUTED_NOT_OBSERVED",
+      "provx_phase1_observable": "UNKNOWN",
+      "provx_phase2_core_edge_localizable": "UNKNOWN",
+      "raw_key_run_id_reversible_mapping": "A unique reversible map from every telemetry record to run_id and raw_key is mandatory.",
+      "socket_events": [
+        "bind/connect/listen/accept, local/remote endpoint, pid, protocol"
+      ]
+    },
+    "PROCESS_COMMAND_EXECUTION": {
+      "file_events": [
+        "create/read/write/delete, path class, pid, timestamps where applicable"
+      ],
+      "logical_host_attribution": [
+        "host shell PID, child PID, netns/cgroup or equivalent, interface mapping"
+      ],
+      "packet_events": [
+        "bounded packet metadata, direction, protocol, timestamps, fixture interfaces"
+      ],
+      "process_events": [
+        "exec/exit, pid/ppid, command-line or equivalent source-visible identity where applicable"
+      ],
+      "provenance_nodes_edges": [
+        "run node",
+        "raw_key node",
+        "process/file/socket/packet nodes as observed",
+        "causal edges only when emitted by collector"
+      ],
+      "provx_claim_status": "UNEXECUTED_NOT_OBSERVED",
+      "provx_phase1_observable": "UNKNOWN",
+      "provx_phase2_core_edge_localizable": "UNKNOWN",
+      "raw_key_run_id_reversible_mapping": "A unique reversible map from every telemetry record to run_id and raw_key is mandatory.",
+      "socket_events": [
+        "bind/connect/listen/accept, local/remote endpoint, pid, protocol"
+      ]
+    },
+    "TRANSFER_DOWNLOAD_UPLOAD": {
+      "file_events": [
+        "create/read/write/delete, path class, pid, timestamps where applicable"
+      ],
+      "logical_host_attribution": [
+        "host shell PID, child PID, netns/cgroup or equivalent, interface mapping"
+      ],
+      "packet_events": [
+        "bounded packet metadata, direction, protocol, timestamps, fixture interfaces"
+      ],
+      "process_events": [
+        "exec/exit, pid/ppid, command-line or equivalent source-visible identity where applicable"
+      ],
+      "provenance_nodes_edges": [
+        "run node",
+        "raw_key node",
+        "process/file/socket/packet nodes as observed",
+        "causal edges only when emitted by collector"
+      ],
+      "provx_claim_status": "UNEXECUTED_NOT_OBSERVED",
+      "provx_phase1_observable": "UNKNOWN",
+      "provx_phase2_core_edge_localizable": "UNKNOWN",
+      "raw_key_run_id_reversible_mapping": "A unique reversible map from every telemetry record to run_id and raw_key is mandatory.",
+      "socket_events": [
+        "bind/connect/listen/accept, local/remote endpoint, pid, protocol"
+      ]
+    }
+  },
+  "non_executable": true,
+  "schema": "E0C_R2_PROVX_TELEMETRY_CONTRACTS_V1"
+}

@@ -1,0 +1,619 @@
+{
+  "contract_scope": "non-executable design contracts for the five highest-coverage reusable R1 families",
+  "contracts": {
+    "EMAIL_DELIVERY": {
+      "adapter_id": "adapter::email_delivery",
+      "adapter_version": "0.1.0-design",
+      "applicable_raw_key_set_commitment": {
+        "algorithm": "sha256",
+        "canonical_order": "lexicographic raw_key joined with LF",
+        "raw_count": 105,
+        "sha256": "3ce3a1cb599a3dc886ecd9c3d0acf35906c9dd91dca6e01032386af0d6d28a7c"
+      },
+      "candidate_modes_present": [
+        "SYNTHETIC_CANDIDATE"
+      ],
+      "cleanup_reset": [
+        "Record reset plan before any future implementation.",
+        "Remove only inert fixture artifacts created for the run.",
+        "Verify topology, service, process, file, and socket state return to the approved baseline."
+      ],
+      "environment_service_fixtures": {
+        "external_service_emulation_required": false,
+        "fixture_policy": "Use inert, isolated Mininet fixtures only; no public targets or real malware.",
+        "required_os_platform_hints": [
+          "any"
+        ],
+        "required_service_or_protocol_prerequisites": [
+          "DNS",
+          "EMAIL_SERVICE",
+          "FTP",
+          "HTTP",
+          "HTTPS",
+          "SMB",
+          "SMTP",
+          "TCP",
+          "TLS"
+        ]
+      },
+      "evidence_artifacts": [
+        "run manifest with raw_key and adapter_id",
+        "fixture/topology manifest",
+        "timestamped telemetry artifact index",
+        "reset verification record",
+        "controlled error record when blocked or failed"
+      ],
+      "execution_result_schema": {
+        "error_code": "nullable controlled error code",
+        "formal_outcome": "UNEXECUTED_NOT_OBSERVED",
+        "raw_key": "exact R1 raw_key",
+        "run_id": "string; design binding only",
+        "status": [
+          "NOT_EXECUTED",
+          "PLANNED",
+          "BLOCKED",
+          "ERROR"
+        ],
+        "stimulus_summary": "non-sensitive design summary only",
+        "telemetry_artifact_refs": "list of artifact identifiers, empty before execution"
+      },
+      "fail_closed_behavior": [
+        "Reject raw_key values outside the committed set.",
+        "Reject missing or reused run_id bindings.",
+        "Reject unresolved mandatory prerequisites.",
+        "Never execute a row marked REQUIRES_MANUAL_DESIGN.",
+        "Never convert absence of telemetry into a detection or localization result."
+      ],
+      "formal_execution_authorized": false,
+      "implementation_status": "DESIGN_ONLY_NOT_IMPLEMENTED",
+      "input_parameters": [
+        "run_id",
+        "raw_key",
+        "source_action_type",
+        "source_os_platform_hint",
+        "source_protocol_service_prerequisites",
+        "approved_inert_fixture_profile",
+        "telemetry_correlation_context"
+      ],
+      "manual_design_member_count": 0,
+      "mininet_compatibility": {
+        "basis": "Inert transfer/message fixtures can be represented on isolated Mininet-connected nodes.",
+        "classification": "PLAIN_MININET_CANDIDATE"
+      },
+      "preconditions": [
+        "raw_key is present in the committed R1 member manifest",
+        "run_id is unique for the planned repetition and is bound before any future implementation",
+        "all source-supported OS, service, and telemetry prerequisites are resolved or the row is routed to MANUAL_DESIGN",
+        "approved isolated fixture and reset procedure exist",
+        "formal_execution_authorized remains false"
+      ],
+      "primary_execution_archetype": "EMAIL_DELIVERY",
+      "raw_count": 105,
+      "required_source_target_roles": {
+        "logical_host_role": "R1 logical host attribution; unresolved values remain UNKNOWN",
+        "source_roles": [
+          "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+        ],
+        "target_roles": [
+          "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+        ]
+      },
+      "run_id_raw_key_binding": {
+        "canonical_encoding": "length-prefixed UTF-8 fields in the listed order",
+        "canonical_fields": [
+          "run_id",
+          "raw_key",
+          "adapter_id"
+        ],
+        "collision_policy": "fail closed on duplicate or mismatched binding",
+        "fingerprint": "sha256(canonical binding)",
+        "required": true,
+        "reverse_fields": "retain the canonical fields in the run manifest; fingerprint is an integrity check, not the sole identifier",
+        "reversible": true
+      },
+      "timeout_error_semantics": {
+        "error": "return ERROR with a controlled code and preserve the unexecuted result state",
+        "fixture_unavailable": "return BLOCKED with prerequisite code",
+        "telemetry_missing": "return BLOCKED and invalidate equivalence claim",
+        "timeout": "return BLOCKED or ERROR with timeout code; never infer an outcome",
+        "unexpected_state": "return ERROR and require reset review"
+      }
+    },
+    "NETWORK_C2_BEACON": {
+      "adapter_id": "adapter::network_c2_beacon",
+      "adapter_version": "0.1.0-design",
+      "applicable_raw_key_set_commitment": {
+        "algorithm": "sha256",
+        "canonical_order": "lexicographic raw_key joined with LF",
+        "raw_count": 103,
+        "sha256": "e8cb559197759e9e110698851d8249546201b7a47676a9eb9b0d4204f4342672"
+      },
+      "candidate_modes_present": [
+        "EMULATED_CANDIDATE",
+        "NATIVE_CANDIDATE",
+        "REQUIRES_MANUAL_DESIGN"
+      ],
+      "cleanup_reset": [
+        "Record reset plan before any future implementation.",
+        "Remove only inert fixture artifacts created for the run.",
+        "Verify topology, service, process, file, and socket state return to the approved baseline."
+      ],
+      "environment_service_fixtures": {
+        "external_service_emulation_required": true,
+        "fixture_policy": "Use inert, isolated Mininet fixtures only; no public targets or real malware.",
+        "required_os_platform_hints": [
+          "any",
+          "linux",
+          "windows"
+        ],
+        "required_service_or_protocol_prerequisites": [
+          "DNS",
+          "FTP",
+          "HTTP",
+          "RDP",
+          "SMB",
+          "SMTP",
+          "SSH",
+          "TCP",
+          "UNKNOWN"
+        ]
+      },
+      "evidence_artifacts": [
+        "run manifest with raw_key and adapter_id",
+        "fixture/topology manifest",
+        "timestamped telemetry artifact index",
+        "reset verification record",
+        "controlled error record when blocked or failed"
+      ],
+      "execution_result_schema": {
+        "error_code": "nullable controlled error code",
+        "formal_outcome": "UNEXECUTED_NOT_OBSERVED",
+        "raw_key": "exact R1 raw_key",
+        "run_id": "string; design binding only",
+        "status": [
+          "NOT_EXECUTED",
+          "PLANNED",
+          "BLOCKED",
+          "ERROR"
+        ],
+        "stimulus_summary": "non-sensitive design summary only",
+        "telemetry_artifact_refs": "list of artifact identifiers, empty before execution"
+      },
+      "fail_closed_behavior": [
+        "Reject raw_key values outside the committed set.",
+        "Reject missing or reused run_id bindings.",
+        "Reject unresolved mandatory prerequisites.",
+        "Never execute a row marked REQUIRES_MANUAL_DESIGN.",
+        "Never convert absence of telemetry into a detection or localization result."
+      ],
+      "formal_execution_authorized": false,
+      "implementation_status": "DESIGN_ONLY_NOT_IMPLEMENTED",
+      "input_parameters": [
+        "run_id",
+        "raw_key",
+        "source_action_type",
+        "source_os_platform_hint",
+        "source_protocol_service_prerequisites",
+        "approved_inert_fixture_profile",
+        "telemetry_correlation_context"
+      ],
+      "manual_design_member_count": 34,
+      "mininet_compatibility": {
+        "basis": "Mixed host/network C2 rows require attribution validation before any future stimulus.",
+        "classification": "REQUIRES_HOST_PROVENANCE_VALIDATION"
+      },
+      "preconditions": [
+        "raw_key is present in the committed R1 member manifest",
+        "run_id is unique for the planned repetition and is bound before any future implementation",
+        "all source-supported OS, service, and telemetry prerequisites are resolved or the row is routed to MANUAL_DESIGN",
+        "approved isolated fixture and reset procedure exist",
+        "formal_execution_authorized remains false"
+      ],
+      "primary_execution_archetype": "NETWORK_C2_BEACON",
+      "raw_count": 103,
+      "required_source_target_roles": {
+        "logical_host_role": "R1 logical host attribution; unresolved values remain UNKNOWN",
+        "source_roles": [
+          "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+        ],
+        "target_roles": [
+          "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+        ]
+      },
+      "run_id_raw_key_binding": {
+        "canonical_encoding": "length-prefixed UTF-8 fields in the listed order",
+        "canonical_fields": [
+          "run_id",
+          "raw_key",
+          "adapter_id"
+        ],
+        "collision_policy": "fail closed on duplicate or mismatched binding",
+        "fingerprint": "sha256(canonical binding)",
+        "required": true,
+        "reverse_fields": "retain the canonical fields in the run manifest; fingerprint is an integrity check, not the sole identifier",
+        "reversible": true
+      },
+      "timeout_error_semantics": {
+        "error": "return ERROR with a controlled code and preserve the unexecuted result state",
+        "fixture_unavailable": "return BLOCKED with prerequisite code",
+        "telemetry_missing": "return BLOCKED and invalidate equivalence claim",
+        "timeout": "return BLOCKED or ERROR with timeout code; never infer an outcome",
+        "unexpected_state": "return ERROR and require reset review"
+      }
+    },
+    "NETWORK_SERVICE_INTERACTION": {
+      "adapter_id": "adapter::network_service_interaction",
+      "adapter_version": "0.1.0-design",
+      "applicable_raw_key_set_commitment": {
+        "algorithm": "sha256",
+        "canonical_order": "lexicographic raw_key joined with LF",
+        "raw_count": 232,
+        "sha256": "551770d24f0f345ba6a5d7a5f6fa88b1dcbbe47da9707f4aa2a4f7a1547bed48"
+      },
+      "candidate_modes_present": [
+        "EMULATED_CANDIDATE"
+      ],
+      "cleanup_reset": [
+        "Record reset plan before any future implementation.",
+        "Remove only inert fixture artifacts created for the run.",
+        "Verify topology, service, process, file, and socket state return to the approved baseline."
+      ],
+      "environment_service_fixtures": {
+        "external_service_emulation_required": true,
+        "fixture_policy": "Use inert, isolated Mininet fixtures only; no public targets or real malware.",
+        "required_os_platform_hints": [
+          "any"
+        ],
+        "required_service_or_protocol_prerequisites": [
+          "DNS",
+          "FTP",
+          "HTTP",
+          "HTTPS",
+          "LDAP",
+          "MODBUS",
+          "MSSQL",
+          "MYSQL",
+          "RDP",
+          "SFTP",
+          "SMB",
+          "SMTP",
+          "SSH",
+          "TCP",
+          "TLS",
+          "UNKNOWN",
+          "WEB_APPLICATION_SERVICE",
+          "WINRM"
+        ]
+      },
+      "evidence_artifacts": [
+        "run manifest with raw_key and adapter_id",
+        "fixture/topology manifest",
+        "timestamped telemetry artifact index",
+        "reset verification record",
+        "controlled error record when blocked or failed"
+      ],
+      "execution_result_schema": {
+        "error_code": "nullable controlled error code",
+        "formal_outcome": "UNEXECUTED_NOT_OBSERVED",
+        "raw_key": "exact R1 raw_key",
+        "run_id": "string; design binding only",
+        "status": [
+          "NOT_EXECUTED",
+          "PLANNED",
+          "BLOCKED",
+          "ERROR"
+        ],
+        "stimulus_summary": "non-sensitive design summary only",
+        "telemetry_artifact_refs": "list of artifact identifiers, empty before execution"
+      },
+      "fail_closed_behavior": [
+        "Reject raw_key values outside the committed set.",
+        "Reject missing or reused run_id bindings.",
+        "Reject unresolved mandatory prerequisites.",
+        "Never execute a row marked REQUIRES_MANUAL_DESIGN.",
+        "Never convert absence of telemetry into a detection or localization result."
+      ],
+      "formal_execution_authorized": false,
+      "implementation_status": "DESIGN_ONLY_NOT_IMPLEMENTED",
+      "input_parameters": [
+        "run_id",
+        "raw_key",
+        "source_action_type",
+        "source_os_platform_hint",
+        "source_protocol_service_prerequisites",
+        "approved_inert_fixture_profile",
+        "telemetry_correlation_context"
+      ],
+      "manual_design_member_count": 0,
+      "mininet_compatibility": {
+        "basis": "Network service fixtures can be isolated behind Mininet links, subject to per-row prerequisites.",
+        "classification": "PLAIN_MININET_CANDIDATE"
+      },
+      "preconditions": [
+        "raw_key is present in the committed R1 member manifest",
+        "run_id is unique for the planned repetition and is bound before any future implementation",
+        "all source-supported OS, service, and telemetry prerequisites are resolved or the row is routed to MANUAL_DESIGN",
+        "approved isolated fixture and reset procedure exist",
+        "formal_execution_authorized remains false"
+      ],
+      "primary_execution_archetype": "NETWORK_SERVICE_INTERACTION",
+      "raw_count": 232,
+      "required_source_target_roles": {
+        "logical_host_role": "R1 logical host attribution; unresolved values remain UNKNOWN",
+        "source_roles": [
+          "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+        ],
+        "target_roles": [
+          "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+        ]
+      },
+      "run_id_raw_key_binding": {
+        "canonical_encoding": "length-prefixed UTF-8 fields in the listed order",
+        "canonical_fields": [
+          "run_id",
+          "raw_key",
+          "adapter_id"
+        ],
+        "collision_policy": "fail closed on duplicate or mismatched binding",
+        "fingerprint": "sha256(canonical binding)",
+        "required": true,
+        "reverse_fields": "retain the canonical fields in the run manifest; fingerprint is an integrity check, not the sole identifier",
+        "reversible": true
+      },
+      "timeout_error_semantics": {
+        "error": "return ERROR with a controlled code and preserve the unexecuted result state",
+        "fixture_unavailable": "return BLOCKED with prerequisite code",
+        "telemetry_missing": "return BLOCKED and invalidate equivalence claim",
+        "timeout": "return BLOCKED or ERROR with timeout code; never infer an outcome",
+        "unexpected_state": "return ERROR and require reset review"
+      }
+    },
+    "PROCESS_COMMAND_EXECUTION": {
+      "adapter_id": "adapter::process_command_execution",
+      "adapter_version": "0.1.0-design",
+      "applicable_raw_key_set_commitment": {
+        "algorithm": "sha256",
+        "canonical_order": "lexicographic raw_key joined with LF",
+        "raw_count": 712,
+        "sha256": "79d217c896558a90e5047800dc4c8fd78f9fd1624089465236e83c31d477ebbc"
+      },
+      "candidate_modes_present": [
+        "NATIVE_CANDIDATE",
+        "REQUIRES_MANUAL_DESIGN"
+      ],
+      "cleanup_reset": [
+        "Record reset plan before any future implementation.",
+        "Remove only inert fixture artifacts created for the run.",
+        "Verify topology, service, process, file, and socket state return to the approved baseline."
+      ],
+      "environment_service_fixtures": {
+        "external_service_emulation_required": true,
+        "fixture_policy": "Use inert, isolated Mininet fixtures only; no public targets or real malware.",
+        "required_os_platform_hints": [
+          "linux",
+          "windows"
+        ],
+        "required_service_or_protocol_prerequisites": [
+          "DNS",
+          "FTP",
+          "HTTP",
+          "HTTPS",
+          "MSSQL",
+          "MYSQL",
+          "RDP",
+          "SMB",
+          "SSH",
+          "TCP",
+          "TLS",
+          "UDP",
+          "UNKNOWN"
+        ]
+      },
+      "evidence_artifacts": [
+        "run manifest with raw_key and adapter_id",
+        "fixture/topology manifest",
+        "timestamped telemetry artifact index",
+        "reset verification record",
+        "controlled error record when blocked or failed"
+      ],
+      "execution_result_schema": {
+        "error_code": "nullable controlled error code",
+        "formal_outcome": "UNEXECUTED_NOT_OBSERVED",
+        "raw_key": "exact R1 raw_key",
+        "run_id": "string; design binding only",
+        "status": [
+          "NOT_EXECUTED",
+          "PLANNED",
+          "BLOCKED",
+          "ERROR"
+        ],
+        "stimulus_summary": "non-sensitive design summary only",
+        "telemetry_artifact_refs": "list of artifact identifiers, empty before execution"
+      },
+      "fail_closed_behavior": [
+        "Reject raw_key values outside the committed set.",
+        "Reject missing or reused run_id bindings.",
+        "Reject unresolved mandatory prerequisites.",
+        "Never execute a row marked REQUIRES_MANUAL_DESIGN.",
+        "Never convert absence of telemetry into a detection or localization result."
+      ],
+      "formal_execution_authorized": false,
+      "implementation_status": "DESIGN_ONLY_NOT_IMPLEMENTED",
+      "input_parameters": [
+        "run_id",
+        "raw_key",
+        "source_action_type",
+        "source_os_platform_hint",
+        "source_protocol_service_prerequisites",
+        "approved_inert_fixture_profile",
+        "telemetry_correlation_context"
+      ],
+      "manual_design_member_count": 339,
+      "mininet_compatibility": {
+        "basis": "Host process ancestry and platform semantics must be validated at the host boundary.",
+        "classification": "REQUIRES_HOST_PROVENANCE_VALIDATION"
+      },
+      "preconditions": [
+        "raw_key is present in the committed R1 member manifest",
+        "run_id is unique for the planned repetition and is bound before any future implementation",
+        "all source-supported OS, service, and telemetry prerequisites are resolved or the row is routed to MANUAL_DESIGN",
+        "approved isolated fixture and reset procedure exist",
+        "formal_execution_authorized remains false"
+      ],
+      "primary_execution_archetype": "PROCESS_COMMAND_EXECUTION",
+      "raw_count": 712,
+      "required_source_target_roles": {
+        "logical_host_role": "R1 logical host attribution; unresolved values remain UNKNOWN",
+        "source_roles": [
+          "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+        ],
+        "target_roles": [
+          "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+        ]
+      },
+      "run_id_raw_key_binding": {
+        "canonical_encoding": "length-prefixed UTF-8 fields in the listed order",
+        "canonical_fields": [
+          "run_id",
+          "raw_key",
+          "adapter_id"
+        ],
+        "collision_policy": "fail closed on duplicate or mismatched binding",
+        "fingerprint": "sha256(canonical binding)",
+        "required": true,
+        "reverse_fields": "retain the canonical fields in the run manifest; fingerprint is an integrity check, not the sole identifier",
+        "reversible": true
+      },
+      "timeout_error_semantics": {
+        "error": "return ERROR with a controlled code and preserve the unexecuted result state",
+        "fixture_unavailable": "return BLOCKED with prerequisite code",
+        "telemetry_missing": "return BLOCKED and invalidate equivalence claim",
+        "timeout": "return BLOCKED or ERROR with timeout code; never infer an outcome",
+        "unexpected_state": "return ERROR and require reset review"
+      }
+    },
+    "TRANSFER_DOWNLOAD_UPLOAD": {
+      "adapter_id": "adapter::transfer_download_upload",
+      "adapter_version": "0.1.0-design",
+      "applicable_raw_key_set_commitment": {
+        "algorithm": "sha256",
+        "canonical_order": "lexicographic raw_key joined with LF",
+        "raw_count": 166,
+        "sha256": "847269f179f0f8366f03e4297152bf2918e19a5c15adfb951480331c4f390748"
+      },
+      "candidate_modes_present": [
+        "SYNTHETIC_CANDIDATE"
+      ],
+      "cleanup_reset": [
+        "Record reset plan before any future implementation.",
+        "Remove only inert fixture artifacts created for the run.",
+        "Verify topology, service, process, file, and socket state return to the approved baseline."
+      ],
+      "environment_service_fixtures": {
+        "external_service_emulation_required": true,
+        "fixture_policy": "Use inert, isolated Mininet fixtures only; no public targets or real malware.",
+        "required_os_platform_hints": [
+          "any"
+        ],
+        "required_service_or_protocol_prerequisites": [
+          "DNS",
+          "FTP",
+          "HTTP",
+          "HTTPS",
+          "ICMP",
+          "MYSQL",
+          "RDP",
+          "SMB",
+          "SMTP",
+          "SSH",
+          "TCP",
+          "TLS"
+        ]
+      },
+      "evidence_artifacts": [
+        "run manifest with raw_key and adapter_id",
+        "fixture/topology manifest",
+        "timestamped telemetry artifact index",
+        "reset verification record",
+        "controlled error record when blocked or failed"
+      ],
+      "execution_result_schema": {
+        "error_code": "nullable controlled error code",
+        "formal_outcome": "UNEXECUTED_NOT_OBSERVED",
+        "raw_key": "exact R1 raw_key",
+        "run_id": "string; design binding only",
+        "status": [
+          "NOT_EXECUTED",
+          "PLANNED",
+          "BLOCKED",
+          "ERROR"
+        ],
+        "stimulus_summary": "non-sensitive design summary only",
+        "telemetry_artifact_refs": "list of artifact identifiers, empty before execution"
+      },
+      "fail_closed_behavior": [
+        "Reject raw_key values outside the committed set.",
+        "Reject missing or reused run_id bindings.",
+        "Reject unresolved mandatory prerequisites.",
+        "Never execute a row marked REQUIRES_MANUAL_DESIGN.",
+        "Never convert absence of telemetry into a detection or localization result."
+      ],
+      "formal_execution_authorized": false,
+      "implementation_status": "DESIGN_ONLY_NOT_IMPLEMENTED",
+      "input_parameters": [
+        "run_id",
+        "raw_key",
+        "source_action_type",
+        "source_os_platform_hint",
+        "source_protocol_service_prerequisites",
+        "approved_inert_fixture_profile",
+        "telemetry_correlation_context"
+      ],
+      "manual_design_member_count": 0,
+      "mininet_compatibility": {
+        "basis": "Inert transfer/message fixtures can be represented on isolated Mininet-connected nodes.",
+        "classification": "PLAIN_MININET_CANDIDATE"
+      },
+      "preconditions": [
+        "raw_key is present in the committed R1 member manifest",
+        "run_id is unique for the planned repetition and is bound before any future implementation",
+        "all source-supported OS, service, and telemetry prerequisites are resolved or the row is routed to MANUAL_DESIGN",
+        "approved isolated fixture and reset procedure exist",
+        "formal_execution_authorized remains false"
+      ],
+      "primary_execution_archetype": "TRANSFER_DOWNLOAD_UPLOAD",
+      "raw_count": 166,
+      "required_source_target_roles": {
+        "logical_host_role": "R1 logical host attribution; unresolved values remain UNKNOWN",
+        "source_roles": [
+          "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+        ],
+        "target_roles": [
+          "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+        ]
+      },
+      "run_id_raw_key_binding": {
+        "canonical_encoding": "length-prefixed UTF-8 fields in the listed order",
+        "canonical_fields": [
+          "run_id",
+          "raw_key",
+          "adapter_id"
+        ],
+        "collision_policy": "fail closed on duplicate or mismatched binding",
+        "fingerprint": "sha256(canonical binding)",
+        "required": true,
+        "reverse_fields": "retain the canonical fields in the run manifest; fingerprint is an integrity check, not the sole identifier",
+        "reversible": true
+      },
+      "timeout_error_semantics": {
+        "error": "return ERROR with a controlled code and preserve the unexecuted result state",
+        "fixture_unavailable": "return BLOCKED with prerequisite code",
+        "telemetry_missing": "return BLOCKED and invalidate equivalence claim",
+        "timeout": "return BLOCKED or ERROR with timeout code; never infer an outcome",
+        "unexpected_state": "return ERROR and require reset review"
+      }
+    }
+  },
+  "raw_denominator": 1796,
+  "schema_version": "e0c-r2-adapter-contracts-v1"
+}

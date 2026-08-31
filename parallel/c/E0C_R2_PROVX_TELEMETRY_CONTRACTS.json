@@ -1,0 +1,211 @@
+{
+  "contracts": {
+    "EMAIL_DELIVERY": {
+      "adapter_family_id": "adapter::email_delivery",
+      "candidate_observation_surfaces": [
+        "FILE",
+        "OTHER_EMAIL_MESSAGE"
+      ],
+      "detectability_localization_claim": "NONE",
+      "file_events": "Collect file entity and operation class when the R1 surface requires file telemetry; otherwise record NOT_REQUIRED.",
+      "logical_host_attribution": "Carry source/target logical-host identifiers from the run manifest; unresolved attribution remains UNKNOWN.",
+      "packet_events": "Collect packet metadata, direction, protocol, and sequence for network candidates; payload content remains inert or fixture-scoped.",
+      "process_events": "Collect process creation/ancestry and command-line class when the R1 surface requires host process telemetry; otherwise record NOT_REQUIRED.",
+      "provenance_nodes_edges": {
+        "edges": [
+          "run_applies_to_raw_action",
+          "fixture_emits_telemetry",
+          "telemetry_observed_on_logical_host"
+        ],
+        "nodes": [
+          "run",
+          "raw_action",
+          "logical_host",
+          "fixture",
+          "telemetry_artifact"
+        ],
+        "observed": false
+      },
+      "provx_phase1_observable": "UNKNOWN",
+      "provx_phase2_core_edge_localizable": "UNKNOWN",
+      "raw_count": 105,
+      "raw_key_run_id_reversible_mapping": {
+        "canonical_binding": "retain the three required fields and a sha256 fingerprint; fingerprint is not the sole identifier",
+        "mapping": "reversible and collision-checked; no row identity is split",
+        "required_fields": [
+          "run_id",
+          "raw_key",
+          "adapter_family_id"
+        ]
+      },
+      "result_status": "UNEXECUTED_NOT_OBSERVED",
+      "socket_events": "Collect socket open/connect/close class when the R1 surface requires socket telemetry; otherwise record NOT_REQUIRED."
+    },
+    "NETWORK_C2_BEACON": {
+      "adapter_family_id": "adapter::network_c2_beacon",
+      "candidate_observation_surfaces": [
+        "FILE",
+        "OTHER_NETWORK_METADATA_ONLY",
+        "PROCESS",
+        "SOCKET"
+      ],
+      "detectability_localization_claim": "NONE",
+      "file_events": "Collect file entity and operation class when the R1 surface requires file telemetry; otherwise record NOT_REQUIRED.",
+      "logical_host_attribution": "Carry source/target logical-host identifiers from the run manifest; unresolved attribution remains UNKNOWN.",
+      "packet_events": "Collect packet metadata, direction, protocol, and sequence for network candidates; payload content remains inert or fixture-scoped.",
+      "process_events": "Collect process creation/ancestry and command-line class when the R1 surface requires host process telemetry; otherwise record NOT_REQUIRED.",
+      "provenance_nodes_edges": {
+        "edges": [
+          "run_applies_to_raw_action",
+          "fixture_emits_telemetry",
+          "telemetry_observed_on_logical_host"
+        ],
+        "nodes": [
+          "run",
+          "raw_action",
+          "logical_host",
+          "fixture",
+          "telemetry_artifact"
+        ],
+        "observed": false
+      },
+      "provx_phase1_observable": "UNKNOWN",
+      "provx_phase2_core_edge_localizable": "UNKNOWN",
+      "raw_count": 103,
+      "raw_key_run_id_reversible_mapping": {
+        "canonical_binding": "retain the three required fields and a sha256 fingerprint; fingerprint is not the sole identifier",
+        "mapping": "reversible and collision-checked; no row identity is split",
+        "required_fields": [
+          "run_id",
+          "raw_key",
+          "adapter_family_id"
+        ]
+      },
+      "result_status": "UNEXECUTED_NOT_OBSERVED",
+      "socket_events": "Collect socket open/connect/close class when the R1 surface requires socket telemetry; otherwise record NOT_REQUIRED."
+    },
+    "NETWORK_SERVICE_INTERACTION": {
+      "adapter_family_id": "adapter::network_service_interaction",
+      "candidate_observation_surfaces": [
+        "FILE",
+        "OTHER_NETWORK_METADATA_ONLY"
+      ],
+      "detectability_localization_claim": "NONE",
+      "file_events": "Collect file entity and operation class when the R1 surface requires file telemetry; otherwise record NOT_REQUIRED.",
+      "logical_host_attribution": "Carry source/target logical-host identifiers from the run manifest; unresolved attribution remains UNKNOWN.",
+      "packet_events": "Collect packet metadata, direction, protocol, and sequence for network candidates; payload content remains inert or fixture-scoped.",
+      "process_events": "Collect process creation/ancestry and command-line class when the R1 surface requires host process telemetry; otherwise record NOT_REQUIRED.",
+      "provenance_nodes_edges": {
+        "edges": [
+          "run_applies_to_raw_action",
+          "fixture_emits_telemetry",
+          "telemetry_observed_on_logical_host"
+        ],
+        "nodes": [
+          "run",
+          "raw_action",
+          "logical_host",
+          "fixture",
+          "telemetry_artifact"
+        ],
+        "observed": false
+      },
+      "provx_phase1_observable": "UNKNOWN",
+      "provx_phase2_core_edge_localizable": "UNKNOWN",
+      "raw_count": 232,
+      "raw_key_run_id_reversible_mapping": {
+        "canonical_binding": "retain the three required fields and a sha256 fingerprint; fingerprint is not the sole identifier",
+        "mapping": "reversible and collision-checked; no row identity is split",
+        "required_fields": [
+          "run_id",
+          "raw_key",
+          "adapter_family_id"
+        ]
+      },
+      "result_status": "UNEXECUTED_NOT_OBSERVED",
+      "socket_events": "Collect socket open/connect/close class when the R1 surface requires socket telemetry; otherwise record NOT_REQUIRED."
+    },
+    "PROCESS_COMMAND_EXECUTION": {
+      "adapter_family_id": "adapter::process_command_execution",
+      "candidate_observation_surfaces": [
+        "PROCESS"
+      ],
+      "detectability_localization_claim": "NONE",
+      "file_events": "Collect file entity and operation class when the R1 surface requires file telemetry; otherwise record NOT_REQUIRED.",
+      "logical_host_attribution": "Carry source/target logical-host identifiers from the run manifest; unresolved attribution remains UNKNOWN.",
+      "packet_events": "Collect packet metadata, direction, protocol, and sequence for network candidates; payload content remains inert or fixture-scoped.",
+      "process_events": "Collect process creation/ancestry and command-line class when the R1 surface requires host process telemetry; otherwise record NOT_REQUIRED.",
+      "provenance_nodes_edges": {
+        "edges": [
+          "run_applies_to_raw_action",
+          "fixture_emits_telemetry",
+          "telemetry_observed_on_logical_host"
+        ],
+        "nodes": [
+          "run",
+          "raw_action",
+          "logical_host",
+          "fixture",
+          "telemetry_artifact"
+        ],
+        "observed": false
+      },
+      "provx_phase1_observable": "UNKNOWN",
+      "provx_phase2_core_edge_localizable": "UNKNOWN",
+      "raw_count": 712,
+      "raw_key_run_id_reversible_mapping": {
+        "canonical_binding": "retain the three required fields and a sha256 fingerprint; fingerprint is not the sole identifier",
+        "mapping": "reversible and collision-checked; no row identity is split",
+        "required_fields": [
+          "run_id",
+          "raw_key",
+          "adapter_family_id"
+        ]
+      },
+      "result_status": "UNEXECUTED_NOT_OBSERVED",
+      "socket_events": "Collect socket open/connect/close class when the R1 surface requires socket telemetry; otherwise record NOT_REQUIRED."
+    },
+    "TRANSFER_DOWNLOAD_UPLOAD": {
+      "adapter_family_id": "adapter::transfer_download_upload",
+      "candidate_observation_surfaces": [
+        "FILE"
+      ],
+      "detectability_localization_claim": "NONE",
+      "file_events": "Collect file entity and operation class when the R1 surface requires file telemetry; otherwise record NOT_REQUIRED.",
+      "logical_host_attribution": "Carry source/target logical-host identifiers from the run manifest; unresolved attribution remains UNKNOWN.",
+      "packet_events": "Collect packet metadata, direction, protocol, and sequence for network candidates; payload content remains inert or fixture-scoped.",
+      "process_events": "Collect process creation/ancestry and command-line class when the R1 surface requires host process telemetry; otherwise record NOT_REQUIRED.",
+      "provenance_nodes_edges": {
+        "edges": [
+          "run_applies_to_raw_action",
+          "fixture_emits_telemetry",
+          "telemetry_observed_on_logical_host"
+        ],
+        "nodes": [
+          "run",
+          "raw_action",
+          "logical_host",
+          "fixture",
+          "telemetry_artifact"
+        ],
+        "observed": false
+      },
+      "provx_phase1_observable": "UNKNOWN",
+      "provx_phase2_core_edge_localizable": "UNKNOWN",
+      "raw_count": 166,
+      "raw_key_run_id_reversible_mapping": {
+        "canonical_binding": "retain the three required fields and a sha256 fingerprint; fingerprint is not the sole identifier",
+        "mapping": "reversible and collision-checked; no row identity is split",
+        "required_fields": [
+          "run_id",
+          "raw_key",
+          "adapter_family_id"
+        ]
+      },
+      "result_status": "UNEXECUTED_NOT_OBSERVED",
+      "socket_events": "Collect socket open/connect/close class when the R1 surface requires socket telemetry; otherwise record NOT_REQUIRED."
+    }
+  },
+  "raw_denominator": 1796,
+  "schema_version": "e0c-r2-provx-telemetry-contracts-v1"
+}
