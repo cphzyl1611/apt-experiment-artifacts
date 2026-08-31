@@ -1,0 +1,209 @@
+{
+  "stage": "PROVX-R3",
+  "status": "DESIGNED_NOT_TRAINED",
+  "schema_name": "PROVX_ADAPTED_LIVE_FEATURE_SCHEMA",
+  "design_only": true,
+  "implementation_status": "NOT_IMPLEMENTED",
+  "official_vocabulary_status": "OFFICIAL_21_FEATURE_VOCABULARY_NOT_AVAILABLE",
+  "encoder": {
+    "encoder_id": "provx-adapted-live-v1",
+    "version": "1.0.0",
+    "output_dimension": 32,
+    "dtype": "torch.float32",
+    "encoder_sha256": "f27984513a39a004534f7bb409e3ff6410c48b442645656435c0534e64a15188",
+    "hash_algorithm": "SHA-256",
+    "hash_scope": "Canonical JSON of encoder_id, feature_columns, entity_type_order, event_class_order, normalization, unknown_policy, and ordering with UTF-8, sorted keys, and compact separators.",
+    "identity_payload": {
+      "encoder_id": "provx-adapted-live-v1",
+      "feature_columns": [
+        "entity_process",
+        "entity_file",
+        "entity_socket",
+        "entity_other",
+        "entity_type_unknown",
+        "entity_id_present",
+        "process_pid_present",
+        "process_ppid_present",
+        "process_executable_present",
+        "process_command_line_present",
+        "process_user_present",
+        "file_path_present",
+        "file_hash_present",
+        "socket_protocol_tcp",
+        "socket_protocol_udp",
+        "socket_local_endpoint_present",
+        "socket_remote_endpoint_present",
+        "socket_remote_external",
+        "socket_port_present",
+        "event_create_norm",
+        "event_read_open_norm",
+        "event_write_norm",
+        "event_execute_norm",
+        "event_connect_send_norm",
+        "event_close_delete_norm",
+        "event_other_norm",
+        "event_count_norm",
+        "in_degree_norm",
+        "out_degree_norm",
+        "first_seen_delta_norm",
+        "last_seen_delta_norm",
+        "unknown_field_fraction_norm"
+      ],
+      "entity_type_order": ["process", "file", "socket", "other"],
+      "event_class_order": ["create", "read_open", "write", "execute", "connect_send", "close_delete", "other"],
+      "normalization": {
+        "count_transform": "clip(log1p(value)/log1p(1024),0,1)",
+        "degree_transform": "clip(log1p(value)/log1p(1024),0,1)",
+        "time_transform": "clip(delta_seconds/3600,0,1)",
+        "unknown_field_transform": "clip(unknown_field_count/max(event_count,1),0,1)",
+        "boolean_transform": "0.0_or_1.0",
+        "socket_external_address_policy": "Treat RFC1918 IPv4 (10/8,172.16/12,192.168/16), loopback (127/8,::1), link-local (169.254/16,fe80::/10), and unique-local IPv6 (fc00::/7) as host-local/private; valid addresses outside these ranges are external; invalid or missing addresses are unknown and map to 0."
+      },
+      "unknown_policy": {
+        "unknown_entity_type": "entity_other=1 and entity_type_unknown=1; all type-specific flags=0",
+        "unknown_event_type": "event_other_norm receives the event count",
+        "missing_optional_field": "presence flag=0; numeric count remains 0",
+        "non_finite_numeric": "reject_record_and_increment_adapter_error",
+        "out_of_range_numeric": "clip_after_transform"
+      },
+      "ordering": {
+        "node_key": "(host_id,entity_type_rank,canonical_entity_id)",
+        "edge_key": "(timestamp_ms,src_node_index,dst_node_index,event_class_rank,canonical_event_id)",
+        "canonicalization": "Unicode NFC, UTF-8, trim surrounding whitespace, casefold enum tokens only",
+        "raw_key": "sha256(run_id + source_record_id + canonical_record_bytes)"
+      }
+    }
+  },
+  "model_input": {
+    "x": {
+      "required": true,
+      "shape": "[N,32]",
+      "dtype": "torch.float32",
+      "finite_values_required": true,
+      "row_order": "node_map[i].model_node_index == i",
+      "checkpoint_compatibility": "Not compatible with the packaged 21-input checkpoint until a new detector is trained and its checkpoint is separately authenticated."
+    },
+    "edge_index": {
+      "required": true,
+      "shape": "[2,E]",
+      "dtype": "torch.int64",
+      "row_semantics": {"row_0": "source", "row_1": "destination"},
+      "endpoint_constraint": "0 <= endpoint < N",
+      "column_order": "Deterministic edge_key order persisted in edge_map; duplicate handling persisted in normalization_map.",
+      "edge_features": "none"
+    },
+    "batch": {
+      "required": false,
+      "dtype": "torch.int64",
+      "single_graph_value": "all zeros"
+    }
+  },
+  "entity_types": [
+    {"name": "process", "rank": 0, "identity_fields": ["host_id", "process_id_or_pid", "start_time_ms"], "missing_identity": "route to other and set entity_type_unknown"},
+    {"name": "file", "rank": 1, "identity_fields": ["host_id", "canonical_path_or_file_id"], "missing_identity": "route to other and set entity_type_unknown"},
+    {"name": "socket", "rank": 2, "identity_fields": ["host_id", "protocol", "local_endpoint", "remote_endpoint", "socket_id"], "missing_identity": "route to other and set entity_type_unknown"},
+    {"name": "other", "rank": 3, "identity_fields": ["host_id", "entity_id"], "missing_identity": "reject_node_and_increment_adapter_error"}
+  ],
+  "event_classes": [
+    {"name": "create", "rank": 0, "canonical_tokens": ["create", "process_create", "file_create"]},
+    {"name": "read_open", "rank": 1, "canonical_tokens": ["read", "open", "file_read", "file_open"]},
+    {"name": "write", "rank": 2, "canonical_tokens": ["write", "file_write", "modify", "append"]},
+    {"name": "execute", "rank": 3, "canonical_tokens": ["execute", "exec", "process_execute", "command"]},
+    {"name": "connect_send", "rank": 4, "canonical_tokens": ["connect", "send", "network_connect", "network_send", "flow_start"]},
+    {"name": "close_delete", "rank": 5, "canonical_tokens": ["close", "delete", "unlink", "remove"]},
+    {"name": "other", "rank": 6, "canonical_tokens": []}
+  ],
+  "feature_columns": [
+    {"index": 0, "name": "entity_process", "kind": "one_hot", "source": "normalized entity_type", "definition": "1 iff entity_type is process"},
+    {"index": 1, "name": "entity_file", "kind": "one_hot", "source": "normalized entity_type", "definition": "1 iff entity_type is file"},
+    {"index": 2, "name": "entity_socket", "kind": "one_hot", "source": "normalized entity_type", "definition": "1 iff entity_type is socket"},
+    {"index": 3, "name": "entity_other", "kind": "one_hot", "source": "normalized entity_type", "definition": "1 iff entity_type is other or unknown"},
+    {"index": 4, "name": "entity_type_unknown", "kind": "binary", "source": "entity-type parser", "definition": "1 iff the source type token was absent or not in the declared enum"},
+    {"index": 5, "name": "entity_id_present", "kind": "binary", "source": "canonical entity identity", "definition": "1 iff a stable canonical entity ID is present"},
+    {"index": 6, "name": "process_pid_present", "kind": "binary", "source": "process pid", "definition": "1 iff pid is present and not a documented unavailable sentinel"},
+    {"index": 7, "name": "process_ppid_present", "kind": "binary", "source": "process parent pid", "definition": "1 iff ppid is present and not a documented unavailable sentinel"},
+    {"index": 8, "name": "process_executable_present", "kind": "binary", "source": "process executable/image path", "definition": "1 iff executable identity is present"},
+    {"index": 9, "name": "process_command_line_present", "kind": "binary", "source": "process command line", "definition": "1 iff command line is present"},
+    {"index": 10, "name": "process_user_present", "kind": "binary", "source": "principal/user field", "definition": "1 iff principal/user is present"},
+    {"index": 11, "name": "file_path_present", "kind": "binary", "source": "file path or file ID", "definition": "1 iff a canonical file path/ID is present"},
+    {"index": 12, "name": "file_hash_present", "kind": "binary", "source": "file hash", "definition": "1 iff a content/executable hash is present"},
+    {"index": 13, "name": "socket_protocol_tcp", "kind": "binary", "source": "socket protocol", "definition": "1 iff protocol normalizes to tcp"},
+    {"index": 14, "name": "socket_protocol_udp", "kind": "binary", "source": "socket protocol", "definition": "1 iff protocol normalizes to udp"},
+    {"index": 15, "name": "socket_local_endpoint_present", "kind": "binary", "source": "socket local endpoint", "definition": "1 iff local address/port is present"},
+    {"index": 16, "name": "socket_remote_endpoint_present", "kind": "binary", "source": "socket remote endpoint", "definition": "1 iff remote address/port is present"},
+    {"index": 17, "name": "socket_remote_external", "kind": "binary", "source": "socket remote endpoint", "definition": "1 iff the remote address is outside the declared host-local/private ranges; unknown is 0"},
+    {"index": 18, "name": "socket_port_present", "kind": "binary", "source": "socket local or remote port", "definition": "1 iff at least one valid port is present"},
+    {"index": 19, "name": "event_create_norm", "kind": "normalized_count", "source": "incident raw records", "definition": "normalized count of create events incident on the node"},
+    {"index": 20, "name": "event_read_open_norm", "kind": "normalized_count", "source": "incident raw records", "definition": "normalized count of read/open events incident on the node"},
+    {"index": 21, "name": "event_write_norm", "kind": "normalized_count", "source": "incident raw records", "definition": "normalized count of write/modify events incident on the node"},
+    {"index": 22, "name": "event_execute_norm", "kind": "normalized_count", "source": "incident raw records", "definition": "normalized count of execute events incident on the node"},
+    {"index": 23, "name": "event_connect_send_norm", "kind": "normalized_count", "source": "incident raw records", "definition": "normalized count of connect/send events incident on the node"},
+    {"index": 24, "name": "event_close_delete_norm", "kind": "normalized_count", "source": "incident raw records", "definition": "normalized count of close/delete events incident on the node"},
+    {"index": 25, "name": "event_other_norm", "kind": "normalized_count", "source": "incident raw records", "definition": "normalized count of unrecognized event classes incident on the node"},
+    {"index": 26, "name": "event_count_norm", "kind": "normalized_count", "source": "incident raw records", "definition": "normalized count of all incident records"},
+    {"index": 27, "name": "in_degree_norm", "kind": "normalized_count", "source": "constructed causal graph", "definition": "normalized incoming edge count after declared duplicate policy"},
+    {"index": 28, "name": "out_degree_norm", "kind": "normalized_count", "source": "constructed causal graph", "definition": "normalized outgoing edge count after declared duplicate policy"},
+    {"index": 29, "name": "first_seen_delta_norm", "kind": "normalized_time", "source": "collector timestamps", "definition": "node first-seen time minus subgraph minimum timestamp"},
+    {"index": 30, "name": "last_seen_delta_norm", "kind": "normalized_time", "source": "collector timestamps", "definition": "node last-seen time minus subgraph minimum timestamp"},
+    {"index": 31, "name": "unknown_field_fraction_norm", "kind": "normalized_fraction", "source": "schema parser", "definition": "unknown source-field count divided by max(incident event count,1)"}
+  ],
+  "normalization": {
+    "boolean": "0.0 or 1.0",
+    "count": "clip(log1p(value)/log1p(1024), 0, 1)",
+    "degree": "clip(log1p(value)/log1p(1024), 0, 1)",
+    "time": "clip(delta_seconds/3600, 0, 1) with negative deltas rejected as ordering errors",
+    "fraction": "clip(numerator/max(denominator,1), 0, 1)",
+    "socket_external_address_policy": "Treat RFC1918 IPv4 (10/8,172.16/12,192.168/16), loopback (127/8,::1), link-local (169.254/16,fe80::/10), and unique-local IPv6 (fc00::/7) as host-local/private; valid addresses outside these ranges are external; invalid or missing addresses are unknown and map to 0.",
+    "timestamp_policy": "Use collector timestamp_ms after UTC/epoch normalization; reject missing timestamps for edge ordering unless the adapter supplies an explicitly versioned monotonic sequence.",
+    "finite_policy": "Reject NaN and infinity before tensor construction; record adapter error and source_record_id.",
+    "out_of_range_policy": "Apply clipping only after the stated transform and record clipping counts in the run manifest."
+  },
+  "unknown_and_missing_handling": {
+    "unknown_entity_type": "Set entity_other and entity_type_unknown to 1; set type-specific presence flags to 0.",
+    "unknown_event_type": "Count it only in event_other_norm and event_count_norm.",
+    "missing_optional_field": "Set its presence feature to 0; do not synthesize a value.",
+    "unavailable_pid_sentinel": "Treat -1 and 0/zero UUID values as unavailable for presence features, consistent with cited eCAR documentation.",
+    "unknown_protocol": "Set both protocol-specific flags to 0; retain endpoint presence if available.",
+    "invalid_record": "Do not silently coerce; reject the record, retain its hash/error reason, and apply the predeclared loss policy."
+  },
+  "graph_and_mapping_contract": {
+    "node_source": "Collector-visible process, file, socket, or explicitly unknown entities only.",
+    "edge_source": "Collector-visible causal event records linking source and destination entities; no labels or analyst annotations.",
+    "causal_direction": "source actor/entity to object/receiver entity as emitted by the collector normalization contract",
+    "duplicate_policy": "Coalesce exact duplicate (src,dst,event_class,canonical_event_id) records only; preserve all contributing raw_keys in normalization_map.",
+    "self_loop_policy": "Retain in input manifest, then record any artifact-compatible removal/addition in normalization_map before Phase-II.",
+    "node_order": "Sort by (host_id, entity_type_rank, canonical_entity_id); persist node_map.",
+    "edge_order": "Sort by (timestamp_ms, src_node_index, dst_node_index, event_class_rank, canonical_event_id); persist edge_map.",
+    "raw_key": "SHA-256 of run_id, source_record_id, and canonical record bytes; never pass raw_key to the model.",
+    "required_metadata": ["run_id", "source_record_hashes", "node_map", "edge_map", "normalization_map", "encoder_id", "encoder_sha256"]
+  },
+  "output_envelope": {
+    "required_fields": [
+      "run_id",
+      "graph_or_subgraph_id",
+      "encoder_id",
+      "encoder_sha256",
+      "checkpoint_sha256",
+      "config_sha256",
+      "top_k_edge_indices",
+      "top_k_normalized_endpoints",
+      "top_k_raw_keys",
+      "edge_weights",
+      "mer_model_level_intervention_flip"
+    ],
+    "raw_key_mapping": "top_k_raw_keys are references into edge_map/normalization_map and must not be interpreted as commands.",
+    "intervention_semantics": "mer_model_level_intervention_flip records only whether the fixed detector argmax changed after the declared edge/node intervention; it is not host prevention evidence."
+  },
+  "live_boundary": {
+    "allowed_inputs": ["host audit/provenance records", "collector timestamps and stable IDs", "process/file/socket fields visible to the collector"],
+    "forbidden_runtime_inputs": ["_VULN", "_LINE", "_SAMPLE", "sample_labels_all.pkl", "formal evaluation labels", "playbook identity as a feature", "analyst-selected ground truth"],
+    "alert_subgraph_source": "A separately declared PIDS/EDR/SIEM/network/analyst expansion source; Louvain is optional and must not be assumed to match the paper without an implementation contract.",
+    "host_action_boundary": "Top-K edges are evidence references for analyst review; this schema issues no process termination, file quarantine, syscall block, or network restriction command."
+  },
+  "route_requirements": {
+    "detector": "Retrain a new detector with input_feature_dim=32 under the Track L protocol before any scored use.",
+    "phase_ii": "Use the same GNN-compatible mask optimization, staged solidification, MER intervention semantics, and externally controlled seed policy only after the Track L checkpoint is frozen.",
+    "packaged_checkpoint": "Do not load the 21-input packaged checkpoint with this schema.",
+    "formal_status": "No training or formal experiment has been executed for this schema."
+  }
+}

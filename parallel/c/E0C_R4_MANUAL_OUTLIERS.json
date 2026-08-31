@@ -1,0 +1,672 @@
+{
+  "blocked_need_more_source_detail_count": 31,
+  "raw_specific_count": 64,
+  "rows": [
+    {
+      "classification": "BLOCKED_NEED_MORE_SOURCE_DETAIL",
+      "rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000002::S02::A004",
+      "source_locator": "$.pipeline[1].actions[3]",
+      "template_id": "r4-template-022-discovery_enumeration"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000002::S03::A004",
+      "source_locator": "$.pipeline[2].actions[3]",
+      "template_id": "r4-template-029-discovery_enumeration"
+    },
+    {
+      "classification": "BLOCKED_NEED_MORE_SOURCE_DETAIL",
+      "rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000003::S04::A002",
+      "source_locator": "$.pipeline[3].actions[1]",
+      "template_id": "r4-template-022-discovery_enumeration"
+    },
+    {
+      "classification": "BLOCKED_NEED_MORE_SOURCE_DETAIL",
+      "rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000004::S02::A007",
+      "source_locator": "$.pipeline[1].actions[6]",
+      "template_id": "r4-template-022-discovery_enumeration"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000004::S03::A001",
+      "source_locator": "$.pipeline[2].actions[0]",
+      "template_id": "r4-template-123-process_command_execution"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000004::S03::A002",
+      "source_locator": "$.pipeline[2].actions[1]",
+      "template_id": "r4-template-103-process_command_execution"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000004::S03::A003",
+      "source_locator": "$.pipeline[2].actions[2]",
+      "template_id": "r4-template-097-process_command_execution"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000004::S04::A008",
+      "source_locator": "$.pipeline[3].actions[7]",
+      "template_id": "r4-template-141-process_command_execution"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000004::S07::A001",
+      "source_locator": "$.pipeline[6].actions[0]",
+      "template_id": "r4-template-076-privilege_account_action"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000004::S07::A002",
+      "source_locator": "$.pipeline[6].actions[1]",
+      "template_id": "r4-template-061-persistence_configuration"
+    },
+    {
+      "classification": "BLOCKED_NEED_MORE_SOURCE_DETAIL",
+      "rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000006::S04::A005",
+      "source_locator": "$.pipeline[3].actions[4]",
+      "template_id": "r4-template-022-discovery_enumeration"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000006::S08::A006",
+      "source_locator": "$.pipeline[7].actions[5]",
+      "template_id": "r4-template-004-credential_store_access"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000006::S08::A007",
+      "source_locator": "$.pipeline[7].actions[6]",
+      "template_id": "r4-template-008-credential_store_access"
+    },
+    {
+      "classification": "BLOCKED_NEED_MORE_SOURCE_DETAIL",
+      "rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000007::S03::A002",
+      "source_locator": "$.pipeline[2].actions[1]",
+      "template_id": "r4-template-031-discovery_enumeration"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000007::S06::A001",
+      "source_locator": "$.pipeline[5].actions[0]",
+      "template_id": "r4-template-084-privilege_account_action"
+    },
+    {
+      "classification": "BLOCKED_NEED_MORE_SOURCE_DETAIL",
+      "rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000007::S08::A003",
+      "source_locator": "$.pipeline[7].actions[2]",
+      "template_id": "r4-template-055-network_c2_beacon"
+    },
+    {
+      "classification": "BLOCKED_NEED_MORE_SOURCE_DETAIL",
+      "rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000008::S03::A002",
+      "source_locator": "$.pipeline[2].actions[1]",
+      "template_id": "r4-template-031-discovery_enumeration"
+    },
+    {
+      "classification": "BLOCKED_NEED_MORE_SOURCE_DETAIL",
+      "rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000008::S04::A001",
+      "source_locator": "$.pipeline[3].actions[0]",
+      "template_id": "r4-template-026-discovery_enumeration"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000008::S09::A004",
+      "source_locator": "$.pipeline[8].actions[3]",
+      "template_id": "r4-template-036-file_resource_operation"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000009::S06::A003",
+      "source_locator": "$.pipeline[5].actions[2]",
+      "template_id": "r4-template-113-process_command_execution"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000009::S06::A004",
+      "source_locator": "$.pipeline[5].actions[3]",
+      "template_id": "r4-template-139-process_command_execution"
+    },
+    {
+      "classification": "BLOCKED_NEED_MORE_SOURCE_DETAIL",
+      "rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000010::S03::A003",
+      "source_locator": "$.pipeline[2].actions[2]",
+      "template_id": "r4-template-022-discovery_enumeration"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000010::S12::A004",
+      "source_locator": "$.pipeline[11].actions[3]",
+      "template_id": "r4-template-121-process_command_execution"
+    },
+    {
+      "classification": "BLOCKED_NEED_MORE_SOURCE_DETAIL",
+      "rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000011::S03::A009",
+      "source_locator": "$.pipeline[2].actions[8]",
+      "template_id": "r4-template-026-discovery_enumeration"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000013::S06::A003",
+      "source_locator": "$.pipeline[5].actions[2]",
+      "template_id": "r4-template-070-persistence_configuration"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000013::S07::A005",
+      "source_locator": "$.pipeline[6].actions[4]",
+      "template_id": "r4-template-012-credential_store_access"
+    },
+    {
+      "classification": "BLOCKED_NEED_MORE_SOURCE_DETAIL",
+      "rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000014::S03::A002",
+      "source_locator": "$.pipeline[2].actions[1]",
+      "template_id": "r4-template-023-discovery_enumeration"
+    },
+    {
+      "classification": "BLOCKED_NEED_MORE_SOURCE_DETAIL",
+      "rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000015::S04::A001",
+      "source_locator": "$.pipeline[3].actions[0]",
+      "template_id": "r4-template-031-discovery_enumeration"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000015::S04::A002",
+      "source_locator": "$.pipeline[3].actions[1]",
+      "template_id": "r4-template-101-process_command_execution"
+    },
+    {
+      "classification": "BLOCKED_NEED_MORE_SOURCE_DETAIL",
+      "rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000015::S04::A005",
+      "source_locator": "$.pipeline[3].actions[4]",
+      "template_id": "r4-template-055-network_c2_beacon"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000015::S07::A004",
+      "source_locator": "$.pipeline[6].actions[3]",
+      "template_id": "r4-template-143-process_command_execution"
+    },
+    {
+      "classification": "BLOCKED_NEED_MORE_SOURCE_DETAIL",
+      "rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000017::S03::A001",
+      "source_locator": "$.pipeline[2].actions[0]",
+      "template_id": "r4-template-031-discovery_enumeration"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000018::S03::A002",
+      "source_locator": "$.pipeline[2].actions[1]",
+      "template_id": "r4-template-020-discovery_enumeration"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000018::S05::A001",
+      "source_locator": "$.pipeline[4].actions[0]",
+      "template_id": "r4-template-057-persistence_configuration"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000018::S06::A002",
+      "source_locator": "$.pipeline[5].actions[1]",
+      "template_id": "r4-template-032-file_resource_operation"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000018::S07::A002",
+      "source_locator": "$.pipeline[6].actions[1]",
+      "template_id": "r4-template-033-file_resource_operation"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000018::S07::A004",
+      "source_locator": "$.pipeline[6].actions[3]",
+      "template_id": "r4-template-086-process_command_execution"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000019::S03::A001",
+      "source_locator": "$.pipeline[2].actions[0]",
+      "template_id": "r4-template-054-network_c2_beacon"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000019::S04::A006",
+      "source_locator": "$.pipeline[3].actions[5]",
+      "template_id": "r4-template-024-discovery_enumeration"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000020::S03::A004",
+      "source_locator": "$.pipeline[2].actions[3]",
+      "template_id": "r4-template-038-file_resource_operation"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000020::S06::A001",
+      "source_locator": "$.pipeline[5].actions[0]",
+      "template_id": "r4-template-011-credential_store_access"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000021::S08::A002",
+      "source_locator": "$.pipeline[7].actions[1]",
+      "template_id": "r4-template-005-credential_store_access"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000023::S07::A005",
+      "source_locator": "$.pipeline[6].actions[4]",
+      "template_id": "r4-template-106-process_command_execution"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000023::S10::A003",
+      "source_locator": "$.pipeline[9].actions[2]",
+      "template_id": "r4-template-082-privilege_account_action"
+    },
+    {
+      "classification": "BLOCKED_NEED_MORE_SOURCE_DETAIL",
+      "rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000024::S04::A001",
+      "source_locator": "$.pipeline[3].actions[0]",
+      "template_id": "r4-template-031-discovery_enumeration"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000024::S06::A002",
+      "source_locator": "$.pipeline[5].actions[1]",
+      "template_id": "r4-template-068-persistence_configuration"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000024::S06::A003",
+      "source_locator": "$.pipeline[5].actions[2]",
+      "template_id": "r4-template-025-discovery_enumeration"
+    },
+    {
+      "classification": "BLOCKED_NEED_MORE_SOURCE_DETAIL",
+      "rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000025::S04::A005",
+      "source_locator": "$.pipeline[3].actions[4]",
+      "template_id": "r4-template-031-discovery_enumeration"
+    },
+    {
+      "classification": "BLOCKED_NEED_MORE_SOURCE_DETAIL",
+      "rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000026::S03::A004",
+      "source_locator": "$.pipeline[2].actions[3]",
+      "template_id": "r4-template-031-discovery_enumeration"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000026::S08::A003",
+      "source_locator": "$.pipeline[7].actions[2]",
+      "template_id": "r4-template-039-file_resource_operation"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000027::S04::A004",
+      "source_locator": "$.pipeline[3].actions[3]",
+      "template_id": "r4-template-122-process_command_execution"
+    },
+    {
+      "classification": "BLOCKED_NEED_MORE_SOURCE_DETAIL",
+      "rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000027::S05::A002",
+      "source_locator": "$.pipeline[4].actions[1]",
+      "template_id": "r4-template-027-discovery_enumeration"
+    },
+    {
+      "classification": "BLOCKED_NEED_MORE_SOURCE_DETAIL",
+      "rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000028::S03::A005",
+      "source_locator": "$.pipeline[2].actions[4]",
+      "template_id": "r4-template-030-discovery_enumeration"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000028::S05::A004",
+      "source_locator": "$.pipeline[4].actions[3]",
+      "template_id": "r4-template-146-process_command_execution"
+    },
+    {
+      "classification": "BLOCKED_NEED_MORE_SOURCE_DETAIL",
+      "rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000029::S04::A002",
+      "source_locator": "$.pipeline[3].actions[1]",
+      "template_id": "r4-template-030-discovery_enumeration"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000031::S04::A003",
+      "source_locator": "$.pipeline[3].actions[2]",
+      "template_id": "r4-template-018-credential_store_access"
+    },
+    {
+      "classification": "BLOCKED_NEED_MORE_SOURCE_DETAIL",
+      "rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000031::S04::A004",
+      "source_locator": "$.pipeline[3].actions[3]",
+      "template_id": "r4-template-031-discovery_enumeration"
+    },
+    {
+      "classification": "BLOCKED_NEED_MORE_SOURCE_DETAIL",
+      "rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000031::S04::A005",
+      "source_locator": "$.pipeline[3].actions[4]",
+      "template_id": "r4-template-031-discovery_enumeration"
+    },
+    {
+      "classification": "BLOCKED_NEED_MORE_SOURCE_DETAIL",
+      "rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000032::S04::A001",
+      "source_locator": "$.pipeline[3].actions[0]",
+      "template_id": "r4-template-031-discovery_enumeration"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000033::S03::A004",
+      "source_locator": "$.pipeline[2].actions[3]",
+      "template_id": "r4-template-065-persistence_configuration"
+    },
+    {
+      "classification": "BLOCKED_NEED_MORE_SOURCE_DETAIL",
+      "rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000033::S04::A002",
+      "source_locator": "$.pipeline[3].actions[1]",
+      "template_id": "r4-template-023-discovery_enumeration"
+    },
+    {
+      "classification": "BLOCKED_NEED_MORE_SOURCE_DETAIL",
+      "rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000033::S04::A004",
+      "source_locator": "$.pipeline[3].actions[3]",
+      "template_id": "r4-template-030-discovery_enumeration"
+    },
+    {
+      "classification": "BLOCKED_NEED_MORE_SOURCE_DETAIL",
+      "rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000034::S03::A001",
+      "source_locator": "$.pipeline[2].actions[0]",
+      "template_id": "r4-template-031-discovery_enumeration"
+    },
+    {
+      "classification": "BLOCKED_NEED_MORE_SOURCE_DETAIL",
+      "rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000034::S05::A001",
+      "source_locator": "$.pipeline[4].actions[0]",
+      "template_id": "r4-template-026-discovery_enumeration"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000034::S06::A004",
+      "source_locator": "$.pipeline[5].actions[3]",
+      "template_id": "r4-template-133-process_command_execution"
+    },
+    {
+      "classification": "BLOCKED_NEED_MORE_SOURCE_DETAIL",
+      "rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000035::S04::A003",
+      "source_locator": "$.pipeline[3].actions[2]",
+      "template_id": "r4-template-026-discovery_enumeration"
+    },
+    {
+      "classification": "BLOCKED_NEED_MORE_SOURCE_DETAIL",
+      "rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000037::S03::A002",
+      "source_locator": "$.pipeline[2].actions[1]",
+      "template_id": "r4-template-023-discovery_enumeration"
+    },
+    {
+      "classification": "BLOCKED_NEED_MORE_SOURCE_DETAIL",
+      "rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000039::S04::A005",
+      "source_locator": "$.pipeline[3].actions[4]",
+      "template_id": "r4-template-055-network_c2_beacon"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000039::S07::A001",
+      "source_locator": "$.pipeline[6].actions[0]",
+      "template_id": "r4-template-148-process_command_execution"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000040::S03::A001",
+      "source_locator": "$.pipeline[2].actions[0]",
+      "template_id": "r4-template-087-process_command_execution"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000040::S03::A002",
+      "source_locator": "$.pipeline[2].actions[1]",
+      "template_id": "r4-template-088-process_command_execution"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000040::S03::A005",
+      "source_locator": "$.pipeline[2].actions[4]",
+      "template_id": "r4-template-021-discovery_enumeration"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000040::S04::A002",
+      "source_locator": "$.pipeline[3].actions[1]",
+      "template_id": "r4-template-073-privilege_account_action"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000040::S04::A003",
+      "source_locator": "$.pipeline[3].actions[2]",
+      "template_id": "r4-template-074-privilege_account_action"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000040::S05::A001",
+      "source_locator": "$.pipeline[4].actions[0]",
+      "template_id": "r4-template-001-credential_store_access"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000040::S05::A002",
+      "source_locator": "$.pipeline[4].actions[1]",
+      "template_id": "r4-template-091-process_command_execution"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000040::S07::A001",
+      "source_locator": "$.pipeline[6].actions[0]",
+      "template_id": "r4-template-092-process_command_execution"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000042::S03::A001",
+      "source_locator": "$.pipeline[2].actions[0]",
+      "template_id": "r4-template-037-file_resource_operation"
+    },
+    {
+      "classification": "BLOCKED_NEED_MORE_SOURCE_DETAIL",
+      "rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000042::S04::A003",
+      "source_locator": "$.pipeline[3].actions[2]",
+      "template_id": "r4-template-027-discovery_enumeration"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000042::S06::A003",
+      "source_locator": "$.pipeline[5].actions[2]",
+      "template_id": "r4-template-064-persistence_configuration"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000042::S08::A002",
+      "source_locator": "$.pipeline[7].actions[1]",
+      "template_id": "r4-template-028-discovery_enumeration"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000043::S03::A001",
+      "source_locator": "$.pipeline[2].actions[0]",
+      "template_id": "r4-template-118-process_command_execution"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000044::S05::A002",
+      "source_locator": "$.pipeline[4].actions[1]",
+      "template_id": "r4-template-153-process_command_execution"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000046::S06::A002",
+      "source_locator": "$.pipeline[5].actions[1]",
+      "template_id": "r4-template-060-persistence_configuration"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000047::S07::A003",
+      "source_locator": "$.pipeline[6].actions[2]",
+      "template_id": "r4-template-140-process_command_execution"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000047::S08::A003",
+      "source_locator": "$.pipeline[7].actions[2]",
+      "template_id": "r4-template-067-persistence_configuration"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000048::S05::A005",
+      "source_locator": "$.pipeline[4].actions[4]",
+      "template_id": "r4-template-007-credential_store_access"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000050::S06::A004",
+      "source_locator": "$.pipeline[5].actions[3]",
+      "template_id": "r4-template-098-process_command_execution"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000053::S02::A001",
+      "source_locator": "$.pipeline[1].actions[0]",
+      "template_id": "r4-template-096-process_command_execution"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000053::S04::A001",
+      "source_locator": "$.pipeline[3].actions[0]",
+      "template_id": "r4-template-129-process_command_execution"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000053::S06::A004",
+      "source_locator": "$.pipeline[5].actions[3]",
+      "template_id": "r4-template-099-process_command_execution"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000056::S03::A001",
+      "source_locator": "$.pipeline[2].actions[0]",
+      "template_id": "r4-template-112-process_command_execution"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000056::S03::A003",
+      "source_locator": "$.pipeline[2].actions[2]",
+      "template_id": "r4-template-100-process_command_execution"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000060::S03::A001",
+      "source_locator": "$.pipeline[2].actions[0]",
+      "template_id": "r4-template-131-process_command_execution"
+    },
+    {
+      "classification": "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED",
+      "rationale": "No second row shares the complete evidence signature.",
+      "raw_key": "6000061::S02::A001",
+      "source_locator": "$.pipeline[1].actions[0]",
+      "template_id": "r4-template-132-process_command_execution"
+    }
+  ],
+  "schema_version": "e0c-r4-manual-outliers-v1"
+}

@@ -1,0 +1,110 @@
+{
+  "auditctl_list": {
+    "returncode": 0,
+    "stderr": "",
+    "stdout_b64": "Tm8gcnVsZXMK"
+  },
+  "auditctl_status": {
+    "argv": [
+      "/usr/sbin/auditctl",
+      "-s"
+    ],
+    "parsed": {
+      "backlog": 0,
+      "backlog_limit": 8192,
+      "backlog_wait_time": 60000,
+      "backlog_wait_time_actual": 0,
+      "enabled": 1,
+      "lost": 0,
+      "raw": "enabled 1\nfailure 1\npid 573176\nrate_limit 0\nbacklog_limit 8192\nlost 0\nbacklog 0\nbacklog_wait_time 60000\nbacklog_wait_time_actual 0\nloginuid_immutable 0 unlocked\n"
+    },
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "enabled 1\nfailure 1\npid 573176\nrate_limit 0\nbacklog_limit 8192\nlost 0\nbacklog 0\nbacklog_wait_time 60000\nbacklog_wait_time_actual 0\nloginuid_immutable 0 unlocked\n"
+  },
+  "auditd_active": {
+    "argv": [
+      "/bin/systemctl",
+      "is-active",
+      "auditd"
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "active\n"
+  },
+  "auditd_enabled": {
+    "argv": [
+      "/bin/systemctl",
+      "is-enabled",
+      "auditd"
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "enabled\n"
+  },
+  "baseline_rule_dump_sha256": "61501e69a61dbbc1a41605ea15c34807e6b1d3992bee195dde36a7ebdd95dd87",
+  "captured_at_utc": "2026-08-31T05:21:53.137771+00:00",
+  "config_files": {
+    "/etc/audit/audit.rules": {
+      "present": true,
+      "sha256": "0944f975965910b2dcd78d74ddd94cadeab1646609fed3731e050aae3e193dc4",
+      "size_bytes": 107
+    },
+    "/etc/audit/auditd.conf": {
+      "present": true,
+      "sha256": "9a17001171e39899e535173ab9044923fb155c9c9afa2c8eb71eef2db757c883",
+      "size_bytes": 881
+    }
+  },
+  "independent_review": {
+    "auditctl_version_probe": {
+      "argv": [
+        "/usr/sbin/auditctl",
+        "--version"
+      ],
+      "returncode": 4,
+      "stderr": "You must be root to run this program.\n",
+      "stdout": ""
+    },
+    "auditd_active": {
+      "argv": [
+        "/bin/systemctl",
+        "is-active",
+        "auditd"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "active\n"
+    },
+    "auditd_enabled": {
+      "argv": [
+        "/bin/systemctl",
+        "is-enabled",
+        "auditd"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "enabled\n"
+    },
+    "ausearch_version_probe": {
+      "argv": [
+        "/usr/sbin/ausearch",
+        "--version"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "ausearch version 3.0.7\n"
+    },
+    "baseline_recorded": true,
+    "installed_auditd_package": "auditd=1:3.0.7-1build1",
+    "installed_version_matches_pin": true,
+    "kernel_audit_config": {
+      "CONFIG_AUDIT": true,
+      "CONFIG_AUDITSYSCALL": true
+    },
+    "kernel_release": "6.8.0-138-generic",
+    "reviewed_at_utc": "2026-08-31T05:44:42.054933+00:00",
+    "source_audit_log_sha256": "777a9c397de1f4cd6e861b56697df52176fe96c94a9cf18c9be77ab463903c52"
+  },
+  "persistent_rules_files_edited": false
+}

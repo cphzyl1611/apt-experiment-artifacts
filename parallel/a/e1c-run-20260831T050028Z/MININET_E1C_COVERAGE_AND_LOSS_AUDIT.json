@@ -1,0 +1,357 @@
+{
+  "apt_action_executed": false,
+  "apt_action_scope": "No APT action in the E1C harness or independent review; pinned auditd package was installed manually as the prerequisite.",
+  "audit_backlog": 0,
+  "audit_backlog_scope": "pre_run_only_post_run_probe_denied",
+  "audit_key": "e1c902f74f583",
+  "audit_log": {
+    "path": "/var/log/audit/audit.log",
+    "sha256": "777a9c397de1f4cd6e861b56697df52176fe96c94a9cf18c9be77ab463903c52",
+    "size_bytes": 55456
+  },
+  "audit_lost_events": 0,
+  "audit_lost_events_scope": "pre_run_only_post_run_probe_denied",
+  "audit_status_post_run": null,
+  "audit_status_pre_run": {
+    "backlog": 0,
+    "backlog_limit": 8192,
+    "backlog_wait_time": 60000,
+    "backlog_wait_time_actual": 0,
+    "enabled": 1,
+    "lost": 0,
+    "raw": "enabled 1\nfailure 1\npid 573176\nrate_limit 0\nbacklog_limit 8192\nlost 0\nbacklog 0\nbacklog_wait_time 60000\nbacklog_wait_time_actual 0\nloginuid_immutable 0 unlocked\n"
+  },
+  "class_evidence": {
+    "FILE_CREATE_OR_OPEN": {
+      "count": 6,
+      "raw_serials": [
+        116,
+        117,
+        118,
+        119,
+        120,
+        121
+      ],
+      "status": "OBSERVED"
+    },
+    "FILE_DELETE": {
+      "count": 2,
+      "raw_serials": [
+        142,
+        143
+      ],
+      "status": "OBSERVED"
+    },
+    "FILE_READ_OR_WRITE": {
+      "count": 0,
+      "raw_serials": [],
+      "status": "MISSING"
+    },
+    "PROCESS_EXIT": {
+      "count": 4,
+      "raw_serials": [
+        140,
+        141,
+        144,
+        145
+      ],
+      "status": "OBSERVED"
+    },
+    "PROCESS_START_OR_EXEC": {
+      "count": 6,
+      "raw_serials": [
+        114,
+        115,
+        134,
+        135,
+        136,
+        137
+      ],
+      "status": "OBSERVED"
+    },
+    "SOCKET_ACCEPT": {
+      "count": 0,
+      "raw_serials": [],
+      "status": "MISSING"
+    },
+    "SOCKET_BIND": {
+      "count": 2,
+      "raw_serials": [
+        122,
+        123
+      ],
+      "status": "OBSERVED"
+    },
+    "SOCKET_CONNECT": {
+      "count": 2,
+      "raw_serials": [
+        138,
+        139
+      ],
+      "status": "OBSERVED"
+    }
+  },
+  "classification": "BLOCKED",
+  "duplicate_serial_count": 0,
+  "external_nat_attachment": false,
+  "file_read_write_rule_limitation": "auditctl rejected pread64 in the bounded rule (Syscall name unknown: pread64); no broad fallback was attempted",
+  "formal_experiment_executed": false,
+  "malformed_records": 0,
+  "missing_required_classes": [
+    "FILE_READ_OR_WRITE",
+    "SOCKET_ACCEPT"
+  ],
+  "mn_dash_c_executed": false,
+  "namespace_assertions": {
+    "checks": {
+      "h1_child_netns != h2_shell_netns": null,
+      "h1_child_netns == h1_shell_netns": null,
+      "h2_child_netns != h1_shell_netns": null,
+      "h2_child_netns == h2_shell_netns": null
+    },
+    "pass": false,
+    "status": "NOT_VALIDATED_NO_PERSISTED_LIVE_NETNS_EVIDENCE"
+  },
+  "normalized_class_counts": {
+    "FILE_CREATE_OR_OPEN": 6,
+    "FILE_DELETE": 2,
+    "FILE_READ_OR_WRITE": 0,
+    "PROCESS_EXIT": 4,
+    "PROCESS_START_OR_EXEC": 6,
+    "SOCKET_ACCEPT": 0,
+    "SOCKET_BIND": 2,
+    "SOCKET_CONNECT": 2
+  },
+  "normalized_event_count": 22,
+  "normalized_raw_links_valid": true,
+  "pid_netns_join_failure_count": 4,
+  "pid_netns_join_failures_explicit": true,
+  "pid_netns_join_success_count": 0,
+  "post_cleanup": {
+    "baseline_restored": false,
+    "child_residue_zero": true,
+    "run_rules_removed": false,
+    "topology_residue_zero": false
+  },
+  "provx_executed": false,
+  "raw_record_count": 42,
+  "raw_record_type_counts": {
+    "CONFIG_CHANGE": 20,
+    "CWD": 13,
+    "EXECVE": 4,
+    "PATH": 23,
+    "PROCTITLE": 42,
+    "SOCKADDR": 23,
+    "SYSCALL": 42
+  },
+  "raw_records_preserved_with_hashes": true,
+  "raw_serials": [
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    129,
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143,
+    144,
+    145
+  ],
+  "required_classes": [
+    "PROCESS_START_OR_EXEC",
+    "PROCESS_EXIT",
+    "FILE_CREATE_OR_OPEN",
+    "FILE_READ_OR_WRITE",
+    "FILE_DELETE",
+    "SOCKET_BIND",
+    "SOCKET_CONNECT",
+    "SOCKET_ACCEPT"
+  ],
+  "reviewed_at_utc": "2026-08-31T05:44:42.148953+00:00",
+  "run_id": "e1c-run-20260831T050028Z",
+  "same_tcp_port": {
+    "both_hosts_successfully_exchanged": false,
+    "h1_bind_observed": true,
+    "h2_bind_observed": true,
+    "intended_port": 18080,
+    "reason": "connect exit=-115 and no accept/NETWORK evidence"
+  },
+  "schema": "MININET_E1C_COVERAGE_AND_LOSS_AUDIT_V2",
+  "socket_accept_limitation": "No accept/accept4 audit record was emitted because both connect calls failed with exit=-115 before accept",
+  "socket_listener_liveness": {
+    "bind_records_present": true,
+    "control_flow_timing_supports_bind_before_exit": true,
+    "direct_ss_or_proc_tcp_snapshot_persisted": false
+  },
+  "transient_rules": {
+    "attempted": 24,
+    "delete_rule_records": [],
+    "rejected": 4,
+    "rejections": [
+      {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "read",
+          "-S",
+          "write",
+          "-S",
+          "pread64",
+          "-S",
+          "pwrite64",
+          "-S",
+          "readv",
+          "-S",
+          "writev",
+          "-S",
+          "pwritev2",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-run-20260831T050028Z/temp-events",
+          "-F",
+          "pid=575776",
+          "-k",
+          "e1c902f74f583"
+        ],
+        "name": "h1_pid_file_read_write",
+        "returncode": 255,
+        "stderr": "Syscall name unknown: pread64\n"
+      },
+      {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "read",
+          "-S",
+          "write",
+          "-S",
+          "pread64",
+          "-S",
+          "pwrite64",
+          "-S",
+          "readv",
+          "-S",
+          "writev",
+          "-S",
+          "pwritev2",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-run-20260831T050028Z/temp-events",
+          "-F",
+          "pid=575777",
+          "-k",
+          "e1c902f74f583"
+        ],
+        "name": "h2_pid_file_read_write",
+        "returncode": 255,
+        "stderr": "Syscall name unknown: pread64\n"
+      },
+      {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "read",
+          "-S",
+          "write",
+          "-S",
+          "pread64",
+          "-S",
+          "pwrite64",
+          "-S",
+          "readv",
+          "-S",
+          "writev",
+          "-S",
+          "pwritev2",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-run-20260831T050028Z/temp-events",
+          "-F",
+          "ppid=<child_pid>",
+          "-k",
+          "e1c902f74f583"
+        ],
+        "evidence_basis": "same bounded rule and same host loop; ppid outcome not persisted before exception",
+        "name": "h1_ppid_file_read_write",
+        "returncode": 255,
+        "stderr": "Syscall name unknown: pread64"
+      },
+      {
+        "argv": [
+          "/usr/sbin/auditctl",
+          "-a",
+          "always,exit",
+          "-F",
+          "arch=b64",
+          "-S",
+          "read",
+          "-S",
+          "write",
+          "-S",
+          "pread64",
+          "-S",
+          "pwrite64",
+          "-S",
+          "readv",
+          "-S",
+          "writev",
+          "-S",
+          "pwritev2",
+          "-F",
+          "dir=/home/cph/experiment-parallel/e0-a/e1c-run-20260831T050028Z/temp-events",
+          "-F",
+          "ppid=<child_pid>",
+          "-k",
+          "e1c902f74f583"
+        ],
+        "evidence_basis": "same bounded rule and same host loop; ppid outcome not persisted before exception",
+        "name": "h2_ppid_file_read_write",
+        "returncode": 255,
+        "stderr": "Syscall name unknown: pread64"
+      }
+    ],
+    "removal_proven": false,
+    "successful": 20
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "stage": "PROVX-R3",
+  "status": "PREREGISTERED_BEFORE_FORMAL_EVALUATION",
+  "policy_id": "provx-phase2-seed-policy-v1",
+  "freeze_time_utc": "2026-08-31T05:13:26Z",
+  "formal_evaluation_executed": false,
+  "reference_wrapper": {
+    "path": "provx-r2/control_seed_wrapper.py",
+    "sha256": "da4d6a19455352bb152751bea71ca2f6d1c37cd057d4b93fa7225a585a110caf",
+    "role": "external seed-setting reference that invokes the unchanged ProvXExplainer API; any production wrapper must preserve the recorded RNG controls and receive its own hash"
+  },
+  "primary": {
+    "seed": 314159,
+    "selection_rule": "Use the first seed in the immutable registration list; register it before acquiring or inspecting FA1B2de formal outcomes.",
+    "purpose": "single primary Phase-II result for the frozen formal evaluation",
+    "favorable_result_selection": "forbidden",
+    "external_to_official_artifact": true
+  },
+  "optional_sensitivity": {
+    "enabled": false,
+    "seeds": [271828, 161803, 42],
+    "selection_rule": "If enabled, run every declared sensitivity seed on the same frozen inputs/configuration and report all results; do not add or remove seeds after viewing formal outcomes.",
+    "primary_result_replacement": "never"
+  },
+  "rng_controls": {
+    "python_random": "random.seed(seed)",
+    "python_hash": "set PYTHONHASHSEED to the decimal seed before interpreter start",
+    "numpy": "numpy.random.seed(seed)",
+    "torch_cpu": "torch.manual_seed(seed)",
+    "torch_cuda": "torch.cuda.manual_seed_all(seed) when CUDA is used",
+    "cuda_backend": "When CUDA is used, set torch.backends.cudnn.deterministic=true and benchmark=false and record device/driver; the R1/R2 baseline is CPU-only.",
+    "process_isolation": "Set all controls in the wrapper process before model/explainer construction.",
+    "graph_order": "Use the frozen deterministic graph and edge order from the route manifest.",
+    "retry_rule": "A rerun uses the same registered seed and configuration; infrastructure retries receive a new run ID and retain both manifests."
+  },
+  "phase2_scope": {
+    "randomized_operation": "ProvXExplainer edge-mask initialization via torch.randn",
+    "controlled_operation": "all Phase-II explanations in a run, including any graph iteration order",
+    "not_controlled_by_this_policy": ["detector training randomness", "data split selection", "post-hoc seed selection"],
+    "track_o_config": "artifact-as-shipped Phase-II defaults recorded in PROVX_R1_PHASE2_SAMPLE_RUN.json and PROVX_R2_SCHEMA_AND_DETERMINISM_REPORT.md",
+    "track_l_config": "separately frozen with the new 32-input detector before formal evaluation"
+  },
+  "comparison_and_reporting": {
+    "semantic_identity": "Canonical hash over run metadata, explanation edge_index tensor, edge_weight tensor, prediction, and target label.",
+    "raw_torch_file_hash": "Informational only because Torch ZIP member names can contain the output filename; do not treat differing archive hashes as semantic nondeterminism.",
+    "report_all_sensitivity_rows": true,
+    "report_seed_and_rng_sources": true,
+    "forbid_metric_only_summary": "Retain per-graph explanation content and canonical hashes, not only aggregate metrics."
+  },
+  "pre_registration_attestation": {
+    "seed_chosen_from_formal_results": false,
+    "formal_results_seen_at_freeze": false,
+    "policy_mutation_after_formal_eval": "requires a new policy_id and a separately labeled evaluation; it cannot overwrite this registration"
+  },
+  "next_action": "Fresh review of the R3 live route decision before any formal evaluation."
+}

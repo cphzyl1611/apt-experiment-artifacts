@@ -1,0 +1,72 @@
+{
+  "schema": "MININET_E1C_PRE_RUN_CONTRACT_V1",
+  "created_at_utc": "2026-08-31T05:09:47.072196Z",
+  "run_id": "e1c-run-20260831T050028Z",
+  "collector": {
+    "decision": "AUDITD_PRIMARY_CANDIDATE",
+    "package": "auditd=1:3.0.7-1build1",
+    "installed": true,
+    "ready_for_smoke": true,
+    "auditctl_root_required": true
+  },
+  "e1a_r2_pin": {
+    "harness_sha256": "129bc1b10486e3f23c37d7b3386f7dfeebc108a7b29a25f493809391fd070e90",
+    "runtime_result_sha256": "43c769bdf1c074c9456aeba7d3d2d6737b592891234cc541de2a4907345c58e1",
+    "runtime_validation_sha256": "f50a771931e51b9bb37980a5e2619069da2ff92c374e311aaab0c0fb41e83c2c",
+    "attribution_report_sha256": "e265a6a3dab4ee0dc41ecbcfb479448e31ec4c51ebdbc5f21281274a01f19a44",
+    "pcap_sha256": "184b030eb86881bd7e0b08fce1e2d2a22731af85e806cc66f0951dd9592b7e50",
+    "cleanup_assertions": {
+      "RUN_OWNED_CHILDREN_REMAINING": 0,
+      "RESERVED_TEST_INTERFACES_REMAINING": 0,
+      "RESERVED_TEST_OVS_OBJECTS_REMAINING": 0,
+      "TCPDUMP_PROCESS_REMAINING": 0
+    }
+  },
+  "topology": {
+    "hosts": ["h1", "h2"],
+    "switch": "s1",
+    "network": "10.0.0.0/24",
+    "nat": false,
+    "external_links": false,
+    "same_tcp_port": 18080
+  },
+  "required_runtime_actions": [
+    "capture shell PIDs and netns",
+    "add bounded transient rules",
+    "spawn gated long-lived benign children after rules are active",
+    "create/write/read/delete unique temp files",
+    "bind/listen and h1<->h2 connect/accept/exchange",
+    "collect raw audit records by unique key",
+    "normalize required event classes",
+    "join event PID to live netns and logical_host_id",
+    "remove only run-owned rules",
+    "stop topology and prove baseline restoration"
+  ],
+  "required_outputs": [
+    "MININET_E1C_AUDIT_PRE_STATE.json",
+    "MININET_E1C_TRANSIENT_RULE_CONTRACT.json",
+    "MININET_E1C_RAW_AUDIT_EVIDENCE.jsonl",
+    "MININET_E1C_NORMALIZED_EVENTS.jsonl",
+    "MININET_E1C_PID_NETNS_JOIN.jsonl",
+    "MININET_E1C_STRACE_ORACLE_COMPARISON.json",
+    "MININET_E1C_COVERAGE_AND_LOSS_AUDIT.json",
+    "MININET_E1C_POST_CLEANUP_AUDIT.json",
+    "MININET_E1C_AUDITD_SMOKE_REPORT.md"
+  ],
+  "boundaries": {
+    "no_apt_actions": true,
+    "no_automatic_sudo": true,
+    "no_persistent_audit_rule_file_edits": true,
+    "no_provx": true,
+    "no_formal_experiment": true,
+    "no_mn_dash_c": true,
+    "no_authority_mutation": true
+  },
+  "exact_human_command": "sudo /usr/bin/python3 /home/cph/experiment-parallel/e0-a/e1c-run-20260831T050028Z/mininet_e1c_auditd_bounded_smoke.py",
+  "terminal": {
+    "MININET_E1C_HARNESS_PREPARATION": "PASS",
+    "HUMAN_PRIVILEGED_RUN_REQUIRED": "YES",
+    "NEXT_ACTION": "HUMAN_RUN_EXACT_SUDO_COMMAND",
+    "STOP": true
+  }
+}

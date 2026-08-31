@@ -1,0 +1,87 @@
+{
+  "stage": "PROVX-R3",
+  "status": "FROZEN_METHODOLOGY_NOT_EXECUTED",
+  "formal_evaluation_set": {
+    "name": "FA1B2de",
+    "playbooks": 53,
+    "raw_actions": 1796,
+    "role": "final held-out test material",
+    "availability_at_r3": "not acquired and not executed"
+  },
+  "binding_exclusion": {
+    "excluded_from_detector_training": true,
+    "excluded_from_detector_tuning": true,
+    "excluded_from_mask_tuning": true,
+    "excluded_from_threshold_or_alpha_calibration": true,
+    "excluded_from_feature_selection": true,
+    "excluded_from_encoder_design": true,
+    "excluded_from_preprocessing_design": true,
+    "excluded_from_seed_selection": true,
+    "excluded_from_failure_retry_policy": true,
+    "rule": "No statistic, label, raw record, graph, action identity, or outcome from the 53 playbooks/1796 actions may influence a fitted parameter, feature/schema choice, calibration value, or primary seed before the one-time final evaluation."
+  },
+  "partitions": {
+    "track_o_sample_control": {
+      "source": "authenticated packaged Sample train/val/test partitions",
+      "purpose": "artifact-as-shipped reproduction only",
+      "formal_fa1b2de_use": false,
+      "live_encoder_use": false,
+      "checkpoint": "packaged 21-input GCN checkpoint only"
+    },
+    "track_l_detector_train": {
+      "purpose": "fit the new 32-input detector",
+      "allowed_sources": [
+        "separately authorized historical DARPA provenance partitions with train membership fixed before formal evaluation",
+        "separately authorized non-FA1B2de provenance corpora",
+        "synthetic or reserved Mininet traces declared as training data before the evaluation manifest is frozen"
+      ],
+      "forbidden_sources": ["FA1B2de 53 playbooks", "FA1B2de 1796 raw actions", "any labels or outcomes derived from them"],
+      "split_unit": "host/run/playbook boundary, never an individual event randomly split across partitions",
+      "fit_operations": ["encoder fitting only if a transform actually requires fitted statistics", "detector parameter optimization", "declared training-only negative sampling"],
+      "manifest_required": ["source IDs", "raw/graph hashes", "membership", "collection dates", "authorization", "encoder ID/hash", "label provenance"]
+    },
+    "track_l_calibration": {
+      "purpose": "freeze thresholds, alpha, K, solidification choices, and preprocessing acceptance criteria",
+      "allowed_sources": ["a separately reserved validation partition from approved non-formal data", "synthetic/reserved Mininet smoke traces if declared before freeze"],
+      "forbidden_sources": ["FA1B2de raws, labels, playbook IDs, or post-hoc formal outputs"],
+      "must_be_frozen_before_formal_eval": true,
+      "manifest_required": ["calibration source hashes", "candidate grid", "selection rule", "chosen values", "date/time freeze", "reviewer/authority"]
+    },
+    "track_l_final_fa1b2de_test": {
+      "purpose": "single final formal evaluation after all configuration is frozen",
+      "membership": "all 53 playbooks and 1796 raw actions",
+      "training_or_calibration_use": false,
+      "post_eval_feedback": "results may be reported but cannot alter the frozen run; any later iteration receives a new configuration identity and new held-out test plan",
+      "retry_policy": "no selective retries; infrastructure failure is logged and rerun only under the same frozen manifest with a new run ID"
+    },
+    "non_scored_smoke": {
+      "purpose": "adapter/schema/round-trip and safety validation",
+      "allowed_sources": ["synthetic events", "reserved Mininet traces not in FA1B2de"],
+      "formal_score_use": false,
+      "tuning_use": "only if membership and use as calibration/training data were declared before freeze; otherwise validation only",
+      "must_not_contain": ["formal playbook identity", "formal action labels", "formal outcomes"]
+    }
+  },
+  "leakage_controls": {
+    "group_disjointness": "Keep all events from a host/run/playbook group in exactly one partition.",
+    "temporal_rule": "Do not use future records from a run to construct training features for earlier records in another partition.",
+    "identifier_rule": "Do not encode playbook, action, or evaluation membership as a feature or ordering key.",
+    "normalization_rule": "Any fitted statistics must be computed on detector-train only; deterministic fixed constants in the adapted schema are not fitted.",
+    "label_rule": "Ground-truth labels are used only for the declared train/validation/test role and never as live sensor inputs.",
+    "negative_sampling_rule": "If needed, perform random negative sampling only within the approved training source using a predeclared seed and retain the sampling manifest; never resample formal test records."
+  },
+  "track_l_protocol": {
+    "feature_schema": "PROVX_R3_ADAPTED_LIVE_FEATURE_SCHEMA.json",
+    "input_dimension": 32,
+    "architecture": "same provenance-subgraph GNN family and Phase-II structure, with a newly trained input layer",
+    "checkpoint_lineage": "new checkpoint; no loading, padding, projection, or warm-start from the packaged 21-input checkpoint",
+    "formal_evaluation_prerequisites": ["approved train source", "approved calibration source", "frozen manifests", "non-scored adapter smoke validation", "checkpoint hash", "primary seed registration"]
+  },
+  "r3_execution_record": {
+    "training_executed": false,
+    "retraining_executed": false,
+    "formal_benchmark_executed": false,
+    "raw_fa1b2de_acquired": false,
+    "apt_actions_executed": false
+  }
+}

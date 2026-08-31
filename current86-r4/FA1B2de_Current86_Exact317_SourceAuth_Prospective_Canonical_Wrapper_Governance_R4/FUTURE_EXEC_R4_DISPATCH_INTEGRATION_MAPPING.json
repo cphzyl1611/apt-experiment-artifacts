@@ -1,0 +1,87 @@
+{
+  "common_input_freeze": {
+    "current_closure_candidate": "FA1B2de_Current86_Exact317_SourceAuth_Production_Authority_Inputs_R1/COMMON_INPUT_FREEZE_CANDIDATE.json",
+    "required_inputs": [
+      "exact317 manifest",
+      "wrapper input manifests",
+      "wrapper checkpoints",
+      "extractor identities",
+      "source-class/fact-type registry"
+    ],
+    "role": "SOURCE_AUTH_COMMON_INPUT_FREEZE_AND_RUNTIME_WHITELIST",
+    "status": "MUST_BE_AUTHENTICATED_LATER"
+  },
+  "current_exec_r4_dispatch": {
+    "package": "FA1B2de_Current86_Exact317_SourceAuth_Execution_Contract_R4",
+    "package_sha256sums_sha256": "06722fddd39d4d55a0cd1e4834bb63491112d13442aec1cc067219fb5bd232f6",
+    "production_authority_roots": "MISSING_AND_FAIL_CLOSED",
+    "synthetic_dispatch_only": true
+  },
+  "dispatch_entries": [
+    {
+      "authority_role": "DETERMINISTIC_CORPUS_SCHEMA_FIELD_PIN_RULE",
+      "evaluator_configuration_id": "FA1B2DE_MACHINE_AUTHORITY_EVALUATOR_CONFIG_R4",
+      "extractor_sha256": "55815bb2e783c41714d89de3d0d2a69f238d52ac154dbaefa17be6be73a9eaa0",
+      "rule_id": "R4_WRAPPER_RAW_LEGACY_26",
+      "schema_or_contract_id": "R4_WRAPPER_RAW_LEGACY_26_SCHEMA_V1",
+      "status": "PROSPECTIVE_REVIEW_REQUIRED; NOT_REGISTERED_IN_EXEC_R4",
+      "target_commitment_sha256": "3c9ed2c6df01720185ca07324a0de6b41978794426f86a6b2487297a999240a6"
+    },
+    {
+      "authority_role": "DETERMINISTIC_CORPUS_SCHEMA_FIELD_PIN_RULE",
+      "evaluator_configuration_id": "FA1B2DE_MACHINE_AUTHORITY_EVALUATOR_CONFIG_R4",
+      "extractor_sha256": "f6ca03b9db360e6124c199c7e5a4cfdcc7a19f5fb804d289738b1346e55c69d2",
+      "rule_id": "R4_WRAPPER_C0_60",
+      "schema_or_contract_id": "R4_WRAPPER_C0_60_SCHEMA_V1",
+      "status": "PROSPECTIVE_REVIEW_REQUIRED; NOT_REGISTERED_IN_EXEC_R4",
+      "target_commitment_sha256": "bbd7692ea3c0b146deb29d9f26c74ea2fe748056471dadc61fe0e748ca3bf6f4"
+    },
+    {
+      "authority_role": "DETERMINISTIC_CORPUS_SCHEMA_FIELD_PIN_RULE",
+      "evaluator_configuration_id": "FA1B2DE_MACHINE_AUTHORITY_EVALUATOR_CONFIG_R4",
+      "extractor_sha256": "c307d5d27cb0ed32d7bf9cc9d2ab00492b085f01d0365e326d204786439710ee",
+      "rule_id": "R4_WRAPPER_SCORING_231",
+      "schema_or_contract_id": "R4_WRAPPER_SCORING_231_SCHEMA_V1",
+      "status": "PROSPECTIVE_REVIEW_REQUIRED; NOT_REGISTERED_IN_EXEC_R4",
+      "target_commitment_sha256": "3baa14e28e18ba3ed7162f524cd70ac9619098ac05b4ebbf6b4b1ed8907d240f"
+    }
+  ],
+  "do_not_modify_exec_r4": true,
+  "field_pin_roots": {
+    "current_closure_candidate": "FA1B2de_Current86_Exact317_SourceAuth_Production_Authority_Inputs_R1/FIELD_PIN_AUTHORITY_ROOTS.json",
+    "pointer_selection_performed": false,
+    "role": "FIELD_PIN_REGISTRY_AND_POINTER_RULE_ROOTS",
+    "status": "MUST_REMAIN_BLOCKED_UNTIL_SOURCE_ADMISSION",
+    "target_level_units": 317
+  },
+  "future_integration_order": [
+    "common-input freeze",
+    "production source-admission root",
+    "wrapper rule dispatch",
+    "field-pin registry/pointer roots",
+    "independent verifier isolation",
+    "EXEC-R4 production dispatch review",
+    "future source-auth execution"
+  ],
+  "integration_constraints": [
+    "exact target set must equal Exact317 manifest",
+    "no cross-side substitution",
+    "no historical identity mutation",
+    "wrapper approval does not activate authority",
+    "field pins remain separate human-governed units",
+    "EXEC-R4 must be reviewed and patched separately if production registration is approved"
+  ],
+  "schema": "FA1B2DE_CURRENT86_FUTURE_EXEC_R4_DISPATCH_INTEGRATION_MAPPING_R4",
+  "source_admission_roots": {
+    "current_closure_candidate": "FA1B2de_Current86_Exact317_SourceAuth_Production_Authority_Inputs_R1/SOURCE_ADMISSION_AUTHORITY_ROOTS.json",
+    "role": "SOURCE_ADMISSION_REGISTRY_ROOT",
+    "rule_ids": [
+      "R4_WRAPPER_RAW_LEGACY_26",
+      "R4_WRAPPER_C0_60",
+      "R4_WRAPPER_SCORING_231"
+    ],
+    "status": "MUST_BE_CREATED_AND_REVIEWED_LATER",
+    "target_set_commitment_sha256": "280ec585bcb9c8a5cc555955aceeecc35bfbd2ea34f7d5eec05bb2377cb307d7"
+  },
+  "status": "PROSPECTIVE_NOT_REGISTERED"
+}

@@ -1,0 +1,412 @@
+{
+  "RESERVED_TEST_INTERFACES_REMAINING": 0,
+  "RESERVED_TEST_OVS_OBJECTS_REMAINING": null,
+  "RUN_OWNED_CHILDREN_REMAINING": 0,
+  "TCPDUMP_PROCESS_REMAINING": 0,
+  "apt_action_executed": false,
+  "apt_action_scope": "No APT action in the E1C harness or independent review; pinned auditd package was installed manually as the prerequisite.",
+  "audit_key": "e1c902f74f583",
+  "auditctl_post_rules_probe": {
+    "argv": [
+      "/usr/sbin/auditctl",
+      "-l"
+    ],
+    "returncode": 4,
+    "stderr": "You must be root to run this program.\n",
+    "stdout": ""
+  },
+  "auditctl_post_status_probe": {
+    "argv": [
+      "/usr/sbin/auditctl",
+      "-s"
+    ],
+    "returncode": 4,
+    "stderr": "You must be root to run this program.\n",
+    "stdout": ""
+  },
+  "automatic_sudo_invoked": false,
+  "baseline_restored": false,
+  "baseline_restored_status": "UNVERIFIED_PERMISSION_DENIED",
+  "baseline_rule_dump_sha256_after": null,
+  "baseline_rule_dump_sha256_before": "61501e69a61dbbc1a41605ea15c34807e6b1d3992bee195dde36a7ebdd95dd87",
+  "external_nat_attachment": false,
+  "external_nat_evidence": "Harness static audit and source contain no NAT/external-link operations",
+  "formal_experiment_executed": false,
+  "harness_result": {
+    "error": {
+      "message": "[Errno 2] No such file or directory: '/proc/575829/ns/net'",
+      "type": "FileNotFoundError"
+    },
+    "formal_experiment_executed": false,
+    "run_id": "e1c-run-20260831T050028Z",
+    "status": "FAILED"
+  },
+  "mn_dash_c_audit_scan_matches": [],
+  "mn_dash_c_executed": false,
+  "persistent_rules_files_edited": false,
+  "persistent_rules_post_probe": {
+    "files": {
+      "/etc/audit/audit.rules": {
+        "error": "PermissionError: [Errno 13] Permission denied: '/etc/audit/audit.rules'",
+        "pre_state": {
+          "present": true,
+          "sha256": "0944f975965910b2dcd78d74ddd94cadeab1646609fed3731e050aae3e193dc4",
+          "size_bytes": 107
+        },
+        "readable": false
+      },
+      "/etc/audit/auditd.conf": {
+        "error": "PermissionError: [Errno 13] Permission denied: '/etc/audit/auditd.conf'",
+        "pre_state": {
+          "present": true,
+          "sha256": "9a17001171e39899e535173ab9044923fb155c9c9afa2c8eb71eef2db757c883",
+          "size_bytes": 881
+        },
+        "readable": false
+      }
+    },
+    "rules_dir": {
+      "error": "PermissionError: [Errno 13] Permission denied: '/etc/audit/rules.d'",
+      "readable": false
+    },
+    "status": "UNVERIFIED_PERMISSION_DENIED"
+  },
+  "preexisting_ovs_daemons_excluded": [
+    {
+      "preexisting_daemon_excluded_from_run_owned_state": true,
+      "raw": "841 Sat Aug 29 10:05:34 2026 ovsdb-server    ovsdb-server /etc/openvswitch/conf.db -vconsole:emer -vsyslog:err -vfile:info --remote=punix:/var/run/openvswitch/db.sock --private-key=db:Open_vSwitch,SSL,private_key --certificate=db:Open_vSwitch,SSL,certificate --bootstrap-ca-cert=db:Open_vSwitch,SSL,ca_cert --no-chdir --log-file=/var/log/openvswitch/ovsdb-server.log --pidfile=/var/run/openvswitch/ovsdb-server.pid --detach"
+    },
+    {
+      "preexisting_daemon_excluded_from_run_owned_state": true,
+      "raw": "907 Sat Aug 29 10:05:34 2026 ovs-vswitchd    ovs-vswitchd unix:/var/run/openvswitch/db.sock -vconsole:emer -vsyslog:err -vfile:info --mlockall --no-chdir --log-file=/var/log/openvswitch/ovs-vswitchd.log --pidfile=/var/run/openvswitch/ovs-vswitchd.pid --detach"
+    }
+  ],
+  "provx_executed": false,
+  "reserved_ovs_queries": [
+    {
+      "argv": [
+        "/usr/bin/ovs-vsctl",
+        "--timeout=2",
+        "br-exists",
+        "s1"
+      ],
+      "label": "bridge:s1",
+      "result": {
+        "argv": [
+          "/usr/bin/ovs-vsctl",
+          "--timeout=2",
+          "br-exists",
+          "s1"
+        ],
+        "returncode": 1,
+        "stderr": "ovs-vsctl: unix:/var/run/openvswitch/db.sock: database connection failed (Permission denied)\n",
+        "stdout": ""
+      }
+    },
+    {
+      "argv": [
+        "/usr/bin/ovs-vsctl",
+        "--timeout=2",
+        "--data=bare",
+        "--no-heading",
+        "--columns=name",
+        "find",
+        "Interface",
+        "name=s1"
+      ],
+      "label": "interface:s1",
+      "result": {
+        "argv": [
+          "/usr/bin/ovs-vsctl",
+          "--timeout=2",
+          "--data=bare",
+          "--no-heading",
+          "--columns=name",
+          "find",
+          "Interface",
+          "name=s1"
+        ],
+        "returncode": 1,
+        "stderr": "ovs-vsctl: unix:/var/run/openvswitch/db.sock: database connection failed (Permission denied)\n",
+        "stdout": ""
+      }
+    },
+    {
+      "argv": [
+        "/usr/bin/ovs-vsctl",
+        "--timeout=2",
+        "--data=bare",
+        "--no-heading",
+        "--columns=name",
+        "find",
+        "Interface",
+        "name=s1-eth1"
+      ],
+      "label": "interface:s1-eth1",
+      "result": {
+        "argv": [
+          "/usr/bin/ovs-vsctl",
+          "--timeout=2",
+          "--data=bare",
+          "--no-heading",
+          "--columns=name",
+          "find",
+          "Interface",
+          "name=s1-eth1"
+        ],
+        "returncode": 1,
+        "stderr": "ovs-vsctl: unix:/var/run/openvswitch/db.sock: database connection failed (Permission denied)\n",
+        "stdout": ""
+      }
+    },
+    {
+      "argv": [
+        "/usr/bin/ovs-vsctl",
+        "--timeout=2",
+        "--data=bare",
+        "--no-heading",
+        "--columns=name",
+        "find",
+        "Interface",
+        "name=s1-eth2"
+      ],
+      "label": "interface:s1-eth2",
+      "result": {
+        "argv": [
+          "/usr/bin/ovs-vsctl",
+          "--timeout=2",
+          "--data=bare",
+          "--no-heading",
+          "--columns=name",
+          "find",
+          "Interface",
+          "name=s1-eth2"
+        ],
+        "returncode": 1,
+        "stderr": "ovs-vsctl: unix:/var/run/openvswitch/db.sock: database connection failed (Permission denied)\n",
+        "stdout": ""
+      }
+    },
+    {
+      "argv": [
+        "/usr/bin/ovs-vsctl",
+        "--timeout=2",
+        "--data=bare",
+        "--no-heading",
+        "--columns=name",
+        "find",
+        "Interface",
+        "name=h1-eth0"
+      ],
+      "label": "interface:h1-eth0",
+      "result": {
+        "argv": [
+          "/usr/bin/ovs-vsctl",
+          "--timeout=2",
+          "--data=bare",
+          "--no-heading",
+          "--columns=name",
+          "find",
+          "Interface",
+          "name=h1-eth0"
+        ],
+        "returncode": 1,
+        "stderr": "ovs-vsctl: unix:/var/run/openvswitch/db.sock: database connection failed (Permission denied)\n",
+        "stdout": ""
+      }
+    },
+    {
+      "argv": [
+        "/usr/bin/ovs-vsctl",
+        "--timeout=2",
+        "--data=bare",
+        "--no-heading",
+        "--columns=name",
+        "find",
+        "Interface",
+        "name=h2-eth0"
+      ],
+      "label": "interface:h2-eth0",
+      "result": {
+        "argv": [
+          "/usr/bin/ovs-vsctl",
+          "--timeout=2",
+          "--data=bare",
+          "--no-heading",
+          "--columns=name",
+          "find",
+          "Interface",
+          "name=h2-eth0"
+        ],
+        "returncode": 1,
+        "stderr": "ovs-vsctl: unix:/var/run/openvswitch/db.sock: database connection failed (Permission denied)\n",
+        "stdout": ""
+      }
+    },
+    {
+      "argv": [
+        "/usr/bin/ovs-vsctl",
+        "--timeout=2",
+        "--data=bare",
+        "--no-heading",
+        "--columns=name",
+        "find",
+        "Port",
+        "name=s1"
+      ],
+      "label": "port:s1",
+      "result": {
+        "argv": [
+          "/usr/bin/ovs-vsctl",
+          "--timeout=2",
+          "--data=bare",
+          "--no-heading",
+          "--columns=name",
+          "find",
+          "Port",
+          "name=s1"
+        ],
+        "returncode": 1,
+        "stderr": "ovs-vsctl: unix:/var/run/openvswitch/db.sock: database connection failed (Permission denied)\n",
+        "stdout": ""
+      }
+    },
+    {
+      "argv": [
+        "/usr/bin/ovs-vsctl",
+        "--timeout=2",
+        "--data=bare",
+        "--no-heading",
+        "--columns=name",
+        "find",
+        "Port",
+        "name=s1-eth1"
+      ],
+      "label": "port:s1-eth1",
+      "result": {
+        "argv": [
+          "/usr/bin/ovs-vsctl",
+          "--timeout=2",
+          "--data=bare",
+          "--no-heading",
+          "--columns=name",
+          "find",
+          "Port",
+          "name=s1-eth1"
+        ],
+        "returncode": 1,
+        "stderr": "ovs-vsctl: unix:/var/run/openvswitch/db.sock: database connection failed (Permission denied)\n",
+        "stdout": ""
+      }
+    },
+    {
+      "argv": [
+        "/usr/bin/ovs-vsctl",
+        "--timeout=2",
+        "--data=bare",
+        "--no-heading",
+        "--columns=name",
+        "find",
+        "Port",
+        "name=s1-eth2"
+      ],
+      "label": "port:s1-eth2",
+      "result": {
+        "argv": [
+          "/usr/bin/ovs-vsctl",
+          "--timeout=2",
+          "--data=bare",
+          "--no-heading",
+          "--columns=name",
+          "find",
+          "Port",
+          "name=s1-eth2"
+        ],
+        "returncode": 1,
+        "stderr": "ovs-vsctl: unix:/var/run/openvswitch/db.sock: database connection failed (Permission denied)\n",
+        "stdout": ""
+      }
+    },
+    {
+      "argv": [
+        "/usr/bin/ovs-vsctl",
+        "--timeout=2",
+        "--data=bare",
+        "--no-heading",
+        "--columns=name",
+        "find",
+        "Port",
+        "name=h1-eth0"
+      ],
+      "label": "port:h1-eth0",
+      "result": {
+        "argv": [
+          "/usr/bin/ovs-vsctl",
+          "--timeout=2",
+          "--data=bare",
+          "--no-heading",
+          "--columns=name",
+          "find",
+          "Port",
+          "name=h1-eth0"
+        ],
+        "returncode": 1,
+        "stderr": "ovs-vsctl: unix:/var/run/openvswitch/db.sock: database connection failed (Permission denied)\n",
+        "stdout": ""
+      }
+    },
+    {
+      "argv": [
+        "/usr/bin/ovs-vsctl",
+        "--timeout=2",
+        "--data=bare",
+        "--no-heading",
+        "--columns=name",
+        "find",
+        "Port",
+        "name=h2-eth0"
+      ],
+      "label": "port:h2-eth0",
+      "result": {
+        "argv": [
+          "/usr/bin/ovs-vsctl",
+          "--timeout=2",
+          "--data=bare",
+          "--no-heading",
+          "--columns=name",
+          "find",
+          "Port",
+          "name=h2-eth0"
+        ],
+        "returncode": 1,
+        "stderr": "ovs-vsctl: unix:/var/run/openvswitch/db.sock: database connection failed (Permission denied)\n",
+        "stdout": ""
+      }
+    }
+  ],
+  "reserved_test_interfaces_remaining_names": [],
+  "reserved_test_ovs_objects_remaining_status": "UNVERIFIED_PERMISSION_DENIED",
+  "reviewed_at_utc": "2026-08-31T05:44:42.134505+00:00",
+  "run_id": "e1c-run-20260831T050028Z",
+  "run_owned_child_residue_zero": true,
+  "run_owned_children_remaining_pids": [],
+  "run_rules_removed": false,
+  "run_rules_removed_status": "NOT_PROVEN_NO_DELETE_RULE_RECORDS",
+  "schema": "MININET_E1C_POST_CLEANUP_AUDIT_V2",
+  "tcpdump_probe": {
+    "count": 0,
+    "matching_process_lines": [],
+    "probe": {
+      "argv": [
+        "/bin/ps",
+        "-eo",
+        "pid=,comm=,args="
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "      1 systemd         /sbin/init auto noprompt splash\n      2 kthreadd        [kthreadd]\n      3 pool_workqueue_ [pool_workqueue_release]\n      4 kworker/R-rcu_g [kworker/R-rcu_g]\n      5 kworker/R-rcu_p [kworker/R-rcu_p]\n      6 kworker/R-slub_ [kworker/R-slub_]\n      7 kworker/R-netns [kworker/R-netns]\n     11 kworker/R-mm_pe [kworker/R-mm_pe]\n     12 rcu_tasks_kthre [rcu_tasks_kthread]\n     13 rcu_tasks_rude_ [rcu_tasks_rude_kthread]\n     14 rcu_tasks_trace [rcu_tasks_trace_kthread]\n     16 ksoftirqd/0     [ksoftirqd/0]\n     17 rcu_preempt     [rcu_preempt]\n     18 migration/0     [migration/0]\n     19 idle_inject/0   [idle_inject/0]\n     20 cpuhp/0         [cpuhp/0]\n     21 cpuhp/1         [cpuhp/1]\n     22 idle_inject/1   [idle_inject/1]\n     23 migration/1     [migration/1]\n     24 ksoftirqd/1     [ksoftirqd/1]\n     27 cpuhp/2         [cpuhp/2]\n     28 idle_inject/2   [idle_inject/2]\n     29 migration/2     [migration/2]\n     30 ksoftirqd/2     [ksoftirqd/2]\n     33 cpuhp/3         [cpuhp/3]\n     34 idle_inject/3   [idle_inject/3]\n     35 migration/3     [migration/3]\n     36 ksoftirqd/3     [ksoftirqd/3]\n     41 kdevtmpfs       [kdevtmpfs]\n     42 kworker/R-inet_ [kworker/R-inet_]\n     43 kauditd         [kauditd]\n     45 khungtaskd      [khungtaskd]\n     47 oom_reaper      [oom_reaper]\n     49 kworker/R-write [kworker/R-write]\n     50 kcompactd0      [kcompactd0]\n     51 ksmd            [ksmd]\n     52 khugepaged      [khugepaged]\n     53 kworker/R-kinte [kworker/R-kinte]\n     54 kworker/R-kbloc [kworker/R-kbloc]\n     55 kworker/R-blkcg [kworker/R-blkcg]\n     56 irq/9-acpi      [irq/9-acpi]\n     59 kworker/R-tpm_d [kworker/R-tpm_d]\n     60 kworker/R-ata_s [kworker/R-ata_s]\n     61 kworker/R-md    [kworker/R-md]\n     62 kworker/R-md_bi [kworker/R-md_bi]\n     63 kworker/R-edac- [kworker/R-edac-]\n     64 kworker/R-devfr [kworker/R-devfr]\n     65 watchdogd       [watchdogd]\n     67 kworker/R-quota [kworker/R-quota]\n     70 kswapd0         [kswapd0]\n     71 ecryptfs-kthrea [ecryptfs-kthread]\n     72 kworker/R-kthro [kworker/R-kthro]\n     73 irq/24-pciehp   [irq/24-pciehp]\n     74 irq/25-pciehp   [irq/25-pciehp]\n     75 irq/26-pciehp   [irq/26-pciehp]\n     76 irq/27-pciehp   [irq/27-pciehp]\n     77 irq/28-pciehp   [irq/28-pciehp]\n     78 irq/29-pciehp   [irq/29-pciehp]\n     79 irq/30-pciehp   [irq/30-pciehp]\n     80 irq/31-pciehp   [irq/31-pciehp]\n     81 irq/32-pciehp   [irq/32-pciehp]\n     82 irq/33-pciehp   [irq/33-pciehp]\n     83 irq/34-pciehp   [irq/34-pciehp]\n     84 irq/35-pciehp   [irq/35-pciehp]\n     85 irq/36-pciehp   [irq/36-pciehp]\n     86 irq/37-pciehp   [irq/37-pciehp]\n     87 irq/38-pciehp   [irq/38-pciehp]\n     88 irq/39-pciehp   [irq/39-pciehp]\n     89 irq/40-pciehp   [irq/40-pciehp]\n     90 irq/41-pciehp   [irq/41-pciehp]\n     91 irq/42-pciehp   [irq/42-pciehp]\n     92 irq/43-pciehp   [irq/43-pciehp]\n     93 irq/44-pciehp   [irq/44-pciehp]\n     94 irq/45-pciehp   [irq/45-pciehp]\n     95 irq/46-pciehp   [irq/46-pciehp]\n     96 irq/47-pciehp   [irq/47-pciehp]\n     97 irq/48-pciehp   [irq/48-pciehp]\n     98 irq/49-pciehp   [irq/49-pciehp]\n     99 irq/50-pciehp   [irq/50-pciehp]\n    100 irq/51-pciehp   [irq/51-pciehp]\n    101 irq/52-pciehp   [irq/52-pciehp]\n    102 irq/53-pciehp   [irq/53-pciehp]\n    103 irq/54-pciehp   [irq/54-pciehp]\n    104 irq/55-pciehp   [irq/55-pciehp]\n    105 kworker/R-acpi_ [kworker/R-acpi_]\n    107 scsi_eh_0       [scsi_eh_0]\n    108 kworker/R-scsi_ [kworker/R-scsi_]\n    109 scsi_eh_1       [scsi_eh_1]\n    110 kworker/R-scsi_ [kworker/R-scsi_]\n    114 kworker/R-mld   [kworker/R-mld]\n    115 kworker/R-ipv6_ [kworker/R-ipv6_]\n    124 kworker/R-kstrp [kworker/R-kstrp]\n    126 kworker/u259:0  [kworker/u259:0]\n    141 kworker/R-charg [kworker/R-charg]\n    193 kworker/R-mpt_p [kworker/R-mpt_p]\n    194 kworker/R-mpt/0 [kworker/R-mpt/0]\n    200 scsi_eh_2       [scsi_eh_2]\n    202 kworker/R-scsi_ [kworker/R-scsi_]\n    206 scsi_eh_3       [scsi_eh_3]\n    207 kworker/R-scsi_ [kworker/R-scsi_]\n    208 scsi_eh_4       [scsi_eh_4]\n    209 kworker/R-scsi_ [kworker/R-scsi_]\n    210 scsi_eh_5       [scsi_eh_5]\n    211 kworker/R-scsi_ [kworker/R-scsi_]\n    212 scsi_eh_6       [scsi_eh_6]\n    213 kworker/R-scsi_ [kworker/R-scsi_]\n    214 scsi_eh_7       [scsi_eh_7]\n    215 kworker/R-scsi_ [kworker/R-scsi_]\n    216 scsi_eh_8       [scsi_eh_8]\n    217 kworker/R-scsi_ [kworker/R-scsi_]\n    218 scsi_eh_9       [scsi_eh_9]\n    219 kworker/R-scsi_ [kworker/R-scsi_]\n    220 scsi_eh_10      [scsi_eh_10]\n    221 kworker/R-scsi_ [kworker/R-scsi_]\n    222 scsi_eh_11      [scsi_eh_11]\n    223 kworker/R-scsi_ [kworker/R-scsi_]\n    224 scsi_eh_12      [scsi_eh_12]\n    225 kworker/R-scsi_ [kworker/R-scsi_]\n    226 scsi_eh_13      [scsi_eh_13]\n    227 kworker/R-scsi_ [kworker/R-scsi_]\n    228 scsi_eh_14      [scsi_eh_14]\n    229 kworker/R-scsi_ [kworker/R-scsi_]\n    230 scsi_eh_15      [scsi_eh_15]\n    231 kworker/R-scsi_ [kworker/R-scsi_]\n    232 scsi_eh_16      [scsi_eh_16]\n    233 kworker/R-scsi_ [kworker/R-scsi_]\n    234 scsi_eh_17      [scsi_eh_17]\n    235 kworker/R-scsi_ [kworker/R-scsi_]\n    236 scsi_eh_18      [scsi_eh_18]\n    237 kworker/R-scsi_ [kworker/R-scsi_]\n    238 scsi_eh_19      [scsi_eh_19]\n    239 kworker/R-scsi_ [kworker/R-scsi_]\n    240 scsi_eh_20      [scsi_eh_20]\n    241 kworker/R-scsi_ [kworker/R-scsi_]\n    242 scsi_eh_21      [scsi_eh_21]\n    243 kworker/R-scsi_ [kworker/R-scsi_]\n    244 scsi_eh_22      [scsi_eh_22]\n    245 kworker/R-scsi_ [kworker/R-scsi_]\n    246 scsi_eh_23      [scsi_eh_23]\n    247 kworker/R-scsi_ [kworker/R-scsi_]\n    248 scsi_eh_24      [scsi_eh_24]\n    249 kworker/R-scsi_ [kworker/R-scsi_]\n    250 scsi_eh_25      [scsi_eh_25]\n    251 kworker/R-scsi_ [kworker/R-scsi_]\n    252 scsi_eh_26      [scsi_eh_26]\n    253 kworker/R-scsi_ [kworker/R-scsi_]\n    254 scsi_eh_27      [scsi_eh_27]\n    255 kworker/R-scsi_ [kworker/R-scsi_]\n    256 scsi_eh_28      [scsi_eh_28]\n    257 kworker/R-scsi_ [kworker/R-scsi_]\n    258 scsi_eh_29      [scsi_eh_29]\n    259 kworker/R-scsi_ [kworker/R-scsi_]\n    260 scsi_eh_30      [scsi_eh_30]\n    261 kworker/R-scsi_ [kworker/R-scsi_]\n    262 scsi_eh_31      [scsi_eh_31]\n    263 kworker/R-scsi_ [kworker/R-scsi_]\n    290 scsi_eh_32      [scsi_eh_32]\n    291 kworker/R-scsi_ [kworker/R-scsi_]\n    318 jbd2/sda3-8     [jbd2/sda3-8]\n    319 kworker/R-ext4- [kworker/R-ext4-]\n    359 systemd-journal /lib/systemd/systemd-journald\n    392 vmware-vmblock- vmware-vmblock-fuse /run/vmblock-fuse -o rw,subtype=vmware-vmblock,default_permissions,allow_other,dev,suid\n    396 irq/16-vmwgfx   [irq/16-vmwgfx]\n    397 kworker/R-ttm   [kworker/R-ttm]\n    562 irq/57-vmw_vmci [irq/57-vmw_vmci]\n    564 irq/58-vmw_vmci [irq/58-vmw_vmci]\n    565 irq/59-vmw_vmci [irq/59-vmw_vmci]\n    662 kworker/R-crypt [kworker/R-crypt]\n    683 systemd-oomd    /lib/systemd/systemd-oomd\n    704 systemd-resolve /lib/systemd/systemd-resolved\n    710 systemd-timesyn /lib/systemd/systemd-timesyncd\n    815 VGAuthService   /usr/bin/VGAuthService\n    818 vmtoolsd        /usr/bin/vmtoolsd\n    841 ovsdb-server    ovsdb-server /etc/openvswitch/conf.db -vconsole:emer -vsyslog:err -vfile:info --remote=punix:/var/run/openvswitch/db.sock --private-key=db:Open_vSwitch,SSL,private_key --certificate=db:Open_vSwitch,SSL,certificate --bootstrap-ca-cert=db:Open_vSwitch,SSL,ca_cert --no-chdir --log-file=/var/log/openvswitch/ovsdb-server.log --pidfile=/var/run/openvswitch/ovsdb-server.pid --detach\n    907 ovs-vswitchd    ovs-vswitchd unix:/var/run/openvswitch/db.sock -vconsole:emer -vsyslog:err -vfile:info --mlockall --no-chdir --log-file=/var/log/openvswitch/ovs-vswitchd.log --pidfile=/var/run/openvswitch/ovs-vswitchd.pid --detach\n    954 accounts-daemon /usr/libexec/accounts-daemon\n    955 acpid           /usr/sbin/acpid\n    958 avahi-daemon    avahi-daemon: running [UBU-MONITOR01.local]\n    959 cron            /usr/sbin/cron -f -P\n    961 dbus-daemon     @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only\n    965 NetworkManager  /usr/sbin/NetworkManager --no-daemon\n    973 irqbalance      /usr/sbin/irqbalance --foreground\n    976 networkd-dispat /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers\n    980 polkitd         /usr/libexec/polkitd --no-debug\n    981 power-profiles- /usr/libexec/power-profiles-daemon\n    984 rsyslogd        /usr/sbin/rsyslogd -n -iNONE\n    990 snapd           /snap/snapd/current/usr/lib/snapd/snapd\n    994 switcheroo-cont /usr/libexec/switcheroo-control\n   1000 systemd-logind  /lib/systemd/systemd-logind\n   1003 udisksd         /usr/libexec/udisks2/udisksd\n   1012 node            /usr/share/wazuh-dashboard/node/bin/node --no-warnings --max-http-header-size=65536 --unhandled-rejections=warn /usr/share/wazuh-dashboard/src/cli/dist\n   1016 wpa_supplicant  /sbin/wpa_supplicant -u -s -O /run/wpa_supplicant\n   1033 avahi-daemon    avahi-daemon: chroot helper\n   1057 ModemManager    /usr/sbin/ModemManager\n   1102 unattended-upgr /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal\n   1104 sshd            sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups\n   1114 gdm3            /usr/sbin/gdm3\n   1182 filebeat        /usr/share/filebeat/bin/filebeat --environment systemd -c /etc/filebeat/filebeat.yml --path.home /usr/share/filebeat --path.config /etc/filebeat --path.data /var/lib/filebeat --path.logs /var/log/filebeat\n   1189 java            /usr/share/wazuh-indexer/jdk/bin/java -Xshare:auto -Dopensearch.networkaddress.cache.ttl=60 -Dopensearch.networkaddress.cache.negative.ttl=10 -XX:+AlwaysPreTouch -Xss1m -Djava.awt.headless=true -Dfile.encoding=UTF-8 -Djna.nosys=true -XX:-OmitStackTraceInFastThrow -XX:+ShowCodeDetailsInExceptionMessages -Dio.netty.noUnsafe=true -Dio.netty.noKeySetOptimization=true -Dio.netty.recycler.maxCapacityPerThread=0 -Dio.netty.allocator.numDirectArenas=0 -Dlog4j.shutdownHookEnabled=false -Dlog4j2.disable.jmx=true -Djava.security.manager=allow -Djava.locale.providers=SPI,COMPAT -Xms1024m -Xmx1024m -XX:+UseG1GC -XX:G1ReservePercent=25 -XX:InitiatingHeapOccupancyPercent=30 -Djava.io.tmpdir=/tmp/opensearch-5200924368550124937 -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/var/lib/wazuh-indexer -XX:ErrorFile=/var/log/wazuh-indexer/hs_err_pid%p.log -Xlog:gc*,gc+age=trace,safepoint:file=/var/log/wazuh-indexer/gc.log:utctime,pid,tags:filecount=32,filesize=64m -Djava.security.manager=allow --add-modules=jdk.incubator.vector -Djava.util.concurrent.ForkJoinPool.common.threadFactory=org.opensearch.secure_sm.SecuredForkJoinWorkerThreadFactory -Dclk.tck=100 -Djdk.attach.allowAttachSelf=true -Djava.security.policy=file:///etc/wazuh-indexer/opensearch-performance-analyzer/opensearch_security.policy --add-opens=jdk.attach/sun.tools.attach=ALL-UNNAMED -XX:MaxDirectMemorySize=536870912 -Dopensearch.path.home=/usr/share/wazuh-indexer -Dopensearch.path.conf=/etc/wazuh-indexer -Dopensearch.distribution.type=deb -Dopensearch.bundled_jdk=true -cp /usr/share/wazuh-indexer/lib/* org.opensearch.bootstrap.OpenSearch -p /run/wazuh-indexer/wazuh-indexer.pid --quiet\n   1245 kerneloops      /usr/sbin/kerneloops --test\n   1267 kerneloops      /usr/sbin/kerneloops\n   1306 rtkit-daemon    /usr/libexec/rtkit-daemon\n   1577 upowerd         /usr/libexec/upowerd\n   1595 packagekitd     /usr/libexec/packagekitd\n   1789 colord          /usr/libexec/colord\n   1913 python3         /var/ossec/framework/python/bin/python3 /var/ossec/api/scripts/wazuh_apid.py\n   1914 python3         /var/ossec/framework/python/bin/python3 /var/ossec/api/scripts/wazuh_apid.py\n   1915 python3         /var/ossec/framework/python/bin/python3 /var/ossec/api/scripts/wazuh_apid.py\n   1918 python3         /var/ossec/framework/python/bin/python3 /var/ossec/api/scripts/wazuh_apid.py\n   1921 python3         /var/ossec/framework/python/bin/python3 /var/ossec/api/scripts/wazuh_apid.py\n   1978 wazuh-authd     /var/ossec/bin/wazuh-authd\n   1996 wazuh-db        /var/ossec/bin/wazuh-db\n   2037 wazuh-execd     /var/ossec/bin/wazuh-execd\n   2051 wazuh-analysisd /var/ossec/bin/wazuh-analysisd\n   2111 wazuh-syscheckd /var/ossec/bin/wazuh-syscheckd\n   2132 wazuh-remoted   /var/ossec/bin/wazuh-remoted\n   2170 wazuh-logcollec /var/ossec/bin/wazuh-logcollector\n   2190 wazuh-monitord  /var/ossec/bin/wazuh-monitord\n   2215 wazuh-modulesd  /var/ossec/bin/wazuh-modulesd\n   4292 gdm-session-wor gdm-session-worker [pam/gdm-password]\n   4395 systemd         /lib/systemd/systemd --user\n   4396 (sd-pam)        (sd-pam)\n   4404 pipewire        /usr/bin/pipewire\n   4405 pipewire-media- /usr/bin/pipewire-media-session\n   4406 pulseaudio      /usr/bin/pulseaudio --daemonize=no --log-target=journal\n   4415 gnome-keyring-d /usr/bin/gnome-keyring-daemon --daemonize --login\n   4438 dbus-daemon     /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only\n   4439 xdg-document-po /usr/libexec/xdg-document-portal\n   4442 xdg-permission- /usr/libexec/xdg-permission-store\n   4449 fusermount3     fusermount3 -o rw,nosuid,nodev,fsname=portal,auto_unmount,subtype=portal -- /run/user/1000/doc\n   4475 gdm-x-session   /usr/libexec/gdm-x-session --run-script env GNOME_SHELL_SESSION_MODE=ubuntu /usr/bin/gnome-session --session=ubuntu\n   4477 Xorg            /usr/lib/xorg/Xorg vt2 -displayfd 3 -auth /run/user/1000/gdm/Xauthority -nolisten tcp -background none -noreset -keeptty -novtswitch -verbose 3\n   4545 gnome-session-b /usr/libexec/gnome-session-binary --session=ubuntu\n   4628 at-spi-bus-laun /usr/libexec/at-spi-bus-launcher\n   4634 dbus-daemon     /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 11 --address=unix:path=/run/user/1000/at-spi/bus_0\n   4650 gnome-session-c /usr/libexec/gnome-session-ctl --monitor\n   4661 gvfsd           /usr/libexec/gvfsd\n   4668 gvfsd-fuse      /usr/libexec/gvfsd-fuse /run/user/1000/gvfs -f\n   4670 gnome-session-b /usr/libexec/gnome-session-binary --systemd-service --session=ubuntu\n   4699 gnome-shell     /usr/bin/gnome-shell\n   4736 gnome-shell-cal /usr/libexec/gnome-shell-calendar-server\n   4746 evolution-sourc /usr/libexec/evolution-source-registry\n   4754 goa-daemon      /usr/libexec/goa-daemon\n   4755 dconf-service   /usr/libexec/dconf-service\n   4760 evolution-calen /usr/libexec/evolution-calendar-factory\n   4761 gvfs-udisks2-vo /usr/libexec/gvfs-udisks2-volume-monitor\n   4770 gvfs-goa-volume /usr/libexec/gvfs-goa-volume-monitor\n   4781 goa-identity-se /usr/libexec/goa-identity-service\n   4787 gvfs-gphoto2-vo /usr/libexec/gvfs-gphoto2-volume-monitor\n   4795 evolution-addre /usr/libexec/evolution-addressbook-factory\n   4800 gvfs-afc-volume /usr/libexec/gvfs-afc-volume-monitor\n   4810 gvfs-mtp-volume /usr/libexec/gvfs-mtp-volume-monitor\n   4826 gvfsd-trash     /usr/libexec/gvfsd-trash --spawner :1.21 /org/gtk/gvfs/exec_spaw/0\n   4837 gjs             /usr/bin/gjs /usr/share/gnome-shell/org.gnome.Shell.Notifications\n   4840 at-spi2-registr /usr/libexec/at-spi2-registryd --use-gnome-session\n   4857 sh              sh -c /usr/bin/ibus-daemon --panel disable $([ \"$XDG_SESSION_TYPE\" = \"x11\" ] && echo \"--xim\")\n   4859 gsd-a11y-settin /usr/libexec/gsd-a11y-settings\n   4865 gsd-color       /usr/libexec/gsd-color\n   4869 gsd-datetime    /usr/libexec/gsd-datetime\n   4872 ibus-daemon     /usr/bin/ibus-daemon --panel disable --xim\n   4876 gsd-housekeepin /usr/libexec/gsd-housekeeping\n   4877 gsd-keyboard    /usr/libexec/gsd-keyboard\n   4878 gsd-media-keys  /usr/libexec/gsd-media-keys\n   4890 gsd-power       /usr/libexec/gsd-power\n   4892 gsd-print-notif /usr/libexec/gsd-print-notifications\n   4897 gsd-rfkill      /usr/libexec/gsd-rfkill\n   4901 gsd-screensaver /usr/libexec/gsd-screensaver-proxy\n   4903 ibus-memconf    /usr/libexec/ibus-memconf\n   4908 ibus-extension- /usr/libexec/ibus-extension-gtk3\n   4909 gsd-sharing     /usr/libexec/gsd-sharing\n   4915 gsd-smartcard   /usr/libexec/gsd-smartcard\n   4927 gsd-sound       /usr/libexec/gsd-sound\n   4932 gsd-wacom       /usr/libexec/gsd-wacom\n   4933 gsd-disk-utilit /usr/libexec/gsd-disk-utility-notify\n   4937 gsd-xsettings   /usr/libexec/gsd-xsettings\n   4939 ibus-x11        /usr/libexec/ibus-x11 --kill-daemon\n   4940 vmtoolsd        /usr/bin/vmtoolsd -n vmusr --blockFd 3\n   4946 ibus-portal     /usr/libexec/ibus-portal\n   4952 evolution-alarm /usr/libexec/evolution-data-server/evolution-alarm-notify\n   4967 xdg-desktop-por /usr/libexec/xdg-desktop-portal\n   5016 xdg-desktop-por /usr/libexec/xdg-desktop-portal-gnome\n   5024 gsd-printer     /usr/libexec/gsd-printer\n   5054 snap-store      /snap/snap-store/1216/usr/bin/snap-store --gapplication-service\n   5071 ibus-engine-sim /usr/libexec/ibus-engine-simple\n   5104 gjs             /usr/bin/gjs /usr/share/gnome-shell/org.gnome.ScreenSaver\n   5121 gvfsd-metadata  /usr/libexec/gvfsd-metadata\n   5128 tracker-miner-f /usr/libexec/tracker-miner-fs-3\n   5234 xdg-desktop-por /usr/libexec/xdg-desktop-portal-gtk\n   5280 gjs             gjs /usr/share/gnome-shell/extensions/ding@rastersoft.com/ding.js -E -P /usr/share/gnome-shell/extensions/ding@rastersoft.com -M 0 -D 0:0:1676:966:1:27:0:70:0:0\n   5513 user-session-he /snap/snapd-desktop-integration/391/usr/bin/user-session-helper /snap/snapd-desktop-integration/391/usr/bin/snapd-desktop-integration\n   5615 snapd-desktop-i /snap/snapd-desktop-integration/391/usr/bin/snapd-desktop-integration\n   6659 nautilus        /usr/bin/nautilus --gapplication-service\n   7684 update-notifier update-notifier\n  13911 gvfsd-network   /usr/libexec/gvfsd-network --spawner :1.21 /org/gtk/gvfs/exec_spaw/1\n  13935 gvfsd-recent    /usr/libexec/gvfsd-recent --spawner :1.21 /org/gtk/gvfs/exec_spaw/3\n  13970 gvfsd-dnssd     /usr/libexec/gvfsd-dnssd --spawner :1.21 /org/gtk/gvfs/exec_spaw/4\n  21883 cc-switch       cc-switch\n  21896 WebKitNetworkPr /usr/lib/x86_64-linux-gnu/webkit2gtk-4.1/WebKitNetworkProcess 1 18 20\n  21903 WebKitWebProces /usr/lib/x86_64-linux-gnu/webkit2gtk-4.1/WebKitWebProcess 4 24 27\n 339260 systemd-udevd   /lib/systemd/systemd-udevd\n 504887 kworker/u256:2- [kworker/u256:2-ext4-rsv-conversion]\n 515245 gnome-terminal- /usr/libexec/gnome-terminal-server\n 515267 bash            bash\n 523096 node            node /home/cph/.nvm/versions/node/v22.23.1/bin/codex --yolo\n 523103 codex           /home/cph/.nvm/versions/node/v22.23.1/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex --yolo\n 523388 codex-code-mode /home/cph/.nvm/versions/node/v22.23.1/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex-code-mode-host\n 531279 file-roller     file-roller /home/cph/FA1B2de_four_parallel_prompts.zip\n 531361 bash            bash\n 531920 node            node /home/cph/.nvm/versions/node/v22.23.1/bin/codex --yolo\n 531927 codex           /home/cph/.nvm/versions/node/v22.23.1/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex --yolo\n 532666 codex-code-mode /home/cph/.nvm/versions/node/v22.23.1/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex-code-mode-host\n 536474 bash            bash\n 548769 bash            bash\n 549878 kworker/3:0H-kb [kworker/3:0H-kblockd]\n 555332 kworker/u256:1- [kworker/u256:1-ext4-rsv-conversion]\n 559103 code            /usr/share/code/code\n 559108 code            /usr/share/code/code --type=zygote --no-zygote-sandbox\n 559109 code            /usr/share/code/code --type=zygote\n 559111 code            /usr/share/code/code --type=zygote\n 559138 chrome_crashpad /usr/share/code/chrome_crashpad_handler --monitor-self-annotation=ptype=crashpad-handler --no-rate-limit --database=/home/cph/.config/Code/Crashpad --url=appcenter://code?aid=fba07a4d-84bd-4fc8-a125-9640fc8ce171&uid=ad7f3bb7-d56d-4c53-980b-69d9ce569036&iid=ad7f3bb7-d56d-4c53-980b-69d9ce569036&sid=ad7f3bb7-d56d-4c53-980b-69d9ce569036 --annotation=_companyName=Microsoft --annotation=_productName=VSCode --annotation=_version=1.129.1 --annotation=lsb-release=Ubuntu 22.04.5 LTS --annotation=plat=Linux --annotation=prod=Electron --annotation=ver=42.6.0 --initial-client-fd=49 --shared-client-connection\n 559157 code            /usr/share/code/code --type=gpu-process --ozone-platform=x11 --crashpad-handler-pid=559138 --enable-crash-reporter=c8e793c4-5d2d-4117-bd92-443989656633,no_channel --user-data-dir=/home/cph/.config/Code --gpu-preferences=UAAAAAAAAAAgAQAEAAAAAAAAAAAAAGAAAQAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAYAAAAAAAAABgAAAAAAAAAAQAAAAAAAAAIAAAAAAAAAAgAAAAAAAAA --shared-files --field-trial-handle=3,i,6352598575844597007,2398005554219249412,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,GlobalShortcutsPortal,PdfUseShowSaveFilePicker --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=7,i,14835443687995856888,15507762924557029854,4 --trace-process-track-uuid=3190708988185955192\n 559160 code            /usr/share/code/code --type=utility --utility-sub-type=network.mojom.NetworkService --lang=zh-CN --service-sandbox-type=none --crashpad-handler-pid=559138 --enable-crash-reporter=c8e793c4-5d2d-4117-bd92-443989656633,no_channel --user-data-dir=/home/cph/.config/Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,6352598575844597007,2398005554219249412,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,GlobalShortcutsPortal,PdfUseShowSaveFilePicker --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=7,i,14835443687995856888,15507762924557029854,4 --trace-process-track-uuid=3190708989122997041\n 559177 code            /usr/share/code/code --type=renderer --crashpad-handler-pid=559138 --enable-crash-reporter=c8e793c4-5d2d-4117-bd92-443989656633,no_channel --user-data-dir=/home/cph/.config/Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --app-path=/usr/share/code/resources/app --enable-sandbox --enable-blink-features=HighlightAPI --max-active-webgl-contexts=32 --ozone-platform=x11 --disable-blink-features=FontMatchingCTMigration,StandardizedBrowserZoom, --lang=zh-CN --num-raster-threads=2 --enable-main-frame-before-activation --renderer-client-id=4 --time-ticks-at-unix-epoch=-1788012310112900 --launch-time-ticks=129203500355 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,6352598575844597007,2398005554219249412,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,GlobalShortcutsPortal,PdfUseShowSaveFilePicker --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=7,i,14835443687995856888,15507762924557029854,4 --trace-process-track-uuid=3190708990060038890 --vscode-window-config=vscode:0a42bf65-a736-4665-945e-b14df356ae4c\n 559197 code            /usr/share/code/code --type=broker\n 559214 code            /usr/share/code/code --type=utility --utility-sub-type=node.mojom.NodeService --lang=zh-CN --service-sandbox-type=none --crashpad-handler-pid=559138 --enable-crash-reporter=c8e793c4-5d2d-4117-bd92-443989656633,no_channel --user-data-dir=/home/cph/.config/Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,6352598575844597007,2398005554219249412,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,GlobalShortcutsPortal,PdfUseShowSaveFilePicker --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=7,i,14835443687995856888,15507762924557029854,4 --trace-process-track-uuid=3190708990997080739\n 559215 code            /usr/share/code/code --type=utility --utility-sub-type=node.mojom.NodeService --lang=zh-CN --service-sandbox-type=none --crashpad-handler-pid=559138 --enable-crash-reporter=c8e793c4-5d2d-4117-bd92-443989656633,no_channel --user-data-dir=/home/cph/.config/Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,6352598575844597007,2398005554219249412,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,GlobalShortcutsPortal,PdfUseShowSaveFilePicker --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=7,i,14835443687995856888,15507762924557029854,4 --trace-process-track-uuid=3190708991934122588\n 559475 code            /usr/share/code/code --type=utility --utility-sub-type=node.mojom.NodeService --lang=zh-CN --service-sandbox-type=none --dns-result-order=ipv4first --experimental-network-inspection --inspect-port=0 --crashpad-handler-pid=559138 --enable-crash-reporter=c8e793c4-5d2d-4117-bd92-443989656633,no_channel --user-data-dir=/home/cph/.config/Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,6352598575844597007,2398005554219249412,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,GlobalShortcutsPortal,PdfUseShowSaveFilePicker --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=7,i,14835443687995856888,15507762924557029854,4 --trace-process-track-uuid=3190708992871164437\n 561355 bash            bash\n 563337 kworker/2:2H-kb [kworker/2:2H-kblockd]\n 563388 node            node /home/cph/.nvm/versions/node/v22.23.1/bin/codex --yolo\n 563395 codex           /home/cph/.nvm/versions/node/v22.23.1/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex --yolo\n 563963 codex-code-mode /home/cph/.nvm/versions/node/v22.23.1/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex-code-mode-host\n 564069 kworker/1:0H    [kworker/1:0H]\n 565431 kworker/3:3-rcu [kworker/3:3-rcu_par_gp]\n 567201 code            /usr/share/code/code --type=renderer --crashpad-handler-pid=559138 --enable-crash-reporter=c8e793c4-5d2d-4117-bd92-443989656633,no_channel --user-data-dir=/home/cph/.config/Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --app-path=/usr/share/code/resources/app --enable-sandbox --enable-blink-features=HighlightAPI --max-active-webgl-contexts=32 --ozone-platform=x11 --disable-gpu-compositing --disable-blink-features=FontMatchingCTMigration,StandardizedBrowserZoom, --lang=zh-CN --num-raster-threads=2 --enable-main-frame-before-activation --renderer-client-id=12 --time-ticks-at-unix-epoch=-1788012310112900 --launch-time-ticks=130412368989 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,6352598575844597007,2398005554219249412,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,GlobalShortcutsPortal,PdfUseShowSaveFilePicker --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=7,i,14835443687995856888,15507762924557029854,4 --trace-process-track-uuid=3190708997556373682 --vscode-window-config=vscode:0a42bf65-a736-4665-945e-b14df356ae4c\n 567262 code            /usr/share/code/code --type=renderer --crashpad-handler-pid=559138 --enable-crash-reporter=c8e793c4-5d2d-4117-bd92-443989656633,no_channel --user-data-dir=/home/cph/.config/Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --app-path=/usr/share/code/resources/app --enable-sandbox --enable-blink-features=HighlightAPI --max-active-webgl-contexts=32 --ozone-platform=x11 --disable-gpu-compositing --disable-blink-features=FontMatchingCTMigration,StandardizedBrowserZoom, --lang=zh-CN --num-raster-threads=2 --enable-main-frame-before-activation --renderer-client-id=14 --time-ticks-at-unix-epoch=-1788012310112900 --launch-time-ticks=130425773641 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,6352598575844597007,2398005554219249412,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,GlobalShortcutsPortal,PdfUseShowSaveFilePicker --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=7,i,14835443687995856888,15507762924557029854,4 --trace-process-track-uuid=3190708999430457380 --vscode-window-config=vscode:0a42bf65-a736-4665-945e-b14df356ae4c\n 568351 kworker/u261:3- [kworker/u261:3-ttm]\n 570126 kworker/u261:0- [kworker/u261:0-ttm]\n 570138 kworker/u260:2- [kworker/u260:2-ttm]\n 570141 kworker/u260:6- [kworker/u260:6-ttm]\n 571918 kworker/1:0-eve [kworker/1:0-events]\n 572330 kworker/0:0-ine [kworker/0:0-inet_frag_wq]\n 572437 kworker/u258:1- [kworker/u258:1-flush-8:0]\n 572482 cupsd           /usr/sbin/cupsd -l\n 572484 cups-browsed    /usr/sbin/cups-browsed\n 572834 kworker/u257:1- [kworker/u257:1-iou_exit]\n 572959 kworker/u258:4- [kworker/u258:4-events_unbound]\n 573175 kworker/2:0-rcu [kworker/2:0-rcu_par_gp]\n 573176 auditd          /sbin/auditd\n 575575 kworker/u257:4- [kworker/u257:4-iou_exit]\n 575606 kworker/u258:3- [kworker/u258:3-flush-8:0]\n 575719 kworker/0:2-eve [kworker/0:2-events]\n 575720 kworker/1:2-ine [kworker/1:2-inet_frag_wq]\n 575728 kworker/2:2-eve [kworker/2:2-events]\n 575729 kworker/3:1-eve [kworker/3:1-events]\n 575785 audit_prune_tre [audit_prune_tree]\n 575859 node            node /home/cph/.nvm/versions/node/v22.23.1/bin/codex --yolo\n 575866 codex           /home/cph/.nvm/versions/node/v22.23.1/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex --yolo\n 576315 codex-code-mode /home/cph/.nvm/versions/node/v22.23.1/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex-code-mode-host\n 576618 kworker/u258:5- [kworker/u258:5-events_power_efficient]\n 576792 kworker/0:1H-kb [kworker/0:1H-kblockd]\n 576825 kworker/1:2H-kb [kworker/1:2H-kblockd]\n 576826 kworker/2:0H    [kworker/2:0H]\n 576827 kworker/3:1H    [kworker/3:1H]\n 577776 kworker/u257:2- [kworker/u257:2-flush-8:0]\n 578047 kworker/0:0H    [kworker/0:0H]\n 578315 kworker/u258:0- [kworker/u258:0-events_power_efficient]\n 578321 kworker/u257:0- [kworker/u257:0-events_unbound]\n 578322 kworker/u257:3  [kworker/u257:3]\n 578712 bash            /bin/bash -c python3 e1c-run-20260831T050028Z/recover_e1c_evidence.py && python3 -m py_compile e1c-run-20260831T050028Z/recover_e1c_evidence.py && python3 - <<'PY' import base64,hashlib,json,re,sys from pathlib import Path rd=Path('e1c-run-20260831T050028Z') load=lambda n: json.loads((rd/n).read_text()) rows=lambda n:[json.loads(x) for x in (rd/n).read_text().splitlines() if x.strip()] raw=rows('MININET_E1C_RAW_AUDIT_EVIDENCE.jsonl'); norm=rows('MININET_E1C_NORMALIZED_EVENTS.jsonl'); joins=rows('MININET_E1C_PID_NETNS_JOIN.jsonl') pre=load('MININET_E1C_AUDIT_PRE_STATE.json'); cov=load('MININET_E1C_COVERAGE_AND_LOSS_AUDIT.json'); post=load('MININET_E1C_POST_CLEANUP_AUDIT.json'); contract=load('MININET_E1C_TRANSIENT_RULE_CONTRACT.json'); oracle=load('MININET_E1C_STRACE_ORACLE_COMPARISON.json'); result=load('MININET_E1C_PRIVILEGED_RUN_RESULT.json') rawmap={r['serial']:r for r in raw}; expected={'PROCESS_START_OR_EXEC':6,'PROCESS_EXIT':4,'FILE_CREATE_OR_OPEN':6,'FILE_READ_OR_WRITE':0,'FILE_DELETE':2,'SOCKET_BIND':2,'SOCKET_CONNECT':2,'SOCKET_ACCEPT':0} checks=[  ('required_artifacts', all((rd/n).exists() and (rd/n).stat().st_size>0 for n in ['MININET_E1C_AUDIT_PRE_STATE.json','MININET_E1C_TRANSIENT_RULE_CONTRACT.json','MININET_E1C_RAW_AUDIT_EVIDENCE.jsonl','MININET_E1C_NORMALIZED_EVENTS.jsonl','MININET_E1C_PID_NETNS_JOIN.jsonl','MININET_E1C_STRACE_ORACLE_COMPARISON.json','MININET_E1C_COVERAGE_AND_LOSS_AUDIT.json','MININET_E1C_POST_CLEANUP_AUDIT.json','MININET_E1C_AUDITD_SMOKE_REPORT.md'])),  ('namespace_assertions_explicit_unvalidated', cov['namespace_assertions']['pass'] is False and all(v is None for v in cov['namespace_assertions']['checks'].values())),  ('pinned_version_and_baseline', pre['independent_review']['installed_auditd_package']=='auditd=1:3.0.7-1build1' and pre['baseline_rule_dump_sha256']=='61501e69a61dbbc1a41605ea15c34807e6b1d3992bee195dde36a7ebdd95dd87'),  ('raw_42_hashed', len(raw)==42 and len(rawmap)==42 and all(hashlib.sha256(base64.b64decode(r['raw_bytes_b64'])).hexdigest()==r['raw_sha256'] for r in raw)),  ('normalized_counts', cov['normalized_event_count']==22 and cov['normalized_class_counts']==expected),  ('raw_links', cov['normalized_raw_links_valid'] and all(e['raw_serial'] in rawmap and e['raw_event_sha256']==rawmap[e['raw_serial']]['raw_sha256'] for e in norm)),  ('joins_counted', len(joins)==4 and cov['pid_netns_join_success_count']==0 and cov['pid_netns_join_failure_count']==4),  ('missing_classes_explicit', set(cov['missing_required_classes'])=={'FILE_READ_OR_WRITE','SOCKET_ACCEPT'} and 'pread64' in cov['file_read_write_rule_limitation'] and 'exit=-115' in cov['socket_accept_limitation']),  ('loss_backlog_recorded', cov['audit_lost_events']==0 and cov['audit_backlog']==0 and cov['audit_status_post_run'] is None),  ('rules_cleanup_not_claimed', contract['status']=='ACTIVE' and contract['independent_review']['successful_add_rule_records']==20 and contract['independent_review']['audit_log_delete_rule_serials']==[] and post['run_rules_removed'] is False and post['baseline_restored'] is False),  ('cleanup_conservative', post['RUN_OWNED_CHILDREN_REMAINING']==0 and post['RESERVED_TEST_INTERFACES_REMAINING']==0 and post['TCPDUMP_PROCESS_REMAINING']==0 and post['RESERVED_TEST_OVS_OBJECTS_REMAINING'] is None),  ('same_port_only', cov['same_tcp_port']['h1_bind_observed'] and cov['same_tcp_port']['h2_bind_observed'] and not cov['same_tcp_port']['both_hosts_successfully_exchanged']),  ('boundaries', post['mn_dash_c_executed'] is False and post['external_nat_attachment'] is False and not post['apt_action_executed'] and not post['provx_executed'] and not post['formal_experiment_executed']),  ('strace_not_inference', oracle['status']=='NOT_RUN' and oracle['missing_classes_inferred_from_strace'] is False),  ('failed_result', result['status']=='FAILED' and result['formal_experiment_executed'] is False),  ('classification', cov['classification']=='BLOCKED'), ] for name,ok in checks: print(name+': '+('PASS' if ok else 'FAIL')) print('overall: '+('PASS' if all(ok for _,ok in checks) else 'FAIL')) if not all(ok for _,ok in checks): sys.exit(1) PY\n 578713 python3         python3 e1c-run-20260831T050028Z/recover_e1c_evidence.py\n 578739 ps              /bin/ps -eo pid=,comm=,args=\n"
+    }
+  },
+  "topology_residue_status": "UNVERIFIED_OVS_PERMISSION",
+  "topology_residue_zero": false
+}

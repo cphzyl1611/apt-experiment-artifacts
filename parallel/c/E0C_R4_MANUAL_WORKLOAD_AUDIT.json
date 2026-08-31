@@ -1,0 +1,29 @@
+{
+  "binding_authority_mutation": "NO",
+  "blocked_need_more_source_detail": 31,
+  "classification_counts": {
+    "BLOCKED_NEED_MORE_SOURCE_DETAIL": 31,
+    "CANDIDATE_FOR_SHARED_HUMAN_TEMPLATE": 494,
+    "RAW_SPECIFIC_HUMAN_DESIGN_REQUIRED": 64
+  },
+  "classification_missing": 0,
+  "classification_overlap": 0,
+  "classification_sum": 589,
+  "denominator_change": "NO",
+  "exact_manual_raw_count": 589,
+  "formal_experiment_executed": "NO",
+  "human_decisions_created": 0,
+  "manual_set_conservation": "PASS",
+  "next_action": "FRESH_REVIEW_OF_E0C_R4_MANUAL_DESIGN_COMPRESSION",
+  "provx_observability_claim": "NONE; design-only packet, all PROVX phase fields remain UNKNOWN",
+  "r1_audit_sha256": "ea90c4fcf2ce98ea9c93e48b44329ca528f66f32d8364111959f5d54a396088f",
+  "r2_blocker_sha256": "eb4394cb20a5d5c5ef580369744e09fce7b37dfa1c8ad57127aa2d1b03797e3e",
+  "r3_audit_sha256": "dc28d7ddddf9cc3521faad2da2453c9b81a9aa011eb19660779047b4cf467eff",
+  "raw_specific_human_design_required": 64,
+  "schema_version": "e0c-r4-manual-workload-audit-v1",
+  "scoring_authority_mutation": "NO",
+  "shared_template_count": 89,
+  "shared_template_covered_rows": 494,
+  "status_authority_mutation": "NO",
+  "stop": true
+}

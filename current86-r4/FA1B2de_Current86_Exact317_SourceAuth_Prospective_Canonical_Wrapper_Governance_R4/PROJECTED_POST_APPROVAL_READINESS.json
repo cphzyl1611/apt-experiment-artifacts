@@ -1,0 +1,59 @@
+{
+  "conditional_after_all_three_wrapper_approvals": {
+    "active_canonical_source_authority": false,
+    "prospective_wrapper_coverage": 317,
+    "remaining_blocked_until_later_approval_and_execution": 317,
+    "source_auth_targets_executed": 0,
+    "source_authentication_executable": false,
+    "target_level_governance_unavoidable": 317,
+    "targets_requiring_later_field_pin_governance": 317,
+    "wrapper_rule_approval_units": 3
+  },
+  "current_before_human_approval": {
+    "human_decisions_created": 0,
+    "prospective_wrapper_rules_ready": 3,
+    "source_objects_authenticated": 0,
+    "target_level_governance_routes": 317,
+    "targets_still_blocked": 317
+  },
+  "design_status": "CONDITIONAL_PROJECTION_ONLY",
+  "exact_target_manifest_sha256": "d8d55d369fe433bf7b93a3c332b8ac9a517a9146b28fa223370ff3ec946955ac",
+  "hard_boundary": {
+    "binding_authority_mutation": "NO",
+    "binding_publication": "NO",
+    "git_ref_mutation": "NO",
+    "p0_executed": "NO",
+    "p1_executed": "NO",
+    "scoring_authority_mutation": "NO",
+    "source_auth_executed": "NO"
+  },
+  "route_projection": [
+    {
+      "approval_required": true,
+      "covered_target_count": 26,
+      "field_pin_governance_after_wrapper_approval": 26,
+      "rejection_result": "KEEP_EXACT_TARGETS_BLOCKED",
+      "rule_id": "R4_WRAPPER_RAW_LEGACY_26"
+    },
+    {
+      "approval_required": true,
+      "covered_target_count": 60,
+      "field_pin_governance_after_wrapper_approval": 60,
+      "rejection_result": "KEEP_EXACT_TARGETS_BLOCKED",
+      "rule_id": "R4_WRAPPER_C0_60"
+    },
+    {
+      "approval_required": true,
+      "covered_target_count": 231,
+      "field_pin_governance_after_wrapper_approval": 231,
+      "rejection_result": "KEEP_EXACT_TARGETS_BLOCKED",
+      "rule_id": "R4_WRAPPER_SCORING_231"
+    }
+  ],
+  "schema": "FA1B2DE_CURRENT86_PROJECTED_POST_APPROVAL_READINESS_R4",
+  "target_counts": {
+    "candidate": 231,
+    "raw": 86,
+    "total": 317
+  }
+}

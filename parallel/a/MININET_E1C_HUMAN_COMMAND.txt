@@ -1,0 +1,1 @@
+sudo /usr/bin/python3 /home/cph/experiment-parallel/e0-a/e1c-run-20260831T050028Z/mininet_e1c_auditd_bounded_smoke.py

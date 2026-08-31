@@ -1,0 +1,48 @@
+{
+  "schema": "MININET_E1C_HARNESS_STATIC_AUDIT_V1",
+  "audited_at_utc": "2026-08-31T05:09:47.072196Z",
+  "harness_path": "/home/cph/experiment-parallel/e0-a/e1c-run-20260831T050028Z/mininet_e1c_auditd_bounded_smoke.py",
+  "harness_sha256": "1af1f3b9e4213f214dad74e02c8a422152654e772dc670b1ba444fb5542fd417",
+  "test_path": "/home/cph/experiment-parallel/e0-a/e1c-run-20260831T050028Z/test_e1c_auditd_bounded_smoke.py",
+  "test_sha256": "a0c897a2d7461f29a7bf5222b523258537a13635c5574a2b85988449de762fbb",
+  "fresh_validation": {
+    "py_compile": {"exit_code": 0, "result": "PASS"},
+    "unit_tests": {"tests_run": 8, "failures": 0, "errors": 0, "exit_code": 0, "result": "PASS"},
+    "static_self_check": {"exit_code": 0, "result": "PASS", "evidence_path": "/home/cph/experiment-parallel/e0-a/e1c-run-20260831T050028Z/MININET_E1C_HARNESS_STATIC_SELF_CHECK.json"}
+  },
+  "static_checks": {
+    "python_ast_parse": true,
+    "no_nat_or_external_links": true,
+    "no_apt_commands": true,
+    "no_automatic_sudo": true,
+    "no_mn_c": true,
+    "no_provx_or_formal_benchmark_execution": true,
+    "transient_audit_rules_only": true,
+    "bounded_file_rules": true,
+    "pid_or_ppid_filtered_rules": true,
+    "required_syscall_families_present": true,
+    "raw_audit_preserved_and_hashed": true,
+    "baseline_hash_restore_present": true,
+    "no_broad_delete_rule": true,
+    "unique_audit_key_and_ausearch_collection": true,
+    "exact_remove_only_successfully_added_rules": true,
+    "mininet_topology_has_no_nat_or_external_link": true,
+    "strace_not_formal_collector": true
+  },
+  "runtime_limitations_recorded": [
+    "auditctl baseline/rule mutation requires root and is deferred to human command",
+    "path-filtered read/write rule acceptance is checked at runtime; no broad fallback is allowed",
+    "PID/netns mapping is captured while child and worker are alive",
+    "filesystem isolation is not claimed"
+  ],
+  "formal_experiment_executed": false,
+  "apt_action_executed": false,
+  "automatic_sudo_invoked": false,
+  "audit_status": "PASS_READY_FOR_HUMAN_PRIVILEGED_RUN",
+  "terminal": {
+    "MININET_E1C_HARNESS_PREPARATION": "PASS",
+    "HUMAN_PRIVILEGED_RUN_REQUIRED": "YES",
+    "NEXT_ACTION": "HUMAN_RUN_EXACT_SUDO_COMMAND",
+    "STOP": true
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "stage": "PROVX-R3",
+  "decision": "OFFICIAL_21_FEATURE_VOCABULARY_NOT_AVAILABLE",
+  "decision_basis": "The authenticated Zenodo archive, its complete source/data/checkpoint contents, the cited paper, prior R0-R2 evidence, and cited official DARPA repository documentation provide only x width/dtype and broad provenance context. No authoritative ordered names, one-hot categories, raw-to-graph encoder, normalization constants, or DARPA-to-column mapping for all 21 features is published.",
+  "search_inventory": "PROVX_R3_FEATURE_SEMANTICS_SEARCH_INVENTORY.json",
+  "authenticated_artifact": {
+    "record_id": 20310415,
+    "doi": "10.5281/zenodo.20310415",
+    "archive_sha256": "a46fe7dec840ea28d9f8acf8771879af7204e0d622e24d12a99ad95f4187e3ff",
+    "artifact_root": "provx-r0/extracted/ProvX-USENIX-artifact",
+    "checkpoint": "storage/cache/Sample/saved_models/GCNConv/checkpoint-best-acc/model.bin",
+    "checkpoint_sha256": "d1307de5ad2b8410eca6b964f48e0afc9e9fdb0655e1702f9c85d6dfd07399f0"
+  },
+  "authenticated_facts": {
+    "x_shape": "[N,21]",
+    "x_dtype": "torch.float32",
+    "runtime_inputs": ["x", "edge_index", "optional batch"],
+    "evaluation_metadata": ["_VULN", "_LINE", "_SAMPLE", "sample_labels_all.pkl"],
+    "broad_paper_entity_examples": ["Process", "File", "Socket"]
+  },
+  "unresolved_required_for_exact_live_use": [
+    "ordered 21 feature names",
+    "one-hot/entity/event category vocabulary",
+    "raw audit/event to node and edge construction rules",
+    "numeric transforms and normalization constants",
+    "unknown/missing-value policy",
+    "Louvain/subgraph preprocessing implementation and parameters",
+    "DARPA/TC/OpTC to x-column mapping",
+    "live alert seed and expansion policy"
+  ],
+  "negative_inference_rule": "Do not infer column semantics from per-column statistics, learned weights, values, or broad paper examples.",
+  "compatibility_result": {
+    "packaged_sample_to_checkpoint": "COMPATIBLE_FOR_ARTIFACT_AS_SHIPPED_SAMPLE_ONLY",
+    "arbitrary_new_mininet_encoding_to_packaged_checkpoint": "UNPROVEN",
+    "direct_live_compatibility": "NOT_AUTHENTICATED"
+  },
+  "required_route_effects": {
+    "PACKAGED_CHECKPOINT_DIRECT_LIVE_MININET_USE": "NOT_VALIDATED",
+    "LIVE_PROVX_ROUTE": "PROVX_ADAPTED_LIVE_DEPLOYMENT",
+    "adapted_route_requires_new_encoder": true,
+    "adapted_route_requires_separately_frozen_retraining": true,
+    "adapted_route_input_width": 32,
+    "force_adapted_width_to_21": false
+  },
+  "prohibited_actions_at_r3": [
+    "inventing an official 21-column mapping",
+    "feeding _VULN, _LINE, _SAMPLE, or sample_labels_all.pkl as live sensor features",
+    "using formal FA1B2de evaluation actions for feature or model decisions",
+    "training/retraining or formal benchmark execution"
+  ],
+  "formal_experiment_executed": "NO",
+  "next_action": "FRESH_REVIEW_OF_PROVX_R3_LIVE_ROUTE_DECISION",
+  "stop": true
+}

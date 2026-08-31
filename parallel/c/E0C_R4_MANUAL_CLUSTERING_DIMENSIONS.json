@@ -1,0 +1,72 @@
+{
+  "dimensions": [
+    {
+      "field": "primary_execution_archetype",
+      "mechanical": true,
+      "source": "R1 primary_execution_archetype"
+    },
+    {
+      "field": "os_platform_hints",
+      "mechanical": true,
+      "source": "R1 os_platform_hints"
+    },
+    {
+      "field": "named_protocols_or_services",
+      "mechanical": true,
+      "source": "R1 named_protocols_or_services"
+    },
+    {
+      "field": "requires_privileged_host_action",
+      "mechanical": true,
+      "source": "R1 boolean flag"
+    },
+    {
+      "field": "credential_sensitive",
+      "mechanical": true,
+      "source": "R2 credential_sensitive blocker"
+    },
+    {
+      "field": "destructive_state_risk",
+      "mechanical": true,
+      "source": "R2 destructive_state blocker"
+    },
+    {
+      "field": "persistence",
+      "mechanical": true,
+      "source": "R1 primary archetype"
+    },
+    {
+      "field": "windows_specific_semantics",
+      "mechanical": true,
+      "source": "R2 windows_only_semantics blocker"
+    },
+    {
+      "field": "blocker_taxonomy",
+      "mechanical": true,
+      "source": "R2 manual blocker taxonomy"
+    },
+    {
+      "field": "source_action_type",
+      "mechanical": true,
+      "source": "R1 action_type"
+    },
+    {
+      "field": "explicit_tooling",
+      "mechanical": true,
+      "source": "R1 explicit_tool_or_malware_names"
+    },
+    {
+      "field": "service_prerequisites",
+      "mechanical": true,
+      "source": "R1 service_prerequisites"
+    }
+  ],
+  "excluded_methods": [
+    "embeddings",
+    "semantic similarity models",
+    "unstated command inference",
+    "human decisions"
+  ],
+  "schema_version": "e0c-r4-manual-clustering-dimensions-v1",
+  "source": "R1 exact fields plus R2 source-supported blocker taxonomy"
+}

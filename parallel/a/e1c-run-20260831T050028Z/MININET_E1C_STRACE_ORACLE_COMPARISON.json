@@ -1,0 +1,9 @@
+{
+  "formal_collector": false,
+  "missing_classes_inferred_from_strace": false,
+  "reason": "Harness aborted before an oracle run; missing audit classes are not inferred from strace, tcpdump, or any substitute.",
+  "role": "validation_oracle_only",
+  "run_id": "e1c-run-20260831T050028Z",
+  "schema": "MININET_E1C_STRACE_ORACLE_COMPARISON_V2",
+  "status": "NOT_RUN"
+}

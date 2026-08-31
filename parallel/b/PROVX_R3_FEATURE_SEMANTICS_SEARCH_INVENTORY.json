@@ -1,0 +1,185 @@
+{
+  "stage": "PROVX-R3",
+  "inventory_status": "COMPLETE",
+  "search_completed_utc": "2026-08-31T05:13:26Z",
+  "decision_scope": "Determine whether an authoritative, ordered vocabulary and encoder for all 21 packaged x columns can be authenticated. General provenance or eCAR field descriptions do not qualify as a ProvX feature vocabulary.",
+  "allowed_authority": [
+    "Authenticated Zenodo record and its shipped archive",
+    "Local cited paper/supplementary material",
+    "Official/cited source repositories explicitly named by the paper"
+  ],
+  "sources": [
+    {
+      "source_id": "zenodo_record_20310415",
+      "authority": "official_artifact",
+      "location": "https://zenodo.org/api/records/20310415",
+      "local_evidence": "provx-r0/PROVX_R0_ZENODO_RECORD_METADATA.json",
+      "revision_or_record": "record 20310415, revision 4, published 2026-05-20",
+      "content_sha256": "b42f8ec92ca6c6d99f4692929994af71aa1e9fdd6a8aabd073889c22d2a8d052",
+      "searched": ["metadata description", "file manifest", "related identifiers", "links"],
+      "findings": ["One file, ProvX-USENIX-artifact.zip, is published.", "Metadata describes code, detector, mask learning, solidification, and evaluation utilities but no feature vocabulary or preprocessing package."],
+      "feature_vocabulary_evidence": "none",
+      "status": "insufficient"
+    },
+    {
+      "source_id": "zenodo_archive",
+      "authority": "official_artifact",
+      "location": "provx-r0/extracted/ProvX-USENIX-artifact",
+      "revision_or_record": "archive SHA-256 a46fe7dec840ea28d9f8acf8771879af7204e0d622e24d12a99ad95f4187e3ff",
+      "searched": [
+        "README.md",
+        "provx_usenix/data.py",
+        "provx_usenix/detector.py",
+        "provx_usenix/training.py",
+        "provx_usenix/provx.py",
+        "provx_usenix/evaluation.py",
+        "provx_usenix/checkpoints.py",
+        "scripts/*.py",
+        "checkpoint-best-acc/metadata.json",
+        "all packaged project files and strings"
+      ],
+      "findings": [
+        "README defines x as a node feature matrix and lists graph fields x, edge_index, _VULN, _LINE, and _SAMPLE.",
+        "data.py only loads serialized PyG objects and derives labels/identifiers; it contains no raw-event parser or encoder.",
+        "detector.py consumes x, edge_index, and optional batch; no feature names or entity/event enums are referenced.",
+        "training.py uses _VULN only for graph labels and contains no feature construction.",
+        "provx.py and evaluation.py operate on graph tensors and masks; they contain no feature construction, Louvain implementation, or live collector boundary.",
+        "scripts only infer x.size(1), load partitions/checkpoints, train, explain, or evaluate.",
+        "checkpoint metadata records architecture/training settings but no feature names, order, normalization, or source revision.",
+        "sample_labels_all.pkl contains removed line identifiers keyed by sample ID; it is evaluation metadata, not a feature map."
+      ],
+      "feature_vocabulary_evidence": "width=21 and dtype=float32 are authenticated; semantics/order/normalization are absent",
+      "status": "insufficient"
+    },
+    {
+      "source_id": "local_sample_metadata",
+      "authority": "official_artifact_data",
+      "location": "provx-r0/extracted/ProvX-USENIX-artifact/Datasets/Sample",
+      "searched": ["sample_labels_all.pkl", "train_100nodes.pt", "val_100nodes.pt", "test_100nodes.pt", "serialized Data field names and tensor statistics"],
+      "findings": [
+        "All partitions contain PyG Data with x shaped [N,21] float32 and no feature-name sidecar.",
+        "_VULN, _LINE, and _SAMPLE are integer metadata/labels and do not identify x columns.",
+        "Observed value distributions cannot establish semantics and were not used to infer any mapping."
+      ],
+      "feature_vocabulary_evidence": "none",
+      "status": "insufficient"
+    },
+    {
+      "source_id": "local_checkpoint",
+      "authority": "official_artifact",
+      "location": "provx-r0/extracted/ProvX-USENIX-artifact/storage/cache/Sample/saved_models/GCNConv/checkpoint-best-acc",
+      "searched": ["metadata.json", "model.bin state keys and tensor shapes"],
+      "findings": [
+        "feature_transform.0.weight has shape [64,21], confirming only the input width.",
+        "State keys encode layer names and dimensions, not semantic feature names or preprocessing constants."
+      ],
+      "feature_vocabulary_evidence": "none",
+      "status": "insufficient"
+    },
+    {
+      "source_id": "local_paper",
+      "authority": "cited_paper",
+      "location": "sec26cycle2-final500(2).pdf",
+      "revision_or_record": "local PDF SHA-256 74f2f0dca2f3deeb76f414358adecbf4268f4d8c2fe1ef5b1cfcd27ab159409d",
+      "searched": ["full pdftotext", "feature", "semantic", "node/entity", "process/file/socket", "Louvain", "preprocess", "normalization", "DARPA mapping", "21"],
+      "findings": [
+        "The paper describes process, file, and socket examples, causal dependencies, a node feature matrix X_k, and a Louvain-based evaluation subgraph procedure.",
+        "The paper states that semantic attributes alone are less discriminative than structure but does not publish an ordered 21-column vocabulary.",
+        "The paper states that deployment can receive alert-associated subgraphs from PIDS/EDR/SIEM/network/analyst workflows and that enforcement mapping is deployment-specific.",
+        "Implementation details provide model and Phase-II hyperparameters but no raw-to-feature encoder, column names, normalization constants, or serialized schema."
+      ],
+      "feature_vocabulary_evidence": "none",
+      "status": "insufficient"
+    },
+    {
+      "source_id": "local_prior_reports",
+      "authority": "prior_authenticated_analysis",
+      "location": [
+        "PROVX_R0_PAPER_ARTIFACT_DISCREPANCIES.md",
+        "PROVX_R1_REPRODUCTION_REPORT.md",
+        "PROVX_R2_SCHEMA_AND_DETERMINISM_REPORT.md",
+        "PROVX_R2_SAMPLE_GRAPH_SCHEMA.json",
+        "PROVX_R2_CHECKPOINT_INPUT_CONTRACT.json",
+        "PROVX_R2_MODEL_INPUT_VS_EVALUATION_METADATA.json",
+        "PROVX_R2_LIVE_ADAPTER_TARGET_SCHEMA.json",
+        "EXP_E0_B_PROVX_MININET_INTEGRATION_GAP.md",
+        "EXP_E0_B_PROVX_TRAIN_TEST_SEPARATION.md"
+      ],
+      "searched": ["feature semantics", "runtime versus metadata", "raw-to-graph", "Louvain", "live adapter", "train/test boundary"],
+      "findings": [
+        "R0-R2 explicitly record that 21-column semantics are undefined by the artifact.",
+        "R2 pins x + edge_index (+ optional batch) as runtime input and _VULN/_LINE/_SAMPLE/sample_labels_all.pkl as evaluation metadata.",
+        "Existing reports prohibit inventing a live mapping from statistics."
+      ],
+      "feature_vocabulary_evidence": "none",
+      "status": "insufficient"
+    },
+    {
+      "source_id": "official_optc_repository",
+      "authority": "official_cited_dataset_repository",
+      "location": "https://github.com/FiveDirections/OpTC-data",
+      "revision_or_record": "master HEAD 5b108604f11f767aa11ea79ff827595f3fad15fd",
+      "pinned_files": [
+        {"url": "https://raw.githubusercontent.com/FiveDirections/OpTC-data/master/README.md", "sha256": "bbbeca5d5a861ffc765a6d42ddd19cb84acb93861226b4b93887bb950e121074"},
+        {"url": "https://raw.githubusercontent.com/FiveDirections/OpTC-data/master/ecar.md", "sha256": "1df4539c49963cc49b783580033fe1ec68bbae68434abf29da83c47b5d26d16b"},
+        {"url": "https://raw.githubusercontent.com/FiveDirections/OpTC-data/master/errata.md", "sha256": "4044970eae0db4f67055fa2c0e5bb99824628c13d991fcef01dcc5ec06e8d062"}
+      ],
+      "searched": ["repository tree", "README.md", "ecar.md", "errata.md"],
+      "findings": [
+        "README documents endpoint JSON records, eCAR translation, and data folders but no ProvX feature encoder.",
+        "eCAR documents timestamp, IDs, hostname, object, action, actor, PID/TID/principal, and string properties; these are source-event semantics, not the 21 x-column order.",
+        "Errata documents data-quality issues, reinforcing that source normalization would need an explicit new contract."
+      ],
+      "feature_vocabulary_evidence": "general source-event schema only; no ProvX mapping",
+      "status": "insufficient"
+    },
+    {
+      "source_id": "official_tc_repository",
+      "authority": "official_cited_dataset_repository",
+      "location": "https://github.com/darpa-i2o/Transparent-Computing",
+      "revision_or_record": "master HEAD 244ae2401032ce92ac3b72f49b8039cae67d60d6",
+      "pinned_files": [
+        {"url": "https://raw.githubusercontent.com/darpa-i2o/Transparent-Computing/master/README-E3.md", "sha256": "441be7b5f8781efc48e22f671b3efe1fff380879390dd85788af46d95b77bbb1"},
+        {"url": "https://raw.githubusercontent.com/darpa-i2o/Transparent-Computing/master/README.md", "sha256": "176c5fb6684f63718d8e169948711c87a1f51a5e852b0a1882e87301a192db43"}
+      ],
+      "searched": ["repository tree", "README-E3.md", "README.md"],
+      "findings": [
+        "README-E3 documents TA1 provenance data, CDM schema/tools, and engagement files; it does not define ProvX x columns.",
+        "README describes process/file/system-component provenance at a broad program level, not a detector feature vocabulary or normalization implementation.",
+        "The repository tree contains no ProvX source or 21-feature sidecar."
+      ],
+      "feature_vocabulary_evidence": "general provenance/CDM context only; no ProvX mapping",
+      "status": "insufficient"
+    }
+  ],
+  "search_method": {
+    "local_commands": [
+      "rg --files and targeted rg over artifact, reports, scripts, metadata, and paper text",
+      "read-only inspection of all 17 artifact project/source files and checkpoint metadata",
+      "read-only pickle key/type inspection and tensor schema inspection already recorded by R2",
+      "sha256sum for local evidence and downloaded official documentation"
+    ],
+    "network_commands": [
+      "Zenodo API record 20310415",
+      "GitHub API repository metadata/tree/HEAD for FiveDirections/OpTC-data",
+      "GitHub API repository metadata/tree/HEAD for darpa-i2o/Transparent-Computing",
+      "raw official README/eCAR/errata files only"
+    ],
+    "excluded": ["third-party implementations", "DARPA raw-data downloads", "APT actions", "training", "formal benchmark execution"]
+  },
+  "field_resolution": {
+    "input_width": {"value": 21, "status": "authenticated", "evidence": ["R2 sample schema", "R2 checkpoint input contract"]},
+    "input_dtype": {"value": "float32", "status": "authenticated", "evidence": ["R2 sample schema"]},
+    "column_names": {"value": null, "status": "not_available"},
+    "column_order": {"value": null, "status": "not_available"},
+    "entity_type_vocabulary": {"value": ["Process", "File", "Socket"], "status": "broad_examples_only_not_an_encoder"},
+    "event_type_vocabulary": {"value": null, "status": "not_available"},
+    "raw_to_graph_rules": {"value": null, "status": "not_available"},
+    "normalization_constants": {"value": null, "status": "not_available"},
+    "louvain_parameters": {"value": null, "status": "not_available"},
+    "darpa_to_feature_mapping": {"value": null, "status": "not_available"},
+    "live_alert_seed_and_expansion": {"value": null, "status": "not_available"}
+  },
+  "conclusion": "The search is complete and no authoritative source defines the ordered semantics and deterministic encoding of all 21 packaged x columns. Width and dtype alone cannot authenticate compatibility with newly encoded Mininet provenance.",
+  "recommended_decision": "OFFICIAL_21_FEATURE_VOCABULARY_NOT_AVAILABLE"
+}
