@@ -1,0 +1,29 @@
+{
+  "stage": "PROVX-R2",
+  "semantic_boundary": {
+    "MODEL_RUNTIME_INPUT": ["x", "edge_index"],
+    "MODEL_RUNTIME_OPTIONAL_INPUT": ["batch"],
+    "EVALUATION_GROUND_TRUTH_OR_METADATA": ["_VULN", "_LINE", "_SAMPLE", "sample_labels_all.pkl"],
+    "boundary_statement": "A future live adapter must not require _VULN as a sensor input. _VULN is used by artifact training/evaluation to derive labels and attack-edge truth; _LINE/_SAMPLE and auxiliary labels support localization metadata."
+  },
+  "detector_forward_verification": {
+    "source": "provx-r1/artifact/provx_usenix/detector.py:102-107",
+    "signature": "forward(self, x, edge_index, batch=None, **kwargs)",
+    "behavior": [
+      "If batch is omitted, Detector.forward creates torch.zeros(x.size(0), dtype=torch.long, device=x.device).",
+      "The model computes feature_transform(x), message passing over edge_index, pooling using batch, and classifier logits.",
+      "Additional Data fields are not read by Detector.forward; **kwargs is accepted but ignored."
+    ],
+    "output": "float32 logits with shape [B,2]; caller takes argmax for class 0/1"
+  },
+  "artifact_usage_by_stage": {
+    "data_loading": {"source": "provx-r1/artifact/provx_usenix/data.py:18-27", "fields": ["x", "edge_index", "_VULN", "_LINE", "_SAMPLE"], "role": "loads complete PyG Data object; no field removal is required"},
+    "training": {"source": "provx-r1/artifact/provx_usenix/training.py:98-105,188-192", "model_fields": ["x", "edge_index", "batch"], "evaluation_label_fields": ["_VULN"], "role": "global_max_pool(_VULN,batch) creates graph labels"},
+    "phase_ii_explain": {"source": "provx-r1/artifact/provx_usenix/provx.py:80-130", "model_fields": ["x", "edge_index", "batch"], "metadata_fields": [], "role": "edge mask optimization and explanation output"},
+    "mer_evaluation": {"source": "provx-r1/artifact/provx_usenix/evaluation.py:104-122", "model_fields": ["x", "edge_index", "batch"], "metadata_fields": [], "role": "zero incident-node features, remove top-K edges, compare detector argmax"},
+    "localization_evaluation": {"source": "provx-r1/artifact/provx_usenix/evaluation.py:13-101", "model_fields": [], "metadata_fields": ["_VULN", "_LINE", "_SAMPLE", "sample_labels_all.pkl"], "role": "ground-truth edge/line hit metrics"}
+  },
+  "live_sensor_rule": "Do not make _VULN, _LINE, _SAMPLE, or sample_labels_all.pkl prerequisites for a live detector call. They may be attached as optional evaluation/provenance metadata only.",
+  "model_level_boundary": "MODEL_LEVEL_INTERVENTION_FLIP != REAL_WORLD_PREVENTED/BLOCKED",
+  "inspection_mode": "source inspection only; no official source modified"
+}

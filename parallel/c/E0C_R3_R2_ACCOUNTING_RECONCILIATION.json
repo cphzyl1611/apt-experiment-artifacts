@@ -1,0 +1,85 @@
+{
+  "explanation": "R2 contract-covered rows (945) include the 4 unresolved prerequisite rows; R2 manual-design rows (589) span all 13 R1 families, so these reported figures overlap and are not an exhaustive disjoint partition.",
+  "r1_authentication": {
+    "archetype_counts": {
+      "ARCHIVE_COMPRESSION": 9,
+      "CREDENTIAL_STORE_ACCESS": 67,
+      "DISCOVERY_ENUMERATION": 90,
+      "DNS_INTERACTION": 5,
+      "EMAIL_DELIVERY": 105,
+      "FILE_RESOURCE_OPERATION": 64,
+      "NETWORK_C2_BEACON": 103,
+      "NETWORK_SCAN_ENUMERATION": 62,
+      "NETWORK_SERVICE_INTERACTION": 232,
+      "PERSISTENCE_CONFIGURATION": 101,
+      "PRIVILEGE_ACCOUNT_ACTION": 80,
+      "PROCESS_COMMAND_EXECUTION": 712,
+      "TRANSFER_DOWNLOAD_UPLOAD": 166
+    },
+    "formal_execution_authorized_false": true,
+    "provx_boundary_unchanged": true,
+    "r1_conservation_audit_authenticated": true,
+    "r1_conservation_audit_sha256": "ea90c4fcf2ce98ea9c93e48b44329ca528f66f32d8364111959f5d54a396088f",
+    "raw_key_set_sha256": "d3521ccd11c27867fc1b46a1be77ab75d15113a3b409fb84c260258a852f6a40",
+    "raw_record_count": 1796,
+    "unique_raw_key_count": 1796
+  },
+  "r1_conservation_audit_authenticated": true,
+  "r1_conservation_audit_sha256": "ea90c4fcf2ce98ea9c93e48b44329ca528f66f32d8364111959f5d54a396088f",
+  "r1_r2_authority": "PASS",
+  "r2_authenticated_artifact_count": 5,
+  "r2_authenticated_artifacts": [
+    {
+      "path": "E0C_R2_ADAPTER_FAMILY_MANIFESTS.json",
+      "sha256": "ada23cf00a2512fd95ff403ac3218695ae6e1f34e826667c53f947bc160a5b49",
+      "status": "PASS"
+    },
+    {
+      "path": "E0C_R2_ADAPTER_CONTRACTS.json",
+      "sha256": "bf4e53024398ae290a50d42a22f17f5b068401dc6722449dfe2850ad595a63f0",
+      "status": "PASS"
+    },
+    {
+      "path": "E0C_R2_DEFENSIVE_EQUIVALENCE_CONTRACTS.json",
+      "sha256": "f52266c0425397d211ae3bfab60136415f1a354c54f507561ff0aad2f9b77c1a",
+      "status": "PASS"
+    },
+    {
+      "path": "E0C_R2_PROVX_TELEMETRY_CONTRACTS.json",
+      "sha256": "0fab377782fe29e8c6c629e58af7e85d638c896635c3e4cb1f0617572573bf59",
+      "status": "PASS"
+    },
+    {
+      "path": "E0C_R2_COVERAGE_AUDIT.json",
+      "sha256": "21f41bb0358f17b3975f10ba925b8944e4cd4c9af03ffb8028656db6fef86f49",
+      "status": "PASS"
+    }
+  ],
+  "r2_contract_covered_rows": 945,
+  "r2_contract_rows_including_unresolved": 945,
+  "r2_global_status_overlap_warning": true,
+  "r2_manual_design_rows": 589,
+  "r2_manual_rows_inside_target_families": 373,
+  "r2_manual_rows_outside_target_families": 216,
+  "r2_target_family_rows": 1318,
+  "r2_unresolved_is_subset_of_contract_rows": true,
+  "r2_unresolved_prerequisite_rows": 4,
+  "r2_unresolved_raw_keys": [
+    "6000007::S06::A004",
+    "6000031::S02::A001",
+    "6000031::S07::A003",
+    "6000044::S06::A002"
+  ],
+  "raw_denominator": 1796,
+  "remaining_family_counts": {
+    "ARCHIVE_COMPRESSION": 9,
+    "CREDENTIAL_STORE_ACCESS": 67,
+    "DISCOVERY_ENUMERATION": 90,
+    "DNS_INTERACTION": 5,
+    "FILE_RESOURCE_OPERATION": 64,
+    "NETWORK_SCAN_ENUMERATION": 62,
+    "PERSISTENCE_CONFIGURATION": 101,
+    "PRIVILEGE_ACCOUNT_ACTION": 80
+  },
+  "remaining_family_rows": 478
+}

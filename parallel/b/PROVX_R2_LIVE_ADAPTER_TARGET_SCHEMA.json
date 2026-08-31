@@ -1,0 +1,58 @@
+{
+  "stage": "PROVX-R2",
+  "status": "READY_FOR_ADAPTER_DESIGN",
+  "schema_name": "PROVX_LIVE_ADAPTER_TARGET_SCHEMA",
+  "source_of_truth": {
+    "artifact": "provx-r1/artifact",
+    "data_format": "PyTorch Geometric Data",
+    "feature_semantics": "UNDEFINED_BY_ARTIFACT: artifact provides width/dtype but no feature-column vocabulary or live encoding specification; do not invent semantics in R2"
+  },
+  "model_input": {
+    "x": {
+      "required": true,
+      "dtype": "torch.float32",
+      "shape": "[N,21]",
+      "constraints": ["N >= 1", "second dimension exactly 21", "all values finite for model execution", "row i is the stable model node index i"],
+      "ordering": "node rows must remain stable for the lifetime of edge_index and node_map",
+      "semantics": "21 feature columns are opaque artifact features; column meanings are not defined by the artifact"
+    },
+    "edge_index": {
+      "required": true,
+      "dtype": "torch.int64",
+      "shape": "[2,E]",
+      "constraints": ["E >= 1 for ProvXExplainer.explain", "endpoints in [0,N-1]", "row 0 is source index and row 1 is destination index", "device must match x/model"],
+      "ordering": "column order must be deterministic and accompanied by edge_map; artifact may remove self-loops and coalesce before Phase-II masking",
+      "edge_features": "none; no edge feature tensor is accepted by the packaged model contract"
+    },
+    "batch": {
+      "required": false,
+      "dtype": "torch.int64",
+      "shape": "[N]",
+      "single_graph_value": "all zeros",
+      "behavior_if_omitted": "Detector.forward creates an all-zero batch"
+    }
+  },
+  "optional_evaluation_metadata": {
+    "_VULN": {"dtype": "torch.int64", "shape": "[N]", "required_for_live_model": false, "role": "node-level benchmark ground truth; graph label is any positive node"},
+    "_LINE": {"dtype": "torch.int64", "shape": "[N]", "required_for_live_model": false, "role": "original node identifiers for localization/evidence mapping"},
+    "_SAMPLE": {"dtype": "torch.int64", "shape": "[N]", "required_for_live_model": false, "role": "constant sample/subgraph identifier per packaged graph"},
+    "sample_labels_all.pkl": {"type": "pickle mapping keyed by sample identifier", "required_for_live_model": false, "role": "auxiliary line-label ground truth for evaluation"}
+  },
+  "reversible_mapping_metadata": {
+    "run_id": {"type": "string", "required": true, "semantics": "stable identifier for one controlled-host execution; not passed to model"},
+    "raw_key": {"type": "string", "required": true, "semantics": "stable unique identifier for each raw audit/event record or normalized causal edge; not passed to model"},
+    "node_map": {"type": "array length N", "required": true, "fields": ["model_node_index", "raw_key", "entity_type_optional", "source_record_refs"], "ordering": "node_map[i].model_node_index == i"},
+    "edge_map": {"type": "array length E", "required": true, "fields": ["input_edge_column", "src_model_node_index", "dst_model_node_index", "raw_key", "source_record_refs", "event_type_optional", "timestamp_optional"], "ordering": "edge_map[j] describes edge_index[:,j] before artifact normalization"},
+    "normalization_map": {"required": true, "fields": ["self_loop_columns_removed", "duplicate_columns_coalesced", "coalesced_edge_to_raw_keys", "post_coalesce_edge_order"], "purpose": "reversibly map Phase-II edge indices/top-K output back to raw_key/run_id evidence after artifact remove_self_loops/coalesce behavior"},
+    "output_envelope": {"required": true, "fields": ["run_id", "raw_key references", "graph_index_or_subgraph_id", "checkpoint_hash", "config_hash", "top_k_edge_indices", "top_k_raw_keys", "edge_weights", "mer_model_level_intervention_flip"], "model_boundary": "top_k_raw_keys are analyst evidence references, not enforcement commands"}
+  },
+  "ordering_and_normalization": {
+    "canonical_node_order": "adapter-defined stable order, persisted in node_map; changing it changes x and edge_index semantics",
+    "canonical_input_edge_order": "adapter-defined deterministic order, persisted in edge_map; do not rely on incidental dictionary/file order",
+    "artifact_phase2_normalization": "ProvXExplainer removes self-loops, coalesces edge_index, adds remaining self-loops for message passing, then removes self-loops from returned explanation",
+    "duplicate_policy": "must be explicit in normalization_map; artifact coalesce can merge duplicate COO columns and a naive one-to-one mapping would be invalid",
+    "top_k_identity": "edge_index column/index plus normalized src/dst and raw_key references; weights are float scores 1-sigmoid(mask)"
+  },
+  "not_pinned_by_artifact": ["feature-column semantics", "process/file/socket event enum", "causal edge-construction rules", "alert seed/expansion policy", "timestamps/clock policy", "host action enforcement mapping"],
+  "design_gate": "Schema is ready for adapter design, but adapter implementation and live event semantics belong to R3/R4, not R2."
+}

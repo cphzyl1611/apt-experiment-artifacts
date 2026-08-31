@@ -1,0 +1,164 @@
+{
+  "schema": "MININET_E1B_COLLECTOR_COMPARISON_V1",
+  "created_at_utc": "2026-08-31T02:06:01.311015Z",
+  "comparison_method": "Qualitative capability matrix grounded in local probes and collector semantics; no formal numerical scoring was executed.",
+  "e1a_r2_pin": {
+    "harness_sha256": "129bc1b10486e3f23c37d7b3386f7dfeebc108a7b29a25f493809391fd070e90",
+    "runtime_result_sha256": "43c769bdf1c074c9456aeba7d3d2d6737b592891234cc541de2a4907345c58e1",
+    "runtime_validation_sha256": "f50a771931e51b9bb37980a5e2619069da2ff92c374e311aaab0c0fb41e83c2c",
+    "attribution_report_sha256": "e265a6a3dab4ee0dc41ecbcfb479448e31ec4c51ebdbc5f21281274a01f19a44",
+    "pcap_sha256": "184b030eb86881bd7e0b08fce1e2d2a22731af85e806cc66f0951dd9592b7e50",
+    "cleanup_zero_assertions": {
+      "RUN_OWNED_CHILDREN_REMAINING": 0,
+      "RESERVED_TEST_INTERFACES_REMAINING": 0,
+      "RESERVED_TEST_OVS_OBJECTS_REMAINING": 0,
+      "TCPDUMP_PROCESS_REMAINING": 0
+    }
+  },
+  "status_legend": {
+    "strong": "Native or directly observable with the candidate after bounded configuration.",
+    "partial": "Possible, but requires syscall/configuration or an external deterministic join.",
+    "weak": "Not reliable as a primary causal source; useful only as a supplement/oracle.",
+    "absent": "Not available from the observed installation.",
+    "conditional": "Technically plausible, but no installed collector evidence exists here."
+  },
+  "capabilities": [
+    "process_exec_create_exit",
+    "parent_child_ids",
+    "file_open_read_write_create_delete",
+    "socket_bind_connect_accept_send_receive",
+    "timestamp_and_order",
+    "pid_netns_mapping",
+    "event_loss_drop_reporting",
+    "raw_event_preservation",
+    "privileges_and_overhead",
+    "mininet_compatibility",
+    "logical_host_id_correlation",
+    "deterministic_parsing",
+    "process_file_socket_causal_graph_suitability"
+  ],
+  "collectors": {
+    "auditd": {
+      "decision_label": "AUDITD_PRIMARY_CANDIDATE",
+      "installed": false,
+      "capability_matrix": {
+        "process_exec_create_exit": {"status": "strong", "basis": "Linux audit syscall records can cover execve, fork/clone, and exit with configured rules."},
+        "parent_child_ids": {"status": "strong", "basis": "Audit records expose pid/ppid and serial/event identifiers."},
+        "file_open_read_write_create_delete": {"status": "partial", "basis": "openat/read/write/creat/unlink/rename syscall rules are required; broad rules increase volume."},
+        "socket_bind_connect_accept_send_receive": {"status": "partial", "basis": "bind/connect/accept/accept4/send*/recv* syscall rules are required; semantic socket reconstruction is a normalization step."},
+        "timestamp_and_order": {"status": "strong", "basis": "Kernel audit timestamps plus serial IDs provide deterministic ordering within configured audit stream."},
+        "pid_netns_mapping": {"status": "partial", "basis": "PID is native; netns inode requires a synchronized /proc/<pid>/ns/net join while the process is alive."},
+        "event_loss_drop_reporting": {"status": "strong", "basis": "Audit status exposes backlog/lost counters that can be retained with the run."},
+        "raw_event_preservation": {"status": "strong", "basis": "Raw audit records can be retained before parsing in audit log files or a dispatcher stream."},
+        "privileges_and_overhead": {"status": "partial", "basis": "Root/audit-control privilege is required; syscall coverage must be bounded to control overhead."},
+        "mininet_compatibility": {"status": "strong", "basis": "Host-wide audit sees Mininet processes; namespace join disambiguates h1/h2 as demonstrated by E1A-R2."},
+        "logical_host_id_correlation": {"status": "partial", "basis": "Requires run manifest mapping netns inode and interface identity to h1/h2."},
+        "deterministic_parsing": {"status": "strong", "basis": "auditd/ausearch/libauparse formats are stable enough for a version-pinned parser with raw retention."},
+        "process_file_socket_causal_graph_suitability": {"status": "strong", "basis": "One normalized syscall event stream can feed process/file/socket nodes and temporal edges after explicit joins."}
+      },
+      "selection_reason": "Smallest standard Ubuntu collector with a kernel-backed event stream spanning process lifecycle, file syscalls, and socket syscalls; only one package and bounded audit rules are needed before smoke validation."
+    },
+    "ebpf": {
+      "decision_label": "EBPF_PRIMARY_CANDIDATE",
+      "installed": false,
+      "capability_matrix": {
+        "process_exec_create_exit": {"status": "conditional", "basis": "Kernel tracepoints/kprobes can observe lifecycle events, but no collector program is installed."},
+        "parent_child_ids": {"status": "conditional", "basis": "BPF context can capture pid/tgid/parent metadata in a custom program."},
+        "file_open_read_write_create_delete": {"status": "conditional", "basis": "LSM/tracepoint coverage is possible, but requires a custom program and policy."},
+        "socket_bind_connect_accept_send_receive": {"status": "conditional", "basis": "Tracepoints/kprobes can capture operations, but no deployed semantic collector exists."},
+        "timestamp_and_order": {"status": "conditional", "basis": "Kernel monotonic timestamps are available; cross-buffer ordering must be designed."},
+        "pid_netns_mapping": {"status": "conditional", "basis": "BPF can capture pid and network namespace context, but logical_host_id mapping remains external."},
+        "event_loss_drop_reporting": {"status": "conditional", "basis": "Ring-buffer/perf-buffer loss counters are available only if implemented and retained."},
+        "raw_event_preservation": {"status": "conditional", "basis": "Raw ring-buffer records require a custom serializer and durable writer."},
+        "privileges_and_overhead": {"status": "partial", "basis": "Potentially lower runtime overhead, but this host disables unprivileged BPF and has perf_event_paranoid=4; root/CAP_BPF is required."},
+        "mininet_compatibility": {"status": "conditional", "basis": "Kernel-wide collection is compatible in principle; namespace/process joins need implementation and validation."},
+        "logical_host_id_correlation": {"status": "conditional", "basis": "Requires the same E1A-R2 netns/interface mapping contract."},
+        "deterministic_parsing": {"status": "conditional", "basis": "Custom event schema and versioned decoder are not present."},
+        "process_file_socket_causal_graph_suitability": {"status": "strong", "basis": "A purpose-built collector could provide rich causal edges, but there is no installed implementation to select now."}
+      },
+      "rejection_reason": "bpftool/libbpf/kernel support are primitives, not a ready provenance collector; selecting eBPF now would require building and validating a new collector."
+    },
+    "camflow": {
+      "decision_label": "CAMFLOW_PRIMARY_CANDIDATE",
+      "installed": false,
+      "capability_matrix": {
+        "process_exec_create_exit": {"status": "conditional", "basis": "CamFlow is designed for provenance capture, but no local implementation is installed."},
+        "parent_child_ids": {"status": "conditional", "basis": "Would depend on the deployed CamFlow record schema."},
+        "file_open_read_write_create_delete": {"status": "conditional", "basis": "Would depend on the deployed kernel/userspace component."},
+        "socket_bind_connect_accept_send_receive": {"status": "conditional", "basis": "Would require installed CamFlow network provenance support."},
+        "timestamp_and_order": {"status": "conditional", "basis": "No local event stream to inspect."},
+        "pid_netns_mapping": {"status": "conditional", "basis": "No local schema or mapping behavior to validate."},
+        "event_loss_drop_reporting": {"status": "conditional", "basis": "No local collector or counters observed."},
+        "raw_event_preservation": {"status": "conditional", "basis": "No local output format observed."},
+        "privileges_and_overhead": {"status": "conditional", "basis": "Kernel instrumentation and deployment overhead cannot be measured here."},
+        "mininet_compatibility": {"status": "conditional", "basis": "Must be validated against Mininet namespaces and host kernel."},
+        "logical_host_id_correlation": {"status": "conditional", "basis": "Would still require E1A-R2 netns join."},
+        "deterministic_parsing": {"status": "conditional", "basis": "No version-pinned local schema or parser."},
+        "process_file_socket_causal_graph_suitability": {"status": "strong", "basis": "Potentially high, but unsubstantiated by local runtime evidence."}
+      },
+      "rejection_reason": "No CamFlow binary, package, module, process, or output schema is available locally."
+    },
+    "strace": {
+      "decision_label": "VALIDATION_ORACLE_ONLY",
+      "installed": true,
+      "capability_matrix": {
+        "process_exec_create_exit": {"status": "partial", "basis": "Excellent for a traced process and descendants when explicitly attached; not system-wide."},
+        "parent_child_ids": {"status": "partial", "basis": "PIDs and fork/clone records can be observed under -f, but lifecycle coverage is trace-scope dependent."},
+        "file_open_read_write_create_delete": {"status": "strong", "basis": "Syscall arguments expose common file operations for traced processes."},
+        "socket_bind_connect_accept_send_receive": {"status": "strong", "basis": "Network syscalls and arguments are visible for traced processes."},
+        "timestamp_and_order": {"status": "strong", "basis": "Per-process syscall ordering and timestamps are available."},
+        "pid_netns_mapping": {"status": "partial", "basis": "PID is visible; netns requires an external /proc join while alive."},
+        "event_loss_drop_reporting": {"status": "weak", "basis": "No kernel-wide loss/drop accounting for an unattended system collector."},
+        "raw_event_preservation": {"status": "strong", "basis": "Raw text output can be retained."},
+        "privileges_and_overhead": {"status": "partial", "basis": "Ptrace permissions and high syscall overhead make broad use unsuitable."},
+        "mininet_compatibility": {"status": "partial", "basis": "Works for selected child processes in Mininet namespaces, as a bounded oracle."},
+        "logical_host_id_correlation": {"status": "partial", "basis": "Can join exact traced PID to E1A-R2 netns, but requires per-process orchestration."},
+        "deterministic_parsing": {"status": "partial", "basis": "Text parser is manageable but version/output-option sensitive."},
+        "process_file_socket_causal_graph_suitability": {"status": "partial", "basis": "Useful for parser validation, not complete host-wide provenance."}
+      },
+      "rejection_reason": "Installed and useful, but explicitly retained as a development/validation oracle rather than the formal collector."
+    },
+    "wazuh_existing_endpoint_telemetry": {
+      "decision_label": "OTHER_EXACT_CANDIDATE",
+      "installed": true,
+      "capability_matrix": {
+        "process_exec_create_exit": {"status": "partial", "basis": "Wazuh process/module telemetry is present as a service, but no durable event stream was exposed for this task."},
+        "parent_child_ids": {"status": "weak", "basis": "No verified parent-child provenance feed was available."},
+        "file_open_read_write_create_delete": {"status": "partial", "basis": "Syscheck can report selected file changes, not complete open/read/write causality."},
+        "socket_bind_connect_accept_send_receive": {"status": "weak", "basis": "No verified socket syscall provenance feed."},
+        "timestamp_and_order": {"status": "partial", "basis": "Service logs have timestamps, but cross-source causal ordering is not bound."},
+        "pid_netns_mapping": {"status": "weak", "basis": "No netns inode field or Mininet logical-host join observed."},
+        "event_loss_drop_reporting": {"status": "partial", "basis": "Agent queues exist, but collector-specific loss evidence was not available."},
+        "raw_event_preservation": {"status": "partial", "basis": "Service logs may preserve records, but protected configuration and schema were not available."},
+        "privileges_and_overhead": {"status": "partial", "basis": "Already-running root-owned services add unknown system overhead."},
+        "mininet_compatibility": {"status": "weak", "basis": "No namespace-aware Mininet mapping was verified."},
+        "logical_host_id_correlation": {"status": "absent", "basis": "No cross-source logical_host_id binding exists in observed assets."},
+        "deterministic_parsing": {"status": "partial", "basis": "ECS-like fields exist in Filebeat schemas, but no active provenance source is configured."},
+        "process_file_socket_causal_graph_suitability": {"status": "weak", "basis": "Telemetry is not a verified unified process/file/socket causal stream."}
+      },
+      "rejection_reason": "Active endpoint services are not equivalent to a ready Mininet-aware provenance collector and have no verified logical-host join."
+    }
+  },
+  "selection": {
+    "allowed_value": "AUDITD_PRIMARY_CANDIDATE",
+    "collector_installed_and_ready": false,
+    "why_smallest_defensible": [
+      "Ubuntu Jammy provides a version-pinned auditd package in the local index.",
+      "The running kernel enables AUDIT and AUDITSYSCALL.",
+      "Auditd spans the required process, file, and socket syscall families without writing a new kernel collector.",
+      "E1A-R2 already proves the deterministic PID/netns/logical_host_id join needed to disambiguate Mininet hosts.",
+      "Raw records and audit loss counters can be retained before graph conversion."
+    ],
+    "required_next_validation": "After human installation approval, run a bounded benign auditd smoke design with explicit rules and compare audit records against the E1A-R2 child/socket/pcap contract.",
+    "strace_role": "validation oracle only",
+    "formal_experiment_executed": false,
+    "provx_executed": false
+  },
+  "terminal": {
+    "MININET_E1B_COLLECTOR_DECISION": "AUDITD_PRIMARY_CANDIDATE",
+    "COLLECTOR_INSTALLED_AND_READY": "NO",
+    "NEXT_ACTION": "HUMAN_INSTALL_APPROVAL",
+    "FORMAL_EXPERIMENT_EXECUTED": "NO",
+    "STOP": true
+  }
+}

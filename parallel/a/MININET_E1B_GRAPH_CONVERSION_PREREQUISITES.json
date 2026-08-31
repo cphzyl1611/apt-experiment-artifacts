@@ -1,0 +1,126 @@
+{
+  "schema": "MININET_E1B_GRAPH_CONVERSION_PREREQUISITES_V1",
+  "status": "DESIGN_ONLY_NO_PROVX_TENSORS_CONSTRUCTED",
+  "purpose": "Define deterministic prerequisites for converting normalized benign provenance events into a causal graph.",
+  "pinned_inputs": {
+    "event_contract": "MININET_E1B_BENIGN_EVENT_CONTRACT.json",
+    "primary_collector_candidate": "AUDITD_PRIMARY_CANDIDATE",
+    "e1a_r2_harness_sha256": "129bc1b10486e3f23c37d7b3386f7dfeebc108a7b29a25f493809391fd070e90",
+    "e1a_r2_runtime_validation_sha256": "f50a771931e51b9bb37980a5e2619069da2ff92c374e311aaab0c0fb41e83c2c",
+    "e1a_r2_pcap_sha256": "184b030eb86881bd7e0b08fce1e2d2a22731af85e806cc66f0951dd9592b7e50"
+  },
+  "identity_domains": {
+    "PROCESS": {
+      "canonical_id": "sha256(run_id || boot_id || pid || pid_start_time_ticks || executable.sha256 || executable.path)",
+      "required_fields": ["run_id", "boot_id", "pid", "pid_start_time_ticks", "executable"],
+      "lifecycle": ["PROCESS_START", "PROCESS_EXEC", "PROCESS_EXIT"],
+      "pid_reuse_protection": true
+    },
+    "FILE": {
+      "canonical_id": "sha256(run_id || device || inode || normalized_path)",
+      "required_fields": ["run_id", "file_identity.device", "file_identity.inode", "file_identity.path"],
+      "lifecycle": ["FILE_CREATE_OR_OPEN", "FILE_READ_OR_WRITE", "FILE_DELETE"],
+      "path_alias_rule": "Device/inode is authoritative; path is retained as an observed alias."
+    },
+    "SOCKET": {
+      "canonical_id": "sha256(run_id || netns_inode || socket_inode || family || protocol || local_endpoint || remote_endpoint)",
+      "required_fields": ["run_id", "netns_inode", "socket_identity.socket_inode", "socket_identity.family", "socket_identity.protocol", "socket_identity.local_address", "socket_identity.local_port"],
+      "lifecycle": ["SOCKET_BIND", "SOCKET_CONNECT_OR_ACCEPT"],
+      "namespace_rule": "A socket identity without netns_inode is not graph-joinable to h1/h2."
+    },
+    "NETWORK": {
+      "canonical_id": "sha256(run_id || pcap_sha256 || packet_index || packet_timestamp || interface || five_tuple)",
+      "required_fields": ["run_id", "pcap_sha256", "packet_index", "timestamp", "interface", "five_tuple"],
+      "lifecycle": ["NETWORK_CORRELATION"],
+      "packet_rule": "Keep unmatched packet records; never fabricate a process/socket owner."
+    }
+  },
+  "causal_edges": [
+    {
+      "edge": "PROCESS_PARENT_OF_PROCESS",
+      "source_event": "PROCESS_START",
+      "join": "child pid/start_ticks to ppid/parent start_ticks",
+      "required_proof": "Both process identities exist and timestamps are ordered."
+    },
+    {
+      "edge": "PROCESS_EXECUTES_FILE",
+      "source_event": "PROCESS_EXEC",
+      "join": "PROCESS identity to executable FILE identity",
+      "required_proof": "exec_path plus device/inode or immutable executable hash."
+    },
+    {
+      "edge": "PROCESS_OPENS_FILE",
+      "source_event": "FILE_CREATE_OR_OPEN",
+      "join": "PROCESS identity to FILE identity",
+      "required_proof": "PID/start_ticks, netns/logical host, path/device/inode, syscall result."
+    },
+    {
+      "edge": "PROCESS_READS_FILE",
+      "source_event": "FILE_READ_OR_WRITE",
+      "join": "PROCESS identity to FILE identity",
+      "required_proof": "Operation=read and successful syscall result or explicit failure."
+    },
+    {
+      "edge": "PROCESS_WRITES_FILE",
+      "source_event": "FILE_READ_OR_WRITE",
+      "join": "PROCESS identity to FILE identity",
+      "required_proof": "Operation=write and returned byte count/result."
+    },
+    {
+      "edge": "PROCESS_DELETES_FILE",
+      "source_event": "FILE_DELETE",
+      "join": "PROCESS identity to FILE identity",
+      "required_proof": "unlink/rename record with device/inode/path and result."
+    },
+    {
+      "edge": "PROCESS_BINDS_SOCKET",
+      "source_event": "SOCKET_BIND",
+      "join": "PROCESS identity to SOCKET identity",
+      "required_proof": "Live socket inode plus netns and endpoint evidence."
+    },
+    {
+      "edge": "PROCESS_CONNECTS_OR_ACCEPTS_SOCKET",
+      "source_event": "SOCKET_CONNECT_OR_ACCEPT",
+      "join": "PROCESS identity to SOCKET identity",
+      "required_proof": "Operation, socket inode, endpoints, and syscall result."
+    },
+    {
+      "edge": "SOCKET_CORRELATES_NETWORK",
+      "source_event": "NETWORK_CORRELATION",
+      "join": "SOCKET identity to NETWORK identity by netns, endpoint tuple, time window, interface, and pcap hash",
+      "required_proof": "Bounded packet record and at least one matching socket/process event; unmatched packets remain unjoined."
+    }
+  ],
+  "join_and_order_prerequisites": {
+    "run_manifest": ["run_id", "boot_id", "collector_session_id", "pcap_sha256", "topology_interface_map"],
+    "logical_host_map": ["netns_inode", "logical_host_id", "shell_pid", "interface_name", "interface_ip", "interface_mac"],
+    "process_identity": ["pid", "pid_start_time_ticks", "ppid", "executable"],
+    "clock": ["wall_clock_utc", "monotonic_ns", "source_timestamp", "clock_id"],
+    "ordering": ["source_timestamp", "audit_serial_or_collector_sequence", "monotonic_ns"],
+    "loss": ["collector_loss_counters", "tcpdump_drop_count", "unjoined_event_count"],
+    "raw_retention": ["raw_event_bytes_b64", "raw_event_sha256", "decoder_version"]
+  },
+  "validation_gates": [
+    "Every normalized event has every common contract field, including file_identity and socket_identity fields.",
+    "Every PID join includes pid_start_time_ticks or is marked PID_REUSE_UNPROVEN.",
+    "Every netns join maps to exactly one logical_host_id and satisfies the four E1A-R2 namespace assertions.",
+    "Every process/file/socket edge references existing canonical nodes.",
+    "Every edge timestamp is within the source event lifetime and preserves causal order.",
+    "Any collector or packet loss is recorded and prevents a complete-graph claim unless explicitly bounded and justified.",
+    "Raw bytes hash and decoder version reproduce the normalized event deterministically.",
+    "Packet-only observations are never promoted to process provenance without a socket/process join.",
+    "Filesystem isolation is not inferred from PID-attributed file events."
+  ],
+  "output_boundary": {
+    "allowed_now": ["normalized event records", "node/edge validation reports", "graph conversion prerequisites"],
+    "forbidden_now": ["PROVX tensors", "formal benchmark scores", "PROVX inference on Mininet data", "authority mutation"],
+    "tensor_construction_performed": false
+  },
+  "terminal": {
+    "MININET_E1B_COLLECTOR_DECISION": "AUDITD_PRIMARY_CANDIDATE",
+    "COLLECTOR_INSTALLED_AND_READY": "NO",
+    "NEXT_ACTION": "HUMAN_INSTALL_APPROVAL",
+    "FORMAL_EXPERIMENT_EXECUTED": "NO",
+    "STOP": true
+  }
+}

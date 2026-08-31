@@ -1,0 +1,189 @@
+{
+  "schema": "MININET_E1B_BENIGN_EVENT_CONTRACT_V1",
+  "status": "DESIGN_ONLY_NO_EVENTS_COLLECTED",
+  "collector": {
+    "primary_candidate": "auditd",
+    "decision": "AUDITD_PRIMARY_CANDIDATE",
+    "installed_and_ready": false,
+    "version_target": "1:3.0.7-1build1",
+    "strace_role": "validation_oracle_only",
+    "packet_source_role": "tcpdump_supplemental_network_correlation_only"
+  },
+  "scope": {
+    "logical_hosts": ["h1", "h2"],
+    "benign_operations": [
+      "child process start/exec/exit",
+      "temporary file create/open/read/write/delete",
+      "TCP listener bind",
+      "TCP connect/accept/send/receive",
+      "bounded ICMP/TCP packet correlation"
+    ],
+    "filesystem_isolation_claimed": false,
+    "network_scope": "10.0.0.0/24"
+  },
+  "run_context": {
+    "run_id": {
+      "type": "string",
+      "source": "E1A-R2 run manifest and collector session marker",
+      "required": true,
+      "example": "e1a-r2-run-20260830T060231Z"
+    },
+    "logical_host_id": {
+      "type": "enum",
+      "allowed": ["h1", "h2"],
+      "source": "netns inode plus E1A-R2 interface mapping",
+      "required": true
+    },
+    "netns_inode": {
+      "type": "string",
+      "format": "decimal inode extracted from /proc/<pid>/ns/net target net:[inode]",
+      "required": true,
+      "join_rule": "Must map to exactly one logical_host_id for the run."
+    }
+  },
+  "common_required_fields": {
+    "event_id": {
+      "type": "string",
+      "rule": "Stable unique ID derived from run_id, collector_session_id, collector_sequence, event_type, and raw_event_sha256."
+    },
+    "timestamp": {
+      "type": "object",
+      "fields": ["wall_clock_utc", "monotonic_ns", "source_timestamp", "clock_id"],
+      "rule": "Preserve source timestamp and normalized UTC plus monotonic ordering value when available."
+    },
+    "pid": {"type": "integer", "nullable": false},
+    "ppid": {"type": "integer", "nullable": true, "rule": "Null only when source does not expose a parent; never silently synthesize 0."},
+    "pid_start_time_ticks": {"type": "integer", "nullable": true, "rule": "Required for PID-reuse protection when /proc is available."},
+    "executable": {
+      "type": "object",
+      "fields": ["path", "sha256", "argv", "comm"],
+      "rule": "Path and command identity are retained; sha256 may be null only if executable bytes cannot be read."
+    },
+    "file_identity": {
+      "type": "object_or_null",
+      "fields": ["path", "device", "inode", "mode", "flags", "operation"],
+      "rule": "Field is always present; null is allowed for events without a file object."
+    },
+    "socket_identity": {
+      "type": "object_or_null",
+      "fields": ["socket_inode", "family", "protocol", "local_address", "local_port", "remote_address", "remote_port", "operation"],
+      "rule": "Field is always present; null is allowed for events without a socket object."
+    },
+    "netns_inode": {"type": "string", "required": true},
+    "logical_host_id": {"type": "enum", "allowed": ["h1", "h2"], "required": true},
+    "run_id": {"type": "string", "required": true},
+    "raw_event_bytes_b64": {
+      "type": "string",
+      "encoding": "base64",
+      "rule": "Exact bytes received from auditd or supplemental source before normalization."
+    },
+    "raw_event_sha256": {
+      "type": "string",
+      "format": "64 lowercase hexadecimal characters",
+      "rule": "SHA-256 of raw_event_bytes_b64 decoded bytes."
+    },
+    "collector_metadata": {
+      "type": "object",
+      "fields": ["collector_name", "collector_version", "collector_session_id", "collector_sequence", "loss_counters"],
+      "rule": "Retain source version, stream sequence, and loss/drop counters with every event or an adjacent loss record."
+    }
+  },
+  "event_types": {
+    "PROCESS_START": {
+      "source_records": ["audit fork/clone/vfork or equivalent process-start record"],
+      "required_fields": ["event_id", "timestamp", "pid", "ppid", "pid_start_time_ticks", "executable", "file_identity", "socket_identity", "netns_inode", "logical_host_id", "run_id", "raw_event_bytes_b64", "raw_event_sha256", "collector_metadata"],
+      "event_specific_fields": ["process_identity", "parent_process_identity", "clone_flags"],
+      "normalization": "Create one PROCESS node identity; link parent PID/start ticks when present."
+    },
+    "PROCESS_EXEC": {
+      "source_records": ["audit EXECVE/EXECVEAT and SYSCALL record"],
+      "required_fields": ["event_id", "timestamp", "pid", "ppid", "pid_start_time_ticks", "executable", "file_identity", "socket_identity", "netns_inode", "logical_host_id", "run_id", "raw_event_bytes_b64", "raw_event_sha256", "collector_metadata"],
+      "event_specific_fields": ["exec_path", "argv", "environment_hash", "exec_result"],
+      "normalization": "Attach executable FILE identity and update PROCESS executable identity without losing the pre-exec identity."
+    },
+    "PROCESS_EXIT": {
+      "source_records": ["audit EXIT or process termination record"],
+      "required_fields": ["event_id", "timestamp", "pid", "ppid", "pid_start_time_ticks", "executable", "file_identity", "socket_identity", "netns_inode", "logical_host_id", "run_id", "raw_event_bytes_b64", "raw_event_sha256", "collector_metadata"],
+      "event_specific_fields": ["exit_code", "termination_signal", "core_dumped"],
+      "normalization": "Close PROCESS lifetime interval; retain missing-exit status as an explicit validation failure."
+    },
+    "FILE_CREATE_OR_OPEN": {
+      "source_records": ["audit open/openat/creat syscall and PATH records"],
+      "required_fields": ["event_id", "timestamp", "pid", "ppid", "pid_start_time_ticks", "executable", "file_identity", "socket_identity", "netns_inode", "logical_host_id", "run_id", "raw_event_bytes_b64", "raw_event_sha256", "collector_metadata"],
+      "event_specific_fields": ["open_flags", "create_requested", "fd", "result_errno"],
+      "normalization": "Resolve device/inode/path and create or reference a FILE node; preserve unresolved-path status."
+    },
+    "FILE_READ_OR_WRITE": {
+      "source_records": ["audit read/pread/readv/write/pwrite/writev syscall records when rules are enabled"],
+      "required_fields": ["event_id", "timestamp", "pid", "ppid", "pid_start_time_ticks", "executable", "file_identity", "socket_identity", "netns_inode", "logical_host_id", "run_id", "raw_event_bytes_b64", "raw_event_sha256", "collector_metadata"],
+      "event_specific_fields": ["fd", "operation", "bytes_requested", "bytes_returned", "result_errno"],
+      "normalization": "Emit PROCESS reads/writes FILE edges with byte counts and syscall result."
+    },
+    "FILE_DELETE": {
+      "source_records": ["audit unlink/unlinkat/rename/renameat syscall and PATH records"],
+      "required_fields": ["event_id", "timestamp", "pid", "ppid", "pid_start_time_ticks", "executable", "file_identity", "socket_identity", "netns_inode", "logical_host_id", "run_id", "raw_event_bytes_b64", "raw_event_sha256", "collector_metadata"],
+      "event_specific_fields": ["operation", "old_path", "new_path", "result_errno"],
+      "normalization": "Close FILE lifetime or create a rename edge; do not infer deletion from absence alone."
+    },
+    "SOCKET_BIND": {
+      "source_records": ["audit bind syscall record plus /proc/<pid>/net and socket inode join"],
+      "required_fields": ["event_id", "timestamp", "pid", "ppid", "pid_start_time_ticks", "executable", "file_identity", "socket_identity", "netns_inode", "logical_host_id", "run_id", "raw_event_bytes_b64", "raw_event_sha256", "collector_metadata"],
+      "event_specific_fields": ["address_family", "bind_address", "bind_port", "socket_fd", "socket_inode"],
+      "normalization": "Create SOCKET node keyed by netns, protocol, endpoint, and inode; require live /proc or ss evidence during smoke validation."
+    },
+    "SOCKET_CONNECT_OR_ACCEPT": {
+      "source_records": ["audit connect/accept/accept4 syscall records plus socket inode join"],
+      "required_fields": ["event_id", "timestamp", "pid", "ppid", "pid_start_time_ticks", "executable", "file_identity", "socket_identity", "netns_inode", "logical_host_id", "run_id", "raw_event_bytes_b64", "raw_event_sha256", "collector_metadata"],
+      "event_specific_fields": ["operation", "socket_fd", "socket_inode", "peer_address", "peer_port", "result_errno"],
+      "normalization": "Create or update SOCKET connection interval and link PROCESS to the accepting/connecting socket."
+    },
+    "NETWORK_CORRELATION": {
+      "source_records": ["bounded tcpdump packet record joined to socket/process event"],
+      "required_fields": ["event_id", "timestamp", "pid", "ppid", "pid_start_time_ticks", "executable", "file_identity", "socket_identity", "netns_inode", "logical_host_id", "run_id", "raw_event_bytes_b64", "raw_event_sha256", "collector_metadata"],
+      "event_specific_fields": ["pcap_sha256", "interface", "packet_index", "five_tuple", "packet_length", "tcp_flags", "correlated_socket_event_ids"],
+      "normalization": "Bind packet timestamp/interface/five-tuple to a SOCKET and logical_host_id; preserve unmatched packets as explicit unjoined records."
+    }
+  },
+  "event_presence_rules": {
+    "all_event_types_have_required_fields": true,
+    "file_identity_always_present": true,
+    "socket_identity_always_present": true,
+    "raw_bytes_and_hash_always_present": true,
+    "null_identity_rule": "Only the object not involved in a given event may be null; the field itself must never be omitted.",
+    "pid_reuse_rule": "A PID without pid_start_time_ticks is not sufficient for a long-lived causal graph join.",
+    "loss_rule": "Any nonzero collector loss/drop counter blocks a complete-graph claim and is retained in run evidence."
+  },
+  "logical_host_join": {
+    "inputs": ["pid", "pid_start_time_ticks", "netns_inode", "run_id", "E1A-R2 host shell/netns/interface manifest"],
+    "mandatory_assertions": [
+      "h1_child_netns == h1_shell_netns",
+      "h2_child_netns == h2_shell_netns",
+      "h1_child_netns != h2_shell_netns",
+      "h2_child_netns != h1_shell_netns"
+    ],
+    "join_result": "exactly one logical_host_id h1 or h2, otherwise UNJOINED",
+    "no_filesystem_isolation_claim": true
+  },
+  "parsing": {
+    "raw_first": true,
+    "decoder_version_pinned": true,
+    "audit_serial_and_sequence_preserved": true,
+    "timestamp_order": "source timestamp, then audit serial/collector sequence, then monotonic_ns",
+    "deterministic_replay": "Replaying identical raw bytes with the same decoder version must produce byte-identical normalized JSON."
+  },
+  "boundaries": {
+    "formal_experiment_executed": false,
+    "provx_inference_executed": false,
+    "apt_actions_executed": false,
+    "automatic_sudo_executed": false,
+    "system_wide_audit_rules_mutated": false,
+    "authority_mutated": false
+  },
+  "terminal": {
+    "MININET_E1B_COLLECTOR_DECISION": "AUDITD_PRIMARY_CANDIDATE",
+    "COLLECTOR_INSTALLED_AND_READY": "NO",
+    "NEXT_ACTION": "HUMAN_INSTALL_APPROVAL",
+    "FORMAL_EXPERIMENT_EXECUTED": "NO",
+    "STOP": true
+  }
+}

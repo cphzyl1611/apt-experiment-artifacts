@@ -1,0 +1,25 @@
+{
+  "all_rows_formal_execution_authorized_false": true,
+  "binding_authority_mutation": "NO",
+  "blocked_unresolved_prerequisite_count": 11,
+  "contract_designed_count": 1196,
+  "denominator_change": "NO",
+  "formal_experiment_executed": "NO",
+  "global_status_counts": {
+    "BLOCKED_UNRESOLVED_PREREQUISITE": 11,
+    "CONTRACT_DESIGNED_READY_FOR_IMPLEMENTATION_PLANNING": 1196,
+    "MANUAL_DESIGN_REQUIRED": 589
+  },
+  "global_status_missing": 0,
+  "global_status_overlap": 0,
+  "global_status_sum": 1796,
+  "manual_design_required_count": 589,
+  "next_action": "FRESH_REVIEW_OF_E0C_R3_GLOBAL_ADAPTER_COVERAGE",
+  "provx_observability_claim": "NONE; all phase fields remain UNKNOWN and result status remains UNEXECUTED_NOT_OBSERVED",
+  "raw_denominator": 1796,
+  "remaining_family_rows": 478,
+  "schema_version": "e0c-r3-global-coverage-audit-v1",
+  "scoring_authority_mutation": "NO",
+  "stop": true,
+  "target_family_rows": 1318
+}

@@ -1,0 +1,218 @@
+{
+  "schema": "MININET_E1B_COLLECTOR_INVENTORY_V1",
+  "observed_at_utc": "2026-08-31T02:06:01.311015Z",
+  "scope": "Read-only local availability and capability inventory for benign Mininet host provenance collection.",
+  "environment": {
+    "os": "Ubuntu 22.04.5 LTS (Jammy)",
+    "kernel": "6.8.0-138-generic",
+    "system_python": "/usr/bin/python3 3.10.12",
+    "current_uid": 1000,
+    "current_user_has_sudo_group": true,
+    "passwordless_sudo": false,
+    "no_installation_or_service_mutation_performed": true
+  },
+  "e1a_r2_pin": {
+    "harness_path": "/home/cph/experiment-parallel/e0-a/e1a-r2-run-20260830T060231Z/mininet_e1a_r2_privileged_harness.py",
+    "harness_sha256": "129bc1b10486e3f23c37d7b3386f7dfeebc108a7b29a25f493809391fd070e90",
+    "runtime_result_path": "/home/cph/experiment-parallel/e0-a/e1a-r2-run-20260830T060231Z/MININET_E1A_R2_PRIVILEGED_RUN_RESULT.json",
+    "runtime_result_sha256": "43c769bdf1c074c9456aeba7d3d2d6737b592891234cc541de2a4907345c58e1",
+    "runtime_validation_path": "/home/cph/experiment-parallel/e0-a/MININET_E1A_R2_RUNTIME_EVIDENCE_VALIDATION.json",
+    "runtime_validation_sha256": "f50a771931e51b9bb37980a5e2619069da2ff92c374e311aaab0c0fb41e83c2c",
+    "attribution_report_path": "/home/cph/experiment-parallel/e0-a/MININET_E1A_R2_ATTRIBUTION_FEASIBILITY_REPORT.md",
+    "attribution_report_sha256": "e265a6a3dab4ee0dc41ecbcfb479448e31ec4c51ebdbc5f21281274a01f19a44",
+    "live_attribution_path": "/home/cph/experiment-parallel/e0-a/e1a-r2-run-20260830T060231Z/MININET_E1A_R2_LIVE_ATTRIBUTION.jsonl",
+    "live_attribution_sha256": "5b582d182743af8c16df6e48010c01931a4d99e30750f252380d987fe167b8e0",
+    "pcap_path": "/home/cph/experiment-parallel/e0-a/e1a-r2-run-20260830T060231Z/MININET_E1A_R2_BENIGN_TRAFFIC.pcap",
+    "pcap_sha256": "184b030eb86881bd7e0b08fce1e2d2a22731af85e806cc66f0951dd9592b7e50",
+    "cleanup_assertions": {
+      "RUN_OWNED_CHILDREN_REMAINING": 0,
+      "RESERVED_TEST_INTERFACES_REMAINING": 0,
+      "RESERVED_TEST_OVS_OBJECTS_REMAINING": 0,
+      "TCPDUMP_PROCESS_REMAINING": 0
+    },
+    "runtime_verdict": "PLAIN_MININET_ATTRIBUTION_FEASIBLE"
+  },
+  "probe_method": {
+    "binary_probe": "command -v plus --version where supported",
+    "package_probe": "dpkg-query and read-only local /var/lib/apt/lists metadata",
+    "kernel_probe": "read-only /boot/config-6.8.0-138-generic and /proc/sys values",
+    "service_probe": "systemctl is-active",
+    "filesystem_probe": "read-only stat/find; permission failures retained as evidence",
+    "prohibited_actions": [
+      "APT install/update",
+      "automatic sudo",
+      "audit rule mutation",
+      "PROVX execution",
+      "formal experiment"
+    ]
+  },
+  "collectors": {
+    "auditd": {
+      "category": "AUDITD_PRIMARY_CANDIDATE",
+      "installed": false,
+      "ready": false,
+      "binary_probes": {
+        "auditctl": {"path": null, "version": null},
+        "auditd": {"path": null, "version": null},
+        "ausearch": {"path": null, "version": null},
+        "aureport": {"path": null, "version": null}
+      },
+      "service_state": "inactive (auditd)",
+      "package_metadata": {
+        "package": "auditd",
+        "ubuntu_release": "jammy main amd64",
+        "candidate_version_from_local_index": "1:3.0.7-1build1",
+        "package_sha256_from_local_index": "dfa1a5078226d017f082a70dc3d17f07629ba15531761579d46247efaad67bfc",
+        "local_index_path": "/var/lib/apt/lists/us.archive.ubuntu.com_ubuntu_dists_jammy_main_binary-amd64_Packages",
+        "installed_status": "not installed"
+      },
+      "kernel_support": {
+        "CONFIG_AUDIT": "y",
+        "CONFIG_AUDITSYSCALL": "y",
+        "audit_netlink_visible": true,
+        "userland_collector_present": false
+      },
+      "evidence": [
+        "command -v auditctl, auditd, ausearch, aureport returned absent",
+        "dpkg-query reports auditd not installed",
+        "systemctl is-active auditd returned inactive",
+        "Ubuntu local package index contains auditd 1:3.0.7-1build1",
+        "kernel config enables AUDIT and AUDITSYSCALL",
+        "no /etc/audit and no /var/log/audit directory"
+      ]
+    },
+    "ebpf_bcc_bpftrace_libbpf": {
+      "category": "EBPF_PRIMARY_CANDIDATE",
+      "installed": false,
+      "ready": false,
+      "binary_probes": {
+        "bpftool": {"path": "/usr/sbin/bpftool", "version": "bpftool v7.4.0", "installed": true},
+        "bpftrace": {"path": null, "version": null, "installed": false},
+        "perf": {"path": "/usr/bin/perf", "version": "perf version 6.8.12", "installed": true},
+        "bcc_tools": {"path": null, "version": null, "installed": false}
+      },
+      "package_metadata": {
+        "libbpf0": {"installed": true, "version": "1:0.5.0-1ubuntu22.04.1"},
+        "linux-tools-common": {"installed": true, "version": "5.15.0-190.200"},
+        "linux-tools-6.8.0-138-generic": {"installed": true, "version": "6.8.0-138.138~22.04.1"},
+        "bpftrace": {"installed": false, "candidate_version_from_local_index": "0.14.0-1"},
+        "bpfcc-tools": {"installed": false, "candidate_version_from_local_index": "0.18.0+ds-2"},
+        "python3-bpfcc": {"installed": false, "candidate_version_from_local_index": "0.18.0+ds-2"}
+      },
+      "kernel_support": {
+        "CONFIG_BPF": "y",
+        "CONFIG_BPF_SYSCALL": "y",
+        "CONFIG_BPF_JIT": "y",
+        "CONFIG_CGROUP_BPF": "y",
+        "CONFIG_KPROBES": "y",
+        "CONFIG_KPROBE_EVENTS": "y",
+        "CONFIG_FTRACE": "y",
+        "CONFIG_PERF_EVENTS": "y",
+        "CONFIG_NET_NS": "y",
+        "tracefs_present": true,
+        "bpf_fs_present": true,
+        "unprivileged_bpf_disabled": "2",
+        "perf_event_paranoid": "4",
+        "current_user_can_load_collector_without_privilege": false
+      },
+      "evidence": [
+        "bpftool and perf binaries are present, but no event collector is installed",
+        "bpftrace, bpfcc-tools, python3-bpfcc, and CamFlow are absent",
+        "kernel supports BPF, kprobes, ftrace, perf events, cgroup BPF, and network namespaces",
+        "unprivileged BPF is disabled and perf_event_paranoid is 4",
+        "no BPF programs or maps were present in /sys/fs/bpf"
+      ]
+    },
+    "camflow": {
+      "category": "CAMFLOW_PRIMARY_CANDIDATE",
+      "installed": false,
+      "ready": false,
+      "binary_probes": {
+        "camflow": {"path": null, "version": null},
+        "camflowd": {"path": null, "version": null}
+      },
+      "package_metadata": {
+        "local_ubuntu_package_record": false,
+        "candidate_version": null,
+        "installed_status": "not installed"
+      },
+      "kernel_support": {
+        "module_or_userspace_provenance_source_observed": false,
+        "tracefs_present": true
+      },
+      "evidence": [
+        "command -v camflow and camflowd returned absent",
+        "dpkg-query found no CamFlow package",
+        "local package index scan found no CamFlow package record",
+        "no CamFlow files or running process observed"
+      ]
+    },
+    "strace": {
+      "category": "VALIDATION_ORACLE_ONLY",
+      "installed": true,
+      "ready_as_formal_collector": false,
+      "binary": {"path": "/usr/bin/strace", "version": "strace -- version 5.16"},
+      "package": {"name": "strace", "version": "5.16-0ubuntu3", "status": "install ok installed"},
+      "evidence": [
+        "strace binary and package are installed",
+        "no system-wide persistent strace collector or event store observed"
+      ],
+      "role": "Use for bounded per-child smoke validation of syscall ordering and parser assumptions; do not treat it as the formal system-wide collector."
+    }
+  },
+  "existing_endpoint_telemetry": {
+    "wazuh": {
+      "packages": {
+        "wazuh-manager": "4.14.6-1",
+        "wazuh-indexer": "4.14.6-1",
+        "wazuh-dashboard": "4.14.6-1",
+        "filebeat": "7.10.2-2"
+      },
+      "services": {
+        "wazuh-manager": "active",
+        "wazuh-indexer": "active",
+        "wazuh-dashboard": "active"
+      },
+      "observed_processes": [
+        "wazuh-syscheckd",
+        "wazuh-logcollector",
+        "wazuh-modulesd",
+        "wazuh-analysisd"
+      ],
+      "auditd_filebeat_module": "present but disabled at /etc/filebeat/modules.d/auditd.yml.disabled",
+      "audit_log_directory": "missing /var/log/audit",
+      "config_access": "Wazuh configuration is root-owned and unreadable to current user",
+      "persistent_process_file_socket_provenance": false,
+      "logical_host_netns_join": false,
+      "ready_for_PROVX_causal_graph": false,
+      "evidence_source": [
+        "EXP_E0_A_ENVIRONMENT_PRECHECK.json",
+        "EXP_E0_A_EXISTING_ASSET_INVENTORY.json",
+        "read-only package/service/file probes"
+      ]
+    },
+    "tcpdump": {
+      "installed": true,
+      "version": "4.99.1-3ubuntu0.2",
+      "role": "supplemental packet correlation only; not a host provenance collector"
+    },
+    "sysmon_etw": {"present": false},
+    "darpa_tc_optc_preprocessing": {"present": false},
+    "persistent_cross_source_binding": {"present": false}
+  },
+  "inventory_conclusion": {
+    "installed_full_collector_candidates": [],
+    "installed_validation_oracles": ["strace"],
+    "installed_supplemental_network_source": ["tcpdump"],
+    "smallest_defensible_candidate": "AUDITD_PRIMARY_CANDIDATE",
+    "collector_installed_and_ready": false,
+    "human_install_approval_required": true
+  },
+  "terminal": {
+    "MININET_E1B_COLLECTOR_DECISION": "AUDITD_PRIMARY_CANDIDATE",
+    "COLLECTOR_INSTALLED_AND_READY": "NO",
+    "NEXT_ACTION": "HUMAN_INSTALL_APPROVAL",
+    "FORMAL_EXPERIMENT_EXECUTED": "NO",
+    "STOP": true
+  }
+}

@@ -1,0 +1,221 @@
+{
+  "stage": "PROVX-R2",
+  "artifact_root": "provx-r1/artifact",
+  "checkpoint_path": "../provx-r1/artifact/storage/cache/Sample/saved_models/GCNConv/checkpoint-best-acc/model.bin",
+  "checkpoint_sha256": "d1307de5ad2b8410eca6b964f48e0afc9e9fdb0655e1702f9c85d6dfd07399f0",
+  "checkpoint_bytes": 193297,
+  "checkpoint_state_type": "OrderedDict",
+  "state_key_count": 14,
+  "state_entries": [
+    {
+      "key": "feature_transform.0.weight",
+      "shape": [
+        64,
+        21
+      ],
+      "dtype": "torch.float32",
+      "device": "cpu",
+      "numel": 1344,
+      "requires_grad": false
+    },
+    {
+      "key": "feature_transform.0.bias",
+      "shape": [
+        64
+      ],
+      "dtype": "torch.float32",
+      "device": "cpu",
+      "numel": 64,
+      "requires_grad": false
+    },
+    {
+      "key": "feature_transform.2.weight",
+      "shape": [
+        256,
+        64
+      ],
+      "dtype": "torch.float32",
+      "device": "cpu",
+      "numel": 16384,
+      "requires_grad": false
+    },
+    {
+      "key": "feature_transform.2.bias",
+      "shape": [
+        256
+      ],
+      "dtype": "torch.float32",
+      "device": "cpu",
+      "numel": 256,
+      "requires_grad": false
+    },
+    {
+      "key": "linear.0.weight",
+      "shape": [
+        64,
+        256
+      ],
+      "dtype": "torch.float32",
+      "device": "cpu",
+      "numel": 16384,
+      "requires_grad": false
+    },
+    {
+      "key": "linear.0.bias",
+      "shape": [
+        64
+      ],
+      "dtype": "torch.float32",
+      "device": "cpu",
+      "numel": 64,
+      "requires_grad": false
+    },
+    {
+      "key": "gnn_layers.0.bias",
+      "shape": [
+        64
+      ],
+      "dtype": "torch.float32",
+      "device": "cpu",
+      "numel": 64,
+      "requires_grad": false
+    },
+    {
+      "key": "gnn_layers.0.lin.weight",
+      "shape": [
+        64,
+        64
+      ],
+      "dtype": "torch.float32",
+      "device": "cpu",
+      "numel": 4096,
+      "requires_grad": false
+    },
+    {
+      "key": "gnn_layers.1.bias",
+      "shape": [
+        64
+      ],
+      "dtype": "torch.float32",
+      "device": "cpu",
+      "numel": 64,
+      "requires_grad": false
+    },
+    {
+      "key": "gnn_layers.1.lin.weight",
+      "shape": [
+        64,
+        64
+      ],
+      "dtype": "torch.float32",
+      "device": "cpu",
+      "numel": 4096,
+      "requires_grad": false
+    },
+    {
+      "key": "classifier.0.weight",
+      "shape": [
+        64,
+        64
+      ],
+      "dtype": "torch.float32",
+      "device": "cpu",
+      "numel": 4096,
+      "requires_grad": false
+    },
+    {
+      "key": "classifier.0.bias",
+      "shape": [
+        64
+      ],
+      "dtype": "torch.float32",
+      "device": "cpu",
+      "numel": 64,
+      "requires_grad": false
+    },
+    {
+      "key": "classifier.3.weight",
+      "shape": [
+        2,
+        64
+      ],
+      "dtype": "torch.float32",
+      "device": "cpu",
+      "numel": 128,
+      "requires_grad": false
+    },
+    {
+      "key": "classifier.3.bias",
+      "shape": [
+        2
+      ],
+      "dtype": "torch.float32",
+      "device": "cpu",
+      "numel": 2,
+      "requires_grad": false
+    }
+  ],
+  "metadata_json": {
+    "detector_config": {
+      "gnn_model": "GCNConv",
+      "gnn_hidden_size": 64,
+      "gnn_feature_dim_size": 256,
+      "num_gnn_layers": 2,
+      "graph_pooling": "mean",
+      "dropout_rate": 0.1,
+      "num_classes": 2,
+      "residual": false,
+      "gat_heads": 8,
+      "graphsage_aggr": "mean"
+    },
+    "train_config": {
+      "epochs": 50,
+      "batch_size": 32,
+      "learning_rate": 0.005,
+      "weight_decay": 0.0,
+      "adam_epsilon": 1e-08,
+      "max_grad_norm": 1.0,
+      "seed": 1,
+      "use_weighted_sampler": true,
+      "sampler_multiplier": 3,
+      "limit_train_batches": 0,
+      "limit_eval_batches": 0
+    }
+  },
+  "input_contract": {
+    "x": {
+      "shape": "[N,21]",
+      "dtype": "torch.float32",
+      "device": "cpu for shipped checkpoint; model can be moved to another device"
+    },
+    "edge_index": {
+      "shape": "[2,E]",
+      "dtype": "torch.int64",
+      "device": "same as x/model",
+      "semantics": "PyG COO endpoint indices"
+    },
+    "batch": {
+      "shape": "[N]",
+      "dtype": "torch.int64",
+      "required": "optional; Detector.forward creates all-zero batch when omitted"
+    },
+    "output": {
+      "shape": "[B,2]",
+      "dtype": "torch.float32 logits",
+      "semantics": "argmax class 0/1"
+    }
+  },
+  "compatibility_checks": {
+    "input_feature_dim_from_checkpoint": 21,
+    "hidden_size": 64,
+    "gnn_feature_dim_size": 256,
+    "num_gnn_layers": 2,
+    "pooling": "mean",
+    "num_classes": 2,
+    "all_state_tensors_float32_cpu": true
+  },
+  "source_evidence": {
+    "detector_forward": "provx_usenix/detector.py:102-107 takes x, edge_index, optional batch and ignores **kwargs; data.py:18-27 loads Data objects; evaluation.py:104-122 uses metadata only for ground truth/intervention"
+  },
+  "inspection_mode": "read-only torch.load checkpoint state; no forward/training/inference in this inspection"
+}

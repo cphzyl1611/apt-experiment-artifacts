@@ -1,0 +1,238 @@
+{
+  "seed": null,
+  "graph_index": 19,
+  "sample_id": 497,
+  "pred": 1,
+  "target_label": 1,
+  "edge_count": 100,
+  "top_k": 30,
+  "top_k_edges": [
+    {
+      "rank": 1,
+      "edge_index": 53,
+      "src": 54,
+      "dst": 0,
+      "weight": 0.1341700553894043
+    },
+    {
+      "rank": 2,
+      "edge_index": 2,
+      "src": 3,
+      "dst": 0,
+      "weight": 0.11828774213790894
+    },
+    {
+      "rank": 3,
+      "edge_index": 32,
+      "src": 33,
+      "dst": 0,
+      "weight": 0.11088132858276367
+    },
+    {
+      "rank": 4,
+      "edge_index": 18,
+      "src": 19,
+      "dst": 0,
+      "weight": 0.10959070920944214
+    },
+    {
+      "rank": 5,
+      "edge_index": 17,
+      "src": 18,
+      "dst": 0,
+      "weight": 0.1066354513168335
+    },
+    {
+      "rank": 6,
+      "edge_index": 4,
+      "src": 5,
+      "dst": 0,
+      "weight": 0.10505211353302002
+    },
+    {
+      "rank": 7,
+      "edge_index": 96,
+      "src": 97,
+      "dst": 0,
+      "weight": 0.10392153263092041
+    },
+    {
+      "rank": 8,
+      "edge_index": 84,
+      "src": 85,
+      "dst": 0,
+      "weight": 0.09896314144134521
+    },
+    {
+      "rank": 9,
+      "edge_index": 85,
+      "src": 86,
+      "dst": 0,
+      "weight": 0.09859007596969604
+    },
+    {
+      "rank": 10,
+      "edge_index": 51,
+      "src": 52,
+      "dst": 0,
+      "weight": 0.09747254848480225
+    },
+    {
+      "rank": 11,
+      "edge_index": 12,
+      "src": 13,
+      "dst": 0,
+      "weight": 0.09335368871688843
+    },
+    {
+      "rank": 12,
+      "edge_index": 21,
+      "src": 22,
+      "dst": 0,
+      "weight": 0.09215331077575684
+    },
+    {
+      "rank": 13,
+      "edge_index": 26,
+      "src": 27,
+      "dst": 0,
+      "weight": 0.0910908579826355
+    },
+    {
+      "rank": 14,
+      "edge_index": 65,
+      "src": 66,
+      "dst": 0,
+      "weight": 0.08994466066360474
+    },
+    {
+      "rank": 15,
+      "edge_index": 13,
+      "src": 14,
+      "dst": 0,
+      "weight": 0.08917152881622314
+    },
+    {
+      "rank": 16,
+      "edge_index": 16,
+      "src": 17,
+      "dst": 0,
+      "weight": 0.0862809419631958
+    },
+    {
+      "rank": 17,
+      "edge_index": 36,
+      "src": 37,
+      "dst": 0,
+      "weight": 0.08599293231964111
+    },
+    {
+      "rank": 18,
+      "edge_index": 5,
+      "src": 6,
+      "dst": 0,
+      "weight": 0.08525288105010986
+    },
+    {
+      "rank": 19,
+      "edge_index": 60,
+      "src": 61,
+      "dst": 0,
+      "weight": 0.08399426937103271
+    },
+    {
+      "rank": 20,
+      "edge_index": 67,
+      "src": 68,
+      "dst": 0,
+      "weight": 0.08161163330078125
+    },
+    {
+      "rank": 21,
+      "edge_index": 97,
+      "src": 98,
+      "dst": 0,
+      "weight": 0.08154940605163574
+    },
+    {
+      "rank": 22,
+      "edge_index": 34,
+      "src": 35,
+      "dst": 0,
+      "weight": 0.07776105403900146
+    },
+    {
+      "rank": 23,
+      "edge_index": 20,
+      "src": 21,
+      "dst": 0,
+      "weight": 0.07588356733322144
+    },
+    {
+      "rank": 24,
+      "edge_index": 77,
+      "src": 78,
+      "dst": 0,
+      "weight": 0.07415914535522461
+    },
+    {
+      "rank": 25,
+      "edge_index": 81,
+      "src": 82,
+      "dst": 0,
+      "weight": 0.07409608364105225
+    },
+    {
+      "rank": 26,
+      "edge_index": 19,
+      "src": 20,
+      "dst": 0,
+      "weight": 0.07389795780181885
+    },
+    {
+      "rank": 27,
+      "edge_index": 83,
+      "src": 84,
+      "dst": 0,
+      "weight": 0.07359123229980469
+    },
+    {
+      "rank": 28,
+      "edge_index": 69,
+      "src": 70,
+      "dst": 0,
+      "weight": 0.07355839014053345
+    },
+    {
+      "rank": 29,
+      "edge_index": 68,
+      "src": 69,
+      "dst": 0,
+      "weight": 0.07179200649261475
+    },
+    {
+      "rank": 30,
+      "edge_index": 15,
+      "src": 16,
+      "dst": 0,
+      "weight": 0.07139962911605835
+    }
+  ],
+  "mer_model_level_intervention_flip": 1,
+  "runtime_sec": 0.4838147740083514,
+  "output_path": "provx-r2/unseeded/rep_05.pt",
+  "output_bytes": 3869,
+  "output_sha256": "ac454f4c4045c6d6bee1a92390f030473c0c8574d18f60735b51285ab7910dc5",
+  "config": {
+    "epochs": 200,
+    "lr": 0.05,
+    "alpha": 0.9,
+    "solidification_factor": 0.6,
+    "solidification_stage_start_ratio": 0.6,
+    "confident_threshold_low": 0.05,
+    "confident_threshold_high": 0.95,
+    "use_l1_distance": false
+  },
+  "checkpoint": "/home/cph/experiment-parallel/e0-b/provx-r1/artifact/storage/cache/Sample/saved_models/GCNConv/checkpoint-best-acc/model.bin",
+  "mer_semantics": "MODEL_LEVEL_INTERVENTION_FLIP_ONLY"
+}

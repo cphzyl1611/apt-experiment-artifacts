@@ -1,0 +1,2932 @@
+{
+  "stage": "PROVX-R2",
+  "run_count": 10,
+  "identical_input_config": true,
+  "seed": null,
+  "config": {
+    "epochs": 200,
+    "lr": 0.05,
+    "alpha": 0.9,
+    "solidification_factor": 0.6,
+    "solidification_stage_start_ratio": 0.6,
+    "confident_threshold_low": 0.05,
+    "confident_threshold_high": 0.95,
+    "use_l1_distance": false
+  },
+  "graph_index": 19,
+  "sample_id": 497,
+  "predictions": [
+    1
+  ],
+  "target_labels": [
+    1
+  ],
+  "mer_model_level_intervention_flip_values": [
+    1
+  ],
+  "output_hashes": [
+    "85477ab54880c4787c81c2a369f044c76376e018d99f28f82b6ee9dc705b2c24",
+    "17ae3274567d4537f3f7eba83ebd572bdc94ea25d5051ae0dfb0b0fe3957eb8c",
+    "361fa859b2202b120b101c460f0dad047a7ac61ca7464c8e05f9f3fabe5808f7",
+    "fc2f26531997d53e39c245ae83e4ac591520d2d0e33d245ac1cb55ba4dc1fe81",
+    "ac454f4c4045c6d6bee1a92390f030473c0c8574d18f60735b51285ab7910dc5",
+    "c87550fed99c6e2e5f26df4849030016ac4e89dd3e2ba037ff6b023f1bfbbfe4",
+    "3cb5dbc7c8e39bd9a13a4b4958d985300c12e4ac2074ca8ff09953c2b4680936",
+    "f0dd55c91bf86e5501eedb86f54b18bf2d3b40dd4b8bec840ecf81e051d2e660",
+    "0fd0ed756b97946e832e56b45e518f02e3297a65f71d183c3ce9ac26a58f7fb1",
+    "53ffcb797a504454be4e6209941a116238f5f700bc3fd6c3995e6bdcf25ae8d9"
+  ],
+  "output_bytes": [
+    3869,
+    3869,
+    3869,
+    3869,
+    3869,
+    3869,
+    3869,
+    3869,
+    3869,
+    3869
+  ],
+  "runtimes_sec": [
+    0.3984068800054956,
+    0.3691001609986415,
+    0.5050954809994437,
+    1.0053029539994895,
+    0.4838147740083514,
+    0.5264858890004689,
+    0.42519206400902476,
+    0.4994787370087579,
+    0.5424897749908268,
+    0.4230147449998185
+  ],
+  "runtime_summary_sec": {
+    "min": 0.3691001609986415,
+    "max": 1.0053029539994895,
+    "mean": 0.5178381460020318,
+    "median": 0.49164675550855463
+  },
+  "repetitions": [
+    {
+      "seed": null,
+      "graph_index": 19,
+      "sample_id": 497,
+      "pred": 1,
+      "target_label": 1,
+      "edge_count": 100,
+      "top_k": 30,
+      "top_k_edges": [
+        {
+          "rank": 1,
+          "edge_index": 81,
+          "src": 82,
+          "dst": 0,
+          "weight": 0.12364238500595093
+        },
+        {
+          "rank": 2,
+          "edge_index": 85,
+          "src": 86,
+          "dst": 0,
+          "weight": 0.12024372816085815
+        },
+        {
+          "rank": 3,
+          "edge_index": 17,
+          "src": 18,
+          "dst": 0,
+          "weight": 0.11552673578262329
+        },
+        {
+          "rank": 4,
+          "edge_index": 20,
+          "src": 21,
+          "dst": 0,
+          "weight": 0.10882413387298584
+        },
+        {
+          "rank": 5,
+          "edge_index": 84,
+          "src": 85,
+          "dst": 0,
+          "weight": 0.10700458288192749
+        },
+        {
+          "rank": 6,
+          "edge_index": 19,
+          "src": 20,
+          "dst": 0,
+          "weight": 0.10245907306671143
+        },
+        {
+          "rank": 7,
+          "edge_index": 15,
+          "src": 16,
+          "dst": 0,
+          "weight": 0.1017986536026001
+        },
+        {
+          "rank": 8,
+          "edge_index": 92,
+          "src": 93,
+          "dst": 0,
+          "weight": 0.10162132978439331
+        },
+        {
+          "rank": 9,
+          "edge_index": 32,
+          "src": 33,
+          "dst": 0,
+          "weight": 0.09464609622955322
+        },
+        {
+          "rank": 10,
+          "edge_index": 91,
+          "src": 92,
+          "dst": 0,
+          "weight": 0.09166592359542847
+        },
+        {
+          "rank": 11,
+          "edge_index": 53,
+          "src": 54,
+          "dst": 0,
+          "weight": 0.09134358167648315
+        },
+        {
+          "rank": 12,
+          "edge_index": 59,
+          "src": 60,
+          "dst": 0,
+          "weight": 0.08731412887573242
+        },
+        {
+          "rank": 13,
+          "edge_index": 37,
+          "src": 38,
+          "dst": 0,
+          "weight": 0.08366191387176514
+        },
+        {
+          "rank": 14,
+          "edge_index": 36,
+          "src": 37,
+          "dst": 0,
+          "weight": 0.08269131183624268
+        },
+        {
+          "rank": 15,
+          "edge_index": 60,
+          "src": 61,
+          "dst": 0,
+          "weight": 0.08184444904327393
+        },
+        {
+          "rank": 16,
+          "edge_index": 4,
+          "src": 5,
+          "dst": 0,
+          "weight": 0.08069616556167603
+        },
+        {
+          "rank": 17,
+          "edge_index": 52,
+          "src": 53,
+          "dst": 0,
+          "weight": 0.07947015762329102
+        },
+        {
+          "rank": 18,
+          "edge_index": 69,
+          "src": 70,
+          "dst": 0,
+          "weight": 0.07927554845809937
+        },
+        {
+          "rank": 19,
+          "edge_index": 21,
+          "src": 22,
+          "dst": 0,
+          "weight": 0.07884770631790161
+        },
+        {
+          "rank": 20,
+          "edge_index": 18,
+          "src": 19,
+          "dst": 0,
+          "weight": 0.07804882526397705
+        },
+        {
+          "rank": 21,
+          "edge_index": 5,
+          "src": 6,
+          "dst": 0,
+          "weight": 0.07554876804351807
+        },
+        {
+          "rank": 22,
+          "edge_index": 65,
+          "src": 66,
+          "dst": 0,
+          "weight": 0.07428622245788574
+        },
+        {
+          "rank": 23,
+          "edge_index": 0,
+          "src": 1,
+          "dst": 0,
+          "weight": 0.0741531252861023
+        },
+        {
+          "rank": 24,
+          "edge_index": 68,
+          "src": 69,
+          "dst": 0,
+          "weight": 0.0740620493888855
+        },
+        {
+          "rank": 25,
+          "edge_index": 16,
+          "src": 17,
+          "dst": 0,
+          "weight": 0.07385873794555664
+        },
+        {
+          "rank": 26,
+          "edge_index": 45,
+          "src": 46,
+          "dst": 0,
+          "weight": 0.07363373041152954
+        },
+        {
+          "rank": 27,
+          "edge_index": 77,
+          "src": 78,
+          "dst": 0,
+          "weight": 0.0734589695930481
+        },
+        {
+          "rank": 28,
+          "edge_index": 26,
+          "src": 27,
+          "dst": 0,
+          "weight": 0.07284635305404663
+        },
+        {
+          "rank": 29,
+          "edge_index": 33,
+          "src": 34,
+          "dst": 0,
+          "weight": 0.07236230373382568
+        },
+        {
+          "rank": 30,
+          "edge_index": 9,
+          "src": 10,
+          "dst": 0,
+          "weight": 0.0716012716293335
+        }
+      ],
+      "mer_model_level_intervention_flip": 1,
+      "runtime_sec": 0.3984068800054956,
+      "output_path": "provx-r2/unseeded/rep_01.pt",
+      "output_bytes": 3869,
+      "output_sha256": "85477ab54880c4787c81c2a369f044c76376e018d99f28f82b6ee9dc705b2c24",
+      "config": {
+        "epochs": 200,
+        "lr": 0.05,
+        "alpha": 0.9,
+        "solidification_factor": 0.6,
+        "solidification_stage_start_ratio": 0.6,
+        "confident_threshold_low": 0.05,
+        "confident_threshold_high": 0.95,
+        "use_l1_distance": false
+      },
+      "checkpoint": "/home/cph/experiment-parallel/e0-b/provx-r1/artifact/storage/cache/Sample/saved_models/GCNConv/checkpoint-best-acc/model.bin",
+      "mer_semantics": "MODEL_LEVEL_INTERVENTION_FLIP_ONLY"
+    },
+    {
+      "seed": null,
+      "graph_index": 19,
+      "sample_id": 497,
+      "pred": 1,
+      "target_label": 1,
+      "edge_count": 100,
+      "top_k": 30,
+      "top_k_edges": [
+        {
+          "rank": 1,
+          "edge_index": 68,
+          "src": 69,
+          "dst": 0,
+          "weight": 0.13613593578338623
+        },
+        {
+          "rank": 2,
+          "edge_index": 17,
+          "src": 18,
+          "dst": 0,
+          "weight": 0.11647963523864746
+        },
+        {
+          "rank": 3,
+          "edge_index": 84,
+          "src": 85,
+          "dst": 0,
+          "weight": 0.1092904806137085
+        },
+        {
+          "rank": 4,
+          "edge_index": 20,
+          "src": 21,
+          "dst": 0,
+          "weight": 0.10532242059707642
+        },
+        {
+          "rank": 5,
+          "edge_index": 34,
+          "src": 35,
+          "dst": 0,
+          "weight": 0.10226202011108398
+        },
+        {
+          "rank": 6,
+          "edge_index": 53,
+          "src": 54,
+          "dst": 0,
+          "weight": 0.10040193796157837
+        },
+        {
+          "rank": 7,
+          "edge_index": 96,
+          "src": 97,
+          "dst": 0,
+          "weight": 0.10023230314254761
+        },
+        {
+          "rank": 8,
+          "edge_index": 69,
+          "src": 70,
+          "dst": 0,
+          "weight": 0.0952644944190979
+        },
+        {
+          "rank": 9,
+          "edge_index": 16,
+          "src": 17,
+          "dst": 0,
+          "weight": 0.09465748071670532
+        },
+        {
+          "rank": 10,
+          "edge_index": 92,
+          "src": 93,
+          "dst": 0,
+          "weight": 0.09216910600662231
+        },
+        {
+          "rank": 11,
+          "edge_index": 97,
+          "src": 98,
+          "dst": 0,
+          "weight": 0.09082949161529541
+        },
+        {
+          "rank": 12,
+          "edge_index": 85,
+          "src": 86,
+          "dst": 0,
+          "weight": 0.09015995264053345
+        },
+        {
+          "rank": 13,
+          "edge_index": 23,
+          "src": 24,
+          "dst": 0,
+          "weight": 0.08408349752426147
+        },
+        {
+          "rank": 14,
+          "edge_index": 0,
+          "src": 1,
+          "dst": 0,
+          "weight": 0.08296406269073486
+        },
+        {
+          "rank": 15,
+          "edge_index": 60,
+          "src": 61,
+          "dst": 0,
+          "weight": 0.08189880847930908
+        },
+        {
+          "rank": 16,
+          "edge_index": 51,
+          "src": 52,
+          "dst": 0,
+          "weight": 0.08160412311553955
+        },
+        {
+          "rank": 17,
+          "edge_index": 18,
+          "src": 19,
+          "dst": 0,
+          "weight": 0.07976222038269043
+        },
+        {
+          "rank": 18,
+          "edge_index": 24,
+          "src": 25,
+          "dst": 0,
+          "weight": 0.078419029712677
+        },
+        {
+          "rank": 19,
+          "edge_index": 32,
+          "src": 33,
+          "dst": 0,
+          "weight": 0.07724744081497192
+        },
+        {
+          "rank": 20,
+          "edge_index": 11,
+          "src": 12,
+          "dst": 0,
+          "weight": 0.07656073570251465
+        },
+        {
+          "rank": 21,
+          "edge_index": 83,
+          "src": 84,
+          "dst": 0,
+          "weight": 0.07596945762634277
+        },
+        {
+          "rank": 22,
+          "edge_index": 1,
+          "src": 2,
+          "dst": 0,
+          "weight": 0.07574772834777832
+        },
+        {
+          "rank": 23,
+          "edge_index": 35,
+          "src": 36,
+          "dst": 0,
+          "weight": 0.07524865865707397
+        },
+        {
+          "rank": 24,
+          "edge_index": 36,
+          "src": 37,
+          "dst": 0,
+          "weight": 0.07338321208953857
+        },
+        {
+          "rank": 25,
+          "edge_index": 81,
+          "src": 82,
+          "dst": 0,
+          "weight": 0.07323312759399414
+        },
+        {
+          "rank": 26,
+          "edge_index": 45,
+          "src": 46,
+          "dst": 0,
+          "weight": 0.07148474454879761
+        },
+        {
+          "rank": 27,
+          "edge_index": 13,
+          "src": 14,
+          "dst": 0,
+          "weight": 0.07062917947769165
+        },
+        {
+          "rank": 28,
+          "edge_index": 89,
+          "src": 90,
+          "dst": 0,
+          "weight": 0.06938028335571289
+        },
+        {
+          "rank": 29,
+          "edge_index": 12,
+          "src": 13,
+          "dst": 0,
+          "weight": 0.06663644313812256
+        },
+        {
+          "rank": 30,
+          "edge_index": 99,
+          "src": 100,
+          "dst": 0,
+          "weight": 0.06611084938049316
+        }
+      ],
+      "mer_model_level_intervention_flip": 1,
+      "runtime_sec": 0.3691001609986415,
+      "output_path": "provx-r2/unseeded/rep_02.pt",
+      "output_bytes": 3869,
+      "output_sha256": "17ae3274567d4537f3f7eba83ebd572bdc94ea25d5051ae0dfb0b0fe3957eb8c",
+      "config": {
+        "epochs": 200,
+        "lr": 0.05,
+        "alpha": 0.9,
+        "solidification_factor": 0.6,
+        "solidification_stage_start_ratio": 0.6,
+        "confident_threshold_low": 0.05,
+        "confident_threshold_high": 0.95,
+        "use_l1_distance": false
+      },
+      "checkpoint": "/home/cph/experiment-parallel/e0-b/provx-r1/artifact/storage/cache/Sample/saved_models/GCNConv/checkpoint-best-acc/model.bin",
+      "mer_semantics": "MODEL_LEVEL_INTERVENTION_FLIP_ONLY"
+    },
+    {
+      "seed": null,
+      "graph_index": 19,
+      "sample_id": 497,
+      "pred": 1,
+      "target_label": 1,
+      "edge_count": 100,
+      "top_k": 30,
+      "top_k_edges": [
+        {
+          "rank": 1,
+          "edge_index": 19,
+          "src": 20,
+          "dst": 0,
+          "weight": 0.1098320484161377
+        },
+        {
+          "rank": 2,
+          "edge_index": 20,
+          "src": 21,
+          "dst": 0,
+          "weight": 0.10132378339767456
+        },
+        {
+          "rank": 3,
+          "edge_index": 92,
+          "src": 93,
+          "dst": 0,
+          "weight": 0.09674584865570068
+        },
+        {
+          "rank": 4,
+          "edge_index": 18,
+          "src": 19,
+          "dst": 0,
+          "weight": 0.09445017576217651
+        },
+        {
+          "rank": 5,
+          "edge_index": 2,
+          "src": 3,
+          "dst": 0,
+          "weight": 0.092335045337677
+        },
+        {
+          "rank": 6,
+          "edge_index": 32,
+          "src": 33,
+          "dst": 0,
+          "weight": 0.09213590621948242
+        },
+        {
+          "rank": 7,
+          "edge_index": 68,
+          "src": 69,
+          "dst": 0,
+          "weight": 0.08990693092346191
+        },
+        {
+          "rank": 8,
+          "edge_index": 15,
+          "src": 16,
+          "dst": 0,
+          "weight": 0.08835464715957642
+        },
+        {
+          "rank": 9,
+          "edge_index": 11,
+          "src": 12,
+          "dst": 0,
+          "weight": 0.08772188425064087
+        },
+        {
+          "rank": 10,
+          "edge_index": 77,
+          "src": 78,
+          "dst": 0,
+          "weight": 0.0869174599647522
+        },
+        {
+          "rank": 11,
+          "edge_index": 85,
+          "src": 86,
+          "dst": 0,
+          "weight": 0.08635759353637695
+        },
+        {
+          "rank": 12,
+          "edge_index": 67,
+          "src": 68,
+          "dst": 0,
+          "weight": 0.08429217338562012
+        },
+        {
+          "rank": 13,
+          "edge_index": 84,
+          "src": 85,
+          "dst": 0,
+          "weight": 0.08377599716186523
+        },
+        {
+          "rank": 14,
+          "edge_index": 13,
+          "src": 14,
+          "dst": 0,
+          "weight": 0.0834764838218689
+        },
+        {
+          "rank": 15,
+          "edge_index": 17,
+          "src": 18,
+          "dst": 0,
+          "weight": 0.08347189426422119
+        },
+        {
+          "rank": 16,
+          "edge_index": 4,
+          "src": 5,
+          "dst": 0,
+          "weight": 0.08286696672439575
+        },
+        {
+          "rank": 17,
+          "edge_index": 45,
+          "src": 46,
+          "dst": 0,
+          "weight": 0.08141499757766724
+        },
+        {
+          "rank": 18,
+          "edge_index": 1,
+          "src": 2,
+          "dst": 0,
+          "weight": 0.08140486478805542
+        },
+        {
+          "rank": 19,
+          "edge_index": 96,
+          "src": 97,
+          "dst": 0,
+          "weight": 0.08055174350738525
+        },
+        {
+          "rank": 20,
+          "edge_index": 83,
+          "src": 84,
+          "dst": 0,
+          "weight": 0.07910871505737305
+        },
+        {
+          "rank": 21,
+          "edge_index": 16,
+          "src": 17,
+          "dst": 0,
+          "weight": 0.07759737968444824
+        },
+        {
+          "rank": 22,
+          "edge_index": 34,
+          "src": 35,
+          "dst": 0,
+          "weight": 0.07712298631668091
+        },
+        {
+          "rank": 23,
+          "edge_index": 12,
+          "src": 13,
+          "dst": 0,
+          "weight": 0.07698071002960205
+        },
+        {
+          "rank": 24,
+          "edge_index": 0,
+          "src": 1,
+          "dst": 0,
+          "weight": 0.07648640871047974
+        },
+        {
+          "rank": 25,
+          "edge_index": 21,
+          "src": 22,
+          "dst": 0,
+          "weight": 0.0756380558013916
+        },
+        {
+          "rank": 26,
+          "edge_index": 5,
+          "src": 6,
+          "dst": 0,
+          "weight": 0.07432359457015991
+        },
+        {
+          "rank": 27,
+          "edge_index": 51,
+          "src": 52,
+          "dst": 0,
+          "weight": 0.07428151369094849
+        },
+        {
+          "rank": 28,
+          "edge_index": 35,
+          "src": 36,
+          "dst": 0,
+          "weight": 0.07316720485687256
+        },
+        {
+          "rank": 29,
+          "edge_index": 52,
+          "src": 53,
+          "dst": 0,
+          "weight": 0.07232952117919922
+        },
+        {
+          "rank": 30,
+          "edge_index": 89,
+          "src": 90,
+          "dst": 0,
+          "weight": 0.07213670015335083
+        }
+      ],
+      "mer_model_level_intervention_flip": 1,
+      "runtime_sec": 0.5050954809994437,
+      "output_path": "provx-r2/unseeded/rep_03.pt",
+      "output_bytes": 3869,
+      "output_sha256": "361fa859b2202b120b101c460f0dad047a7ac61ca7464c8e05f9f3fabe5808f7",
+      "config": {
+        "epochs": 200,
+        "lr": 0.05,
+        "alpha": 0.9,
+        "solidification_factor": 0.6,
+        "solidification_stage_start_ratio": 0.6,
+        "confident_threshold_low": 0.05,
+        "confident_threshold_high": 0.95,
+        "use_l1_distance": false
+      },
+      "checkpoint": "/home/cph/experiment-parallel/e0-b/provx-r1/artifact/storage/cache/Sample/saved_models/GCNConv/checkpoint-best-acc/model.bin",
+      "mer_semantics": "MODEL_LEVEL_INTERVENTION_FLIP_ONLY"
+    },
+    {
+      "seed": null,
+      "graph_index": 19,
+      "sample_id": 497,
+      "pred": 1,
+      "target_label": 1,
+      "edge_count": 100,
+      "top_k": 30,
+      "top_k_edges": [
+        {
+          "rank": 1,
+          "edge_index": 68,
+          "src": 69,
+          "dst": 0,
+          "weight": 0.14758634567260742
+        },
+        {
+          "rank": 2,
+          "edge_index": 83,
+          "src": 84,
+          "dst": 0,
+          "weight": 0.12669700384140015
+        },
+        {
+          "rank": 3,
+          "edge_index": 0,
+          "src": 1,
+          "dst": 0,
+          "weight": 0.12072640657424927
+        },
+        {
+          "rank": 4,
+          "edge_index": 85,
+          "src": 86,
+          "dst": 0,
+          "weight": 0.1159098744392395
+        },
+        {
+          "rank": 5,
+          "edge_index": 77,
+          "src": 78,
+          "dst": 0,
+          "weight": 0.11414915323257446
+        },
+        {
+          "rank": 6,
+          "edge_index": 20,
+          "src": 21,
+          "dst": 0,
+          "weight": 0.11397624015808105
+        },
+        {
+          "rank": 7,
+          "edge_index": 12,
+          "src": 13,
+          "dst": 0,
+          "weight": 0.10843998193740845
+        },
+        {
+          "rank": 8,
+          "edge_index": 2,
+          "src": 3,
+          "dst": 0,
+          "weight": 0.10789716243743896
+        },
+        {
+          "rank": 9,
+          "edge_index": 19,
+          "src": 20,
+          "dst": 0,
+          "weight": 0.1042029857635498
+        },
+        {
+          "rank": 10,
+          "edge_index": 15,
+          "src": 16,
+          "dst": 0,
+          "weight": 0.1035502552986145
+        },
+        {
+          "rank": 11,
+          "edge_index": 32,
+          "src": 33,
+          "dst": 0,
+          "weight": 0.09856414794921875
+        },
+        {
+          "rank": 12,
+          "edge_index": 69,
+          "src": 70,
+          "dst": 0,
+          "weight": 0.09714359045028687
+        },
+        {
+          "rank": 13,
+          "edge_index": 9,
+          "src": 10,
+          "dst": 0,
+          "weight": 0.0967145562171936
+        },
+        {
+          "rank": 14,
+          "edge_index": 67,
+          "src": 68,
+          "dst": 0,
+          "weight": 0.09568923711776733
+        },
+        {
+          "rank": 15,
+          "edge_index": 53,
+          "src": 54,
+          "dst": 0,
+          "weight": 0.0883636474609375
+        },
+        {
+          "rank": 16,
+          "edge_index": 84,
+          "src": 85,
+          "dst": 0,
+          "weight": 0.08815264701843262
+        },
+        {
+          "rank": 17,
+          "edge_index": 1,
+          "src": 2,
+          "dst": 0,
+          "weight": 0.08632242679595947
+        },
+        {
+          "rank": 18,
+          "edge_index": 26,
+          "src": 27,
+          "dst": 0,
+          "weight": 0.08370321989059448
+        },
+        {
+          "rank": 19,
+          "edge_index": 33,
+          "src": 34,
+          "dst": 0,
+          "weight": 0.08316284418106079
+        },
+        {
+          "rank": 20,
+          "edge_index": 4,
+          "src": 5,
+          "dst": 0,
+          "weight": 0.08168947696685791
+        },
+        {
+          "rank": 21,
+          "edge_index": 24,
+          "src": 25,
+          "dst": 0,
+          "weight": 0.0790908932685852
+        },
+        {
+          "rank": 22,
+          "edge_index": 45,
+          "src": 46,
+          "dst": 0,
+          "weight": 0.07856708765029907
+        },
+        {
+          "rank": 23,
+          "edge_index": 92,
+          "src": 93,
+          "dst": 0,
+          "weight": 0.07749372720718384
+        },
+        {
+          "rank": 24,
+          "edge_index": 51,
+          "src": 52,
+          "dst": 0,
+          "weight": 0.07462936639785767
+        },
+        {
+          "rank": 25,
+          "edge_index": 28,
+          "src": 29,
+          "dst": 0,
+          "weight": 0.07195734977722168
+        },
+        {
+          "rank": 26,
+          "edge_index": 17,
+          "src": 18,
+          "dst": 0,
+          "weight": 0.07164031267166138
+        },
+        {
+          "rank": 27,
+          "edge_index": 61,
+          "src": 62,
+          "dst": 0,
+          "weight": 0.07136362791061401
+        },
+        {
+          "rank": 28,
+          "edge_index": 65,
+          "src": 66,
+          "dst": 0,
+          "weight": 0.07043886184692383
+        },
+        {
+          "rank": 29,
+          "edge_index": 97,
+          "src": 98,
+          "dst": 0,
+          "weight": 0.06947803497314453
+        },
+        {
+          "rank": 30,
+          "edge_index": 21,
+          "src": 22,
+          "dst": 0,
+          "weight": 0.06918758153915405
+        }
+      ],
+      "mer_model_level_intervention_flip": 1,
+      "runtime_sec": 1.0053029539994895,
+      "output_path": "provx-r2/unseeded/rep_04.pt",
+      "output_bytes": 3869,
+      "output_sha256": "fc2f26531997d53e39c245ae83e4ac591520d2d0e33d245ac1cb55ba4dc1fe81",
+      "config": {
+        "epochs": 200,
+        "lr": 0.05,
+        "alpha": 0.9,
+        "solidification_factor": 0.6,
+        "solidification_stage_start_ratio": 0.6,
+        "confident_threshold_low": 0.05,
+        "confident_threshold_high": 0.95,
+        "use_l1_distance": false
+      },
+      "checkpoint": "/home/cph/experiment-parallel/e0-b/provx-r1/artifact/storage/cache/Sample/saved_models/GCNConv/checkpoint-best-acc/model.bin",
+      "mer_semantics": "MODEL_LEVEL_INTERVENTION_FLIP_ONLY"
+    },
+    {
+      "seed": null,
+      "graph_index": 19,
+      "sample_id": 497,
+      "pred": 1,
+      "target_label": 1,
+      "edge_count": 100,
+      "top_k": 30,
+      "top_k_edges": [
+        {
+          "rank": 1,
+          "edge_index": 53,
+          "src": 54,
+          "dst": 0,
+          "weight": 0.1341700553894043
+        },
+        {
+          "rank": 2,
+          "edge_index": 2,
+          "src": 3,
+          "dst": 0,
+          "weight": 0.11828774213790894
+        },
+        {
+          "rank": 3,
+          "edge_index": 32,
+          "src": 33,
+          "dst": 0,
+          "weight": 0.11088132858276367
+        },
+        {
+          "rank": 4,
+          "edge_index": 18,
+          "src": 19,
+          "dst": 0,
+          "weight": 0.10959070920944214
+        },
+        {
+          "rank": 5,
+          "edge_index": 17,
+          "src": 18,
+          "dst": 0,
+          "weight": 0.1066354513168335
+        },
+        {
+          "rank": 6,
+          "edge_index": 4,
+          "src": 5,
+          "dst": 0,
+          "weight": 0.10505211353302002
+        },
+        {
+          "rank": 7,
+          "edge_index": 96,
+          "src": 97,
+          "dst": 0,
+          "weight": 0.10392153263092041
+        },
+        {
+          "rank": 8,
+          "edge_index": 84,
+          "src": 85,
+          "dst": 0,
+          "weight": 0.09896314144134521
+        },
+        {
+          "rank": 9,
+          "edge_index": 85,
+          "src": 86,
+          "dst": 0,
+          "weight": 0.09859007596969604
+        },
+        {
+          "rank": 10,
+          "edge_index": 51,
+          "src": 52,
+          "dst": 0,
+          "weight": 0.09747254848480225
+        },
+        {
+          "rank": 11,
+          "edge_index": 12,
+          "src": 13,
+          "dst": 0,
+          "weight": 0.09335368871688843
+        },
+        {
+          "rank": 12,
+          "edge_index": 21,
+          "src": 22,
+          "dst": 0,
+          "weight": 0.09215331077575684
+        },
+        {
+          "rank": 13,
+          "edge_index": 26,
+          "src": 27,
+          "dst": 0,
+          "weight": 0.0910908579826355
+        },
+        {
+          "rank": 14,
+          "edge_index": 65,
+          "src": 66,
+          "dst": 0,
+          "weight": 0.08994466066360474
+        },
+        {
+          "rank": 15,
+          "edge_index": 13,
+          "src": 14,
+          "dst": 0,
+          "weight": 0.08917152881622314
+        },
+        {
+          "rank": 16,
+          "edge_index": 16,
+          "src": 17,
+          "dst": 0,
+          "weight": 0.0862809419631958
+        },
+        {
+          "rank": 17,
+          "edge_index": 36,
+          "src": 37,
+          "dst": 0,
+          "weight": 0.08599293231964111
+        },
+        {
+          "rank": 18,
+          "edge_index": 5,
+          "src": 6,
+          "dst": 0,
+          "weight": 0.08525288105010986
+        },
+        {
+          "rank": 19,
+          "edge_index": 60,
+          "src": 61,
+          "dst": 0,
+          "weight": 0.08399426937103271
+        },
+        {
+          "rank": 20,
+          "edge_index": 67,
+          "src": 68,
+          "dst": 0,
+          "weight": 0.08161163330078125
+        },
+        {
+          "rank": 21,
+          "edge_index": 97,
+          "src": 98,
+          "dst": 0,
+          "weight": 0.08154940605163574
+        },
+        {
+          "rank": 22,
+          "edge_index": 34,
+          "src": 35,
+          "dst": 0,
+          "weight": 0.07776105403900146
+        },
+        {
+          "rank": 23,
+          "edge_index": 20,
+          "src": 21,
+          "dst": 0,
+          "weight": 0.07588356733322144
+        },
+        {
+          "rank": 24,
+          "edge_index": 77,
+          "src": 78,
+          "dst": 0,
+          "weight": 0.07415914535522461
+        },
+        {
+          "rank": 25,
+          "edge_index": 81,
+          "src": 82,
+          "dst": 0,
+          "weight": 0.07409608364105225
+        },
+        {
+          "rank": 26,
+          "edge_index": 19,
+          "src": 20,
+          "dst": 0,
+          "weight": 0.07389795780181885
+        },
+        {
+          "rank": 27,
+          "edge_index": 83,
+          "src": 84,
+          "dst": 0,
+          "weight": 0.07359123229980469
+        },
+        {
+          "rank": 28,
+          "edge_index": 69,
+          "src": 70,
+          "dst": 0,
+          "weight": 0.07355839014053345
+        },
+        {
+          "rank": 29,
+          "edge_index": 68,
+          "src": 69,
+          "dst": 0,
+          "weight": 0.07179200649261475
+        },
+        {
+          "rank": 30,
+          "edge_index": 15,
+          "src": 16,
+          "dst": 0,
+          "weight": 0.07139962911605835
+        }
+      ],
+      "mer_model_level_intervention_flip": 1,
+      "runtime_sec": 0.4838147740083514,
+      "output_path": "provx-r2/unseeded/rep_05.pt",
+      "output_bytes": 3869,
+      "output_sha256": "ac454f4c4045c6d6bee1a92390f030473c0c8574d18f60735b51285ab7910dc5",
+      "config": {
+        "epochs": 200,
+        "lr": 0.05,
+        "alpha": 0.9,
+        "solidification_factor": 0.6,
+        "solidification_stage_start_ratio": 0.6,
+        "confident_threshold_low": 0.05,
+        "confident_threshold_high": 0.95,
+        "use_l1_distance": false
+      },
+      "checkpoint": "/home/cph/experiment-parallel/e0-b/provx-r1/artifact/storage/cache/Sample/saved_models/GCNConv/checkpoint-best-acc/model.bin",
+      "mer_semantics": "MODEL_LEVEL_INTERVENTION_FLIP_ONLY"
+    },
+    {
+      "seed": null,
+      "graph_index": 19,
+      "sample_id": 497,
+      "pred": 1,
+      "target_label": 1,
+      "edge_count": 100,
+      "top_k": 30,
+      "top_k_edges": [
+        {
+          "rank": 1,
+          "edge_index": 20,
+          "src": 21,
+          "dst": 0,
+          "weight": 0.1352863311767578
+        },
+        {
+          "rank": 2,
+          "edge_index": 77,
+          "src": 78,
+          "dst": 0,
+          "weight": 0.1121932864189148
+        },
+        {
+          "rank": 3,
+          "edge_index": 15,
+          "src": 16,
+          "dst": 0,
+          "weight": 0.10969990491867065
+        },
+        {
+          "rank": 4,
+          "edge_index": 17,
+          "src": 18,
+          "dst": 0,
+          "weight": 0.10871118307113647
+        },
+        {
+          "rank": 5,
+          "edge_index": 97,
+          "src": 98,
+          "dst": 0,
+          "weight": 0.10529285669326782
+        },
+        {
+          "rank": 6,
+          "edge_index": 35,
+          "src": 36,
+          "dst": 0,
+          "weight": 0.10411053895950317
+        },
+        {
+          "rank": 7,
+          "edge_index": 89,
+          "src": 90,
+          "dst": 0,
+          "weight": 0.10043048858642578
+        },
+        {
+          "rank": 8,
+          "edge_index": 2,
+          "src": 3,
+          "dst": 0,
+          "weight": 0.09915703535079956
+        },
+        {
+          "rank": 9,
+          "edge_index": 99,
+          "src": 100,
+          "dst": 0,
+          "weight": 0.0958482027053833
+        },
+        {
+          "rank": 10,
+          "edge_index": 4,
+          "src": 5,
+          "dst": 0,
+          "weight": 0.09337633848190308
+        },
+        {
+          "rank": 11,
+          "edge_index": 68,
+          "src": 69,
+          "dst": 0,
+          "weight": 0.09237480163574219
+        },
+        {
+          "rank": 12,
+          "edge_index": 91,
+          "src": 92,
+          "dst": 0,
+          "weight": 0.09048360586166382
+        },
+        {
+          "rank": 13,
+          "edge_index": 33,
+          "src": 34,
+          "dst": 0,
+          "weight": 0.08923721313476562
+        },
+        {
+          "rank": 14,
+          "edge_index": 18,
+          "src": 19,
+          "dst": 0,
+          "weight": 0.08742296695709229
+        },
+        {
+          "rank": 15,
+          "edge_index": 21,
+          "src": 22,
+          "dst": 0,
+          "weight": 0.08688157796859741
+        },
+        {
+          "rank": 16,
+          "edge_index": 45,
+          "src": 46,
+          "dst": 0,
+          "weight": 0.08641350269317627
+        },
+        {
+          "rank": 17,
+          "edge_index": 84,
+          "src": 85,
+          "dst": 0,
+          "weight": 0.08494007587432861
+        },
+        {
+          "rank": 18,
+          "edge_index": 53,
+          "src": 54,
+          "dst": 0,
+          "weight": 0.08304357528686523
+        },
+        {
+          "rank": 19,
+          "edge_index": 36,
+          "src": 37,
+          "dst": 0,
+          "weight": 0.08192414045333862
+        },
+        {
+          "rank": 20,
+          "edge_index": 81,
+          "src": 82,
+          "dst": 0,
+          "weight": 0.08037519454956055
+        },
+        {
+          "rank": 21,
+          "edge_index": 0,
+          "src": 1,
+          "dst": 0,
+          "weight": 0.07989078760147095
+        },
+        {
+          "rank": 22,
+          "edge_index": 59,
+          "src": 60,
+          "dst": 0,
+          "weight": 0.07884413003921509
+        },
+        {
+          "rank": 23,
+          "edge_index": 83,
+          "src": 84,
+          "dst": 0,
+          "weight": 0.07799661159515381
+        },
+        {
+          "rank": 24,
+          "edge_index": 19,
+          "src": 20,
+          "dst": 0,
+          "weight": 0.07645392417907715
+        },
+        {
+          "rank": 25,
+          "edge_index": 3,
+          "src": 4,
+          "dst": 0,
+          "weight": 0.07408976554870605
+        },
+        {
+          "rank": 26,
+          "edge_index": 92,
+          "src": 93,
+          "dst": 0,
+          "weight": 0.07406491041183472
+        },
+        {
+          "rank": 27,
+          "edge_index": 67,
+          "src": 68,
+          "dst": 0,
+          "weight": 0.07388061285018921
+        },
+        {
+          "rank": 28,
+          "edge_index": 69,
+          "src": 70,
+          "dst": 0,
+          "weight": 0.07169240713119507
+        },
+        {
+          "rank": 29,
+          "edge_index": 24,
+          "src": 25,
+          "dst": 0,
+          "weight": 0.07142901420593262
+        },
+        {
+          "rank": 30,
+          "edge_index": 32,
+          "src": 33,
+          "dst": 0,
+          "weight": 0.06807947158813477
+        }
+      ],
+      "mer_model_level_intervention_flip": 1,
+      "runtime_sec": 0.5264858890004689,
+      "output_path": "provx-r2/unseeded/rep_06.pt",
+      "output_bytes": 3869,
+      "output_sha256": "c87550fed99c6e2e5f26df4849030016ac4e89dd3e2ba037ff6b023f1bfbbfe4",
+      "config": {
+        "epochs": 200,
+        "lr": 0.05,
+        "alpha": 0.9,
+        "solidification_factor": 0.6,
+        "solidification_stage_start_ratio": 0.6,
+        "confident_threshold_low": 0.05,
+        "confident_threshold_high": 0.95,
+        "use_l1_distance": false
+      },
+      "checkpoint": "/home/cph/experiment-parallel/e0-b/provx-r1/artifact/storage/cache/Sample/saved_models/GCNConv/checkpoint-best-acc/model.bin",
+      "mer_semantics": "MODEL_LEVEL_INTERVENTION_FLIP_ONLY"
+    },
+    {
+      "seed": null,
+      "graph_index": 19,
+      "sample_id": 497,
+      "pred": 1,
+      "target_label": 1,
+      "edge_count": 100,
+      "top_k": 30,
+      "top_k_edges": [
+        {
+          "rank": 1,
+          "edge_index": 68,
+          "src": 69,
+          "dst": 0,
+          "weight": 0.12620776891708374
+        },
+        {
+          "rank": 2,
+          "edge_index": 83,
+          "src": 84,
+          "dst": 0,
+          "weight": 0.10767757892608643
+        },
+        {
+          "rank": 3,
+          "edge_index": 85,
+          "src": 86,
+          "dst": 0,
+          "weight": 0.10487812757492065
+        },
+        {
+          "rank": 4,
+          "edge_index": 53,
+          "src": 54,
+          "dst": 0,
+          "weight": 0.1021120548248291
+        },
+        {
+          "rank": 5,
+          "edge_index": 69,
+          "src": 70,
+          "dst": 0,
+          "weight": 0.10045373439788818
+        },
+        {
+          "rank": 6,
+          "edge_index": 12,
+          "src": 13,
+          "dst": 0,
+          "weight": 0.10036027431488037
+        },
+        {
+          "rank": 7,
+          "edge_index": 21,
+          "src": 22,
+          "dst": 0,
+          "weight": 0.09643441438674927
+        },
+        {
+          "rank": 8,
+          "edge_index": 84,
+          "src": 85,
+          "dst": 0,
+          "weight": 0.09451591968536377
+        },
+        {
+          "rank": 9,
+          "edge_index": 17,
+          "src": 18,
+          "dst": 0,
+          "weight": 0.09445106983184814
+        },
+        {
+          "rank": 10,
+          "edge_index": 31,
+          "src": 32,
+          "dst": 0,
+          "weight": 0.09111016988754272
+        },
+        {
+          "rank": 11,
+          "edge_index": 20,
+          "src": 21,
+          "dst": 0,
+          "weight": 0.08937591314315796
+        },
+        {
+          "rank": 12,
+          "edge_index": 51,
+          "src": 52,
+          "dst": 0,
+          "weight": 0.08854728937149048
+        },
+        {
+          "rank": 13,
+          "edge_index": 77,
+          "src": 78,
+          "dst": 0,
+          "weight": 0.08754128217697144
+        },
+        {
+          "rank": 14,
+          "edge_index": 9,
+          "src": 10,
+          "dst": 0,
+          "weight": 0.08589500188827515
+        },
+        {
+          "rank": 15,
+          "edge_index": 11,
+          "src": 12,
+          "dst": 0,
+          "weight": 0.08476245403289795
+        },
+        {
+          "rank": 16,
+          "edge_index": 97,
+          "src": 98,
+          "dst": 0,
+          "weight": 0.083778977394104
+        },
+        {
+          "rank": 17,
+          "edge_index": 33,
+          "src": 34,
+          "dst": 0,
+          "weight": 0.0835031270980835
+        },
+        {
+          "rank": 18,
+          "edge_index": 98,
+          "src": 99,
+          "dst": 0,
+          "weight": 0.08336561918258667
+        },
+        {
+          "rank": 19,
+          "edge_index": 37,
+          "src": 38,
+          "dst": 0,
+          "weight": 0.08078145980834961
+        },
+        {
+          "rank": 20,
+          "edge_index": 1,
+          "src": 2,
+          "dst": 0,
+          "weight": 0.07980865240097046
+        },
+        {
+          "rank": 21,
+          "edge_index": 24,
+          "src": 25,
+          "dst": 0,
+          "weight": 0.07980287075042725
+        },
+        {
+          "rank": 22,
+          "edge_index": 36,
+          "src": 37,
+          "dst": 0,
+          "weight": 0.07928013801574707
+        },
+        {
+          "rank": 23,
+          "edge_index": 93,
+          "src": 94,
+          "dst": 0,
+          "weight": 0.0787804126739502
+        },
+        {
+          "rank": 24,
+          "edge_index": 92,
+          "src": 93,
+          "dst": 0,
+          "weight": 0.07860660552978516
+        },
+        {
+          "rank": 25,
+          "edge_index": 34,
+          "src": 35,
+          "dst": 0,
+          "weight": 0.07452398538589478
+        },
+        {
+          "rank": 26,
+          "edge_index": 16,
+          "src": 17,
+          "dst": 0,
+          "weight": 0.07383358478546143
+        },
+        {
+          "rank": 27,
+          "edge_index": 99,
+          "src": 100,
+          "dst": 0,
+          "weight": 0.07180333137512207
+        },
+        {
+          "rank": 28,
+          "edge_index": 13,
+          "src": 14,
+          "dst": 0,
+          "weight": 0.07178843021392822
+        },
+        {
+          "rank": 29,
+          "edge_index": 65,
+          "src": 66,
+          "dst": 0,
+          "weight": 0.06805729866027832
+        },
+        {
+          "rank": 30,
+          "edge_index": 19,
+          "src": 20,
+          "dst": 0,
+          "weight": 0.06804656982421875
+        }
+      ],
+      "mer_model_level_intervention_flip": 1,
+      "runtime_sec": 0.42519206400902476,
+      "output_path": "provx-r2/unseeded/rep_07.pt",
+      "output_bytes": 3869,
+      "output_sha256": "3cb5dbc7c8e39bd9a13a4b4958d985300c12e4ac2074ca8ff09953c2b4680936",
+      "config": {
+        "epochs": 200,
+        "lr": 0.05,
+        "alpha": 0.9,
+        "solidification_factor": 0.6,
+        "solidification_stage_start_ratio": 0.6,
+        "confident_threshold_low": 0.05,
+        "confident_threshold_high": 0.95,
+        "use_l1_distance": false
+      },
+      "checkpoint": "/home/cph/experiment-parallel/e0-b/provx-r1/artifact/storage/cache/Sample/saved_models/GCNConv/checkpoint-best-acc/model.bin",
+      "mer_semantics": "MODEL_LEVEL_INTERVENTION_FLIP_ONLY"
+    },
+    {
+      "seed": null,
+      "graph_index": 19,
+      "sample_id": 497,
+      "pred": 1,
+      "target_label": 1,
+      "edge_count": 100,
+      "top_k": 30,
+      "top_k_edges": [
+        {
+          "rank": 1,
+          "edge_index": 85,
+          "src": 86,
+          "dst": 0,
+          "weight": 0.13123071193695068
+        },
+        {
+          "rank": 2,
+          "edge_index": 68,
+          "src": 69,
+          "dst": 0,
+          "weight": 0.11444962024688721
+        },
+        {
+          "rank": 3,
+          "edge_index": 19,
+          "src": 20,
+          "dst": 0,
+          "weight": 0.10735398530960083
+        },
+        {
+          "rank": 4,
+          "edge_index": 18,
+          "src": 19,
+          "dst": 0,
+          "weight": 0.10688108205795288
+        },
+        {
+          "rank": 5,
+          "edge_index": 33,
+          "src": 34,
+          "dst": 0,
+          "weight": 0.09975188970565796
+        },
+        {
+          "rank": 6,
+          "edge_index": 65,
+          "src": 66,
+          "dst": 0,
+          "weight": 0.09934508800506592
+        },
+        {
+          "rank": 7,
+          "edge_index": 11,
+          "src": 12,
+          "dst": 0,
+          "weight": 0.0931437611579895
+        },
+        {
+          "rank": 8,
+          "edge_index": 24,
+          "src": 25,
+          "dst": 0,
+          "weight": 0.09125781059265137
+        },
+        {
+          "rank": 9,
+          "edge_index": 83,
+          "src": 84,
+          "dst": 0,
+          "weight": 0.08961981534957886
+        },
+        {
+          "rank": 10,
+          "edge_index": 20,
+          "src": 21,
+          "dst": 0,
+          "weight": 0.08892589807510376
+        },
+        {
+          "rank": 11,
+          "edge_index": 2,
+          "src": 3,
+          "dst": 0,
+          "weight": 0.08570230007171631
+        },
+        {
+          "rank": 12,
+          "edge_index": 81,
+          "src": 82,
+          "dst": 0,
+          "weight": 0.08503478765487671
+        },
+        {
+          "rank": 13,
+          "edge_index": 9,
+          "src": 10,
+          "dst": 0,
+          "weight": 0.0830199122428894
+        },
+        {
+          "rank": 14,
+          "edge_index": 34,
+          "src": 35,
+          "dst": 0,
+          "weight": 0.08250373601913452
+        },
+        {
+          "rank": 15,
+          "edge_index": 17,
+          "src": 18,
+          "dst": 0,
+          "weight": 0.08230811357498169
+        },
+        {
+          "rank": 16,
+          "edge_index": 45,
+          "src": 46,
+          "dst": 0,
+          "weight": 0.08171206712722778
+        },
+        {
+          "rank": 17,
+          "edge_index": 21,
+          "src": 22,
+          "dst": 0,
+          "weight": 0.08095288276672363
+        },
+        {
+          "rank": 18,
+          "edge_index": 96,
+          "src": 97,
+          "dst": 0,
+          "weight": 0.07779550552368164
+        },
+        {
+          "rank": 19,
+          "edge_index": 26,
+          "src": 27,
+          "dst": 0,
+          "weight": 0.07658982276916504
+        },
+        {
+          "rank": 20,
+          "edge_index": 1,
+          "src": 2,
+          "dst": 0,
+          "weight": 0.07651978731155396
+        },
+        {
+          "rank": 21,
+          "edge_index": 60,
+          "src": 61,
+          "dst": 0,
+          "weight": 0.0756603479385376
+        },
+        {
+          "rank": 22,
+          "edge_index": 84,
+          "src": 85,
+          "dst": 0,
+          "weight": 0.07545751333236694
+        },
+        {
+          "rank": 23,
+          "edge_index": 32,
+          "src": 33,
+          "dst": 0,
+          "weight": 0.0725100040435791
+        },
+        {
+          "rank": 24,
+          "edge_index": 36,
+          "src": 37,
+          "dst": 0,
+          "weight": 0.07200098037719727
+        },
+        {
+          "rank": 25,
+          "edge_index": 53,
+          "src": 54,
+          "dst": 0,
+          "weight": 0.0707595944404602
+        },
+        {
+          "rank": 26,
+          "edge_index": 97,
+          "src": 98,
+          "dst": 0,
+          "weight": 0.0701490044593811
+        },
+        {
+          "rank": 27,
+          "edge_index": 4,
+          "src": 5,
+          "dst": 0,
+          "weight": 0.06944406032562256
+        },
+        {
+          "rank": 28,
+          "edge_index": 0,
+          "src": 1,
+          "dst": 0,
+          "weight": 0.06828010082244873
+        },
+        {
+          "rank": 29,
+          "edge_index": 93,
+          "src": 94,
+          "dst": 0,
+          "weight": 0.06797021627426147
+        },
+        {
+          "rank": 30,
+          "edge_index": 69,
+          "src": 70,
+          "dst": 0,
+          "weight": 0.06683170795440674
+        }
+      ],
+      "mer_model_level_intervention_flip": 1,
+      "runtime_sec": 0.4994787370087579,
+      "output_path": "provx-r2/unseeded/rep_08.pt",
+      "output_bytes": 3869,
+      "output_sha256": "f0dd55c91bf86e5501eedb86f54b18bf2d3b40dd4b8bec840ecf81e051d2e660",
+      "config": {
+        "epochs": 200,
+        "lr": 0.05,
+        "alpha": 0.9,
+        "solidification_factor": 0.6,
+        "solidification_stage_start_ratio": 0.6,
+        "confident_threshold_low": 0.05,
+        "confident_threshold_high": 0.95,
+        "use_l1_distance": false
+      },
+      "checkpoint": "/home/cph/experiment-parallel/e0-b/provx-r1/artifact/storage/cache/Sample/saved_models/GCNConv/checkpoint-best-acc/model.bin",
+      "mer_semantics": "MODEL_LEVEL_INTERVENTION_FLIP_ONLY"
+    },
+    {
+      "seed": null,
+      "graph_index": 19,
+      "sample_id": 497,
+      "pred": 1,
+      "target_label": 1,
+      "edge_count": 100,
+      "top_k": 30,
+      "top_k_edges": [
+        {
+          "rank": 1,
+          "edge_index": 85,
+          "src": 86,
+          "dst": 0,
+          "weight": 0.14794504642486572
+        },
+        {
+          "rank": 2,
+          "edge_index": 20,
+          "src": 21,
+          "dst": 0,
+          "weight": 0.12126946449279785
+        },
+        {
+          "rank": 3,
+          "edge_index": 68,
+          "src": 69,
+          "dst": 0,
+          "weight": 0.11796075105667114
+        },
+        {
+          "rank": 4,
+          "edge_index": 84,
+          "src": 85,
+          "dst": 0,
+          "weight": 0.11459362506866455
+        },
+        {
+          "rank": 5,
+          "edge_index": 53,
+          "src": 54,
+          "dst": 0,
+          "weight": 0.11458927392959595
+        },
+        {
+          "rank": 6,
+          "edge_index": 21,
+          "src": 22,
+          "dst": 0,
+          "weight": 0.11048835515975952
+        },
+        {
+          "rank": 7,
+          "edge_index": 18,
+          "src": 19,
+          "dst": 0,
+          "weight": 0.10112500190734863
+        },
+        {
+          "rank": 8,
+          "edge_index": 9,
+          "src": 10,
+          "dst": 0,
+          "weight": 0.09874749183654785
+        },
+        {
+          "rank": 9,
+          "edge_index": 4,
+          "src": 5,
+          "dst": 0,
+          "weight": 0.09447520971298218
+        },
+        {
+          "rank": 10,
+          "edge_index": 32,
+          "src": 33,
+          "dst": 0,
+          "weight": 0.09401023387908936
+        },
+        {
+          "rank": 11,
+          "edge_index": 51,
+          "src": 52,
+          "dst": 0,
+          "weight": 0.09331381320953369
+        },
+        {
+          "rank": 12,
+          "edge_index": 61,
+          "src": 62,
+          "dst": 0,
+          "weight": 0.09268134832382202
+        },
+        {
+          "rank": 13,
+          "edge_index": 5,
+          "src": 6,
+          "dst": 0,
+          "weight": 0.0916028618812561
+        },
+        {
+          "rank": 14,
+          "edge_index": 0,
+          "src": 1,
+          "dst": 0,
+          "weight": 0.08980214595794678
+        },
+        {
+          "rank": 15,
+          "edge_index": 67,
+          "src": 68,
+          "dst": 0,
+          "weight": 0.087790846824646
+        },
+        {
+          "rank": 16,
+          "edge_index": 92,
+          "src": 93,
+          "dst": 0,
+          "weight": 0.08776313066482544
+        },
+        {
+          "rank": 17,
+          "edge_index": 16,
+          "src": 17,
+          "dst": 0,
+          "weight": 0.08471161127090454
+        },
+        {
+          "rank": 18,
+          "edge_index": 17,
+          "src": 18,
+          "dst": 0,
+          "weight": 0.084561288356781
+        },
+        {
+          "rank": 19,
+          "edge_index": 65,
+          "src": 66,
+          "dst": 0,
+          "weight": 0.08209943771362305
+        },
+        {
+          "rank": 20,
+          "edge_index": 11,
+          "src": 12,
+          "dst": 0,
+          "weight": 0.07882511615753174
+        },
+        {
+          "rank": 21,
+          "edge_index": 36,
+          "src": 37,
+          "dst": 0,
+          "weight": 0.07864594459533691
+        },
+        {
+          "rank": 22,
+          "edge_index": 93,
+          "src": 94,
+          "dst": 0,
+          "weight": 0.07701998949050903
+        },
+        {
+          "rank": 23,
+          "edge_index": 49,
+          "src": 50,
+          "dst": 0,
+          "weight": 0.07560461759567261
+        },
+        {
+          "rank": 24,
+          "edge_index": 81,
+          "src": 82,
+          "dst": 0,
+          "weight": 0.07484620809555054
+        },
+        {
+          "rank": 25,
+          "edge_index": 19,
+          "src": 20,
+          "dst": 0,
+          "weight": 0.07348185777664185
+        },
+        {
+          "rank": 26,
+          "edge_index": 34,
+          "src": 35,
+          "dst": 0,
+          "weight": 0.07259482145309448
+        },
+        {
+          "rank": 27,
+          "edge_index": 28,
+          "src": 29,
+          "dst": 0,
+          "weight": 0.06943869590759277
+        },
+        {
+          "rank": 28,
+          "edge_index": 2,
+          "src": 3,
+          "dst": 0,
+          "weight": 0.06938546895980835
+        },
+        {
+          "rank": 29,
+          "edge_index": 97,
+          "src": 98,
+          "dst": 0,
+          "weight": 0.06911629438400269
+        },
+        {
+          "rank": 30,
+          "edge_index": 69,
+          "src": 70,
+          "dst": 0,
+          "weight": 0.06777077913284302
+        }
+      ],
+      "mer_model_level_intervention_flip": 1,
+      "runtime_sec": 0.5424897749908268,
+      "output_path": "provx-r2/unseeded/rep_09.pt",
+      "output_bytes": 3869,
+      "output_sha256": "0fd0ed756b97946e832e56b45e518f02e3297a65f71d183c3ce9ac26a58f7fb1",
+      "config": {
+        "epochs": 200,
+        "lr": 0.05,
+        "alpha": 0.9,
+        "solidification_factor": 0.6,
+        "solidification_stage_start_ratio": 0.6,
+        "confident_threshold_low": 0.05,
+        "confident_threshold_high": 0.95,
+        "use_l1_distance": false
+      },
+      "checkpoint": "/home/cph/experiment-parallel/e0-b/provx-r1/artifact/storage/cache/Sample/saved_models/GCNConv/checkpoint-best-acc/model.bin",
+      "mer_semantics": "MODEL_LEVEL_INTERVENTION_FLIP_ONLY"
+    },
+    {
+      "seed": null,
+      "graph_index": 19,
+      "sample_id": 497,
+      "pred": 1,
+      "target_label": 1,
+      "edge_count": 100,
+      "top_k": 30,
+      "top_k_edges": [
+        {
+          "rank": 1,
+          "edge_index": 68,
+          "src": 69,
+          "dst": 0,
+          "weight": 0.15167462825775146
+        },
+        {
+          "rank": 2,
+          "edge_index": 85,
+          "src": 86,
+          "dst": 0,
+          "weight": 0.1362515091896057
+        },
+        {
+          "rank": 3,
+          "edge_index": 53,
+          "src": 54,
+          "dst": 0,
+          "weight": 0.11881548166275024
+        },
+        {
+          "rank": 4,
+          "edge_index": 19,
+          "src": 20,
+          "dst": 0,
+          "weight": 0.11608892679214478
+        },
+        {
+          "rank": 5,
+          "edge_index": 84,
+          "src": 85,
+          "dst": 0,
+          "weight": 0.1082296371459961
+        },
+        {
+          "rank": 6,
+          "edge_index": 4,
+          "src": 5,
+          "dst": 0,
+          "weight": 0.09968727827072144
+        },
+        {
+          "rank": 7,
+          "edge_index": 18,
+          "src": 19,
+          "dst": 0,
+          "weight": 0.09512126445770264
+        },
+        {
+          "rank": 8,
+          "edge_index": 21,
+          "src": 22,
+          "dst": 0,
+          "weight": 0.09449315071105957
+        },
+        {
+          "rank": 9,
+          "edge_index": 57,
+          "src": 58,
+          "dst": 0,
+          "weight": 0.08845692873001099
+        },
+        {
+          "rank": 10,
+          "edge_index": 65,
+          "src": 66,
+          "dst": 0,
+          "weight": 0.08840423822402954
+        },
+        {
+          "rank": 11,
+          "edge_index": 51,
+          "src": 52,
+          "dst": 0,
+          "weight": 0.08734112977981567
+        },
+        {
+          "rank": 12,
+          "edge_index": 89,
+          "src": 90,
+          "dst": 0,
+          "weight": 0.0860140323638916
+        },
+        {
+          "rank": 13,
+          "edge_index": 92,
+          "src": 93,
+          "dst": 0,
+          "weight": 0.08563655614852905
+        },
+        {
+          "rank": 14,
+          "edge_index": 17,
+          "src": 18,
+          "dst": 0,
+          "weight": 0.08480650186538696
+        },
+        {
+          "rank": 15,
+          "edge_index": 97,
+          "src": 98,
+          "dst": 0,
+          "weight": 0.08420652151107788
+        },
+        {
+          "rank": 16,
+          "edge_index": 83,
+          "src": 84,
+          "dst": 0,
+          "weight": 0.08403128385543823
+        },
+        {
+          "rank": 17,
+          "edge_index": 20,
+          "src": 21,
+          "dst": 0,
+          "weight": 0.08383893966674805
+        },
+        {
+          "rank": 18,
+          "edge_index": 28,
+          "src": 29,
+          "dst": 0,
+          "weight": 0.08353817462921143
+        },
+        {
+          "rank": 19,
+          "edge_index": 2,
+          "src": 3,
+          "dst": 0,
+          "weight": 0.0833977460861206
+        },
+        {
+          "rank": 20,
+          "edge_index": 69,
+          "src": 70,
+          "dst": 0,
+          "weight": 0.0817750096321106
+        },
+        {
+          "rank": 21,
+          "edge_index": 9,
+          "src": 10,
+          "dst": 0,
+          "weight": 0.08153170347213745
+        },
+        {
+          "rank": 22,
+          "edge_index": 77,
+          "src": 78,
+          "dst": 0,
+          "weight": 0.07905936241149902
+        },
+        {
+          "rank": 23,
+          "edge_index": 3,
+          "src": 4,
+          "dst": 0,
+          "weight": 0.07870537042617798
+        },
+        {
+          "rank": 24,
+          "edge_index": 16,
+          "src": 17,
+          "dst": 0,
+          "weight": 0.0781598687171936
+        },
+        {
+          "rank": 25,
+          "edge_index": 15,
+          "src": 16,
+          "dst": 0,
+          "weight": 0.07639765739440918
+        },
+        {
+          "rank": 26,
+          "edge_index": 31,
+          "src": 32,
+          "dst": 0,
+          "weight": 0.07518267631530762
+        },
+        {
+          "rank": 27,
+          "edge_index": 32,
+          "src": 33,
+          "dst": 0,
+          "weight": 0.07335907220840454
+        },
+        {
+          "rank": 28,
+          "edge_index": 0,
+          "src": 1,
+          "dst": 0,
+          "weight": 0.07207614183425903
+        },
+        {
+          "rank": 29,
+          "edge_index": 45,
+          "src": 46,
+          "dst": 0,
+          "weight": 0.06981194019317627
+        },
+        {
+          "rank": 30,
+          "edge_index": 33,
+          "src": 34,
+          "dst": 0,
+          "weight": 0.06926321983337402
+        }
+      ],
+      "mer_model_level_intervention_flip": 1,
+      "runtime_sec": 0.4230147449998185,
+      "output_path": "provx-r2/unseeded/rep_10.pt",
+      "output_bytes": 3869,
+      "output_sha256": "53ffcb797a504454be4e6209941a116238f5f700bc3fd6c3995e6bdcf25ae8d9",
+      "config": {
+        "epochs": 200,
+        "lr": 0.05,
+        "alpha": 0.9,
+        "solidification_factor": 0.6,
+        "solidification_stage_start_ratio": 0.6,
+        "confident_threshold_low": 0.05,
+        "confident_threshold_high": 0.95,
+        "use_l1_distance": false
+      },
+      "checkpoint": "/home/cph/experiment-parallel/e0-b/provx-r1/artifact/storage/cache/Sample/saved_models/GCNConv/checkpoint-best-acc/model.bin",
+      "mer_semantics": "MODEL_LEVEL_INTERVENTION_FLIP_ONLY"
+    }
+  ],
+  "pairwise_summary": {
+    "pair_count": 45,
+    "overlap_count": {
+      "min": 16,
+      "max": 24,
+      "mean": 19.8,
+      "median": 20
+    },
+    "jaccard": {
+      "min": 0.36363636363636365,
+      "max": 0.6666666666666666,
+      "mean": 0.49537383313840905,
+      "median": 0.5
+    },
+    "common_mean_abs_rank_delta": {
+      "min": 5.833333333333333,
+      "max": 13.666666666666666,
+      "mean": 9.308359100861681,
+      "median": 9.818181818181818
+    },
+    "common_rank_spearman": {
+      "min": -0.36114496960699133,
+      "max": 0.5925737122805604,
+      "mean": 0.14610345553076975,
+      "median": 0.1274866237692656
+    }
+  },
+  "pairwise": [
+    {
+      "left": "provx-r2/unseeded/rep_01.pt",
+      "right": "provx-r2/unseeded/rep_02.pt",
+      "overlap_count": 16,
+      "jaccard": 0.36363636363636365,
+      "common_mean_abs_rank_delta": 7.8125,
+      "common_max_abs_rank_delta": 24,
+      "common_rank_spearman": 0.1461276183906844,
+      "common_mean_abs_weight_delta": 0.015252508223056793
+    },
+    {
+      "left": "provx-r2/unseeded/rep_01.pt",
+      "right": "provx-r2/unseeded/rep_03.pt",
+      "overlap_count": 18,
+      "jaccard": 0.42857142857142855,
+      "common_mean_abs_rank_delta": 7.333333333333333,
+      "common_max_abs_rank_delta": 17,
+      "common_rank_spearman": 0.4607102319280036,
+      "common_mean_abs_weight_delta": 0.011009818977779813
+    },
+    {
+      "left": "provx-r2/unseeded/rep_01.pt",
+      "right": "provx-r2/unseeded/rep_04.pt",
+      "overlap_count": 20,
+      "jaccard": 0.5,
+      "common_mean_abs_rank_delta": 9.9,
+      "common_max_abs_rank_delta": 23,
+      "common_rank_spearman": 0.07248891531894855,
+      "common_mean_abs_weight_delta": 0.01758030354976654
+    },
+    {
+      "left": "provx-r2/unseeded/rep_01.pt",
+      "right": "provx-r2/unseeded/rep_05.pt",
+      "overlap_count": 21,
+      "jaccard": 0.5384615384615384,
+      "common_mean_abs_rank_delta": 9.857142857142858,
+      "common_max_abs_rank_delta": 24,
+      "common_rank_spearman": 0.09332925286388596,
+      "common_mean_abs_weight_delta": 0.01802221934000651
+    },
+    {
+      "left": "provx-r2/unseeded/rep_01.pt",
+      "right": "provx-r2/unseeded/rep_06.pt",
+      "overlap_count": 21,
+      "jaccard": 0.5384615384615384,
+      "common_mean_abs_rank_delta": 10.095238095238095,
+      "common_max_abs_rank_delta": 25,
+      "common_rank_spearman": -0.06782340081508592,
+      "common_mean_abs_weight_delta": 0.01597472031911214
+    },
+    {
+      "left": "provx-r2/unseeded/rep_01.pt",
+      "right": "provx-r2/unseeded/rep_07.pt",
+      "overlap_count": 17,
+      "jaccard": 0.3953488372093023,
+      "common_mean_abs_rank_delta": 10.352941176470589,
+      "common_max_abs_rank_delta": 24,
+      "common_rank_spearman": 0.1274866237692656,
+      "common_mean_abs_weight_delta": 0.01644394327612484
+    },
+    {
+      "left": "provx-r2/unseeded/rep_01.pt",
+      "right": "provx-r2/unseeded/rep_08.pt",
+      "overlap_count": 21,
+      "jaccard": 0.5384615384615384,
+      "common_mean_abs_rank_delta": 11.333333333333334,
+      "common_max_abs_rank_delta": 24,
+      "common_rank_spearman": 0.024337581231883863,
+      "common_mean_abs_weight_delta": 0.017872895513262068
+    },
+    {
+      "left": "provx-r2/unseeded/rep_01.pt",
+      "right": "provx-r2/unseeded/rep_09.pt",
+      "overlap_count": 20,
+      "jaccard": 0.5,
+      "common_mean_abs_rank_delta": 9.95,
+      "common_max_abs_rank_delta": 23,
+      "common_rank_spearman": -0.019412184736001124,
+      "common_mean_abs_weight_delta": 0.019983720779418946
+    },
+    {
+      "left": "provx-r2/unseeded/rep_01.pt",
+      "right": "provx-r2/unseeded/rep_10.pt",
+      "overlap_count": 21,
+      "jaccard": 0.5384615384615384,
+      "common_mean_abs_rank_delta": 8.095238095238095,
+      "common_max_abs_rank_delta": 23,
+      "common_rank_spearman": 0.4115008280394714,
+      "common_mean_abs_weight_delta": 0.01673722267150879
+    },
+    {
+      "left": "provx-r2/unseeded/rep_02.pt",
+      "right": "provx-r2/unseeded/rep_03.pt",
+      "overlap_count": 21,
+      "jaccard": 0.5384615384615384,
+      "common_mean_abs_rank_delta": 8.476190476190476,
+      "common_max_abs_rank_delta": 17,
+      "common_rank_spearman": 0.38427243725818633,
+      "common_mean_abs_weight_delta": 0.013347742103395007
+    },
+    {
+      "left": "provx-r2/unseeded/rep_02.pt",
+      "right": "provx-r2/unseeded/rep_04.pt",
+      "overlap_count": 17,
+      "jaccard": 0.3953488372093023,
+      "common_mean_abs_rank_delta": 10.058823529411764,
+      "common_max_abs_rank_delta": 24,
+      "common_rank_spearman": -0.0072278243147331726,
+      "common_mean_abs_weight_delta": 0.019922901602352366
+    },
+    {
+      "left": "provx-r2/unseeded/rep_02.pt",
+      "right": "provx-r2/unseeded/rep_05.pt",
+      "overlap_count": 20,
+      "jaccard": 0.5,
+      "common_mean_abs_rank_delta": 9.95,
+      "common_max_abs_rank_delta": 28,
+      "common_rank_spearman": 0.003977931976828013,
+      "common_mean_abs_weight_delta": 0.018312111496925354
+    },
+    {
+      "left": "provx-r2/unseeded/rep_02.pt",
+      "right": "provx-r2/unseeded/rep_06.pt",
+      "overlap_count": 19,
+      "jaccard": 0.4634146341463415,
+      "common_mean_abs_rank_delta": 10.31578947368421,
+      "common_max_abs_rank_delta": 21,
+      "common_rank_spearman": 0.10637806049204056,
+      "common_mean_abs_weight_delta": 0.017290645524075155
+    },
+    {
+      "left": "provx-r2/unseeded/rep_02.pt",
+      "right": "provx-r2/unseeded/rep_07.pt",
+      "overlap_count": 20,
+      "jaccard": 0.5,
+      "common_mean_abs_rank_delta": 7.55,
+      "common_max_abs_rank_delta": 23,
+      "common_rank_spearman": 0.37344171606969434,
+      "common_mean_abs_weight_delta": 0.012612026929855347
+    },
+    {
+      "left": "provx-r2/unseeded/rep_02.pt",
+      "right": "provx-r2/unseeded/rep_08.pt",
+      "overlap_count": 21,
+      "jaccard": 0.5384615384615384,
+      "common_mean_abs_rank_delta": 10.619047619047619,
+      "common_max_abs_rank_delta": 22,
+      "common_rank_spearman": -0.019369358118363784,
+      "common_mean_abs_weight_delta": 0.018482997303917295
+    },
+    {
+      "left": "provx-r2/unseeded/rep_02.pt",
+      "right": "provx-r2/unseeded/rep_09.pt",
+      "overlap_count": 18,
+      "jaccard": 0.42857142857142855,
+      "common_mean_abs_rank_delta": 7.555555555555555,
+      "common_max_abs_rank_delta": 22,
+      "common_rank_spearman": 0.27903064052960186,
+      "common_mean_abs_weight_delta": 0.016797535949283175
+    },
+    {
+      "left": "provx-r2/unseeded/rep_02.pt",
+      "right": "provx-r2/unseeded/rep_10.pt",
+      "overlap_count": 17,
+      "jaccard": 0.3953488372093023,
+      "common_mean_abs_rank_delta": 7.9411764705882355,
+      "common_max_abs_rank_delta": 16,
+      "common_rank_spearman": 0.40666807785170594,
+      "common_mean_abs_weight_delta": 0.014096740414114559
+    },
+    {
+      "left": "provx-r2/unseeded/rep_03.pt",
+      "right": "provx-r2/unseeded/rep_04.pt",
+      "overlap_count": 20,
+      "jaccard": 0.5,
+      "common_mean_abs_rank_delta": 7.45,
+      "common_max_abs_rank_delta": 21,
+      "common_rank_spearman": 0.3135730962069166,
+      "common_mean_abs_weight_delta": 0.017790856957435607
+    },
+    {
+      "left": "provx-r2/unseeded/rep_03.pt",
+      "right": "provx-r2/unseeded/rep_05.pt",
+      "overlap_count": 22,
+      "jaccard": 0.5789473684210527,
+      "common_mean_abs_rank_delta": 10.0,
+      "common_max_abs_rank_delta": 25,
+      "common_rank_spearman": -0.10157361553036427,
+      "common_mean_abs_weight_delta": 0.01615466312928633
+    },
+    {
+      "left": "provx-r2/unseeded/rep_03.pt",
+      "right": "provx-r2/unseeded/rep_06.pt",
+      "overlap_count": 19,
+      "jaccard": 0.4634146341463415,
+      "common_mean_abs_rank_delta": 10.473684210526315,
+      "common_max_abs_rank_delta": 24,
+      "common_rank_spearman": -0.1170678466355943,
+      "common_mean_abs_weight_delta": 0.016017691085213108
+    },
+    {
+      "left": "provx-r2/unseeded/rep_03.pt",
+      "right": "provx-r2/unseeded/rep_07.pt",
+      "overlap_count": 17,
+      "jaccard": 0.3953488372093023,
+      "common_mean_abs_rank_delta": 10.882352941176471,
+      "common_max_abs_rank_delta": 29,
+      "common_rank_spearman": -0.16656476528185718,
+      "common_mean_abs_weight_delta": 0.015214937574723187
+    },
+    {
+      "left": "provx-r2/unseeded/rep_03.pt",
+      "right": "provx-r2/unseeded/rep_08.pt",
+      "overlap_count": 18,
+      "jaccard": 0.42857142857142855,
+      "common_mean_abs_rank_delta": 5.833333333333333,
+      "common_max_abs_rank_delta": 17,
+      "common_rank_spearman": 0.5560036724053227,
+      "common_mean_abs_weight_delta": 0.01048109597629971
+    },
+    {
+      "left": "provx-r2/unseeded/rep_03.pt",
+      "right": "provx-r2/unseeded/rep_09.pt",
+      "overlap_count": 19,
+      "jaccard": 0.4634146341463415,
+      "common_mean_abs_rank_delta": 9.473684210526315,
+      "common_max_abs_rank_delta": 24,
+      "common_rank_spearman": 0.001701886137457381,
+      "common_mean_abs_weight_delta": 0.01781312101765683
+    },
+    {
+      "left": "provx-r2/unseeded/rep_03.pt",
+      "right": "provx-r2/unseeded/rep_10.pt",
+      "overlap_count": 20,
+      "jaccard": 0.5,
+      "common_mean_abs_rank_delta": 10.15,
+      "common_max_abs_rank_delta": 21,
+      "common_rank_spearman": 0.12012402721418702,
+      "common_mean_abs_weight_delta": 0.01523059606552124
+    },
+    {
+      "left": "provx-r2/unseeded/rep_04.pt",
+      "right": "provx-r2/unseeded/rep_05.pt",
+      "overlap_count": 21,
+      "jaccard": 0.5384615384615384,
+      "common_mean_abs_rank_delta": 13.666666666666666,
+      "common_max_abs_rank_delta": 28,
+      "common_rank_spearman": -0.36114496960699133,
+      "common_mean_abs_weight_delta": 0.026760166599636988
+    },
+    {
+      "left": "provx-r2/unseeded/rep_04.pt",
+      "right": "provx-r2/unseeded/rep_06.pt",
+      "overlap_count": 21,
+      "jaccard": 0.5384615384615384,
+      "common_mean_abs_rank_delta": 10.714285714285714,
+      "common_max_abs_rank_delta": 24,
+      "common_rank_spearman": -0.013591130677090744,
+      "common_mean_abs_weight_delta": 0.020200357550666445
+    },
+    {
+      "left": "provx-r2/unseeded/rep_04.pt",
+      "right": "provx-r2/unseeded/rep_07.pt",
+      "overlap_count": 20,
+      "jaccard": 0.5,
+      "common_mean_abs_rank_delta": 6.75,
+      "common_max_abs_rank_delta": 23,
+      "common_rank_spearman": 0.4391171548959575,
+      "common_mean_abs_weight_delta": 0.013522619009017944
+    },
+    {
+      "left": "provx-r2/unseeded/rep_04.pt",
+      "right": "provx-r2/unseeded/rep_08.pt",
+      "overlap_count": 22,
+      "jaccard": 0.5789473684210527,
+      "common_mean_abs_rank_delta": 8.545454545454545,
+      "common_max_abs_rank_delta": 25,
+      "common_rank_spearman": 0.24092644569933366,
+      "common_mean_abs_weight_delta": 0.018264082345095547
+    },
+    {
+      "left": "provx-r2/unseeded/rep_04.pt",
+      "right": "provx-r2/unseeded/rep_09.pt",
+      "overlap_count": 21,
+      "jaccard": 0.5384615384615384,
+      "common_mean_abs_rank_delta": 9.142857142857142,
+      "common_max_abs_rank_delta": 24,
+      "common_rank_spearman": 0.2733751638380058,
+      "common_mean_abs_weight_delta": 0.018926464375995454
+    },
+    {
+      "left": "provx-r2/unseeded/rep_04.pt",
+      "right": "provx-r2/unseeded/rep_10.pt",
+      "overlap_count": 24,
+      "jaccard": 0.6666666666666666,
+      "common_mean_abs_rank_delta": 11.791666666666666,
+      "common_max_abs_rank_delta": 25,
+      "common_rank_spearman": -0.054286482045492364,
+      "common_mean_abs_weight_delta": 0.02062707891066869
+    },
+    {
+      "left": "provx-r2/unseeded/rep_05.pt",
+      "right": "provx-r2/unseeded/rep_06.pt",
+      "overlap_count": 19,
+      "jaccard": 0.4634146341463415,
+      "common_mean_abs_rank_delta": 10.631578947368421,
+      "common_max_abs_rank_delta": 27,
+      "common_rank_spearman": -0.00781960303436481,
+      "common_mean_abs_weight_delta": 0.01974961945885106
+    },
+    {
+      "left": "provx-r2/unseeded/rep_05.pt",
+      "right": "provx-r2/unseeded/rep_07.pt",
+      "overlap_count": 19,
+      "jaccard": 0.4634146341463415,
+      "common_mean_abs_rank_delta": 9.421052631578947,
+      "common_max_abs_rank_delta": 28,
+      "common_rank_spearman": 0.11929301354542726,
+      "common_mean_abs_weight_delta": 0.015116377880698756
+    },
+    {
+      "left": "provx-r2/unseeded/rep_05.pt",
+      "right": "provx-r2/unseeded/rep_08.pt",
+      "overlap_count": 22,
+      "jaccard": 0.5789473684210527,
+      "common_mean_abs_rank_delta": 11.545454545454545,
+      "common_max_abs_rank_delta": 27,
+      "common_rank_spearman": -0.18332971174983875,
+      "common_mean_abs_weight_delta": 0.02162296934561296
+    },
+    {
+      "left": "provx-r2/unseeded/rep_05.pt",
+      "right": "provx-r2/unseeded/rep_09.pt",
+      "overlap_count": 22,
+      "jaccard": 0.5789473684210527,
+      "common_mean_abs_rank_delta": 7.181818181818182,
+      "common_max_abs_rank_delta": 26,
+      "common_rank_spearman": 0.3526553311034909,
+      "common_mean_abs_weight_delta": 0.016334032470529728
+    },
+    {
+      "left": "provx-r2/unseeded/rep_05.pt",
+      "right": "provx-r2/unseeded/rep_10.pt",
+      "overlap_count": 20,
+      "jaccard": 0.5,
+      "common_mean_abs_rank_delta": 8.5,
+      "common_max_abs_rank_delta": 28,
+      "common_rank_spearman": 0.21258681593197643,
+      "common_mean_abs_weight_delta": 0.017986586689949034
+    },
+    {
+      "left": "provx-r2/unseeded/rep_06.pt",
+      "right": "provx-r2/unseeded/rep_07.pt",
+      "overlap_count": 16,
+      "jaccard": 0.36363636363636365,
+      "common_mean_abs_rank_delta": 10.1875,
+      "common_max_abs_rank_delta": 23,
+      "common_rank_spearman": 0.14730903650336918,
+      "common_mean_abs_weight_delta": 0.018159668892621994
+    },
+    {
+      "left": "provx-r2/unseeded/rep_06.pt",
+      "right": "provx-r2/unseeded/rep_08.pt",
+      "overlap_count": 20,
+      "jaccard": 0.5,
+      "common_mean_abs_rank_delta": 9.35,
+      "common_max_abs_rank_delta": 21,
+      "common_rank_spearman": 0.1337054519522991,
+      "common_mean_abs_weight_delta": 0.016378769278526308
+    },
+    {
+      "left": "provx-r2/unseeded/rep_06.pt",
+      "right": "provx-r2/unseeded/rep_09.pt",
+      "overlap_count": 18,
+      "jaccard": 0.42857142857142855,
+      "common_mean_abs_rank_delta": 9.333333333333334,
+      "common_max_abs_rank_delta": 24,
+      "common_rank_spearman": 0.17061313939215098,
+      "common_mean_abs_weight_delta": 0.017136623462041218
+    },
+    {
+      "left": "provx-r2/unseeded/rep_06.pt",
+      "right": "provx-r2/unseeded/rep_10.pt",
+      "overlap_count": 22,
+      "jaccard": 0.5789473684210527,
+      "common_mean_abs_rank_delta": 10.863636363636363,
+      "common_max_abs_rank_delta": 22,
+      "common_rank_spearman": 0.058427761327749746,
+      "common_mean_abs_weight_delta": 0.02066553451798179
+    },
+    {
+      "left": "provx-r2/unseeded/rep_07.pt",
+      "right": "provx-r2/unseeded/rep_08.pt",
+      "overlap_count": 20,
+      "jaccard": 0.5,
+      "common_mean_abs_rank_delta": 10.0,
+      "common_max_abs_rank_delta": 27,
+      "common_rank_spearman": -0.033714085448216045,
+      "common_mean_abs_weight_delta": 0.01604095697402954
+    },
+    {
+      "left": "provx-r2/unseeded/rep_07.pt",
+      "right": "provx-r2/unseeded/rep_09.pt",
+      "overlap_count": 19,
+      "jaccard": 0.4634146341463415,
+      "common_mean_abs_rank_delta": 5.947368421052632,
+      "common_max_abs_rank_delta": 25,
+      "common_rank_spearman": 0.5925737122805604,
+      "common_mean_abs_weight_delta": 0.013391783362940737
+    },
+    {
+      "left": "provx-r2/unseeded/rep_07.pt",
+      "right": "provx-r2/unseeded/rep_10.pt",
+      "overlap_count": 19,
+      "jaccard": 0.4634146341463415,
+      "common_mean_abs_rank_delta": 7.947368421052632,
+      "common_max_abs_rank_delta": 26,
+      "common_rank_spearman": 0.21792998380355041,
+      "common_mean_abs_weight_delta": 0.01426826652727629
+    },
+    {
+      "left": "provx-r2/unseeded/rep_08.pt",
+      "right": "provx-r2/unseeded/rep_09.pt",
+      "overlap_count": 22,
+      "jaccard": 0.5789473684210527,
+      "common_mean_abs_rank_delta": 9.818181818181818,
+      "common_max_abs_rank_delta": 22,
+      "common_rank_spearman": 0.22272214053280529,
+      "common_mean_abs_weight_delta": 0.01710808277130127
+    },
+    {
+      "left": "provx-r2/unseeded/rep_08.pt",
+      "right": "provx-r2/unseeded/rep_10.pt",
+      "overlap_count": 20,
+      "jaccard": 0.5,
+      "common_mean_abs_rank_delta": 8.65,
+      "common_max_abs_rank_delta": 25,
+      "common_rank_spearman": 0.26772382744427414,
+      "common_mean_abs_weight_delta": 0.014564713835716248
+    },
+    {
+      "left": "provx-r2/unseeded/rep_09.pt",
+      "right": "provx-r2/unseeded/rep_10.pt",
+      "overlap_count": 21,
+      "jaccard": 0.5384615384615384,
+      "common_mean_abs_rank_delta": 7.428571428571429,
+      "common_max_abs_rank_delta": 21,
+      "common_rank_spearman": 0.39746890094359844,
+      "common_mean_abs_weight_delta": 0.014154590311504546
+    }
+  ],
+  "result": "VARIABLE_RECORDED",
+  "reason": "ProvXExplainer._set_masks initializes edge_mask with torch.randn; run_provx.py exposes no Phase-II seed"
+}

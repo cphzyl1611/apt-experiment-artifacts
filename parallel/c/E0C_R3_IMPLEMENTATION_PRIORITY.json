@@ -1,0 +1,163 @@
+{
+  "family_count": 13,
+  "priority_order": [
+    {
+      "adapter_id": "adapter::process_command_execution",
+      "blocked_unresolved_prerequisite_rows": 1,
+      "candidate_rows": 373,
+      "dependency_classification": "WAIT_FOR_WINDOWS_OR_SERVICE_ENVIRONMENT",
+      "manual_design_rows": 339,
+      "playbook_count": 53,
+      "primary_execution_archetype": "PROCESS_COMMAND_EXECUTION",
+      "priority_basis": "coverage, playbook reuse, Mininet compatibility, OS/dependency availability, PROVX telemetry suitability, and manual burden; not scoring weight",
+      "priority_rank": 1,
+      "raw_count": 712
+    },
+    {
+      "adapter_id": "adapter::network_service_interaction",
+      "blocked_unresolved_prerequisite_rows": 3,
+      "candidate_rows": 232,
+      "dependency_classification": "WAIT_FOR_PROVX_SCHEMA",
+      "manual_design_rows": 0,
+      "playbook_count": 45,
+      "primary_execution_archetype": "NETWORK_SERVICE_INTERACTION",
+      "priority_basis": "coverage, playbook reuse, Mininet compatibility, OS/dependency availability, PROVX telemetry suitability, and manual burden; not scoring weight",
+      "priority_rank": 2,
+      "raw_count": 232
+    },
+    {
+      "adapter_id": "adapter::transfer_download_upload",
+      "blocked_unresolved_prerequisite_rows": 0,
+      "candidate_rows": 166,
+      "dependency_classification": "CAN_IMPLEMENT_BEFORE_PROVX_COLLECTOR",
+      "manual_design_rows": 0,
+      "playbook_count": 41,
+      "primary_execution_archetype": "TRANSFER_DOWNLOAD_UPLOAD",
+      "priority_basis": "coverage, playbook reuse, Mininet compatibility, OS/dependency availability, PROVX telemetry suitability, and manual burden; not scoring weight",
+      "priority_rank": 3,
+      "raw_count": 166
+    },
+    {
+      "adapter_id": "adapter::email_delivery",
+      "blocked_unresolved_prerequisite_rows": 0,
+      "candidate_rows": 105,
+      "dependency_classification": "CAN_IMPLEMENT_BEFORE_PROVX_COLLECTOR",
+      "manual_design_rows": 0,
+      "playbook_count": 40,
+      "primary_execution_archetype": "EMAIL_DELIVERY",
+      "priority_basis": "coverage, playbook reuse, Mininet compatibility, OS/dependency availability, PROVX telemetry suitability, and manual burden; not scoring weight",
+      "priority_rank": 4,
+      "raw_count": 105
+    },
+    {
+      "adapter_id": "adapter::network_c2_beacon",
+      "blocked_unresolved_prerequisite_rows": 0,
+      "candidate_rows": 69,
+      "dependency_classification": "WAIT_FOR_MININET_PROVENANCE_COLLECTOR",
+      "manual_design_rows": 34,
+      "playbook_count": 44,
+      "primary_execution_archetype": "NETWORK_C2_BEACON",
+      "priority_basis": "coverage, playbook reuse, Mininet compatibility, OS/dependency availability, PROVX telemetry suitability, and manual burden; not scoring weight",
+      "priority_rank": 5,
+      "raw_count": 103
+    },
+    {
+      "adapter_id": "adapter::network_scan_enumeration",
+      "blocked_unresolved_prerequisite_rows": 4,
+      "candidate_rows": 62,
+      "dependency_classification": "WAIT_FOR_MININET_PROVENANCE_COLLECTOR",
+      "manual_design_rows": 0,
+      "playbook_count": 27,
+      "primary_execution_archetype": "NETWORK_SCAN_ENUMERATION",
+      "priority_basis": "coverage, playbook reuse, Mininet compatibility, OS/dependency availability, PROVX telemetry suitability, and manual burden; not scoring weight",
+      "priority_rank": 6,
+      "raw_count": 62
+    },
+    {
+      "adapter_id": "adapter::discovery_enumeration",
+      "blocked_unresolved_prerequisite_rows": 2,
+      "candidate_rows": 56,
+      "dependency_classification": "WAIT_FOR_WINDOWS_OR_SERVICE_ENVIRONMENT",
+      "manual_design_rows": 34,
+      "playbook_count": 39,
+      "primary_execution_archetype": "DISCOVERY_ENUMERATION",
+      "priority_basis": "coverage, playbook reuse, Mininet compatibility, OS/dependency availability, PROVX telemetry suitability, and manual burden; not scoring weight",
+      "priority_rank": 7,
+      "raw_count": 90
+    },
+    {
+      "adapter_id": "adapter::persistence_configuration",
+      "blocked_unresolved_prerequisite_rows": 1,
+      "candidate_rows": 52,
+      "dependency_classification": "WAIT_FOR_WINDOWS_OR_SERVICE_ENVIRONMENT",
+      "manual_design_rows": 49,
+      "playbook_count": 45,
+      "primary_execution_archetype": "PERSISTENCE_CONFIGURATION",
+      "priority_basis": "coverage, playbook reuse, Mininet compatibility, OS/dependency availability, PROVX telemetry suitability, and manual burden; not scoring weight",
+      "priority_rank": 8,
+      "raw_count": 101
+    },
+    {
+      "adapter_id": "adapter::privilege_account_action",
+      "blocked_unresolved_prerequisite_rows": 0,
+      "candidate_rows": 51,
+      "dependency_classification": "WAIT_FOR_WINDOWS_OR_SERVICE_ENVIRONMENT",
+      "manual_design_rows": 29,
+      "playbook_count": 36,
+      "primary_execution_archetype": "PRIVILEGE_ACCOUNT_ACTION",
+      "priority_basis": "coverage, playbook reuse, Mininet compatibility, OS/dependency availability, PROVX telemetry suitability, and manual burden; not scoring weight",
+      "priority_rank": 9,
+      "raw_count": 80
+    },
+    {
+      "adapter_id": "adapter::file_resource_operation",
+      "blocked_unresolved_prerequisite_rows": 0,
+      "candidate_rows": 20,
+      "dependency_classification": "WAIT_FOR_WINDOWS_OR_SERVICE_ENVIRONMENT",
+      "manual_design_rows": 44,
+      "playbook_count": 33,
+      "primary_execution_archetype": "FILE_RESOURCE_OPERATION",
+      "priority_basis": "coverage, playbook reuse, Mininet compatibility, OS/dependency availability, PROVX telemetry suitability, and manual burden; not scoring weight",
+      "priority_rank": 10,
+      "raw_count": 64
+    },
+    {
+      "adapter_id": "adapter::archive_compression",
+      "blocked_unresolved_prerequisite_rows": 0,
+      "candidate_rows": 9,
+      "dependency_classification": "CAN_IMPLEMENT_BEFORE_PROVX_COLLECTOR",
+      "manual_design_rows": 0,
+      "playbook_count": 8,
+      "primary_execution_archetype": "ARCHIVE_COMPRESSION",
+      "priority_basis": "coverage, playbook reuse, Mininet compatibility, OS/dependency availability, PROVX telemetry suitability, and manual burden; not scoring weight",
+      "priority_rank": 11,
+      "raw_count": 9
+    },
+    {
+      "adapter_id": "adapter::credential_store_access",
+      "blocked_unresolved_prerequisite_rows": 0,
+      "candidate_rows": 7,
+      "dependency_classification": "MANUAL_ONLY",
+      "manual_design_rows": 60,
+      "playbook_count": 31,
+      "primary_execution_archetype": "CREDENTIAL_STORE_ACCESS",
+      "priority_basis": "coverage, playbook reuse, Mininet compatibility, OS/dependency availability, PROVX telemetry suitability, and manual burden; not scoring weight",
+      "priority_rank": 12,
+      "raw_count": 67
+    },
+    {
+      "adapter_id": "adapter::dns_interaction",
+      "blocked_unresolved_prerequisite_rows": 0,
+      "candidate_rows": 5,
+      "dependency_classification": "CAN_IMPLEMENT_BEFORE_PROVX_COLLECTOR",
+      "manual_design_rows": 0,
+      "playbook_count": 2,
+      "primary_execution_archetype": "DNS_INTERACTION",
+      "priority_basis": "coverage, playbook reuse, Mininet compatibility, OS/dependency availability, PROVX telemetry suitability, and manual burden; not scoring weight",
+      "priority_rank": 13,
+      "raw_count": 5
+    }
+  ],
+  "raw_denominator": 1796,
+  "schema_version": "e0c-r3-implementation-priority-v1"
+}
