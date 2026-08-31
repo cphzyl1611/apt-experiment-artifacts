@@ -1,0 +1,126 @@
+{
+  "stage": "PROVX-R4",
+  "status": "DESIGNED_NOT_EXECUTED",
+  "protocol_id": "provx-track-l-training-v1",
+  "track": "TRACK_L",
+  "track_o_separation": {
+    "track_o": "EXACT_OFFICIAL_ARTIFACT_REPRODUCTION_BASELINE",
+    "track_o_checkpoint": "authenticated packaged 21-input GCN checkpoint",
+    "track_o_parameters": "artifact-as-shipped parameters remain unchanged",
+    "track_l_warm_start": false,
+    "track_l_checkpoint_lineage": "new detector with input_feature_dim=32"
+  },
+  "encoder": {
+    "id": "provx-adapted-live-v1",
+    "dimension": 32,
+    "schema_path": "PROVX_R3_ADAPTED_LIVE_FEATURE_SCHEMA.json",
+    "schema_sha256": "53caab007f9cea84e83a5fb92ddea0cb9082cb816d19752db896cc58c675f68a",
+    "encoder_sha256": "f27984513a39a004534f7bb409e3ff6410c48b442645656435c0534e64a15188"
+  },
+  "data_protocol": {
+    "training_source": "approved non-FA1B2de source declared in an immutable manifest before fitting",
+    "group_key": "(host_id,run_id,playbook_or_scenario_id_if_non_formal)",
+    "split": {
+      "method": "grouped deterministic split",
+      "ratios": {"train": 0.70, "validation": 0.15, "internal_holdout": 0.15},
+      "unit": "whole host/run/scenario groups; never individual events",
+      "seed": 1,
+      "formal_fa1b2de": "all 53 playbooks/1796 raw actions remain outside these partitions and are reserved for a later final evaluation"
+    },
+    "feature_fitting": "The adapted schema uses fixed constants; no mean/std or vocabulary is fitted. If a future protocol adds a fitted transform, fit it on train groups only and version the protocol.",
+    "label_provenance": "Labels must come from the declared training source or controlled generator metadata and are never passed as live features.",
+    "negative_sampling": {
+      "primary": "inverse-frequency weighted sampler on training groups only",
+      "sampler_multiplier": 3,
+      "candidate": "no sampler with class-weighted cross entropy",
+      "sampling_seed": 1,
+      "formal_records_sampled": false
+    }
+  },
+  "detector_architecture": {
+    "primary": {
+      "class": "provx_usenix.detector.Detector",
+      "gnn_model": "GCNConv",
+      "input_feature_dim": 32,
+      "gnn_hidden_size": 64,
+      "gnn_feature_dim_size": 256,
+      "num_gnn_layers": 2,
+      "graph_pooling": "mean",
+      "dropout_rate": 0.1,
+      "num_classes": 2,
+      "residual": false
+    },
+    "preserved_structure": ["feature transform", "message passing", "ReLU/Dropout", "mean pooling", "two-layer classifier"],
+    "input_contract": "x float32 [N,32], edge_index int64 [2,E], optional batch int64 [N]",
+    "candidate_families": ["GCNConv primary only at initial training review; GAT/GraphSAGE require a separately declared comparison protocol"]
+  },
+  "optimization_candidates": {
+    "primary": {
+      "loss": "torch.nn.functional.cross_entropy",
+      "optimizer": "torch.optim.AdamW",
+      "learning_rate": 0.005,
+      "weight_decay": 0.0,
+      "epochs_max": 50,
+      "batch_size": 32,
+      "max_grad_norm": 1.0
+    },
+    "predeclared_alternative": {
+      "loss": "class-weighted cross entropy using training-group frequencies",
+      "optimizer": "torch.optim.Adam",
+      "learning_rate": 0.001,
+      "weight_decay": 0.0,
+      "epochs_max": 50,
+      "batch_size": 32,
+      "max_grad_norm": 1.0
+    },
+    "selection_rule": "If alternatives are evaluated, choose by validation balanced accuracy, then validation binary F1, then lowest validation loss, with the lexicographically first configuration as the final tie-break. Selection uses validation groups only and is frozen before formal evaluation.",
+    "track_o_parameter_boundary": "Do not substitute these candidates into Track O or alter the packaged checkpoint baseline."
+  },
+  "early_stopping": {
+    "enabled": true,
+    "monitor": "validation balanced accuracy",
+    "patience_epochs": 10,
+    "minimum_delta": 0.0,
+    "restore_best": true,
+    "tie_break": "earliest epoch"
+  },
+  "randomness": {
+    "training_primary_seed": 1,
+    "training_sensitivity_seeds": [7, 17],
+    "seed_selection": "registered before training and never selected from formal results",
+    "rng_sources": ["Python random", "PYTHONHASHSEED", "NumPy", "Torch CPU", "Torch CUDA if used"],
+    "phase2_primary_seed": 314159,
+    "phase2_policy": "PROVX_R3_PHASE2_SEED_POLICY.json"
+  },
+  "model_selection_metrics": {
+    "primary": "validation balanced accuracy",
+    "secondary": ["binary F1", "validation loss"],
+    "reported_after_freeze": ["accuracy", "precision", "recall", "F1", "AUC", "FPR", "TPR", "confusion counts"],
+    "formal_test_used_for_selection": false
+  },
+  "calibration_policy": {
+    "default": "Use detector argmax over the two logits; no post-hoc probability calibration is performed in R4.",
+    "threshold_changes": "Any probability threshold, temperature scaling, or alert policy requires a new protocol version and validation-only selection before formal evaluation.",
+    "formal_outputs": "No formal output may alter calibration or this protocol."
+  },
+  "checkpoint_identity": {
+    "manifest_inputs": ["protocol_id", "encoder_id", "encoder_sha256", "schema_sha256", "training_source_manifest_hash", "split_manifest_hash", "architecture", "optimizer/loss", "training_seed", "selected_epoch", "dependency_lock"],
+    "checkpoint_sha256": "not available until a separately authorized training run; absence is intentional at R4",
+    "identity_hash": "sha256(canonical JSON of manifest inputs)",
+    "required_metadata": ["checkpoint_sha256", "identity_hash", "protocol_id", "encoder/schema hashes", "split membership", "seed/RNG sources", "selected epoch", "validation metrics"],
+    "packaged_checkpoint_loaded": false
+  },
+  "phase2_contract": {
+    "architecture": "same differentiable GNN-compatible mask optimization and staged solidification semantics",
+    "detector": "new frozen Track-L 32-input checkpoint only",
+    "seed": 314159,
+    "mer": "model-level intervention flip only; not host enforcement",
+    "formal_evaluation": "deferred until training, calibration, checkpoint, and adapter gates pass"
+  },
+  "execution_record": {
+    "detector_training_executed": false,
+    "detector_retraining_executed": false,
+    "formal_experiment_executed": false,
+    "apt_actions_executed": false
+  }
+}

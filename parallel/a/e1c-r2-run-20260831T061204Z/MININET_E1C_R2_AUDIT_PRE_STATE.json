@@ -1,0 +1,47 @@
+{
+  "auditctl_list": {
+    "returncode": 0,
+    "stderr": "",
+    "stdout_b64": "LWEgYWx3YXlzLGV4aXQgLUYgYXJjaD1iNjQgLVMgY2xvbmUsZm9yayx2Zm9yayxleGVjdmUsZXhlY3ZlYXQgLUYgcGlkPTU3NTc3NiAtRiBrZXk9ZTFjOTAyZjc0ZjU4MwotYSBhbHdheXMsZXhpdCAtRiBhcmNoPWI2NCAtUyBleGl0X2dyb3VwIC1GIHBpZD01NzU3NzYgLUYga2V5PWUxYzkwMmY3NGY1ODMKLWEgYWx3YXlzLGV4aXQgLUYgYXJjaD1iNjQgLVMgb3BlbmF0LG9wZW5hdDIgLUYgZGlyPS9ob21lL2NwaC9leHBlcmltZW50LXBhcmFsbGVsL2UwLWEvZTFjLXJ1bi0yMDI2MDgzMVQwNTAwMjhaL3RlbXAtZXZlbnRzIC1GIHBpZD01NzU3NzYgLUYga2V5PWUxYzkwMmY3NGY1ODMKLWEgYWx3YXlzLGV4aXQgLUYgYXJjaD1iNjQgLVMgdW5saW5rLHVubGlua2F0LHJlbmFtZWF0IC1GIGRpcj0vaG9tZS9jcGgvZXhwZXJpbWVudC1wYXJhbGxlbC9lMC1hL2UxYy1ydW4tMjAyNjA4MzFUMDUwMDI4Wi90ZW1wLWV2ZW50cyAtRiBwaWQ9NTc1Nzc2IC1GIGtleT1lMWM5MDJmNzRmNTgzCi1hIGFsd2F5cyxleGl0IC1GIGFyY2g9YjY0IC1TIGNvbm5lY3QsYWNjZXB0LGJpbmQsYWNjZXB0NCAtRiBwaWQ9NTc1Nzc2IC1GIGtleT1lMWM5MDJmNzRmNTgzCi1hIGFsd2F5cyxleGl0IC1GIGFyY2g9YjY0IC1TIGNsb25lLGZvcmssdmZvcmssZXhlY3ZlLGV4ZWN2ZWF0IC1GIHBpZD01NzU3NzcgLUYga2V5PWUxYzkwMmY3NGY1ODMKLWEgYWx3YXlzLGV4aXQgLUYgYXJjaD1iNjQgLVMgZXhpdF9ncm91cCAtRiBwaWQ9NTc1Nzc3IC1GIGtleT1lMWM5MDJmNzRmNTgzCi1hIGFsd2F5cyxleGl0IC1GIGFyY2g9YjY0IC1TIG9wZW5hdCxvcGVuYXQyIC1GIGRpcj0vaG9tZS9jcGgvZXhwZXJpbWVudC1wYXJhbGxlbC9lMC1hL2UxYy1ydW4tMjAyNjA4MzFUMDUwMDI4Wi90ZW1wLWV2ZW50cyAtRiBwaWQ9NTc1Nzc3IC1GIGtleT1lMWM5MDJmNzRmNTgzCi1hIGFsd2F5cyxleGl0IC1GIGFyY2g9YjY0IC1TIHVubGluayx1bmxpbmthdCxyZW5hbWVhdCAtRiBkaXI9L2hvbWUvY3BoL2V4cGVyaW1lbnQtcGFyYWxsZWwvZTAtYS9lMWMtcnVuLTIwMjYwODMxVDA1MDAyOFovdGVtcC1ldmVudHMgLUYgcGlkPTU3NTc3NyAtRiBrZXk9ZTFjOTAyZjc0ZjU4MwotYSBhbHdheXMsZXhpdCAtRiBhcmNoPWI2NCAtUyBjb25uZWN0LGFjY2VwdCxiaW5kLGFjY2VwdDQgLUYgcGlkPTU3NTc3NyAtRiBrZXk9ZTFjOTAyZjc0ZjU4MwotYSBhbHdheXMsZXhpdCAtRiBhcmNoPWI2NCAtUyBjbG9uZSxmb3JrLHZmb3JrLGV4ZWN2ZSxleGVjdmVhdCAtRiBwcGlkPTU3NTc3NiAtRiBrZXk9ZTFjOTAyZjc0ZjU4MwotYSBhbHdheXMsZXhpdCAtRiBhcmNoPWI2NCAtUyBleGl0X2dyb3VwIC1GIHBwaWQ9NTc1Nzc2IC1GIGtleT1lMWM5MDJmNzRmNTgzCi1hIGFsd2F5cyxleGl0IC1GIGFyY2g9YjY0IC1TIG9wZW5hdCxvcGVuYXQyIC1GIGRpcj0vaG9tZS9jcGgvZXhwZXJpbWVudC1wYXJhbGxlbC9lMC1hL2UxYy1ydW4tMjAyNjA4MzFUMDUwMDI4Wi90ZW1wLWV2ZW50cyAtRiBwcGlkPTU3NTc3NiAtRiBrZXk9ZTFjOTAyZjc0ZjU4MwotYSBhbHdheXMsZXhpdCAtRiBhcmNoPWI2NCAtUyB1bmxpbmssdW5saW5rYXQscmVuYW1lYXQgLUYgZGlyPS9ob21lL2NwaC9leHBlcmltZW50LXBhcmFsbGVsL2UwLWEvZTFjLXJ1bi0yMDI2MDgzMVQwNTAwMjhaL3RlbXAtZXZlbnRzIC1GIHBwaWQ9NTc1Nzc2IC1GIGtleT1lMWM5MDJmNzRmNTgzCi1hIGFsd2F5cyxleGl0IC1GIGFyY2g9YjY0IC1TIGNvbm5lY3QsYWNjZXB0LGJpbmQsYWNjZXB0NCAtRiBwcGlkPTU3NTc3NiAtRiBrZXk9ZTFjOTAyZjc0ZjU4MwotYSBhbHdheXMsZXhpdCAtRiBhcmNoPWI2NCAtUyBjbG9uZSxmb3JrLHZmb3JrLGV4ZWN2ZSxleGVjdmVhdCAtRiBwcGlkPTU3NTc3NyAtRiBrZXk9ZTFjOTAyZjc0ZjU4MwotYSBhbHdheXMsZXhpdCAtRiBhcmNoPWI2NCAtUyBleGl0X2dyb3VwIC1GIHBwaWQ9NTc1Nzc3IC1GIGtleT1lMWM5MDJmNzRmNTgzCi1hIGFsd2F5cyxleGl0IC1GIGFyY2g9YjY0IC1TIG9wZW5hdCxvcGVuYXQyIC1GIGRpcj0vaG9tZS9jcGgvZXhwZXJpbWVudC1wYXJhbGxlbC9lMC1hL2UxYy1ydW4tMjAyNjA4MzFUMDUwMDI4Wi90ZW1wLWV2ZW50cyAtRiBwcGlkPTU3NTc3NyAtRiBrZXk9ZTFjOTAyZjc0ZjU4MwotYSBhbHdheXMsZXhpdCAtRiBhcmNoPWI2NCAtUyB1bmxpbmssdW5saW5rYXQscmVuYW1lYXQgLUYgZGlyPS9ob21lL2NwaC9leHBlcmltZW50LXBhcmFsbGVsL2UwLWEvZTFjLXJ1bi0yMDI2MDgzMVQwNTAwMjhaL3RlbXAtZXZlbnRzIC1GIHBwaWQ9NTc1Nzc3IC1GIGtleT1lMWM5MDJmNzRmNTgzCi1hIGFsd2F5cyxleGl0IC1GIGFyY2g9YjY0IC1TIGNvbm5lY3QsYWNjZXB0LGJpbmQsYWNjZXB0NCAtRiBwcGlkPTU3NTc3NyAtRiBrZXk9ZTFjOTAyZjc0ZjU4Mwo="
+  },
+  "auditctl_status": {
+    "argv": [
+      "/usr/sbin/auditctl",
+      "-s"
+    ],
+    "parsed": {
+      "backlog": 0,
+      "backlog_limit": 8192,
+      "backlog_wait_time": 60000,
+      "backlog_wait_time_actual": 0,
+      "enabled": 1,
+      "lost": 0,
+      "raw": "enabled 1\nfailure 1\npid 573176\nrate_limit 0\nbacklog_limit 8192\nlost 0\nbacklog 0\nbacklog_wait_time 60000\nbacklog_wait_time_actual 0\nloginuid_immutable 0 unlocked\n"
+    },
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "enabled 1\nfailure 1\npid 573176\nrate_limit 0\nbacklog_limit 8192\nlost 0\nbacklog 0\nbacklog_wait_time 60000\nbacklog_wait_time_actual 0\nloginuid_immutable 0 unlocked\n"
+  },
+  "auditd_active": {
+    "argv": [
+      "/bin/systemctl",
+      "is-active",
+      "auditd"
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "active\n"
+  },
+  "auditd_enabled": {
+    "argv": [
+      "/bin/systemctl",
+      "is-enabled",
+      "auditd"
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "enabled\n"
+  },
+  "baseline_rule_dump_sha256": "3dd72c0d937aa4ba362f1e831768831b563d5eedfde2a37fc760abe614e0969e",
+  "captured_at_utc": "2026-08-31T06:36:22.369290+00:00"
+}

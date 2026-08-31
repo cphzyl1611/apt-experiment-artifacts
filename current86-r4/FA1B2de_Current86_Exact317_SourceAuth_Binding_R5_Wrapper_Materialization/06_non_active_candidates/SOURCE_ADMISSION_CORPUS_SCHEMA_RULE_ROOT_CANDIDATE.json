@@ -1,0 +1,52 @@
+{
+  "activation_status": "NOT_ACTIVE",
+  "active_canonical_source_authority_created": false,
+  "authority_role": "SOURCE_ADMISSION_CORPUS_SCHEMA_RULE_ROOT",
+  "authority_status": "NON_ACTIVE_CANDIDATE",
+  "binding_publication": false,
+  "corpus_schema_rules": {
+    "R4_WRAPPER_C0_60": {
+      "contract": "immutable C0 JSONL line plus exact lookup_key and row-byte SHA256",
+      "match_cardinality": "exactly_one",
+      "required_fields": [
+        "jsonl_line",
+        "lookup_key",
+        "row_bytes_sha256"
+      ]
+    },
+    "R4_WRAPPER_RAW_LEGACY_26": {
+      "contract": "stable positional raw key -> source_file -> $.pipeline[stage_index-1].actions[action_index-1]",
+      "match_cardinality": "exactly_one",
+      "required_fields": [
+        "playbook_id",
+        "stage_identifier=SNN",
+        "action_index=ANN",
+        "raw_action_key"
+      ]
+    },
+    "R4_WRAPPER_SCORING_231": {
+      "contract": "immutable scoring JSONL line plus exact scoring_id and row-byte SHA256",
+      "match_cardinality": "exactly_one",
+      "required_fields": [
+        "jsonl_line",
+        "lookup_key=scoring:<id>",
+        "row_bytes_sha256"
+      ]
+    }
+  },
+  "expansion_policy": "EXACT_COMMITTED_TARGET_SET_ONLY",
+  "fail_closed": true,
+  "field_pins_created": 0,
+  "git_ref_mutation": false,
+  "schema": "FA1B2DE_CURRENT86_SOURCE_ADMISSION_CORPUS_SCHEMA_RULE_ROOT_R5_CANDIDATE",
+  "scope": "EXACT317_ONLY",
+  "scoring_authority_mutated": false,
+  "source_auth_executed": false,
+  "target_count": 317,
+  "target_manifest_sha256": "d8d55d369fe433bf7b93a3c332b8ac9a517a9146b28fa223370ff3ec946955ac",
+  "wrapper_rule_ids": [
+    "R4_WRAPPER_C0_60",
+    "R4_WRAPPER_RAW_LEGACY_26",
+    "R4_WRAPPER_SCORING_231"
+  ]
+}

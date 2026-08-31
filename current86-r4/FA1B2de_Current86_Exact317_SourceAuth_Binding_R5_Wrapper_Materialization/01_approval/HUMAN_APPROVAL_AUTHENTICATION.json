@@ -1,0 +1,23 @@
+{
+  "active_canonical_source_authority_created": false,
+  "approval_decisions": {
+    "R4_WRAPPER_C0_60": "APPROVE_EXACT_CANONICAL_WRAPPER_RULE",
+    "R4_WRAPPER_RAW_LEGACY_26": "APPROVE_EXACT_CANONICAL_WRAPPER_RULE",
+    "R4_WRAPPER_SCORING_231": "APPROVE_EXACT_CANONICAL_WRAPPER_RULE"
+  },
+  "approved_r4_rule_ids": [
+    "R4_WRAPPER_C0_60",
+    "R4_WRAPPER_RAW_LEGACY_26",
+    "R4_WRAPPER_SCORING_231"
+  ],
+  "authenticated": true,
+  "field_pins_created": 0,
+  "frozen_r4_package": {
+    "path": "/home/cph/fa1b2de-bso-a2-transition-r2-design-patch/FA1B2de_Current86_Exact317_SourceAuth_Prospective_Canonical_Wrapper_Governance_R4",
+    "rule_package_sha256": "da7e5bb23baf63559c719f2fc6319e56fd23ce493e4d74a1f8aa22220055c444",
+    "sha256sums_sha256": "9aaa523bd7dce92bf865ee8283ddf61e339d6a804f90b264fa87e700dde2e2cd"
+  },
+  "human_origin": "USER_EXPLICIT_APPROVAL",
+  "schema": "FA1B2DE_CURRENT86_BINDING_R5_HUMAN_APPROVAL_AUTHENTICATION_V1",
+  "source_auth_executed": false
+}

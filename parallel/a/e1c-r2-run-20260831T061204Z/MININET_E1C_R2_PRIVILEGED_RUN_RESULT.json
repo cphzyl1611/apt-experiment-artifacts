@@ -1,0 +1,8 @@
+{
+  "error": {
+    "message": "Object of type bytes is not JSON serializable",
+    "type": "TypeError"
+  },
+  "formal_experiment_executed": false,
+  "status": "FAILED"
+}

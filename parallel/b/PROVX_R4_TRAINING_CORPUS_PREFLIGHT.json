@@ -1,0 +1,149 @@
+{
+  "stage": "PROVX-R4",
+  "status": "FEASIBILITY_PREFLIGHT_NO_DOWNLOAD_NO_TRAINING",
+  "encoder": {
+    "id": "provx-adapted-live-v1",
+    "dimension": 32,
+    "schema": "PROVX_R3_ADAPTED_LIVE_FEATURE_SCHEMA.json",
+    "schema_sha256": "53caab007f9cea84e83a5fb92ddea0cb9082cb816d19752db896cc58c675f68a"
+  },
+  "formal_exclusion": {
+    "dataset": "FA1B2de",
+    "playbooks": 53,
+    "raw_actions": 1796,
+    "raw_data_acquired": false,
+    "allowed_in_training": false,
+    "allowed_in_tuning_or_calibration": false,
+    "allowed_in_fixture_generation": false,
+    "allowed_in_seed_selection": false
+  },
+  "source_inventory": [
+    {
+      "source_id": "official_optc",
+      "authority": "official_cited_dataset_repository",
+      "url": "https://github.com/FiveDirections/OpTC-data",
+      "revision": "master HEAD 5b108604f11f767aa11ea79ff827595f3fad15fd",
+      "documentation_hashes": {
+        "README.md": "bbbeca5d5a861ffc765a6d42ddd19cb84acb93861226b4b93887bb950e121074",
+        "ecar.md": "1df4539c49963cc49b783580033fe1ec68bbae68434abf29da83c47b5d26d16b",
+        "errata.md": "4044970eae0db4f67055fa2c0e5bb99824628c13d991fcef01dcc5ec06e8d062"
+      },
+      "provenance_event_schema_compatibility": {
+        "assessment": "PARTIAL_COMPATIBLE",
+        "evidence": "Official eCAR documentation exposes timestamp, IDs, hostname, object/action, actor, PID/TID, principal, and properties that can populate the adapted process/file/socket/event contract.",
+        "gaps": ["ProvX causal-edge construction is absent", "entity identity de-duplication is source-specific", "no mapping to the packaged 21 columns is available"]
+      },
+      "preprocessing_burden": "HIGH: approximately terabyte-scale compressed JSON collection, eCAR normalization, duplicate-process handling, path normalization, causal graph construction, subgraph extraction, and source errata checks.",
+      "download_storage_size": "README describes approximately one terabyte of compressed JSON-compatible data hosted outside the repository; no download performed at R4.",
+      "labels": "Red-team ground truth documentation is published; graph/node labels and a train/validation split must be constructed separately and frozen before use.",
+      "split_feasibility": "FEASIBLE in principle by host/run/time groups with a held-out validation group; do not split individual events randomly.",
+      "leakage_risk": ["shared benign background across hosts", "duplicate process objects noted in errata", "time-window overlap", "ground-truth-derived fields leaking into features"],
+      "licensing_access_constraints": "Official repository states public-domain release/distribution-unlimited language; data is hosted through an external Google Drive and remains subject to release terms. Authorization and checksums are required before acquisition.",
+      "r4_route": "candidate_train_or_validation_source_after_authorization; not acquired"
+    },
+    {
+      "source_id": "official_tc_e3",
+      "authority": "official_cited_dataset_repository",
+      "url": "https://github.com/darpa-i2o/Transparent-Computing",
+      "revision": "master HEAD 244ae2401032ce92ac3b72f49b8039cae67d60d6",
+      "documentation_hashes": {
+        "README-E3.md": "441be7b5f8781efc48e22f671b3efe1fff380879390dd85788af46d95b77bbb1",
+        "README.md": "176c5fb6684f63718d8e169948711c87a1f51a5e852b0a1882e87301a192db43"
+      },
+      "provenance_event_schema_compatibility": {
+        "assessment": "PARTIAL_COMPATIBLE",
+        "evidence": "Official TC E3 documentation describes TA1 provenance records, process/file/system-component interactions, CDM Avro schema, and parser tools.",
+        "gaps": ["ProvX raw-to-graph rules and feature encoder are absent", "CDM-to-adapted entity/event normalization must be implemented and versioned", "Louvain parameters are not supplied by ProvX artifact"]
+      },
+      "preprocessing_burden": "HIGH: Avro/CDM decoding, performer-specific normalization, causal linking, timestamp/identity reconciliation, graph construction, subgraph extraction, and ground-truth alignment.",
+      "download_storage_size": "Repository README points to large external Google Drive data; exact size is not pinned in the local documentation and no data was downloaded at R4.",
+      "labels": "Engagement ground-truth reports and annotations are described; labels must remain partition metadata and never become live features.",
+      "split_feasibility": "FEASIBLE in principle by performer/host/engagement run with a separately reserved validation group.",
+      "leakage_risk": ["shared background activity", "hub duplication across subgraphs", "performer-specific artifacts", "ground-truth annotations entering feature construction"],
+      "licensing_access_constraints": "Official repository states public-domain release language and external hosting; obtain authorization, release terms, and checksums before acquisition.",
+      "r4_route": "candidate_train_or_validation_source_after_authorization; not acquired"
+    },
+    {
+      "source_id": "reserved_non_scored_mininet",
+      "authority": "local_controlled_generation_to_be_declared",
+      "url": null,
+      "revision": "not generated at R4",
+      "provenance_event_schema_compatibility": {
+        "assessment": "DIRECT_IF_COLLECTOR_MATCHES_CONTRACT",
+        "evidence": "The adapter can generate normalized process/file/socket records, causal edges, timestamps, and stable IDs directly from a controlled collector.",
+        "gaps": ["collector completeness and loss detection", "graph-window policy", "external alert-seed source"]
+      },
+      "preprocessing_burden": "LOW_TO_MEDIUM for schema smoke tests; MEDIUM for a representative corpus because collection loss, clocking, and causal linking must be measured.",
+      "download_storage_size": "No download; size depends on declared trace count/window and must be recorded in a future manifest.",
+      "labels": "Synthetic labels may be generated from the trace generator for training/validation only; no formal labels are present.",
+      "split_feasibility": "FEASIBLE by isolated VM/host/run and generator seed; keep entire runs together.",
+      "leakage_risk": ["generator-template memorization", "reusing the same seed across train and validation", "using smoke traces for post-hoc formal tuning"],
+      "licensing_access_constraints": "Controlled local traces require authorization for the host and collector; retain generator/configuration hashes.",
+      "r4_route": "preferred non-scored adapter validation source; may become training/validation only if declared before freeze"
+    },
+    {
+      "source_id": "separately_generated_benign_traces",
+      "authority": "local_authorized_collection",
+      "url": null,
+      "revision": "not generated at R4",
+      "provenance_event_schema_compatibility": {
+        "assessment": "DIRECT_IF_SAME_COLLECTOR",
+        "evidence": "Benign process/file/socket audit records can be normalized by the same 32-feature encoder without evaluation labels.",
+        "gaps": ["must cover realistic event diversity", "must define collector loss/unknown policy", "must not reuse formal host/run identities"]
+      },
+      "preprocessing_burden": "MEDIUM: collection, normalization, causal linking, quality checks, and run-level manifests.",
+      "download_storage_size": "No download; estimate and record after a pilot collection.",
+      "labels": "Benign-by-generation label only; no analyst ground truth.",
+      "split_feasibility": "FEASIBLE by host/run/time groups.",
+      "leakage_risk": ["same scripted workload in all partitions", "host identity or path memorization", "future records crossing a split boundary"],
+      "licensing_access_constraints": "Requires local collection authorization and retention policy for audit data.",
+      "r4_route": "candidate training/validation source after declaration"
+    },
+    {
+      "source_id": "authorized_non_formal_adversary_emulation",
+      "authority": "separate authorization required",
+      "url": null,
+      "revision": "not present and not executed at R4",
+      "provenance_event_schema_compatibility": {
+        "assessment": "DIRECT_IF_SAME_COLLECTOR",
+        "evidence": "Authorized emulation can emit the same process/file/socket/event records required by the adapted encoder.",
+        "gaps": ["action-to-record completeness", "ground-truth provenance", "safe isolation and cleanup", "no R4 execution authorization"]
+      },
+      "preprocessing_burden": "HIGH: controlled execution, complete collection, action identity propagation, causal graphing, and safety review.",
+      "download_storage_size": "Not known; no acquisition or execution at R4.",
+      "labels": "Emulation ground truth can be retained outside live features if separately authorized and manifested.",
+      "split_feasibility": "FEASIBLE only with disjoint emulation scenarios/hosts/runs and a predeclared split.",
+      "leakage_risk": ["scenario signatures", "shared tooling across partitions", "action IDs or labels encoded in features", "post-hoc selection of successful emulations"],
+      "licensing_access_constraints": "Requires explicit authorization, isolated infrastructure, safety review, and data-retention approval; no APT action is permitted in R4.",
+      "r4_route": "future candidate source; blocked pending authorization and safety plan"
+    },
+    {
+      "source_id": "packaged_sample_track_o_only",
+      "authority": "authenticated_zenodo_artifact",
+      "url": "https://zenodo.org/records/20310415",
+      "revision": "archive SHA-256 a46fe7dec840ea28d9f8acf8771879af7204e0d622e24d12a99ad95f4187e3ff",
+      "provenance_event_schema_compatibility": {
+        "assessment": "NOT_COMPATIBLE_FOR_TRACK_L_FEATURE_FITTING",
+        "evidence": "Packaged Sample tensors are compatible with the 21-input checkpoint but their raw feature vocabulary is unavailable; no raw events are included.",
+        "gaps": ["opaque 21-column semantics", "no raw-to-adapted conversion", "not a live collector corpus"]
+      },
+      "preprocessing_burden": "LOW for Track O reproduction; unusable for authenticated Track L encoder training without raw provenance and labels.",
+      "download_storage_size": "Already local from R0; no new acquisition.",
+      "labels": "Packaged _VULN/_LINE/_SAMPLE and auxiliary labels are evaluation metadata for Track O, not Track L live features.",
+      "split_feasibility": "Existing Sample train/val/test partitions are usable only for Track O controls.",
+      "leakage_risk": ["mistaking opaque features for the adapted vocabulary", "using evaluation metadata as live inputs"],
+      "licensing_access_constraints": "Authenticated MIT-licensed artifact; preserve archive/source hashes.",
+      "r4_route": "Track O control only; excluded from Track L training"
+    }
+  ],
+  "selection_recommendation": {
+    "preferred_sequence": [
+      "reserved non-scored Mininet traces for adapter/round-trip validation",
+      "separately generated benign traces for initial Track-L training coverage",
+      "authorized non-formal adversary/emulation traces if safety and authorization are approved",
+      "official OpTC or TC E3 only after data access, schema normalization, and grouped split manifests are frozen"
+    ],
+    "minimum_training_corpus_gate": "At least one approved non-formal source with process/file/socket coverage, run-level labels, disjoint validation groups, and complete raw/graph/feature hashes.",
+    "no_training_at_r4": true
+  }
+}

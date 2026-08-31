@@ -1,0 +1,66 @@
+{
+  "schema": "MININET_E1C_R2_PRE_RUN_CONTRACT_V1",
+  "created_at_utc": "2026-08-31T06:22:20.536827Z",
+  "run_id": "e1c-r2-run-20260831T061204Z",
+  "prior_run": {
+    "run_id": "e1c-run-20260831T050028Z",
+    "audit_key": "e1c902f74f583",
+    "pre_state_path": "/home/cph/experiment-parallel/e0-a/e1c-run-20260831T050028Z/MININET_E1C_AUDIT_PRE_STATE.json",
+    "pre_state_sha256_at_contract": "49bea36b12bd06f9fa51554483167f4bfe77d2ce602d1000b146179f50058e20",
+    "transient_contract_path": "/home/cph/experiment-parallel/e0-a/e1c-run-20260831T050028Z/MININET_E1C_TRANSIENT_RULE_CONTRACT.json",
+    "transient_contract_sha256_at_contract": "c9cb8820046114d4b17b6cf814e93f79eced2d1722faf1b10e9d96a254ff4e8b",
+    "recorded_baseline_rule_dump_sha256": "61501e69a61dbbc1a41605ea15c34807e6b1d3992bee195dde36a7ebdd95dd87",
+    "recorded_baseline_rules": "No rules",
+    "residual_cleanup_policy": "Only exact old key rules matching the recorded old rule contract may be deleted; fail closed on any unmatched or unrelated rule."
+  },
+  "collector": {
+    "package": "auditd=1:3.0.7-1build1",
+    "installed": true,
+    "daemon_active": true,
+    "daemon_enabled": true,
+    "supported_syscall_probe": "per-syscall transient auditctl add/remove before R2 rules; no compound rule with unsupported names",
+    "read_write_policy": "Use only supported read/write syscalls with -F dir=<unique run temp directory> and pid/ppid filters; mark PARTIAL if none are safely supported."
+  },
+  "harness": {
+    "path": "/home/cph/experiment-parallel/e0-a/e1c-r2-run-20260831T061204Z/mininet_e1c_r2_corrected_smoke.py",
+    "sha256": "f299142d5ed365042e46cd240c559cbcea3644a23e34b24f7eb76bc514276464",
+    "test_path": "/home/cph/experiment-parallel/e0-a/e1c-r2-run-20260831T061204Z/test_mininet_e1c_r2_corrected_smoke.py",
+    "test_sha256": "ad1598806026ffedb8ce796899d6f2f15c6245c32b6fb617170715f8cfd38d8f"
+  },
+  "topology": {
+    "hosts": ["h1", "h2"],
+    "switch": "s1",
+    "network": "10.0.0.0/24",
+    "nat": false,
+    "external_links": false,
+    "same_tcp_port": 18080,
+    "handshake": "h2 blocks in accept after READY; h1 performs blocking connect after both READY messages; fixed benign payload and ACK"
+  },
+  "required_runtime_evidence": [
+    "old-run residual rule count/removal and baseline restoration before R2",
+    "supported syscall probe results",
+    "host shell PID/netns and child PID/netns captured while alive",
+    "listener socket state, /proc/<pid>/net/tcp, and ss ownership while alive",
+    "all eight required normalized audit event classes",
+    "raw serials/bytes/hashes and PID/netns/logical_host joins",
+    "audit lost/backlog counters",
+    "exact run-rule deletion and post-cleanup baseline/topology/process checks"
+  ],
+  "boundaries": {
+    "no_automatic_sudo": true,
+    "no_apt_actions": true,
+    "no_model_execution": true,
+    "no_formal_experiment": true,
+    "no_mn_dash_c": true,
+    "no_external_or_nat_attachment": true,
+    "no_persistent_audit_rule_file_edits": true,
+    "preexisting_ovs_daemons_not_run_owned": true
+  },
+  "exact_human_command": "sudo /usr/bin/python3 /home/cph/experiment-parallel/e0-a/e1c-r2-run-20260831T061204Z/mininet_e1c_r2_corrected_smoke.py",
+  "terminal": {
+    "MININET_E1C_R2_PREPARATION": "PASS",
+    "HUMAN_PRIVILEGED_RUN_REQUIRED": "YES",
+    "NEXT_ACTION": "HUMAN_RUN_EXACT_SUDO_COMMAND",
+    "STOP": true
+  }
+}

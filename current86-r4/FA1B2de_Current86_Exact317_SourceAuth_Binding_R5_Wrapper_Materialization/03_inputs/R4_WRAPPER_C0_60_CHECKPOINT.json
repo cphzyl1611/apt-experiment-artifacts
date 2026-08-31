@@ -1,0 +1,20 @@
+{
+  "active_canonical_source_authority_created": false,
+  "approved_r4_checkpoint_sha256": "63076ac10f8d56aecf2ff4cf421df66ebd7f63a655197a806e6459b3e9fcb816",
+  "dry_run_only": true,
+  "extractor_implementation_sha256": "ce847a16203de5d163d8b241a0c04a998c29568525de220240644c1931089b7e",
+  "extractor_spec_id": "R4_C0_IMMUTABLE_JSONL_WRAPPER_EXTRACTOR_V1",
+  "extractor_spec_sha256": "f6ca03b9db360e6124c199c7e5a4cfdcc7a19f5fb804d289738b1346e55c69d2",
+  "field_pins_created": 0,
+  "input_manifest_sha256": "e68188c0b156f4a011376f47e0779ca2e5c099fd5e63d47bcdd909147d65bc2b",
+  "route_entrypoint": {
+    "path": "04_extractors/c0_exact_row_extractor.py",
+    "sha256": "ec84d8007b4e7c9e3e029ce84723c8b27427d9b35ddc1dd3b83582db5deb4a5b",
+    "spec_id": "R4_C0_IMMUTABLE_JSONL_WRAPPER_EXTRACTOR_V1"
+  },
+  "rule_id": "R4_WRAPPER_C0_60",
+  "schema": "FA1B2DE_CURRENT86_BINDING_R5_WRAPPER_CHECKPOINT_V1",
+  "source_auth_executed": false,
+  "status": "MATERIALIZED_PROSPECTIVE_CHECKPOINT_NON_AUTHORITATIVE",
+  "target_count": 60
+}

@@ -1,0 +1,1951 @@
+{
+  "blocked_need_more_source_detail_count": 31,
+  "grouping_policy": "Rows are grouped only by their identical mechanically observed missing-evidence source key.",
+  "human_decisions_created": 0,
+  "inferred_semantics": false,
+  "recovery_groups": [
+    {
+      "missing_evidence_source_key": "HUMAN_CLARIFICATION::EXPLICIT_PROTOCOL_OR_SERVICE_NOT_PRESENT_IN_AUTHENTICATED_R1_FIELDS",
+      "missing_fields": [
+        "named_protocols_or_services",
+        "service_prerequisites"
+      ],
+      "raw_key_count": 31,
+      "raw_keys": [
+        "6000002::S02::A004",
+        "6000003::S04::A002",
+        "6000004::S02::A007",
+        "6000006::S04::A005",
+        "6000007::S03::A002",
+        "6000007::S08::A003",
+        "6000008::S03::A002",
+        "6000008::S04::A001",
+        "6000010::S03::A003",
+        "6000011::S03::A009",
+        "6000014::S03::A002",
+        "6000015::S04::A001",
+        "6000015::S04::A005",
+        "6000017::S03::A001",
+        "6000024::S04::A001",
+        "6000025::S04::A005",
+        "6000026::S03::A004",
+        "6000027::S05::A002",
+        "6000028::S03::A005",
+        "6000029::S04::A002",
+        "6000031::S04::A004",
+        "6000031::S04::A005",
+        "6000032::S04::A001",
+        "6000033::S04::A002",
+        "6000033::S04::A004",
+        "6000034::S03::A001",
+        "6000034::S05::A001",
+        "6000035::S04::A003",
+        "6000037::S03::A002",
+        "6000039::S04::A005",
+        "6000042::S04::A003"
+      ],
+      "recovery_source_kind": "HUMAN_CLARIFICATION"
+    }
+  ],
+  "rows": [
+    {
+      "formal_execution_authorized": false,
+      "human_clarification_request": "Provide source-cited explicit protocol or service prerequisite details for this exact raw, or confirm that none exist. Do not infer command, credential, target, or network semantics.",
+      "inferred_semantics": false,
+      "missing_evidence_source_key": "HUMAN_CLARIFICATION::EXPLICIT_PROTOCOL_OR_SERVICE_NOT_PRESENT_IN_AUTHENTICATED_R1_FIELDS",
+      "missing_fields": [
+        "named_protocols_or_services",
+        "service_prerequisites"
+      ],
+      "observed_authenticated_values": {
+        "named_protocols_or_services": [
+          "UNKNOWN"
+        ],
+        "required_protocol": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "required_service_class": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "service_prerequisites": [
+          "UNKNOWN"
+        ]
+      },
+      "primary_execution_archetype": "DISCOVERY_ENUMERATION",
+      "r1_source_locator_and_text": {
+        "action_description": "此验证动作还原使用\"nltest /domain_trusts\"命令查询域信任关系。虽然此验证动作本身并不是恶意的，但此活动与数据泄露或未经授权的用户执行的活动相结合可能是恶意的。",
+        "action_name": "Host Command Line - Active Directory, Nltest, Domain Trust",
+        "source_file": "APT数据集/playbooks/6000002.json",
+        "source_locator": "$.pipeline[1].actions[3]"
+      },
+      "r2_blocker_evidence": {
+        "ambiguous_source_wording": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-AMBIGUOUS-WORDING",
+            "exact_source_value": "此验证动作还原使用\"nltest /domain_trusts\"命令查询域信任关系。虽然此验证动作本身并不是恶意的，但此活动与数据泄露或未经授权的用户执行的活动相结合可能是恶意的。",
+            "source_field_path": "$.pipeline[1].actions[3].desc"
+          }
+        ],
+        "destructive_state": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-DESTRUCTIVE-LEXEME",
+            "exact_source_value": "此验证动作还原使用\"nltest /domain_trusts\"命令查询域信任关系。虽然此验证动作本身并不是恶意的，但此活动与数据泄露或未经授权的用户执行的活动相结合可能是恶意的。",
+            "source_field_path": "$.pipeline[1].actions[3].desc"
+          }
+        ],
+        "multi_step_composite": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-MULTI-STEP-LEXEME",
+            "exact_source_value": "Host Command Line - Active Directory, Nltest, Domain Trust",
+            "source_field_path": "$.pipeline[1].actions[3].name"
+          }
+        ],
+        "windows_only_semantics": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-WINDOWS-OS-FLAG",
+            "exact_source_value": "windows",
+            "source_field_path": "$.pipeline[1].actions[3].os"
+          }
+        ]
+      },
+      "r2_blockers": [
+        "ambiguous_source_wording",
+        "destructive_state",
+        "multi_step_composite",
+        "windows_only_semantics"
+      ],
+      "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+      "r4_rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000002::S02::A004",
+      "recovery_source_kind": "HUMAN_CLARIFICATION",
+      "recovery_source_reason": "R4 records missing protocol/service detail and the authenticated R1 protocol and service fields are both UNKNOWN; R2 blocker evidence supplies no replacement protocol or service semantics.",
+      "source_detail_to_recover": "An explicit protocol or service identifier and any source-scoped service prerequisite needed before defining a shared review contract.",
+      "template_id": "r4-template-022-discovery_enumeration"
+    },
+    {
+      "formal_execution_authorized": false,
+      "human_clarification_request": "Provide source-cited explicit protocol or service prerequisite details for this exact raw, or confirm that none exist. Do not infer command, credential, target, or network semantics.",
+      "inferred_semantics": false,
+      "missing_evidence_source_key": "HUMAN_CLARIFICATION::EXPLICIT_PROTOCOL_OR_SERVICE_NOT_PRESENT_IN_AUTHENTICATED_R1_FIELDS",
+      "missing_fields": [
+        "named_protocols_or_services",
+        "service_prerequisites"
+      ],
+      "observed_authenticated_values": {
+        "named_protocols_or_services": [
+          "UNKNOWN"
+        ],
+        "required_protocol": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "required_service_class": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "service_prerequisites": [
+          "UNKNOWN"
+        ]
+      },
+      "primary_execution_archetype": "DISCOVERY_ENUMERATION",
+      "r1_source_locator_and_text": {
+        "action_description": "此验证动作还原使用\"nltest /domain_trusts\"命令查询域信任关系。虽然此验证动作本身并不是恶意的，但此活动与数据泄露或未经授权的用户执行的活动相结合可能是恶意的。",
+        "action_name": "Host Command Line - Active Directory, Nltest, Domain Trust",
+        "source_file": "APT数据集/playbooks/6000003.json",
+        "source_locator": "$.pipeline[3].actions[1]"
+      },
+      "r2_blocker_evidence": {
+        "ambiguous_source_wording": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-AMBIGUOUS-WORDING",
+            "exact_source_value": "此验证动作还原使用\"nltest /domain_trusts\"命令查询域信任关系。虽然此验证动作本身并不是恶意的，但此活动与数据泄露或未经授权的用户执行的活动相结合可能是恶意的。",
+            "source_field_path": "$.pipeline[3].actions[1].desc"
+          }
+        ],
+        "destructive_state": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-DESTRUCTIVE-LEXEME",
+            "exact_source_value": "此验证动作还原使用\"nltest /domain_trusts\"命令查询域信任关系。虽然此验证动作本身并不是恶意的，但此活动与数据泄露或未经授权的用户执行的活动相结合可能是恶意的。",
+            "source_field_path": "$.pipeline[3].actions[1].desc"
+          }
+        ],
+        "multi_step_composite": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-MULTI-STEP-LEXEME",
+            "exact_source_value": "Host Command Line - Active Directory, Nltest, Domain Trust",
+            "source_field_path": "$.pipeline[3].actions[1].name"
+          }
+        ],
+        "windows_only_semantics": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-WINDOWS-OS-FLAG",
+            "exact_source_value": "windows",
+            "source_field_path": "$.pipeline[3].actions[1].os"
+          }
+        ]
+      },
+      "r2_blockers": [
+        "ambiguous_source_wording",
+        "destructive_state",
+        "multi_step_composite",
+        "windows_only_semantics"
+      ],
+      "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+      "r4_rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000003::S04::A002",
+      "recovery_source_kind": "HUMAN_CLARIFICATION",
+      "recovery_source_reason": "R4 records missing protocol/service detail and the authenticated R1 protocol and service fields are both UNKNOWN; R2 blocker evidence supplies no replacement protocol or service semantics.",
+      "source_detail_to_recover": "An explicit protocol or service identifier and any source-scoped service prerequisite needed before defining a shared review contract.",
+      "template_id": "r4-template-022-discovery_enumeration"
+    },
+    {
+      "formal_execution_authorized": false,
+      "human_clarification_request": "Provide source-cited explicit protocol or service prerequisite details for this exact raw, or confirm that none exist. Do not infer command, credential, target, or network semantics.",
+      "inferred_semantics": false,
+      "missing_evidence_source_key": "HUMAN_CLARIFICATION::EXPLICIT_PROTOCOL_OR_SERVICE_NOT_PRESENT_IN_AUTHENTICATED_R1_FIELDS",
+      "missing_fields": [
+        "named_protocols_or_services",
+        "service_prerequisites"
+      ],
+      "observed_authenticated_values": {
+        "named_protocols_or_services": [
+          "UNKNOWN"
+        ],
+        "required_protocol": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "required_service_class": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "service_prerequisites": [
+          "UNKNOWN"
+        ]
+      },
+      "primary_execution_archetype": "DISCOVERY_ENUMERATION",
+      "r1_source_locator_and_text": {
+        "action_description": "此验证动作还原了通过 PowerShell 进行的 WMI 查询。此验证动作中使用的查询列出了系统上已安装的驱动程序。虽然此验证动作本质上不是恶意的，但攻击可能会使用此信息来了解有关受感染主机的更多信息。",
+        "action_name": "Host Command Line - WMI Query, Driver List",
+        "source_file": "APT数据集/playbooks/6000004.json",
+        "source_locator": "$.pipeline[1].actions[6]"
+      },
+      "r2_blocker_evidence": {
+        "ambiguous_source_wording": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-AMBIGUOUS-WORDING",
+            "exact_source_value": "此验证动作还原了通过 PowerShell 进行的 WMI 查询。此验证动作中使用的查询列出了系统上已安装的驱动程序。虽然此验证动作本质上不是恶意的，但攻击可能会使用此信息来了解有关受感染主机的更多信息。",
+            "source_field_path": "$.pipeline[1].actions[6].desc"
+          }
+        ],
+        "destructive_state": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-DESTRUCTIVE-LEXEME",
+            "exact_source_value": "此验证动作还原了通过 PowerShell 进行的 WMI 查询。此验证动作中使用的查询列出了系统上已安装的驱动程序。虽然此验证动作本质上不是恶意的，但攻击可能会使用此信息来了解有关受感染主机的更多信息。",
+            "source_field_path": "$.pipeline[1].actions[6].desc"
+          }
+        ],
+        "multi_step_composite": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-MULTI-STEP-LEXEME",
+            "exact_source_value": "Host Command Line - WMI Query, Driver List",
+            "source_field_path": "$.pipeline[1].actions[6].name"
+          }
+        ],
+        "windows_only_semantics": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-WINDOWS-OS-FLAG",
+            "exact_source_value": "windows",
+            "source_field_path": "$.pipeline[1].actions[6].os"
+          }
+        ]
+      },
+      "r2_blockers": [
+        "ambiguous_source_wording",
+        "destructive_state",
+        "multi_step_composite",
+        "windows_only_semantics"
+      ],
+      "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+      "r4_rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000004::S02::A007",
+      "recovery_source_kind": "HUMAN_CLARIFICATION",
+      "recovery_source_reason": "R4 records missing protocol/service detail and the authenticated R1 protocol and service fields are both UNKNOWN; R2 blocker evidence supplies no replacement protocol or service semantics.",
+      "source_detail_to_recover": "An explicit protocol or service identifier and any source-scoped service prerequisite needed before defining a shared review contract.",
+      "template_id": "r4-template-022-discovery_enumeration"
+    },
+    {
+      "formal_execution_authorized": false,
+      "human_clarification_request": "Provide source-cited explicit protocol or service prerequisite details for this exact raw, or confirm that none exist. Do not infer command, credential, target, or network semantics.",
+      "inferred_semantics": false,
+      "missing_evidence_source_key": "HUMAN_CLARIFICATION::EXPLICIT_PROTOCOL_OR_SERVICE_NOT_PRESENT_IN_AUTHENTICATED_R1_FIELDS",
+      "missing_fields": [
+        "named_protocols_or_services",
+        "service_prerequisites"
+      ],
+      "observed_authenticated_values": {
+        "named_protocols_or_services": [
+          "UNKNOWN"
+        ],
+        "required_protocol": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "required_service_class": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "service_prerequisites": [
+          "UNKNOWN"
+        ]
+      },
+      "primary_execution_archetype": "DISCOVERY_ENUMERATION",
+      "r1_source_locator_and_text": {
+        "action_description": "此验证动作还原了通过 PowerShell 进行的 WMI 查询。此验证动作中使用的查询列出了系统上已安装的驱动程序。虽然此验证动作本质上不是恶意的，但攻击可能会使用此信息来了解有关受感染主机的更多信息。",
+        "action_name": "Host Command Line - WMI Query, Driver List",
+        "source_file": "APT数据集/playbooks/6000006.json",
+        "source_locator": "$.pipeline[3].actions[4]"
+      },
+      "r2_blocker_evidence": {
+        "ambiguous_source_wording": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-AMBIGUOUS-WORDING",
+            "exact_source_value": "此验证动作还原了通过 PowerShell 进行的 WMI 查询。此验证动作中使用的查询列出了系统上已安装的驱动程序。虽然此验证动作本质上不是恶意的，但攻击可能会使用此信息来了解有关受感染主机的更多信息。",
+            "source_field_path": "$.pipeline[3].actions[4].desc"
+          }
+        ],
+        "destructive_state": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-DESTRUCTIVE-LEXEME",
+            "exact_source_value": "此验证动作还原了通过 PowerShell 进行的 WMI 查询。此验证动作中使用的查询列出了系统上已安装的驱动程序。虽然此验证动作本质上不是恶意的，但攻击可能会使用此信息来了解有关受感染主机的更多信息。",
+            "source_field_path": "$.pipeline[3].actions[4].desc"
+          }
+        ],
+        "multi_step_composite": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-MULTI-STEP-LEXEME",
+            "exact_source_value": "Host Command Line - WMI Query, Driver List",
+            "source_field_path": "$.pipeline[3].actions[4].name"
+          }
+        ],
+        "windows_only_semantics": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-WINDOWS-OS-FLAG",
+            "exact_source_value": "windows",
+            "source_field_path": "$.pipeline[3].actions[4].os"
+          }
+        ]
+      },
+      "r2_blockers": [
+        "ambiguous_source_wording",
+        "destructive_state",
+        "multi_step_composite",
+        "windows_only_semantics"
+      ],
+      "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+      "r4_rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000006::S04::A005",
+      "recovery_source_kind": "HUMAN_CLARIFICATION",
+      "recovery_source_reason": "R4 records missing protocol/service detail and the authenticated R1 protocol and service fields are both UNKNOWN; R2 blocker evidence supplies no replacement protocol or service semantics.",
+      "source_detail_to_recover": "An explicit protocol or service identifier and any source-scoped service prerequisite needed before defining a shared review contract.",
+      "template_id": "r4-template-022-discovery_enumeration"
+    },
+    {
+      "formal_execution_authorized": false,
+      "human_clarification_request": "Provide source-cited explicit protocol or service prerequisite details for this exact raw, or confirm that none exist. Do not infer command, credential, target, or network semantics.",
+      "inferred_semantics": false,
+      "missing_evidence_source_key": "HUMAN_CLARIFICATION::EXPLICIT_PROTOCOL_OR_SERVICE_NOT_PRESENT_IN_AUTHENTICATED_R1_FIELDS",
+      "missing_fields": [
+        "named_protocols_or_services",
+        "service_prerequisites"
+      ],
+      "observed_authenticated_values": {
+        "named_protocols_or_services": [
+          "UNKNOWN"
+        ],
+        "required_protocol": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "required_service_class": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "service_prerequisites": [
+          "UNKNOWN"
+        ]
+      },
+      "primary_execution_archetype": "DISCOVERY_ENUMERATION",
+      "r1_source_locator_and_text": {
+        "action_description": "此验证动作还原了一个在 PowerShell 中调用“whoami”命令的攻击者。 使用此动作验证验证您的塞讯安全验证平台验证机器人是否可以正常执行命令，并确保不同用户配置文件的行为符合预期。 这种良性验证动作旨在以一种不会对安全产品显示为恶意的方式测试 CLI 操作的执行。",
+        "action_name": "Host command line - Benign: Executing whoami via PowerShell in Windows",
+        "source_file": "APT数据集/playbooks/6000007.json",
+        "source_locator": "$.pipeline[2].actions[1]"
+      },
+      "r2_blocker_evidence": {
+        "destructive_state": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-DESTRUCTIVE-LEXEME",
+            "exact_source_value": "此验证动作还原了一个在 PowerShell 中调用“whoami”命令的攻击者。 使用此动作验证验证您的塞讯安全验证平台验证机器人是否可以正常执行命令，并确保不同用户配置文件的行为符合预期。 这种良性验证动作旨在以一种不会对安全产品显示为恶意的方式测试 CLI 操作的执行。",
+            "source_field_path": "$.pipeline[2].actions[1].desc"
+          }
+        ],
+        "windows_only_semantics": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-WINDOWS-OS-FLAG",
+            "exact_source_value": "windows",
+            "source_field_path": "$.pipeline[2].actions[1].os"
+          }
+        ]
+      },
+      "r2_blockers": [
+        "destructive_state",
+        "windows_only_semantics"
+      ],
+      "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+      "r4_rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000007::S03::A002",
+      "recovery_source_kind": "HUMAN_CLARIFICATION",
+      "recovery_source_reason": "R4 records missing protocol/service detail and the authenticated R1 protocol and service fields are both UNKNOWN; R2 blocker evidence supplies no replacement protocol or service semantics.",
+      "source_detail_to_recover": "An explicit protocol or service identifier and any source-scoped service prerequisite needed before defining a shared review contract.",
+      "template_id": "r4-template-031-discovery_enumeration"
+    },
+    {
+      "formal_execution_authorized": false,
+      "human_clarification_request": "Provide source-cited explicit protocol or service prerequisite details for this exact raw, or confirm that none exist. Do not infer command, credential, target, or network semantics.",
+      "inferred_semantics": false,
+      "missing_evidence_source_key": "HUMAN_CLARIFICATION::EXPLICIT_PROTOCOL_OR_SERVICE_NOT_PRESENT_IN_AUTHENTICATED_R1_FIELDS",
+      "missing_fields": [
+        "named_protocols_or_services",
+        "service_prerequisites"
+      ],
+      "observed_authenticated_values": {
+        "named_protocols_or_services": [
+          "UNKNOWN"
+        ],
+        "required_protocol": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "required_service_class": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "service_prerequisites": [
+          "UNKNOWN"
+        ]
+      },
+      "primary_execution_archetype": "NETWORK_C2_BEACON",
+      "r1_source_locator_and_text": {
+        "action_description": "此验证动作还原了一个攻击者试图发现受感染主机上的网络信息。 验证机器人将使用此信息来识别环境中的其他目标、网络协议、网络布局等。 这可以帮助攻击者发现漏洞并进一步利用网络。\n\n注意：此验证动作被视为“弱信号”操作。 这意味着它展示的行为并不总是表示恶意活动，并且可以匹配合法用户或管理活动。 当您单独运行弱信号验证动作时，它不太可能被安全防御设备阻止。 最佳实践是确保您的安全防御设备提供对此类行为的可见性。 这使您可以将共计活动与更高保真度的信号关联起来以进行检测或用于威胁搜寻。",
+        "action_name": "Host Command Line - Local Network Connection Discovery",
+        "source_file": "APT数据集/playbooks/6000007.json",
+        "source_locator": "$.pipeline[7].actions[2]"
+      },
+      "r2_blocker_evidence": {
+        "ambiguous_source_wording": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-AMBIGUOUS-WORDING",
+            "exact_source_value": "此验证动作还原了一个攻击者试图发现受感染主机上的网络信息。 验证机器人将使用此信息来识别环境中的其他目标、网络协议、网络布局等。 这可以帮助攻击者发现漏洞并进一步利用网络。\n\n注意：此验证动作被视为“弱信号”操作。 这意味着它展示的行为并不总是表示恶意活动，并且可以匹配合法用户或管理活动。 当您单独运行弱信号验证动作时，它不太可能被安全防御设备阻止。 最佳实践是确保您的安全防御设备提供对此类行为的可见性。 这使您可以将共计活动与更高保真度的信号关联起来以进行检测或用于威胁搜寻。",
+            "source_field_path": "$.pipeline[7].actions[2].desc"
+          }
+        ],
+        "destructive_state": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-DESTRUCTIVE-LEXEME",
+            "exact_source_value": "此验证动作还原了一个攻击者试图发现受感染主机上的网络信息。 验证机器人将使用此信息来识别环境中的其他目标、网络协议、网络布局等。 这可以帮助攻击者发现漏洞并进一步利用网络。\n\n注意：此验证动作被视为“弱信号”操作。 这意味着它展示的行为并不总是表示恶意活动，并且可以匹配合法用户或管理活动。 当您单独运行弱信号验证动作时，它不太可能被安全防御设备阻止。 最佳实践是确保您的安全防御设备提供对此类行为的可见性。 这使您可以将共计活动与更高保真度的信号关联起来以进行检测或用于威胁搜寻。",
+            "source_field_path": "$.pipeline[7].actions[2].desc"
+          }
+        ],
+        "windows_only_semantics": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-WINDOWS-OS-FLAG",
+            "exact_source_value": "windows",
+            "source_field_path": "$.pipeline[7].actions[2].os"
+          }
+        ]
+      },
+      "r2_blockers": [
+        "ambiguous_source_wording",
+        "destructive_state",
+        "windows_only_semantics"
+      ],
+      "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+      "r4_rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000007::S08::A003",
+      "recovery_source_kind": "HUMAN_CLARIFICATION",
+      "recovery_source_reason": "R4 records missing protocol/service detail and the authenticated R1 protocol and service fields are both UNKNOWN; R2 blocker evidence supplies no replacement protocol or service semantics.",
+      "source_detail_to_recover": "An explicit protocol or service identifier and any source-scoped service prerequisite needed before defining a shared review contract.",
+      "template_id": "r4-template-055-network_c2_beacon"
+    },
+    {
+      "formal_execution_authorized": false,
+      "human_clarification_request": "Provide source-cited explicit protocol or service prerequisite details for this exact raw, or confirm that none exist. Do not infer command, credential, target, or network semantics.",
+      "inferred_semantics": false,
+      "missing_evidence_source_key": "HUMAN_CLARIFICATION::EXPLICIT_PROTOCOL_OR_SERVICE_NOT_PRESENT_IN_AUTHENTICATED_R1_FIELDS",
+      "missing_fields": [
+        "named_protocols_or_services",
+        "service_prerequisites"
+      ],
+      "observed_authenticated_values": {
+        "named_protocols_or_services": [
+          "UNKNOWN"
+        ],
+        "required_protocol": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "required_service_class": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "service_prerequisites": [
+          "UNKNOWN"
+        ]
+      },
+      "primary_execution_archetype": "DISCOVERY_ENUMERATION",
+      "r1_source_locator_and_text": {
+        "action_description": "此验证动作还原了一个验证机器人 使用 Python 在 PowerShell 中调用\"whoami\"命令。使用此验证动作来验证您的 塞讯验证攻击者是否可以正确执行命令并确保不同的用户配置文件按预期运行。此良性操作旨在以一种不会对安全控制显示为恶意的方式测试 Python CLI 操作的执行。",
+        "action_name": "Host Command Line - Benign: Whoami in Windows via Python",
+        "source_file": "APT数据集/playbooks/6000008.json",
+        "source_locator": "$.pipeline[2].actions[1]"
+      },
+      "r2_blocker_evidence": {
+        "destructive_state": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-DESTRUCTIVE-LEXEME",
+            "exact_source_value": "此验证动作还原了一个验证机器人 使用 Python 在 PowerShell 中调用\"whoami\"命令。使用此验证动作来验证您的 塞讯验证攻击者是否可以正确执行命令并确保不同的用户配置文件按预期运行。此良性操作旨在以一种不会对安全控制显示为恶意的方式测试 Python CLI 操作的执行。",
+            "source_field_path": "$.pipeline[2].actions[1].desc"
+          }
+        ],
+        "windows_only_semantics": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-WINDOWS-OS-FLAG",
+            "exact_source_value": "windows",
+            "source_field_path": "$.pipeline[2].actions[1].os"
+          }
+        ]
+      },
+      "r2_blockers": [
+        "destructive_state",
+        "windows_only_semantics"
+      ],
+      "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+      "r4_rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000008::S03::A002",
+      "recovery_source_kind": "HUMAN_CLARIFICATION",
+      "recovery_source_reason": "R4 records missing protocol/service detail and the authenticated R1 protocol and service fields are both UNKNOWN; R2 blocker evidence supplies no replacement protocol or service semantics.",
+      "source_detail_to_recover": "An explicit protocol or service identifier and any source-scoped service prerequisite needed before defining a shared review contract.",
+      "template_id": "r4-template-031-discovery_enumeration"
+    },
+    {
+      "formal_execution_authorized": false,
+      "human_clarification_request": "Provide source-cited explicit protocol or service prerequisite details for this exact raw, or confirm that none exist. Do not infer command, credential, target, or network semantics.",
+      "inferred_semantics": false,
+      "missing_evidence_source_key": "HUMAN_CLARIFICATION::EXPLICIT_PROTOCOL_OR_SERVICE_NOT_PRESENT_IN_AUTHENTICATED_R1_FIELDS",
+      "missing_fields": [
+        "named_protocols_or_services",
+        "service_prerequisites"
+      ],
+      "observed_authenticated_values": {
+        "named_protocols_or_services": [
+          "UNKNOWN"
+        ],
+        "required_protocol": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "required_service_class": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "service_prerequisites": [
+          "UNKNOWN"
+        ]
+      },
+      "primary_execution_archetype": "DISCOVERY_ENUMERATION",
+      "r1_source_locator_and_text": {
+        "action_description": "此验证动作还原了验证机器人使用 Microsoft Windows Management Instrumentation 命令行 (WMIC) 实用程序快速检索本地计算机上安装的所有修补程序的 ID 的行为。 如果攻击者能够识别出缺少哪些补丁，他或她就有可能利用现有的漏洞进一步破坏本地计算机。\n\n注意：此验证动作被视为“弱信号”操作。 这意味着它展示的行为并不总是表示恶意活动，并且可以匹配合法用户或管理活动。 当您单独运行弱信号验证动作时，它不太可能被安全防御设备阻止。 最佳实践是确保您的安全防御设备提供对此类行为的可见性。 这使您可以将共计活动与更高保真度的信号关联起来以进行检测或用于威胁搜寻。",
+        "action_name": "Host Command Line - WMIC HotPatch Status",
+        "source_file": "APT数据集/playbooks/6000008.json",
+        "source_locator": "$.pipeline[3].actions[0]"
+      },
+      "r2_blocker_evidence": {
+        "ambiguous_source_wording": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-AMBIGUOUS-WORDING",
+            "exact_source_value": "此验证动作还原了验证机器人使用 Microsoft Windows Management Instrumentation 命令行 (WMIC) 实用程序快速检索本地计算机上安装的所有修补程序的 ID 的行为。 如果攻击者能够识别出缺少哪些补丁，他或她就有可能利用现有的漏洞进一步破坏本地计算机。\n\n注意：此验证动作被视为“弱信号”操作。 这意味着它展示的行为并不总是表示恶意活动，并且可以匹配合法用户或管理活动。 当您单独运行弱信号验证动作时，它不太可能被安全防御设备阻止。 最佳实践是确保您的安全防御设备提供对此类行为的可见性。 这使您可以将共计活动与更高保真度的信号关联起来以进行检测或用于威胁搜寻。",
+            "source_field_path": "$.pipeline[3].actions[0].desc"
+          }
+        ],
+        "destructive_state": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-DESTRUCTIVE-LEXEME",
+            "exact_source_value": "此验证动作还原了验证机器人使用 Microsoft Windows Management Instrumentation 命令行 (WMIC) 实用程序快速检索本地计算机上安装的所有修补程序的 ID 的行为。 如果攻击者能够识别出缺少哪些补丁，他或她就有可能利用现有的漏洞进一步破坏本地计算机。\n\n注意：此验证动作被视为“弱信号”操作。 这意味着它展示的行为并不总是表示恶意活动，并且可以匹配合法用户或管理活动。 当您单独运行弱信号验证动作时，它不太可能被安全防御设备阻止。 最佳实践是确保您的安全防御设备提供对此类行为的可见性。 这使您可以将共计活动与更高保真度的信号关联起来以进行检测或用于威胁搜寻。",
+            "source_field_path": "$.pipeline[3].actions[0].desc"
+          }
+        ],
+        "windows_only_semantics": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-WINDOWS-OS-FLAG",
+            "exact_source_value": "windows",
+            "source_field_path": "$.pipeline[3].actions[0].os"
+          }
+        ]
+      },
+      "r2_blockers": [
+        "ambiguous_source_wording",
+        "destructive_state",
+        "windows_only_semantics"
+      ],
+      "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+      "r4_rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000008::S04::A001",
+      "recovery_source_kind": "HUMAN_CLARIFICATION",
+      "recovery_source_reason": "R4 records missing protocol/service detail and the authenticated R1 protocol and service fields are both UNKNOWN; R2 blocker evidence supplies no replacement protocol or service semantics.",
+      "source_detail_to_recover": "An explicit protocol or service identifier and any source-scoped service prerequisite needed before defining a shared review contract.",
+      "template_id": "r4-template-026-discovery_enumeration"
+    },
+    {
+      "formal_execution_authorized": false,
+      "human_clarification_request": "Provide source-cited explicit protocol or service prerequisite details for this exact raw, or confirm that none exist. Do not infer command, credential, target, or network semantics.",
+      "inferred_semantics": false,
+      "missing_evidence_source_key": "HUMAN_CLARIFICATION::EXPLICIT_PROTOCOL_OR_SERVICE_NOT_PRESENT_IN_AUTHENTICATED_R1_FIELDS",
+      "missing_fields": [
+        "named_protocols_or_services",
+        "service_prerequisites"
+      ],
+      "observed_authenticated_values": {
+        "named_protocols_or_services": [
+          "UNKNOWN"
+        ],
+        "required_protocol": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "required_service_class": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "service_prerequisites": [
+          "UNKNOWN"
+        ]
+      },
+      "primary_execution_archetype": "DISCOVERY_ENUMERATION",
+      "r1_source_locator_and_text": {
+        "action_description": "此验证动作还原了通过 PowerShell 进行的 WMI 查询。此验证动作中使用的查询列出了系统上已安装的驱动程序。虽然此验证动作本质上不是恶意的，但攻击可能会使用此信息来了解有关受感染主机的更多信息。",
+        "action_name": "Host Command Line - WMI Query, Driver List",
+        "source_file": "APT数据集/playbooks/6000010.json",
+        "source_locator": "$.pipeline[2].actions[2]"
+      },
+      "r2_blocker_evidence": {
+        "ambiguous_source_wording": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-AMBIGUOUS-WORDING",
+            "exact_source_value": "此验证动作还原了通过 PowerShell 进行的 WMI 查询。此验证动作中使用的查询列出了系统上已安装的驱动程序。虽然此验证动作本质上不是恶意的，但攻击可能会使用此信息来了解有关受感染主机的更多信息。",
+            "source_field_path": "$.pipeline[2].actions[2].desc"
+          }
+        ],
+        "destructive_state": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-DESTRUCTIVE-LEXEME",
+            "exact_source_value": "此验证动作还原了通过 PowerShell 进行的 WMI 查询。此验证动作中使用的查询列出了系统上已安装的驱动程序。虽然此验证动作本质上不是恶意的，但攻击可能会使用此信息来了解有关受感染主机的更多信息。",
+            "source_field_path": "$.pipeline[2].actions[2].desc"
+          }
+        ],
+        "multi_step_composite": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-MULTI-STEP-LEXEME",
+            "exact_source_value": "Host Command Line - WMI Query, Driver List",
+            "source_field_path": "$.pipeline[2].actions[2].name"
+          }
+        ],
+        "windows_only_semantics": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-WINDOWS-OS-FLAG",
+            "exact_source_value": "windows",
+            "source_field_path": "$.pipeline[2].actions[2].os"
+          }
+        ]
+      },
+      "r2_blockers": [
+        "ambiguous_source_wording",
+        "destructive_state",
+        "multi_step_composite",
+        "windows_only_semantics"
+      ],
+      "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+      "r4_rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000010::S03::A003",
+      "recovery_source_kind": "HUMAN_CLARIFICATION",
+      "recovery_source_reason": "R4 records missing protocol/service detail and the authenticated R1 protocol and service fields are both UNKNOWN; R2 blocker evidence supplies no replacement protocol or service semantics.",
+      "source_detail_to_recover": "An explicit protocol or service identifier and any source-scoped service prerequisite needed before defining a shared review contract.",
+      "template_id": "r4-template-022-discovery_enumeration"
+    },
+    {
+      "formal_execution_authorized": false,
+      "human_clarification_request": "Provide source-cited explicit protocol or service prerequisite details for this exact raw, or confirm that none exist. Do not infer command, credential, target, or network semantics.",
+      "inferred_semantics": false,
+      "missing_evidence_source_key": "HUMAN_CLARIFICATION::EXPLICIT_PROTOCOL_OR_SERVICE_NOT_PRESENT_IN_AUTHENTICATED_R1_FIELDS",
+      "missing_fields": [
+        "named_protocols_or_services",
+        "service_prerequisites"
+      ],
+      "observed_authenticated_values": {
+        "named_protocols_or_services": [
+          "UNKNOWN"
+        ],
+        "required_protocol": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "required_service_class": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "service_prerequisites": [
+          "UNKNOWN"
+        ]
+      },
+      "primary_execution_archetype": "DISCOVERY_ENUMERATION",
+      "r1_source_locator_and_text": {
+        "action_description": "此验证动作还原了攻击者试图从磁盘收集信息，例如可用空间和大小。",
+        "action_name": "Host Command Line - Collecting disk information from the target via WMIC.exe",
+        "source_file": "APT数据集/playbooks/6000011.json",
+        "source_locator": "$.pipeline[2].actions[8]"
+      },
+      "r2_blocker_evidence": {
+        "ambiguous_source_wording": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-AMBIGUOUS-WORDING",
+            "exact_source_value": "此验证动作还原了攻击者试图从磁盘收集信息，例如可用空间和大小。",
+            "source_field_path": "$.pipeline[2].actions[8].desc"
+          }
+        ],
+        "destructive_state": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-DESTRUCTIVE-LEXEME",
+            "exact_source_value": "Host Command Line - Collecting disk information from the target via WMIC.exe",
+            "source_field_path": "$.pipeline[2].actions[8].name"
+          }
+        ],
+        "windows_only_semantics": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-WINDOWS-OS-FLAG",
+            "exact_source_value": "windows",
+            "source_field_path": "$.pipeline[2].actions[8].os"
+          }
+        ]
+      },
+      "r2_blockers": [
+        "ambiguous_source_wording",
+        "destructive_state",
+        "windows_only_semantics"
+      ],
+      "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+      "r4_rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000011::S03::A009",
+      "recovery_source_kind": "HUMAN_CLARIFICATION",
+      "recovery_source_reason": "R4 records missing protocol/service detail and the authenticated R1 protocol and service fields are both UNKNOWN; R2 blocker evidence supplies no replacement protocol or service semantics.",
+      "source_detail_to_recover": "An explicit protocol or service identifier and any source-scoped service prerequisite needed before defining a shared review contract.",
+      "template_id": "r4-template-026-discovery_enumeration"
+    },
+    {
+      "formal_execution_authorized": false,
+      "human_clarification_request": "Provide source-cited explicit protocol or service prerequisite details for this exact raw, or confirm that none exist. Do not infer command, credential, target, or network semantics.",
+      "inferred_semantics": false,
+      "missing_evidence_source_key": "HUMAN_CLARIFICATION::EXPLICIT_PROTOCOL_OR_SERVICE_NOT_PRESENT_IN_AUTHENTICATED_R1_FIELDS",
+      "missing_fields": [
+        "named_protocols_or_services",
+        "service_prerequisites"
+      ],
+      "observed_authenticated_values": {
+        "named_protocols_or_services": [
+          "UNKNOWN"
+        ],
+        "required_protocol": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "required_service_class": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "service_prerequisites": [
+          "UNKNOWN"
+        ]
+      },
+      "primary_execution_archetype": "DISCOVERY_ENUMERATION",
+      "r1_source_locator_and_text": {
+        "action_description": "此验证动作还原了验证机器人利用 Powershell 加载的不安全库来加载易受攻击的 amsi.dll 版本，以绕过反恶意软件扫描接口 (AMSI)。成功执行后，powershell.exe 将被复制并重命名为 updater.exe，并从非标准路径加载 amsi.dll。\n\n劫持 DLL 加载可能是为了建立持久化以及提升权限和/或规避文件执行的限制。",
+        "action_name": "Host command line - evasion Anti-Malware Scan Interface",
+        "source_file": "APT数据集/playbooks/6000014.json",
+        "source_locator": "$.pipeline[2].actions[1]"
+      },
+      "r2_blocker_evidence": {
+        "ambiguous_source_wording": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-AMBIGUOUS-WORDING",
+            "exact_source_value": "此验证动作还原了验证机器人利用 Powershell 加载的不安全库来加载易受攻击的 amsi.dll 版本，以绕过反恶意软件扫描接口 (AMSI)。成功执行后，powershell.exe 将被复制并重命名为 updater.exe，并从非标准路径加载 amsi.dll。\n\n劫持 DLL 加载可能是为了建立持久化以及提升权限和/或规避文件执行的限制。",
+            "source_field_path": "$.pipeline[2].actions[1].desc"
+          }
+        ],
+        "destructive_state": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-DESTRUCTIVE-LEXEME",
+            "exact_source_value": "此验证动作还原了验证机器人利用 Powershell 加载的不安全库来加载易受攻击的 amsi.dll 版本，以绕过反恶意软件扫描接口 (AMSI)。成功执行后，powershell.exe 将被复制并重命名为 updater.exe，并从非标准路径加载 amsi.dll。\n\n劫持 DLL 加载可能是为了建立持久化以及提升权限和/或规避文件执行的限制。",
+            "source_field_path": "$.pipeline[2].actions[1].desc"
+          }
+        ],
+        "privileged_action": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-PRIVILEGE-FLAG-OR-LEXEME",
+            "exact_source_value": "Host command line - evasion Anti-Malware Scan Interface",
+            "source_field_path": "$.pipeline[2].actions[1].name"
+          }
+        ],
+        "windows_only_semantics": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-WINDOWS-OS-FLAG",
+            "exact_source_value": "windows",
+            "source_field_path": "$.pipeline[2].actions[1].os"
+          }
+        ]
+      },
+      "r2_blockers": [
+        "ambiguous_source_wording",
+        "destructive_state",
+        "privileged_action",
+        "windows_only_semantics"
+      ],
+      "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+      "r4_rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000014::S03::A002",
+      "recovery_source_kind": "HUMAN_CLARIFICATION",
+      "recovery_source_reason": "R4 records missing protocol/service detail and the authenticated R1 protocol and service fields are both UNKNOWN; R2 blocker evidence supplies no replacement protocol or service semantics.",
+      "source_detail_to_recover": "An explicit protocol or service identifier and any source-scoped service prerequisite needed before defining a shared review contract.",
+      "template_id": "r4-template-023-discovery_enumeration"
+    },
+    {
+      "formal_execution_authorized": false,
+      "human_clarification_request": "Provide source-cited explicit protocol or service prerequisite details for this exact raw, or confirm that none exist. Do not infer command, credential, target, or network semantics.",
+      "inferred_semantics": false,
+      "missing_evidence_source_key": "HUMAN_CLARIFICATION::EXPLICIT_PROTOCOL_OR_SERVICE_NOT_PRESENT_IN_AUTHENTICATED_R1_FIELDS",
+      "missing_fields": [
+        "named_protocols_or_services",
+        "service_prerequisites"
+      ],
+      "observed_authenticated_values": {
+        "named_protocols_or_services": [
+          "UNKNOWN"
+        ],
+        "required_protocol": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "required_service_class": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "service_prerequisites": [
+          "UNKNOWN"
+        ]
+      },
+      "primary_execution_archetype": "DISCOVERY_ENUMERATION",
+      "r1_source_locator_and_text": {
+        "action_description": "此验证动作还原了一个验证机器人 使用 Python 在 PowerShell 中调用\"whoami\"命令。使用此验证动作来验证您的 塞讯验证攻击者是否可以正确执行命令并确保不同的用户配置文件按预期运行。此良性操作旨在以一种不会对安全控制显示为恶意的方式测试 Python CLI 操作的执行。",
+        "action_name": "Host Command Line - Benign: Whoami in Windows via Python",
+        "source_file": "APT数据集/playbooks/6000015.json",
+        "source_locator": "$.pipeline[3].actions[0]"
+      },
+      "r2_blocker_evidence": {
+        "destructive_state": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-DESTRUCTIVE-LEXEME",
+            "exact_source_value": "此验证动作还原了一个验证机器人 使用 Python 在 PowerShell 中调用\"whoami\"命令。使用此验证动作来验证您的 塞讯验证攻击者是否可以正确执行命令并确保不同的用户配置文件按预期运行。此良性操作旨在以一种不会对安全控制显示为恶意的方式测试 Python CLI 操作的执行。",
+            "source_field_path": "$.pipeline[3].actions[0].desc"
+          }
+        ],
+        "windows_only_semantics": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-WINDOWS-OS-FLAG",
+            "exact_source_value": "windows",
+            "source_field_path": "$.pipeline[3].actions[0].os"
+          }
+        ]
+      },
+      "r2_blockers": [
+        "destructive_state",
+        "windows_only_semantics"
+      ],
+      "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+      "r4_rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000015::S04::A001",
+      "recovery_source_kind": "HUMAN_CLARIFICATION",
+      "recovery_source_reason": "R4 records missing protocol/service detail and the authenticated R1 protocol and service fields are both UNKNOWN; R2 blocker evidence supplies no replacement protocol or service semantics.",
+      "source_detail_to_recover": "An explicit protocol or service identifier and any source-scoped service prerequisite needed before defining a shared review contract.",
+      "template_id": "r4-template-031-discovery_enumeration"
+    },
+    {
+      "formal_execution_authorized": false,
+      "human_clarification_request": "Provide source-cited explicit protocol or service prerequisite details for this exact raw, or confirm that none exist. Do not infer command, credential, target, or network semantics.",
+      "inferred_semantics": false,
+      "missing_evidence_source_key": "HUMAN_CLARIFICATION::EXPLICIT_PROTOCOL_OR_SERVICE_NOT_PRESENT_IN_AUTHENTICATED_R1_FIELDS",
+      "missing_fields": [
+        "named_protocols_or_services",
+        "service_prerequisites"
+      ],
+      "observed_authenticated_values": {
+        "named_protocols_or_services": [
+          "UNKNOWN"
+        ],
+        "required_protocol": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "required_service_class": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "service_prerequisites": [
+          "UNKNOWN"
+        ]
+      },
+      "primary_execution_archetype": "NETWORK_C2_BEACON",
+      "r1_source_locator_and_text": {
+        "action_description": "此验证动作还原了一个攻击者试图发现受感染主机上的网络信息。 验证机器人将使用此信息来识别环境中的其他目标、网络协议、网络布局等。 这可以帮助攻击者发现漏洞并进一步利用网络。\n\n注意：此验证动作被视为“弱信号”操作。 这意味着它展示的行为并不总是表示恶意活动，并且可以匹配合法用户或管理活动。 当您单独运行弱信号验证动作时，它不太可能被安全防御设备阻止。 最佳实践是确保您的安全防御设备提供对此类行为的可见性。 这使您可以将共计活动与更高保真度的信号关联起来以进行检测或用于威胁搜寻。",
+        "action_name": "Host Command Line - Local Network Connection Discovery",
+        "source_file": "APT数据集/playbooks/6000015.json",
+        "source_locator": "$.pipeline[3].actions[4]"
+      },
+      "r2_blocker_evidence": {
+        "ambiguous_source_wording": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-AMBIGUOUS-WORDING",
+            "exact_source_value": "此验证动作还原了一个攻击者试图发现受感染主机上的网络信息。 验证机器人将使用此信息来识别环境中的其他目标、网络协议、网络布局等。 这可以帮助攻击者发现漏洞并进一步利用网络。\n\n注意：此验证动作被视为“弱信号”操作。 这意味着它展示的行为并不总是表示恶意活动，并且可以匹配合法用户或管理活动。 当您单独运行弱信号验证动作时，它不太可能被安全防御设备阻止。 最佳实践是确保您的安全防御设备提供对此类行为的可见性。 这使您可以将共计活动与更高保真度的信号关联起来以进行检测或用于威胁搜寻。",
+            "source_field_path": "$.pipeline[3].actions[4].desc"
+          }
+        ],
+        "destructive_state": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-DESTRUCTIVE-LEXEME",
+            "exact_source_value": "此验证动作还原了一个攻击者试图发现受感染主机上的网络信息。 验证机器人将使用此信息来识别环境中的其他目标、网络协议、网络布局等。 这可以帮助攻击者发现漏洞并进一步利用网络。\n\n注意：此验证动作被视为“弱信号”操作。 这意味着它展示的行为并不总是表示恶意活动，并且可以匹配合法用户或管理活动。 当您单独运行弱信号验证动作时，它不太可能被安全防御设备阻止。 最佳实践是确保您的安全防御设备提供对此类行为的可见性。 这使您可以将共计活动与更高保真度的信号关联起来以进行检测或用于威胁搜寻。",
+            "source_field_path": "$.pipeline[3].actions[4].desc"
+          }
+        ],
+        "windows_only_semantics": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-WINDOWS-OS-FLAG",
+            "exact_source_value": "windows",
+            "source_field_path": "$.pipeline[3].actions[4].os"
+          }
+        ]
+      },
+      "r2_blockers": [
+        "ambiguous_source_wording",
+        "destructive_state",
+        "windows_only_semantics"
+      ],
+      "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+      "r4_rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000015::S04::A005",
+      "recovery_source_kind": "HUMAN_CLARIFICATION",
+      "recovery_source_reason": "R4 records missing protocol/service detail and the authenticated R1 protocol and service fields are both UNKNOWN; R2 blocker evidence supplies no replacement protocol or service semantics.",
+      "source_detail_to_recover": "An explicit protocol or service identifier and any source-scoped service prerequisite needed before defining a shared review contract.",
+      "template_id": "r4-template-055-network_c2_beacon"
+    },
+    {
+      "formal_execution_authorized": false,
+      "human_clarification_request": "Provide source-cited explicit protocol or service prerequisite details for this exact raw, or confirm that none exist. Do not infer command, credential, target, or network semantics.",
+      "inferred_semantics": false,
+      "missing_evidence_source_key": "HUMAN_CLARIFICATION::EXPLICIT_PROTOCOL_OR_SERVICE_NOT_PRESENT_IN_AUTHENTICATED_R1_FIELDS",
+      "missing_fields": [
+        "named_protocols_or_services",
+        "service_prerequisites"
+      ],
+      "observed_authenticated_values": {
+        "named_protocols_or_services": [
+          "UNKNOWN"
+        ],
+        "required_protocol": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "required_service_class": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "service_prerequisites": [
+          "UNKNOWN"
+        ]
+      },
+      "primary_execution_archetype": "DISCOVERY_ENUMERATION",
+      "r1_source_locator_and_text": {
+        "action_description": "此验证动作还原了一个验证机器人 使用 Python 在 PowerShell 中调用\"whoami\"命令。使用此验证动作来验证您的 塞讯验证攻击者是否可以正确执行命令并确保不同的用户配置文件按预期运行。此良性操作旨在以一种不会对安全控制显示为恶意的方式测试 Python CLI 操作的执行。",
+        "action_name": "Host Command Line - Benign: Whoami in Windows via Python",
+        "source_file": "APT数据集/playbooks/6000017.json",
+        "source_locator": "$.pipeline[2].actions[0]"
+      },
+      "r2_blocker_evidence": {
+        "destructive_state": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-DESTRUCTIVE-LEXEME",
+            "exact_source_value": "此验证动作还原了一个验证机器人 使用 Python 在 PowerShell 中调用\"whoami\"命令。使用此验证动作来验证您的 塞讯验证攻击者是否可以正确执行命令并确保不同的用户配置文件按预期运行。此良性操作旨在以一种不会对安全控制显示为恶意的方式测试 Python CLI 操作的执行。",
+            "source_field_path": "$.pipeline[2].actions[0].desc"
+          }
+        ],
+        "windows_only_semantics": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-WINDOWS-OS-FLAG",
+            "exact_source_value": "windows",
+            "source_field_path": "$.pipeline[2].actions[0].os"
+          }
+        ]
+      },
+      "r2_blockers": [
+        "destructive_state",
+        "windows_only_semantics"
+      ],
+      "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+      "r4_rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000017::S03::A001",
+      "recovery_source_kind": "HUMAN_CLARIFICATION",
+      "recovery_source_reason": "R4 records missing protocol/service detail and the authenticated R1 protocol and service fields are both UNKNOWN; R2 blocker evidence supplies no replacement protocol or service semantics.",
+      "source_detail_to_recover": "An explicit protocol or service identifier and any source-scoped service prerequisite needed before defining a shared review contract.",
+      "template_id": "r4-template-031-discovery_enumeration"
+    },
+    {
+      "formal_execution_authorized": false,
+      "human_clarification_request": "Provide source-cited explicit protocol or service prerequisite details for this exact raw, or confirm that none exist. Do not infer command, credential, target, or network semantics.",
+      "inferred_semantics": false,
+      "missing_evidence_source_key": "HUMAN_CLARIFICATION::EXPLICIT_PROTOCOL_OR_SERVICE_NOT_PRESENT_IN_AUTHENTICATED_R1_FIELDS",
+      "missing_fields": [
+        "named_protocols_or_services",
+        "service_prerequisites"
+      ],
+      "observed_authenticated_values": {
+        "named_protocols_or_services": [
+          "UNKNOWN"
+        ],
+        "required_protocol": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "required_service_class": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "service_prerequisites": [
+          "UNKNOWN"
+        ]
+      },
+      "primary_execution_archetype": "DISCOVERY_ENUMERATION",
+      "r1_source_locator_and_text": {
+        "action_description": "此验证动作还原了“wmic process get title,executablepath,commandline”命令使用 WMIC 获取当前正在运行的进程的信息",
+        "action_name": "Host Command Line - Use WMIC to get information about currently running processes",
+        "source_file": "APT数据集/playbooks/6000024.json",
+        "source_locator": "$.pipeline[3].actions[0]"
+      },
+      "r2_blocker_evidence": {
+        "destructive_state": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-DESTRUCTIVE-LEXEME",
+            "exact_source_value": "Host Command Line - Use WMIC to get information about currently running processes",
+            "source_field_path": "$.pipeline[3].actions[0].name"
+          }
+        ],
+        "windows_only_semantics": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-WINDOWS-OS-FLAG",
+            "exact_source_value": "windows",
+            "source_field_path": "$.pipeline[3].actions[0].os"
+          }
+        ]
+      },
+      "r2_blockers": [
+        "destructive_state",
+        "windows_only_semantics"
+      ],
+      "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+      "r4_rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000024::S04::A001",
+      "recovery_source_kind": "HUMAN_CLARIFICATION",
+      "recovery_source_reason": "R4 records missing protocol/service detail and the authenticated R1 protocol and service fields are both UNKNOWN; R2 blocker evidence supplies no replacement protocol or service semantics.",
+      "source_detail_to_recover": "An explicit protocol or service identifier and any source-scoped service prerequisite needed before defining a shared review contract.",
+      "template_id": "r4-template-031-discovery_enumeration"
+    },
+    {
+      "formal_execution_authorized": false,
+      "human_clarification_request": "Provide source-cited explicit protocol or service prerequisite details for this exact raw, or confirm that none exist. Do not infer command, credential, target, or network semantics.",
+      "inferred_semantics": false,
+      "missing_evidence_source_key": "HUMAN_CLARIFICATION::EXPLICIT_PROTOCOL_OR_SERVICE_NOT_PRESENT_IN_AUTHENTICATED_R1_FIELDS",
+      "missing_fields": [
+        "named_protocols_or_services",
+        "service_prerequisites"
+      ],
+      "observed_authenticated_values": {
+        "named_protocols_or_services": [
+          "UNKNOWN"
+        ],
+        "required_protocol": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "required_service_class": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "service_prerequisites": [
+          "UNKNOWN"
+        ]
+      },
+      "primary_execution_archetype": "DISCOVERY_ENUMERATION",
+      "r1_source_locator_and_text": {
+        "action_description": "此验证动作还原了攻击者通过“wmic qfe get description,installedOn /format:csv”命令使用 WMIC 获取安装在本地工作站上的补丁。",
+        "action_name": "Host Command Line - Use WMIC to get the patches installed on the local workstation",
+        "source_file": "APT数据集/playbooks/6000025.json",
+        "source_locator": "$.pipeline[3].actions[4]"
+      },
+      "r2_blocker_evidence": {
+        "destructive_state": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-DESTRUCTIVE-LEXEME",
+            "exact_source_value": "此验证动作还原了攻击者通过“wmic qfe get description,installedOn /format:csv”命令使用 WMIC 获取安装在本地工作站上的补丁。",
+            "source_field_path": "$.pipeline[3].actions[4].desc"
+          }
+        ],
+        "windows_only_semantics": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-WINDOWS-OS-FLAG",
+            "exact_source_value": "windows",
+            "source_field_path": "$.pipeline[3].actions[4].os"
+          }
+        ]
+      },
+      "r2_blockers": [
+        "destructive_state",
+        "windows_only_semantics"
+      ],
+      "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+      "r4_rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000025::S04::A005",
+      "recovery_source_kind": "HUMAN_CLARIFICATION",
+      "recovery_source_reason": "R4 records missing protocol/service detail and the authenticated R1 protocol and service fields are both UNKNOWN; R2 blocker evidence supplies no replacement protocol or service semantics.",
+      "source_detail_to_recover": "An explicit protocol or service identifier and any source-scoped service prerequisite needed before defining a shared review contract.",
+      "template_id": "r4-template-031-discovery_enumeration"
+    },
+    {
+      "formal_execution_authorized": false,
+      "human_clarification_request": "Provide source-cited explicit protocol or service prerequisite details for this exact raw, or confirm that none exist. Do not infer command, credential, target, or network semantics.",
+      "inferred_semantics": false,
+      "missing_evidence_source_key": "HUMAN_CLARIFICATION::EXPLICIT_PROTOCOL_OR_SERVICE_NOT_PRESENT_IN_AUTHENTICATED_R1_FIELDS",
+      "missing_fields": [
+        "named_protocols_or_services",
+        "service_prerequisites"
+      ],
+      "observed_authenticated_values": {
+        "named_protocols_or_services": [
+          "UNKNOWN"
+        ],
+        "required_protocol": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "required_service_class": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "service_prerequisites": [
+          "UNKNOWN"
+        ]
+      },
+      "primary_execution_archetype": "DISCOVERY_ENUMERATION",
+      "r1_source_locator_and_text": {
+        "action_description": "此验证动作还原了一个验证机器人 使用 Python 在 PowerShell 中调用\"whoami\"命令。使用此验证动作来验证您的 塞讯验证攻击者是否可以正确执行命令并确保不同的用户配置文件按预期运行。此良性操作旨在以一种不会对安全控制显示为恶意的方式测试 Python CLI 操作的执行。",
+        "action_name": "Host Command Line - Benign: Whoami in Windows via Python",
+        "source_file": "APT数据集/playbooks/6000026.json",
+        "source_locator": "$.pipeline[2].actions[3]"
+      },
+      "r2_blocker_evidence": {
+        "destructive_state": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-DESTRUCTIVE-LEXEME",
+            "exact_source_value": "此验证动作还原了一个验证机器人 使用 Python 在 PowerShell 中调用\"whoami\"命令。使用此验证动作来验证您的 塞讯验证攻击者是否可以正确执行命令并确保不同的用户配置文件按预期运行。此良性操作旨在以一种不会对安全控制显示为恶意的方式测试 Python CLI 操作的执行。",
+            "source_field_path": "$.pipeline[2].actions[3].desc"
+          }
+        ],
+        "windows_only_semantics": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-WINDOWS-OS-FLAG",
+            "exact_source_value": "windows",
+            "source_field_path": "$.pipeline[2].actions[3].os"
+          }
+        ]
+      },
+      "r2_blockers": [
+        "destructive_state",
+        "windows_only_semantics"
+      ],
+      "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+      "r4_rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000026::S03::A004",
+      "recovery_source_kind": "HUMAN_CLARIFICATION",
+      "recovery_source_reason": "R4 records missing protocol/service detail and the authenticated R1 protocol and service fields are both UNKNOWN; R2 blocker evidence supplies no replacement protocol or service semantics.",
+      "source_detail_to_recover": "An explicit protocol or service identifier and any source-scoped service prerequisite needed before defining a shared review contract.",
+      "template_id": "r4-template-031-discovery_enumeration"
+    },
+    {
+      "formal_execution_authorized": false,
+      "human_clarification_request": "Provide source-cited explicit protocol or service prerequisite details for this exact raw, or confirm that none exist. Do not infer command, credential, target, or network semantics.",
+      "inferred_semantics": false,
+      "missing_evidence_source_key": "HUMAN_CLARIFICATION::EXPLICIT_PROTOCOL_OR_SERVICE_NOT_PRESENT_IN_AUTHENTICATED_R1_FIELDS",
+      "missing_fields": [
+        "named_protocols_or_services",
+        "service_prerequisites"
+      ],
+      "observed_authenticated_values": {
+        "named_protocols_or_services": [
+          "UNKNOWN"
+        ],
+        "required_protocol": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "required_service_class": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "service_prerequisites": [
+          "UNKNOWN"
+        ]
+      },
+      "primary_execution_archetype": "DISCOVERY_ENUMERATION",
+      "r1_source_locator_and_text": {
+        "action_description": "此验证动作还原了攻击者确定主机操作系统使用的已安装语言。攻击者有时会利用此信息来尝试确定目标计算机所在的区域。\n\n此验证动作使用 reg query 来查询注册表项“HKLM\\SYSTEM\\ControlSet001\\Control\\Nls\\Language”。 KeyName 返回的十六进制值 InstallLanguage 表示 Windows 区域设置 ID。每个 ID 对应一个使用相同语言的区域。\n\n注意：此验证动作被视为“弱信号”操作。这意味着它展示的行为并不总是表示恶意活动，并且可以匹配合法用户或管理活动。当您单独运行弱信号操作时，它不太可能被安全产品阻止。最佳实践是确保您的安全产品提供对此类行为的可见性。这使您可以将活动与更高保真度的信号关联起来以进行检测或用于威胁搜寻。",
+        "action_name": "Host Command Line - query using reg query language",
+        "source_file": "APT数据集/playbooks/6000027.json",
+        "source_locator": "$.pipeline[4].actions[1]"
+      },
+      "r2_blocker_evidence": {
+        "ambiguous_source_wording": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-AMBIGUOUS-WORDING",
+            "exact_source_value": "此验证动作还原了攻击者确定主机操作系统使用的已安装语言。攻击者有时会利用此信息来尝试确定目标计算机所在的区域。\n\n此验证动作使用 reg query 来查询注册表项“HKLM\\SYSTEM\\ControlSet001\\Control\\Nls\\Language”。 KeyName 返回的十六进制值 InstallLanguage 表示 Windows 区域设置 ID。每个 ID 对应一个使用相同语言的区域。\n\n注意：此验证动作被视为“弱信号”操作。这意味着它展示的行为并不总是表示恶意活动，并且可以匹配合法用户或管理活动。当您单独运行弱信号操作时，它不太可能被安全产品阻止。最佳实践是确保您的安全产品提供对此类行为的可见性。这使您可以将活动与更高保真度的信号关联起来以进行检测或用于威胁搜寻。",
+            "source_field_path": "$.pipeline[4].actions[1].desc"
+          }
+        ],
+        "destructive_state": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-DESTRUCTIVE-LEXEME",
+            "exact_source_value": "此验证动作还原了攻击者确定主机操作系统使用的已安装语言。攻击者有时会利用此信息来尝试确定目标计算机所在的区域。\n\n此验证动作使用 reg query 来查询注册表项“HKLM\\SYSTEM\\ControlSet001\\Control\\Nls\\Language”。 KeyName 返回的十六进制值 InstallLanguage 表示 Windows 区域设置 ID。每个 ID 对应一个使用相同语言的区域。\n\n注意：此验证动作被视为“弱信号”操作。这意味着它展示的行为并不总是表示恶意活动，并且可以匹配合法用户或管理活动。当您单独运行弱信号操作时，它不太可能被安全产品阻止。最佳实践是确保您的安全产品提供对此类行为的可见性。这使您可以将活动与更高保真度的信号关联起来以进行检测或用于威胁搜寻。",
+            "source_field_path": "$.pipeline[4].actions[1].desc"
+          }
+        ],
+        "windows_only_semantics": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-WINDOWS-OS-FLAG",
+            "exact_source_value": "windows",
+            "source_field_path": "$.pipeline[4].actions[1].os"
+          }
+        ]
+      },
+      "r2_blockers": [
+        "ambiguous_source_wording",
+        "destructive_state",
+        "windows_only_semantics"
+      ],
+      "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+      "r4_rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000027::S05::A002",
+      "recovery_source_kind": "HUMAN_CLARIFICATION",
+      "recovery_source_reason": "R4 records missing protocol/service detail and the authenticated R1 protocol and service fields are both UNKNOWN; R2 blocker evidence supplies no replacement protocol or service semantics.",
+      "source_detail_to_recover": "An explicit protocol or service identifier and any source-scoped service prerequisite needed before defining a shared review contract.",
+      "template_id": "r4-template-027-discovery_enumeration"
+    },
+    {
+      "formal_execution_authorized": false,
+      "human_clarification_request": "Provide source-cited explicit protocol or service prerequisite details for this exact raw, or confirm that none exist. Do not infer command, credential, target, or network semantics.",
+      "inferred_semantics": false,
+      "missing_evidence_source_key": "HUMAN_CLARIFICATION::EXPLICIT_PROTOCOL_OR_SERVICE_NOT_PRESENT_IN_AUTHENTICATED_R1_FIELDS",
+      "missing_fields": [
+        "named_protocols_or_services",
+        "service_prerequisites"
+      ],
+      "observed_authenticated_values": {
+        "named_protocols_or_services": [
+          "UNKNOWN"
+        ],
+        "required_protocol": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "required_service_class": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "service_prerequisites": [
+          "UNKNOWN"
+        ]
+      },
+      "primary_execution_archetype": "DISCOVERY_ENUMERATION",
+      "r1_source_locator_and_text": {
+        "action_description": "此验证动作还原了使用 WMI 查询来发现本地系统信息。在感染了 AGENTTESLA 的主机上观察到了这种行为。启动后，AGENTTESLA 将开始收集本地系统信息，安装键盘记录器模块，并初始化用于发现和收集数据的任务流程。此过程的一部分包括基本的 WMI 查询。",
+        "action_name": "Host Command Line - AGENTTESLA, using WMI query to discover local system information, Variant -2",
+        "source_file": "APT数据集/playbooks/6000028.json",
+        "source_locator": "$.pipeline[2].actions[4]"
+      },
+      "r2_blocker_evidence": {
+        "destructive_state": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-DESTRUCTIVE-LEXEME",
+            "exact_source_value": "Host Command Line - AGENTTESLA, using WMI query to discover local system information, Variant -2",
+            "source_field_path": "$.pipeline[2].actions[4].name"
+          }
+        ],
+        "multi_step_composite": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-MULTI-STEP-LEXEME",
+            "exact_source_value": "Host Command Line - AGENTTESLA, using WMI query to discover local system information, Variant -2",
+            "source_field_path": "$.pipeline[2].actions[4].name"
+          }
+        ],
+        "windows_only_semantics": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-WINDOWS-OS-FLAG",
+            "exact_source_value": "windows",
+            "source_field_path": "$.pipeline[2].actions[4].os"
+          }
+        ]
+      },
+      "r2_blockers": [
+        "destructive_state",
+        "multi_step_composite",
+        "windows_only_semantics"
+      ],
+      "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+      "r4_rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000028::S03::A005",
+      "recovery_source_kind": "HUMAN_CLARIFICATION",
+      "recovery_source_reason": "R4 records missing protocol/service detail and the authenticated R1 protocol and service fields are both UNKNOWN; R2 blocker evidence supplies no replacement protocol or service semantics.",
+      "source_detail_to_recover": "An explicit protocol or service identifier and any source-scoped service prerequisite needed before defining a shared review contract.",
+      "template_id": "r4-template-030-discovery_enumeration"
+    },
+    {
+      "formal_execution_authorized": false,
+      "human_clarification_request": "Provide source-cited explicit protocol or service prerequisite details for this exact raw, or confirm that none exist. Do not infer command, credential, target, or network semantics.",
+      "inferred_semantics": false,
+      "missing_evidence_source_key": "HUMAN_CLARIFICATION::EXPLICIT_PROTOCOL_OR_SERVICE_NOT_PRESENT_IN_AUTHENTICATED_R1_FIELDS",
+      "missing_fields": [
+        "named_protocols_or_services",
+        "service_prerequisites"
+      ],
+      "observed_authenticated_values": {
+        "named_protocols_or_services": [
+          "UNKNOWN"
+        ],
+        "required_protocol": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "required_service_class": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "service_prerequisites": [
+          "UNKNOWN"
+        ]
+      },
+      "primary_execution_archetype": "DISCOVERY_ENUMERATION",
+      "r1_source_locator_and_text": {
+        "action_description": "此验证动作还原了使用 WMI 查询来发现本地系统信息。在感染了 AGENTTESLA 的主机上观察到了这种行为。启动后，AGENTTESLA 将开始收集本地系统信息，安装键盘记录器模块，并初始化用于发现和收集数据的任务流程。此过程的一部分包括基本的 WMI 查询。",
+        "action_name": "Host Command Line - AGENTTESLA, using WMI query to discover local system information, Variant -2",
+        "source_file": "APT数据集/playbooks/6000029.json",
+        "source_locator": "$.pipeline[3].actions[1]"
+      },
+      "r2_blocker_evidence": {
+        "destructive_state": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-DESTRUCTIVE-LEXEME",
+            "exact_source_value": "Host Command Line - AGENTTESLA, using WMI query to discover local system information, Variant -2",
+            "source_field_path": "$.pipeline[3].actions[1].name"
+          }
+        ],
+        "multi_step_composite": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-MULTI-STEP-LEXEME",
+            "exact_source_value": "Host Command Line - AGENTTESLA, using WMI query to discover local system information, Variant -2",
+            "source_field_path": "$.pipeline[3].actions[1].name"
+          }
+        ],
+        "windows_only_semantics": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-WINDOWS-OS-FLAG",
+            "exact_source_value": "windows",
+            "source_field_path": "$.pipeline[3].actions[1].os"
+          }
+        ]
+      },
+      "r2_blockers": [
+        "destructive_state",
+        "multi_step_composite",
+        "windows_only_semantics"
+      ],
+      "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+      "r4_rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000029::S04::A002",
+      "recovery_source_kind": "HUMAN_CLARIFICATION",
+      "recovery_source_reason": "R4 records missing protocol/service detail and the authenticated R1 protocol and service fields are both UNKNOWN; R2 blocker evidence supplies no replacement protocol or service semantics.",
+      "source_detail_to_recover": "An explicit protocol or service identifier and any source-scoped service prerequisite needed before defining a shared review contract.",
+      "template_id": "r4-template-030-discovery_enumeration"
+    },
+    {
+      "formal_execution_authorized": false,
+      "human_clarification_request": "Provide source-cited explicit protocol or service prerequisite details for this exact raw, or confirm that none exist. Do not infer command, credential, target, or network semantics.",
+      "inferred_semantics": false,
+      "missing_evidence_source_key": "HUMAN_CLARIFICATION::EXPLICIT_PROTOCOL_OR_SERVICE_NOT_PRESENT_IN_AUTHENTICATED_R1_FIELDS",
+      "missing_fields": [
+        "named_protocols_or_services",
+        "service_prerequisites"
+      ],
+      "observed_authenticated_values": {
+        "named_protocols_or_services": [
+          "UNKNOWN"
+        ],
+        "required_protocol": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "required_service_class": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "service_prerequisites": [
+          "UNKNOWN"
+        ]
+      },
+      "primary_execution_archetype": "DISCOVERY_ENUMERATION",
+      "r1_source_locator_and_text": {
+        "action_description": "此验证动作还原了“wmic process get title,executablepath,commandline”命令使用 WMIC 获取当前正在运行的进程的信息",
+        "action_name": "Host Command Line - Use WMIC to get information about currently running processes",
+        "source_file": "APT数据集/playbooks/6000031.json",
+        "source_locator": "$.pipeline[3].actions[3]"
+      },
+      "r2_blocker_evidence": {
+        "destructive_state": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-DESTRUCTIVE-LEXEME",
+            "exact_source_value": "Host Command Line - Use WMIC to get information about currently running processes",
+            "source_field_path": "$.pipeline[3].actions[3].name"
+          }
+        ],
+        "windows_only_semantics": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-WINDOWS-OS-FLAG",
+            "exact_source_value": "windows",
+            "source_field_path": "$.pipeline[3].actions[3].os"
+          }
+        ]
+      },
+      "r2_blockers": [
+        "destructive_state",
+        "windows_only_semantics"
+      ],
+      "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+      "r4_rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000031::S04::A004",
+      "recovery_source_kind": "HUMAN_CLARIFICATION",
+      "recovery_source_reason": "R4 records missing protocol/service detail and the authenticated R1 protocol and service fields are both UNKNOWN; R2 blocker evidence supplies no replacement protocol or service semantics.",
+      "source_detail_to_recover": "An explicit protocol or service identifier and any source-scoped service prerequisite needed before defining a shared review contract.",
+      "template_id": "r4-template-031-discovery_enumeration"
+    },
+    {
+      "formal_execution_authorized": false,
+      "human_clarification_request": "Provide source-cited explicit protocol or service prerequisite details for this exact raw, or confirm that none exist. Do not infer command, credential, target, or network semantics.",
+      "inferred_semantics": false,
+      "missing_evidence_source_key": "HUMAN_CLARIFICATION::EXPLICIT_PROTOCOL_OR_SERVICE_NOT_PRESENT_IN_AUTHENTICATED_R1_FIELDS",
+      "missing_fields": [
+        "named_protocols_or_services",
+        "service_prerequisites"
+      ],
+      "observed_authenticated_values": {
+        "named_protocols_or_services": [
+          "UNKNOWN"
+        ],
+        "required_protocol": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "required_service_class": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "service_prerequisites": [
+          "UNKNOWN"
+        ]
+      },
+      "primary_execution_archetype": "DISCOVERY_ENUMERATION",
+      "r1_source_locator_and_text": {
+        "action_description": "此验证动作还原了攻击者通过“wmic qfe get description,installedOn /format:csv”命令使用 WMIC 获取安装在本地工作站上的补丁。",
+        "action_name": "Host Command Line - Use WMIC to get the patches installed on the local workstation",
+        "source_file": "APT数据集/playbooks/6000031.json",
+        "source_locator": "$.pipeline[3].actions[4]"
+      },
+      "r2_blocker_evidence": {
+        "destructive_state": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-DESTRUCTIVE-LEXEME",
+            "exact_source_value": "此验证动作还原了攻击者通过“wmic qfe get description,installedOn /format:csv”命令使用 WMIC 获取安装在本地工作站上的补丁。",
+            "source_field_path": "$.pipeline[3].actions[4].desc"
+          }
+        ],
+        "windows_only_semantics": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-WINDOWS-OS-FLAG",
+            "exact_source_value": "windows",
+            "source_field_path": "$.pipeline[3].actions[4].os"
+          }
+        ]
+      },
+      "r2_blockers": [
+        "destructive_state",
+        "windows_only_semantics"
+      ],
+      "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+      "r4_rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000031::S04::A005",
+      "recovery_source_kind": "HUMAN_CLARIFICATION",
+      "recovery_source_reason": "R4 records missing protocol/service detail and the authenticated R1 protocol and service fields are both UNKNOWN; R2 blocker evidence supplies no replacement protocol or service semantics.",
+      "source_detail_to_recover": "An explicit protocol or service identifier and any source-scoped service prerequisite needed before defining a shared review contract.",
+      "template_id": "r4-template-031-discovery_enumeration"
+    },
+    {
+      "formal_execution_authorized": false,
+      "human_clarification_request": "Provide source-cited explicit protocol or service prerequisite details for this exact raw, or confirm that none exist. Do not infer command, credential, target, or network semantics.",
+      "inferred_semantics": false,
+      "missing_evidence_source_key": "HUMAN_CLARIFICATION::EXPLICIT_PROTOCOL_OR_SERVICE_NOT_PRESENT_IN_AUTHENTICATED_R1_FIELDS",
+      "missing_fields": [
+        "named_protocols_or_services",
+        "service_prerequisites"
+      ],
+      "observed_authenticated_values": {
+        "named_protocols_or_services": [
+          "UNKNOWN"
+        ],
+        "required_protocol": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "required_service_class": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "service_prerequisites": [
+          "UNKNOWN"
+        ]
+      },
+      "primary_execution_archetype": "DISCOVERY_ENUMERATION",
+      "r1_source_locator_and_text": {
+        "action_description": "此验证动作还原了一个在 PowerShell 中调用“whoami”命令的攻击者。 使用此动作验证验证您的塞讯安全验证平台验证机器人是否可以正常执行命令，并确保不同用户配置文件的行为符合预期。 这种良性验证动作旨在以一种不会对安全产品显示为恶意的方式测试 CLI 操作的执行。",
+        "action_name": "Host command line - Benign: Executing whoami via PowerShell in Windows",
+        "source_file": "APT数据集/playbooks/6000032.json",
+        "source_locator": "$.pipeline[3].actions[0]"
+      },
+      "r2_blocker_evidence": {
+        "destructive_state": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-DESTRUCTIVE-LEXEME",
+            "exact_source_value": "此验证动作还原了一个在 PowerShell 中调用“whoami”命令的攻击者。 使用此动作验证验证您的塞讯安全验证平台验证机器人是否可以正常执行命令，并确保不同用户配置文件的行为符合预期。 这种良性验证动作旨在以一种不会对安全产品显示为恶意的方式测试 CLI 操作的执行。",
+            "source_field_path": "$.pipeline[3].actions[0].desc"
+          }
+        ],
+        "windows_only_semantics": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-WINDOWS-OS-FLAG",
+            "exact_source_value": "windows",
+            "source_field_path": "$.pipeline[3].actions[0].os"
+          }
+        ]
+      },
+      "r2_blockers": [
+        "destructive_state",
+        "windows_only_semantics"
+      ],
+      "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+      "r4_rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000032::S04::A001",
+      "recovery_source_kind": "HUMAN_CLARIFICATION",
+      "recovery_source_reason": "R4 records missing protocol/service detail and the authenticated R1 protocol and service fields are both UNKNOWN; R2 blocker evidence supplies no replacement protocol or service semantics.",
+      "source_detail_to_recover": "An explicit protocol or service identifier and any source-scoped service prerequisite needed before defining a shared review contract.",
+      "template_id": "r4-template-031-discovery_enumeration"
+    },
+    {
+      "formal_execution_authorized": false,
+      "human_clarification_request": "Provide source-cited explicit protocol or service prerequisite details for this exact raw, or confirm that none exist. Do not infer command, credential, target, or network semantics.",
+      "inferred_semantics": false,
+      "missing_evidence_source_key": "HUMAN_CLARIFICATION::EXPLICIT_PROTOCOL_OR_SERVICE_NOT_PRESENT_IN_AUTHENTICATED_R1_FIELDS",
+      "missing_fields": [
+        "named_protocols_or_services",
+        "service_prerequisites"
+      ],
+      "observed_authenticated_values": {
+        "named_protocols_or_services": [
+          "UNKNOWN"
+        ],
+        "required_protocol": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "required_service_class": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "service_prerequisites": [
+          "UNKNOWN"
+        ]
+      },
+      "primary_execution_archetype": "DISCOVERY_ENUMERATION",
+      "r1_source_locator_and_text": {
+        "action_description": "此验证动作还原了一个验证机器人 尝试使用 Windows Management Instrumentation (WMI) 命令行来收集有关主机域的信息。WMI 是一种本机 Windows 功能，允许管理员管理整个企业的系统。攻击者通常会将本机 Windows 命令用于恶意目的，这使得检测这些操作更加困难，因为管理员通常将相同的命令和功能用于合法目的。WMI 已被多个 APT 组织利用。",
+        "action_name": "Host Command Line - WMIC Domain Enumeration",
+        "source_file": "APT数据集/playbooks/6000033.json",
+        "source_locator": "$.pipeline[3].actions[1]"
+      },
+      "r2_blocker_evidence": {
+        "ambiguous_source_wording": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-AMBIGUOUS-WORDING",
+            "exact_source_value": "此验证动作还原了一个验证机器人 尝试使用 Windows Management Instrumentation (WMI) 命令行来收集有关主机域的信息。WMI 是一种本机 Windows 功能，允许管理员管理整个企业的系统。攻击者通常会将本机 Windows 命令用于恶意目的，这使得检测这些操作更加困难，因为管理员通常将相同的命令和功能用于合法目的。WMI 已被多个 APT 组织利用。",
+            "source_field_path": "$.pipeline[3].actions[1].desc"
+          }
+        ],
+        "destructive_state": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-DESTRUCTIVE-LEXEME",
+            "exact_source_value": "此验证动作还原了一个验证机器人 尝试使用 Windows Management Instrumentation (WMI) 命令行来收集有关主机域的信息。WMI 是一种本机 Windows 功能，允许管理员管理整个企业的系统。攻击者通常会将本机 Windows 命令用于恶意目的，这使得检测这些操作更加困难，因为管理员通常将相同的命令和功能用于合法目的。WMI 已被多个 APT 组织利用。",
+            "source_field_path": "$.pipeline[3].actions[1].desc"
+          }
+        ],
+        "privileged_action": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-PRIVILEGE-FLAG-OR-LEXEME",
+            "exact_source_value": "Host Command Line - WMIC Domain Enumeration",
+            "source_field_path": "$.pipeline[3].actions[1].name"
+          }
+        ],
+        "windows_only_semantics": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-WINDOWS-OS-FLAG",
+            "exact_source_value": "windows",
+            "source_field_path": "$.pipeline[3].actions[1].os"
+          }
+        ]
+      },
+      "r2_blockers": [
+        "ambiguous_source_wording",
+        "destructive_state",
+        "privileged_action",
+        "windows_only_semantics"
+      ],
+      "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+      "r4_rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000033::S04::A002",
+      "recovery_source_kind": "HUMAN_CLARIFICATION",
+      "recovery_source_reason": "R4 records missing protocol/service detail and the authenticated R1 protocol and service fields are both UNKNOWN; R2 blocker evidence supplies no replacement protocol or service semantics.",
+      "source_detail_to_recover": "An explicit protocol or service identifier and any source-scoped service prerequisite needed before defining a shared review contract.",
+      "template_id": "r4-template-023-discovery_enumeration"
+    },
+    {
+      "formal_execution_authorized": false,
+      "human_clarification_request": "Provide source-cited explicit protocol or service prerequisite details for this exact raw, or confirm that none exist. Do not infer command, credential, target, or network semantics.",
+      "inferred_semantics": false,
+      "missing_evidence_source_key": "HUMAN_CLARIFICATION::EXPLICIT_PROTOCOL_OR_SERVICE_NOT_PRESENT_IN_AUTHENTICATED_R1_FIELDS",
+      "missing_fields": [
+        "named_protocols_or_services",
+        "service_prerequisites"
+      ],
+      "observed_authenticated_values": {
+        "named_protocols_or_services": [
+          "UNKNOWN"
+        ],
+        "required_protocol": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "required_service_class": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "service_prerequisites": [
+          "UNKNOWN"
+        ]
+      },
+      "primary_execution_archetype": "DISCOVERY_ENUMERATION",
+      "r1_source_locator_and_text": {
+        "action_description": "此验证动作还原了使用 WMI 查询来发现本地系统信息。在感染了 AGENTTESLA 的主机上观察到了这种行为。启动后，AGENTTESLA 将开始收集本地系统信息，安装键盘记录器模块，并初始化用于发现和收集数据的例程。此过程的一部分包括基本的 WMI 查询。",
+        "action_name": "Host command line - AGENTTESLA, using WMI query to discover local system information, Variant -1",
+        "source_file": "APT数据集/playbooks/6000033.json",
+        "source_locator": "$.pipeline[3].actions[3]"
+      },
+      "r2_blocker_evidence": {
+        "destructive_state": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-DESTRUCTIVE-LEXEME",
+            "exact_source_value": "Host command line - AGENTTESLA, using WMI query to discover local system information, Variant -1",
+            "source_field_path": "$.pipeline[3].actions[3].name"
+          }
+        ],
+        "multi_step_composite": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-MULTI-STEP-LEXEME",
+            "exact_source_value": "Host command line - AGENTTESLA, using WMI query to discover local system information, Variant -1",
+            "source_field_path": "$.pipeline[3].actions[3].name"
+          }
+        ],
+        "windows_only_semantics": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-WINDOWS-OS-FLAG",
+            "exact_source_value": "windows",
+            "source_field_path": "$.pipeline[3].actions[3].os"
+          }
+        ]
+      },
+      "r2_blockers": [
+        "destructive_state",
+        "multi_step_composite",
+        "windows_only_semantics"
+      ],
+      "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+      "r4_rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000033::S04::A004",
+      "recovery_source_kind": "HUMAN_CLARIFICATION",
+      "recovery_source_reason": "R4 records missing protocol/service detail and the authenticated R1 protocol and service fields are both UNKNOWN; R2 blocker evidence supplies no replacement protocol or service semantics.",
+      "source_detail_to_recover": "An explicit protocol or service identifier and any source-scoped service prerequisite needed before defining a shared review contract.",
+      "template_id": "r4-template-030-discovery_enumeration"
+    },
+    {
+      "formal_execution_authorized": false,
+      "human_clarification_request": "Provide source-cited explicit protocol or service prerequisite details for this exact raw, or confirm that none exist. Do not infer command, credential, target, or network semantics.",
+      "inferred_semantics": false,
+      "missing_evidence_source_key": "HUMAN_CLARIFICATION::EXPLICIT_PROTOCOL_OR_SERVICE_NOT_PRESENT_IN_AUTHENTICATED_R1_FIELDS",
+      "missing_fields": [
+        "named_protocols_or_services",
+        "service_prerequisites"
+      ],
+      "observed_authenticated_values": {
+        "named_protocols_or_services": [
+          "UNKNOWN"
+        ],
+        "required_protocol": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "required_service_class": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "service_prerequisites": [
+          "UNKNOWN"
+        ]
+      },
+      "primary_execution_archetype": "DISCOVERY_ENUMERATION",
+      "r1_source_locator_and_text": {
+        "action_description": "此验证动作还原了一个验证机器人 使用 Python 在 PowerShell 中调用\"whoami\"命令。使用此验证动作来验证您的 塞讯验证攻击者是否可以正确执行命令并确保不同的用户配置文件按预期运行。此良性操作旨在以一种不会对安全控制显示为恶意的方式测试 Python CLI 操作的执行。",
+        "action_name": "Host Command Line - Benign: Whoami in Windows via Python",
+        "source_file": "APT数据集/playbooks/6000034.json",
+        "source_locator": "$.pipeline[2].actions[0]"
+      },
+      "r2_blocker_evidence": {
+        "destructive_state": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-DESTRUCTIVE-LEXEME",
+            "exact_source_value": "此验证动作还原了一个验证机器人 使用 Python 在 PowerShell 中调用\"whoami\"命令。使用此验证动作来验证您的 塞讯验证攻击者是否可以正确执行命令并确保不同的用户配置文件按预期运行。此良性操作旨在以一种不会对安全控制显示为恶意的方式测试 Python CLI 操作的执行。",
+            "source_field_path": "$.pipeline[2].actions[0].desc"
+          }
+        ],
+        "windows_only_semantics": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-WINDOWS-OS-FLAG",
+            "exact_source_value": "windows",
+            "source_field_path": "$.pipeline[2].actions[0].os"
+          }
+        ]
+      },
+      "r2_blockers": [
+        "destructive_state",
+        "windows_only_semantics"
+      ],
+      "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+      "r4_rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000034::S03::A001",
+      "recovery_source_kind": "HUMAN_CLARIFICATION",
+      "recovery_source_reason": "R4 records missing protocol/service detail and the authenticated R1 protocol and service fields are both UNKNOWN; R2 blocker evidence supplies no replacement protocol or service semantics.",
+      "source_detail_to_recover": "An explicit protocol or service identifier and any source-scoped service prerequisite needed before defining a shared review contract.",
+      "template_id": "r4-template-031-discovery_enumeration"
+    },
+    {
+      "formal_execution_authorized": false,
+      "human_clarification_request": "Provide source-cited explicit protocol or service prerequisite details for this exact raw, or confirm that none exist. Do not infer command, credential, target, or network semantics.",
+      "inferred_semantics": false,
+      "missing_evidence_source_key": "HUMAN_CLARIFICATION::EXPLICIT_PROTOCOL_OR_SERVICE_NOT_PRESENT_IN_AUTHENTICATED_R1_FIELDS",
+      "missing_fields": [
+        "named_protocols_or_services",
+        "service_prerequisites"
+      ],
+      "observed_authenticated_values": {
+        "named_protocols_or_services": [
+          "UNKNOWN"
+        ],
+        "required_protocol": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "required_service_class": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "service_prerequisites": [
+          "UNKNOWN"
+        ]
+      },
+      "primary_execution_archetype": "DISCOVERY_ENUMERATION",
+      "r1_source_locator_and_text": {
+        "action_description": "此验证动作还原了一个攻击者试图收集主机上安装的软件列表。 攻击者可以使用此信息来确定可以在环境中的其他系统上安装哪些软件，以及他们可以在后续攻击中利用哪些漏洞。\n\n注意：此验证动作被视为“弱信号”操作。 这意味着它展示的行为并不总是表示恶意活动，并且可以匹配合法用户或管理活动。 当您单独运行弱信号验证动作时，它不太可能被安全防御设备阻止。 最佳实践是确保您的安全防御设备提供对此类行为的可见性。 这使您可以将共计活动与更高保真度的信号关联起来以进行检测或用于威胁搜寻。",
+        "action_name": "Host Command Line - Discovering Software via WMIC",
+        "source_file": "APT数据集/playbooks/6000034.json",
+        "source_locator": "$.pipeline[4].actions[0]"
+      },
+      "r2_blocker_evidence": {
+        "ambiguous_source_wording": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-AMBIGUOUS-WORDING",
+            "exact_source_value": "此验证动作还原了一个攻击者试图收集主机上安装的软件列表。 攻击者可以使用此信息来确定可以在环境中的其他系统上安装哪些软件，以及他们可以在后续攻击中利用哪些漏洞。\n\n注意：此验证动作被视为“弱信号”操作。 这意味着它展示的行为并不总是表示恶意活动，并且可以匹配合法用户或管理活动。 当您单独运行弱信号验证动作时，它不太可能被安全防御设备阻止。 最佳实践是确保您的安全防御设备提供对此类行为的可见性。 这使您可以将共计活动与更高保真度的信号关联起来以进行检测或用于威胁搜寻。",
+            "source_field_path": "$.pipeline[4].actions[0].desc"
+          }
+        ],
+        "destructive_state": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-DESTRUCTIVE-LEXEME",
+            "exact_source_value": "此验证动作还原了一个攻击者试图收集主机上安装的软件列表。 攻击者可以使用此信息来确定可以在环境中的其他系统上安装哪些软件，以及他们可以在后续攻击中利用哪些漏洞。\n\n注意：此验证动作被视为“弱信号”操作。 这意味着它展示的行为并不总是表示恶意活动，并且可以匹配合法用户或管理活动。 当您单独运行弱信号验证动作时，它不太可能被安全防御设备阻止。 最佳实践是确保您的安全防御设备提供对此类行为的可见性。 这使您可以将共计活动与更高保真度的信号关联起来以进行检测或用于威胁搜寻。",
+            "source_field_path": "$.pipeline[4].actions[0].desc"
+          }
+        ],
+        "windows_only_semantics": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-WINDOWS-OS-FLAG",
+            "exact_source_value": "windows",
+            "source_field_path": "$.pipeline[4].actions[0].os"
+          }
+        ]
+      },
+      "r2_blockers": [
+        "ambiguous_source_wording",
+        "destructive_state",
+        "windows_only_semantics"
+      ],
+      "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+      "r4_rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000034::S05::A001",
+      "recovery_source_kind": "HUMAN_CLARIFICATION",
+      "recovery_source_reason": "R4 records missing protocol/service detail and the authenticated R1 protocol and service fields are both UNKNOWN; R2 blocker evidence supplies no replacement protocol or service semantics.",
+      "source_detail_to_recover": "An explicit protocol or service identifier and any source-scoped service prerequisite needed before defining a shared review contract.",
+      "template_id": "r4-template-026-discovery_enumeration"
+    },
+    {
+      "formal_execution_authorized": false,
+      "human_clarification_request": "Provide source-cited explicit protocol or service prerequisite details for this exact raw, or confirm that none exist. Do not infer command, credential, target, or network semantics.",
+      "inferred_semantics": false,
+      "missing_evidence_source_key": "HUMAN_CLARIFICATION::EXPLICIT_PROTOCOL_OR_SERVICE_NOT_PRESENT_IN_AUTHENTICATED_R1_FIELDS",
+      "missing_fields": [
+        "named_protocols_or_services",
+        "service_prerequisites"
+      ],
+      "observed_authenticated_values": {
+        "named_protocols_or_services": [
+          "UNKNOWN"
+        ],
+        "required_protocol": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "required_service_class": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "service_prerequisites": [
+          "UNKNOWN"
+        ]
+      },
+      "primary_execution_archetype": "DISCOVERY_ENUMERATION",
+      "r1_source_locator_and_text": {
+        "action_description": "此验证动作还原了攻击者确定当前用户使用的配置语言设置。攻击者有时会利用此信息来尝试确定目标计算机所在的区域。\n\n注意：此验证动作被视为“弱信号”操作。这意味着它展示的行为并不总是表示恶意活动，并且可以匹配合法用户或管理活动。当您单独运行弱信号操作时，它不太可能被安全产品阻止。最佳实践是确保您的安全产品提供对此类行为的可见性。这使您可以将活动与更高保真度的信号关联起来以进行检测或用于威胁搜寻。",
+        "action_name": "Host Command Line - Use PowerShell language to query the current user",
+        "source_file": "APT数据集/playbooks/6000035.json",
+        "source_locator": "$.pipeline[3].actions[2]"
+      },
+      "r2_blocker_evidence": {
+        "ambiguous_source_wording": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-AMBIGUOUS-WORDING",
+            "exact_source_value": "此验证动作还原了攻击者确定当前用户使用的配置语言设置。攻击者有时会利用此信息来尝试确定目标计算机所在的区域。\n\n注意：此验证动作被视为“弱信号”操作。这意味着它展示的行为并不总是表示恶意活动，并且可以匹配合法用户或管理活动。当您单独运行弱信号操作时，它不太可能被安全产品阻止。最佳实践是确保您的安全产品提供对此类行为的可见性。这使您可以将活动与更高保真度的信号关联起来以进行检测或用于威胁搜寻。",
+            "source_field_path": "$.pipeline[3].actions[2].desc"
+          }
+        ],
+        "destructive_state": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-DESTRUCTIVE-LEXEME",
+            "exact_source_value": "此验证动作还原了攻击者确定当前用户使用的配置语言设置。攻击者有时会利用此信息来尝试确定目标计算机所在的区域。\n\n注意：此验证动作被视为“弱信号”操作。这意味着它展示的行为并不总是表示恶意活动，并且可以匹配合法用户或管理活动。当您单独运行弱信号操作时，它不太可能被安全产品阻止。最佳实践是确保您的安全产品提供对此类行为的可见性。这使您可以将活动与更高保真度的信号关联起来以进行检测或用于威胁搜寻。",
+            "source_field_path": "$.pipeline[3].actions[2].desc"
+          }
+        ],
+        "windows_only_semantics": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-WINDOWS-OS-FLAG",
+            "exact_source_value": "windows",
+            "source_field_path": "$.pipeline[3].actions[2].os"
+          }
+        ]
+      },
+      "r2_blockers": [
+        "ambiguous_source_wording",
+        "destructive_state",
+        "windows_only_semantics"
+      ],
+      "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+      "r4_rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000035::S04::A003",
+      "recovery_source_kind": "HUMAN_CLARIFICATION",
+      "recovery_source_reason": "R4 records missing protocol/service detail and the authenticated R1 protocol and service fields are both UNKNOWN; R2 blocker evidence supplies no replacement protocol or service semantics.",
+      "source_detail_to_recover": "An explicit protocol or service identifier and any source-scoped service prerequisite needed before defining a shared review contract.",
+      "template_id": "r4-template-026-discovery_enumeration"
+    },
+    {
+      "formal_execution_authorized": false,
+      "human_clarification_request": "Provide source-cited explicit protocol or service prerequisite details for this exact raw, or confirm that none exist. Do not infer command, credential, target, or network semantics.",
+      "inferred_semantics": false,
+      "missing_evidence_source_key": "HUMAN_CLARIFICATION::EXPLICIT_PROTOCOL_OR_SERVICE_NOT_PRESENT_IN_AUTHENTICATED_R1_FIELDS",
+      "missing_fields": [
+        "named_protocols_or_services",
+        "service_prerequisites"
+      ],
+      "observed_authenticated_values": {
+        "named_protocols_or_services": [
+          "UNKNOWN"
+        ],
+        "required_protocol": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "required_service_class": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "service_prerequisites": [
+          "UNKNOWN"
+        ]
+      },
+      "primary_execution_archetype": "DISCOVERY_ENUMERATION",
+      "r1_source_locator_and_text": {
+        "action_description": "此验证动作还原了一个验证机器人 尝试使用 Windows Management Instrumentation (WMI) 命令行来收集有关主机的信息。WMI 是一种本机 Windows 功能，允许管理员管理整个企业的系统。攻击者通常会将本机 Windows 命令用于恶意目的，这使得检测这些操作更加困难，因为管理员通常将相同的命令和功能用于合法目的。WMI 已被多个 APT 组织利用。",
+        "action_name": "Host Command Line - WMIC Account Enumeration",
+        "source_file": "APT数据集/playbooks/6000037.json",
+        "source_locator": "$.pipeline[2].actions[1]"
+      },
+      "r2_blocker_evidence": {
+        "ambiguous_source_wording": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-AMBIGUOUS-WORDING",
+            "exact_source_value": "此验证动作还原了一个验证机器人 尝试使用 Windows Management Instrumentation (WMI) 命令行来收集有关主机的信息。WMI 是一种本机 Windows 功能，允许管理员管理整个企业的系统。攻击者通常会将本机 Windows 命令用于恶意目的，这使得检测这些操作更加困难，因为管理员通常将相同的命令和功能用于合法目的。WMI 已被多个 APT 组织利用。",
+            "source_field_path": "$.pipeline[2].actions[1].desc"
+          }
+        ],
+        "destructive_state": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-DESTRUCTIVE-LEXEME",
+            "exact_source_value": "此验证动作还原了一个验证机器人 尝试使用 Windows Management Instrumentation (WMI) 命令行来收集有关主机的信息。WMI 是一种本机 Windows 功能，允许管理员管理整个企业的系统。攻击者通常会将本机 Windows 命令用于恶意目的，这使得检测这些操作更加困难，因为管理员通常将相同的命令和功能用于合法目的。WMI 已被多个 APT 组织利用。",
+            "source_field_path": "$.pipeline[2].actions[1].desc"
+          }
+        ],
+        "privileged_action": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-PRIVILEGE-FLAG-OR-LEXEME",
+            "exact_source_value": "Host Command Line - WMIC Account Enumeration",
+            "source_field_path": "$.pipeline[2].actions[1].name"
+          }
+        ],
+        "windows_only_semantics": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-WINDOWS-OS-FLAG",
+            "exact_source_value": "windows",
+            "source_field_path": "$.pipeline[2].actions[1].os"
+          }
+        ]
+      },
+      "r2_blockers": [
+        "ambiguous_source_wording",
+        "destructive_state",
+        "privileged_action",
+        "windows_only_semantics"
+      ],
+      "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+      "r4_rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000037::S03::A002",
+      "recovery_source_kind": "HUMAN_CLARIFICATION",
+      "recovery_source_reason": "R4 records missing protocol/service detail and the authenticated R1 protocol and service fields are both UNKNOWN; R2 blocker evidence supplies no replacement protocol or service semantics.",
+      "source_detail_to_recover": "An explicit protocol or service identifier and any source-scoped service prerequisite needed before defining a shared review contract.",
+      "template_id": "r4-template-023-discovery_enumeration"
+    },
+    {
+      "formal_execution_authorized": false,
+      "human_clarification_request": "Provide source-cited explicit protocol or service prerequisite details for this exact raw, or confirm that none exist. Do not infer command, credential, target, or network semantics.",
+      "inferred_semantics": false,
+      "missing_evidence_source_key": "HUMAN_CLARIFICATION::EXPLICIT_PROTOCOL_OR_SERVICE_NOT_PRESENT_IN_AUTHENTICATED_R1_FIELDS",
+      "missing_fields": [
+        "named_protocols_or_services",
+        "service_prerequisites"
+      ],
+      "observed_authenticated_values": {
+        "named_protocols_or_services": [
+          "UNKNOWN"
+        ],
+        "required_protocol": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "required_service_class": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "service_prerequisites": [
+          "UNKNOWN"
+        ]
+      },
+      "primary_execution_archetype": "NETWORK_C2_BEACON",
+      "r1_source_locator_and_text": {
+        "action_description": "此验证动作还原了一个攻击者试图发现受感染主机上的网络信息。 验证机器人将使用此信息来识别环境中的其他目标、网络协议、网络布局等。 这可以帮助攻击者发现漏洞并进一步利用网络。\n\n注意：此验证动作被视为“弱信号”操作。 这意味着它展示的行为并不总是表示恶意活动，并且可以匹配合法用户或管理活动。 当您单独运行弱信号验证动作时，它不太可能被安全防御设备阻止。 最佳实践是确保您的安全防御设备提供对此类行为的可见性。 这使您可以将共计活动与更高保真度的信号关联起来以进行检测或用于威胁搜寻。",
+        "action_name": "Host Command Line - Local Network Connection Discovery",
+        "source_file": "APT数据集/playbooks/6000039.json",
+        "source_locator": "$.pipeline[3].actions[4]"
+      },
+      "r2_blocker_evidence": {
+        "ambiguous_source_wording": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-AMBIGUOUS-WORDING",
+            "exact_source_value": "此验证动作还原了一个攻击者试图发现受感染主机上的网络信息。 验证机器人将使用此信息来识别环境中的其他目标、网络协议、网络布局等。 这可以帮助攻击者发现漏洞并进一步利用网络。\n\n注意：此验证动作被视为“弱信号”操作。 这意味着它展示的行为并不总是表示恶意活动，并且可以匹配合法用户或管理活动。 当您单独运行弱信号验证动作时，它不太可能被安全防御设备阻止。 最佳实践是确保您的安全防御设备提供对此类行为的可见性。 这使您可以将共计活动与更高保真度的信号关联起来以进行检测或用于威胁搜寻。",
+            "source_field_path": "$.pipeline[3].actions[4].desc"
+          }
+        ],
+        "destructive_state": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-DESTRUCTIVE-LEXEME",
+            "exact_source_value": "此验证动作还原了一个攻击者试图发现受感染主机上的网络信息。 验证机器人将使用此信息来识别环境中的其他目标、网络协议、网络布局等。 这可以帮助攻击者发现漏洞并进一步利用网络。\n\n注意：此验证动作被视为“弱信号”操作。 这意味着它展示的行为并不总是表示恶意活动，并且可以匹配合法用户或管理活动。 当您单独运行弱信号验证动作时，它不太可能被安全防御设备阻止。 最佳实践是确保您的安全防御设备提供对此类行为的可见性。 这使您可以将共计活动与更高保真度的信号关联起来以进行检测或用于威胁搜寻。",
+            "source_field_path": "$.pipeline[3].actions[4].desc"
+          }
+        ],
+        "windows_only_semantics": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-WINDOWS-OS-FLAG",
+            "exact_source_value": "windows",
+            "source_field_path": "$.pipeline[3].actions[4].os"
+          }
+        ]
+      },
+      "r2_blockers": [
+        "ambiguous_source_wording",
+        "destructive_state",
+        "windows_only_semantics"
+      ],
+      "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+      "r4_rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000039::S04::A005",
+      "recovery_source_kind": "HUMAN_CLARIFICATION",
+      "recovery_source_reason": "R4 records missing protocol/service detail and the authenticated R1 protocol and service fields are both UNKNOWN; R2 blocker evidence supplies no replacement protocol or service semantics.",
+      "source_detail_to_recover": "An explicit protocol or service identifier and any source-scoped service prerequisite needed before defining a shared review contract.",
+      "template_id": "r4-template-055-network_c2_beacon"
+    },
+    {
+      "formal_execution_authorized": false,
+      "human_clarification_request": "Provide source-cited explicit protocol or service prerequisite details for this exact raw, or confirm that none exist. Do not infer command, credential, target, or network semantics.",
+      "inferred_semantics": false,
+      "missing_evidence_source_key": "HUMAN_CLARIFICATION::EXPLICIT_PROTOCOL_OR_SERVICE_NOT_PRESENT_IN_AUTHENTICATED_R1_FIELDS",
+      "missing_fields": [
+        "named_protocols_or_services",
+        "service_prerequisites"
+      ],
+      "observed_authenticated_values": {
+        "named_protocols_or_services": [
+          "UNKNOWN"
+        ],
+        "required_protocol": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "required_service_class": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+        "service_prerequisites": [
+          "UNKNOWN"
+        ]
+      },
+      "primary_execution_archetype": "DISCOVERY_ENUMERATION",
+      "r1_source_locator_and_text": {
+        "action_description": "此验证动作还原了攻击者确定主机操作系统使用的已安装语言。攻击者有时会利用此信息来尝试确定目标计算机所在的区域。\n\n此验证动作使用 reg query 来查询注册表项“HKLM\\SYSTEM\\ControlSet001\\Control\\Nls\\Language”。 KeyName 返回的十六进制值 InstallLanguage 表示 Windows 区域设置 ID。每个 ID 对应一个使用相同语言的区域。\n\n注意：此验证动作被视为“弱信号”操作。这意味着它展示的行为并不总是表示恶意活动，并且可以匹配合法用户或管理活动。当您单独运行弱信号操作时，它不太可能被安全产品阻止。最佳实践是确保您的安全产品提供对此类行为的可见性。这使您可以将活动与更高保真度的信号关联起来以进行检测或用于威胁搜寻。",
+        "action_name": "Host Command Line - query using reg query language",
+        "source_file": "APT数据集/playbooks/6000042.json",
+        "source_locator": "$.pipeline[3].actions[2]"
+      },
+      "r2_blocker_evidence": {
+        "ambiguous_source_wording": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-AMBIGUOUS-WORDING",
+            "exact_source_value": "此验证动作还原了攻击者确定主机操作系统使用的已安装语言。攻击者有时会利用此信息来尝试确定目标计算机所在的区域。\n\n此验证动作使用 reg query 来查询注册表项“HKLM\\SYSTEM\\ControlSet001\\Control\\Nls\\Language”。 KeyName 返回的十六进制值 InstallLanguage 表示 Windows 区域设置 ID。每个 ID 对应一个使用相同语言的区域。\n\n注意：此验证动作被视为“弱信号”操作。这意味着它展示的行为并不总是表示恶意活动，并且可以匹配合法用户或管理活动。当您单独运行弱信号操作时，它不太可能被安全产品阻止。最佳实践是确保您的安全产品提供对此类行为的可见性。这使您可以将活动与更高保真度的信号关联起来以进行检测或用于威胁搜寻。",
+            "source_field_path": "$.pipeline[3].actions[2].desc"
+          }
+        ],
+        "destructive_state": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-DESTRUCTIVE-LEXEME",
+            "exact_source_value": "此验证动作还原了攻击者确定主机操作系统使用的已安装语言。攻击者有时会利用此信息来尝试确定目标计算机所在的区域。\n\n此验证动作使用 reg query 来查询注册表项“HKLM\\SYSTEM\\ControlSet001\\Control\\Nls\\Language”。 KeyName 返回的十六进制值 InstallLanguage 表示 Windows 区域设置 ID。每个 ID 对应一个使用相同语言的区域。\n\n注意：此验证动作被视为“弱信号”操作。这意味着它展示的行为并不总是表示恶意活动，并且可以匹配合法用户或管理活动。当您单独运行弱信号操作时，它不太可能被安全产品阻止。最佳实践是确保您的安全产品提供对此类行为的可见性。这使您可以将活动与更高保真度的信号关联起来以进行检测或用于威胁搜寻。",
+            "source_field_path": "$.pipeline[3].actions[2].desc"
+          }
+        ],
+        "windows_only_semantics": [
+          {
+            "derivation_rule_id": "R2-BLOCKER-WINDOWS-OS-FLAG",
+            "exact_source_value": "windows",
+            "source_field_path": "$.pipeline[3].actions[2].os"
+          }
+        ]
+      },
+      "r2_blockers": [
+        "ambiguous_source_wording",
+        "destructive_state",
+        "windows_only_semantics"
+      ],
+      "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+      "r4_rationale": "Network/discovery semantics lack an explicit protocol or service detail for a shared contract.",
+      "raw_key": "6000042::S04::A003",
+      "recovery_source_kind": "HUMAN_CLARIFICATION",
+      "recovery_source_reason": "R4 records missing protocol/service detail and the authenticated R1 protocol and service fields are both UNKNOWN; R2 blocker evidence supplies no replacement protocol or service semantics.",
+      "source_detail_to_recover": "An explicit protocol or service identifier and any source-scoped service prerequisite needed before defining a shared review contract.",
+      "template_id": "r4-template-027-discovery_enumeration"
+    }
+  ],
+  "schema_version": "e0c-r5-blocked31-source-detail-recovery-v1"
+}

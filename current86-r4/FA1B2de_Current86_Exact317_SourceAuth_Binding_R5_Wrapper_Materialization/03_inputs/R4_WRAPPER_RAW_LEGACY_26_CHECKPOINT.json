@@ -1,0 +1,20 @@
+{
+  "active_canonical_source_authority_created": false,
+  "approved_r4_checkpoint_sha256": "7da60ca889448a9f549c11b13729cc80524fd4923536ef04c48ba1f9e07ea2b1",
+  "dry_run_only": true,
+  "extractor_implementation_sha256": "ce847a16203de5d163d8b241a0c04a998c29568525de220240644c1931089b7e",
+  "extractor_spec_id": "R4_RAW_PLAYBOOK_POSITIONAL_EXTRACTOR_V1",
+  "extractor_spec_sha256": "55815bb2e783c41714d89de3d0d2a69f238d52ac154dbaefa17be6be73a9eaa0",
+  "field_pins_created": 0,
+  "input_manifest_sha256": "49c5a6f7277bfe3c1cc860e437e6908b37da1365f67e8dbf96263dd0aa4c9b90",
+  "route_entrypoint": {
+    "path": "04_extractors/raw_positional_extractor.py",
+    "sha256": "4b1943320ea3bdc4132a38792bfada6d5b05a657254205cbb36eea2fc4444ae9",
+    "spec_id": "R4_RAW_PLAYBOOK_POSITIONAL_EXTRACTOR_V1"
+  },
+  "rule_id": "R4_WRAPPER_RAW_LEGACY_26",
+  "schema": "FA1B2DE_CURRENT86_BINDING_R5_WRAPPER_CHECKPOINT_V1",
+  "source_auth_executed": false,
+  "status": "MATERIALIZED_PROSPECTIVE_CHECKPOINT_NON_AUTHORITATIVE",
+  "target_count": 26
+}

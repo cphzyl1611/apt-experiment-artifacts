@@ -1,0 +1,16 @@
+{
+  "active_canonical_source_authority_created": false,
+  "candidate": 231,
+  "candidate_wrapper_objects_only": true,
+  "cross_route_substitution": 0,
+  "duplicates": 0,
+  "exact": true,
+  "exact317_dry_run_sha256": "884dec61cc33e13d12c439e202568c8e592650b82f98acca22b5eb0b4f4eaa82",
+  "field_pins_created": 0,
+  "raw": 86,
+  "schema": "FA1B2DE_CURRENT86_BINDING_R5_DRY_RUN_CONSERVATION_V1",
+  "source_auth_executed": false,
+  "status": "NON_AUTHORITATIVE_DRY_RUN_ONLY",
+  "targets_total": 317,
+  "union": "Exact317"
+}

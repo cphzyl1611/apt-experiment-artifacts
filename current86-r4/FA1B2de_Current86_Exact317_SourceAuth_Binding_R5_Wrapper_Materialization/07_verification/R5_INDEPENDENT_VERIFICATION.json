@@ -1,0 +1,33 @@
+{
+  "approved_specs_verified": [
+    "R4_WRAPPER_C0_60",
+    "R4_WRAPPER_RAW_LEGACY_26",
+    "R4_WRAPPER_SCORING_231"
+  ],
+  "authority_boundary": {
+    "active_source_auth_created": false,
+    "binding_publication": false,
+    "exec_r4_mutated": false,
+    "field_pins_created": 0,
+    "p0_executed": false,
+    "p1_executed": false,
+    "scoring_authority_mutated": false,
+    "source_auth_executed": false
+  },
+  "candidate": 231,
+  "cross_route_substitution": 0,
+  "dry_run_outputs_verified": {
+    "R4_WRAPPER_C0_60": 60,
+    "R4_WRAPPER_RAW_LEGACY_26": 26,
+    "R4_WRAPPER_SCORING_231": 231
+  },
+  "duplicates": 0,
+  "independent": true,
+  "materialized_checkpoints_verified": 3,
+  "materialized_manifests_verified": 3,
+  "raw": 86,
+  "schema": "FA1B2DE_CURRENT86_BINDING_R5_INDEPENDENT_VERIFICATION_V1",
+  "targets_total": 317,
+  "union": "Exact317",
+  "verification_status": "PASS"
+}

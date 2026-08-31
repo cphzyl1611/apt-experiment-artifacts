@@ -1,0 +1,17 @@
+{
+  "active_canonical_source_authority_created": false,
+  "approval_artifact": "01_approval/HUMAN_APPROVAL_AUTHENTICATION.json",
+  "binding_publication": false,
+  "candidate_target_total": 231,
+  "exact317_manifest": "/home/cph/fa1b2de-bso-a2-transition-r2-design-patch/FA1B2de_Current86_Exact317_SourceAuth_Execution_Contract_R4/00_lineage/EXACT317_TARGET_MANIFEST.json",
+  "exact317_manifest_sha256": "d8d55d369fe433bf7b93a3c332b8ac9a517a9146b28fa223370ff3ec946955ac",
+  "field_pins_created": 0,
+  "frozen_r4_package": "/home/cph/fa1b2de-bso-a2-transition-r2-design-patch/FA1B2de_Current86_Exact317_SourceAuth_Prospective_Canonical_Wrapper_Governance_R4",
+  "frozen_r4_sha256sums_sha256": "9aaa523bd7dce92bf865ee8283ddf61e339d6a804f90b264fa87e700dde2e2cd",
+  "human_origin": "USER_EXPLICIT_APPROVAL",
+  "raw_target_total": 86,
+  "schema": "FA1B2DE_CURRENT86_BINDING_R5_LINEAGE_PIN_V1",
+  "source_auth_executed": false,
+  "stage": "BINDING_R5_WRAPPER_MATERIALIZATION",
+  "target_total": 317
+}

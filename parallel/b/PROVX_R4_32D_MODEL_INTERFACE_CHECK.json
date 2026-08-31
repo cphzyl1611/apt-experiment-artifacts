@@ -1,0 +1,36 @@
+{
+  "stage": "PROVX-R4",
+  "status": "PASS_INTERFACE_ONLY",
+  "encoder_id": "provx-adapted-live-v1",
+  "encoder_dimension": 32,
+  "fixture": "PROVX_R4_GOLDEN_FIXTURES.jsonl",
+  "command": "PYTHONPATH=provx-r1/artifact provx-r1/venv_r1_cpu/bin/python -W error::UserWarning <untrained 32D forward check>",
+  "model": {
+    "class": "provx_usenix.detector.Detector",
+    "gnn_model": "GCNConv",
+    "input_feature_dim": 32,
+    "state_parameter_count": 47810,
+    "weights": "fresh random/untrained initialization",
+    "packaged_checkpoint_loaded": false,
+    "packaged_checkpoint_path": null
+  },
+  "input_tensors": {
+    "x": {"shape": [5, 32], "dtype": "torch.float32", "device": "cpu", "finite": true},
+    "edge_index": {"shape": [2, 9], "dtype": "torch.int64", "device": "cpu"},
+    "batch": {"shape": [5], "dtype": "torch.int64", "device": "cpu", "values": "all zeros"}
+  },
+  "forward_result": {
+    "logits_shape": [1, 2],
+    "logits_dtype": "torch.float32",
+    "logits_device": "cpu",
+    "finite": true
+  },
+  "scope_guard": {
+    "accuracy_reported": false,
+    "detection_result_reported": false,
+    "phase2_executed": false,
+    "formal_benchmark_executed": false,
+    "training_executed": false
+  },
+  "compatibility_result": "PASS for tensor/device/dtype interface only; this does not validate detector performance or packaged-checkpoint compatibility."
+}

@@ -1,0 +1,26 @@
+{
+  "stage": "PROVX-R4",
+  "fixture_id": "golden-fixture",
+  "fixture_path": "PROVX_R4_GOLDEN_FIXTURES.jsonl",
+  "fixture_sha256": "72aecfe3f79f2668010bcf338565ca04f3177aab41ae36826d8e6a6e3dd2aa4e",
+  "run_id": "golden-run",
+  "encoder_id": "provx-adapted-live-v1",
+  "encoder_sha256": "f27984513a39a004534f7bb409e3ff6410c48b442645656435c0534e64a15188",
+  "schema_sha256": "53caab007f9cea84e83a5fb92ddea0cb9082cb816d19752db896cc58c675f68a",
+  "expected_shape": {"x": [5, 32], "edge_index": [2, 9]},
+  "expected_normalization": {"input_edge_count": 10, "coalesced_edge_count": 9, "self_loop_columns": [3, 6]},
+  "hash_algorithm": "SHA-256",
+  "hashes": {
+    "implementation_sha256": "013d9b77297308843144ccfce4c3eec4b03dc3cc5172dabd6eb3320e7bc46547",
+    "schema_sha256": "53caab007f9cea84e83a5fb92ddea0cb9082cb816d19752db896cc58c675f68a",
+    "encoder_sha256": "f27984513a39a004534f7bb409e3ff6410c48b442645656435c0534e64a15188",
+    "x_bytes_sha256": "b6a49e514e78ce2e883a49d7d6cd9f31a79030416de108efb623db11b7088ba6",
+    "edge_index_bytes_sha256": "6fc7d733791b0b73669c0b685a7275e3a5e0db305f28b246fd394d3467c928eb",
+    "node_map_canonical_sha256": "f8a9b21bffeb2cb36e8b8d7838383fb2d5fdf122cfbe706348998f62c69a79b5",
+    "edge_map_canonical_sha256": "608fc6fd90edd37fedb7ab9afa00a0421e79732e00f67c052349e4c229e59f9d",
+    "normalization_map_canonical_sha256": "09e49def8e3593b8ac39aa186c8e0d62a2d075c161a12e1553efa1aa3e10bca1",
+    "run_manifest_canonical_sha256": "545c26f896761b608722c93ca57ea0e4e3f0b26423740c4981bcc773ca0f9110",
+    "canonical_output_sha256": "70b5830fdc0a50514e0d00e366d69d0a1350e2d95be8307c763e128425c17687"
+  },
+  "regeneration_requirement": "Two independent processes must reproduce every hash above exactly."
+}
