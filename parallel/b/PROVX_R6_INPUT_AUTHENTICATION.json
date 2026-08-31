@@ -1,0 +1,86 @@
+{
+  "stage": "PROVX-R6",
+  "status": "PASS_R5_INPUTS_AUTHENTICATED",
+  "purpose": "Authenticate the frozen R5 acquisition/split/leakage/search/release contracts and the R4 encoder identities before R6 governance; this record authorizes no acquisition or training.",
+  "prompt": {
+    "path": "Prompt_3_PROVX_R6_Corpus_Acquisition_Governance_and_Readiness.md",
+    "sha256": "eb35c6fee6a9bb29c945eef8741fb1053e60bd412e95c66ba9d567a8d792e270",
+    "hash_algorithm": "SHA-256"
+  },
+  "pinned_state": {
+    "track_l_encoder": "provx-adapted-live-v1",
+    "track_l_dimension": 32,
+    "staged_corpus_strategy": "FROZEN",
+    "split_protocol": "FROZEN",
+    "training_search_policy": "FROZEN",
+    "corpus_acquired": false,
+    "detector_trained": false,
+    "formal_experiment_executed": false
+  },
+  "r5_artifacts": [
+    {"path": "PROVX_R5_INPUT_AUTHENTICATION.json", "sha256": "fe66a7a580c744410dfbd5e4e90fb3d8cd268575dd388ecbfee409eaf7dff44a", "role": "R5 input and review-commit authentication"},
+    {"path": "PROVX_R5_STAGED_TRAINING_CORPUS_STRATEGY.json", "sha256": "e1ef236e49f8822777a97d21b7d0699f01f2bffe7c648f04b77d7888b5aa026a", "role": "local-first Stage A/B/C route"},
+    {"path": "PROVX_R5_OFFICIAL_CORPUS_SUBSET_ACQUISITION_DESIGN.json", "sha256": "241f33011006cd8fa9c6d38731d501ca4ac7ff762a881963fe91ec23afa1d013", "role": "bounded OpTC and TC E3 fallback design"},
+    {"path": "PROVX_R5_TRAIN_VALIDATION_SPLIT_CONTRACT.json", "sha256": "d779ac55012a5a2c1dedc573cc6c2a1478efdc98d44a5f751d4d2e8f04e797ad", "role": "pre-acquisition grouped split contract"},
+    {"path": "PROVX_R5_LABEL_LEAKAGE_AND_CONTAMINATION_CONTRACT.json", "sha256": "878cc54207d5c522c4c7b47d37d9a3a0760b6c4a999983d60bb8fb58db883c3c", "role": "label separation and contamination denial"},
+    {"path": "PROVX_R5_TRAINING_SEARCH_POLICY.json", "sha256": "5d81ea71e69152444b253fc9694443aa573cc6c28e222387336ba066a0e9db7e", "role": "finite detector search policy"},
+    {"path": "PROVX_R5_CORPUS_ACQUISITION_DECISION_PACKET.json", "sha256": "7c6d258da2fd6e817c7a5d95f728fb9ed3df57f1aa9ee33c7307c26d0d041b0d", "role": "human acquisition decision boundary"},
+    {"path": "PROVX_R5_TRAINING_RELEASE_GATES.json", "sha256": "674d4096dfef69ac16440ff427a888a095fc2f76893476b7ac9fc2b2224d99ac", "role": "separate acquisition/training/formal gates"},
+    {"path": "PROVX_R5_TRAINING_CORPUS_FREEZE_REPORT.md", "sha256": "0ff5675ccf01b0de457e1cbdebbcd18f6a5a362921d4dabe30b261d4de677faf", "role": "R5 terminal state and evidence report"}
+  ],
+  "r4_encoder_identities": [
+    {"path": "PROVX_R3_ADAPTED_LIVE_FEATURE_SCHEMA.json", "sha256": "53caab007f9cea84e83a5fb92ddea0cb9082cb816d19752db896cc58c675f68a", "role": "authenticated 32-column schema", "encoder_id": "provx-adapted-live-v1", "dimension": 32},
+    {"path": "PROVX_R4_ENCODER_IMPLEMENTATION.py", "sha256": "013d9b77297308843144ccfce4c3eec4b03dc3cc5172dabd6eb3320e7bc46547", "role": "pure encoder implementation"},
+    {"path": "PROVX_R4_ENCODER_TESTS.py", "sha256": "481d527b895a0e3ebd8059fc32db1a3dfe596d67be2a5196dfb8d83712d36daf", "role": "encoder tests"},
+    {"path": "PROVX_R4_GOLDEN_FIXTURES.jsonl", "sha256": "72aecfe3f79f2668010bcf338565ca04f3177aab41ae36826d8e6a6e3dd2aa4e", "role": "deterministic fixtures"},
+    {"path": "PROVX_R4_GOLDEN_TENSOR_HASHES.json", "sha256": "27b7aeb52f90ddb62240e72a558f2807eec2325813df3ec3fe581567caaa8c48", "role": "golden tensor hash manifest"},
+    {"path": "PROVX_R4_ENCODER_VERIFICATION.json", "sha256": "30b5f2655b950d7ecf8f18e5109471b9a015c49246eea219bbb3cae2039cf276", "role": "R4 verification and boundary attestation"},
+    {"path": "PROVX_R4_32D_MODEL_INTERFACE_CHECK.json", "sha256": "86c848a7047625be88aa8a4ec03cdc2e998db4bda992b0cbbb758e6dbdaca406", "role": "32D interface-only check"},
+    {"path": "PROVX_R4_TRAINING_CORPUS_PREFLIGHT.json", "sha256": "565563b0458dcae023f468dbe5d945e1830824c01dddb13bed8532655cbf33ef", "role": "candidate source feasibility"},
+    {"path": "PROVX_R4_TRAINING_PROTOCOL_DESIGN.json", "sha256": "ebd5f5cd042d7b0d9af0869a1cabc2c34030abc73d7577cb5edda5ea326c917e", "role": "pre-R5 training design"},
+    {"path": "PROVX_R4_ADAPTED_ENCODER_REPORT.md", "sha256": "42d8f0e6c989f254fead54f14e862543b6f39435b5550b5f48da56a5ff048e34", "role": "R4 report"}
+  ],
+  "r3_separation_and_seed_identity": [
+    {"path": "PROVX_R3_TRAIN_EVAL_SEPARATION_CONTRACT.json", "sha256": "7c2b0bf1c53dfa18adc8f1f5ef5a76d020a077baf48621842cbd15175ec60436", "role": "FA1B2de exclusion authority"},
+    {"path": "PROVX_R3_PHASE2_SEED_POLICY.json", "sha256": "ea00a2912c0f1c2b806a5201ea9b0f6f6d7a5e3bff65565a01ae06f411fd3f45", "role": "external Phase-II seed authority"}
+  ],
+  "pinned_review_authority": {
+    "repository": "https://github.com/cphzyl1611/apt-experiment-artifacts",
+    "commit": "ef9cc3cf7566cbe2280c29fcc1dde958cebf12d9",
+    "commit_url": "https://github.com/cphzyl1611/apt-experiment-artifacts/commit/ef9cc3cf7566cbe2280c29fcc1dde958cebf12d9",
+    "api_url": "https://api.github.com/repos/cphzyl1611/apt-experiment-artifacts/commits/ef9cc3cf7566cbe2280c29fcc1dde958cebf12d9",
+    "api_response_sha256": "3a269a89a2dd0694a7b7c1b66a750c90ddc472553315ad20e1b7c435c2e15dca",
+    "message": "R6",
+    "parent": "90513ab76a2d392398fefd0456ad53a4660a3e8a",
+    "author": "cphzyl1611",
+    "authored_at_utc": "2026-08-31T08:59:11Z",
+    "local_git_repository": false,
+    "interpretation": "Pinned commit is review authority only; the local workspace has no Git repository and no authority was mutated."
+  },
+  "review_commit_byte_comparison": {
+    "status": "PASS_ALL_R5_FILES_MATCH",
+    "method": "Read-only HTTPS retrieval of parallel/b R5 files at the pinned commit, SHA-256, and byte comparison.",
+    "remote_files": [
+      "PROVX_R5_INPUT_AUTHENTICATION.json",
+      "PROVX_R5_STAGED_TRAINING_CORPUS_STRATEGY.json",
+      "PROVX_R5_OFFICIAL_CORPUS_SUBSET_ACQUISITION_DESIGN.json",
+      "PROVX_R5_TRAIN_VALIDATION_SPLIT_CONTRACT.json",
+      "PROVX_R5_LABEL_LEAKAGE_AND_CONTAMINATION_CONTRACT.json",
+      "PROVX_R5_TRAINING_SEARCH_POLICY.json",
+      "PROVX_R5_CORPUS_ACQUISITION_DECISION_PACKET.json",
+      "PROVX_R5_TRAINING_RELEASE_GATES.json",
+      "PROVX_R5_TRAINING_CORPUS_FREEZE_REPORT.md"
+    ],
+    "all_local_bytes_match": true
+  },
+  "scope_attestation": {
+    "external_corpus_downloaded": false,
+    "provider_object_ids_known": false,
+    "provider_checksums_known": false,
+    "detector_trained": false,
+    "formal_experiment_executed": false,
+    "fa1b2de_actions_executed": false,
+    "packaged_21d_checkpoint_loaded_for_track_l": false,
+    "authority_mutated": false
+  }
+}

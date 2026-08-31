@@ -1,0 +1,170 @@
+{
+  "stage": "PROVX-R6",
+  "status": "SCHEMA_FROZEN_NOT_MATERIALIZED",
+  "schema_id": "provx-track-l-tc-e3-pre-acquisition-manifest-v1",
+  "source": {
+    "source_id": "official_tc_e3",
+    "dataset": "DARPA Transparent Computing Engagement 3",
+    "official_repository_url": "https://github.com/darpa-i2o/Transparent-Computing",
+    "official_data_url": "https://drive.google.com/open?id=1QlbUFWAGq3Hpl8wVdzOdIoZLFxkII4EK",
+    "revision": "master HEAD 244ae2401032ce92ac3b72f49b8039cae67d60d6",
+    "documentation_hashes": {
+      "README.md": "176c5fb6684f63718d8e169948711c87a1f51a5e852b0a1882e87301a192db43",
+      "README-E3.md": "441be7b5f8781efc48e22f671b3efe1fff380879390dd85788af46d95b77bbb1"
+    },
+    "terms_evidence": {
+      "release": "Official README-E3 states public domain/public release, as-is and without warranty; files are externally hosted due to size.",
+      "terms_recheck_required": true,
+      "preserve_files": ["README.md", "README-E3.md", "CDM18.avdl", "cdm.pdf", "ground_truth/tc_ground_truth_report_e3_update.pdf"]
+    }
+  },
+  "manifest_instance_schema": {
+    "required_fields": [
+      "schema_id",
+      "manifest_instance_id",
+      "created_at_utc",
+      "reviewer_authority",
+      "source_id",
+      "source_revision",
+      "official_data_url",
+      "selection_rule_id",
+      "selection_parameters",
+      "provider_objects",
+      "selected_groups",
+      "estimated_compressed_bytes",
+      "estimated_expanded_bytes",
+      "size_caps",
+      "terms_evidence_hashes",
+      "cdm_schema_identity",
+      "parser_identity",
+      "label_artifact",
+      "normalization_contract",
+      "checksum_contract",
+      "stop_condition_results"
+    ],
+    "pre_transfer_null_fields": [
+      "manifest_instance_id",
+      "created_at_utc",
+      "reviewer_authority",
+      "provider_objects[*].object_id",
+      "provider_objects[*].object_name",
+      "provider_objects[*].object_path",
+      "provider_objects[*].etag_or_revision",
+      "provider_objects[*].compressed_byte_length",
+      "provider_objects[*].provider_sha256",
+      "provider_objects[*].local_sha256",
+      "selected_groups",
+      "estimated_compressed_bytes",
+      "estimated_expanded_bytes",
+      "cdm_schema_identity.sha256",
+      "parser_identity.sha256"
+    ],
+    "unknown_identity_or_checksum_blocks_acquisition": true
+  },
+  "deterministic_selection": {
+    "selection_rule_id": "tc-e3-one-good-topic-performer-two-window-v1",
+    "candidate_unit": "performer + official good topic + engagement run + host + contiguous window start",
+    "official_good_topics_by_performer": {
+      "cadets": ["ta1-cadets-e3-official", "ta1-cadets-e3-official-1", "ta1-cadets-e3-official-2"],
+      "clearscope": ["ta1-clearscope-e3-official", "ta1-clearscope-e3-official-1", "ta1-clearscope-e3-official-2"],
+      "fivedirections": ["ta1-fivedirections-e3-official", "ta1-fivedirections-e3-official-2", "ta1-fivedirections-e3-official-3"],
+      "theia": ["ta1-theia-e3-official-1r", "ta1-theia-e3-official-3", "ta1-theia-e3-official-5m", "ta1-theia-e3-official-6r"],
+      "trace": ["ta1-trace-e3-official", "ta1-trace-e3-official-1"]
+    },
+    "topic_order": "Sort official good topic names by UTF-8 byte order and choose the first per performer; do not substitute an unlisted topic.",
+    "expected_selected_topics": {
+      "cadets": "ta1-cadets-e3-official",
+      "clearscope": "ta1-clearscope-e3-official",
+      "fivedirections": "ta1-fivedirections-e3-official",
+      "theia": "ta1-theia-e3-official-1r",
+      "trace": "ta1-trace-e3-official"
+    },
+    "window_rule": "For each selected topic, select the earliest complete contiguous 3600-second benign window and earliest complete contiguous 3600-second window intersecting a documented ground-truth activity interval; keep each performer/topic/host/run/window indivisible.",
+    "target_group_count": 10,
+    "group_boundary": "No Avro event, host, or overlapping window is split across partitions.",
+    "selection_failure": "Missing good topic, complete window, host/run identity, ground-truth alignment, or valid record causes a stop and REQUEST_SMALLER_OR_DIFFERENT_SUBSET."
+  },
+  "expected_provider_object_identity": {
+    "provider": "Five Directions Google Drive",
+    "expected_path_patterns": ["data/cadets/<topic>/", "data/clearscope/<topic>/", "data/fivedirections/<topic>/", "data/theia/<topic>/", "data/trace/<topic>/", "ground_truth/"],
+    "object_id": null,
+    "object_name": null,
+    "object_path": null,
+    "etag_or_revision": null,
+    "expected_identity_rule": "The acquisition operator must record provider object ID, exact path/name, provider revision/ETag if available, byte length, and topic/performer for every selected object and the ground-truth artifact. Nulls are intentional until a human-approved manifest is created.",
+    "null_identity_is_blocking": true
+  },
+  "checksum_and_size": {
+    "checksum_algorithm": "SHA-256",
+    "provider_sha256": null,
+    "local_sha256": null,
+    "manifest_sha256": null,
+    "extracted_file_sha256_list": null,
+    "checksum_method": "Hash exact provider bytes before decoding and every extracted Avro/JSON/PDF/schema file; hash canonical ordered manifest JSON with sorted keys/compact separators; retain provider IDs and byte lengths.",
+    "unknown_checksum_is_blocking": true,
+    "size_caps": {
+      "compressed_transfer_gib_max": 10,
+      "expanded_storage_gib_max": 30,
+      "estimated_compressed_bytes": null,
+      "estimated_expanded_bytes": null,
+      "target_group_count": 10,
+      "overflow_action": "Stop transfer and request a smaller/different subset; no silent truncation."
+    }
+  },
+  "cdm_and_parser_expectations": {
+    "cdm_schema_identity": {"path": "CDM18.avdl", "sha256": null, "required_before_decode": true},
+    "parser_identity": {"implementation": null, "version": null, "sha256": null, "required_before_decode": true},
+    "schema": "Decode the official Avro/CDM records with the pinned schema/parser identity and preserve performer/topic/source IDs in metadata only.",
+    "label_artifact": "ground_truth/tc_ground_truth_report_e3_update.pdf",
+    "label_artifact_provider_object_id": null
+  },
+  "label_expectations": {
+    "availability": "Expected from official E3 ground-truth/ACT documentation; exact provider object identity and checksum are unknown until approved manifesting.",
+    "roles": {
+      "benign_window": "background/negative",
+      "ground_truth_overlap_window": "positive only where independent ground-truth alignment says so; remaining background is not relabeled by proximity",
+      "calibration": "groups assigned by the frozen R5 hash split, never formal material"
+    },
+    "label_quality_gate": "Every positive label cites the ground-truth artifact/interval, performer/topic/host/run, source record identity, and alignment method; ambiguous or incomplete joins quarantine the entire group.",
+    "encoder_boundary": "No ground-truth field, ACT annotation, topic/performer ID, engagement schedule, action identity, or outcome enters x."
+  },
+  "normalization_contract": {
+    "encoder_id": "provx-adapted-live-v1",
+    "encoder_dimension": 32,
+    "schema_sha256": "53caab007f9cea84e83a5fb92ddea0cb9082cb816d19752db896cc58c675f68a",
+    "rules": [
+      "Map process, file, socket/system-component entities and causal interactions into the R3 canonical entity/event contract.",
+      "Version each performer-specific mapping and retain unknown/invalid counters; never silently coerce invalid Avro/CDM records.",
+      "Normalize timestamps to UTC epoch milliseconds and persist deterministic node_map, edge_map, and normalization_map.",
+      "De-identify host/path/user identifiers before split assignment; source IDs, topic IDs, and mapping keys are metadata only.",
+      "Ground-truth joins occur after feature construction or in a separate target channel; they cannot influence x.",
+      "Persist raw/normalized/graph/feature hashes and finite x [N,32]/edge_index [2,E] checks."
+    ],
+    "hash_chain_required": ["raw_sha256", "normalized_sha256", "graph_sha256", "feature_sha256", "x_sha256", "edge_index_sha256"]
+  },
+  "stop_conditions": [
+    "human acquisition approval is absent",
+    "any provider object ID, exact path, schema/parser identity, or checksum remains null at transfer/decode time",
+    "a selected topic is not on the official good-topic list",
+    "selection criteria cannot be satisfied without post-hoc relaxation",
+    "per-object/extracted checksum mismatch or partial transfer",
+    "10 GiB compressed or 30 GiB expanded cap is exceeded",
+    "ground-truth alignment is missing or ambiguous",
+    "CDM schema/parser cannot be pinned and reproduced",
+    "FA1B2de/1796-action overlap or Track O metadata is detected",
+    "normalization cannot produce finite 32D features with complete audit counters"
+  ],
+  "acquisition_state": {
+    "provider_objects_materialized": false,
+    "provider_checksums_materialized": false,
+    "manifest_instance_created": false,
+    "cdm_schema_authenticated": false,
+    "parser_authenticated": false,
+    "human_approval": false,
+    "data_downloaded": false,
+    "data_acquired": false,
+    "detector_training_authorized": false,
+    "detector_trained": false,
+    "formal_experiment_executed": false
+  }
+}

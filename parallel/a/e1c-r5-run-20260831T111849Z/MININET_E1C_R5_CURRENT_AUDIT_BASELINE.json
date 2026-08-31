@@ -1,0 +1,11 @@
+{
+  "schema": "MININET_E1C_R5_CURRENT_AUDIT_BASELINE_V1",
+  "captured_at_utc": "2026-08-31T11:43:00Z",
+  "status": "CLEAN_NO_RULES",
+  "basis": "pinned R4 post-cleanup evidence plus no R5 privileged/audit mutation during preparation",
+  "historical_rule_dump_sha256": "61501e69a61dbbc1a41605ea15c34807e6b1d3992bee195dde36a7ebdd95dd87",
+  "pinned_r4_post_cleanup": "/home/cph/experiment-parallel/e0-a/e1c-r4-run-20260831T105503Z/MININET_E1C_R4_POST_CLEANUP.json",
+  "root_start_reverification_required": true,
+  "nonroot_direct_auditctl_probe": "not_authoritative (auditctl requires root)",
+  "fail_closed_if_root_reverification_differs": true
+}

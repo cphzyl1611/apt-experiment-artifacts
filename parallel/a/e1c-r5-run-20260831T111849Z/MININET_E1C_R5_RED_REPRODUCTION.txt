@@ -1,0 +1,10 @@
+R4 early-child-failure RED reproduction
+========================================
+Pinned source: e1c-r4-run-20260831T105503Z/mininet_e1c_r4_delete_argv_fixed_smoke.py
+Synthetic child stdout: {"event":"FINISHED","logical_host_id":"h2"}
+Observed parent exception:
+RuntimeError: h2 emitted FINISHED before READY
+
+The reproduction confirms that R4 discarded stderr, stdout history, return
+code, liveness, stage, and timestamp. The R5 parent reader now persists those
+fields before raising ChildProtocolError. The corresponding R5 test passes.

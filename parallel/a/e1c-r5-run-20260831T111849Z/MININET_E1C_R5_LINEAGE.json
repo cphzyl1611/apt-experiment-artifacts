@@ -1,0 +1,35 @@
+{
+  "schema": "MININET_E1C_R5_LINEAGE_V1",
+  "created_at_utc": "2026-08-31T11:38:20Z",
+  "run_id": "e1c-r5-run-20260831T111849Z",
+  "pinned_review_commit": "64854aeb8ad688b4423d600193fa6be5c2cbc390",
+  "prior_run": {
+    "run_id": "e1c-r4-run-20260831T105503Z",
+    "harness": "/home/cph/experiment-parallel/e0-a/e1c-r4-run-20260831T105503Z/mininet_e1c_r4_delete_argv_fixed_smoke.py",
+    "privileged_result": "/home/cph/experiment-parallel/e0-a/e1c-r4-run-20260831T105503Z/MININET_E1C_R4_PRIVILEGED_RUN_RESULT.json",
+    "verdict": "BLOCKED",
+    "runtime_error": "h2 emitted FINISHED before READY",
+    "exact_exception": "NOT_RECOVERABLE_FROM_R4_EVIDENCE",
+    "raw_audit_bytes": 0,
+    "normalized_event_bytes": 0,
+    "pid_netns_join_bytes": 0,
+    "pcap_sha256": "704e5e5b3234433c01fcfd1b20a306e77e985038120492dc53965c3edd38a4ea",
+    "baseline_restored_after": true
+  },
+  "r5": {
+    "harness": "/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/mininet_e1c_r5_child_bootstrap_hardened_smoke.py",
+    "harness_sha256": "54e861e5c3a0b640c80da22a2fab4495b88d1321ed726372c0fd3a98cfa6902a",
+    "tests": "/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/test_e1c_r5_harness.py",
+    "tests_sha256": "44627fe1561e90df781d5e462370d9c56ac3a05be5421c022ac1aaa094b56857",
+    "status": "PREPARED_UNPRIVILEGED_ONLY",
+    "formal_experiment_executed": false
+  },
+  "boundaries": {
+    "no_privileged_execution": true,
+    "no_audit_rule_mutation": true,
+    "no_mn_cleanup": true,
+    "no_external_nat": true,
+    "no_apt": true,
+    "no_provx": true
+  }
+}

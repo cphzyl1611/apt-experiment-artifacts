@@ -1,0 +1,76 @@
+{
+  "stage": "PROVX-R6",
+  "status": "FROZEN_OPTIONS_NOT_SELECTED",
+  "options_contract_id": "provx-track-l-stage-c-options-v1",
+  "scope": "Positive/adversary Track-L training source alternatives. No option is approved, acquired, executed, or used to authorize detector training in R6.",
+  "shared_requirements": {
+    "formal_exclusion": "FA1B2de, its 53 playbooks, 1796 raw actions, labels, outcomes, and copied action sequences are prohibited.",
+    "label_boundary": "Positive labels remain source/run/scenario manifest metadata and supervised targets; labels, action identity, playbook identity, and analyst annotations never enter the encoder.",
+    "split_boundary": "Whole host/run/scenario groups only under PROVX_R5_TRAIN_VALIDATION_SPLIT_CONTRACT.json; no event-level random splitting.",
+    "feature_contract": "Raw records must normalize to finite x [N,32] and edge_index [2,E] under provx-adapted-live-v1, with raw→normalized→graph→feature hashes.",
+    "release_boundary": "Acquisition approval is not training authorization; source integrity, split, contamination, class-count, encoder, and separate training gates remain required."
+  },
+  "alternatives": [
+    {
+      "option_id": "OPTION_A_AUTHORIZED_NON_FA1B2DE_EMULATION",
+      "source": "Separately authorized, isolated, non-formal adversary emulation using the same collector as Stage B.",
+      "scientific_value": "Highest local causal compatibility: controlled positive labels, known scenario boundaries, and direct coverage of process/file/socket provenance in the Track-L live schema.",
+      "preprocessing_storage_burden": "MEDIUM-HIGH: scenario orchestration, collector completeness, causal linking, raw/graph/feature hash chains, isolation evidence, and retention; storage is bounded by a predeclared run/window cap.",
+      "label_quality": "HIGH if action-to-record alignment and scenario manifests are complete; quality must be audited and unsuccessful/incomplete scenarios are quarantined rather than relabeled.",
+      "leakage_risk": ["scenario/tool signatures", "shared hosts or run IDs across partitions", "literal action names or IDs entering command/path fields", "post-hoc selection of successful scenarios"],
+      "compatibility_risk": "LOW-MEDIUM when the same collector and adapter are used; residual risk is collector loss, identity reconciliation, and causal-edge completeness.",
+      "mininet_dependency": "REQUIRES Stage-A E1C before live-route readiness/promotion, but emulation data cannot be admitted until its own authorization, safety, and compatibility gates pass.",
+      "selection_rule": "At least 12 whole scenario/host/run groups spanning credential_or_secret_access, discovery_and_enumeration, persistence_or_execution, and collection_or_network_activity; use fresh isolated hosts and fixed group IDs.",
+      "current_state": "NOT_AUTHORIZED_NOT_ACQUIRED"
+    },
+    {
+      "option_id": "OPTION_B_BOUNDED_OPTC_SUBSET",
+      "source": "Official FiveDirections OpTC data and red-team ground truth under PROVX_R5_OFFICIAL_CORPUS_SUBSET_ACQUISITION_DESIGN.json.",
+      "scientific_value": "High ecological validity and large-scale benign/positive background, with official red-team ground truth and endpoint eCAR semantics.",
+      "preprocessing_storage_burden": "HIGH: approximately terabyte-scale source, bounded object selection, eCAR normalization, errata handling, de-identification, causal graph construction, and storage ceilings of 20 GiB compressed/50 GiB expanded for the proposed subset.",
+      "label_quality": "MEDIUM-HIGH: official red-team ground truth is available, but alignment to 3600-second windows and object-level records requires an auditable join; unaligned background remains background.",
+      "leakage_risk": ["continuous benign traffic during red-team activity", "shared background and duplicate process objects", "host/day/time artifacts", "ground-truth fields entering features"],
+      "compatibility_risk": "MEDIUM-HIGH: eCAR is only partially compatible; source-specific identity/causal-edge rules and the adapted 32D mapping require versioned normalization.",
+      "mininet_dependency": "No Mininet data dependency for source acquisition, but Stage-A E1C remains a separate Track-L live readiness dependency and official records must pass the same adapter compatibility checks.",
+      "selection_rule": "Use the frozen eight-host, two-benign-day plus one ground-truth-overlap-day, earliest passing 3600-second window rule; target 24 groups and stop if eligibility or caps fail.",
+      "current_state": "NOT_APPROVED_NOT_ACQUIRED"
+    },
+    {
+      "option_id": "OPTION_C_BOUNDED_TC_E3_SUBSET",
+      "source": "Official DARPA Transparent Computing Engagement #3 release under PROVX_R5_OFFICIAL_CORPUS_SUBSET_ACQUISITION_DESIGN.json.",
+      "scientific_value": "High provenance diversity across five TA1 performers and engagement-level adversary/background activity with documented good topics and ground truth.",
+      "preprocessing_storage_burden": "HIGH: external files, Avro/CDM decoding, performer-specific normalization, causal linking, timestamp/identity reconciliation, ground-truth alignment, and storage ceilings of 10 GiB compressed/30 GiB expanded for the proposed subset.",
+      "label_quality": "MEDIUM-HIGH: engagement ground truth and ACT annotations are documented, but performer/topic alignment and incomplete/invalid records require strict manifests.",
+      "leakage_risk": ["performer-specific artifacts", "shared background and hub duplication", "topic/engagement identifiers", "ground-truth annotations entering features"],
+      "compatibility_risk": "HIGH: CDM-to-R3 entity/event mapping, parser/schema pinning, and causal graph construction are not supplied by ProvX and must be independently versioned.",
+      "mininet_dependency": "No Mininet data dependency for source acquisition, but Stage-A E1C remains a separate live readiness dependency and the same 32D compatibility audit is mandatory.",
+      "selection_rule": "Use the first UTF-8-sorted good topic for each of cadets, clearscope, fivedirections, theia, and trace; select one earliest complete benign and one earliest ground-truth-overlap 3600-second window per topic; target 10 groups.",
+      "current_state": "NOT_APPROVED_NOT_ACQUIRED"
+    },
+    {
+      "option_id": "OPTION_D_COMBINATION_WITH_FIXED_CAPS",
+      "source": "Option A plus at most one bounded official fallback (Option B or C), with every source retaining separate manifests and group identities.",
+      "scientific_value": "Broadest coverage: local causal compatibility plus either large-scale endpoint diversity (OpTC) or multi-performer provenance diversity (TC E3). Supports a predeclared robustness/diversity comparison.",
+      "preprocessing_storage_burden": "HIGHEST: all Option-A burden plus one official-source normalization path; combined hard cap is 20 GiB compressed/50 GiB expanded for OpTC combination or 10 GiB compressed/30 GiB expanded for TC E3 combination, with no silent overflow.",
+      "label_quality": "Mixed and source-specific: Option A can be high-quality controlled labels; official labels are medium-high only after independent alignment. Source label provenance must remain distinguishable.",
+      "leakage_risk": ["cross-source identifier or tooling artifacts", "source-specific class priors", "shared background across local and official groups", "selection based on preliminary metrics"],
+      "compatibility_risk": "MEDIUM-HIGH: local source may be direct-compatible while official source remains partial/high-burden; a single frozen adapter contract and per-source normalization versions are required.",
+      "mininet_dependency": "Stage-A E1C is required for Track-L live readiness; Option A itself also requires isolated emulation authorization. Official fallback does not remove either dependency.",
+      "selection_rule": "Admit Option A's 12 scenario groups plus exactly one official design (Option B's 24 groups or Option C's 10 groups) under fixed caps, source-stratified group hashing, and no cross-source group merging.",
+      "current_state": "NOT_APPROVED_NOT_ACQUIRED"
+    }
+  ],
+  "comparison_authority": {
+    "default_preference": "OPTION_A_AUTHORIZED_NON_FA1B2DE_EMULATION",
+    "reason": "It maximizes schema/collector compatibility and keeps acquisition bounded, subject to separate authorization and E1C readiness.",
+    "fallback_rule": "If Option A cannot meet class diversity or coverage without unsafe execution, a human may select Option B, Option C, or Option D only by recording an exact scope and accepting its source-specific burden.",
+    "no_metric_selection": "No option may be chosen using formal FA1B2de outcomes or unregistered detector metrics."
+  },
+  "state": {
+    "option_selected": null,
+    "human_approval": false,
+    "corpus_acquired": false,
+    "detector_trained": false,
+    "formal_experiment_executed": false
+  }
+}

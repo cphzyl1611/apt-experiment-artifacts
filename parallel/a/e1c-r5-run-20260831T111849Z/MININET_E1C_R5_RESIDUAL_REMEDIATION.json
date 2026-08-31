@@ -1,0 +1,11 @@
+{
+  "schema": "MININET_E1C_R5_RESIDUAL_REMEDIATION_V1",
+  "run_id": "e1c-r5-run-20260831T111849Z",
+  "status": "DEFERRED_TO_ROOT_PREFLIGHT",
+  "root_policy": "require clean historical baseline; fail closed on any non-empty rule set",
+  "legacy_cleanup_performed": false,
+  "old_run_residual_rules_found": 0,
+  "old_run_residual_rules_removed": 0,
+  "historical_empty_baseline_hash": "61501e69a61dbbc1a41605ea15c34807e6b1d3992bee195dde36a7ebdd95dd87",
+  "no_audit_mutation_during_preparation": true
+}

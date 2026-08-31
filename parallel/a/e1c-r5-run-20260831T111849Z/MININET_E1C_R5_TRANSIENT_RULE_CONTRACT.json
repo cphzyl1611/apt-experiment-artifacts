@@ -1,0 +1,13 @@
+{
+  "schema": "MININET_E1C_R5_TRANSIENT_RULE_CONTRACT_V1",
+  "run_id": "e1c-r5-run-20260831T111849Z",
+  "status": "NOT_STARTED_UNTIL_PRIVILEGED_RUN",
+  "audit_key_prefix": "e1c5",
+  "probe_key_prefix": "e1c5probe",
+  "scope": "per-syscall, per-child PID and PPID, bounded temp-event dir",
+  "required_classes": ["PROCESS_START_OR_EXEC", "PROCESS_EXIT", "FILE_CREATE_OR_OPEN", "FILE_READ_OR_WRITE", "FILE_DELETE", "SOCKET_BIND", "SOCKET_CONNECT", "SOCKET_ACCEPT"],
+  "support_probe": "each candidate syscall is added and exactly deleted before topology start",
+  "cleanup": "delete only exact recorded successful R5/probe argv; no auditctl -D",
+  "persistent_rules_files_modified": false,
+  "formal_experiment_executed": false
+}

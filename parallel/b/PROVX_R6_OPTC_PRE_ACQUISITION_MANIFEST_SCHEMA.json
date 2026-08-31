@@ -1,0 +1,148 @@
+{
+  "stage": "PROVX-R6",
+  "status": "SCHEMA_FROZEN_NOT_MATERIALIZED",
+  "schema_id": "provx-track-l-optc-pre-acquisition-manifest-v1",
+  "source": {
+    "source_id": "official_optc",
+    "dataset": "Operationally Transparent Cyber (OpTC)",
+    "official_repository_url": "https://github.com/FiveDirections/OpTC-data",
+    "official_data_url": "https://drive.google.com/drive/u/0/folders/1n3kkS3KR31KUegn42yk3-e6JkZvf0Caa",
+    "revision": "master HEAD 5b108604f11f767aa11ea79ff827595f3fad15fd",
+    "documentation_hashes": {
+      "README.md": "bbbeca5d5a861ffc765a6d42ddd19cb84acb93861226b4b93887bb950e121074",
+      "ecar.md": "1df4539c49963cc49b783580033fe1ec68bbae684abf29da83c47b5d26d16b",
+      "errata.md": "4044970eae0db4f67055fa2c0e5bb99824628c13d991fcef01dcc5ec06e8d062"
+    },
+    "terms_evidence": {
+      "release": "Official README states public domain, Distribution A approved for public release/distribution unlimited, as-is and without warranty.",
+      "terms_recheck_required": true,
+      "preserve_files": ["README.md", "ecar.md", "errata.md", "OpTCRedTeamGroundTruth.pdf"]
+    }
+  },
+  "manifest_instance_schema": {
+    "required_fields": [
+      "schema_id",
+      "manifest_instance_id",
+      "created_at_utc",
+      "reviewer_authority",
+      "source_id",
+      "source_revision",
+      "official_data_url",
+      "selection_rule_id",
+      "selection_parameters",
+      "provider_objects",
+      "selected_groups",
+      "estimated_compressed_bytes",
+      "estimated_expanded_bytes",
+      "size_caps",
+      "terms_evidence_hashes",
+      "label_artifact",
+      "normalization_contract",
+      "checksum_contract",
+      "stop_condition_results"
+    ],
+    "pre_transfer_null_fields": [
+      "manifest_instance_id",
+      "created_at_utc",
+      "reviewer_authority",
+      "provider_objects[*].object_id",
+      "provider_objects[*].object_name",
+      "provider_objects[*].object_path",
+      "provider_objects[*].etag_or_revision",
+      "provider_objects[*].compressed_byte_length",
+      "provider_objects[*].provider_sha256",
+      "provider_objects[*].local_sha256",
+      "selected_groups",
+      "estimated_compressed_bytes",
+      "estimated_expanded_bytes"
+    ],
+    "unknown_identity_or_checksum_blocks_acquisition": true
+  },
+  "deterministic_selection": {
+    "selection_rule_id": "optc-eight-host-three-window-v1",
+    "candidate_unit": "canonical provider hostname + UTC calendar day + source run/file + contiguous window start",
+    "eligibility": "Host has at least two complete benign-only UTC days before red-team activity and at least one complete day intersecting a documented red-team interval; selected files pass pinned errata and process/file/socket coverage checks.",
+    "host_order": "Sort original provider hostname bytes in UTF-8 order before keyed de-identification; choose first 8 eligible hosts. Persist de-identification mapping hash in the materialized manifest.",
+    "day_order": "For each host, choose two earliest complete benign-only days and the earliest complete ground-truth-overlap day.",
+    "window_rule": "Within each host/day/run, choose the earliest contiguous 3600-second UTC window passing the record-count/loss audit; overlap day must intersect at least one independent ground-truth interval.",
+    "target_group_count": 24,
+    "group_boundary": "Each selected host/day/run/window is one indivisible group. Do not split events, process objects, or overlapping windows across partitions.",
+    "selection_failure": "Fewer than 8 eligible hosts, incomplete windows, missing ground truth, or failed errata/coverage blocks acquisition and invokes REQUEST_SMALLER_OR_DIFFERENT_SUBSET."
+  },
+  "expected_provider_object_identity": {
+    "provider": "Google Drive",
+    "expected_folder_patterns": ["ecar/", "ecar-bro/", "bro/"],
+    "object_id": null,
+    "object_name": null,
+    "object_path": null,
+    "etag_or_revision": null,
+    "expected_identity_rule": "The acquisition operator must record the provider object ID, exact filename/path, provider revision/ETag if available, byte length, and source folder for every selected file. Nulls are intentional until a human-approved manifest is created.",
+    "null_identity_is_blocking": true
+  },
+  "checksum_and_size": {
+    "checksum_algorithm": "SHA-256",
+    "provider_sha256": null,
+    "local_sha256": null,
+    "manifest_sha256": null,
+    "extracted_file_sha256_list": null,
+    "checksum_method": "Hash exact provider bytes before decompression and again every extracted file; hash canonical ordered manifest JSON with sorted keys/compact separators; retain byte lengths and provider object IDs.",
+    "unknown_checksum_is_blocking": true,
+    "size_caps": {
+      "compressed_transfer_gib_max": 20,
+      "expanded_storage_gib_max": 50,
+      "estimated_compressed_bytes": null,
+      "estimated_expanded_bytes": null,
+      "target_group_count": 24,
+      "overflow_action": "Stop transfer and request a smaller/different subset; no silent truncation."
+    }
+  },
+  "label_expectations": {
+    "ground_truth_artifact": "OpTCRedTeamGroundTruth.pdf and official red-team documentation",
+    "ground_truth_provider_object_id": null,
+    "availability": "Expected from official release documentation; exact provider object identity and checksum are unknown until approved manifesting.",
+    "roles": {
+      "two_benign_windows_per_host": "negative/background",
+      "ground_truth_overlap_window": "positive only for records independently aligned to the documented red-team interval; unaligned background remains negative",
+      "calibration": "groups assigned by the frozen R5 hash split, never formal material"
+    },
+    "label_quality_gate": "Every positive label must cite a ground-truth artifact/page or interval, source record identity, and alignment method; missing or ambiguous alignment quarantines the group.",
+    "encoder_boundary": "No label, ground-truth field, red-team interval, host name, run ID, action identity, or outcome enters x."
+  },
+  "normalization_contract": {
+    "encoder_id": "provx-adapted-live-v1",
+    "encoder_dimension": 32,
+    "schema_sha256": "53caab007f9cea84e83a5fb92ddea0cb9082cb816d19752db896cc58c675f68a",
+    "input_fields": ["timestamp_ms", "id", "hostname", "objectID", "object", "action", "actorID", "pid", "tid", "principal", "properties"],
+    "rules": [
+      "Apply pinned OpTC errata before record admission.",
+      "Canonicalize event/action tokens into the R3 event classes; unknown tokens map to other and are counted.",
+      "Construct process/file/socket entities and causal edges only from collector-visible actor/object relationships.",
+      "Normalize timestamp_ms to UTC epoch milliseconds and preserve deterministic node/edge ordering.",
+      "De-identify host/path/user values before split assignment; mapping key and source IDs are metadata only.",
+      "Persist rejected records, duplicate coalescing, node_map, edge_map, normalization_map, raw keys, and finite-tensor checks."
+    ],
+    "hash_chain_required": ["raw_sha256", "normalized_sha256", "graph_sha256", "feature_sha256", "x_sha256", "edge_index_sha256"]
+  },
+  "stop_conditions": [
+    "human acquisition approval is absent",
+    "any provider object ID, exact path, or checksum remains null at transfer time",
+    "selection criteria cannot be satisfied without post-hoc relaxation",
+    "per-object/extracted checksum mismatch or partial transfer",
+    "20 GiB compressed or 50 GiB expanded cap is exceeded",
+    "ground-truth alignment is missing or ambiguous",
+    "pinned errata, source revision, or terms cannot be verified",
+    "FA1B2de/1796-action overlap or Track O evaluation metadata is detected",
+    "normalization cannot produce finite 32D features with complete audit counters"
+  ],
+  "acquisition_state": {
+    "provider_objects_materialized": false,
+    "provider_checksums_materialized": false,
+    "manifest_instance_created": false,
+    "human_approval": false,
+    "data_downloaded": false,
+    "data_acquired": false,
+    "detector_training_authorized": false,
+    "detector_trained": false,
+    "formal_experiment_executed": false
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "stage": "PROVX-R6",
+  "status": "PENDING_HUMAN_APPROVAL",
+  "packet_id": "provx-track-l-r6-acquisition-decision-v1",
+  "decision_authority": "A human reviewer must choose exactly one allowed acquisition decision and name the approved scope. R6 records no approval.",
+  "allowed_decisions": [
+    "APPROVE_BOUNDED_TRAINING_CORPUS_ACQUISITION",
+    "REJECT_CORPUS_ROUTE",
+    "REQUEST_SMALLER_OR_DIFFERENT_SUBSET"
+  ],
+  "recommendation_for_review": {
+    "recommended_choice": "APPROVE_BOUNDED_TRAINING_CORPUS_ACQUISITION",
+    "scope": "Begin with Stage B controlled benign generation and, only after written safety authorization, Option A non-FA1B2de emulation. Use Option B/C/D only if a later scope explicitly names the bounded manifest schema and caps.",
+    "reason": "Local collector/encoder compatibility and bounded group identities are strongest for Stage B/A; official sources remain high-burden fallbacks with unknown provider objects/checksums.",
+    "not_an_approval": true
+  },
+  "scope_to_be_completed_by_reviewer": {
+    "stage_b_generation_contract": "PROVX_R6_STAGE_B_BENIGN_GENERATION_CONTRACT.json",
+    "stage_c_option_id": null,
+    "official_manifest_schema_id": null,
+    "provider_object_ids": null,
+    "provider_sha256_values": null,
+    "compressed_and_expanded_caps": null,
+    "target_group_count": null,
+    "source_revisions": null,
+    "authorization_and_retention_reference": null
+  },
+  "review_checklist": [
+    "Confirm Stage A remains WAIT_MININET_E1C and smoke-only.",
+    "Confirm Stage B has written local authorization, 24 whole groups, fixed seeds/durations, coverage, loss threshold, and reproducible hash chain.",
+    "Select at most one Stage-C option or a fixed-cap combination and record exact scope; do not use formal outcomes to choose.",
+    "For OpTC/TC E3, require provider object IDs, exact paths, byte lengths, and SHA-256 values before transfer; null identity/checksum blocks acquisition.",
+    "Confirm FA1B2de 53 playbooks/1796 actions remain excluded from training, tuning, calibration, fixtures, and seed decisions.",
+    "Confirm acquisition approval is separate from any detector training authorization."
+  ],
+  "post_decision_sequence": {
+    "approve": [
+      "Materialize the named pre-acquisition manifest with all provider identities/checksums no longer null.",
+      "Verify source terms/authorization and transfer/storage caps.",
+      "Acquire only the approved bounded scope; verify raw and extracted hashes.",
+      "Run split, leakage/contamination, class-count, and 32D encoder compatibility gates.",
+      "Request a separate training release decision; do not train automatically."
+    ],
+    "reject": ["Acquire nothing; keep Track O reproduction and R6 design only; mark Track-L acquisition blocked."],
+    "request_smaller_or_different_subset": ["Create a new versioned scope and manifest schema decision; current null decision remains unchanged and no transfer occurs."]
+  },
+  "separation_assertion": {
+    "acquisition_approval_implies_training": false,
+    "acquisition_approval_implies_formal_evaluation": false,
+    "training_requires_separate_human_gate": true,
+    "formal_evaluation_requires_new_authenticated_32d_checkpoint": true
+  },
+  "approval_record": {
+    "decision": null,
+    "scope": null,
+    "reviewer": null,
+    "reviewed_at_utc": null,
+    "signature_or_authority_reference": null
+  },
+  "state": {
+    "human_approval_performed": false,
+    "provider_manifest_materialized": false,
+    "provider_object_ids_known": false,
+    "provider_checksums_known": false,
+    "corpus_acquired": false,
+    "detector_training_authorized": false,
+    "detector_trained": false,
+    "formal_experiment_executed": false,
+    "stop_until_human_decision": true
+  }
+}

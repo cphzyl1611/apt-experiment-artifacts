@@ -1,0 +1,77 @@
+{
+  "stage": "PROVX-R6",
+  "status": "WAIT_MININET_E1C",
+  "contract_id": "provx-track-l-stage-a-local-validation-v1",
+  "purpose": "Define the non-scored adapter/collector round-trip prerequisite without treating it as detector evidence.",
+  "dependency": {
+    "required_before": ["Track-L live route claim", "Stage-A promotion beyond smoke validation", "final encoder compatibility release", "formal evaluation"],
+    "gate_name": "Mininet E1C",
+    "current_state": "No authenticated E1C PASS manifest is present in the workspace; dependency remains waiting.",
+    "status_value": "WAIT_MININET_E1C",
+    "evidence_sources": [
+      {"path": "EXP_E0_B_PROVX_MININET_INTEGRATION_GAP.md", "sha256": "3e01d0297176bd8692da41fa0240490ed2a81ecfbb3ef31fa11a685d69b749b2", "role": "documented live integration gap and non-scored smoke requirement"},
+      {"path": "PROVX_R5_STAGED_TRAINING_CORPUS_STRATEGY.json", "sha256": "e1ef236e49f8822777a97d21b7d0699f01f2bffe7c648f04b77d7888b5aa026a", "role": "frozen Stage A smoke-only boundary"}
+    ]
+  },
+  "allowed_inputs": [
+    "reserved non-scored Mininet traces",
+    "synthetic benign process/file/socket events",
+    "collector timestamps and stable IDs",
+    "adapter configuration and versioned normalization contract"
+  ],
+  "forbidden_inputs": [
+    "FA1B2de playbooks, labels, outcomes, or raw actions",
+    "the 1796-action benchmark",
+    "packaged 21D checkpoint or opaque Sample features as live inputs",
+    "analyst-selected formal alerts",
+    "host-enforcement commands"
+  ],
+  "smoke_protocol": {
+    "environment": "isolated Mininet/controlled-host network with no production connectivity and reversible local state",
+    "collection": "Enable auditd or an equivalent collector using a pinned configuration; capture collector counters, dropped records, timestamps, and raw bytes.",
+    "trace_content": "Benign-only process lifecycle, file read/write, and socket client/server activity; synthetic records may be used to exercise unknown/missing branches.",
+    "round_trip": [
+      "raw collector bytes",
+      "canonical normalized records",
+      "deterministically ordered graph/node/edge maps",
+      "provx-adapted-live-v1 x [N,32] float32 and edge_index [2,E] int64",
+      "output envelope containing hashes and reversible raw-key references"
+    ],
+    "required_run_manifest": ["run_id", "host_id", "collector_config_sha256", "adapter/schema/implementation hashes", "raw_hash", "normalized_hash", "graph_hash", "x_sha256", "edge_index_sha256", "loss_counters", "unknown_counters", "environment_identity", "authorization"],
+    "acceptance_thresholds": {
+      "collector_loss_fraction_max": 0.01,
+      "invalid_record_fraction_max": 0.02,
+      "timestamp_order_errors": 0,
+      "nonfinite_feature_rows": 0,
+      "hash_chain_breaks": 0,
+      "required_entity_classes": ["process", "file", "socket"],
+      "required_event_classes": ["create", "read_open", "write", "execute", "connect_send", "close_delete", "other"]
+    }
+  },
+  "release_boundaries": {
+    "stage_a_is_smoke_only": true,
+    "detector_training": false,
+    "detector_tuning": false,
+    "calibration": false,
+    "formal_evaluation": false,
+    "promotion_rule": "A future promotion requires a new reviewed manifest proving E1C PASS, fresh non-scored data identity, and the unchanged R5 split/leakage/search contracts; no post-hoc promotion is allowed."
+  },
+  "failure_and_stop_conditions": [
+    "E1C PASS evidence is absent or cannot be authenticated",
+    "collector loss exceeds 1% or invalid records exceed 2%",
+    "missing process/file/socket coverage without explicit zero/unknown accounting",
+    "raw-to-feature hash chain cannot be reproduced",
+    "nonfinite tensors, timestamp ordering errors, or unstable IDs occur",
+    "any formal benchmark material or APT action appears",
+    "any smoke output is used to choose detector architecture, threshold, seed, or formal retry"
+  ],
+  "state": {
+    "e1c_pass_authenticated": false,
+    "stage_a_data_generated": false,
+    "stage_a_used_for_training": false,
+    "stage_a_used_for_calibration": false,
+    "corpus_acquired": false,
+    "detector_trained": false,
+    "formal_experiment_executed": false
+  }
+}

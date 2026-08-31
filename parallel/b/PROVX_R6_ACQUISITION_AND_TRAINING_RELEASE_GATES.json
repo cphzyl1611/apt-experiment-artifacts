@@ -1,0 +1,56 @@
+{
+  "stage": "PROVX-R6",
+  "status": "READY_FOR_EXPLICIT_HUMAN_ACQUISITION_REVIEW",
+  "gate_contract_id": "provx-track-l-r6-acquisition-training-gates-v1",
+  "frozen_authorities": {
+    "r5_input_authentication": "PROVX_R6_INPUT_AUTHENTICATION.json: PASS_R5_INPUTS_AUTHENTICATED",
+    "track_l_encoder": "provx-adapted-live-v1",
+    "track_l_dimension": 32,
+    "r5_split_contract": "PROVX_R5_TRAIN_VALIDATION_SPLIT_CONTRACT.json",
+    "r5_search_policy": "PROVX_R5_TRAINING_SEARCH_POLICY.json",
+    "formal_exclusion": "PROVX_R3_TRAIN_EVAL_SEPARATION_CONTRACT.json"
+  },
+  "design_readiness_gates": [
+    {"id": "D0", "name": "R5 inputs and R4 identities authenticated", "evidence": "PROVX_R6_INPUT_AUTHENTICATION.json", "pass": true},
+    {"id": "D1", "name": "Stage A dependency documented", "evidence": "PROVX_R6_STAGE_A_LOCAL_VALIDATION_DEPENDENCY.json", "pass": true, "dependency_state": "WAIT_MININET_E1C"},
+    {"id": "D2", "name": "Stage B generation contract frozen", "evidence": "PROVX_R6_STAGE_B_BENIGN_GENERATION_CONTRACT.json", "pass": true},
+    {"id": "D3", "name": "Stage C options frozen", "evidence": "PROVX_R6_STAGE_C_POSITIVE_CORPUS_OPTIONS.json", "pass": true},
+    {"id": "D4", "name": "OpTC pre-acquisition schema frozen", "evidence": "PROVX_R6_OPTC_PRE_ACQUISITION_MANIFEST_SCHEMA.json", "pass": true},
+    {"id": "D5", "name": "TC E3 pre-acquisition schema frozen", "evidence": "PROVX_R6_TC_E3_PRE_ACQUISITION_MANIFEST_SCHEMA.json", "pass": true},
+    {"id": "D6", "name": "Human decision packet limited and null", "evidence": "PROVX_R6_ACQUISITION_DECISION_PACKET.json", "pass": true}
+  ],
+  "acquisition_release_gates": [
+    {"id": "A0", "name": "explicit human acquisition decision", "condition": "Decision packet records exactly one allowed decision and scope; current decision is null.", "pass": false},
+    {"id": "A1", "name": "Stage B local authorization", "condition": "Written host/infrastructure authorization, privacy/retention review, and collector approval are attached.", "pass": false},
+    {"id": "A2", "name": "Stage C safety authorization", "condition": "For emulation, written scope, isolated infrastructure, safety review, cleanup, and retention authorization are attached.", "pass": false},
+    {"id": "A3", "name": "provider identity manifest", "condition": "For official data, exact provider object IDs, paths, revisions/ETags, byte lengths, and selected group IDs are populated; current nulls block transfer.", "pass": false},
+    {"id": "A4", "name": "provider checksum manifest", "condition": "Per-object provider SHA-256 and manifest SHA-256 are populated and verified; current nulls block transfer.", "pass": false},
+    {"id": "A5", "name": "terms and caps", "condition": "Release terms are rechecked, source revision is pinned, and compressed/expanded caps are accepted.", "pass": false},
+    {"id": "A6", "name": "Stage A dependency disposition", "condition": "E1C status is reviewed; Stage A remains smoke-only until authenticated PASS.", "pass": false, "current": "WAIT_MININET_E1C"}
+  ],
+  "training_release_gates": [
+    {"id": "T0", "name": "raw/normalized/graph/feature hash chain", "condition": "Every admitted group has immutable raw, normalized, graph, x, edge_index, and envelope hashes.", "pass": false},
+    {"id": "T1", "name": "materialized R5 split manifest", "condition": "Whole-group deterministic train/validation/calibration assignment and contract hash are persisted with no overlap.", "pass": false},
+    {"id": "T2", "name": "coverage/loss/class audit", "condition": "Stage B/C required coverage, loss thresholds, class counts, and partition minima pass without reassignment.", "pass": false},
+    {"id": "T3", "name": "leakage/contamination audit", "condition": "FA1B2de denylist, duplicate/cross-group/time-overlap, identifier scrubbing, and feature-dependency audits are clear.", "pass": false},
+    {"id": "T4", "name": "encoder compatibility", "condition": "Authenticated provx-adapted-live-v1 yields finite x [N,32] and edge_index [2,E] for every admitted source.", "pass": false},
+    {"id": "T5", "name": "search registration", "condition": "Exact R5 architecture/config tuples, seeds, dependency lock, and calibration rule are recorded before fitting.", "pass": false},
+    {"id": "T6", "name": "separate human training authorization", "condition": "A later human gate authorizes detector training after T0-T5 pass; acquisition approval alone is insufficient.", "pass": false}
+  ],
+  "formal_evaluation_gate": {
+    "id": "F0",
+    "condition": "A newly trained/authenticated 32D checkpoint, frozen calibration, formal manifest, and post-training review exist; all R3 exclusions remain binding.",
+    "pass": false,
+    "fa1b2de_training_tuning_calibration": false,
+    "formal_experiment_executed": false
+  },
+  "state": {
+    "design_ready_for_explicit_human_acquisition_review": true,
+    "acquisition_approved": false,
+    "corpus_acquired": false,
+    "detector_training_authorized": false,
+    "detector_trained": false,
+    "formal_experiment_executed": false,
+    "next_action": "Fresh human review of PROVX_R6_ACQUISITION_DECISION_PACKET.json; do not transfer or train automatically."
+  }
+}

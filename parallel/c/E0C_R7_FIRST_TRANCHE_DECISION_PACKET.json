@@ -1,0 +1,3420 @@
+{
+  "allowed_decisions": [
+    "APPROVE_TEMPLATE_FOR_MEMBER_SET",
+    "REJECT_TEMPLATE_KEEP_MEMBERS_MANUAL",
+    "REQUEST_SPLIT_OR_MORE_EVIDENCE"
+  ],
+  "authority_mutation": "NO",
+  "blocked31_included": false,
+  "blocked_count": 31,
+  "denominator_change": "NO",
+  "exact_manual_raw_count": 589,
+  "formal_experiment_executed": "NO",
+  "human_decision_options": [
+    "APPROVE_TEMPLATE_FOR_MEMBER_SET",
+    "REJECT_TEMPLATE_KEEP_MEMBERS_MANUAL",
+    "REQUEST_SPLIT_OR_MORE_EVIDENCE"
+  ],
+  "human_decisions_created": 0,
+  "next_action": "HUMAN_REVIEW_OF_EXACT12_TEMPLATE_PACKETS",
+  "no_member_expansion": true,
+  "pinned_review_commit": "ef9cc3cf7566cbe2280c29fcc1dde958cebf12d9",
+  "raw_coverage": 203,
+  "raw_specific_count": 64,
+  "review_gate": "AWAITING_EXPLICIT_HUMAN_TEMPLATE_DECISIONS | BLOCKED",
+  "schema_version": "e0c-r7-first-tranche-decision-packet-v1",
+  "shared_template_count": 89,
+  "shared_template_covered_rows": 494,
+  "status_mutations": 0,
+  "stop": true,
+  "template_count": 12,
+  "template_ids": [
+    "r4-template-120-process_command_execution",
+    "r4-template-136-process_command_execution",
+    "r4-template-107-process_command_execution",
+    "r4-template-159-process_command_execution",
+    "r4-template-130-process_command_execution",
+    "r4-template-152-process_command_execution",
+    "r4-template-069-persistence_configuration",
+    "r4-template-009-credential_store_access",
+    "r4-template-006-credential_store_access",
+    "r4-template-048-network_c2_beacon",
+    "r4-template-035-file_resource_operation",
+    "r4-template-071-persistence_configuration"
+  ],
+  "templates": [
+    {
+      "decision": null,
+      "decision_effects": {
+        "APPROVE_TEMPLATE_FOR_MEMBER_SET": {
+          "action_execution_authorized": false,
+          "formal_experiment_authorized": false,
+          "member_expansion": false,
+          "scope": "exact_member_set_only",
+          "status_mutation": false
+        },
+        "REJECT_TEMPLATE_KEEP_MEMBERS_MANUAL": {
+          "member_expansion": false,
+          "resulting_status": "MANUAL_DESIGN_REQUIRED"
+        },
+        "REQUEST_SPLIT_OR_MORE_EVIDENCE": {
+          "bounded_follow_up_request": "Human reviewer must identify the split boundary or exact missing evidence for this member set; no execution occurs.",
+          "member_expansion": false,
+          "resulting_status": "MANUAL_DESIGN_REQUIRED"
+        }
+      },
+      "decision_options": [
+        "APPROVE_TEMPLATE_FOR_MEMBER_SET",
+        "REJECT_TEMPLATE_KEEP_MEMBERS_MANUAL",
+        "REQUEST_SPLIT_OR_MORE_EVIDENCE"
+      ],
+      "decision_origin": null,
+      "denominator_change": "NO",
+      "evidence_packet_hash": "1284c7257471e035518777bffb37c0b783f2a3129a57f2251bf1a45693be190a",
+      "evidence_packet_hash_algorithm": "sha256(canonical R6 enriched template packet JSON)",
+      "evidence_packet_source": "E0C_R6_EXACT89_ENRICHED_TEMPLATE_PACKETS.jsonl",
+      "formal_execution_authorized": false,
+      "human_decision": null,
+      "human_decision_options": [
+        "APPROVE_TEMPLATE_FOR_MEMBER_SET",
+        "REJECT_TEMPLATE_KEEP_MEMBERS_MANUAL",
+        "REQUEST_SPLIT_OR_MORE_EVIDENCE"
+      ],
+      "human_origin": null,
+      "human_origin_required": true,
+      "member_count": 49,
+      "member_expansion": false,
+      "member_expansion_authorized": false,
+      "member_key_commitment": {
+        "algorithm": "sha256",
+        "canonical_order": "lexicographic raw_key joined with LF",
+        "sha256": "3ceca8928cf0c95f4006ffbf91d677cf3cee9287d7beea4996adfa752703bc33"
+      },
+      "member_keys": [
+        "6000003::S03::A001",
+        "6000003::S03::A008",
+        "6000006::S04::A001",
+        "6000006::S04::A002",
+        "6000007::S03::A003",
+        "6000007::S03::A007",
+        "6000007::S11::A003",
+        "6000008::S03::A003",
+        "6000008::S03::A006",
+        "6000008::S05::A003",
+        "6000008::S09::A001",
+        "6000008::S09::A005",
+        "6000009::S03::A003",
+        "6000010::S03::A004",
+        "6000011::S10::A003",
+        "6000013::S03::A007",
+        "6000013::S04::A002",
+        "6000013::S04::A004",
+        "6000014::S03::A006",
+        "6000015::S04::A004",
+        "6000015::S04::A006",
+        "6000016::S04::A002",
+        "6000016::S04::A004",
+        "6000019::S04::A002",
+        "6000019::S08::A005",
+        "6000020::S04::A001",
+        "6000020::S07::A004",
+        "6000021::S09::A002",
+        "6000024::S04::A002",
+        "6000024::S09::A001",
+        "6000026::S05::A001",
+        "6000027::S04::A001",
+        "6000031::S05::A005",
+        "6000039::S04::A003",
+        "6000042::S02::A004",
+        "6000042::S04::A001",
+        "6000043::S03::A002",
+        "6000044::S03::A004",
+        "6000046::S03::A002",
+        "6000047::S05::A003",
+        "6000047::S08::A002",
+        "6000048::S05::A001",
+        "6000049::S03::A003",
+        "6000051::S04::A001",
+        "6000051::S04::A002",
+        "6000060::S07::A001",
+        "6000062::S03::A001",
+        "6000062::S07::A004",
+        "6000063::S04::A001"
+      ],
+      "member_set_sha256": "3ceca8928cf0c95f4006ffbf91d677cf3cee9287d7beea4996adfa752703bc33",
+      "playbook_count": 30,
+      "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+      "review_record": {
+        "archetype_platform": {
+          "archetype": "PROCESS_COMMAND_EXECUTION",
+          "platform": [
+            "windows"
+          ],
+          "protocols_or_services": [
+            "UNKNOWN"
+          ]
+        },
+        "cleanup_reset_obligations": {
+          "cleanup_reset_requirements": {
+            "r4_cleanup_reset": [],
+            "r5_reset_safety_complexity": {
+              "cleanup_reset_evidence": "R4 template cleanup/reset instructions; no reset is executed in R5.",
+              "level": "HIGH",
+              "source_supported_drivers": [
+                "destructive_state",
+                "windows_only_semantics"
+              ]
+            }
+          },
+          "reset_safety_complexity": {
+            "cleanup_reset_evidence": "R4 template cleanup/reset instructions; no reset is executed in R5.",
+            "level": "HIGH",
+            "source_supported_drivers": [
+              "destructive_state",
+              "windows_only_semantics"
+            ]
+          }
+        },
+        "defensive_equivalence_requirements": {
+          "file_socket_entity_classes": "Preserve source-indicated file/socket entity and operation classes; inert content may differ.",
+          "network_direction_protocol": "Preserve explicit direction/protocol/service evidence; UNKNOWN remains UNKNOWN.",
+          "observable_causality": "Preserve only causality supported by the source and later telemetry; do not fabricate edges.",
+          "process_ancestry": "Preserve host process ancestry class where applicable; never substitute a guessed parent process.",
+          "required_side_effects": "Use only inert side effects required for the same defensive decision point.",
+          "safe_differences": [
+            "payload bytes",
+            "credentials/secrets",
+            "public endpoints",
+            "exploitability",
+            "destructive effects",
+            "fixture identifiers with reversible mapping"
+          ],
+          "timing_sequence": "Preserve source-visible ordering and coarse timing relationships; exact timing may differ."
+        },
+        "environment_prerequisites": {
+          "controlled_environment_feasibility": "NO_AUTHENTICATED_CONTROLLED_REPLAY_ENVIRONMENT_OR_ACTION_IMPLEMENTATION",
+          "environment_blockers": [
+            "NO_AUTHENTICATED_CONTROLLED_REPLAY_ENVIRONMENT_OR_ACTION_IMPLEMENTATION"
+          ],
+          "formal_execution_authorized": false,
+          "per_raw_authenticated_values_count": 49,
+          "required_os_or_host_class": [
+            "windows"
+          ],
+          "required_protocol": [],
+          "required_service_class": [],
+          "service_prerequisites": [],
+          "unresolved_environment_fields": [
+            {
+              "field": "named_protocols_or_services",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "service_prerequisites",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "required_protocol",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "required_service_class",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "required_preconditions",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "cleanup_reset_requirement",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "defensive_equivalence_requirements",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "provx_expected_causal_edge_classes",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "provx_expected_entity_types",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            }
+          ]
+        },
+        "exact_source_evidence_summary": "49 authenticated exact member source references<br>raw=6000003::S03::A001; source=APT数据集/playbooks/6000003.json#$.pipeline[2].actions[0]; action=Host command line - Gathering Information Using the Nishang Framework; type=host_cli; os=windows; description=此验证动作还原了攻击者试图使用 Nishang 后利用框架收集; source_action_sha256=371a33a82a0bda4ab75b9b2a3340935392e74e737d87456e1e4bc22f8e7d4abe; source_file_sha256=36f5c7c07e043d3c72822e3fb8f708486111455bdcb03079b873a7d19b09e393<br>raw=6000003::S03::A008; source=APT数据集/playbooks/6000003.json#$.pipeline[2].actions[7]; action=Host Command Line - Disable Windows Defender Task; type=host_cli; os=windows; description=此验证动作还原了攻击者试图禁用 Windows Defender 相关的计划任务。; source_action_sha256=1f4c7a3e60129bf05831d1a4ed3bad0b0be5d01eea438855a7c685ddcebc9829; source_file_sha256=36f5c7c07e043d3c72822e3fb8f708486111455bdcb03079b873a7d19b09e393<br>raw=6000006::S04::A001; source=APT数据集/playbooks/6000006.json#$.pipeline[3].actions[0]; action=Host Command Line - Bypassing Constrained Language Mode Enforcement via Powershell Runspace; type=host_cli; os=windows; description=此验证动作还原了攻击者试图通过创建 powershell 运行空间来绕过 powershell 受限语言模式强制执行。; source_action_sha256=28b16eeb474a2031ca450a13ae9ca515b2138266b16f954a2b1962375b6d607d; source_file_sha256=c801917cf23db412db586d330d6a2929ab3e89d48996fa64281ae95aac8ca84e",
+        "exact_source_reference_count": 49,
+        "exact_source_reference_coverage": "PASS",
+        "member_count": 49,
+        "member_keys": [
+          "6000003::S03::A001",
+          "6000003::S03::A008",
+          "6000006::S04::A001",
+          "6000006::S04::A002",
+          "6000007::S03::A003",
+          "6000007::S03::A007",
+          "6000007::S11::A003",
+          "6000008::S03::A003",
+          "6000008::S03::A006",
+          "6000008::S05::A003",
+          "6000008::S09::A001",
+          "6000008::S09::A005",
+          "6000009::S03::A003",
+          "6000010::S03::A004",
+          "6000011::S10::A003",
+          "6000013::S03::A007",
+          "6000013::S04::A002",
+          "6000013::S04::A004",
+          "6000014::S03::A006",
+          "6000015::S04::A004",
+          "6000015::S04::A006",
+          "6000016::S04::A002",
+          "6000016::S04::A004",
+          "6000019::S04::A002",
+          "6000019::S08::A005",
+          "6000020::S04::A001",
+          "6000020::S07::A004",
+          "6000021::S09::A002",
+          "6000024::S04::A002",
+          "6000024::S09::A001",
+          "6000026::S05::A001",
+          "6000027::S04::A001",
+          "6000031::S05::A005",
+          "6000039::S04::A003",
+          "6000042::S02::A004",
+          "6000042::S04::A001",
+          "6000043::S03::A002",
+          "6000044::S03::A004",
+          "6000046::S03::A002",
+          "6000047::S05::A003",
+          "6000047::S08::A002",
+          "6000048::S05::A001",
+          "6000049::S03::A003",
+          "6000051::S04::A001",
+          "6000051::S04::A002",
+          "6000060::S07::A001",
+          "6000062::S03::A001",
+          "6000062::S07::A004",
+          "6000063::S04::A001"
+        ],
+        "member_set_sha256": "3ceca8928cf0c95f4006ffbf91d677cf3cee9287d7beea4996adfa752703bc33",
+        "negative_cases": [
+          "Do not infer missing command syntax, credentials, target behavior, or exploitability.",
+          "Do not use public endpoints, real malware, destructive effects, or uncontrolled services.",
+          "Do not mark PROVX detection/localization or formal outcomes from a design packet."
+        ],
+        "playbook_count": 30,
+        "proposed_reusable_design_contract": {
+          "must_remain_unknown": [
+            "named_protocols_or_services",
+            "service_prerequisites",
+            "required_protocol",
+            "required_service_class",
+            "required_preconditions",
+            "cleanup_reset_requirement",
+            "defensive_equivalence_requirements",
+            "provx_expected_causal_edge_classes",
+            "provx_expected_entity_types"
+          ],
+          "not_an_implementation": true,
+          "preserve": [
+            "exact member-set authority and per-raw source locator",
+            "source-visible platform/service/protocol values where explicit",
+            "R4 defensive and telemetry equivalence invariants",
+            "inert side effects only after human approval"
+          ],
+          "source_basis": "R4 template invariants plus exact source evidence references; no semantic embedding"
+        },
+        "representative_raw_keys": [
+          "6000003::S03::A001",
+          "6000003::S03::A008",
+          "6000006::S04::A001"
+        ],
+        "telemetry_equivalence_requirements": {
+          "candidate_observation_surfaces": [
+            "PROCESS"
+          ],
+          "equivalence_confidence": "SOURCE_DERIVED_TELEMETRY_SURFACES_ONLY",
+          "provx_phase1_observable": "UNKNOWN",
+          "provx_phase2_core_edge_localizable": "UNKNOWN",
+          "result_status": "UNEXECUTED_NOT_OBSERVED",
+          "source_telemetry_flags": {
+            "requires_file_telemetry": false,
+            "requires_host_process_telemetry": true,
+            "requires_network_fabric": false,
+            "requires_socket_telemetry": false
+          }
+        },
+        "template_id": "r4-template-120-process_command_execution",
+        "unresolved_unknown_fields": [
+          {
+            "field": "named_protocols_or_services",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "service_prerequisites",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "required_protocol",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "required_service_class",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "required_preconditions",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "cleanup_reset_requirement",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "defensive_equivalence_requirements",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "provx_expected_causal_edge_classes",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "provx_expected_entity_types",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          }
+        ]
+      },
+      "status_mutations": 0,
+      "template_id": "r4-template-120-process_command_execution"
+    },
+    {
+      "decision": null,
+      "decision_effects": {
+        "APPROVE_TEMPLATE_FOR_MEMBER_SET": {
+          "action_execution_authorized": false,
+          "formal_experiment_authorized": false,
+          "member_expansion": false,
+          "scope": "exact_member_set_only",
+          "status_mutation": false
+        },
+        "REJECT_TEMPLATE_KEEP_MEMBERS_MANUAL": {
+          "member_expansion": false,
+          "resulting_status": "MANUAL_DESIGN_REQUIRED"
+        },
+        "REQUEST_SPLIT_OR_MORE_EVIDENCE": {
+          "bounded_follow_up_request": "Human reviewer must identify the split boundary or exact missing evidence for this member set; no execution occurs.",
+          "member_expansion": false,
+          "resulting_status": "MANUAL_DESIGN_REQUIRED"
+        }
+      },
+      "decision_options": [
+        "APPROVE_TEMPLATE_FOR_MEMBER_SET",
+        "REJECT_TEMPLATE_KEEP_MEMBERS_MANUAL",
+        "REQUEST_SPLIT_OR_MORE_EVIDENCE"
+      ],
+      "decision_origin": null,
+      "denominator_change": "NO",
+      "evidence_packet_hash": "8c747145a26e8f2655c2a3bbd10633bb7b50609dac11c0b0aac04dbb7a0ab855",
+      "evidence_packet_hash_algorithm": "sha256(canonical R6 enriched template packet JSON)",
+      "evidence_packet_source": "E0C_R6_EXACT89_ENRICHED_TEMPLATE_PACKETS.jsonl",
+      "formal_execution_authorized": false,
+      "human_decision": null,
+      "human_decision_options": [
+        "APPROVE_TEMPLATE_FOR_MEMBER_SET",
+        "REJECT_TEMPLATE_KEEP_MEMBERS_MANUAL",
+        "REQUEST_SPLIT_OR_MORE_EVIDENCE"
+      ],
+      "human_origin": null,
+      "human_origin_required": true,
+      "member_count": 28,
+      "member_expansion": false,
+      "member_expansion_authorized": false,
+      "member_key_commitment": {
+        "algorithm": "sha256",
+        "canonical_order": "lexicographic raw_key joined with LF",
+        "sha256": "fc076c1fbcef34272b7bb80b611fa0b3a560a940833e960976d45388355d100a"
+      },
+      "member_keys": [
+        "6000006::S04::A007",
+        "6000008::S03::A001",
+        "6000009::S11::A001",
+        "6000010::S05::A002",
+        "6000010::S07::A004",
+        "6000011::S03::A005",
+        "6000011::S03::A008",
+        "6000011::S08::A004",
+        "6000011::S10::A002",
+        "6000014::S05::A001",
+        "6000016::S05::A002",
+        "6000017::S05::A002",
+        "6000017::S08::A001",
+        "6000019::S04::A001",
+        "6000020::S03::A003",
+        "6000023::S07::A002",
+        "6000025::S04::A002",
+        "6000026::S03::A003",
+        "6000027::S05::A003",
+        "6000029::S04::A005",
+        "6000036::S05::A003",
+        "6000039::S07::A003",
+        "6000046::S05::A001",
+        "6000047::S04::A002",
+        "6000047::S08::A004",
+        "6000054::S06::A002",
+        "6000056::S06::A001",
+        "6000062::S06::A001"
+      ],
+      "member_set_sha256": "fc076c1fbcef34272b7bb80b611fa0b3a560a940833e960976d45388355d100a",
+      "playbook_count": 22,
+      "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+      "review_record": {
+        "archetype_platform": {
+          "archetype": "PROCESS_COMMAND_EXECUTION",
+          "platform": [
+            "windows"
+          ],
+          "protocols_or_services": [
+            "UNKNOWN"
+          ]
+        },
+        "cleanup_reset_obligations": {
+          "cleanup_reset_requirements": {
+            "r4_cleanup_reset": [],
+            "r5_reset_safety_complexity": {
+              "cleanup_reset_evidence": "R4 template cleanup/reset instructions; no reset is executed in R5.",
+              "level": "HIGH",
+              "source_supported_drivers": [
+                "destructive_state",
+                "windows_only_semantics"
+              ]
+            }
+          },
+          "reset_safety_complexity": {
+            "cleanup_reset_evidence": "R4 template cleanup/reset instructions; no reset is executed in R5.",
+            "level": "HIGH",
+            "source_supported_drivers": [
+              "destructive_state",
+              "windows_only_semantics"
+            ]
+          }
+        },
+        "defensive_equivalence_requirements": {
+          "file_socket_entity_classes": "Preserve source-indicated file/socket entity and operation classes; inert content may differ.",
+          "network_direction_protocol": "Preserve explicit direction/protocol/service evidence; UNKNOWN remains UNKNOWN.",
+          "observable_causality": "Preserve only causality supported by the source and later telemetry; do not fabricate edges.",
+          "process_ancestry": "Preserve host process ancestry class where applicable; never substitute a guessed parent process.",
+          "required_side_effects": "Use only inert side effects required for the same defensive decision point.",
+          "safe_differences": [
+            "payload bytes",
+            "credentials/secrets",
+            "public endpoints",
+            "exploitability",
+            "destructive effects",
+            "fixture identifiers with reversible mapping"
+          ],
+          "timing_sequence": "Preserve source-visible ordering and coarse timing relationships; exact timing may differ."
+        },
+        "environment_prerequisites": {
+          "controlled_environment_feasibility": "NO_AUTHENTICATED_CONTROLLED_REPLAY_ENVIRONMENT_OR_ACTION_IMPLEMENTATION",
+          "environment_blockers": [
+            "NO_AUTHENTICATED_CONTROLLED_REPLAY_ENVIRONMENT_OR_ACTION_IMPLEMENTATION"
+          ],
+          "formal_execution_authorized": false,
+          "per_raw_authenticated_values_count": 28,
+          "required_os_or_host_class": [
+            "windows"
+          ],
+          "required_protocol": [],
+          "required_service_class": [],
+          "service_prerequisites": [],
+          "unresolved_environment_fields": [
+            {
+              "field": "named_protocols_or_services",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "service_prerequisites",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "required_protocol",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "required_service_class",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "required_preconditions",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "cleanup_reset_requirement",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "defensive_equivalence_requirements",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "provx_expected_causal_edge_classes",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "provx_expected_entity_types",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            }
+          ]
+        },
+        "exact_source_evidence_summary": "28 authenticated exact member source references<br>raw=6000006::S04::A007; source=APT数据集/playbooks/6000006.json#$.pipeline[3].actions[6]; action=Host Command Line - Encoded PowerShell command; type=host_cli; os=windows; description=此验证动作还原了受害主机上 Powershell 命令“whoami”的编码。在受害者的机器上编码 Powershell 命令是攻击者可以混淆恶意代码以逃避检测的一种方式。  在 Powershell 中对命令进行编码是攻击者利用这些离地策略来执行各种活动（例如执行代码、下载或上传文件、保持持久化等）的一种方式。; source_action_sha256=bb0a88eaffb5508391d5e04d39a8d7179d129ef602a0de7c2c8e383069b908c4; source_file_sha256=c801917cf23db412db586d330d6a2929ab3e89d48996fa64281ae95aac8ca84e<br>raw=6000008::S03::A001; source=APT数据集/playbooks/6000008.json#$.pipeline[2].actions[0]; action=Host Command Line - Get computer system information via PowerShell parameter tricks triggered from the command line; type=host_cli; os=windows; description=此验证动作还原了攻击者通过从命令行触发的 PowerShell 中的斜杠参数技巧来获取计算机系统信息。; source_action_sha256=35a288006580fe85119f9e12d1a1570fc6c935d78cf12d03ebb73a4454c77e0f; source_file_sha256=efb55818c06d82ad5d9955eb0f023be029a36a3e2b78c81644e88d4177294547<br>raw=6000009::S11::A001; source=APT数据集/playbooks/6000009.json#$.pipeline[10].actions[0]; action=Host Command Line - Deleting shadow copies via the shadow.bat script; type=host_cli; os=windows; description=此验证动作还原了卷影副本将通过shadow.bat 脚本删除。; source_action_sha256=53a50a94532e796025099c0c6964ff162e617027b3633b11e3a26c4c67a32b1f; source_file_sha256=8ae4ceb81944486be6db1ae33b446242858cfae4fb7d473a3efb64eb39e258c7",
+        "exact_source_reference_count": 28,
+        "exact_source_reference_coverage": "PASS",
+        "member_count": 28,
+        "member_keys": [
+          "6000006::S04::A007",
+          "6000008::S03::A001",
+          "6000009::S11::A001",
+          "6000010::S05::A002",
+          "6000010::S07::A004",
+          "6000011::S03::A005",
+          "6000011::S03::A008",
+          "6000011::S08::A004",
+          "6000011::S10::A002",
+          "6000014::S05::A001",
+          "6000016::S05::A002",
+          "6000017::S05::A002",
+          "6000017::S08::A001",
+          "6000019::S04::A001",
+          "6000020::S03::A003",
+          "6000023::S07::A002",
+          "6000025::S04::A002",
+          "6000026::S03::A003",
+          "6000027::S05::A003",
+          "6000029::S04::A005",
+          "6000036::S05::A003",
+          "6000039::S07::A003",
+          "6000046::S05::A001",
+          "6000047::S04::A002",
+          "6000047::S08::A004",
+          "6000054::S06::A002",
+          "6000056::S06::A001",
+          "6000062::S06::A001"
+        ],
+        "member_set_sha256": "fc076c1fbcef34272b7bb80b611fa0b3a560a940833e960976d45388355d100a",
+        "negative_cases": [
+          "Do not infer missing command syntax, credentials, target behavior, or exploitability.",
+          "Do not use public endpoints, real malware, destructive effects, or uncontrolled services.",
+          "Do not mark PROVX detection/localization or formal outcomes from a design packet."
+        ],
+        "playbook_count": 22,
+        "proposed_reusable_design_contract": {
+          "must_remain_unknown": [
+            "named_protocols_or_services",
+            "service_prerequisites",
+            "required_protocol",
+            "required_service_class",
+            "required_preconditions",
+            "cleanup_reset_requirement",
+            "defensive_equivalence_requirements",
+            "provx_expected_causal_edge_classes",
+            "provx_expected_entity_types"
+          ],
+          "not_an_implementation": true,
+          "preserve": [
+            "exact member-set authority and per-raw source locator",
+            "source-visible platform/service/protocol values where explicit",
+            "R4 defensive and telemetry equivalence invariants",
+            "inert side effects only after human approval"
+          ],
+          "source_basis": "R4 template invariants plus exact source evidence references; no semantic embedding"
+        },
+        "representative_raw_keys": [
+          "6000006::S04::A007",
+          "6000008::S03::A001",
+          "6000009::S11::A001"
+        ],
+        "telemetry_equivalence_requirements": {
+          "candidate_observation_surfaces": [
+            "PROCESS"
+          ],
+          "equivalence_confidence": "SOURCE_DERIVED_TELEMETRY_SURFACES_ONLY",
+          "provx_phase1_observable": "UNKNOWN",
+          "provx_phase2_core_edge_localizable": "UNKNOWN",
+          "result_status": "UNEXECUTED_NOT_OBSERVED",
+          "source_telemetry_flags": {
+            "requires_file_telemetry": false,
+            "requires_host_process_telemetry": true,
+            "requires_network_fabric": false,
+            "requires_socket_telemetry": false
+          }
+        },
+        "template_id": "r4-template-136-process_command_execution",
+        "unresolved_unknown_fields": [
+          {
+            "field": "named_protocols_or_services",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "service_prerequisites",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "required_protocol",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "required_service_class",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "required_preconditions",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "cleanup_reset_requirement",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "defensive_equivalence_requirements",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "provx_expected_causal_edge_classes",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "provx_expected_entity_types",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          }
+        ]
+      },
+      "status_mutations": 0,
+      "template_id": "r4-template-136-process_command_execution"
+    },
+    {
+      "decision": null,
+      "decision_effects": {
+        "APPROVE_TEMPLATE_FOR_MEMBER_SET": {
+          "action_execution_authorized": false,
+          "formal_experiment_authorized": false,
+          "member_expansion": false,
+          "scope": "exact_member_set_only",
+          "status_mutation": false
+        },
+        "REJECT_TEMPLATE_KEEP_MEMBERS_MANUAL": {
+          "member_expansion": false,
+          "resulting_status": "MANUAL_DESIGN_REQUIRED"
+        },
+        "REQUEST_SPLIT_OR_MORE_EVIDENCE": {
+          "bounded_follow_up_request": "Human reviewer must identify the split boundary or exact missing evidence for this member set; no execution occurs.",
+          "member_expansion": false,
+          "resulting_status": "MANUAL_DESIGN_REQUIRED"
+        }
+      },
+      "decision_options": [
+        "APPROVE_TEMPLATE_FOR_MEMBER_SET",
+        "REJECT_TEMPLATE_KEEP_MEMBERS_MANUAL",
+        "REQUEST_SPLIT_OR_MORE_EVIDENCE"
+      ],
+      "decision_origin": null,
+      "denominator_change": "NO",
+      "evidence_packet_hash": "278875f8d71db9229493be0c023225dc894013e702e821e19833f1a47677c031",
+      "evidence_packet_hash_algorithm": "sha256(canonical R6 enriched template packet JSON)",
+      "evidence_packet_source": "E0C_R6_EXACT89_ENRICHED_TEMPLATE_PACKETS.jsonl",
+      "formal_execution_authorized": false,
+      "human_decision": null,
+      "human_decision_options": [
+        "APPROVE_TEMPLATE_FOR_MEMBER_SET",
+        "REJECT_TEMPLATE_KEEP_MEMBERS_MANUAL",
+        "REQUEST_SPLIT_OR_MORE_EVIDENCE"
+      ],
+      "human_origin": null,
+      "human_origin_required": true,
+      "member_count": 27,
+      "member_expansion": false,
+      "member_expansion_authorized": false,
+      "member_key_commitment": {
+        "algorithm": "sha256",
+        "canonical_order": "lexicographic raw_key joined with LF",
+        "sha256": "aeead35be23d0b2f06d1b7085ce3c33e1cdc08c87f92fe9e972eea608809ee0e"
+      },
+      "member_keys": [
+        "6000002::S02::A003",
+        "6000002::S07::A001",
+        "6000004::S05::A004",
+        "6000004::S05::A005",
+        "6000008::S09::A002",
+        "6000009::S06::A002",
+        "6000011::S03::A001",
+        "6000011::S03::A004",
+        "6000014::S08::A004",
+        "6000017::S03::A003",
+        "6000017::S03::A005",
+        "6000023::S10::A001",
+        "6000025::S04::A001",
+        "6000026::S08::A001",
+        "6000031::S04::A001",
+        "6000032::S04::A003",
+        "6000036::S05::A004",
+        "6000041::S02::A001",
+        "6000042::S02::A001",
+        "6000042::S08::A003",
+        "6000047::S04::A001",
+        "6000048::S03::A001",
+        "6000049::S03::A005",
+        "6000049::S03::A006",
+        "6000053::S06::A002",
+        "6000053::S08::A002",
+        "6000054::S03::A002"
+      ],
+      "member_set_sha256": "aeead35be23d0b2f06d1b7085ce3c33e1cdc08c87f92fe9e972eea608809ee0e",
+      "playbook_count": 20,
+      "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+      "review_record": {
+        "archetype_platform": {
+          "archetype": "PROCESS_COMMAND_EXECUTION",
+          "platform": [
+            "windows"
+          ],
+          "protocols_or_services": [
+            "UNKNOWN"
+          ]
+        },
+        "cleanup_reset_obligations": {
+          "cleanup_reset_requirements": {
+            "r4_cleanup_reset": [],
+            "r5_reset_safety_complexity": {
+              "cleanup_reset_evidence": "R4 template cleanup/reset instructions; no reset is executed in R5.",
+              "level": "HIGH",
+              "source_supported_drivers": [
+                "destructive_state",
+                "multi_step_composite",
+                "windows_only_semantics"
+              ]
+            }
+          },
+          "reset_safety_complexity": {
+            "cleanup_reset_evidence": "R4 template cleanup/reset instructions; no reset is executed in R5.",
+            "level": "HIGH",
+            "source_supported_drivers": [
+              "destructive_state",
+              "multi_step_composite",
+              "windows_only_semantics"
+            ]
+          }
+        },
+        "defensive_equivalence_requirements": {
+          "file_socket_entity_classes": "Preserve source-indicated file/socket entity and operation classes; inert content may differ.",
+          "network_direction_protocol": "Preserve explicit direction/protocol/service evidence; UNKNOWN remains UNKNOWN.",
+          "observable_causality": "Preserve only causality supported by the source and later telemetry; do not fabricate edges.",
+          "process_ancestry": "Preserve host process ancestry class where applicable; never substitute a guessed parent process.",
+          "required_side_effects": "Use only inert side effects required for the same defensive decision point.",
+          "safe_differences": [
+            "payload bytes",
+            "credentials/secrets",
+            "public endpoints",
+            "exploitability",
+            "destructive effects",
+            "fixture identifiers with reversible mapping"
+          ],
+          "timing_sequence": "Preserve source-visible ordering and coarse timing relationships; exact timing may differ."
+        },
+        "environment_prerequisites": {
+          "controlled_environment_feasibility": "NO_AUTHENTICATED_CONTROLLED_REPLAY_ENVIRONMENT_OR_ACTION_IMPLEMENTATION",
+          "environment_blockers": [
+            "NO_AUTHENTICATED_CONTROLLED_REPLAY_ENVIRONMENT_OR_ACTION_IMPLEMENTATION"
+          ],
+          "formal_execution_authorized": false,
+          "per_raw_authenticated_values_count": 27,
+          "required_os_or_host_class": [
+            "windows"
+          ],
+          "required_protocol": [],
+          "required_service_class": [],
+          "service_prerequisites": [],
+          "unresolved_environment_fields": [
+            {
+              "field": "named_protocols_or_services",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "service_prerequisites",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "required_protocol",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "required_service_class",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "required_preconditions",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "cleanup_reset_requirement",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "defensive_equivalence_requirements",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "provx_expected_causal_edge_classes",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "provx_expected_entity_types",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            }
+          ]
+        },
+        "exact_source_evidence_summary": "27 authenticated exact member source references<br>raw=6000002::S02::A003; source=APT数据集/playbooks/6000002.json#$.pipeline[1].actions[2]; action=Host Command Line - Network local groups, user discovery; type=host_cli; os=windows; description=此验证动作还原了使用“net localgroup”命令查询用户。虽然此验证动作本身并不是恶意的，但此活动与数据泄漏或未经授权的用户执行的活动相结合可能是恶意的。; source_action_sha256=42e19b291d525816157b42a1f962aa0a2b80df7a1f83e9562269d64b944ff764; source_file_sha256=855ea7b3688eb23c26b6e5526c818da0deab66d312f76d94f5f28bc1ba9f5554<br>raw=6000002::S07::A001; source=APT数据集/playbooks/6000002.json#$.pipeline[6].actions[0]; action=Host Command Line - Use Adfind to gather information about the target domain and operating system; type=host_cli; os=windows; description=此验证动作还原了攻击者使用 Adfind.exe 尝试组合; source_action_sha256=0a59407cace188c7487dc65ec592a3f75e4cebe15c9a1eff67bf3c603edd3b4e; source_file_sha256=855ea7b3688eb23c26b6e5526c818da0deab66d312f76d94f5f28bc1ba9f5554<br>raw=6000004::S05::A004; source=APT数据集/playbooks/6000004.json#$.pipeline[4].actions[3]; action=Protected Sandbox - Clear Windows Security Event Log, PowerShell; type=host_cli; os=windows; description=此验证动作还原了一个尝试使用 PowerShell 清除主机上的安全窗口事件日志的攻击者的模拟。在此示例中，-WhatIf 命令用于防止事件日志在生产机器上被意外清除。这将允许基于命令行的检测发出警报，但可能不会触发围绕事件日志的任何基于事件 ID 的检测。 清除 Windows 事件日志可以删除主机上的危害指标。攻击者通常会尝试删除危害指标，以降低检测的可能性并阻碍潜在的事件响应工作。如果没有特定的危害指标，事件响应者可能无法完全确定危害程度，从而使攻击者能够在环境中站稳脚跟。; source_action_sha256=bd973ff55f2bc2a2966c74fe01cd17fd9761fc0eb1c22075bc27ecd8e03887cd; source_file_sha256=8b75e353609f612da7621a1e57869ff590752c2c75410d3834a6d8673fc75439",
+        "exact_source_reference_count": 27,
+        "exact_source_reference_coverage": "PASS",
+        "member_count": 27,
+        "member_keys": [
+          "6000002::S02::A003",
+          "6000002::S07::A001",
+          "6000004::S05::A004",
+          "6000004::S05::A005",
+          "6000008::S09::A002",
+          "6000009::S06::A002",
+          "6000011::S03::A001",
+          "6000011::S03::A004",
+          "6000014::S08::A004",
+          "6000017::S03::A003",
+          "6000017::S03::A005",
+          "6000023::S10::A001",
+          "6000025::S04::A001",
+          "6000026::S08::A001",
+          "6000031::S04::A001",
+          "6000032::S04::A003",
+          "6000036::S05::A004",
+          "6000041::S02::A001",
+          "6000042::S02::A001",
+          "6000042::S08::A003",
+          "6000047::S04::A001",
+          "6000048::S03::A001",
+          "6000049::S03::A005",
+          "6000049::S03::A006",
+          "6000053::S06::A002",
+          "6000053::S08::A002",
+          "6000054::S03::A002"
+        ],
+        "member_set_sha256": "aeead35be23d0b2f06d1b7085ce3c33e1cdc08c87f92fe9e972eea608809ee0e",
+        "negative_cases": [
+          "Do not infer missing command syntax, credentials, target behavior, or exploitability.",
+          "Do not use public endpoints, real malware, destructive effects, or uncontrolled services.",
+          "Do not mark PROVX detection/localization or formal outcomes from a design packet."
+        ],
+        "playbook_count": 20,
+        "proposed_reusable_design_contract": {
+          "must_remain_unknown": [
+            "named_protocols_or_services",
+            "service_prerequisites",
+            "required_protocol",
+            "required_service_class",
+            "required_preconditions",
+            "cleanup_reset_requirement",
+            "defensive_equivalence_requirements",
+            "provx_expected_causal_edge_classes",
+            "provx_expected_entity_types"
+          ],
+          "not_an_implementation": true,
+          "preserve": [
+            "exact member-set authority and per-raw source locator",
+            "source-visible platform/service/protocol values where explicit",
+            "R4 defensive and telemetry equivalence invariants",
+            "inert side effects only after human approval"
+          ],
+          "source_basis": "R4 template invariants plus exact source evidence references; no semantic embedding"
+        },
+        "representative_raw_keys": [
+          "6000002::S02::A003",
+          "6000002::S07::A001",
+          "6000004::S05::A004"
+        ],
+        "telemetry_equivalence_requirements": {
+          "candidate_observation_surfaces": [
+            "PROCESS"
+          ],
+          "equivalence_confidence": "SOURCE_DERIVED_TELEMETRY_SURFACES_ONLY",
+          "provx_phase1_observable": "UNKNOWN",
+          "provx_phase2_core_edge_localizable": "UNKNOWN",
+          "result_status": "UNEXECUTED_NOT_OBSERVED",
+          "source_telemetry_flags": {
+            "requires_file_telemetry": false,
+            "requires_host_process_telemetry": true,
+            "requires_network_fabric": false,
+            "requires_socket_telemetry": false
+          }
+        },
+        "template_id": "r4-template-107-process_command_execution",
+        "unresolved_unknown_fields": [
+          {
+            "field": "named_protocols_or_services",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "service_prerequisites",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "required_protocol",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "required_service_class",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "required_preconditions",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "cleanup_reset_requirement",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "defensive_equivalence_requirements",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "provx_expected_causal_edge_classes",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "provx_expected_entity_types",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          }
+        ]
+      },
+      "status_mutations": 0,
+      "template_id": "r4-template-107-process_command_execution"
+    },
+    {
+      "decision": null,
+      "decision_effects": {
+        "APPROVE_TEMPLATE_FOR_MEMBER_SET": {
+          "action_execution_authorized": false,
+          "formal_experiment_authorized": false,
+          "member_expansion": false,
+          "scope": "exact_member_set_only",
+          "status_mutation": false
+        },
+        "REJECT_TEMPLATE_KEEP_MEMBERS_MANUAL": {
+          "member_expansion": false,
+          "resulting_status": "MANUAL_DESIGN_REQUIRED"
+        },
+        "REQUEST_SPLIT_OR_MORE_EVIDENCE": {
+          "bounded_follow_up_request": "Human reviewer must identify the split boundary or exact missing evidence for this member set; no execution occurs.",
+          "member_expansion": false,
+          "resulting_status": "MANUAL_DESIGN_REQUIRED"
+        }
+      },
+      "decision_options": [
+        "APPROVE_TEMPLATE_FOR_MEMBER_SET",
+        "REJECT_TEMPLATE_KEEP_MEMBERS_MANUAL",
+        "REQUEST_SPLIT_OR_MORE_EVIDENCE"
+      ],
+      "decision_origin": null,
+      "denominator_change": "NO",
+      "evidence_packet_hash": "1e2f92348d60c0209e5e9b226503b62312f7ef5e092e8261d0374d8577dbb1fc",
+      "evidence_packet_hash_algorithm": "sha256(canonical R6 enriched template packet JSON)",
+      "evidence_packet_source": "E0C_R6_EXACT89_ENRICHED_TEMPLATE_PACKETS.jsonl",
+      "formal_execution_authorized": false,
+      "human_decision": null,
+      "human_decision_options": [
+        "APPROVE_TEMPLATE_FOR_MEMBER_SET",
+        "REJECT_TEMPLATE_KEEP_MEMBERS_MANUAL",
+        "REQUEST_SPLIT_OR_MORE_EVIDENCE"
+      ],
+      "human_origin": null,
+      "human_origin_required": true,
+      "member_count": 17,
+      "member_expansion": false,
+      "member_expansion_authorized": false,
+      "member_key_commitment": {
+        "algorithm": "sha256",
+        "canonical_order": "lexicographic raw_key joined with LF",
+        "sha256": "e5f22f069e236fde74af499ec46117c82ea2ce067d39b759421f6865cd548439"
+      },
+      "member_keys": [
+        "6000007::S11::A002",
+        "6000010::S12::A002",
+        "6000011::S10::A004",
+        "6000015::S07::A001",
+        "6000015::S10::A001",
+        "6000017::S08::A004",
+        "6000021::S07::A002",
+        "6000023::S10::A004",
+        "6000025::S07::A001",
+        "6000026::S08::A002",
+        "6000027::S08::A002",
+        "6000033::S06::A003",
+        "6000041::S05::A004",
+        "6000048::S06::A004",
+        "6000049::S07::A003",
+        "6000061::S06::A003",
+        "6000062::S04::A002"
+      ],
+      "member_set_sha256": "e5f22f069e236fde74af499ec46117c82ea2ce067d39b759421f6865cd548439",
+      "playbook_count": 16,
+      "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+      "review_record": {
+        "archetype_platform": {
+          "archetype": "PROCESS_COMMAND_EXECUTION",
+          "platform": [
+            "windows"
+          ],
+          "protocols_or_services": [
+            "UNKNOWN"
+          ]
+        },
+        "cleanup_reset_obligations": {
+          "cleanup_reset_requirements": {
+            "r4_cleanup_reset": [],
+            "r5_reset_safety_complexity": {
+              "cleanup_reset_evidence": "R4 template cleanup/reset instructions; no reset is executed in R5.",
+              "level": "HIGH",
+              "source_supported_drivers": [
+                "credential_sensitive",
+                "destructive_state",
+                "multi_step_composite",
+                "windows_only_semantics"
+              ]
+            }
+          },
+          "reset_safety_complexity": {
+            "cleanup_reset_evidence": "R4 template cleanup/reset instructions; no reset is executed in R5.",
+            "level": "HIGH",
+            "source_supported_drivers": [
+              "credential_sensitive",
+              "destructive_state",
+              "multi_step_composite",
+              "windows_only_semantics"
+            ]
+          }
+        },
+        "defensive_equivalence_requirements": {
+          "file_socket_entity_classes": "Preserve source-indicated file/socket entity and operation classes; inert content may differ.",
+          "network_direction_protocol": "Preserve explicit direction/protocol/service evidence; UNKNOWN remains UNKNOWN.",
+          "observable_causality": "Preserve only causality supported by the source and later telemetry; do not fabricate edges.",
+          "process_ancestry": "Preserve host process ancestry class where applicable; never substitute a guessed parent process.",
+          "required_side_effects": "Use only inert side effects required for the same defensive decision point.",
+          "safe_differences": [
+            "payload bytes",
+            "credentials/secrets",
+            "public endpoints",
+            "exploitability",
+            "destructive effects",
+            "fixture identifiers with reversible mapping"
+          ],
+          "timing_sequence": "Preserve source-visible ordering and coarse timing relationships; exact timing may differ."
+        },
+        "environment_prerequisites": {
+          "controlled_environment_feasibility": "NO_AUTHENTICATED_CONTROLLED_REPLAY_ENVIRONMENT_OR_ACTION_IMPLEMENTATION",
+          "environment_blockers": [
+            "NO_AUTHENTICATED_CONTROLLED_REPLAY_ENVIRONMENT_OR_ACTION_IMPLEMENTATION"
+          ],
+          "formal_execution_authorized": false,
+          "per_raw_authenticated_values_count": 17,
+          "required_os_or_host_class": [
+            "windows"
+          ],
+          "required_protocol": [],
+          "required_service_class": [],
+          "service_prerequisites": [],
+          "unresolved_environment_fields": [
+            {
+              "field": "named_protocols_or_services",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "service_prerequisites",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "required_protocol",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "required_service_class",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "required_preconditions",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "cleanup_reset_requirement",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "defensive_equivalence_requirements",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "provx_expected_causal_edge_classes",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "provx_expected_entity_types",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            }
+          ]
+        },
+        "exact_source_evidence_summary": "17 authenticated exact member source references<br>raw=6000007::S11::A002; source=APT数据集/playbooks/6000007.json#$.pipeline[10].actions[1]; action=Host command line - Remove local account access via Command Prompt, benign; type=host_cli; os=windows; description=此验证动作还原了一个验证机器人 利用 Window 的内置实用程序“网络”来更改本地用户的密码以禁止访问。设计此良性实验任务的目的是测试 CLI 操作的执行，这种方式不会使安全产品判断它为恶意。; source_action_sha256=de2afab589200fb7a33b6a604e7a36140b489cad74620a0cebc44222edffb616; source_file_sha256=9e7f336c1e66b8e526bd3b784671b46ae9621eb2f1e67ba938ac6e3d9ad7eb41<br>raw=6000010::S12::A002; source=APT数据集/playbooks/6000010.json#$.pipeline[11].actions[1]; action=Host command line - Remove local account access via Command Prompt, benign; type=host_cli; os=windows; description=此验证动作还原了一个验证机器人 利用 Window 的内置实用程序“网络”来更改本地用户的密码以禁止访问。设计此良性实验任务的目的是测试 CLI 操作的执行，这种方式不会使安全产品判断它为恶意。; source_action_sha256=58522bcff79b4e9d5673634470b11d4a8eb18cb138776ff82ceb2afcb600b33e; source_file_sha256=dfbdae92ef01a93bfa0b3437361f615603b54e6cf14d4ee912b15236d47854d0<br>raw=6000011::S10::A004; source=APT数据集/playbooks/6000011.json#$.pipeline[9].actions[3]; action=Host command line - Remove local account access via Command Prompt, benign; type=host_cli; os=windows; description=此验证动作还原了一个验证机器人 利用 Window 的内置实用程序“网络”来更改本地用户的密码以禁止访问。设计此良性实验任务的目的是测试 CLI 操作的执行，这种方式不会使安全产品判断它为恶意。; source_action_sha256=55b9e3715d5f60426df2ff525931d817b9db4c8c072d2506b1e8be71e9f82f72; source_file_sha256=18a6930da2771664f3d5d8d1d037d84d07aa6fe4a53033301a6e1dfef09fa8e0",
+        "exact_source_reference_count": 17,
+        "exact_source_reference_coverage": "PASS",
+        "member_count": 17,
+        "member_keys": [
+          "6000007::S11::A002",
+          "6000010::S12::A002",
+          "6000011::S10::A004",
+          "6000015::S07::A001",
+          "6000015::S10::A001",
+          "6000017::S08::A004",
+          "6000021::S07::A002",
+          "6000023::S10::A004",
+          "6000025::S07::A001",
+          "6000026::S08::A002",
+          "6000027::S08::A002",
+          "6000033::S06::A003",
+          "6000041::S05::A004",
+          "6000048::S06::A004",
+          "6000049::S07::A003",
+          "6000061::S06::A003",
+          "6000062::S04::A002"
+        ],
+        "member_set_sha256": "e5f22f069e236fde74af499ec46117c82ea2ce067d39b759421f6865cd548439",
+        "negative_cases": [
+          "Do not infer missing command syntax, credentials, target behavior, or exploitability.",
+          "Do not use public endpoints, real malware, destructive effects, or uncontrolled services.",
+          "Do not mark PROVX detection/localization or formal outcomes from a design packet."
+        ],
+        "playbook_count": 16,
+        "proposed_reusable_design_contract": {
+          "must_remain_unknown": [
+            "named_protocols_or_services",
+            "service_prerequisites",
+            "required_protocol",
+            "required_service_class",
+            "required_preconditions",
+            "cleanup_reset_requirement",
+            "defensive_equivalence_requirements",
+            "provx_expected_causal_edge_classes",
+            "provx_expected_entity_types"
+          ],
+          "not_an_implementation": true,
+          "preserve": [
+            "exact member-set authority and per-raw source locator",
+            "source-visible platform/service/protocol values where explicit",
+            "R4 defensive and telemetry equivalence invariants",
+            "inert side effects only after human approval"
+          ],
+          "source_basis": "R4 template invariants plus exact source evidence references; no semantic embedding"
+        },
+        "representative_raw_keys": [
+          "6000007::S11::A002",
+          "6000010::S12::A002",
+          "6000011::S10::A004"
+        ],
+        "telemetry_equivalence_requirements": {
+          "candidate_observation_surfaces": [
+            "PROCESS"
+          ],
+          "equivalence_confidence": "SOURCE_DERIVED_TELEMETRY_SURFACES_ONLY",
+          "provx_phase1_observable": "UNKNOWN",
+          "provx_phase2_core_edge_localizable": "UNKNOWN",
+          "result_status": "UNEXECUTED_NOT_OBSERVED",
+          "source_telemetry_flags": {
+            "requires_file_telemetry": false,
+            "requires_host_process_telemetry": true,
+            "requires_network_fabric": false,
+            "requires_socket_telemetry": false
+          }
+        },
+        "template_id": "r4-template-159-process_command_execution",
+        "unresolved_unknown_fields": [
+          {
+            "field": "named_protocols_or_services",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "service_prerequisites",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "required_protocol",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "required_service_class",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "required_preconditions",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "cleanup_reset_requirement",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "defensive_equivalence_requirements",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "provx_expected_causal_edge_classes",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "provx_expected_entity_types",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          }
+        ]
+      },
+      "status_mutations": 0,
+      "template_id": "r4-template-159-process_command_execution"
+    },
+    {
+      "decision": null,
+      "decision_effects": {
+        "APPROVE_TEMPLATE_FOR_MEMBER_SET": {
+          "action_execution_authorized": false,
+          "formal_experiment_authorized": false,
+          "member_expansion": false,
+          "scope": "exact_member_set_only",
+          "status_mutation": false
+        },
+        "REJECT_TEMPLATE_KEEP_MEMBERS_MANUAL": {
+          "member_expansion": false,
+          "resulting_status": "MANUAL_DESIGN_REQUIRED"
+        },
+        "REQUEST_SPLIT_OR_MORE_EVIDENCE": {
+          "bounded_follow_up_request": "Human reviewer must identify the split boundary or exact missing evidence for this member set; no execution occurs.",
+          "member_expansion": false,
+          "resulting_status": "MANUAL_DESIGN_REQUIRED"
+        }
+      },
+      "decision_options": [
+        "APPROVE_TEMPLATE_FOR_MEMBER_SET",
+        "REJECT_TEMPLATE_KEEP_MEMBERS_MANUAL",
+        "REQUEST_SPLIT_OR_MORE_EVIDENCE"
+      ],
+      "decision_origin": null,
+      "denominator_change": "NO",
+      "evidence_packet_hash": "11a878b2a7351f545b882d68f532596c81ae69b19357b13910e7bed129000a1b",
+      "evidence_packet_hash_algorithm": "sha256(canonical R6 enriched template packet JSON)",
+      "evidence_packet_source": "E0C_R6_EXACT89_ENRICHED_TEMPLATE_PACKETS.jsonl",
+      "formal_execution_authorized": false,
+      "human_decision": null,
+      "human_decision_options": [
+        "APPROVE_TEMPLATE_FOR_MEMBER_SET",
+        "REJECT_TEMPLATE_KEEP_MEMBERS_MANUAL",
+        "REQUEST_SPLIT_OR_MORE_EVIDENCE"
+      ],
+      "human_origin": null,
+      "human_origin_required": true,
+      "member_count": 17,
+      "member_expansion": false,
+      "member_expansion_authorized": false,
+      "member_key_commitment": {
+        "algorithm": "sha256",
+        "canonical_order": "lexicographic raw_key joined with LF",
+        "sha256": "b9e9db68106f21ada95ece8e6158f9954372e9e28b908b1e98d886a679280449"
+      },
+      "member_keys": [
+        "6000002::S09::A004",
+        "6000008::S05::A002",
+        "6000009::S07::A005",
+        "6000011::S04::A007",
+        "6000021::S09::A001",
+        "6000024::S09::A003",
+        "6000025::S03::A003",
+        "6000027::S08::A001",
+        "6000027::S08::A006",
+        "6000029::S06::A005",
+        "6000035::S04::A002",
+        "6000036::S03::A001",
+        "6000041::S04::A001",
+        "6000053::S08::A001",
+        "6000054::S03::A001",
+        "6000054::S03::A003",
+        "6000056::S03::A002"
+      ],
+      "member_set_sha256": "b9e9db68106f21ada95ece8e6158f9954372e9e28b908b1e98d886a679280449",
+      "playbook_count": 15,
+      "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+      "review_record": {
+        "archetype_platform": {
+          "archetype": "PROCESS_COMMAND_EXECUTION",
+          "platform": [
+            "windows"
+          ],
+          "protocols_or_services": [
+            "UNKNOWN"
+          ]
+        },
+        "cleanup_reset_obligations": {
+          "cleanup_reset_requirements": {
+            "r4_cleanup_reset": [],
+            "r5_reset_safety_complexity": {
+              "cleanup_reset_evidence": "R4 template cleanup/reset instructions; no reset is executed in R5.",
+              "level": "HIGH",
+              "source_supported_drivers": [
+                "destructive_state",
+                "multi_step_composite",
+                "windows_only_semantics"
+              ]
+            }
+          },
+          "reset_safety_complexity": {
+            "cleanup_reset_evidence": "R4 template cleanup/reset instructions; no reset is executed in R5.",
+            "level": "HIGH",
+            "source_supported_drivers": [
+              "destructive_state",
+              "multi_step_composite",
+              "windows_only_semantics"
+            ]
+          }
+        },
+        "defensive_equivalence_requirements": {
+          "file_socket_entity_classes": "Preserve source-indicated file/socket entity and operation classes; inert content may differ.",
+          "network_direction_protocol": "Preserve explicit direction/protocol/service evidence; UNKNOWN remains UNKNOWN.",
+          "observable_causality": "Preserve only causality supported by the source and later telemetry; do not fabricate edges.",
+          "process_ancestry": "Preserve host process ancestry class where applicable; never substitute a guessed parent process.",
+          "required_side_effects": "Use only inert side effects required for the same defensive decision point.",
+          "safe_differences": [
+            "payload bytes",
+            "credentials/secrets",
+            "public endpoints",
+            "exploitability",
+            "destructive effects",
+            "fixture identifiers with reversible mapping"
+          ],
+          "timing_sequence": "Preserve source-visible ordering and coarse timing relationships; exact timing may differ."
+        },
+        "environment_prerequisites": {
+          "controlled_environment_feasibility": "NO_AUTHENTICATED_CONTROLLED_REPLAY_ENVIRONMENT_OR_ACTION_IMPLEMENTATION",
+          "environment_blockers": [
+            "NO_AUTHENTICATED_CONTROLLED_REPLAY_ENVIRONMENT_OR_ACTION_IMPLEMENTATION"
+          ],
+          "formal_execution_authorized": false,
+          "per_raw_authenticated_values_count": 17,
+          "required_os_or_host_class": [
+            "windows"
+          ],
+          "required_protocol": [],
+          "required_service_class": [],
+          "service_prerequisites": [],
+          "unresolved_environment_fields": [
+            {
+              "field": "named_protocols_or_services",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "service_prerequisites",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "required_protocol",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "required_service_class",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "required_preconditions",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "cleanup_reset_requirement",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "defensive_equivalence_requirements",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "provx_expected_causal_edge_classes",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "provx_expected_entity_types",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            }
+          ]
+        },
+        "exact_source_evidence_summary": "17 authenticated exact member source references<br>raw=6000002::S09::A004; source=APT数据集/playbooks/6000002.json#$.pipeline[8].actions[3]; action=Host command line - POWERSPLOIT, Audio Capture, Variant -2; type=host_cli; os=windows; description=此验证动作还原了如何使用 POWERSPLOIT 的\"Get-MicrophoneAudio.ps1\"脚本从受感染主机捕获音频。该脚本利用连接的外围设备，允许对手在受害者不知情的情况下记录对话。**如果在机器上找不到录音设备，则不会运行此验证动作。**请注意，此验证动作中使用的\"Get-MicrophoneAudio.ps1\"脚本已被验证动作清理删除。; source_action_sha256=3f1344741891a90258736fe155fc9cc8dc026762aec31790a47e96bd5a00d9f7; source_file_sha256=855ea7b3688eb23c26b6e5526c818da0deab66d312f76d94f5f28bc1ba9f5554<br>raw=6000008::S05::A002; source=APT数据集/playbooks/6000008.json#$.pipeline[4].actions[1]; action=Host command line - Add Windows Defender Exception Path, Variant -2; type=host_cli; os=windows; description=此验证动作还原了将 Windows Defender 排除项添加到 %USERPROFILE%。该命令禁用 Windows Defender 对此文件夹中文件的计划扫描和实时扫描。; source_action_sha256=0d31c9f541919d2dda7b31afc778ea377d48e6919954605240b31315553702a6; source_file_sha256=efb55818c06d82ad5d9955eb0f023be029a36a3e2b78c81644e88d4177294547<br>raw=6000009::S07::A005; source=APT数据集/playbooks/6000009.json#$.pipeline[6].actions[4]; action=Host Command Line - Private Key, PowerShell; type=host_cli; os=windows; description=此验证动作还原了恶意用户或程序如何从受感染主机收集加密密钥。 运行 PowerShell 脚本以搜索各种关键文件，例如 .cer 和 .pgp。 在主机的本地、可移动、光驱或网络驱动器上识别的任何关键文件都将被添加到存档中，以便以后进行渗透。 ; source_action_sha256=79991d5d3520ce2ab200dd5b375d9ef59c30687667e672240d15773e3f18655d; source_file_sha256=8ae4ceb81944486be6db1ae33b446242858cfae4fb7d473a3efb64eb39e258c7",
+        "exact_source_reference_count": 17,
+        "exact_source_reference_coverage": "PASS",
+        "member_count": 17,
+        "member_keys": [
+          "6000002::S09::A004",
+          "6000008::S05::A002",
+          "6000009::S07::A005",
+          "6000011::S04::A007",
+          "6000021::S09::A001",
+          "6000024::S09::A003",
+          "6000025::S03::A003",
+          "6000027::S08::A001",
+          "6000027::S08::A006",
+          "6000029::S06::A005",
+          "6000035::S04::A002",
+          "6000036::S03::A001",
+          "6000041::S04::A001",
+          "6000053::S08::A001",
+          "6000054::S03::A001",
+          "6000054::S03::A003",
+          "6000056::S03::A002"
+        ],
+        "member_set_sha256": "b9e9db68106f21ada95ece8e6158f9954372e9e28b908b1e98d886a679280449",
+        "negative_cases": [
+          "Do not infer missing command syntax, credentials, target behavior, or exploitability.",
+          "Do not use public endpoints, real malware, destructive effects, or uncontrolled services.",
+          "Do not mark PROVX detection/localization or formal outcomes from a design packet."
+        ],
+        "playbook_count": 15,
+        "proposed_reusable_design_contract": {
+          "must_remain_unknown": [
+            "named_protocols_or_services",
+            "service_prerequisites",
+            "required_protocol",
+            "required_service_class",
+            "required_preconditions",
+            "cleanup_reset_requirement",
+            "defensive_equivalence_requirements",
+            "provx_expected_causal_edge_classes",
+            "provx_expected_entity_types"
+          ],
+          "not_an_implementation": true,
+          "preserve": [
+            "exact member-set authority and per-raw source locator",
+            "source-visible platform/service/protocol values where explicit",
+            "R4 defensive and telemetry equivalence invariants",
+            "inert side effects only after human approval"
+          ],
+          "source_basis": "R4 template invariants plus exact source evidence references; no semantic embedding"
+        },
+        "representative_raw_keys": [
+          "6000002::S09::A004",
+          "6000008::S05::A002",
+          "6000009::S07::A005"
+        ],
+        "telemetry_equivalence_requirements": {
+          "candidate_observation_surfaces": [
+            "PROCESS"
+          ],
+          "equivalence_confidence": "SOURCE_DERIVED_TELEMETRY_SURFACES_ONLY",
+          "provx_phase1_observable": "UNKNOWN",
+          "provx_phase2_core_edge_localizable": "UNKNOWN",
+          "result_status": "UNEXECUTED_NOT_OBSERVED",
+          "source_telemetry_flags": {
+            "requires_file_telemetry": false,
+            "requires_host_process_telemetry": true,
+            "requires_network_fabric": false,
+            "requires_socket_telemetry": false
+          }
+        },
+        "template_id": "r4-template-130-process_command_execution",
+        "unresolved_unknown_fields": [
+          {
+            "field": "named_protocols_or_services",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "service_prerequisites",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "required_protocol",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "required_service_class",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "required_preconditions",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "cleanup_reset_requirement",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "defensive_equivalence_requirements",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "provx_expected_causal_edge_classes",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "provx_expected_entity_types",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          }
+        ]
+      },
+      "status_mutations": 0,
+      "template_id": "r4-template-130-process_command_execution"
+    },
+    {
+      "decision": null,
+      "decision_effects": {
+        "APPROVE_TEMPLATE_FOR_MEMBER_SET": {
+          "action_execution_authorized": false,
+          "formal_experiment_authorized": false,
+          "member_expansion": false,
+          "scope": "exact_member_set_only",
+          "status_mutation": false
+        },
+        "REJECT_TEMPLATE_KEEP_MEMBERS_MANUAL": {
+          "member_expansion": false,
+          "resulting_status": "MANUAL_DESIGN_REQUIRED"
+        },
+        "REQUEST_SPLIT_OR_MORE_EVIDENCE": {
+          "bounded_follow_up_request": "Human reviewer must identify the split boundary or exact missing evidence for this member set; no execution occurs.",
+          "member_expansion": false,
+          "resulting_status": "MANUAL_DESIGN_REQUIRED"
+        }
+      },
+      "decision_options": [
+        "APPROVE_TEMPLATE_FOR_MEMBER_SET",
+        "REJECT_TEMPLATE_KEEP_MEMBERS_MANUAL",
+        "REQUEST_SPLIT_OR_MORE_EVIDENCE"
+      ],
+      "decision_origin": null,
+      "denominator_change": "NO",
+      "evidence_packet_hash": "af566016e60338a19c76b334b35a1fd3fd2128096d85c706c906bb1ddd548c7e",
+      "evidence_packet_hash_algorithm": "sha256(canonical R6 enriched template packet JSON)",
+      "evidence_packet_source": "E0C_R6_EXACT89_ENRICHED_TEMPLATE_PACKETS.jsonl",
+      "formal_execution_authorized": false,
+      "human_decision": null,
+      "human_decision_options": [
+        "APPROVE_TEMPLATE_FOR_MEMBER_SET",
+        "REJECT_TEMPLATE_KEEP_MEMBERS_MANUAL",
+        "REQUEST_SPLIT_OR_MORE_EVIDENCE"
+      ],
+      "human_origin": null,
+      "human_origin_required": true,
+      "member_count": 12,
+      "member_expansion": false,
+      "member_expansion_authorized": false,
+      "member_key_commitment": {
+        "algorithm": "sha256",
+        "canonical_order": "lexicographic raw_key joined with LF",
+        "sha256": "ed38669390f755e5d316080187f6eff0d819475d59c828fa527d0ec66755ce35"
+      },
+      "member_keys": [
+        "6000006::S08::A005",
+        "6000008::S05::A008",
+        "6000011::S06::A007",
+        "6000017::S05::A006",
+        "6000024::S04::A003",
+        "6000024::S07::A005",
+        "6000026::S05::A005",
+        "6000031::S05::A001",
+        "6000039::S07::A002",
+        "6000060::S06::A003",
+        "6000063::S06::A001",
+        "6000063::S06::A002"
+      ],
+      "member_set_sha256": "ed38669390f755e5d316080187f6eff0d819475d59c828fa527d0ec66755ce35",
+      "playbook_count": 10,
+      "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+      "review_record": {
+        "archetype_platform": {
+          "archetype": "PROCESS_COMMAND_EXECUTION",
+          "platform": [
+            "windows"
+          ],
+          "protocols_or_services": [
+            "UNKNOWN"
+          ]
+        },
+        "cleanup_reset_obligations": {
+          "cleanup_reset_requirements": {
+            "r4_cleanup_reset": [],
+            "r5_reset_safety_complexity": {
+              "cleanup_reset_evidence": "R4 template cleanup/reset instructions; no reset is executed in R5.",
+              "level": "HIGH",
+              "source_supported_drivers": [
+                "credential_sensitive",
+                "windows_only_semantics"
+              ]
+            }
+          },
+          "reset_safety_complexity": {
+            "cleanup_reset_evidence": "R4 template cleanup/reset instructions; no reset is executed in R5.",
+            "level": "HIGH",
+            "source_supported_drivers": [
+              "credential_sensitive",
+              "windows_only_semantics"
+            ]
+          }
+        },
+        "defensive_equivalence_requirements": {
+          "file_socket_entity_classes": "Preserve source-indicated file/socket entity and operation classes; inert content may differ.",
+          "network_direction_protocol": "Preserve explicit direction/protocol/service evidence; UNKNOWN remains UNKNOWN.",
+          "observable_causality": "Preserve only causality supported by the source and later telemetry; do not fabricate edges.",
+          "process_ancestry": "Preserve host process ancestry class where applicable; never substitute a guessed parent process.",
+          "required_side_effects": "Use only inert side effects required for the same defensive decision point.",
+          "safe_differences": [
+            "payload bytes",
+            "credentials/secrets",
+            "public endpoints",
+            "exploitability",
+            "destructive effects",
+            "fixture identifiers with reversible mapping"
+          ],
+          "timing_sequence": "Preserve source-visible ordering and coarse timing relationships; exact timing may differ."
+        },
+        "environment_prerequisites": {
+          "controlled_environment_feasibility": "NO_AUTHENTICATED_CONTROLLED_REPLAY_ENVIRONMENT_OR_ACTION_IMPLEMENTATION",
+          "environment_blockers": [
+            "NO_AUTHENTICATED_CONTROLLED_REPLAY_ENVIRONMENT_OR_ACTION_IMPLEMENTATION"
+          ],
+          "formal_execution_authorized": false,
+          "per_raw_authenticated_values_count": 12,
+          "required_os_or_host_class": [
+            "windows"
+          ],
+          "required_protocol": [],
+          "required_service_class": [],
+          "service_prerequisites": [],
+          "unresolved_environment_fields": [
+            {
+              "field": "named_protocols_or_services",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "service_prerequisites",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "required_protocol",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "required_service_class",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "required_preconditions",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "cleanup_reset_requirement",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "defensive_equivalence_requirements",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "provx_expected_causal_edge_classes",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "provx_expected_entity_types",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            }
+          ]
+        },
+        "exact_source_evidence_summary": "12 authenticated exact member source references<br>raw=6000006::S08::A005; source=APT数据集/playbooks/6000006.json#$.pipeline[7].actions[4]; action=Host Command Line - Search WSL Bash History for Credentials; type=host_cli; os=windows; description=此验证动作还原了用户如何查看以前输入 Windows Linux 子系统的命令的 bash 历史记录。虽然 bash 历史记录有助于普通用户参考，但它也是对手可以利用的东西。例如，如果用户不小心在命令行输入了密码，或者故意将其作为其他命令的参数，则此信息存储在 ~/.bash_history 下。如果历史没有被清除，对手将能够通过查看文件的内容来收集凭据。; source_action_sha256=0508bc8bbdde6f22f2af48aa346a3f17428f43aa0bca78530979f3675f86a6c3; source_file_sha256=c801917cf23db412db586d330d6a2929ab3e89d48996fa64281ae95aac8ca84e<br>raw=6000008::S05::A008; source=APT数据集/playbooks/6000008.json#$.pipeline[4].actions[7]; action=Host Command Line - Search WSL Bash History for Credentials; type=host_cli; os=windows; description=此验证动作还原了用户如何查看以前输入 Windows Linux 子系统的命令的 bash 历史记录。虽然 bash 历史记录有助于普通用户参考，但它也是对手可以利用的东西。例如，如果用户不小心在命令行输入了密码，或者故意将其作为其他命令的参数，则此信息存储在 ~/.bash_history 下。如果历史没有被清除，对手将能够通过查看文件的内容来收集凭据。; source_action_sha256=8033087059e8048636155735b02376af3b56c46e30b12d4e876dfe235b9cb89f; source_file_sha256=efb55818c06d82ad5d9955eb0f023be029a36a3e2b78c81644e88d4177294547<br>raw=6000011::S06::A007; source=APT数据集/playbooks/6000011.json#$.pipeline[5].actions[6]; action=Host Command Line - Keylogger; type=host_cli; os=windows; description=此验证动作还原了攻击者在本地计算机上安装键盘记录器。 入侵者使用一种技术在不接触硬盘的情况下加载键盘记录器键（写入输出除外）。 此外，编码用于混淆 PowerShell 命令。 虽然这种技术的优点是很难在本地检测，但它也带来了局限性。 例如，ps1 文件必须通过互联网传输，让防御者有机会识别网络上的脚本。 此外，由于键盘记录器在内存中运行，因此在 PowerShell 会话关闭时其功能将终止。  请注意，此验证动作中安装的键盘记录器在清理过程中会被移除。; source_action_sha256=297a0af772790183e25c1e453d3a8abe32ff2c662aa9cdb315556fe7cb8ab03c; source_file_sha256=18a6930da2771664f3d5d8d1d037d84d07aa6fe4a53033301a6e1dfef09fa8e0",
+        "exact_source_reference_count": 12,
+        "exact_source_reference_coverage": "PASS",
+        "member_count": 12,
+        "member_keys": [
+          "6000006::S08::A005",
+          "6000008::S05::A008",
+          "6000011::S06::A007",
+          "6000017::S05::A006",
+          "6000024::S04::A003",
+          "6000024::S07::A005",
+          "6000026::S05::A005",
+          "6000031::S05::A001",
+          "6000039::S07::A002",
+          "6000060::S06::A003",
+          "6000063::S06::A001",
+          "6000063::S06::A002"
+        ],
+        "member_set_sha256": "ed38669390f755e5d316080187f6eff0d819475d59c828fa527d0ec66755ce35",
+        "negative_cases": [
+          "Do not infer missing command syntax, credentials, target behavior, or exploitability.",
+          "Do not use public endpoints, real malware, destructive effects, or uncontrolled services.",
+          "Do not mark PROVX detection/localization or formal outcomes from a design packet."
+        ],
+        "playbook_count": 10,
+        "proposed_reusable_design_contract": {
+          "must_remain_unknown": [
+            "named_protocols_or_services",
+            "service_prerequisites",
+            "required_protocol",
+            "required_service_class",
+            "required_preconditions",
+            "cleanup_reset_requirement",
+            "defensive_equivalence_requirements",
+            "provx_expected_causal_edge_classes",
+            "provx_expected_entity_types"
+          ],
+          "not_an_implementation": true,
+          "preserve": [
+            "exact member-set authority and per-raw source locator",
+            "source-visible platform/service/protocol values where explicit",
+            "R4 defensive and telemetry equivalence invariants",
+            "inert side effects only after human approval"
+          ],
+          "source_basis": "R4 template invariants plus exact source evidence references; no semantic embedding"
+        },
+        "representative_raw_keys": [
+          "6000006::S08::A005",
+          "6000008::S05::A008",
+          "6000011::S06::A007"
+        ],
+        "telemetry_equivalence_requirements": {
+          "candidate_observation_surfaces": [
+            "PROCESS"
+          ],
+          "equivalence_confidence": "SOURCE_DERIVED_TELEMETRY_SURFACES_ONLY",
+          "provx_phase1_observable": "UNKNOWN",
+          "provx_phase2_core_edge_localizable": "UNKNOWN",
+          "result_status": "UNEXECUTED_NOT_OBSERVED",
+          "source_telemetry_flags": {
+            "requires_file_telemetry": false,
+            "requires_host_process_telemetry": true,
+            "requires_network_fabric": false,
+            "requires_socket_telemetry": false
+          }
+        },
+        "template_id": "r4-template-152-process_command_execution",
+        "unresolved_unknown_fields": [
+          {
+            "field": "named_protocols_or_services",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "service_prerequisites",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "required_protocol",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "required_service_class",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "required_preconditions",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "cleanup_reset_requirement",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "defensive_equivalence_requirements",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "provx_expected_causal_edge_classes",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "provx_expected_entity_types",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          }
+        ]
+      },
+      "status_mutations": 0,
+      "template_id": "r4-template-152-process_command_execution"
+    },
+    {
+      "decision": null,
+      "decision_effects": {
+        "APPROVE_TEMPLATE_FOR_MEMBER_SET": {
+          "action_execution_authorized": false,
+          "formal_experiment_authorized": false,
+          "member_expansion": false,
+          "scope": "exact_member_set_only",
+          "status_mutation": false
+        },
+        "REJECT_TEMPLATE_KEEP_MEMBERS_MANUAL": {
+          "member_expansion": false,
+          "resulting_status": "MANUAL_DESIGN_REQUIRED"
+        },
+        "REQUEST_SPLIT_OR_MORE_EVIDENCE": {
+          "bounded_follow_up_request": "Human reviewer must identify the split boundary or exact missing evidence for this member set; no execution occurs.",
+          "member_expansion": false,
+          "resulting_status": "MANUAL_DESIGN_REQUIRED"
+        }
+      },
+      "decision_options": [
+        "APPROVE_TEMPLATE_FOR_MEMBER_SET",
+        "REJECT_TEMPLATE_KEEP_MEMBERS_MANUAL",
+        "REQUEST_SPLIT_OR_MORE_EVIDENCE"
+      ],
+      "decision_origin": null,
+      "denominator_change": "NO",
+      "evidence_packet_hash": "f8cfaf1040021757f0dca90a3974ed08eb0c78ad83c90668ef89c91b461c2874",
+      "evidence_packet_hash_algorithm": "sha256(canonical R6 enriched template packet JSON)",
+      "evidence_packet_source": "E0C_R6_EXACT89_ENRICHED_TEMPLATE_PACKETS.jsonl",
+      "formal_execution_authorized": false,
+      "human_decision": null,
+      "human_decision_options": [
+        "APPROVE_TEMPLATE_FOR_MEMBER_SET",
+        "REJECT_TEMPLATE_KEEP_MEMBERS_MANUAL",
+        "REQUEST_SPLIT_OR_MORE_EVIDENCE"
+      ],
+      "human_origin": null,
+      "human_origin_required": true,
+      "member_count": 10,
+      "member_expansion": false,
+      "member_expansion_authorized": false,
+      "member_key_commitment": {
+        "algorithm": "sha256",
+        "canonical_order": "lexicographic raw_key joined with LF",
+        "sha256": "7347ef4f412bf89b0ee6fad51fe44eabb96c64606d8b7d293b0b656ed8e86b42"
+      },
+      "member_keys": [
+        "6000002::S03::A003",
+        "6000002::S06::A002",
+        "6000004::S05::A003",
+        "6000008::S08::A001",
+        "6000010::S05::A001",
+        "6000019::S08::A002",
+        "6000033::S05::A003",
+        "6000049::S06::A002",
+        "6000054::S07::A003",
+        "6000062::S05::A001"
+      ],
+      "member_set_sha256": "7347ef4f412bf89b0ee6fad51fe44eabb96c64606d8b7d293b0b656ed8e86b42",
+      "playbook_count": 9,
+      "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+      "review_record": {
+        "archetype_platform": {
+          "archetype": "PERSISTENCE_CONFIGURATION",
+          "platform": [
+            "windows"
+          ],
+          "protocols_or_services": [
+            "UNKNOWN"
+          ]
+        },
+        "cleanup_reset_obligations": {
+          "cleanup_reset_requirements": {
+            "r4_cleanup_reset": [],
+            "r5_reset_safety_complexity": {
+              "cleanup_reset_evidence": "R4 template cleanup/reset instructions; no reset is executed in R5.",
+              "level": "HIGH",
+              "source_supported_drivers": [
+                "destructive_state",
+                "windows_only_semantics"
+              ]
+            }
+          },
+          "reset_safety_complexity": {
+            "cleanup_reset_evidence": "R4 template cleanup/reset instructions; no reset is executed in R5.",
+            "level": "HIGH",
+            "source_supported_drivers": [
+              "destructive_state",
+              "windows_only_semantics"
+            ]
+          }
+        },
+        "defensive_equivalence_requirements": {
+          "file_socket_entity_classes": "Preserve source-indicated file/socket entity and operation classes; inert content may differ.",
+          "network_direction_protocol": "Preserve explicit direction/protocol/service evidence; UNKNOWN remains UNKNOWN.",
+          "observable_causality": "Preserve only causality supported by the source and later telemetry; do not fabricate edges.",
+          "process_ancestry": "Preserve host process ancestry class where applicable; never substitute a guessed parent process.",
+          "required_side_effects": "Use only inert side effects required for the same defensive decision point.",
+          "safe_differences": [
+            "payload bytes",
+            "credentials/secrets",
+            "public endpoints",
+            "exploitability",
+            "destructive effects",
+            "fixture identifiers with reversible mapping"
+          ],
+          "timing_sequence": "Preserve source-visible ordering and coarse timing relationships; exact timing may differ."
+        },
+        "environment_prerequisites": {
+          "controlled_environment_feasibility": "NO_AUTHENTICATED_CONTROLLED_REPLAY_ENVIRONMENT_OR_ACTION_IMPLEMENTATION",
+          "environment_blockers": [
+            "NO_AUTHENTICATED_CONTROLLED_REPLAY_ENVIRONMENT_OR_ACTION_IMPLEMENTATION"
+          ],
+          "formal_execution_authorized": false,
+          "per_raw_authenticated_values_count": 10,
+          "required_os_or_host_class": [
+            "windows"
+          ],
+          "required_protocol": [],
+          "required_service_class": [],
+          "service_prerequisites": [],
+          "unresolved_environment_fields": [
+            {
+              "field": "named_protocols_or_services",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "service_prerequisites",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "required_protocol",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "required_service_class",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "required_preconditions",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "cleanup_reset_requirement",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "defensive_equivalence_requirements",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "provx_expected_causal_edge_classes",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "provx_expected_entity_types",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            }
+          ]
+        },
+        "exact_source_evidence_summary": "10 authenticated exact member source references<br>raw=6000002::S03::A003; source=APT数据集/playbooks/6000002.json#$.pipeline[2].actions[2]; action=Host Command Line - Use PowerShell to modify group policy to disable Windows Defender; type=host_cli; os=windows; description=此验证动作还原了一个对手试图创建一个新的组策略对象来禁用 Windows Defender。组策略对象 (GPO) 是一组可应用于 AD 容器(例如域和组织单位、OU)的设置。这些设置的范围从计划任务到为用户禁用或启用软件。攻击者可能会尝试修改或创建新的 GPO，以在受损环境中建立持久化、规避防御或提升特权。此验证动作需要域绑定主机才能成功执行。此验证动作还需要在主机上安装远程服务器管理工具 (RSAT)：组策略管理工具和 RSAT：AD 域服务和轻型目录服务工具。**警告：**此验证动作将修改组策略以禁用安全工具。尽管有清理步骤来撤消此验证动作创建的更改，但不建议在属于生产或敏感域的成员或有权访问生产域或敏感域的主机上运行此验证动作。>**依赖条件：**验证机器人必须加入域才能正确配置 AD 环境; source_action_sha256=41d498a28672f33e8112b068ac1c9b84a0a1df58848b8ab003a1bfcf641f3152; source_file_sha256=855ea7b3688eb23c26b6e5526c818da0deab66d312f76d94f5f28bc1ba9f5554<br>raw=6000002::S06::A002; source=APT数据集/playbooks/6000002.json#$.pipeline[5].actions[1]; action=Host command line - create persistence via scheduled task named \"Classic Sound\"; type=host_cli; os=windows; description=此验证动作还原了将创建一个名为“Classic Sound”的计划任务。此任务尝试执行恶意软件的某些部分。; source_action_sha256=1da7eefae53ba9c2e3e58edcadcd81c7140385b673793a959cd3fc5101a6b510; source_file_sha256=855ea7b3688eb23c26b6e5526c818da0deab66d312f76d94f5f28bc1ba9f5554<br>raw=6000004::S05::A003; source=APT数据集/playbooks/6000004.json#$.pipeline[4].actions[2]; action=Host Command Line - Winlogon Registry Changes; type=host_cli; os=windows; description=此验证动作还原了一个恶意攻击者更改 Winlogon 注册表项以建立持久化。 Winlogon.exe 在登录/注销时运行操作，并且可以通过将其放置在注册表中来操纵以运行恶意可执行文件、DLL 或脚本。  在此验证动作中，注册表中放置了一个名为“malicious.bat”的bat文件。 当用户使用这些注册表设置登录时，将执行 bat 文件。 Malicious.bat 只是在 C:\\Users\\Public\\Documents 中创建了一个名为 proof.txt 的文本文档，但更多的恶意文件可用于创建后门。; source_action_sha256=8334209973d7810f36e96b55865042b5527db0ed6f814da697d4a1e3ad716e64; source_file_sha256=8b75e353609f612da7621a1e57869ff590752c2c75410d3834a6d8673fc75439",
+        "exact_source_reference_count": 10,
+        "exact_source_reference_coverage": "PASS",
+        "member_count": 10,
+        "member_keys": [
+          "6000002::S03::A003",
+          "6000002::S06::A002",
+          "6000004::S05::A003",
+          "6000008::S08::A001",
+          "6000010::S05::A001",
+          "6000019::S08::A002",
+          "6000033::S05::A003",
+          "6000049::S06::A002",
+          "6000054::S07::A003",
+          "6000062::S05::A001"
+        ],
+        "member_set_sha256": "7347ef4f412bf89b0ee6fad51fe44eabb96c64606d8b7d293b0b656ed8e86b42",
+        "negative_cases": [
+          "Do not infer missing command syntax, credentials, target behavior, or exploitability.",
+          "Do not use public endpoints, real malware, destructive effects, or uncontrolled services.",
+          "Do not mark PROVX detection/localization or formal outcomes from a design packet."
+        ],
+        "playbook_count": 9,
+        "proposed_reusable_design_contract": {
+          "must_remain_unknown": [
+            "named_protocols_or_services",
+            "service_prerequisites",
+            "required_protocol",
+            "required_service_class",
+            "required_preconditions",
+            "cleanup_reset_requirement",
+            "defensive_equivalence_requirements",
+            "provx_expected_causal_edge_classes",
+            "provx_expected_entity_types"
+          ],
+          "not_an_implementation": true,
+          "preserve": [
+            "exact member-set authority and per-raw source locator",
+            "source-visible platform/service/protocol values where explicit",
+            "R4 defensive and telemetry equivalence invariants",
+            "inert side effects only after human approval"
+          ],
+          "source_basis": "R4 template invariants plus exact source evidence references; no semantic embedding"
+        },
+        "representative_raw_keys": [
+          "6000002::S03::A003",
+          "6000002::S06::A002",
+          "6000004::S05::A003"
+        ],
+        "telemetry_equivalence_requirements": {
+          "candidate_observation_surfaces": [
+            "FILE",
+            "PROCESS"
+          ],
+          "equivalence_confidence": "SOURCE_DERIVED_TELEMETRY_SURFACES_ONLY",
+          "provx_phase1_observable": "UNKNOWN",
+          "provx_phase2_core_edge_localizable": "UNKNOWN",
+          "result_status": "UNEXECUTED_NOT_OBSERVED",
+          "source_telemetry_flags": {
+            "requires_file_telemetry": true,
+            "requires_host_process_telemetry": true,
+            "requires_network_fabric": false,
+            "requires_socket_telemetry": false
+          }
+        },
+        "template_id": "r4-template-069-persistence_configuration",
+        "unresolved_unknown_fields": [
+          {
+            "field": "named_protocols_or_services",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "service_prerequisites",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "required_protocol",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "required_service_class",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "required_preconditions",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "cleanup_reset_requirement",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "defensive_equivalence_requirements",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "provx_expected_causal_edge_classes",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "provx_expected_entity_types",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          }
+        ]
+      },
+      "status_mutations": 0,
+      "template_id": "r4-template-069-persistence_configuration"
+    },
+    {
+      "decision": null,
+      "decision_effects": {
+        "APPROVE_TEMPLATE_FOR_MEMBER_SET": {
+          "action_execution_authorized": false,
+          "formal_experiment_authorized": false,
+          "member_expansion": false,
+          "scope": "exact_member_set_only",
+          "status_mutation": false
+        },
+        "REJECT_TEMPLATE_KEEP_MEMBERS_MANUAL": {
+          "member_expansion": false,
+          "resulting_status": "MANUAL_DESIGN_REQUIRED"
+        },
+        "REQUEST_SPLIT_OR_MORE_EVIDENCE": {
+          "bounded_follow_up_request": "Human reviewer must identify the split boundary or exact missing evidence for this member set; no execution occurs.",
+          "member_expansion": false,
+          "resulting_status": "MANUAL_DESIGN_REQUIRED"
+        }
+      },
+      "decision_options": [
+        "APPROVE_TEMPLATE_FOR_MEMBER_SET",
+        "REJECT_TEMPLATE_KEEP_MEMBERS_MANUAL",
+        "REQUEST_SPLIT_OR_MORE_EVIDENCE"
+      ],
+      "decision_origin": null,
+      "denominator_change": "NO",
+      "evidence_packet_hash": "50bdbf1df6fa4a1cd5a25ec3a964bd2f7d687ff18d483015bbaba47985cd22f0",
+      "evidence_packet_hash_algorithm": "sha256(canonical R6 enriched template packet JSON)",
+      "evidence_packet_source": "E0C_R6_EXACT89_ENRICHED_TEMPLATE_PACKETS.jsonl",
+      "formal_execution_authorized": false,
+      "human_decision": null,
+      "human_decision_options": [
+        "APPROVE_TEMPLATE_FOR_MEMBER_SET",
+        "REJECT_TEMPLATE_KEEP_MEMBERS_MANUAL",
+        "REQUEST_SPLIT_OR_MORE_EVIDENCE"
+      ],
+      "human_origin": null,
+      "human_origin_required": true,
+      "member_count": 9,
+      "member_expansion": false,
+      "member_expansion_authorized": false,
+      "member_key_commitment": {
+        "algorithm": "sha256",
+        "canonical_order": "lexicographic raw_key joined with LF",
+        "sha256": "9ae166dab66173192bbcbcd89bc86757c290e9d8db2d23a0350cd6df890636f4"
+      },
+      "member_keys": [
+        "6000003::S06::A004",
+        "6000004::S08::A004",
+        "6000006::S09::A006",
+        "6000010::S11::A007",
+        "6000011::S07::A006",
+        "6000017::S06::A002",
+        "6000019::S05::A003",
+        "6000026::S05::A006",
+        "6000031::S05::A003"
+      ],
+      "member_set_sha256": "9ae166dab66173192bbcbcd89bc86757c290e9d8db2d23a0350cd6df890636f4",
+      "playbook_count": 9,
+      "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+      "review_record": {
+        "archetype_platform": {
+          "archetype": "CREDENTIAL_STORE_ACCESS",
+          "platform": [
+            "windows"
+          ],
+          "protocols_or_services": [
+            "UNKNOWN"
+          ]
+        },
+        "cleanup_reset_obligations": {
+          "cleanup_reset_requirements": {
+            "r4_cleanup_reset": [],
+            "r5_reset_safety_complexity": {
+              "cleanup_reset_evidence": "R4 template cleanup/reset instructions; no reset is executed in R5.",
+              "level": "HIGH",
+              "source_supported_drivers": [
+                "credential_sensitive",
+                "windows_only_semantics"
+              ]
+            }
+          },
+          "reset_safety_complexity": {
+            "cleanup_reset_evidence": "R4 template cleanup/reset instructions; no reset is executed in R5.",
+            "level": "HIGH",
+            "source_supported_drivers": [
+              "credential_sensitive",
+              "windows_only_semantics"
+            ]
+          }
+        },
+        "defensive_equivalence_requirements": {
+          "file_socket_entity_classes": "Preserve source-indicated file/socket entity and operation classes; inert content may differ.",
+          "network_direction_protocol": "Preserve explicit direction/protocol/service evidence; UNKNOWN remains UNKNOWN.",
+          "observable_causality": "Preserve only causality supported by the source and later telemetry; do not fabricate edges.",
+          "process_ancestry": "Preserve host process ancestry class where applicable; never substitute a guessed parent process.",
+          "required_side_effects": "Use only inert side effects required for the same defensive decision point.",
+          "safe_differences": [
+            "payload bytes",
+            "credentials/secrets",
+            "public endpoints",
+            "exploitability",
+            "destructive effects",
+            "fixture identifiers with reversible mapping"
+          ],
+          "timing_sequence": "Preserve source-visible ordering and coarse timing relationships; exact timing may differ."
+        },
+        "environment_prerequisites": {
+          "controlled_environment_feasibility": "NO_AUTHENTICATED_CONTROLLED_REPLAY_ENVIRONMENT_OR_ACTION_IMPLEMENTATION",
+          "environment_blockers": [
+            "NO_AUTHENTICATED_CONTROLLED_REPLAY_ENVIRONMENT_OR_ACTION_IMPLEMENTATION"
+          ],
+          "formal_execution_authorized": false,
+          "per_raw_authenticated_values_count": 9,
+          "required_os_or_host_class": [
+            "windows"
+          ],
+          "required_protocol": [],
+          "required_service_class": [],
+          "service_prerequisites": [],
+          "unresolved_environment_fields": [
+            {
+              "field": "named_protocols_or_services",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "service_prerequisites",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "required_protocol",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "required_service_class",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "required_preconditions",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "cleanup_reset_requirement",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "defensive_equivalence_requirements",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "provx_expected_causal_edge_classes",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "provx_expected_entity_types",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            }
+          ]
+        },
+        "exact_source_evidence_summary": "9 authenticated exact member source references<br>raw=6000003::S06::A004; source=APT数据集/playbooks/6000003.json#$.pipeline[5].actions[3]; action=Host Command Line - Passing Exported Tickets Using Mimikatz; type=host_cli; os=windows; description=此验证动作还原了攻击者尝试使用 mimikatz 工具在当前会话中传递导出的票证。; source_action_sha256=178072eb24ee74f5ed57719eeec0d7e329f5a47eaa7ff1e438f0bed53e8bd109; source_file_sha256=36f5c7c07e043d3c72822e3fb8f708486111455bdcb03079b873a7d19b09e393<br>raw=6000004::S08::A004; source=APT数据集/playbooks/6000004.json#$.pipeline[7].actions[3]; action=Host Command Line - Passing Exported Tickets Using Mimikatz; type=host_cli; os=windows; description=此验证动作还原了攻击者尝试使用 mimikatz 工具在当前会话中传递导出的票证。; source_action_sha256=8fe4d6dab5c4d0e9151cc0572cdd7fd37287e2da1274d61184676257185ee2ea; source_file_sha256=8b75e353609f612da7621a1e57869ff590752c2c75410d3834a6d8673fc75439<br>raw=6000006::S09::A006; source=APT数据集/playbooks/6000006.json#$.pipeline[8].actions[5]; action=Host Command Line - Passing Exported Tickets Using Mimikatz; type=host_cli; os=windows; description=此验证动作还原了攻击者尝试使用 mimikatz 工具在当前会话中传递导出的票证。; source_action_sha256=477a92d17261d4766502b42a227db150bbcda1246c5b73791403de5642fa63c7; source_file_sha256=c801917cf23db412db586d330d6a2929ab3e89d48996fa64281ae95aac8ca84e",
+        "exact_source_reference_count": 9,
+        "exact_source_reference_coverage": "PASS",
+        "member_count": 9,
+        "member_keys": [
+          "6000003::S06::A004",
+          "6000004::S08::A004",
+          "6000006::S09::A006",
+          "6000010::S11::A007",
+          "6000011::S07::A006",
+          "6000017::S06::A002",
+          "6000019::S05::A003",
+          "6000026::S05::A006",
+          "6000031::S05::A003"
+        ],
+        "member_set_sha256": "9ae166dab66173192bbcbcd89bc86757c290e9d8db2d23a0350cd6df890636f4",
+        "negative_cases": [
+          "Do not infer missing command syntax, credentials, target behavior, or exploitability.",
+          "Do not use public endpoints, real malware, destructive effects, or uncontrolled services.",
+          "Do not mark PROVX detection/localization or formal outcomes from a design packet."
+        ],
+        "playbook_count": 9,
+        "proposed_reusable_design_contract": {
+          "must_remain_unknown": [
+            "named_protocols_or_services",
+            "service_prerequisites",
+            "required_protocol",
+            "required_service_class",
+            "required_preconditions",
+            "cleanup_reset_requirement",
+            "defensive_equivalence_requirements",
+            "provx_expected_causal_edge_classes",
+            "provx_expected_entity_types"
+          ],
+          "not_an_implementation": true,
+          "preserve": [
+            "exact member-set authority and per-raw source locator",
+            "source-visible platform/service/protocol values where explicit",
+            "R4 defensive and telemetry equivalence invariants",
+            "inert side effects only after human approval"
+          ],
+          "source_basis": "R4 template invariants plus exact source evidence references; no semantic embedding"
+        },
+        "representative_raw_keys": [
+          "6000003::S06::A004",
+          "6000004::S08::A004",
+          "6000006::S09::A006"
+        ],
+        "telemetry_equivalence_requirements": {
+          "candidate_observation_surfaces": [
+            "PROCESS"
+          ],
+          "equivalence_confidence": "SOURCE_DERIVED_TELEMETRY_SURFACES_ONLY",
+          "provx_phase1_observable": "UNKNOWN",
+          "provx_phase2_core_edge_localizable": "UNKNOWN",
+          "result_status": "UNEXECUTED_NOT_OBSERVED",
+          "source_telemetry_flags": {
+            "requires_file_telemetry": false,
+            "requires_host_process_telemetry": true,
+            "requires_network_fabric": false,
+            "requires_socket_telemetry": false
+          }
+        },
+        "template_id": "r4-template-009-credential_store_access",
+        "unresolved_unknown_fields": [
+          {
+            "field": "named_protocols_or_services",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "service_prerequisites",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "required_protocol",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "required_service_class",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "required_preconditions",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "cleanup_reset_requirement",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "defensive_equivalence_requirements",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "provx_expected_causal_edge_classes",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "provx_expected_entity_types",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          }
+        ]
+      },
+      "status_mutations": 0,
+      "template_id": "r4-template-009-credential_store_access"
+    },
+    {
+      "decision": null,
+      "decision_effects": {
+        "APPROVE_TEMPLATE_FOR_MEMBER_SET": {
+          "action_execution_authorized": false,
+          "formal_experiment_authorized": false,
+          "member_expansion": false,
+          "scope": "exact_member_set_only",
+          "status_mutation": false
+        },
+        "REJECT_TEMPLATE_KEEP_MEMBERS_MANUAL": {
+          "member_expansion": false,
+          "resulting_status": "MANUAL_DESIGN_REQUIRED"
+        },
+        "REQUEST_SPLIT_OR_MORE_EVIDENCE": {
+          "bounded_follow_up_request": "Human reviewer must identify the split boundary or exact missing evidence for this member set; no execution occurs.",
+          "member_expansion": false,
+          "resulting_status": "MANUAL_DESIGN_REQUIRED"
+        }
+      },
+      "decision_options": [
+        "APPROVE_TEMPLATE_FOR_MEMBER_SET",
+        "REJECT_TEMPLATE_KEEP_MEMBERS_MANUAL",
+        "REQUEST_SPLIT_OR_MORE_EVIDENCE"
+      ],
+      "decision_origin": null,
+      "denominator_change": "NO",
+      "evidence_packet_hash": "6ea93051f924db6c47eaab243e90811f00584e774d0e840b174743f3024216f5",
+      "evidence_packet_hash_algorithm": "sha256(canonical R6 enriched template packet JSON)",
+      "evidence_packet_source": "E0C_R6_EXACT89_ENRICHED_TEMPLATE_PACKETS.jsonl",
+      "formal_execution_authorized": false,
+      "human_decision": null,
+      "human_decision_options": [
+        "APPROVE_TEMPLATE_FOR_MEMBER_SET",
+        "REJECT_TEMPLATE_KEEP_MEMBERS_MANUAL",
+        "REQUEST_SPLIT_OR_MORE_EVIDENCE"
+      ],
+      "human_origin": null,
+      "human_origin_required": true,
+      "member_count": 9,
+      "member_expansion": false,
+      "member_expansion_authorized": false,
+      "member_key_commitment": {
+        "algorithm": "sha256",
+        "canonical_order": "lexicographic raw_key joined with LF",
+        "sha256": "776cc6ca57d025ad62efeed4d6f55f8a34a6dafe4517cc6a8a388519de3e6e8d"
+      },
+      "member_keys": [
+        "6000002::S05::A004",
+        "6000003::S06::A003",
+        "6000027::S08::A005",
+        "6000035::S07::A005",
+        "6000036::S06::A004",
+        "6000043::S05::A002",
+        "6000043::S05::A005",
+        "6000048::S06::A002",
+        "6000063::S07::A002"
+      ],
+      "member_set_sha256": "776cc6ca57d025ad62efeed4d6f55f8a34a6dafe4517cc6a8a388519de3e6e8d",
+      "playbook_count": 8,
+      "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+      "review_record": {
+        "archetype_platform": {
+          "archetype": "CREDENTIAL_STORE_ACCESS",
+          "platform": [
+            "windows"
+          ],
+          "protocols_or_services": [
+            "UNKNOWN"
+          ]
+        },
+        "cleanup_reset_obligations": {
+          "cleanup_reset_requirements": {
+            "r4_cleanup_reset": [],
+            "r5_reset_safety_complexity": {
+              "cleanup_reset_evidence": "R4 template cleanup/reset instructions; no reset is executed in R5.",
+              "level": "HIGH",
+              "source_supported_drivers": [
+                "credential_sensitive",
+                "multi_step_composite",
+                "windows_only_semantics"
+              ]
+            }
+          },
+          "reset_safety_complexity": {
+            "cleanup_reset_evidence": "R4 template cleanup/reset instructions; no reset is executed in R5.",
+            "level": "HIGH",
+            "source_supported_drivers": [
+              "credential_sensitive",
+              "multi_step_composite",
+              "windows_only_semantics"
+            ]
+          }
+        },
+        "defensive_equivalence_requirements": {
+          "file_socket_entity_classes": "Preserve source-indicated file/socket entity and operation classes; inert content may differ.",
+          "network_direction_protocol": "Preserve explicit direction/protocol/service evidence; UNKNOWN remains UNKNOWN.",
+          "observable_causality": "Preserve only causality supported by the source and later telemetry; do not fabricate edges.",
+          "process_ancestry": "Preserve host process ancestry class where applicable; never substitute a guessed parent process.",
+          "required_side_effects": "Use only inert side effects required for the same defensive decision point.",
+          "safe_differences": [
+            "payload bytes",
+            "credentials/secrets",
+            "public endpoints",
+            "exploitability",
+            "destructive effects",
+            "fixture identifiers with reversible mapping"
+          ],
+          "timing_sequence": "Preserve source-visible ordering and coarse timing relationships; exact timing may differ."
+        },
+        "environment_prerequisites": {
+          "controlled_environment_feasibility": "NO_AUTHENTICATED_CONTROLLED_REPLAY_ENVIRONMENT_OR_ACTION_IMPLEMENTATION",
+          "environment_blockers": [
+            "NO_AUTHENTICATED_CONTROLLED_REPLAY_ENVIRONMENT_OR_ACTION_IMPLEMENTATION"
+          ],
+          "formal_execution_authorized": false,
+          "per_raw_authenticated_values_count": 9,
+          "required_os_or_host_class": [
+            "windows"
+          ],
+          "required_protocol": [],
+          "required_service_class": [],
+          "service_prerequisites": [],
+          "unresolved_environment_fields": [
+            {
+              "field": "named_protocols_or_services",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "service_prerequisites",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "required_protocol",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "required_service_class",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "required_preconditions",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "cleanup_reset_requirement",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "defensive_equivalence_requirements",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "provx_expected_causal_edge_classes",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "provx_expected_entity_types",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            }
+          ]
+        },
+        "exact_source_evidence_summary": "9 authenticated exact member source references<br>raw=6000002::S05::A004; source=APT数据集/playbooks/6000002.json#$.pipeline[4].actions[3]; action=Host command line - MIMIKATZ (2.1.1), Valid Accounts from SAM NTLM Hash Dump, Variant -2; type=host_cli; os=windows; description=此验证动作还原了攻击者如何使用 Invoke-Mimikatz PowerShell 脚本提取密码。在此验证动作中，\"lsadump::sam\"模块用于从安全帐户管理器 (SAM) 数据库获取 NTLM 哈希。此信息可用于登录其他帐户或用于 NTLM 哈希传递攻击。MIMIKATZ 是由安全研究员 Benjamin Delpy 开发的 Windows 安全审计工具。MIMIKATZ 可用于窃取密码哈希值并Dump从内存中提取的明文密码。MIMIKATZ 可以Dump来自 LSASS 的凭据以及 Kerberos 密码。Linux 和 Unix 系统将 Kerberos 凭证Dump在缓存文件中，MIMIKATZ 也可以提取该文件。 请注意，此 验证动作中使用的 Invoke-Mimikatz 脚本使用旧版本的 Mimikatz，可能无法在较新的系统(某些版本的 Windows 10 及更高版本)上正常运行。; source_action_sha256=2e416bf680b98d94af4c50af2134aa6eb4be173e29d99132db5a0f541129a2fd; source_file_sha256=855ea7b3688eb23c26b6e5526c818da0deab66d312f76d94f5f28bc1ba9f5554<br>raw=6000003::S06::A003; source=APT数据集/playbooks/6000003.json#$.pipeline[5].actions[2]; action=Host command line - MIMIKATZ PowerShell, download obfuscated file by appending to JPEG, execute in memory; type=host_cli; os=windows; description=此验证动作还原了主机尝试下载 MIMIKATZ PowerShell 脚本的变种并从内存中执行示例。通过将脚本附加到合法图像来混淆此示例。 MIMIKATZ 是一个 Windows 安全审计工具。 MIMIKATZ 可用于窃取密码哈希并Dump从内存中提取的明文密码。 MIMIKATZ 可以从 LSASS Dump凭据以及 Kerberos 密码。 Linux 和 Unix 系统将 Kerberos 凭据存储在缓存文件中，MIMIKATZ 也可以提取该文件。; source_action_sha256=d18e3e5d4b10b053d05c6b607ea13fc0c37ae440b5c8d2e6c22b5d994dfdebb9; source_file_sha256=36f5c7c07e043d3c72822e3fb8f708486111455bdcb03079b873a7d19b09e393<br>raw=6000027::S08::A005; source=APT数据集/playbooks/6000027.json#$.pipeline[7].actions[4]; action=Host command line - MIMIKATZ (2.1.1), Valid Accounts from SAM NTLM Hash Dump, Variant -2; type=host_cli; os=windows; description=此验证动作还原了攻击者如何使用 Invoke-Mimikatz PowerShell 脚本提取密码。在此验证动作中，\"lsadump::sam\"模块用于从安全帐户管理器 (SAM) 数据库获取 NTLM 哈希。此信息可用于登录其他帐户或用于 NTLM 哈希传递攻击。MIMIKATZ 是由安全研究员 Benjamin Delpy 开发的 Windows 安全审计工具。MIMIKATZ 可用于窃取密码哈希值并Dump从内存中提取的明文密码。MIMIKATZ 可以Dump来自 LSASS 的凭据以及 Kerberos 密码。Linux 和 Unix 系统将 Kerberos 凭证Dump在缓存文件中，MIMIKATZ 也可以提取该文件。 请注意，此 验证动作中使用的 Invoke-Mimikatz 脚本使用旧版本的 Mimikatz，可能无法在较新的系统(某些版本的 Windows 10 及更高版本)上正常运行。; source_action_sha256=031442b3d752fe9b189281dec9ea5218b24487ec2dc99800c37270b43e6ecd2f; source_file_sha256=7f594a339bb374d663a18edcb82591d820efb8f9fb3e9d4a426c2ae81f18ba84",
+        "exact_source_reference_count": 9,
+        "exact_source_reference_coverage": "PASS",
+        "member_count": 9,
+        "member_keys": [
+          "6000002::S05::A004",
+          "6000003::S06::A003",
+          "6000027::S08::A005",
+          "6000035::S07::A005",
+          "6000036::S06::A004",
+          "6000043::S05::A002",
+          "6000043::S05::A005",
+          "6000048::S06::A002",
+          "6000063::S07::A002"
+        ],
+        "member_set_sha256": "776cc6ca57d025ad62efeed4d6f55f8a34a6dafe4517cc6a8a388519de3e6e8d",
+        "negative_cases": [
+          "Do not infer missing command syntax, credentials, target behavior, or exploitability.",
+          "Do not use public endpoints, real malware, destructive effects, or uncontrolled services.",
+          "Do not mark PROVX detection/localization or formal outcomes from a design packet."
+        ],
+        "playbook_count": 8,
+        "proposed_reusable_design_contract": {
+          "must_remain_unknown": [
+            "named_protocols_or_services",
+            "service_prerequisites",
+            "required_protocol",
+            "required_service_class",
+            "required_preconditions",
+            "cleanup_reset_requirement",
+            "defensive_equivalence_requirements",
+            "provx_expected_causal_edge_classes",
+            "provx_expected_entity_types"
+          ],
+          "not_an_implementation": true,
+          "preserve": [
+            "exact member-set authority and per-raw source locator",
+            "source-visible platform/service/protocol values where explicit",
+            "R4 defensive and telemetry equivalence invariants",
+            "inert side effects only after human approval"
+          ],
+          "source_basis": "R4 template invariants plus exact source evidence references; no semantic embedding"
+        },
+        "representative_raw_keys": [
+          "6000002::S05::A004",
+          "6000003::S06::A003",
+          "6000027::S08::A005"
+        ],
+        "telemetry_equivalence_requirements": {
+          "candidate_observation_surfaces": [
+            "FILE",
+            "PROCESS"
+          ],
+          "equivalence_confidence": "SOURCE_DERIVED_TELEMETRY_SURFACES_ONLY",
+          "provx_phase1_observable": "UNKNOWN",
+          "provx_phase2_core_edge_localizable": "UNKNOWN",
+          "result_status": "UNEXECUTED_NOT_OBSERVED",
+          "source_telemetry_flags": {
+            "requires_file_telemetry": true,
+            "requires_host_process_telemetry": true,
+            "requires_network_fabric": false,
+            "requires_socket_telemetry": false
+          }
+        },
+        "template_id": "r4-template-006-credential_store_access",
+        "unresolved_unknown_fields": [
+          {
+            "field": "named_protocols_or_services",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "service_prerequisites",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "required_protocol",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "required_service_class",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "required_preconditions",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "cleanup_reset_requirement",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "defensive_equivalence_requirements",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "provx_expected_causal_edge_classes",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "provx_expected_entity_types",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          }
+        ]
+      },
+      "status_mutations": 0,
+      "template_id": "r4-template-006-credential_store_access"
+    },
+    {
+      "decision": null,
+      "decision_effects": {
+        "APPROVE_TEMPLATE_FOR_MEMBER_SET": {
+          "action_execution_authorized": false,
+          "formal_experiment_authorized": false,
+          "member_expansion": false,
+          "scope": "exact_member_set_only",
+          "status_mutation": false
+        },
+        "REJECT_TEMPLATE_KEEP_MEMBERS_MANUAL": {
+          "member_expansion": false,
+          "resulting_status": "MANUAL_DESIGN_REQUIRED"
+        },
+        "REQUEST_SPLIT_OR_MORE_EVIDENCE": {
+          "bounded_follow_up_request": "Human reviewer must identify the split boundary or exact missing evidence for this member set; no execution occurs.",
+          "member_expansion": false,
+          "resulting_status": "MANUAL_DESIGN_REQUIRED"
+        }
+      },
+      "decision_options": [
+        "APPROVE_TEMPLATE_FOR_MEMBER_SET",
+        "REJECT_TEMPLATE_KEEP_MEMBERS_MANUAL",
+        "REQUEST_SPLIT_OR_MORE_EVIDENCE"
+      ],
+      "decision_origin": null,
+      "denominator_change": "NO",
+      "evidence_packet_hash": "02d285e72ae9662ac63c72606084f353a13b5fc6631f359614f9c061f5ecce96",
+      "evidence_packet_hash_algorithm": "sha256(canonical R6 enriched template packet JSON)",
+      "evidence_packet_source": "E0C_R6_EXACT89_ENRICHED_TEMPLATE_PACKETS.jsonl",
+      "formal_execution_authorized": false,
+      "human_decision": null,
+      "human_decision_options": [
+        "APPROVE_TEMPLATE_FOR_MEMBER_SET",
+        "REJECT_TEMPLATE_KEEP_MEMBERS_MANUAL",
+        "REQUEST_SPLIT_OR_MORE_EVIDENCE"
+      ],
+      "human_origin": null,
+      "human_origin_required": true,
+      "member_count": 9,
+      "member_expansion": false,
+      "member_expansion_authorized": false,
+      "member_key_commitment": {
+        "algorithm": "sha256",
+        "canonical_order": "lexicographic raw_key joined with LF",
+        "sha256": "f7ea287ecdda9343ad41d24096b9a4ab8a4a567d0f40c0d3b708a384e65c9db4"
+      },
+      "member_keys": [
+        "6000011::S02::A004",
+        "6000011::S02::A005",
+        "6000016::S03::A001",
+        "6000016::S03::A002",
+        "6000027::S04::A002",
+        "6000035::S03::A004",
+        "6000041::S03::A002",
+        "6000050::S02::A004",
+        "6000060::S04::A001"
+      ],
+      "member_set_sha256": "f7ea287ecdda9343ad41d24096b9a4ab8a4a567d0f40c0d3b708a384e65c9db4",
+      "playbook_count": 7,
+      "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+      "review_record": {
+        "archetype_platform": {
+          "archetype": "NETWORK_C2_BEACON",
+          "platform": [
+            "windows"
+          ],
+          "protocols_or_services": [
+            "DNS",
+            "HTTP"
+          ]
+        },
+        "cleanup_reset_obligations": {
+          "cleanup_reset_requirements": {
+            "r4_cleanup_reset": [],
+            "r5_reset_safety_complexity": {
+              "cleanup_reset_evidence": "R4 template cleanup/reset instructions; no reset is executed in R5.",
+              "level": "HIGH",
+              "source_supported_drivers": [
+                "credential_sensitive",
+                "multi_step_composite",
+                "service_environment_absent",
+                "windows_only_semantics"
+              ]
+            }
+          },
+          "reset_safety_complexity": {
+            "cleanup_reset_evidence": "R4 template cleanup/reset instructions; no reset is executed in R5.",
+            "level": "HIGH",
+            "source_supported_drivers": [
+              "credential_sensitive",
+              "multi_step_composite",
+              "service_environment_absent",
+              "windows_only_semantics"
+            ]
+          }
+        },
+        "defensive_equivalence_requirements": {
+          "file_socket_entity_classes": "Preserve source-indicated file/socket entity and operation classes; inert content may differ.",
+          "network_direction_protocol": "Preserve explicit direction/protocol/service evidence; UNKNOWN remains UNKNOWN.",
+          "observable_causality": "Preserve only causality supported by the source and later telemetry; do not fabricate edges.",
+          "process_ancestry": "Preserve host process ancestry class where applicable; never substitute a guessed parent process.",
+          "required_side_effects": "Use only inert side effects required for the same defensive decision point.",
+          "safe_differences": [
+            "payload bytes",
+            "credentials/secrets",
+            "public endpoints",
+            "exploitability",
+            "destructive effects",
+            "fixture identifiers with reversible mapping"
+          ],
+          "timing_sequence": "Preserve source-visible ordering and coarse timing relationships; exact timing may differ."
+        },
+        "environment_prerequisites": {
+          "controlled_environment_feasibility": "NO_AUTHENTICATED_CONTROLLED_REPLAY_ENVIRONMENT_OR_ACTION_IMPLEMENTATION",
+          "environment_blockers": [
+            "NO_AUTHENTICATED_CONTROLLED_REPLAY_ENVIRONMENT_OR_ACTION_IMPLEMENTATION"
+          ],
+          "formal_execution_authorized": false,
+          "per_raw_authenticated_values_count": 9,
+          "required_os_or_host_class": [
+            "windows"
+          ],
+          "required_protocol": [],
+          "required_service_class": [],
+          "service_prerequisites": [
+            "DNS",
+            "HTTP"
+          ],
+          "unresolved_environment_fields": [
+            {
+              "field": "required_protocol",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "required_service_class",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "required_preconditions",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "cleanup_reset_requirement",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "defensive_equivalence_requirements",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "provx_expected_causal_edge_classes",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "provx_expected_entity_types",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            }
+          ]
+        },
+        "exact_source_evidence_summary": "9 authenticated exact member source references<br>raw=6000011::S02::A004; source=APT数据集/playbooks/6000011.json#$.pipeline[1].actions[3]; action=Host command line - Beacon, DNS Beacon A Record, C2 traffic; type=host_cli; os=windows; description=此验证动作还原了 信标 后门使用 DNS 信标方法与其命令与控制基础设施通信。在此验证动作中，感染了 信标 变种的受感染机器会联系控制器以获取更多命令，以便通过 DNS 在机器上运行。通信和发出的命令在 DNS 请求中进行编码，以隐藏监视工具的任何显着行为。信标 是一个用 C/C++ 编写的后门，它是 Cobalt Strike 框架的一部分。支持的后门命令包括shell命令执行、文件传输、文件执行和文件管理。信标 还可以键盘记录和截屏以及充当代理服务器。信标 还可能负责收集系统凭证、端口扫描和枚举网络上的系统。信标 通过 http 或 DNS 与 C&C 服务器通信。 注意：为了减轻用户面临的任何风险，我们提供了一个选项来输入一个域作为模拟 DNS 信标通信的目标。; source_action_sha256=7791d7cee4b5c6b6556c2e4367e7325ba2be9d012f5356dc9265cc4ea753ac03; source_file_sha256=18a6930da2771664f3d5d8d1d037d84d07aa6fe4a53033301a6e1dfef09fa8e0<br>raw=6000011::S02::A005; source=APT数据集/playbooks/6000011.json#$.pipeline[1].actions[4]; action=Host Command Line - Beacon, DNS Beacon TXT Record, C2 traffic; type=host_cli; os=windows; description=此验证动作还原了 信标 后门使用 DNS 信标方法与其命令与控制基础设施通信。在此验证动作中，感染了 信标 变种的受感染机器会联系控制器以获取更多命令，以便通过 DNS 在机器上运行。通信和发出的命令在 DNS 请求中进行编码，以隐藏监视工具的任何显着行为。信标 是一个用 C/C++ 编写的后门，它是 Cobalt Strike 框架的一部分。支持的后门命令包括shell命令执行、文件传输、文件执行和文件管理。信标 还可以键盘记录和截屏以及充当代理服务器。信标 还可能负责收集系统凭证、端口扫描和枚举网络上的系统。信标 通过 http 或 DNS 与 C&C 服务器通信。 注意：为了减轻用户面临的任何风险，我们提供了一个选项来输入一个域作为模拟 DNS 信标通信的目标。; source_action_sha256=b0cbec2f643f76d45e155e7bcfd44ab3019b0f4ffdd7c9d50cf69ba938ff9dd0; source_file_sha256=18a6930da2771664f3d5d8d1d037d84d07aa6fe4a53033301a6e1dfef09fa8e0<br>raw=6000016::S03::A001; source=APT数据集/playbooks/6000016.json#$.pipeline[2].actions[0]; action=Host Command Line - Beacon, DNS Beacon TXT Record, C2 traffic; type=host_cli; os=windows; description=此验证动作还原了 信标 后门使用 DNS 信标方法与其命令与控制基础设施通信。在此验证动作中，感染了 信标 变种的受感染机器会联系控制器以获取更多命令，以便通过 DNS 在机器上运行。通信和发出的命令在 DNS 请求中进行编码，以隐藏监视工具的任何显着行为。信标 是一个用 C/C++ 编写的后门，它是 Cobalt Strike 框架的一部分。支持的后门命令包括shell命令执行、文件传输、文件执行和文件管理。信标 还可以键盘记录和截屏以及充当代理服务器。信标 还可能负责收集系统凭证、端口扫描和枚举网络上的系统。信标 通过 http 或 DNS 与 C&C 服务器通信。 注意：为了减轻用户面临的任何风险，我们提供了一个选项来输入一个域作为模拟 DNS 信标通信的目标。; source_action_sha256=cc0b4e83d3687baf301899a0136b33469d0f89dbdf9504180a172a938dc4d384; source_file_sha256=d4e5f21cdfac1eb691d18dca3e6de3fcfd00e321179f06923366824d82eca237",
+        "exact_source_reference_count": 9,
+        "exact_source_reference_coverage": "PASS",
+        "member_count": 9,
+        "member_keys": [
+          "6000011::S02::A004",
+          "6000011::S02::A005",
+          "6000016::S03::A001",
+          "6000016::S03::A002",
+          "6000027::S04::A002",
+          "6000035::S03::A004",
+          "6000041::S03::A002",
+          "6000050::S02::A004",
+          "6000060::S04::A001"
+        ],
+        "member_set_sha256": "f7ea287ecdda9343ad41d24096b9a4ab8a4a567d0f40c0d3b708a384e65c9db4",
+        "negative_cases": [
+          "Do not infer missing command syntax, credentials, target behavior, or exploitability.",
+          "Do not use public endpoints, real malware, destructive effects, or uncontrolled services.",
+          "Do not mark PROVX detection/localization or formal outcomes from a design packet."
+        ],
+        "playbook_count": 7,
+        "proposed_reusable_design_contract": {
+          "must_remain_unknown": [
+            "required_protocol",
+            "required_service_class",
+            "required_preconditions",
+            "cleanup_reset_requirement",
+            "defensive_equivalence_requirements",
+            "provx_expected_causal_edge_classes",
+            "provx_expected_entity_types"
+          ],
+          "not_an_implementation": true,
+          "preserve": [
+            "exact member-set authority and per-raw source locator",
+            "source-visible platform/service/protocol values where explicit",
+            "R4 defensive and telemetry equivalence invariants",
+            "inert side effects only after human approval"
+          ],
+          "source_basis": "R4 template invariants plus exact source evidence references; no semantic embedding"
+        },
+        "representative_raw_keys": [
+          "6000011::S02::A004",
+          "6000011::S02::A005",
+          "6000016::S03::A001"
+        ],
+        "telemetry_equivalence_requirements": {
+          "candidate_observation_surfaces": [
+            "PROCESS"
+          ],
+          "equivalence_confidence": "SOURCE_DERIVED_TELEMETRY_SURFACES_ONLY",
+          "provx_phase1_observable": "UNKNOWN",
+          "provx_phase2_core_edge_localizable": "UNKNOWN",
+          "result_status": "UNEXECUTED_NOT_OBSERVED",
+          "source_telemetry_flags": {
+            "requires_file_telemetry": false,
+            "requires_host_process_telemetry": true,
+            "requires_network_fabric": true,
+            "requires_socket_telemetry": true
+          }
+        },
+        "template_id": "r4-template-048-network_c2_beacon",
+        "unresolved_unknown_fields": [
+          {
+            "field": "required_protocol",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "required_service_class",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "required_preconditions",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "cleanup_reset_requirement",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "defensive_equivalence_requirements",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "provx_expected_causal_edge_classes",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "provx_expected_entity_types",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          }
+        ]
+      },
+      "status_mutations": 0,
+      "template_id": "r4-template-048-network_c2_beacon"
+    },
+    {
+      "decision": null,
+      "decision_effects": {
+        "APPROVE_TEMPLATE_FOR_MEMBER_SET": {
+          "action_execution_authorized": false,
+          "formal_experiment_authorized": false,
+          "member_expansion": false,
+          "scope": "exact_member_set_only",
+          "status_mutation": false
+        },
+        "REJECT_TEMPLATE_KEEP_MEMBERS_MANUAL": {
+          "member_expansion": false,
+          "resulting_status": "MANUAL_DESIGN_REQUIRED"
+        },
+        "REQUEST_SPLIT_OR_MORE_EVIDENCE": {
+          "bounded_follow_up_request": "Human reviewer must identify the split boundary or exact missing evidence for this member set; no execution occurs.",
+          "member_expansion": false,
+          "resulting_status": "MANUAL_DESIGN_REQUIRED"
+        }
+      },
+      "decision_options": [
+        "APPROVE_TEMPLATE_FOR_MEMBER_SET",
+        "REJECT_TEMPLATE_KEEP_MEMBERS_MANUAL",
+        "REQUEST_SPLIT_OR_MORE_EVIDENCE"
+      ],
+      "decision_origin": null,
+      "denominator_change": "NO",
+      "evidence_packet_hash": "fbf8903dddcaf4509fefaf8c855d2923c86cc3ca722b01628c4bc3163f35cc5a",
+      "evidence_packet_hash_algorithm": "sha256(canonical R6 enriched template packet JSON)",
+      "evidence_packet_source": "E0C_R6_EXACT89_ENRICHED_TEMPLATE_PACKETS.jsonl",
+      "formal_execution_authorized": false,
+      "human_decision": null,
+      "human_decision_options": [
+        "APPROVE_TEMPLATE_FOR_MEMBER_SET",
+        "REJECT_TEMPLATE_KEEP_MEMBERS_MANUAL",
+        "REQUEST_SPLIT_OR_MORE_EVIDENCE"
+      ],
+      "human_origin": null,
+      "human_origin_required": true,
+      "member_count": 8,
+      "member_expansion": false,
+      "member_expansion_authorized": false,
+      "member_key_commitment": {
+        "algorithm": "sha256",
+        "canonical_order": "lexicographic raw_key joined with LF",
+        "sha256": "ae5c70bcbce560f3194a63c6336b1021b4a3f947601958b75ae98245331b8a52"
+      },
+      "member_keys": [
+        "6000002::S05::A007",
+        "6000004::S04::A010",
+        "6000036::S07::A004",
+        "6000041::S08::A002",
+        "6000043::S06::A004",
+        "6000046::S05::A003",
+        "6000054::S08::A003",
+        "6000062::S07::A003"
+      ],
+      "member_set_sha256": "ae5c70bcbce560f3194a63c6336b1021b4a3f947601958b75ae98245331b8a52",
+      "playbook_count": 8,
+      "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+      "review_record": {
+        "archetype_platform": {
+          "archetype": "FILE_RESOURCE_OPERATION",
+          "platform": [
+            "windows"
+          ],
+          "protocols_or_services": [
+            "FTP"
+          ]
+        },
+        "cleanup_reset_obligations": {
+          "cleanup_reset_requirements": {
+            "r4_cleanup_reset": [],
+            "r5_reset_safety_complexity": {
+              "cleanup_reset_evidence": "R4 template cleanup/reset instructions; no reset is executed in R5.",
+              "level": "HIGH",
+              "source_supported_drivers": [
+                "credential_sensitive",
+                "destructive_state",
+                "multi_step_composite",
+                "windows_only_semantics"
+              ]
+            }
+          },
+          "reset_safety_complexity": {
+            "cleanup_reset_evidence": "R4 template cleanup/reset instructions; no reset is executed in R5.",
+            "level": "HIGH",
+            "source_supported_drivers": [
+              "credential_sensitive",
+              "destructive_state",
+              "multi_step_composite",
+              "windows_only_semantics"
+            ]
+          }
+        },
+        "defensive_equivalence_requirements": {
+          "file_socket_entity_classes": "Preserve source-indicated file/socket entity and operation classes; inert content may differ.",
+          "network_direction_protocol": "Preserve explicit direction/protocol/service evidence; UNKNOWN remains UNKNOWN.",
+          "observable_causality": "Preserve only causality supported by the source and later telemetry; do not fabricate edges.",
+          "process_ancestry": "Preserve host process ancestry class where applicable; never substitute a guessed parent process.",
+          "required_side_effects": "Use only inert side effects required for the same defensive decision point.",
+          "safe_differences": [
+            "payload bytes",
+            "credentials/secrets",
+            "public endpoints",
+            "exploitability",
+            "destructive effects",
+            "fixture identifiers with reversible mapping"
+          ],
+          "timing_sequence": "Preserve source-visible ordering and coarse timing relationships; exact timing may differ."
+        },
+        "environment_prerequisites": {
+          "controlled_environment_feasibility": "NO_AUTHENTICATED_CONTROLLED_REPLAY_ENVIRONMENT_OR_ACTION_IMPLEMENTATION",
+          "environment_blockers": [
+            "NO_AUTHENTICATED_CONTROLLED_REPLAY_ENVIRONMENT_OR_ACTION_IMPLEMENTATION"
+          ],
+          "formal_execution_authorized": false,
+          "per_raw_authenticated_values_count": 8,
+          "required_os_or_host_class": [
+            "windows"
+          ],
+          "required_protocol": [],
+          "required_service_class": [],
+          "service_prerequisites": [
+            "FTP"
+          ],
+          "unresolved_environment_fields": [
+            {
+              "field": "required_protocol",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "required_service_class",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "required_preconditions",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "cleanup_reset_requirement",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "defensive_equivalence_requirements",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "provx_expected_causal_edge_classes",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "provx_expected_entity_types",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            }
+          ]
+        },
+        "exact_source_evidence_summary": "8 authenticated exact member source references<br>raw=6000002::S05::A007; source=APT数据集/playbooks/6000002.json#$.pipeline[4].actions[6]; action=Host Command Line - URSNIF, using iexplore.exe to transfer collected data; type=host_cli; os=windows; description=此验证动作还原了通过 iexplore.exe (Internet Explorer) 泄露数据。\"CoCreateInstance\" API 函数用于创建 Internet Explorer 的 COM 实例。然后使用\"Navigate()\"方法向服务器发送数据。已经观察到 URSNIF 的一个变种使用这种技术将收集到的数据发送回其 C&C 服务器。\r URSNIF 是一种经过修改的模块化银行恶意软件，具有后门功能。其功能包括拦截和修改浏览器流量、文件下载和上传、建立 SOCKS 代理、系统重启和关闭、系统信息收集和域生成算法 (DGA)。该恶意软件还能够从流行的电子邮件和 FTP 客户端以及浏览器中窃取数据和凭据。还; source_action_sha256=1fbf6f2376f31ea163ade61887b670f493e09d18195c0d6a281d798bb6c83b0f; source_file_sha256=855ea7b3688eb23c26b6e5526c818da0deab66d312f76d94f5f28bc1ba9f5554<br>raw=6000004::S04::A010; source=APT数据集/playbooks/6000004.json#$.pipeline[3].actions[9]; action=Host Command Line - URSNIF, using iexplore.exe to transfer collected data; type=host_cli; os=windows; description=此验证动作还原了通过 iexplore.exe (Internet Explorer) 泄露数据。\"CoCreateInstance\" API 函数用于创建 Internet Explorer 的 COM 实例。然后使用\"Navigate()\"方法向服务器发送数据。已经观察到 URSNIF 的一个变种使用这种技术将收集到的数据发送回其 C&C 服务器。\r URSNIF 是一种经过修改的模块化银行恶意软件，具有后门功能。其功能包括拦截和修改浏览器流量、文件下载和上传、建立 SOCKS 代理、系统重启和关闭、系统信息收集和域生成算法 (DGA)。该恶意软件还能够从流行的电子邮件和 FTP 客户端以及浏览器中窃取数据和凭据。还; source_action_sha256=9d6c43c9389689eba34afdf1492bcb532d4d6f3f098b2a78a4cd00d80d4d34bd; source_file_sha256=8b75e353609f612da7621a1e57869ff590752c2c75410d3834a6d8673fc75439<br>raw=6000036::S07::A004; source=APT数据集/playbooks/6000036.json#$.pipeline[6].actions[3]; action=Host Command Line - URSNIF, using iexplore.exe to transfer collected data; type=host_cli; os=windows; description=此验证动作还原了通过 iexplore.exe (Internet Explorer) 泄露数据。\"CoCreateInstance\" API 函数用于创建 Internet Explorer 的 COM 实例。然后使用\"Navigate()\"方法向服务器发送数据。已经观察到 URSNIF 的一个变种使用这种技术将收集到的数据发送回其 C&C 服务器。\r URSNIF 是一种经过修改的模块化银行恶意软件，具有后门功能。其功能包括拦截和修改浏览器流量、文件下载和上传、建立 SOCKS 代理、系统重启和关闭、系统信息收集和域生成算法 (DGA)。该恶意软件还能够从流行的电子邮件和 FTP 客户端以及浏览器中窃取数据和凭据。还; source_action_sha256=faf5ea7cc612555bff06f8c76a53c6e253a63f47cae6a3152b06ed8c69ab0f22; source_file_sha256=2d13b4bbe0187bfafd72d70f6519105f10aaad5c4e84dcc9bcf919cede816658",
+        "exact_source_reference_count": 8,
+        "exact_source_reference_coverage": "PASS",
+        "member_count": 8,
+        "member_keys": [
+          "6000002::S05::A007",
+          "6000004::S04::A010",
+          "6000036::S07::A004",
+          "6000041::S08::A002",
+          "6000043::S06::A004",
+          "6000046::S05::A003",
+          "6000054::S08::A003",
+          "6000062::S07::A003"
+        ],
+        "member_set_sha256": "ae5c70bcbce560f3194a63c6336b1021b4a3f947601958b75ae98245331b8a52",
+        "negative_cases": [
+          "Do not infer missing command syntax, credentials, target behavior, or exploitability.",
+          "Do not use public endpoints, real malware, destructive effects, or uncontrolled services.",
+          "Do not mark PROVX detection/localization or formal outcomes from a design packet."
+        ],
+        "playbook_count": 8,
+        "proposed_reusable_design_contract": {
+          "must_remain_unknown": [
+            "required_protocol",
+            "required_service_class",
+            "required_preconditions",
+            "cleanup_reset_requirement",
+            "defensive_equivalence_requirements",
+            "provx_expected_causal_edge_classes",
+            "provx_expected_entity_types"
+          ],
+          "not_an_implementation": true,
+          "preserve": [
+            "exact member-set authority and per-raw source locator",
+            "source-visible platform/service/protocol values where explicit",
+            "R4 defensive and telemetry equivalence invariants",
+            "inert side effects only after human approval"
+          ],
+          "source_basis": "R4 template invariants plus exact source evidence references; no semantic embedding"
+        },
+        "representative_raw_keys": [
+          "6000002::S05::A007",
+          "6000004::S04::A010",
+          "6000036::S07::A004"
+        ],
+        "telemetry_equivalence_requirements": {
+          "candidate_observation_surfaces": [
+            "FILE",
+            "PROCESS"
+          ],
+          "equivalence_confidence": "SOURCE_DERIVED_TELEMETRY_SURFACES_ONLY",
+          "provx_phase1_observable": "UNKNOWN",
+          "provx_phase2_core_edge_localizable": "UNKNOWN",
+          "result_status": "UNEXECUTED_NOT_OBSERVED",
+          "source_telemetry_flags": {
+            "requires_file_telemetry": true,
+            "requires_host_process_telemetry": true,
+            "requires_network_fabric": false,
+            "requires_socket_telemetry": false
+          }
+        },
+        "template_id": "r4-template-035-file_resource_operation",
+        "unresolved_unknown_fields": [
+          {
+            "field": "required_protocol",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "required_service_class",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "required_preconditions",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "cleanup_reset_requirement",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "defensive_equivalence_requirements",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "provx_expected_causal_edge_classes",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "provx_expected_entity_types",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          }
+        ]
+      },
+      "status_mutations": 0,
+      "template_id": "r4-template-035-file_resource_operation"
+    },
+    {
+      "decision": null,
+      "decision_effects": {
+        "APPROVE_TEMPLATE_FOR_MEMBER_SET": {
+          "action_execution_authorized": false,
+          "formal_experiment_authorized": false,
+          "member_expansion": false,
+          "scope": "exact_member_set_only",
+          "status_mutation": false
+        },
+        "REJECT_TEMPLATE_KEEP_MEMBERS_MANUAL": {
+          "member_expansion": false,
+          "resulting_status": "MANUAL_DESIGN_REQUIRED"
+        },
+        "REQUEST_SPLIT_OR_MORE_EVIDENCE": {
+          "bounded_follow_up_request": "Human reviewer must identify the split boundary or exact missing evidence for this member set; no execution occurs.",
+          "member_expansion": false,
+          "resulting_status": "MANUAL_DESIGN_REQUIRED"
+        }
+      },
+      "decision_options": [
+        "APPROVE_TEMPLATE_FOR_MEMBER_SET",
+        "REJECT_TEMPLATE_KEEP_MEMBERS_MANUAL",
+        "REQUEST_SPLIT_OR_MORE_EVIDENCE"
+      ],
+      "decision_origin": null,
+      "denominator_change": "NO",
+      "evidence_packet_hash": "606e4ba3c98bf4ba0f1a5b87e3b1d34bf85fc40ff457255da1e851df3d1046e6",
+      "evidence_packet_hash_algorithm": "sha256(canonical R6 enriched template packet JSON)",
+      "evidence_packet_source": "E0C_R6_EXACT89_ENRICHED_TEMPLATE_PACKETS.jsonl",
+      "formal_execution_authorized": false,
+      "human_decision": null,
+      "human_decision_options": [
+        "APPROVE_TEMPLATE_FOR_MEMBER_SET",
+        "REJECT_TEMPLATE_KEEP_MEMBERS_MANUAL",
+        "REQUEST_SPLIT_OR_MORE_EVIDENCE"
+      ],
+      "human_origin": null,
+      "human_origin_required": true,
+      "member_count": 8,
+      "member_expansion": false,
+      "member_expansion_authorized": false,
+      "member_key_commitment": {
+        "algorithm": "sha256",
+        "canonical_order": "lexicographic raw_key joined with LF",
+        "sha256": "939db086e6af0f4a8c6fb04d039ff8a379b0b0dc9cf5ebe9cbd76bb4e3b9cb28"
+      },
+      "member_keys": [
+        "6000015::S06::A002",
+        "6000028::S07::A006",
+        "6000029::S04::A001",
+        "6000041::S06::A002",
+        "6000047::S06::A002",
+        "6000050::S04::A004",
+        "6000054::S07::A001",
+        "6000062::S03::A004"
+      ],
+      "member_set_sha256": "939db086e6af0f4a8c6fb04d039ff8a379b0b0dc9cf5ebe9cbd76bb4e3b9cb28",
+      "playbook_count": 8,
+      "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+      "review_record": {
+        "archetype_platform": {
+          "archetype": "PERSISTENCE_CONFIGURATION",
+          "platform": [
+            "windows"
+          ],
+          "protocols_or_services": [
+            "UNKNOWN"
+          ]
+        },
+        "cleanup_reset_obligations": {
+          "cleanup_reset_requirements": {
+            "r4_cleanup_reset": [],
+            "r5_reset_safety_complexity": {
+              "cleanup_reset_evidence": "R4 template cleanup/reset instructions; no reset is executed in R5.",
+              "level": "HIGH",
+              "source_supported_drivers": [
+                "destructive_state",
+                "windows_only_semantics"
+              ]
+            }
+          },
+          "reset_safety_complexity": {
+            "cleanup_reset_evidence": "R4 template cleanup/reset instructions; no reset is executed in R5.",
+            "level": "HIGH",
+            "source_supported_drivers": [
+              "destructive_state",
+              "windows_only_semantics"
+            ]
+          }
+        },
+        "defensive_equivalence_requirements": {
+          "file_socket_entity_classes": "Preserve source-indicated file/socket entity and operation classes; inert content may differ.",
+          "network_direction_protocol": "Preserve explicit direction/protocol/service evidence; UNKNOWN remains UNKNOWN.",
+          "observable_causality": "Preserve only causality supported by the source and later telemetry; do not fabricate edges.",
+          "process_ancestry": "Preserve host process ancestry class where applicable; never substitute a guessed parent process.",
+          "required_side_effects": "Use only inert side effects required for the same defensive decision point.",
+          "safe_differences": [
+            "payload bytes",
+            "credentials/secrets",
+            "public endpoints",
+            "exploitability",
+            "destructive effects",
+            "fixture identifiers with reversible mapping"
+          ],
+          "timing_sequence": "Preserve source-visible ordering and coarse timing relationships; exact timing may differ."
+        },
+        "environment_prerequisites": {
+          "controlled_environment_feasibility": "NO_AUTHENTICATED_CONTROLLED_REPLAY_ENVIRONMENT_OR_ACTION_IMPLEMENTATION",
+          "environment_blockers": [
+            "NO_AUTHENTICATED_CONTROLLED_REPLAY_ENVIRONMENT_OR_ACTION_IMPLEMENTATION"
+          ],
+          "formal_execution_authorized": false,
+          "per_raw_authenticated_values_count": 8,
+          "required_os_or_host_class": [
+            "windows"
+          ],
+          "required_protocol": [],
+          "required_service_class": [],
+          "service_prerequisites": [],
+          "unresolved_environment_fields": [
+            {
+              "field": "named_protocols_or_services",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "service_prerequisites",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "required_protocol",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "required_service_class",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "required_preconditions",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "cleanup_reset_requirement",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "defensive_equivalence_requirements",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "provx_expected_causal_edge_classes",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            },
+            {
+              "field": "provx_expected_entity_types",
+              "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+            }
+          ]
+        },
+        "exact_source_evidence_summary": "8 authenticated exact member source references<br>raw=6000015::S06::A002; source=APT数据集/playbooks/6000015.json#$.pipeline[5].actions[1]; action=Host command line - WMI Persistence; type=host_cli; os=windows; description=此验证动作还原了如何使用 WMI 事件过滤器和使用者来设置持久性。当系统正常运行时间在 300 到 400 秒之间或在 15:30:40 时，TURLA 恶意软件使用这些机制运行存储在注册表中的加密 PowerShell 命令。此验证动作还原了该机制使用\"echo\"命令启动 PowerShell。; source_action_sha256=255dbc69f6bac937bf7fa6b754f74900d6670c8f1a27a795c60767fd7a7633ad; source_file_sha256=211febb1a39bf9d9d15946006bc478d062f83337525b24a2eff8a4827d9941d5<br>raw=6000028::S07::A006; source=APT数据集/playbooks/6000028.json#$.pipeline[6].actions[5]; action=Host Command Line - Add program to Windows startup script for all users; type=host_cli; os=windows; description=此验证动作还原了将可执行文件添加到 Windows 启动文件夹。 添加到“C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Startup”的程序或脚本将在任何用户登录 Windows 时自动执行。 恶意攻击者利用此行为作为目标主机上的持久化机制。 如果通过组策略推送到其他系统，也可以利用此行为进行横向移动。 启动添加的程序是calc.exe的合法副本，被验证动作cleanup删除。; source_action_sha256=9bc135b1d871f7390909281db3a66c5fa1424c9b873c9a9cb27447d02f6d151c; source_file_sha256=7eb3f746abfe2ae51f8dc83262870b11aca511d3c3fa83af49af53abe9fa7885<br>raw=6000029::S04::A001; source=APT数据集/playbooks/6000029.json#$.pipeline[3].actions[0]; action=Host Command Line - Benign: Discovering Group Policy via Command Prompt; type=host_cli; os=windows; description=此验证动作还原了一个验证机器人 利用内置命令提示符“gpresult”实用程序来显示远程用户和计算机的策略结果集 (RSoP) 信息。设计此良性操作的目的是测试 CLI 操作的执行，这种方式不会对安全控制显示为恶意。; source_action_sha256=497c8b76f03b7dcf96a760deec2e9363dd23aec342e8b35b83fbaf8a2954334e; source_file_sha256=f6c646e2166bbb6d4dba66a63200acc2875917a0dd33706a6cf517ef7e22db3f",
+        "exact_source_reference_count": 8,
+        "exact_source_reference_coverage": "PASS",
+        "member_count": 8,
+        "member_keys": [
+          "6000015::S06::A002",
+          "6000028::S07::A006",
+          "6000029::S04::A001",
+          "6000041::S06::A002",
+          "6000047::S06::A002",
+          "6000050::S04::A004",
+          "6000054::S07::A001",
+          "6000062::S03::A004"
+        ],
+        "member_set_sha256": "939db086e6af0f4a8c6fb04d039ff8a379b0b0dc9cf5ebe9cbd76bb4e3b9cb28",
+        "negative_cases": [
+          "Do not infer missing command syntax, credentials, target behavior, or exploitability.",
+          "Do not use public endpoints, real malware, destructive effects, or uncontrolled services.",
+          "Do not mark PROVX detection/localization or formal outcomes from a design packet."
+        ],
+        "playbook_count": 8,
+        "proposed_reusable_design_contract": {
+          "must_remain_unknown": [
+            "named_protocols_or_services",
+            "service_prerequisites",
+            "required_protocol",
+            "required_service_class",
+            "required_preconditions",
+            "cleanup_reset_requirement",
+            "defensive_equivalence_requirements",
+            "provx_expected_causal_edge_classes",
+            "provx_expected_entity_types"
+          ],
+          "not_an_implementation": true,
+          "preserve": [
+            "exact member-set authority and per-raw source locator",
+            "source-visible platform/service/protocol values where explicit",
+            "R4 defensive and telemetry equivalence invariants",
+            "inert side effects only after human approval"
+          ],
+          "source_basis": "R4 template invariants plus exact source evidence references; no semantic embedding"
+        },
+        "representative_raw_keys": [
+          "6000015::S06::A002",
+          "6000028::S07::A006",
+          "6000029::S04::A001"
+        ],
+        "telemetry_equivalence_requirements": {
+          "candidate_observation_surfaces": [
+            "PROCESS"
+          ],
+          "equivalence_confidence": "SOURCE_DERIVED_TELEMETRY_SURFACES_ONLY",
+          "provx_phase1_observable": "UNKNOWN",
+          "provx_phase2_core_edge_localizable": "UNKNOWN",
+          "result_status": "UNEXECUTED_NOT_OBSERVED",
+          "source_telemetry_flags": {
+            "requires_file_telemetry": false,
+            "requires_host_process_telemetry": true,
+            "requires_network_fabric": false,
+            "requires_socket_telemetry": false
+          }
+        },
+        "template_id": "r4-template-071-persistence_configuration",
+        "unresolved_unknown_fields": [
+          {
+            "field": "named_protocols_or_services",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "service_prerequisites",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "required_protocol",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "required_service_class",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "required_preconditions",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "cleanup_reset_requirement",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "defensive_equivalence_requirements",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "provx_expected_causal_edge_classes",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          },
+          {
+            "field": "provx_expected_entity_types",
+            "state": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+          }
+        ]
+      },
+      "status_mutations": 0,
+      "template_id": "r4-template-071-persistence_configuration"
+    }
+  ]
+}

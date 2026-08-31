@@ -1,0 +1,12 @@
+{
+  "schema": "MININET_E1C_R5_AUDIT_PRE_STATE_V1",
+  "run_id": "e1c-r5-run-20260831T111849Z",
+  "status": "PENDING_PRIVILEGED_ROOT_PREFLIGHT",
+  "derived_from_pinned_r4_post_cleanup": true,
+  "historical_rule_dump": "No rules\\n",
+  "baseline_rule_dump_sha256": "61501e69a61dbbc1a41605ea15c34807e6b1d3992bee195dde36a7ebdd95dd87",
+  "canonical_rule_lines": [],
+  "installed_auditd_version": "auditd=1:3.0.7-1build1",
+  "direct_root_capture_performed": false,
+  "root_start_action": "capture auditctl -l/-s and fail closed unless exact clean baseline"
+}
