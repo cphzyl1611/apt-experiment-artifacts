@@ -1,0 +1,31 @@
+{
+  "stage": "PROVX-R1",
+  "inference": {
+    "repetitions": 2,
+    "run_records": ["provx-r1/inference_run1.json", "provx-r1/inference_run2.json"],
+    "full_output_sha256_run1": "e6f3bc820b7ab2a83b832e3e134199636fa259b35d68177fe952be4e440877ee",
+    "full_output_sha256_run2": "e6f3bc820b7ab2a83b832e3e134199636fa259b35d68177fe952be4e440877ee",
+    "prediction_sequence_sha256_run1": "37df743ed89a058f82697bc81dea4fc4684eea62ffdc4f6d0b795edcdfc88585",
+    "prediction_sequence_sha256_run2": "37df743ed89a058f82697bc81dea4fc4684eea62ffdc4f6d0b795edcdfc88585",
+    "predictions_equal": true,
+    "metrics_equal": true,
+    "result": "PASS"
+  },
+  "phase2": {
+    "repetitions": 2,
+    "run_records": ["provx-r1/phase2_run1.pt", "provx-r1/phase2_run2.pt"],
+    "full_output_sha256_run1": "f683eeccfabfc4f0875dd26c896b2e4728f9905b3adb73e60f70f78a0b1f1fa5",
+    "full_output_sha256_run2": "e26e74b27aa5e1a40ff005e3f561533682904e84c90e2c8e7aa9aa3942512660",
+    "graph_identity_equal": true,
+    "edge_index_equal": true,
+    "edge_weight_equal": false,
+    "edge_weight_max_abs_delta": 0.04471695423126221,
+    "edge_weight_mean_abs_delta": 0.011177140288054943,
+    "top30_overlap": 22,
+    "top30_same_set": false,
+    "metrics_equal": true,
+    "unseeded_reason": "ProvXExplainer._set_masks uses torch.randn; run_provx.py exposes no seed argument and does not set a Phase-II seed",
+    "result": "VARIABLE_RECORDED"
+  },
+  "overall": "VARIABLE_RECORDED: deterministic GCN inference; variable Phase-II explanation weights under identical unseeded runs"
+}

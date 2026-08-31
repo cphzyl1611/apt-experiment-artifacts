@@ -1,0 +1,1 @@
+/home/cph/experiment-parallel/e0-b/provx-r1/venv_r1_cpu/bin/python scripts/check_package.py --dataset Sample --partition test_100nodes --gnn-model GCNConv --limit-graphs 1 --device cpu

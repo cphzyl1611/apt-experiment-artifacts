@@ -1,0 +1,99 @@
+{
+  "schema": "MININET_E1A_R2_HARNESS_STATIC_AUDIT_V2",
+  "audited_at_utc": "2026-08-30T06:15:08.408261+00:00",
+  "audit_status": "PASS_READY_FOR_HUMAN_PRIVILEGED_RUN",
+  "harness": {
+    "path": "/home/cph/experiment-parallel/e0-a/e1a-r2-run-20260830T060231Z/mininet_e1a_r2_privileged_harness.py",
+    "sha256": "129bc1b10486e3f23c37d7b3386f7dfeebc108a7b29a25f493809391fd070e90"
+  },
+  "test_file": {
+    "path": "/home/cph/experiment-parallel/e0-a/e1a-r2-run-20260830T060231Z/test_e1a_r2_harness.py",
+    "sha256": "1402d614e9b3bbcb275da4f66bce513c104ea838da75ec5bd5dba1c49a29d23a"
+  },
+  "test_first_history": [
+    {
+      "stage": "RED_MISSING_HARNESS",
+      "result": "EXPECTED_FAILURE"
+    },
+    {
+      "stage": "RED_INCOMPLETE_COMMAND_INVENTORY",
+      "result": "EXPECTED_FAILURE"
+    },
+    {
+      "stage": "RED_MISSING_OVS_PORT_QUERY",
+      "result": "EXPECTED_FAILURE"
+    },
+    {
+      "stage": "GREEN_CORRECTED_HARNESS",
+      "result": "PASS"
+    }
+  ],
+  "fresh_validation": {
+    "py_compile": {
+      "command": "/usr/bin/python3 -m py_compile e1a-r2-run-20260830T060231Z/mininet_e1a_r2_privileged_harness.py e1a-r2-run-20260830T060231Z/test_e1a_r2_harness.py",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    "unit_and_contract_tests": {
+      "command": "/usr/bin/python3 -m unittest discover -s e1a-r2-run-20260830T060231Z -p test_e1a_r2_harness.py -v",
+      "tests_run": 10,
+      "failures": 0,
+      "errors": 0,
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    "static_self_check": {
+      "command": "/usr/bin/python3 e1a-r2-run-20260830T060231Z/mininet_e1a_r2_privileged_harness.py --static-self-check",
+      "evidence_path": "/home/cph/experiment-parallel/e0-a/e1a-r2-run-20260830T060231Z/static_self_check.json",
+      "exit_code": 0,
+      "result": "PASS"
+    }
+  },
+  "static_checks": {
+    "python_ast_parse": true,
+    "no_nat_or_external_links": true,
+    "no_apt_commands": true,
+    "no_provx_or_formal_benchmark_execution": true,
+    "no_mn_c": true,
+    "no_automatic_sudo": true,
+    "bounded_tcpdump_filter": true,
+    "tcpdump_integrated_before_traffic_and_stopped_before_teardown": true,
+    "exact_four_namespace_assertions_present": true,
+    "live_child_proc_net_tcp_capture_present": true,
+    "live_child_ss_and_socket_inode_ownership_capture_present": true,
+    "exact_four_cleanup_zero_assertions_present": true,
+    "ovs_bridge_interface_and_port_residue_queries_present": true,
+    "pre_existing_ovs_daemons_excluded_from_run_owned_state": true,
+    "run_specific_process_identity_uses_pid_and_start_ticks": true,
+    "r1_hashes_unchanged": true
+  },
+  "required_namespace_assertions": [
+    "h1_child_netns == h1_shell_netns",
+    "h2_child_netns == h2_shell_netns",
+    "h1_child_netns != h2_shell_netns",
+    "h2_child_netns != h1_shell_netns"
+  ],
+  "required_post_cleanup_values": {
+    "RUN_OWNED_CHILDREN_REMAINING": 0,
+    "RESERVED_TEST_INTERFACES_REMAINING": 0,
+    "RESERVED_TEST_OVS_OBJECTS_REMAINING": 0,
+    "TCPDUMP_PROCESS_REMAINING": 0
+  },
+  "execution_state": {
+    "privileged_execution_performed": false,
+    "attack_actions_executed": 0,
+    "provx_executed": false,
+    "formal_experiment_executed": false,
+    "apt_actions_executed": 0,
+    "mn_dash_c_executed": false,
+    "automatic_sudo_invoked": false
+  },
+  "pre_human_terminal": {
+    "MININET_E1A_R2_HARNESS_PREPARATION": "PASS",
+    "HUMAN_PRIVILEGED_RUN_REQUIRED": "YES",
+    "ATTACK_ACTIONS_EXECUTED": 0,
+    "FORMAL_EXPERIMENT_EXECUTED": "NO",
+    "NEXT_ACTION": "HUMAN_RUN_EXACT_SUDO_COMMAND",
+    "STOP": true
+  }
+}

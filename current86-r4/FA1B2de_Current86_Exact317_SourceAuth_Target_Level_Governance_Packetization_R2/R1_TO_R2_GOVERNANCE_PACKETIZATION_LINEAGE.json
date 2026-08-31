@@ -1,0 +1,16 @@
+{
+  "authority_status": "NONCANONICAL_EVIDENCE_ONLY_NO_SOURCE_FACTS_CREATED",
+  "exact317_manifest": "/home/cph/fa1b2de-bso-a2-transition-r2-design-patch/FA1B2de_Current86_Exact317_SourceAuth_Execution_Contract_R4/00_lineage/EXACT317_TARGET_MANIFEST.json",
+  "exact317_manifest_sha256": "d8d55d369fe433bf7b93a3c332b8ac9a517a9146b28fa223370ff3ec946955ac",
+  "r1_package": "/home/cph/fa1b2de-bso-a2-transition-r2-design-patch/FA1B2de_Current86_Exact317_SourceAuth_Production_Normative_Authority_Design_R1",
+  "r1_package_sha256s_sha256": "124097d6b43ad0c3d890d843da37e81ccaf7f6ed065ec6737b5419a26d30436b",
+  "review_path": "/home/cph/fa1b2de-bso-a2-transition-r2-design-patch/review_inputs/FA1B2de_Round2_Fresh_Independent_Review.md",
+  "review_sha256": "39a0234018393ce2e46fdb8af1da3748a3b31eb0d36c5b956ad379e102dea3e4",
+  "schema": "FA1B2DE_CURRENT86_TARGET_LEVEL_PACKETIZATION_LINEAGE_R2",
+  "source_class_fact_registry_sha256": "3df4262faa4137996d2ff8d163bcc665d5bed76b3d719e6ff66cf4154252d72f",
+  "source_corpora": {
+    "c0_evidence_sha256": "8273c9b241cab806adbc9452a4ce572c11277657760f2e6e7b6210357829f54a",
+    "raw_registry_sha256": "53c85157f9fd0849ae19b1cf403333ad0d0af2a7d761b0498540dd92d66c1e93",
+    "scoring_snapshot_sha256": "748a3808290f9e78f71c18d4553c77ae208517fd31d163fc2b3008cfcb57f1bb"
+  }
+}

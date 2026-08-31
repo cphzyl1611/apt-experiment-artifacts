@@ -1,0 +1,10 @@
+{
+  "schema": "MININET_E1A_R2_UNPRIVILEGED_GATE_V1",
+  "command": "/usr/bin/python3 /home/cph/experiment-parallel/e0-a/e1a-r2-run-20260830/e1a_r2_benign_attribution_harness.py",
+  "exit_code": 1,
+  "stderr": "*** Mininet must run as root.",
+  "interpretation": "PASS_ROOT_GATE_ENFORCED; topology construction did not proceed",
+  "privileged_execution_performed": false,
+  "attack_actions_executed": 0,
+  "formal_experiment_executed": false
+}

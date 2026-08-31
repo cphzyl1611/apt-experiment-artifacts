@@ -1,0 +1,39 @@
+{
+  "stage": "PROVX-R1",
+  "dataset": "Sample",
+  "partition": "test_100nodes",
+  "checkpoint": "provx-r1/artifact/storage/cache/Sample/saved_models/GCNConv/checkpoint-best-acc/model.bin",
+  "device": "cpu",
+  "command": "PYTHONPATH=. ../venv_r1_cpu/bin/python ../run_gcn_inference.py",
+  "working_directory": "provx-r1/artifact",
+  "checkpoint_load": "PASS",
+  "graph_count": 2463,
+  "first_graph": {"nodes": 102, "edges": 100, "input_feature_dim": 21},
+  "detector_config": {
+    "gnn_model": "GCNConv",
+    "gnn_feature_dim_size": 256,
+    "gnn_hidden_size": 64,
+    "num_gnn_layers": 2,
+    "graph_pooling": "mean",
+    "dropout_rate": 0.1,
+    "num_classes": 2,
+    "residual": false,
+    "gat_heads": 8,
+    "graphsage_aggr": "mean"
+  },
+  "checkpoint_input_feature_dim": 21,
+  "run_1": {
+    "predictions_record": "provx-r1/inference_run1.json",
+    "prediction_sha256": "37df743ed89a058f82697bc81dea4fc4684eea62ffdc4f6d0b795edcdfc88585",
+    "prediction_counts": {"0": 2326, "1": 137},
+    "metrics": {"accuracy": 0.996752, "precision": 0.984962, "recall": 0.956204, "f1": 0.97037, "auc": 0.991533, "tn": 2324, "fp": 2, "fn": 6, "tp": 131}
+  },
+  "run_2": {
+    "predictions_record": "provx-r1/inference_run2.json",
+    "prediction_sha256": "37df743ed89a058f82697bc81dea4fc4684eea62ffdc4f6d0b795edcdfc88585",
+    "prediction_counts": {"0": 2326, "1": 137},
+    "metrics": {"accuracy": 0.996752, "precision": 0.984962, "recall": 0.956204, "f1": 0.97037, "auc": 0.991533, "tn": 2324, "fp": 2, "fn": 6, "tp": 131}
+  },
+  "repeat_result": "PASS: prediction sequences, hashes, and metrics identical across two independent CPU inference processes",
+  "model_execution": "inference/evaluation only; no training, Phase-II, DARPA acquisition, Mininet, or formal experiment"
+}

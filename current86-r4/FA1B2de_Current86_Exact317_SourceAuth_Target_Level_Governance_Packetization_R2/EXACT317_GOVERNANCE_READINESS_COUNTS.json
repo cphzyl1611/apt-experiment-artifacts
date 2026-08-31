@@ -1,0 +1,26 @@
+{
+  "admission_blocked_not_decision_ready": 317,
+  "admission_human_ready": 0,
+  "authority_mutation": "NO",
+  "candidate_targets": 231,
+  "current_terminal_partition": {
+    "BLOCKED_MISSING_AUTHORITY": 317
+  },
+  "design_status": "DESIGN_PREPARATION_ONLY_NO_HUMAN_DECISIONS",
+  "field_pin_blocked_pending_admission": 317,
+  "field_pin_human_ready_pre_admission": 0,
+  "future_target_level_obligations": {
+    "admission": 317,
+    "field_pin_after_admission": 317
+  },
+  "human_decisions_created": 0,
+  "raw_targets": 86,
+  "scalar_leaf_inventory_available": 317,
+  "scalar_leaf_total": 7911,
+  "schema": "FA1B2DE_CURRENT86_GOVERNANCE_READINESS_COUNTS_R2",
+  "semantics_choice_available": 0,
+  "semantics_selection_requires_human": 317,
+  "source_auth_executed": "NO",
+  "target_manifest_sha256": "d8d55d369fe433bf7b93a3c332b8ac9a517a9146b28fa223370ff3ec946955ac",
+  "targets_total": 317
+}

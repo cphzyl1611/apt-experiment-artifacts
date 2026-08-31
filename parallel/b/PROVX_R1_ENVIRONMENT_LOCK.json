@@ -1,0 +1,68 @@
+{
+  "stage": "PROVX-R1",
+  "environment_path": "provx-r1/venv_r1_cpu",
+  "creation_note": "Dedicated Python 3.10 venv under R1; system/conda environments were not modified. The host lacked ensurepip, so the exact packages were installed into this venv's site-packages by an isolated target install.",
+  "python": {
+    "executable": "provx-r1/venv_r1_cpu/bin/python",
+    "version": "3.10.12",
+    "prefix": "/home/cph/experiment-parallel/e0-b/provx-r1/venv_r1_cpu",
+    "base_prefix": "/usr",
+    "include_system_site_packages": false,
+    "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+    "machine": "x86_64"
+  },
+  "artifact_requirements": {
+    "torch": {"requested": "2.8.0", "resolved": "2.8.0+cpu", "source_policy": "official PyTorch CPU wheel index"},
+    "torch-geometric": {"requested": "2.6.1", "resolved": "2.6.1", "source_policy": "PyPI"},
+    "numpy": {"requested": "2.0.2", "resolved": "2.0.2", "source_policy": "PyPI"},
+    "scikit-learn": {"requested": "1.6.1", "resolved": "1.6.1", "source_policy": "PyPI"}
+  },
+  "transitive_packages": {
+    "aiohappyeyeballs": "2.7.1",
+    "aiohttp": "3.14.3",
+    "aiosignal": "1.4.0",
+    "async-timeout": "5.0.1",
+    "attrs": "26.1.0",
+    "certifi": "2026.7.22",
+    "charset-normalizer": "3.5.1",
+    "filelock": "3.32.3",
+    "frozenlist": "1.8.0",
+    "fsspec": "2026.7.0",
+    "idna": "3.19",
+    "Jinja2": "3.1.6",
+    "joblib": "1.5.3",
+    "MarkupSafe": "3.0.3",
+    "mpmath": "1.3.0",
+    "multidict": "6.7.1",
+    "networkx": "3.4.2",
+    "propcache": "0.5.2",
+    "psutil": "7.2.2",
+    "pyparsing": "3.3.2",
+    "requests": "2.34.2",
+    "scipy": "1.15.3",
+    "sympy": "1.14.0",
+    "threadpoolctl": "3.6.0",
+    "tqdm": "4.70.0",
+    "typing_extensions": "4.16.0",
+    "urllib3": "2.7.0",
+    "yarl": "1.24.5"
+  },
+  "pip": {
+    "version": "25.3",
+    "executable": "provx-r1/venv_r1_cpu/bin/pip",
+    "freeze_source": "provx-r1/venv_r1_cpu/bin/pip freeze"
+  },
+  "artifact": {
+    "root": "provx-r1/artifact",
+    "source_archive_sha256": "a46fe7dec840ea28d9f8acf8771879af7204e0d622e24d12a99ad95f4187e3ff",
+    "r0_extracted_hash_verification": "PASS",
+    "r1_copy_project_hash_verification": "PASS"
+  },
+  "execution_policy": {
+    "cpu_only": true,
+    "darpa_raw_dataset_acquisition": false,
+    "apt_actions": false,
+    "formal_experiment": false,
+    "model_execution_before_package_check": false
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "schema": "MININET_E1A_R2_PRE_RUN_CONTRACT_V2",
+  "created_at_utc": "2026-08-30T06:15:08.408261+00:00",
+  "run_id": "e1a-r2-run-20260830T060231Z",
+  "phase": "PRE_HUMAN_PRIVILEGED_EXECUTION",
+  "purpose": "Determine whether benign event process evidence can be attributed to the exact logical Mininet host.",
+  "harness": {
+    "path": "/home/cph/experiment-parallel/e0-a/e1a-r2-run-20260830T060231Z/mininet_e1a_r2_privileged_harness.py",
+    "sha256": "129bc1b10486e3f23c37d7b3386f7dfeebc108a7b29a25f493809391fd070e90",
+    "exact_human_command": "sudo /usr/bin/python3 /home/cph/experiment-parallel/e0-a/e1a-r2-run-20260830T060231Z/mininet_e1a_r2_privileged_harness.py",
+    "privileged_execution_performed": false,
+    "automatic_sudo_invocation": false
+  },
+  "topology": {
+    "logical_hosts": [
+      "h1",
+      "h2"
+    ],
+    "switch": "s1",
+    "controller": null,
+    "private_network": "10.0.0.0/24",
+    "nat": false,
+    "external_links": false
+  },
+  "process_netns_attribution": {
+    "evidence_captured_while_children_are_alive": [
+      "exact_child_pid",
+      "child_netns",
+      "child_cgroup",
+      "host_shell_pid",
+      "host_shell_netns"
+    ],
+    "mandatory_assertions": {
+      "h1_child_netns == h1_shell_netns": true,
+      "h2_child_netns == h2_shell_netns": true,
+      "h1_child_netns != h2_shell_netns": true,
+      "h2_child_netns != h1_shell_netns": true
+    },
+    "runtime_requirement": "All four expressions must evaluate true in the privileged run or the evidence contract fails."
+  },
+  "socket_attribution": {
+    "logical_host_listener_addresses": {
+      "h1": "10.0.0.1:18080",
+      "h2": "10.0.0.2:18080"
+    },
+    "evidence_captured_while_each_socket_is_alive": [
+      "/proc/<child_pid>/net/tcp raw content",
+      "/proc/<child_pid>/net/tcp parsed listener record",
+      "/proc/<child_pid>/fd socket inode",
+      "ss -H -ltnp ownership output",
+      "exact child PID",
+      "logical host mapping"
+    ],
+    "runtime_requirement": "The proc socket inode and ss output must identify the reserved listener and exact live child PID for both logical hosts."
+  },
+  "packet_capture": {
+    "integrated_into_same_harness_run": true,
+    "started_after_topology_interfaces_exist": true,
+    "started_before_benign_traffic": true,
+    "stopped_before_topology_teardown": true,
+    "filter": "(icmp and net 10.0.0.0/24) or (tcp and net 10.0.0.0/24 and port 18080)",
+    "pcap_sha256_required": true
+  },
+  "file_events": {
+    "operations": [
+      "create",
+      "read",
+      "delete"
+    ],
+    "exact_child_pid_recorded": true,
+    "filesystem_isolation_claimed": false
+  },
+  "cleanup": {
+    "net_stop_required": true,
+    "run_specific_process_termination_required": true,
+    "broad_mn_cleanup_allowed": false,
+    "pre_existing_ovs_daemons_are_run_owned": false,
+    "mandatory_post_cleanup_zero_assertions": {
+      "RUN_OWNED_CHILDREN_REMAINING": 0,
+      "RESERVED_TEST_INTERFACES_REMAINING": 0,
+      "RESERVED_TEST_OVS_OBJECTS_REMAINING": 0,
+      "TCPDUMP_PROCESS_REMAINING": 0
+    }
+  },
+  "hard_boundaries": {
+    "r1_mutation": false,
+    "external_network_or_nat": false,
+    "apt_or_package_actions": false,
+    "provx_execution": false,
+    "formal_benchmark_execution": false,
+    "mn_dash_c": false,
+    "automatic_sudo_invocation": false,
+    "attack_actions_executed": 0
+  },
+  "r1_preservation_sha256": {
+    "MININET_E1A_PRE_STATE.json": "0fddee628a0673af6ba484cc3bc3b72dd056ccd87d85cd50d0610a9c50050381",
+    "MININET_E1A_TOPOLOGY_AND_RUN_MANIFEST.json": "25bf1c64d6b855f02bb4487fc13410598c1746d7834ff76845e35bcb8e810bda",
+    "MININET_E1A_PROCESS_NETNS_ATTRIBUTION.jsonl": "9e733f096a1c7646232de1fa13f39f2658211840484d267d67d5498f12461117",
+    "MININET_E1A_PACKET_CORRELATION.json": "389de1119fcbbc085979e698c320f1deffcb6d7089a8b69453a4e5394187ee2e",
+    "MININET_E1A_POST_CLEANUP_AUDIT.json": "f387224e93864a81cb5170f3bda23c78c1100e092042542da4d87d5731a307ba",
+    "MININET_E1A_ATTRIBUTION_FEASIBILITY_REPORT.md": "7ecc9ae36030ab679fb1be2a4b876dc9bda2ad6143f6ef89450853d01ae13ab3",
+    "e1a-run-20260829/e1a_benign_topology.py": "d9f0b5a337f633e4f426784668e4c4db75d048a640b68104dc36e6f4f8bdd8e3"
+  },
+  "pre_human_terminal": {
+    "MININET_E1A_R2_HARNESS_PREPARATION": "PASS",
+    "HUMAN_PRIVILEGED_RUN_REQUIRED": "YES",
+    "ATTACK_ACTIONS_EXECUTED": 0,
+    "FORMAL_EXPERIMENT_EXECUTED": "NO",
+    "NEXT_ACTION": "HUMAN_RUN_EXACT_SUDO_COMMAND",
+    "STOP": true
+  }
+}

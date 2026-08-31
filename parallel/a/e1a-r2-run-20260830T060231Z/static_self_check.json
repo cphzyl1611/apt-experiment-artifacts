@@ -1,0 +1,58 @@
+{
+  "bounded_tcpdump_filter": {
+    "exact_match": true,
+    "filter": "(icmp and net 10.0.0.0/24) or (tcp and net 10.0.0.0/24 and port 18080)",
+    "icmp_bounded": true,
+    "network": "10.0.0.0/24",
+    "pass": true,
+    "tcp_bounded": true,
+    "tcp_port": 18080
+  },
+  "checked_at_utc": "2026-08-30T06:15:08.408261+00:00",
+  "command_executables_inspected": [
+    "ip",
+    "ovs-vsctl",
+    "pgrep",
+    "ping",
+    "python3",
+    "ss",
+    "tcpdump"
+  ],
+  "command_literals_inspected": [
+    "/usr/bin/ovs-vsctl --timeout=2 br-exists s1",
+    "/usr/bin/tcpdump -i any -nn -U -s 0 -w",
+    "/usr/bin/python3 --child --logical-host-id --listen-address --listen-port --temp-file --window-seconds",
+    "ss",
+    "/usr/bin/python3 -c",
+    "/usr/sbin/ip -j address show",
+    "/usr/sbin/ip netns list",
+    "/usr/bin/ovs-vsctl --timeout=2 list-br",
+    "/usr/bin/pgrep -x",
+    "/usr/sbin/ip link show dev",
+    "ping",
+    "ping"
+  ],
+  "harness_path": "/home/cph/experiment-parallel/e0-a/e1a-r2-run-20260830T060231Z/mininet_e1a_r2_privileged_harness.py",
+  "harness_sha256": "129bc1b10486e3f23c37d7b3386f7dfeebc108a7b29a25f493809391fd070e90",
+  "no_apt_commands": true,
+  "no_automatic_sudo": true,
+  "no_mn_c": true,
+  "no_nat_or_external_links": true,
+  "no_provx_or_formal_benchmark_execution": true,
+  "pass": true,
+  "python_ast_parse": true,
+  "required_cleanup_zero_assertion_names": [
+    "RUN_OWNED_CHILDREN_REMAINING",
+    "RESERVED_TEST_INTERFACES_REMAINING",
+    "RESERVED_TEST_OVS_OBJECTS_REMAINING",
+    "TCPDUMP_PROCESS_REMAINING"
+  ],
+  "required_cleanup_zero_assertions": 4,
+  "required_namespace_assertion_names": [
+    "h1_child_netns == h1_shell_netns",
+    "h2_child_netns == h2_shell_netns",
+    "h1_child_netns != h2_shell_netns",
+    "h2_child_netns != h1_shell_netns"
+  ],
+  "required_namespace_assertions": 4
+}

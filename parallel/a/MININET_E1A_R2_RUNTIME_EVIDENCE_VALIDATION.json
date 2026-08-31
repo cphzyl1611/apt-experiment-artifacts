@@ -1,0 +1,187 @@
+{
+  "schema": "MININET_E1A_R2_RUNTIME_EVIDENCE_VALIDATION_V1",
+  "run_id": "e1a-r2-run-20260830T060231Z",
+  "independently_validated_at_utc": "2026-08-30T06:37:19.622403+00:00",
+  "validation_method": "Independent read-only parsing, hashing, positive and negative BPF pcap decoding, source-order inspection, and current residue queries; the privileged harness was not rerun.",
+  "source_artifacts": {
+    "e1a-r2-run-20260830T060231Z/MININET_E1A_R2_PRIVILEGED_RUN_RESULT.json": {
+      "size_bytes": 32069,
+      "sha256": "43c769bdf1c074c9456aeba7d3d2d6737b592891234cc541de2a4907345c58e1"
+    },
+    "e1a-r2-run-20260830T060231Z/MININET_E1A_R2_LIVE_ATTRIBUTION.jsonl": {
+      "size_bytes": 14902,
+      "sha256": "5b582d182743af8c16df6e48010c01931a4d99e30750f252380d987fe167b8e0"
+    },
+    "e1a-r2-run-20260830T060231Z/MININET_E1A_R2_BENIGN_TRAFFIC.pcap": {
+      "size_bytes": 5796,
+      "sha256": "184b030eb86881bd7e0b08fce1e2d2a22731af85e806cc66f0951dd9592b7e50"
+    },
+    "e1a-r2-run-20260830T060231Z/MININET_E1A_R2_TCPDUMP.log": {
+      "size_bytes": 209,
+      "sha256": "0b5b7b7717fe693de2206f6be565061ffc36168b20282aa08e341459bee4c8cb"
+    },
+    "e1a-r2-run-20260830T060231Z/mininet_e1a_r2_privileged_harness.py": {
+      "size_bytes": 34945,
+      "sha256": "129bc1b10486e3f23c37d7b3386f7dfeebc108a7b29a25f493809391fd070e90"
+    }
+  },
+  "run_window": {
+    "started_at_utc": "2026-08-30T06:30:26.836801+00:00",
+    "finished_at_utc": "2026-08-30T06:30:34.464975+00:00"
+  },
+  "logical_host_evidence": {
+    "h1": {
+      "logical_host_id": "h1",
+      "shell_pid": 554185,
+      "shell_netns": "net:[4026532665]",
+      "child_pid": 554254,
+      "child_netns": "net:[4026532665]",
+      "child_cgroup": "0::/user.slice/user-1000.slice/user@1000.service/app.slice/app-org.gnome.Terminal.slice/vte-spawn-2da09d82-9b76-4d94-a440-0db71aa81fba.scope",
+      "interface": {
+        "name": "h1-eth0",
+        "ip": "10.0.0.1",
+        "mac": "00:00:00:00:01:01"
+      },
+      "ready_at_utc": "2026-08-30T06:30:28.386168+00:00",
+      "evidence_captured_at_utc": "2026-08-30T06:30:28.415211+00:00",
+      "finished_at_utc": "2026-08-30T06:30:33.512453+00:00",
+      "captured_during_live_window": true,
+      "pid_consistent_across_ready_proc_file_and_finished_evidence": true,
+      "proc_listener": {
+        "address": "10.0.0.1",
+        "port": 18080,
+        "state_hex": "0A",
+        "inode": 2305693
+      },
+      "socket_fd": {
+        "fd": 5,
+        "inode": 2305693
+      },
+      "ss_evidence": "LISTEN 0      4      10.0.0.1:18080 0.0.0.0:* users:((\"python3\",pid=554254,fd=5))"
+    },
+    "h2": {
+      "logical_host_id": "h2",
+      "shell_pid": 554187,
+      "shell_netns": "net:[4026532826]",
+      "child_pid": 554255,
+      "child_netns": "net:[4026532826]",
+      "child_cgroup": "0::/user.slice/user-1000.slice/user@1000.service/app.slice/app-org.gnome.Terminal.slice/vte-spawn-2da09d82-9b76-4d94-a440-0db71aa81fba.scope",
+      "interface": {
+        "name": "h2-eth0",
+        "ip": "10.0.0.2",
+        "mac": "00:00:00:00:01:02"
+      },
+      "ready_at_utc": "2026-08-30T06:30:28.387554+00:00",
+      "evidence_captured_at_utc": "2026-08-30T06:30:28.440290+00:00",
+      "finished_at_utc": "2026-08-30T06:30:33.761960+00:00",
+      "captured_during_live_window": true,
+      "pid_consistent_across_ready_proc_file_and_finished_evidence": true,
+      "proc_listener": {
+        "address": "10.0.0.2",
+        "port": 18080,
+        "state_hex": "0A",
+        "inode": 2308281
+      },
+      "socket_fd": {
+        "fd": 5,
+        "inode": 2308281
+      },
+      "ss_evidence": "LISTEN 0      4      10.0.0.2:18080 0.0.0.0:* users:((\"python3\",pid=554255,fd=5))"
+    }
+  },
+  "packet_capture_evidence": {
+    "capture_process_pid": 554249,
+    "capture_filter": "(icmp and net 10.0.0.0/24) or (tcp and net 10.0.0.0/24 and port 18080)",
+    "tcpdump_returncode": 0,
+    "packets_captured": 58,
+    "packets_dropped_by_kernel": 0,
+    "decoded_packet_records": 58,
+    "observed_ip_endpoints": [
+      "10.0.0.1",
+      "10.0.0.2"
+    ],
+    "only_test_network_endpoints": true,
+    "packets_outside_test_network": 0,
+    "packets_outside_exact_bounded_filter": 0,
+    "icmp_both_directions": true,
+    "tcp_to_h1_port_18080": true,
+    "tcp_to_h2_port_18080": true,
+    "recorded_sha256": "184b030eb86881bd7e0b08fce1e2d2a22731af85e806cc66f0951dd9592b7e50",
+    "recomputed_sha256": "184b030eb86881bd7e0b08fce1e2d2a22731af85e806cc66f0951dd9592b7e50",
+    "source_order_proves_start_after_topology_and_stop_before_net_stop": true
+  },
+  "correlation_evidence": {
+    "jsonl_rows": 2,
+    "jsonl_logical_host_ids": [
+      "h1",
+      "h2"
+    ],
+    "jsonl_rows_exactly_match_result_host_shell_socket_and_file_evidence": true,
+    "h1_interface_socket_packet_ip": "10.0.0.1",
+    "h2_interface_socket_packet_ip": "10.0.0.2",
+    "same_reserved_tcp_port": 18080,
+    "host_netns_are_distinct": true
+  },
+  "required_checks": {
+    "01_h1_child_netns_equals_h1_shell_netns": true,
+    "02_h2_child_netns_equals_h2_shell_netns": true,
+    "03_h1_child_netns_differs_from_h2_shell_netns": true,
+    "04_h2_child_netns_differs_from_h1_shell_netns": true,
+    "05_child_pid_netns_evidence_captured_while_each_child_alive": true,
+    "06_socket_evidence_captured_while_each_listener_alive": true,
+    "07_both_hosts_used_same_tcp_port_in_distinct_netns": true,
+    "08_tcpdump_ran_inside_same_bounded_topology_lifetime": true,
+    "09_pcap_exists_and_recorded_sha256_matches_recomputed_sha256": true,
+    "10_packet_interface_socket_evidence_correlates_to_logical_host_id": true,
+    "11_RUN_OWNED_CHILDREN_REMAINING_equals_0": true,
+    "12_RESERVED_TEST_INTERFACES_REMAINING_equals_0": true,
+    "13_RESERVED_TEST_OVS_OBJECTS_REMAINING_equals_0": true,
+    "14_TCPDUMP_PROCESS_REMAINING_equals_0": true,
+    "15_no_external_or_nat_attachment": true,
+    "16_no_mn_dash_c_executed": true
+  },
+  "recorded_post_cleanup_values": {
+    "RUN_OWNED_CHILDREN_REMAINING": 0,
+    "RESERVED_TEST_INTERFACES_REMAINING": 0,
+    "RESERVED_TEST_OVS_OBJECTS_REMAINING": 0,
+    "TCPDUMP_PROCESS_REMAINING": 0,
+    "net_stop_called": true,
+    "broad_cleanup_executed": false,
+    "pre_existing_ovs_daemons_were_run_owned": false
+  },
+  "independent_current_cleanup_state": {
+    "known_run_pid_presence": {
+      "h1_shell_554185": false,
+      "h2_shell_554187": false,
+      "h1_child_554254": false,
+      "h2_child_554255": false,
+      "h1_client_554260": false,
+      "h2_client_554261": false,
+      "tcpdump_554249": false
+    },
+    "matching_run_processes": [],
+    "reserved_interfaces_remaining": [],
+    "reserved_ovs_objects_remaining": [],
+    "pre_existing_ovs_daemons_excluded_from_run_owned_state": [
+      841,
+      907
+    ]
+  },
+  "boundaries": {
+    "privileged_harness_rerun": false,
+    "provx_executed": false,
+    "apt_action_executed": false,
+    "formal_benchmark_executed": false,
+    "external_or_nat_attachment": false,
+    "mn_dash_c_executed": false
+  },
+  "limitations": [
+    "The h1 and h2 children share the same cgroup; exact logical-host attribution is provided by their distinct network namespace identities, not by cgroup identity.",
+    "File events are PID-attributed but do not demonstrate filesystem isolation.",
+    "The any-interface Linux cooked capture duplicates some packets; correlation is through the captured IP endpoints, logical interface mapping, network namespace mapping, and exact socket ownership evidence."
+  ],
+  "all_required_checks_pass": true,
+  "verdict": "PLAIN_MININET_ATTRIBUTION_FEASIBLE",
+  "next_action": "FRESH_INDEPENDENT_REVIEW",
+  "stop": true
+}

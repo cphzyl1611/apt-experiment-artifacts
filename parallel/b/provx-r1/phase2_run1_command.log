@@ -1,0 +1,2 @@
+command=PYTHONPATH=. ../venv_r1_cpu/bin/python scripts/run_provx.py --dataset Sample --partition test_100nodes --gnn-model GCNConv --checkpoint storage/cache/Sample/saved_models/GCNConv/checkpoint-best-acc/model.bin --limit-graphs 1 --device cpu --output ../phase2_run1.pt
+exit_code=0

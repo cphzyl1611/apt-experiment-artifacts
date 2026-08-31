@@ -1,0 +1,720 @@
+{
+  "attack_actions_executed": 0,
+  "attribution_assertions": {
+    "checks": {
+      "h1_child_netns != h2_shell_netns": true,
+      "h1_child_netns == h1_shell_netns": true,
+      "h2_child_netns != h1_shell_netns": true,
+      "h2_child_netns == h2_shell_netns": true
+    },
+    "pass": true
+  },
+  "broad_cleanup_executed": false,
+  "child_outputs": {
+    "h1": {
+      "finished_event": {
+        "elapsed_seconds": 5.126505,
+        "event": "FINISHED",
+        "file_operations": [
+          "create",
+          "read",
+          "delete"
+        ],
+        "finished_at_utc": "2026-08-30T06:30:33.512453+00:00",
+        "logical_host_id": "h1",
+        "network_events": [
+          {
+            "accepted_at_utc": "2026-08-30T06:30:30.507086+00:00",
+            "payload_utf8": "benign-h2-to-peer",
+            "peer": [
+              "10.0.0.2",
+              33110
+            ]
+          }
+        ],
+        "pid": 554254
+      },
+      "returncode": 0,
+      "stderr": "",
+      "stdout_after_ready": "{\"elapsed_seconds\": 5.126505, \"event\": \"FINISHED\", \"file_operations\": [\"create\", \"read\", \"delete\"], \"finished_at_utc\": \"2026-08-30T06:30:33.512453+00:00\", \"logical_host_id\": \"h1\", \"network_events\": [{\"accepted_at_utc\": \"2026-08-30T06:30:30.507086+00:00\", \"payload_utf8\": \"benign-h2-to-peer\", \"peer\": [\"10.0.0.2\", 33110]}], \"pid\": 554254}\n",
+      "temp_file_exists_after_child_exit": false
+    },
+    "h2": {
+      "finished_event": {
+        "elapsed_seconds": 5.374593,
+        "event": "FINISHED",
+        "file_operations": [
+          "create",
+          "read",
+          "delete"
+        ],
+        "finished_at_utc": "2026-08-30T06:30:33.761960+00:00",
+        "logical_host_id": "h2",
+        "network_events": [
+          {
+            "accepted_at_utc": "2026-08-30T06:30:30.507214+00:00",
+            "payload_utf8": "benign-h1-to-peer",
+            "peer": [
+              "10.0.0.1",
+              36570
+            ]
+          }
+        ],
+        "pid": 554255
+      },
+      "returncode": 0,
+      "stderr": "",
+      "stdout_after_ready": "{\"elapsed_seconds\": 5.374593, \"event\": \"FINISHED\", \"file_operations\": [\"create\", \"read\", \"delete\"], \"finished_at_utc\": \"2026-08-30T06:30:33.761960+00:00\", \"logical_host_id\": \"h2\", \"network_events\": [{\"accepted_at_utc\": \"2026-08-30T06:30:30.507214+00:00\", \"payload_utf8\": \"benign-h1-to-peer\", \"peer\": [\"10.0.0.1\", 36570]}], \"pid\": 554255}\n",
+      "temp_file_exists_after_child_exit": false
+    }
+  },
+  "evidence_contract_pass": true,
+  "file_event_evidence": {
+    "h1": {
+      "content_while_child_alive": "h1 pid=554254\n",
+      "exact_child_pid": 554254,
+      "exists_while_child_alive": true,
+      "filesystem_isolation_claimed": false,
+      "logical_host_id": "h1",
+      "path": "/tmp/mininet-e1a-r2-e1a-r2-run-20260830T060231Z-h1.txt"
+    },
+    "h2": {
+      "content_while_child_alive": "h2 pid=554255\n",
+      "exact_child_pid": 554255,
+      "exists_while_child_alive": true,
+      "filesystem_isolation_claimed": false,
+      "logical_host_id": "h2",
+      "path": "/tmp/mininet-e1a-r2-e1a-r2-run-20260830T060231Z-h2.txt"
+    }
+  },
+  "finished_at_utc": "2026-08-30T06:30:34.464975+00:00",
+  "formal_experiment_executed": false,
+  "host_shell_evidence": {
+    "h1": {
+      "interfaces": [
+        {
+          "ip": "10.0.0.1",
+          "mac": "00:00:00:00:01:01",
+          "name": "h1-eth0"
+        }
+      ],
+      "logical_host_id": "h1",
+      "shell": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/app.slice/app-org.gnome.Terminal.slice/vte-spawn-2da09d82-9b76-4d94-a440-0db71aa81fba.scope\n",
+        "mntns": "mnt:[4026532662]",
+        "netns": "net:[4026532665]",
+        "owned_listening_sockets": [],
+        "pidns": "pid:[4026531836]",
+        "proc_net_tcp_raw": "  sl  local_address rem_address   st tx_queue rx_queue tr tm->when retrnsmt   uid  timeout inode                                                     \n",
+        "proc_net_tcp_records": [],
+        "process": {
+          "cmdline": "bash --norc --noediting -is mininet:h1",
+          "comm": "bash",
+          "pid": 554185,
+          "role": "h1-shell",
+          "start_ticks": 12753262
+        },
+        "socket_fds": [],
+        "status": "Name:\tbash\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t554185\nNgid:\t0\nPid:\t554185\nPPid:\t554144\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t256\nGroups:\t0 \nNStgid:\t554185\nNSpid:\t554185\nNSpgid:\t554185\nNSsid:\t554185\nKthread:\t0\nVmPeak:\t    9972 kB\nVmSize:\t    9972 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t    3832 kB\nVmRSS:\t    3832 kB\nRssAnon:\t     284 kB\nRssFile:\t    3548 kB\nRssShmem:\t       0 kB\nVmData:\t     304 kB\nVmStk:\t     132 kB\nVmExe:\t     892 kB\nVmLib:\t    1864 kB\nVmPTE:\t      64 kB\nVmSwap:\t       0 kB\nHugetlbPages:\t       0 kB\nCoreDumping:\t0\nTHP_enabled:\t1\nuntag_mask:\t0xffffffffffffffff\nThreads:\t1\nSigQ:\t2/31239\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000000000000\nSigIgn:\t0000000000384004\nSigCgt:\t000000004b813efb\nCapInh:\t0000000000000000\nCapPrm:\t000001ffffffffff\nCapEff:\t000001ffffffffff\nCapBnd:\t000001ffffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSeccomp_filters:\t0\nSpeculation_Store_Bypass:\tthread vulnerable\nSpeculationIndirectBranch:\tconditional enabled\nCpus_allowed:\tffffffff,ffffffff,ffffffff,ffffffff\nCpus_allowed_list:\t0-127\nMems_allowed:\t00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t17\nnonvoluntary_ctxt_switches:\t5\nx86_Thread_features:\t\nx86_Thread_features_locked:\t\n"
+      }
+    },
+    "h2": {
+      "interfaces": [
+        {
+          "ip": "10.0.0.2",
+          "mac": "00:00:00:00:01:02",
+          "name": "h2-eth0"
+        }
+      ],
+      "logical_host_id": "h2",
+      "shell": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/app.slice/app-org.gnome.Terminal.slice/vte-spawn-2da09d82-9b76-4d94-a440-0db71aa81fba.scope\n",
+        "mntns": "mnt:[4026532825]",
+        "netns": "net:[4026532826]",
+        "owned_listening_sockets": [],
+        "pidns": "pid:[4026531836]",
+        "proc_net_tcp_raw": "  sl  local_address rem_address   st tx_queue rx_queue tr tm->when retrnsmt   uid  timeout inode                                                     \n",
+        "proc_net_tcp_records": [],
+        "process": {
+          "cmdline": "bash --norc --noediting -is mininet:h2",
+          "comm": "bash",
+          "pid": 554187,
+          "role": "h2-shell",
+          "start_ticks": 12753264
+        },
+        "socket_fds": [],
+        "status": "Name:\tbash\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t554187\nNgid:\t0\nPid:\t554187\nPPid:\t554144\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t256\nGroups:\t0 \nNStgid:\t554187\nNSpid:\t554187\nNSpgid:\t554187\nNSsid:\t554187\nKthread:\t0\nVmPeak:\t    9972 kB\nVmSize:\t    9972 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t    3828 kB\nVmRSS:\t    3828 kB\nRssAnon:\t     280 kB\nRssFile:\t    3548 kB\nRssShmem:\t       0 kB\nVmData:\t     304 kB\nVmStk:\t     132 kB\nVmExe:\t     892 kB\nVmLib:\t    1864 kB\nVmPTE:\t      64 kB\nVmSwap:\t       0 kB\nHugetlbPages:\t       0 kB\nCoreDumping:\t0\nTHP_enabled:\t1\nuntag_mask:\t0xffffffffffffffff\nThreads:\t1\nSigQ:\t2/31239\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000000000000\nSigIgn:\t0000000000384004\nSigCgt:\t000000004b813efb\nCapInh:\t0000000000000000\nCapPrm:\t000001ffffffffff\nCapEff:\t000001ffffffffff\nCapBnd:\t000001ffffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSeccomp_filters:\t0\nSpeculation_Store_Bypass:\tthread vulnerable\nSpeculationIndirectBranch:\tconditional enabled\nCpus_allowed:\tffffffff,ffffffff,ffffffff,ffffffff\nCpus_allowed_list:\t0-127\nMems_allowed:\t00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t17\nnonvoluntary_ctxt_switches:\t5\nx86_Thread_features:\t\nx86_Thread_features_locked:\t\n"
+      }
+    }
+  },
+  "ping": {
+    "h1_to_h2": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.\n64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=2.05 ms\n64 bytes from 10.0.0.2: icmp_seq=2 ttl=64 time=0.060 ms\n\n--- 10.0.0.2 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1001ms\nrtt min/avg/max/mdev = 0.060/1.054/2.049/0.994 ms\n"
+    },
+    "h2_to_h1": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "PING 10.0.0.1 (10.0.0.1) 56(84) bytes of data.\n64 bytes from 10.0.0.1: icmp_seq=1 ttl=64 time=0.101 ms\n64 bytes from 10.0.0.1: icmp_seq=2 ttl=64 time=0.057 ms\n\n--- 10.0.0.1 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1041ms\nrtt min/avg/max/mdev = 0.057/0.079/0.101/0.022 ms\n"
+    }
+  },
+  "post_cleanup_assertions": {
+    "RESERVED_TEST_INTERFACES_REMAINING": 0,
+    "RESERVED_TEST_OVS_OBJECTS_REMAINING": 0,
+    "RUN_OWNED_CHILDREN_REMAINING": 0,
+    "TCPDUMP_PROCESS_REMAINING": 0,
+    "broad_cleanup_executed": false,
+    "captured_at_utc": "2026-08-30T06:30:34.438775+00:00",
+    "net_stop_called": true,
+    "pass": true,
+    "pre_existing_ovs_daemons_were_run_owned": false,
+    "reserved_test_interfaces_remaining_detail": [],
+    "reserved_test_ovs_objects_remaining_detail": [],
+    "run_owned_children_remaining_detail": []
+  },
+  "post_state": {
+    "boot_id": "b5116b9e-9bef-4c8b-a02a-be618de984de",
+    "captured_at_utc": "2026-08-30T06:30:34.464904+00:00",
+    "interfaces": [
+      {
+        "addr_info": [
+          {
+            "family": "inet",
+            "label": "lo",
+            "local": "127.0.0.1",
+            "preferred_life_time": 4294967295,
+            "prefixlen": 8,
+            "scope": "host",
+            "valid_life_time": 4294967295
+          },
+          {
+            "family": "inet6",
+            "local": "::1",
+            "preferred_life_time": 4294967295,
+            "prefixlen": 128,
+            "scope": "host",
+            "valid_life_time": 4294967295
+          }
+        ],
+        "address": "00:00:00:00:00:00",
+        "broadcast": "00:00:00:00:00:00",
+        "flags": [
+          "LOOPBACK",
+          "UP",
+          "LOWER_UP"
+        ],
+        "group": "default",
+        "ifindex": 1,
+        "ifname": "lo",
+        "link_type": "loopback",
+        "mtu": 65536,
+        "operstate": "UNKNOWN",
+        "qdisc": "noqueue",
+        "txqlen": 1000
+      },
+      {
+        "addr_info": [
+          {
+            "broadcast": "192.168.93.255",
+            "dynamic": true,
+            "family": "inet",
+            "label": "ens33",
+            "local": "192.168.93.128",
+            "noprefixroute": true,
+            "preferred_life_time": 1018,
+            "prefixlen": 24,
+            "scope": "global",
+            "valid_life_time": 1018
+          },
+          {
+            "family": "inet6",
+            "local": "fe80::e8dc:18d0:c68f:330a",
+            "noprefixroute": true,
+            "preferred_life_time": 4294967295,
+            "prefixlen": 64,
+            "scope": "link",
+            "valid_life_time": 4294967295
+          }
+        ],
+        "address": "00:0c:29:ea:62:cc",
+        "altnames": [
+          "enp2s1"
+        ],
+        "broadcast": "ff:ff:ff:ff:ff:ff",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST",
+          "UP",
+          "LOWER_UP"
+        ],
+        "group": "default",
+        "ifindex": 2,
+        "ifname": "ens33",
+        "link_type": "ether",
+        "mtu": 1500,
+        "operstate": "UP",
+        "qdisc": "fq_codel",
+        "txqlen": 1000
+      }
+    ],
+    "named_netns": {
+      "argv": [
+        "/usr/sbin/ip",
+        "netns",
+        "list"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    "ovs_bridges": {
+      "argv": [
+        "/usr/bin/ovs-vsctl",
+        "--timeout=2",
+        "list-br"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    "pre_existing_ovs_daemons_excluded_from_run_owned_state": [
+      {
+        "cmdline": "ovsdb-server /etc/openvswitch/conf.db -vconsole:emer -vsyslog:err -vfile:info --remote=punix:/var/run/openvswitch/db.sock --private-key=db:Open_vSwitch,SSL,private_key --certificate=db:Open_vSwitch,SSL,certificate --bootstrap-ca-cert=db:Open_vSwitch,SSL,ca_cert --no-chdir --log-file=/var/log/openvswitch/ovsdb-server.log --pidfile=/var/run/openvswitch/ovsdb-server.pid --detach",
+        "comm": "ovsdb-server",
+        "pid": 841,
+        "role": "pre-existing-ovsdb-server",
+        "start_ticks": 478
+      },
+      {
+        "cmdline": "ovs-vswitchd unix:/var/run/openvswitch/db.sock -vconsole:emer -vsyslog:err -vfile:info --mlockall --no-chdir --log-file=/var/log/openvswitch/ovs-vswitchd.log --pidfile=/var/run/openvswitch/ovs-vswitchd.pid --detach",
+        "comm": "ovs-vswitchd",
+        "pid": 907,
+        "role": "pre-existing-ovs-vswitchd",
+        "start_ticks": 496
+      }
+    ]
+  },
+  "pre_state": {
+    "boot_id": "b5116b9e-9bef-4c8b-a02a-be618de984de",
+    "captured_at_utc": "2026-08-30T06:30:26.877222+00:00",
+    "interfaces": [
+      {
+        "addr_info": [
+          {
+            "family": "inet",
+            "label": "lo",
+            "local": "127.0.0.1",
+            "preferred_life_time": 4294967295,
+            "prefixlen": 8,
+            "scope": "host",
+            "valid_life_time": 4294967295
+          },
+          {
+            "family": "inet6",
+            "local": "::1",
+            "preferred_life_time": 4294967295,
+            "prefixlen": 128,
+            "scope": "host",
+            "valid_life_time": 4294967295
+          }
+        ],
+        "address": "00:00:00:00:00:00",
+        "broadcast": "00:00:00:00:00:00",
+        "flags": [
+          "LOOPBACK",
+          "UP",
+          "LOWER_UP"
+        ],
+        "group": "default",
+        "ifindex": 1,
+        "ifname": "lo",
+        "link_type": "loopback",
+        "mtu": 65536,
+        "operstate": "UNKNOWN",
+        "qdisc": "noqueue",
+        "txqlen": 1000
+      },
+      {
+        "addr_info": [
+          {
+            "broadcast": "192.168.93.255",
+            "dynamic": true,
+            "family": "inet",
+            "label": "ens33",
+            "local": "192.168.93.128",
+            "noprefixroute": true,
+            "preferred_life_time": 1026,
+            "prefixlen": 24,
+            "scope": "global",
+            "valid_life_time": 1026
+          },
+          {
+            "family": "inet6",
+            "local": "fe80::e8dc:18d0:c68f:330a",
+            "noprefixroute": true,
+            "preferred_life_time": 4294967295,
+            "prefixlen": 64,
+            "scope": "link",
+            "valid_life_time": 4294967295
+          }
+        ],
+        "address": "00:0c:29:ea:62:cc",
+        "altnames": [
+          "enp2s1"
+        ],
+        "broadcast": "ff:ff:ff:ff:ff:ff",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST",
+          "UP",
+          "LOWER_UP"
+        ],
+        "group": "default",
+        "ifindex": 2,
+        "ifname": "ens33",
+        "link_type": "ether",
+        "mtu": 1500,
+        "operstate": "UP",
+        "qdisc": "fq_codel",
+        "txqlen": 1000
+      }
+    ],
+    "named_netns": {
+      "argv": [
+        "/usr/sbin/ip",
+        "netns",
+        "list"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    "ovs_bridges": {
+      "argv": [
+        "/usr/bin/ovs-vsctl",
+        "--timeout=2",
+        "list-br"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    "pre_existing_ovs_daemons_excluded_from_run_owned_state": [
+      {
+        "cmdline": "ovsdb-server /etc/openvswitch/conf.db -vconsole:emer -vsyslog:err -vfile:info --remote=punix:/var/run/openvswitch/db.sock --private-key=db:Open_vSwitch,SSL,private_key --certificate=db:Open_vSwitch,SSL,certificate --bootstrap-ca-cert=db:Open_vSwitch,SSL,ca_cert --no-chdir --log-file=/var/log/openvswitch/ovsdb-server.log --pidfile=/var/run/openvswitch/ovsdb-server.pid --detach",
+        "comm": "ovsdb-server",
+        "pid": 841,
+        "role": "pre-existing-ovsdb-server",
+        "start_ticks": 478
+      },
+      {
+        "cmdline": "ovs-vswitchd unix:/var/run/openvswitch/db.sock -vconsole:emer -vsyslog:err -vfile:info --mlockall --no-chdir --log-file=/var/log/openvswitch/ovs-vswitchd.log --pidfile=/var/run/openvswitch/ovs-vswitchd.pid --detach",
+        "comm": "ovs-vswitchd",
+        "pid": 907,
+        "role": "pre-existing-ovs-vswitchd",
+        "start_ticks": 496
+      }
+    ]
+  },
+  "provx_executed": false,
+  "reserved_state_preflight": {
+    "interfaces": [],
+    "ovs_objects": [],
+    "pass": true
+  },
+  "run_id": "e1a-r2-run-20260830T060231Z",
+  "simultaneous_child_start_delta_ns": 819464,
+  "socket_evidence": {
+    "h1": {
+      "captured_at_utc": "2026-08-30T06:30:28.415211+00:00",
+      "child": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/app.slice/app-org.gnome.Terminal.slice/vte-spawn-2da09d82-9b76-4d94-a440-0db71aa81fba.scope\n",
+        "mntns": "mnt:[4026532662]",
+        "netns": "net:[4026532665]",
+        "owned_listening_sockets": [
+          {
+            "inode": 2305693,
+            "local_address_hex": "0100000A",
+            "local_port": 18080,
+            "raw": "   0: 0100000A:46A0 00000000:0000 0A 00000000:00000000 00:00000000 00000000     0        0 2305693 1 ffff8f21c42f8940 100 0 0 10 0                   ",
+            "remote_address_hex": "00000000",
+            "remote_port": 0,
+            "slot": "0",
+            "state_hex": "0A"
+          }
+        ],
+        "pidns": "pid:[4026531836]",
+        "proc_net_tcp_raw": "  sl  local_address rem_address   st tx_queue rx_queue tr tm->when retrnsmt   uid  timeout inode                                                     \n   0: 0100000A:46A0 00000000:0000 0A 00000000:00000000 00:00000000 00000000     0        0 2305693 1 ffff8f21c42f8940 100 0 0 10 0                   \n",
+        "proc_net_tcp_records": [
+          {
+            "inode": 2305693,
+            "local_address_hex": "0100000A",
+            "local_port": 18080,
+            "raw": "   0: 0100000A:46A0 00000000:0000 0A 00000000:00000000 00:00000000 00000000     0        0 2305693 1 ffff8f21c42f8940 100 0 0 10 0                   ",
+            "remote_address_hex": "00000000",
+            "remote_port": 0,
+            "slot": "0",
+            "state_hex": "0A"
+          }
+        ],
+        "process": {
+          "cmdline": "/usr/bin/python3 /home/cph/experiment-parallel/e0-a/e1a-r2-run-20260830T060231Z/mininet_e1a_r2_privileged_harness.py --child --logical-host-id h1 --listen-address 10.0.0.1 --listen-port 18080 --temp-file /tmp/mininet-e1a-r2-e1a-r2-run-20260830T060231Z-h1.txt --window-seconds 12.0",
+          "comm": "python3",
+          "pid": 554254,
+          "role": "h1-benign-server-child",
+          "start_ticks": 12753396
+        },
+        "socket_fds": [
+          {
+            "fd": 5,
+            "inode": 2305693
+          }
+        ],
+        "status": "Name:\tpython3\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t554254\nNgid:\t0\nPid:\t554254\nPPid:\t554144\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t0 \nNStgid:\t554254\nNSpid:\t554254\nNSpgid:\t554254\nNSsid:\t554254\nKthread:\t0\nVmPeak:\t   29668 kB\nVmSize:\t   29608 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   18504 kB\nVmRSS:\t   18504 kB\nRssAnon:\t    8812 kB\nRssFile:\t    9692 kB\nRssShmem:\t       0 kB\nVmData:\t    9952 kB\nVmStk:\t     132 kB\nVmExe:\t    2760 kB\nVmLib:\t    5152 kB\nVmPTE:\t     104 kB\nVmSwap:\t       0 kB\nHugetlbPages:\t       0 kB\nCoreDumping:\t0\nTHP_enabled:\t1\nuntag_mask:\t0xffffffffffffffff\nThreads:\t1\nSigQ:\t4/31239\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000000000000\nSigIgn:\t0000000001001000\nSigCgt:\t0000000000004002\nCapInh:\t0000000000000000\nCapPrm:\t000001ffffffffff\nCapEff:\t000001ffffffffff\nCapBnd:\t000001ffffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSeccomp_filters:\t0\nSpeculation_Store_Bypass:\tthread vulnerable\nSpeculationIndirectBranch:\tconditional enabled\nCpus_allowed:\tffffffff,ffffffff,ffffffff,ffffffff\nCpus_allowed_list:\t0-127\nMems_allowed:\t00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t1\nnonvoluntary_ctxt_switches:\t2\nx86_Thread_features:\t\nx86_Thread_features_locked:\t\n"
+      },
+      "logical_host_id": "h1",
+      "ownership_checks": {
+        "child_still_alive": true,
+        "proc_child_net_tcp_has_owned_listener": true,
+        "ready_address_matches_logical_host": true,
+        "ready_pid_matches_exact_child_pid": true,
+        "ready_port_matches_reserved_test_port": true,
+        "ss_reports_exact_child_pid": true,
+        "ss_reports_reserved_test_port": true
+      },
+      "pass": true,
+      "port_owned_listeners": [
+        {
+          "inode": 2305693,
+          "local_address_hex": "0100000A",
+          "local_port": 18080,
+          "raw": "   0: 0100000A:46A0 00000000:0000 0A 00000000:00000000 00:00000000 00000000     0        0 2305693 1 ffff8f21c42f8940 100 0 0 10 0                   ",
+          "remote_address_hex": "00000000",
+          "remote_port": 0,
+          "slot": "0",
+          "state_hex": "0A"
+        }
+      ],
+      "ready_event": {
+        "event": "READY",
+        "file_content": "h1 pid=554254\n",
+        "file_operations": [
+          "create",
+          "read"
+        ],
+        "listen_address": "10.0.0.1",
+        "listen_port": 18080,
+        "logical_host_id": "h1",
+        "pid": 554254,
+        "ready_at_utc": "2026-08-30T06:30:28.386168+00:00",
+        "temp_file": "/tmp/mininet-e1a-r2-e1a-r2-run-20260830T060231Z-h1.txt"
+      },
+      "ss_socket_ownership": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "LISTEN 0      4      10.0.0.1:18080 0.0.0.0:* users:((\"python3\",pid=554254,fd=5))\n"
+      }
+    },
+    "h2": {
+      "captured_at_utc": "2026-08-30T06:30:28.440290+00:00",
+      "child": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/app.slice/app-org.gnome.Terminal.slice/vte-spawn-2da09d82-9b76-4d94-a440-0db71aa81fba.scope\n",
+        "mntns": "mnt:[4026532825]",
+        "netns": "net:[4026532826]",
+        "owned_listening_sockets": [
+          {
+            "inode": 2308281,
+            "local_address_hex": "0200000A",
+            "local_port": 18080,
+            "raw": "   0: 0200000A:46A0 00000000:0000 0A 00000000:00000000 00:00000000 00000000     0        0 2308281 1 ffff8f21cc19e5c0 100 0 0 10 0                   ",
+            "remote_address_hex": "00000000",
+            "remote_port": 0,
+            "slot": "0",
+            "state_hex": "0A"
+          }
+        ],
+        "pidns": "pid:[4026531836]",
+        "proc_net_tcp_raw": "  sl  local_address rem_address   st tx_queue rx_queue tr tm->when retrnsmt   uid  timeout inode                                                     \n   0: 0200000A:46A0 00000000:0000 0A 00000000:00000000 00:00000000 00000000     0        0 2308281 1 ffff8f21cc19e5c0 100 0 0 10 0                   \n",
+        "proc_net_tcp_records": [
+          {
+            "inode": 2308281,
+            "local_address_hex": "0200000A",
+            "local_port": 18080,
+            "raw": "   0: 0200000A:46A0 00000000:0000 0A 00000000:00000000 00:00000000 00000000     0        0 2308281 1 ffff8f21cc19e5c0 100 0 0 10 0                   ",
+            "remote_address_hex": "00000000",
+            "remote_port": 0,
+            "slot": "0",
+            "state_hex": "0A"
+          }
+        ],
+        "process": {
+          "cmdline": "/usr/bin/python3 /home/cph/experiment-parallel/e0-a/e1a-r2-run-20260830T060231Z/mininet_e1a_r2_privileged_harness.py --child --logical-host-id h2 --listen-address 10.0.0.2 --listen-port 18080 --temp-file /tmp/mininet-e1a-r2-e1a-r2-run-20260830T060231Z-h2.txt --window-seconds 12.0",
+          "comm": "python3",
+          "pid": 554255,
+          "role": "h2-benign-server-child",
+          "start_ticks": 12753396
+        },
+        "socket_fds": [
+          {
+            "fd": 5,
+            "inode": 2308281
+          }
+        ],
+        "status": "Name:\tpython3\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t554255\nNgid:\t0\nPid:\t554255\nPPid:\t554144\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t0 \nNStgid:\t554255\nNSpid:\t554255\nNSpgid:\t554255\nNSsid:\t554255\nKthread:\t0\nVmPeak:\t   29668 kB\nVmSize:\t   29608 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   18536 kB\nVmRSS:\t   18536 kB\nRssAnon:\t    8812 kB\nRssFile:\t    9724 kB\nRssShmem:\t       0 kB\nVmData:\t    9952 kB\nVmStk:\t     132 kB\nVmExe:\t    2760 kB\nVmLib:\t    5152 kB\nVmPTE:\t     100 kB\nVmSwap:\t       0 kB\nHugetlbPages:\t       0 kB\nCoreDumping:\t0\nTHP_enabled:\t1\nuntag_mask:\t0xffffffffffffffff\nThreads:\t1\nSigQ:\t4/31239\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000000000000\nSigIgn:\t0000000001001000\nSigCgt:\t0000000000004002\nCapInh:\t0000000000000000\nCapPrm:\t000001ffffffffff\nCapEff:\t000001ffffffffff\nCapBnd:\t000001ffffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSeccomp_filters:\t0\nSpeculation_Store_Bypass:\tthread vulnerable\nSpeculationIndirectBranch:\tconditional enabled\nCpus_allowed:\tffffffff,ffffffff,ffffffff,ffffffff\nCpus_allowed_list:\t0-127\nMems_allowed:\t00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t1\nnonvoluntary_ctxt_switches:\t9\nx86_Thread_features:\t\nx86_Thread_features_locked:\t\n"
+      },
+      "logical_host_id": "h2",
+      "ownership_checks": {
+        "child_still_alive": true,
+        "proc_child_net_tcp_has_owned_listener": true,
+        "ready_address_matches_logical_host": true,
+        "ready_pid_matches_exact_child_pid": true,
+        "ready_port_matches_reserved_test_port": true,
+        "ss_reports_exact_child_pid": true,
+        "ss_reports_reserved_test_port": true
+      },
+      "pass": true,
+      "port_owned_listeners": [
+        {
+          "inode": 2308281,
+          "local_address_hex": "0200000A",
+          "local_port": 18080,
+          "raw": "   0: 0200000A:46A0 00000000:0000 0A 00000000:00000000 00:00000000 00000000     0        0 2308281 1 ffff8f21cc19e5c0 100 0 0 10 0                   ",
+          "remote_address_hex": "00000000",
+          "remote_port": 0,
+          "slot": "0",
+          "state_hex": "0A"
+        }
+      ],
+      "ready_event": {
+        "event": "READY",
+        "file_content": "h2 pid=554255\n",
+        "file_operations": [
+          "create",
+          "read"
+        ],
+        "listen_address": "10.0.0.2",
+        "listen_port": 18080,
+        "logical_host_id": "h2",
+        "pid": 554255,
+        "ready_at_utc": "2026-08-30T06:30:28.387554+00:00",
+        "temp_file": "/tmp/mininet-e1a-r2-e1a-r2-run-20260830T060231Z-h2.txt"
+      },
+      "ss_socket_ownership": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "LISTEN 0      4      10.0.0.2:18080 0.0.0.0:* users:((\"python3\",pid=554255,fd=5))\n"
+      }
+    }
+  },
+  "started_at_utc": "2026-08-30T06:30:26.836801+00:00",
+  "static_self_check": {
+    "bounded_tcpdump_filter": {
+      "exact_match": true,
+      "filter": "(icmp and net 10.0.0.0/24) or (tcp and net 10.0.0.0/24 and port 18080)",
+      "icmp_bounded": true,
+      "network": "10.0.0.0/24",
+      "pass": true,
+      "tcp_bounded": true,
+      "tcp_port": 18080
+    },
+    "checked_at_utc": "2026-08-30T06:30:26.975402+00:00",
+    "command_executables_inspected": [
+      "ip",
+      "ovs-vsctl",
+      "pgrep",
+      "ping",
+      "python3",
+      "ss",
+      "tcpdump"
+    ],
+    "command_literals_inspected": [
+      "/usr/bin/ovs-vsctl --timeout=2 br-exists s1",
+      "/usr/bin/tcpdump -i any -nn -U -s 0 -w",
+      "/usr/bin/python3 --child --logical-host-id --listen-address --listen-port --temp-file --window-seconds",
+      "ss",
+      "/usr/bin/python3 -c",
+      "/usr/sbin/ip -j address show",
+      "/usr/sbin/ip netns list",
+      "/usr/bin/ovs-vsctl --timeout=2 list-br",
+      "/usr/bin/pgrep -x",
+      "/usr/sbin/ip link show dev",
+      "ping",
+      "ping"
+    ],
+    "harness_path": "/home/cph/experiment-parallel/e0-a/e1a-r2-run-20260830T060231Z/mininet_e1a_r2_privileged_harness.py",
+    "harness_sha256": "129bc1b10486e3f23c37d7b3386f7dfeebc108a7b29a25f493809391fd070e90",
+    "no_apt_commands": true,
+    "no_automatic_sudo": true,
+    "no_mn_c": true,
+    "no_nat_or_external_links": true,
+    "no_provx_or_formal_benchmark_execution": true,
+    "pass": true,
+    "python_ast_parse": true,
+    "required_cleanup_zero_assertion_names": [
+      "RUN_OWNED_CHILDREN_REMAINING",
+      "RESERVED_TEST_INTERFACES_REMAINING",
+      "RESERVED_TEST_OVS_OBJECTS_REMAINING",
+      "TCPDUMP_PROCESS_REMAINING"
+    ],
+    "required_cleanup_zero_assertions": 4,
+    "required_namespace_assertion_names": [
+      "h1_child_netns == h1_shell_netns",
+      "h2_child_netns == h2_shell_netns",
+      "h1_child_netns != h2_shell_netns",
+      "h2_child_netns != h1_shell_netns"
+    ],
+    "required_namespace_assertions": 4
+  },
+  "status": "COMPLETED_PASS",
+  "tcp_exchange": {
+    "h1": {
+      "pid": 554260,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "ACK:h2\n"
+    },
+    "h2": {
+      "pid": 554261,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "ACK:h1\n"
+    }
+  },
+  "tcpdump": {
+    "filter": "(icmp and net 10.0.0.0/24) or (tcp and net 10.0.0.0/24 and port 18080)",
+    "log": "tcpdump: data link type LINUX_SLL2\ntcpdump: listening on any, link-type LINUX_SLL2 (Linux cooked v2), snapshot length 262144 bytes\n58 packets captured\n58 packets received by filter\n0 packets dropped by kernel\n",
+    "path": "/home/cph/experiment-parallel/e0-a/e1a-r2-run-20260830T060231Z/MININET_E1A_R2_BENIGN_TRAFFIC.pcap",
+    "pcap_exists": true,
+    "pcap_sha256": "184b030eb86881bd7e0b08fce1e2d2a22731af85e806cc66f0951dd9592b7e50",
+    "pcap_size_bytes": 5796,
+    "process": {
+      "cmdline": "/usr/bin/tcpdump -i any -nn -U -s 0 -w /home/cph/experiment-parallel/e0-a/e1a-r2-run-20260830T060231Z/MININET_E1A_R2_BENIGN_TRAFFIC.pcap (icmp and net 10.0.0.0/24) or (tcp and net 10.0.0.0/24 and port 18080)",
+      "comm": "tcpdump",
+      "pid": 554249,
+      "role": "tcpdump",
+      "start_ticks": 12753295
+    },
+    "returncode": 0,
+    "started_before_benign_traffic": true,
+    "stopped_before_topology_teardown": true
+  },
+  "topology_contract": {
+    "controller": null,
+    "external_links": false,
+    "hosts": {
+      "h1": {
+        "address": "10.0.0.1",
+        "ip": "10.0.0.1/24",
+        "mac": "00:00:00:00:01:01"
+      },
+      "h2": {
+        "address": "10.0.0.2",
+        "ip": "10.0.0.2/24",
+        "mac": "00:00:00:00:01:02"
+      }
+    },
+    "nat": false,
+    "switch": "s1"
+  }
+}

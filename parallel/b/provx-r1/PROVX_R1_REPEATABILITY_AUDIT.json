@@ -1,0 +1,20 @@
+{
+  "repeatability": "VARIABLE_RECORDED",
+  "seed_exposed": false,
+  "seed_injected": false,
+  "runs_compared": 2,
+  "output_hashes": [
+    "4733d2038761b2930f7b2e6afdebae0029114b4ca6814757b5d7c464406fe47b",
+    "f6c74dc90d7105cd8575c29c0f30c92bc15e52b84dec4c7cc068ef967777d176"
+  ],
+  "output_hashes_equal": false,
+  "explanation_edge_index_equal": true,
+  "explanation_edge_weight_equal": false,
+  "predictions_equal": true,
+  "metrics_equal": true,
+  "nondeterminism_quantification": {
+    "edge_weight_max_abs_diff": 0.06730854511260986,
+    "edge_weight_mean_abs_diff": 0.013899627141654491
+  },
+  "note": "Identical outputs observed despite no exposed seed; torch RNG state was not explicitly seeded."
+}

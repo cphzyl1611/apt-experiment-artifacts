@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "artifact_as_shipped_baseline": true,
+  "paper_stated_parameter_baseline": false,
+  "dataset": "Sample",
+  "partition": "test_100nodes",
+  "gnn_model": "GCNConv",
+  "checkpoint": "/home/cph/experiment-parallel/e0-b/provx-r1/artifact/storage/cache/Sample/saved_models/GCNConv/checkpoint-best-acc/model.bin",
+  "bounded_limit_graphs": 1,
+  "graph_selection": "first graph with graph_label==1; graph_index=19, sample_id=497",
+  "runs": [
+    {
+      "run_id": "repeat1",
+      "command": "scripts/run_provx.py --dataset Sample --partition test_100nodes --gnn-model GCNConv --epochs 200 --alpha 0.9 --solidification-factor 0.6 --solidification-stage-start-ratio 0.6 --limit-graphs 1 --device cpu --output outputs/provx_explanations_repeat1.pt",
+      "exit_code": 0,
+      "stdout": "explained graph_index=19 sample_id=497 pred=1\nsaved=outputs/provx_explanations_repeat1.pt\ncount=1\n",
+      "stderr": "",
+      "output": "/home/cph/experiment-parallel/e0-b/provx-r1/artifact/outputs/provx_explanations_repeat1.pt",
+      "output_sha256": "4733d2038761b2930f7b2e6afdebae0029114b4ca6814757b5d7c464406fe47b",
+      "evaluation_command": "scripts/evaluate_explanations.py ... --explanations outputs/provx_explanations_repeat1.pt --top-k 30 --device cpu",
+      "evaluation_stdout": "count=1\naccuracy=1.0000\nprecision=1.0000\nrecall=0.3069\nf1=0.4697\nmer=1.0000\n",
+      "evaluation_exit_code": 0
+    },
+    {
+      "run_id": "repeat2",
+      "command": "scripts/run_provx.py --dataset Sample --partition test_100nodes --gnn-model GCNConv --epochs 200 --alpha 0.9 --solidification-factor 0.6 --solidification-stage-start-ratio 0.6 --limit-graphs 1 --device cpu --output outputs/provx_explanations_repeat2.pt",
+      "exit_code": 0,
+      "stdout": "explained graph_index=19 sample_id=497 pred=1\nsaved=outputs/provx_explanations_repeat2.pt\ncount=1\n",
+      "stderr": "",
+      "output": "/home/cph/experiment-parallel/e0-b/provx-r1/artifact/outputs/provx_explanations_repeat2.pt",
+      "output_sha256": "f6c74dc90d7105cd8575c29c0f30c92bc15e52b84dec4c7cc068ef967777d176",
+      "evaluation_command": "scripts/evaluate_explanations.py ... --explanations outputs/provx_explanations_repeat2.pt --top-k 30 --device cpu",
+      "evaluation_stdout": "count=1\naccuracy=1.0000\nprecision=1.0000\nrecall=0.3069\nf1=0.4697\nmer=1.0000\n",
+      "evaluation_exit_code": 0
+    }
+  ],
+  "effective_config": {
+    "epochs": 200,
+    "lr": 0.05,
+    "alpha": 0.9,
+    "solidification_factor": 0.6,
+    "stage_start_ratio": 0.6,
+    "threshold_low": 0.05,
+    "threshold_high": 0.95,
+    "top_k_evaluation": 30,
+    "device": "cpu",
+    "seed": "not exposed by run_provx; no seed injected"
+  },
+  "result": {
+    "pred": 1,
+    "target_label": 1,
+    "edge_count": 100,
+    "repeat_edge_index_equal": true,
+    "repeat_edge_weight_equal": false,
+    "repeat_pred_equal": true,
+    "repeat_target_equal": true,
+    "metrics_equal": true,
+    "mer_semantics": "MODEL_LEVEL_INTERVENTION_FLIP_ONLY",
+    "mer": 1.0
+  }
+}

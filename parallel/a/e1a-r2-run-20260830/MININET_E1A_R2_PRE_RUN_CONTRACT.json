@@ -1,0 +1,52 @@
+{
+  "schema": "MININET_E1A_R2_PRE_RUN_CONTRACT_V1",
+  "run_id": "e1a-r2-run-20260830",
+  "purpose": "Benign attribution proof preparation: process event to exact logical Mininet host",
+  "harness": {
+    "path": "/home/cph/experiment-parallel/e0-a/e1a-r2-run-20260830/e1a_r2_benign_attribution_harness.py",
+    "sha256": "d909d97a242614a7a319f854ca6caf496f656bebcdfac784fb590ad41670f693",
+    "exact_human_command": "sudo /usr/bin/python3 /home/cph/experiment-parallel/e0-a/e1a-r2-run-20260830/e1a_r2_benign_attribution_harness.py"
+  },
+  "topology": {
+    "hosts": ["h1", "h2"],
+    "switch": "s1",
+    "private_subnet": "10.0.0.0/24",
+    "nat_or_external_links": false,
+    "controller": null
+  },
+  "child_attribution": {
+    "simultaneous_long_lived_children": true,
+    "required_fields": ["child_pid", "child_netns", "child_cgroup", "host_shell_pid", "host_shell_netns", "child_netns_equals_owning_host", "child_netns_differs_from_other_host"],
+    "proof_rule": "Each child netns must equal its owning host shell netns and differ from the other host netns while the child is alive."
+  },
+  "socket_attribution": {
+    "listener": "Benign TCP listener bound to 0.0.0.0 inside each host namespace",
+    "required_fields": ["child_pid", "listener_port", "host_shell_netns", "socket_evidence", "proc_tcp_evidence"],
+    "traffic": "One bounded h2-to-h1 TCP connect after both listeners are observed"
+  },
+  "packet_capture": {
+    "started_inside_harness": true,
+    "filter": "net 10.0.0.0/24 and (icmp or tcp)",
+    "pcap_path": "/home/cph/experiment-parallel/e0-a/e1a-r2-run-20260830/benign_fabric.pcap",
+    "hash_required": true,
+    "stopped_before_topology_teardown": true
+  },
+  "file_events": {
+    "operations": ["create", "read", "delete"],
+    "pid_attribution_required": true,
+    "filesystem_isolation_claimed": false
+  },
+  "cleanup": {
+    "child_process_termination": true,
+    "net_stop": true,
+    "broad_mn_cleanup": false,
+    "stale_object_escalation": "Stop and request human approval if run-specific cleanup cannot complete."
+  },
+  "boundaries": {
+    "attack_actions_executed": 0,
+    "formal_experiment_executed": false,
+    "package_installation": false,
+    "automatic_sudo": false,
+    "authority_mutation": false
+  }
+}

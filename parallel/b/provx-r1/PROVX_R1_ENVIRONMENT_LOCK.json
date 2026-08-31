@@ -1,0 +1,22 @@
+{
+  "python_executable": "/home/cph/experiment-parallel/e0-b/provx-r1/venv_r1_cpu/bin/python",
+  "python_version": "3.10.12 (main, Jun 22 2026, 18:55:27) [GCC 11.4.0]",
+  "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+  "requirements_pins": {
+    "torch": "2.8.0",
+    "torch-geometric": "2.6.1",
+    "numpy": "2.0.2",
+    "scikit-learn": "1.6.1"
+  },
+  "installed_versions": {
+    "torch": "2.8.0+cpu",
+    "torch-geometric": "2.6.1",
+    "numpy": "2.0.2",
+    "scikit-learn": "1.6.1"
+  },
+  "torch_device": "cpu",
+  "r0_archive_sha256": "a46fe7dec840ea28d9f8acf8771879af7204e0d622e24d12a99ad95f4187e3ff",
+  "r0_extracted_path": "../provx-r0/extracted/ProvX-USENIX-artifact",
+  "r1_artifact_path": "/home/cph/experiment-parallel/e0-b/provx-r1/artifact",
+  "r0_bytes_untouched": true
+}

@@ -1,0 +1,72 @@
+{
+  "stage": "PROVX-R1",
+  "dataset": "Sample",
+  "partition": "test_100nodes",
+  "backbone": "GCNConv",
+  "checkpoint": "provx-r1/artifact/storage/cache/Sample/saved_models/GCNConv/checkpoint-best-acc/model.bin",
+  "device": "cpu",
+  "bounded_sample": {"limit_graphs": 1, "explained_graph_index": 19, "sample_id": 497, "original_prediction": 1, "target_label": 1, "edge_count_without_self_loops": 100},
+  "artifact_as_shipped_baseline": {
+    "epochs": 200,
+    "lr": 0.05,
+    "alpha": 0.9,
+    "solidification_factor": 0.6,
+    "solidification_stage_start_ratio": 0.6,
+    "confident_threshold_low": 0.05,
+    "confident_threshold_high": 0.95,
+    "top_k": 30,
+    "distance_loss": "BCE(mask, ones_like(mask))",
+    "prediction_loss": "relu(raw_logits[:, target_label]).sum()",
+    "phase2_seed": null
+  },
+  "paper_stated_parameter_baseline": {
+    "detector_training": {"epochs": 50, "optimizer": "Adam", "learning_rate": 0.001},
+    "phase2_epochs": 200,
+    "phase2_learning_rate": 0.01,
+    "R_S": 0.6,
+    "gamma_S": 0.5,
+    "tau_low": 0.05,
+    "tau_high": 0.95
+  },
+  "run_1": {
+    "command": "PYTHONPATH=. ../venv_r1_cpu/bin/python scripts/run_provx.py --dataset Sample --partition test_100nodes --gnn-model GCNConv --checkpoint storage/cache/Sample/saved_models/GCNConv/checkpoint-best-acc/model.bin --limit-graphs 1 --device cpu --output ../phase2_run1.pt",
+    "exit_code": 0,
+    "log": "provx-r1/phase2_run1.log",
+    "output": "provx-r1/phase2_run1.pt",
+    "output_bytes": 3973,
+    "output_sha256": "f683eeccfabfc4f0875dd26c896b2e4728f9905b3adb73e60f70f78a0b1f1fa5",
+    "evaluation_command": "PYTHONPATH=. ../venv_r1_cpu/bin/python scripts/evaluate_explanations.py --dataset Sample --partition test_100nodes --gnn-model GCNConv --checkpoint storage/cache/Sample/saved_models/GCNConv/checkpoint-best-acc/model.bin --explanations ../phase2_run1.pt --top-k 30 --device cpu",
+    "evaluation_exit_code": 0,
+    "evaluation_log": "provx-r1/phase2_eval_run1.log",
+    "metrics": {"count": 1, "accuracy": 1.0, "precision": 1.0, "recall": 0.3069, "f1": 0.4697, "mer": 1.0},
+    "mer_semantics": "MODEL_LEVEL_INTERVENTION_FLIP_ONLY"
+  },
+  "run_2": {
+    "command": "PYTHONPATH=. ../venv_r1_cpu/bin/python scripts/run_provx.py --dataset Sample --partition test_100nodes --gnn-model GCNConv --checkpoint storage/cache/Sample/saved_models/GCNConv/checkpoint-best-acc/model.bin --limit-graphs 1 --device cpu --output ../phase2_run2.pt",
+    "exit_code": 0,
+    "log": "provx-r1/phase2_run2.log",
+    "output": "provx-r1/phase2_run2.pt",
+    "output_bytes": 3973,
+    "output_sha256": "e26e74b27aa5e1a40ff005e3f561533682904e84c90e2c8e7aa9aa3942512660",
+    "evaluation_command": "PYTHONPATH=. ../venv_r1_cpu/bin/python scripts/evaluate_explanations.py --dataset Sample --partition test_100nodes --gnn-model GCNConv --checkpoint storage/cache/Sample/saved_models/GCNConv/checkpoint-best-acc/model.bin --explanations ../phase2_run2.pt --top-k 30 --device cpu",
+    "evaluation_exit_code": 0,
+    "evaluation_log": "provx-r1/phase2_eval_run2.log",
+    "metrics": {"count": 1, "accuracy": 1.0, "precision": 1.0, "recall": 0.3069, "f1": 0.4697, "mer": 1.0},
+    "mer_semantics": "MODEL_LEVEL_INTERVENTION_FLIP_ONLY"
+  },
+  "repeat_comparison": {
+    "graph_identity_equal": true,
+    "prediction_equal": true,
+    "edge_index_equal": true,
+    "edge_weight_equal": false,
+    "edge_weight_sha256_run1": "033aadad57fcec4f3431567d0561066d606cf2c11b26da8ed7408c40ed752b54",
+    "edge_weight_sha256_run2": "b811fa97594e391cb8f9b1b9fed29bd02673f6c2b182c8a7b2c8bce5ffe35d3",
+    "edge_weight_max_abs_delta": 0.04471695423126221,
+    "edge_weight_mean_abs_delta": 0.011177140288054943,
+    "top30_overlap": 22,
+    "top30_same_set": false,
+    "metrics_equal": true,
+    "repeatability": "VARIABLE_RECORDED: Phase-II has no seed argument and randomly initializes the edge mask"
+  },
+  "formal_execution": false
+}

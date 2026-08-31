@@ -1,0 +1,16 @@
+{
+  "stage": "PROVX-R1",
+  "command": "../venv_r1_cpu/bin/python scripts/check_package.py --dataset Sample --partition test_100nodes --gnn-model GCNConv --device cpu --limit-graphs 1",
+  "working_directory": "provx-r1/artifact",
+  "exit_code": 0,
+  "stdout": "dataset=Sample\npartition=test_100nodes\ncheckpoint=/home/cph/experiment-parallel/e0-b/provx-r1/artifact/storage/cache/Sample/saved_models/GCNConv/checkpoint-best-acc/model.bin\ngraphs_loaded=2463\nfirst_graph_nodes=102\nfirst_graph_edges=100\ninput_feature_dim=21\nlogits_shape=(1, 2)\npred=0\n",
+  "stderr": "",
+  "dataset": "Sample",
+  "partition": "test_100nodes",
+  "graphs_loaded": 2463,
+  "first_graph": {"nodes": 102, "edges": 100, "input_feature_dim": 21},
+  "checkpoint": "storage/cache/Sample/saved_models/GCNConv/checkpoint-best-acc/model.bin",
+  "checkpoint_load": "PASS",
+  "detector_forward": {"logits_shape": [1, 2], "pred": 0},
+  "model_execution": "single detector forward pass only; no training, Phase-II, or formal evaluation"
+}

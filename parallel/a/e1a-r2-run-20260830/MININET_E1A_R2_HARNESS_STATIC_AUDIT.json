@@ -1,0 +1,22 @@
+{
+  "schema": "MININET_E1A_R2_HARNESS_STATIC_AUDIT_V1",
+  "harness_path": "/home/cph/experiment-parallel/e0-a/e1a-r2-run-20260830/e1a_r2_benign_attribution_harness.py",
+  "harness_sha256": "d909d97a242614a7a319f854ca6caf496f656bebcdfac784fb590ad41670f693",
+  "py_compile": "PASS",
+  "unprivileged_gate": "PASS_ROOT_GATE_ENFORCED",
+  "static_checks": {
+    "no_nat_or_external_links": "PASS",
+    "no_apt_or_attack_commands": "PASS",
+    "bounded_tcpdump_filter": "PASS",
+    "tcpdump_started_and_stopped_inside_same_run": "PASS",
+    "child_pid_netns_cgroup_capture": "PASS",
+    "live_socket_ownership_capture": "PASS",
+    "file_event_pid_attribution_without_isolation_claim": "PASS",
+    "run_specific_cleanup_only": "PASS",
+    "atomic_manifest_writes": "PASS"
+  },
+  "privileged_execution_performed": false,
+  "attack_actions_executed": 0,
+  "formal_experiment_executed": false,
+  "audit_status": "PASS_READY_FOR_HUMAN_PRIVILEGED_RUN"
+}
