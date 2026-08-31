@@ -1,0 +1,38 @@
+{
+  "authority_boundary": {
+    "active_source_authority_created": false,
+    "binding_publication": false,
+    "field_pins_created": 0,
+    "p0_executed": false,
+    "p1_executed": false,
+    "source_auth_executed": false
+  },
+  "exact317": {
+    "candidate": 231,
+    "cross_route_substitution": 0,
+    "duplicates": 0,
+    "raw": 86,
+    "total": 317,
+    "union": "Exact317"
+  },
+  "field_pin_packet_skeleton_count": 317,
+  "human_activation_decision": null,
+  "independent": true,
+  "protected_package_file_counts": {
+    "EXEC_R4": 88,
+    "GOV_R4": 4,
+    "PRODUCTION_AUTHORITY_INPUTS_R1": 11,
+    "R4_WRAPPER_GOVERNANCE": 9
+  },
+  "r5_package_file_count": 31,
+  "r5_review_commit": "90513ab76a2d392398fefd0456ad53a4660a3e8a",
+  "r5_review_tree": "fc67b7dcc66284ea2b8be4bb52d2fc3f3d1ebef5",
+  "schema": "FA1B2DE_CURRENT86_R6_INDEPENDENT_DESIGN_VERIFICATION_V1",
+  "transaction_id": "e8a0a97a33d47ac68c8ded4af1af109fa010d979acf9736fd5dffdebf96c5208",
+  "verification_status": "PASS",
+  "wrapper_routes": {
+    "R4_WRAPPER_C0_60": 60,
+    "R4_WRAPPER_RAW_LEGACY_26": 26,
+    "R4_WRAPPER_SCORING_231": 231
+  }
+}

@@ -1,0 +1,8 @@
+R2 serialization defect reproduction (RED)
+Command: /usr/bin/python3 test_e1c_r3_harness.py
+Result: ERROR / FAILED (expected before repair)
+Exact failure:
+  File ".../e1c-r2-run-20260831T061204Z/mininet_e1c_r2_corrected_smoke.py", line 95, in write_json_atomic
+    temp.write_text(json.dumps(value, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+TypeError: Object of type bytes is not JSON serializable
+Cause: R2 persisted run_command_bytes() stdout/stderr bytes inside before_probe without recursive conversion.

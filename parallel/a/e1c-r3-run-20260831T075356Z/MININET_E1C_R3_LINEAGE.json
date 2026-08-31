@@ -1,0 +1,48 @@
+{
+  "schema": "MININET_E1C_R3_LINEAGE_V1",
+  "created_at_utc": "2026-08-31T08:03:00Z",
+  "run_id": "e1c-r3-run-20260831T075356Z",
+  "pinned_review_commit": "90513ab76a2d392398fefd0456ad53a4660a3e8a",
+  "prior_runs": {
+    "r1": {
+      "run_id": "e1c-run-20260831T050028Z",
+      "audit_key": "e1c902f74f583",
+      "harness_path": "/home/cph/experiment-parallel/e0-a/e1c-run-20260831T050028Z/mininet_e1c_auditd_bounded_smoke.py",
+      "harness_sha256": "1af1f3b9e4213f214dad74e02c8a422152654e772dc670b1ba444fb5542fd417",
+      "pre_state_sha256": "49bea36b12bd06f9fa51554483167f4bfe77d2ce602d1000b146179f50058e20",
+      "historical_baseline": "No rules",
+      "historical_baseline_sha256": "61501e69a61dbbc1a41605ea15c34807e6b1d3992bee195dde36a7ebdd95dd87"
+    },
+    "r2": {
+      "run_id": "e1c-r2-run-20260831T061204Z",
+      "harness_path": "/home/cph/experiment-parallel/e0-a/e1c-r2-run-20260831T061204Z/mininet_e1c_r2_corrected_smoke.py",
+      "harness_sha256": "f299142d5ed365042e46cd240c559cbcea3644a23e34b24f7eb76bc514276464",
+      "test_path": "/home/cph/experiment-parallel/e0-a/e1c-r2-run-20260831T061204Z/test_mininet_e1c_r2_corrected_smoke.py",
+      "test_sha256": "ad1598806026ffedb8ce796899d6f2f15c6245c32b6fb617170715f8cfd38d8f",
+      "pre_state_sha256": "f7e6bb85cf9358504e2b4e6a0f9ef966bc131aba15509fbffaf8b8f69e05187e",
+      "privileged_result_path": "/home/cph/experiment-parallel/e0-a/e1c-r2-run-20260831T061204Z/MININET_E1C_R2_PRIVILEGED_RUN_RESULT.json",
+      "privileged_result_sha256": "f0834a0b658e0073bec5613dfe3e24ccca69bc962c34c31e7b322c04abf90b90",
+      "failure": {
+        "type": "TypeError",
+        "message": "Object of type bytes is not JSON serializable",
+        "persistence_pattern": "write_json_atomic({**before, stdout: text}) retained stderr bytes"
+      },
+      "old_residual_rules_at_prestate": 20,
+      "current_residual_rule_count": "UNKNOWN"
+    }
+  },
+  "r3": {
+    "harness_path": "/home/cph/experiment-parallel/e0-a/e1c-r3-run-20260831T075356Z/mininet_e1c_r3_auditd_bounded_smoke.py",
+    "harness_sha256": "4dcc55d5c2cff633da4617b34f246790e274b4d22599fb9a404a68fd59c988f3",
+    "test_path": "/home/cph/experiment-parallel/e0-a/e1c-r3-run-20260831T075356Z/test_e1c_r3_harness.py",
+    "test_sha256": "a388bee70431d9e7896f734c02f24332567d1927a5697c7dc37efd30816b6842",
+    "defect_reproduced_red": true,
+    "defect_fixed_by_recursive_json_safe_policy": true,
+    "known_owned_rule_sources": [
+      "/home/cph/experiment-parallel/e0-a/e1c-r2-run-20260831T061204Z/MININET_E1C_R2_AUDIT_PRE_STATE.json",
+      "/home/cph/experiment-parallel/e0-a/e1c-run-20260831T050028Z/MININET_E1C_TRANSIENT_RULE_CONTRACT.json"
+    ]
+  },
+  "formal_experiment_executed": false,
+  "no_r1_or_r2_mutation": true
+}

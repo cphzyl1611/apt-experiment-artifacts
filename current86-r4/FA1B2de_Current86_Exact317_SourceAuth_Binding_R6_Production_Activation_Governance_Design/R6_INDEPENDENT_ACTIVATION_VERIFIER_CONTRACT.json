@@ -1,0 +1,72 @@
+{
+  "checks": [
+    {
+      "assert": "each installed root ID equals SHA256(canonical root identity basis) and its artifact hash matches the transaction",
+      "id": "ROOT_IDENTITY"
+    },
+    {
+      "assert": "exactly four approved role roots are present; no field-pin root is present",
+      "id": "ROOT_ROLE_MEMBERSHIP"
+    },
+    {
+      "assert": "the three wrapper rules are exact and route counts are RAW 26, C0 60, SCORING 231",
+      "id": "WRAPPER_RULE_MEMBERSHIP"
+    },
+    {
+      "assert": "union of installed target commitments equals the exact317 manifest: 86 RAW + 231 CANDIDATE = 317; duplicates 0",
+      "id": "EXACT317_CONSERVATION"
+    },
+    {
+      "assert": "each route dispatches only its hash-bound R5 entrypoint/spec and exact source side; no cross-route substitution",
+      "id": "DISPATCH_ROUTE_EXACTNESS"
+    },
+    {
+      "assert": "no synthetic-only, legacy, unregistered, alternate, or path-only route is reachable from the production pointer",
+      "id": "NO_INACTIVE_OR_LEGACY_LEAKAGE"
+    },
+    {
+      "assert": "only the transaction's exact manifest, checkpoint, extractor, interpreter/isolation, and protected contract hashes are mounted read-only",
+      "id": "RUNTIME_WHITELIST_EXACTNESS"
+    },
+    {
+      "assert": "authority-store enumeration contains no newer or same-role different-hash root",
+      "id": "NO_NEWER_CONFLICTING_ROOTS"
+    },
+    {
+      "assert": "source-auth execution count remains zero immediately after activation",
+      "id": "SOURCE_AUTH_ZERO"
+    },
+    {
+      "assert": "field-pin registry is absent and field-pin count remains zero",
+      "id": "FIELD_PINS_ZERO"
+    },
+    {
+      "assert": "P0, P1, binding publication, scoring mutation, and binding mutation remain false/zero",
+      "id": "DOWNSTREAM_ZERO"
+    },
+    {
+      "assert": "GOV-R4 and EXEC-R4 hashes match the protected inputs and are not rewritten",
+      "id": "SEMANTICS_PRESERVED"
+    }
+  ],
+  "design_only": true,
+  "expected_packet_skeleton_sha256": "d55bc015d21b3fb4a6edc7ef9aa0caf5abca1da177da2df232f1dd97bd6f8573",
+  "expected_post_state_root_ids": {
+    "EXEC_R4_PRODUCTION_DISPATCH_INTEGRATION": "3f1f169c1ada9fbddd381727114b5b4a0a422b1bd4016c6ec5ff5b6461a02aa8",
+    "SOURCE_ADMISSION_CORPUS_SCHEMA_RULE_ROOT": "f88d911080e97e8e1e58010fd5e551f91127ec6b1ae77d2a3d28af07f71ef52f",
+    "SOURCE_ADMISSION_REGISTRY_ROOT": "8f9596729361f8c6620c98c18344c8cf31073e35085b3eb408fc5212ebd41d6a",
+    "SOURCE_AUTH_COMMON_INPUT_FREEZE_AND_RUNTIME_WHITELIST": "5d868125294dcd4d5f643f2fef820b89b056925a925d0b0f98fcf7408c41009d"
+  },
+  "failure_result": "FAIL_CLOSED_NO_ACTIVATION_AND_BLOCK_PRODUCTION_EVALUATOR",
+  "future_allowed_action": "emit an independent verification record only; never select a field or publish a binding",
+  "independence_requirements": [
+    "run from a separately hashed verifier implementation and isolated read-only mount",
+    "read the committed transaction pointer and artifacts without trusting producer-computed PASS flags",
+    "recompute all content hashes, IDs, counts, and route membership from source bytes",
+    "fail closed on missing, duplicate, conflicting, stale, or out-of-scope data"
+  ],
+  "pass_result": "ACTIVATION_VERIFIED_BUT_SOURCE_AUTH_AND_FIELD_PIN_STAGES_REMAIN_SEPARATE",
+  "schema": "FA1B2DE_CURRENT86_R6_INDEPENDENT_ACTIVATION_VERIFIER_CONTRACT_V1",
+  "transaction_id": "e8a0a97a33d47ac68c8ded4af1af109fa010d979acf9736fd5dffdebf96c5208",
+  "verifier_status": "PROSPECTIVE_CONTRACT_NOT_EXECUTING_ACTIVATION"
+}

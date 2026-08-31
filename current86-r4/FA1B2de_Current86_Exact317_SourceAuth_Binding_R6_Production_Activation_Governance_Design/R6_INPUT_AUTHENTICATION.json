@@ -1,0 +1,304 @@
+{
+  "approved_r4": {
+    "approval_decisions": {
+      "R4_WRAPPER_C0_60": "APPROVE_EXACT_CANONICAL_WRAPPER_RULE",
+      "R4_WRAPPER_RAW_LEGACY_26": "APPROVE_EXACT_CANONICAL_WRAPPER_RULE",
+      "R4_WRAPPER_SCORING_231": "APPROVE_EXACT_CANONICAL_WRAPPER_RULE"
+    },
+    "route_commitment_sha256s": {
+      "R4_WRAPPER_C0_60": "bbd7692ea3c0b146deb29d9f26c74ea2fe748056471dadc61fe0e748ca3bf6f4",
+      "R4_WRAPPER_RAW_LEGACY_26": "3c9ed2c6df01720185ca07324a0de6b41978794426f86a6b2487297a999240a6",
+      "R4_WRAPPER_SCORING_231": "3baa14e28e18ba3ed7162f524cd70ac9619098ac05b4ebbf6b4b1ed8907d240f"
+    },
+    "route_counts": {
+      "R4_WRAPPER_C0_60": 60,
+      "R4_WRAPPER_RAW_LEGACY_26": 26,
+      "R4_WRAPPER_SCORING_231": 231
+    },
+    "rule_ids": [
+      "R4_WRAPPER_C0_60",
+      "R4_WRAPPER_RAW_LEGACY_26",
+      "R4_WRAPPER_SCORING_231"
+    ],
+    "target_commitments": {
+      "byte_length": 103218,
+      "path": "R5/02_specs/APPROVED_R4_TARGET_COMMITMENTS.json",
+      "sha256": "de56fb25894633e67a206ed2627e2a89d06d1155f9deaff4713fe28adc8c1104"
+    },
+    "wrapper_specs": {
+      "byte_length": 30255,
+      "path": "R5/02_specs/APPROVED_R4_WRAPPER_SPECS.json",
+      "sha256": "79ebd0f79bcdd4b38ff4c9dc2ccd48d18c706a2d047be4b102d51b2671181474"
+    }
+  },
+  "authentication_conclusion": "R5_AND_EXACT317_AUTHENTICATED_FOR_DESIGN_ONLY",
+  "authentication_status": "PASS",
+  "authority_boundary": {
+    "active_source_authority_created": false,
+    "binding_authority_mutated": false,
+    "binding_publication": false,
+    "field_pins_created": 0,
+    "git_ref_mutation": false,
+    "p0_executed": false,
+    "p1_executed": false,
+    "scoring_authority_mutated": false,
+    "source_auth_executed": false
+  },
+  "common_input_freeze_runtime_base": {
+    "base_common_input_freeze_candidate": {
+      "byte_length": 5820,
+      "path": "PRODUCTION-AUTHORITY-INPUTS-R1/COMMON_INPUT_FREEZE_CANDIDATE.json",
+      "sha256": "2aa3753e8fc806767032ea867581b6191188ad8dd45624b0010f8e7e35c238eb"
+    },
+    "base_runtime_whitelist_candidate": {
+      "byte_length": 3480,
+      "path": "PRODUCTION-AUTHORITY-INPUTS-R1/RUNTIME_WHITELIST_CANDIDATE.json",
+      "sha256": "837e4cb8e7885dca33427712a94ff9343c60755055adadc48a2b084741d060fb"
+    },
+    "r5_additions": {
+      "byte_length": 1761,
+      "path": "R5/06_non_active_candidates/COMMON_INPUT_FREEZE_ADDITIONS_CANDIDATE.json",
+      "sha256": "98f4f42b4014f3f06f3a2ba823ff70fb13e0dffa15083b7ab8ba8c4bc647ac3d"
+    }
+  },
+  "design_only": true,
+  "dry_run_assertions": {
+    "all_candidate_wrapper_objects_only": true,
+    "cross_route_substitution": 0,
+    "duplicates": 0,
+    "route_counts": {
+      "R4_WRAPPER_C0_60": 60,
+      "R4_WRAPPER_RAW_LEGACY_26": 26,
+      "R4_WRAPPER_SCORING_231": 231
+    },
+    "union": "Exact317"
+  },
+  "exact317": {
+    "candidate_side_total": 231,
+    "manifest": {
+      "byte_length": 234895,
+      "path": "EXEC-R4/00_lineage/EXACT317_TARGET_MANIFEST.json",
+      "sha256": "d8d55d369fe433bf7b93a3c332b8ac9a517a9146b28fa223370ff3ec946955ac"
+    },
+    "manifest_schema": "CURRENT86_CANONICAL_INTRINSIC_317_EXACT_TARGETS_V1",
+    "raw_side_total": 86,
+    "target_id_set_sha256": "7f54dccb4a663c2450de09347be8d40c678094509027141df0c2576d311892fc",
+    "target_total": 317
+  },
+  "materialized_r5_inputs": {
+    "checkpoints": {
+      "R4_WRAPPER_C0_60": {
+        "byte_length": 1024,
+        "path": "R5/03_inputs/R4_WRAPPER_C0_60_CHECKPOINT.json",
+        "sha256": "a91844ffa4de66247fe69dbfe05dc2314a26698b2d751e644c64454e5e28b8b8"
+      },
+      "R4_WRAPPER_RAW_LEGACY_26": {
+        "byte_length": 1028,
+        "path": "R5/03_inputs/R4_WRAPPER_RAW_LEGACY_26_CHECKPOINT.json",
+        "sha256": "77a09653ad4d1e058ace1207ddef36c197486b26e59c43ab2d326c9a67bd61d9"
+      },
+      "R4_WRAPPER_SCORING_231": {
+        "byte_length": 1035,
+        "path": "R5/03_inputs/R4_WRAPPER_SCORING_231_CHECKPOINT.json",
+        "sha256": "fa5783b9e850fa63496593cf50b85bcbd8c16aa7a8ad81646f672716b7cdbeed"
+      }
+    },
+    "dry_run_outputs": {
+      "conservation": {
+        "byte_length": 519,
+        "path": "R5/05_dry_run/DRY_RUN_CONSERVATION.json",
+        "sha256": "153d18d4401794d86443712604243b81f93d278288677968624687696eb65161"
+      },
+      "exact317": {
+        "byte_length": 494470,
+        "path": "R5/05_dry_run/EXACT317_CANDIDATE_WRAPPER_OBJECTS_ONLY.jsonl",
+        "sha256": "884dec61cc33e13d12c439e202568c8e592650b82f98acca22b5eb0b4f4eaa82"
+      }
+    },
+    "extractors": {
+      "R4_WRAPPER_C0_60": {
+        "byte_length": 230,
+        "path": "R5/04_extractors/c0_exact_row_extractor.py",
+        "sha256": "ec84d8007b4e7c9e3e029ce84723c8b27427d9b35ddc1dd3b83582db5deb4a5b"
+      },
+      "R4_WRAPPER_RAW_LEGACY_26": {
+        "byte_length": 237,
+        "path": "R5/04_extractors/raw_positional_extractor.py",
+        "sha256": "4b1943320ea3bdc4132a38792bfada6d5b05a657254205cbb36eea2fc4444ae9"
+      },
+      "R4_WRAPPER_SCORING_231": {
+        "byte_length": 244,
+        "path": "R5/04_extractors/scoring_exact_id_row_extractor.py",
+        "sha256": "d7c46ac740b21d8e788016a416a6c68ef99fb94a169282fcbfecedfbdd13e531"
+      }
+    },
+    "independent_verification": {
+      "byte_length": 892,
+      "path": "R5/07_verification/R5_INDEPENDENT_VERIFICATION.json",
+      "sha256": "ad33b7b5168af4d54486b1d8216e9889b5e13811f218ab98a86355da12788860"
+    },
+    "manifests": {
+      "R4_WRAPPER_C0_60": {
+        "byte_length": 28623,
+        "path": "R5/03_inputs/R4_WRAPPER_C0_60_INPUT_MANIFEST.json",
+        "sha256": "e68188c0b156f4a011376f47e0779ca2e5c099fd5e63d47bcdd909147d65bc2b"
+      },
+      "R4_WRAPPER_RAW_LEGACY_26": {
+        "byte_length": 14419,
+        "path": "R5/03_inputs/R4_WRAPPER_RAW_LEGACY_26_INPUT_MANIFEST.json",
+        "sha256": "49c5a6f7277bfe3c1cc860e437e6908b37da1365f67e8dbf96263dd0aa4c9b90"
+      },
+      "R4_WRAPPER_SCORING_231": {
+        "byte_length": 114034,
+        "path": "R5/03_inputs/R4_WRAPPER_SCORING_231_INPUT_MANIFEST.json",
+        "sha256": "8e16276a8a550eccfd137d6e6e7cd6ce015c0e15eef69e5292eb0cd41a470a02"
+      }
+    },
+    "non_active_candidates": {
+      "EXEC_R4_PRODUCTION_DISPATCH_INTEGRATION": {
+        "byte_length": 1829,
+        "path": "R5/06_non_active_candidates/EXEC_R4_PRODUCTION_DISPATCH_INTEGRATION_PATCH_CANDIDATE.json",
+        "sha256": "24fafe7dc36c3f04b73fee413a6cabb66bbbb2bcafa0a460e8a2d6516027099b"
+      },
+      "SOURCE_ADMISSION_CORPUS_SCHEMA_RULE_ROOT": {
+        "byte_length": 1723,
+        "path": "R5/06_non_active_candidates/SOURCE_ADMISSION_CORPUS_SCHEMA_RULE_ROOT_CANDIDATE.json",
+        "sha256": "3eb4a78f6487286a6321e466d5a3cc2f6f645be959c51a33dd0046e3a4007346"
+      },
+      "SOURCE_ADMISSION_REGISTRY_ROOT": {
+        "byte_length": 27215,
+        "path": "R5/06_non_active_candidates/SOURCE_ADMISSION_REGISTRY_ROOT_CANDIDATE.json",
+        "sha256": "e1f20c4a4352997e3a969a1d281e8ff0aa4314a6748edd82ad2b0a6eee013d1c"
+      },
+      "SOURCE_AUTH_COMMON_INPUT_FREEZE_AND_RUNTIME_WHITELIST": {
+        "byte_length": 1761,
+        "path": "R5/06_non_active_candidates/COMMON_INPUT_FREEZE_ADDITIONS_CANDIDATE.json",
+        "sha256": "98f4f42b4014f3f06f3a2ba823ff70fb13e0dffa15083b7ab8ba8c4bc647ac3d"
+      }
+    }
+  },
+  "pinned_r5_review": {
+    "commit": "90513ab76a2d392398fefd0456ad53a4660a3e8a",
+    "commit_type": "commit",
+    "committed_r5_file_count": 31,
+    "committed_r5_file_mismatches": 0,
+    "package_prefix": "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_R5_Wrapper_Materialization",
+    "repository": "/home/cph/fa1b2de-review-artifacts",
+    "review_commit_authentication": "PASS",
+    "tree": "fc67b7dcc66284ea2b8be4bb52d2fc3f3d1ebef5"
+  },
+  "protected_input_packages": {
+    "EXEC_R4": {
+      "byte_length": 10160,
+      "path": "EXEC-R4/SHA256SUMS.txt",
+      "sha256": "06722fddd39d4d55a0cd1e4834bb63491112d13442aec1cc067219fb5bd232f6"
+    },
+    "GOV_R4": {
+      "byte_length": 514,
+      "path": "GOV-R4/SHA256SUMS.txt",
+      "sha256": "233cfbda4676d447b82273d8defaf40a66b2d8bf0a8b3e1e58f5c471cd12fd63"
+    },
+    "PRODUCTION_AUTHORITY_INPUTS_R1": {
+      "byte_length": 1200,
+      "path": "PRODUCTION-AUTHORITY-INPUTS-R1/SHA256SUMS.txt",
+      "sha256": "d00c3bb53f423b4379c659a760d89060d881967802a2aa163ceef26f52e5013c"
+    },
+    "R4_WRAPPER_GOVERNANCE": {
+      "byte_length": 964,
+      "path": "R4/SHA256SUMS.txt",
+      "sha256": "9aaa523bd7dce92bf865ee8283ddf61e339d6a804f90b264fa87e700dde2e2cd"
+    }
+  },
+  "protected_source_state": {
+    "authentication_status": "PASS",
+    "authority_reads_raw_bytes_from_pinned_commit": true,
+    "raw_playbook_git": {
+      "commit": "a699ebe4fa14cf25768fd0e5475b994a72b60dec",
+      "repository": "/home/cph/experiment",
+      "tree": "5ccafffe7e7785535fc276d352487b1d680947e9"
+    },
+    "source_artifacts": {
+      "c0_source": {
+        "byte_length": 2484224,
+        "path": "/home/cph/experiment-artifacts/tier-de1c0-handoff-20260823-083725/tier_de1c0_typed_operation_semantics.jsonl",
+        "sha256": "0036c42fb02026182274a7ac2a33b103b03b1e527856eb33b5ad650ceddd5c32"
+      },
+      "raw_registry": {
+        "byte_length": 2025927,
+        "path": "/home/cph/experiment-artifacts/fa1b2de-bso-r-20260825T100958Z/inputs/project_snapshots/raw_action_registry.jsonl",
+        "sha256": "53c85157f9fd0849ae19b1cf403333ad0d0af2a7d761b0498540dd92d66c1e93"
+      },
+      "scoring_snapshot": {
+        "byte_length": 1348627,
+        "path": "/home/cph/experiment-artifacts/fa1b2de-bso-r-20260825T100958Z/inputs/c2/c2_scoring_snapshot_post_c1.jsonl",
+        "sha256": "748a3808290f9e78f71c18d4553c77ae208517fd31d163fc2b3008cfcb57f1bb"
+      }
+    }
+  },
+  "r5_independent_verification": {
+    "candidate": 231,
+    "cross_route_substitution": 0,
+    "duplicates": 0,
+    "independent": true,
+    "raw": 86,
+    "status": "PASS",
+    "targets_total": 317,
+    "union": "Exact317"
+  },
+  "r5_lineage": {
+    "approved_rule_ids": [
+      "R4_WRAPPER_C0_60",
+      "R4_WRAPPER_RAW_LEGACY_26",
+      "R4_WRAPPER_SCORING_231"
+    ],
+    "artifact": {
+      "byte_length": 994,
+      "path": "R5/00_lineage/R5_LINEAGE_PIN.json",
+      "sha256": "a8bb855b431e494e139cde16743f757fbef22bb9bea35abf248e356b20e1a798"
+    },
+    "frozen_r4_rule_package_sha256": "da7e5bb23baf63559c719f2fc6319e56fd23ce493e4d74a1f8aa22220055c444",
+    "frozen_r4_sha256sums_sha256": "9aaa523bd7dce92bf865ee8283ddf61e339d6a804f90b264fa87e700dde2e2cd",
+    "human_approval_authenticated": true,
+    "human_origin": "USER_EXPLICIT_APPROVAL"
+  },
+  "r5_package": {
+    "file_count": 31,
+    "file_hashes": {
+      "00_lineage/R5_LINEAGE_PIN.json": "a8bb855b431e494e139cde16743f757fbef22bb9bea35abf248e356b20e1a798",
+      "01_approval/HUMAN_APPROVAL_AUTHENTICATION.json": "48fde5250d825d1470319f4b3fc487787c34b7b5727dac5d09c8cdb989172c02",
+      "02_specs/APPROVED_R4_TARGET_COMMITMENTS.json": "de56fb25894633e67a206ed2627e2a89d06d1155f9deaff4713fe28adc8c1104",
+      "02_specs/APPROVED_R4_WRAPPER_SPECS.json": "79ebd0f79bcdd4b38ff4c9dc2ccd48d18c706a2d047be4b102d51b2671181474",
+      "03_inputs/R4_WRAPPER_C0_60_CHECKPOINT.json": "a91844ffa4de66247fe69dbfe05dc2314a26698b2d751e644c64454e5e28b8b8",
+      "03_inputs/R4_WRAPPER_C0_60_INPUT_MANIFEST.json": "e68188c0b156f4a011376f47e0779ca2e5c099fd5e63d47bcdd909147d65bc2b",
+      "03_inputs/R4_WRAPPER_RAW_LEGACY_26_CHECKPOINT.json": "77a09653ad4d1e058ace1207ddef36c197486b26e59c43ab2d326c9a67bd61d9",
+      "03_inputs/R4_WRAPPER_RAW_LEGACY_26_INPUT_MANIFEST.json": "49c5a6f7277bfe3c1cc860e437e6908b37da1365f67e8dbf96263dd0aa4c9b90",
+      "03_inputs/R4_WRAPPER_SCORING_231_CHECKPOINT.json": "fa5783b9e850fa63496593cf50b85bcbd8c16aa7a8ad81646f672716b7cdbeed",
+      "03_inputs/R4_WRAPPER_SCORING_231_INPUT_MANIFEST.json": "8e16276a8a550eccfd137d6e6e7cd6ce015c0e15eef69e5292eb0cd41a470a02",
+      "04_extractors/c0_exact_row_extractor.py": "ec84d8007b4e7c9e3e029ce84723c8b27427d9b35ddc1dd3b83582db5deb4a5b",
+      "04_extractors/raw_positional_extractor.py": "4b1943320ea3bdc4132a38792bfada6d5b05a657254205cbb36eea2fc4444ae9",
+      "04_extractors/scoring_exact_id_row_extractor.py": "d7c46ac740b21d8e788016a416a6c68ef99fb94a169282fcbfecedfbdd13e531",
+      "05_dry_run/C0_60_CANDIDATE_WRAPPER_OBJECTS_ONLY.jsonl": "74be9934c88954a797522f6e09da1ccd4b48c1208050403a7f4431727120d6da",
+      "05_dry_run/DRY_RUN_CONSERVATION.json": "153d18d4401794d86443712604243b81f93d278288677968624687696eb65161",
+      "05_dry_run/EXACT317_CANDIDATE_WRAPPER_OBJECTS_ONLY.jsonl": "884dec61cc33e13d12c439e202568c8e592650b82f98acca22b5eb0b4f4eaa82",
+      "05_dry_run/RAW_26_CANDIDATE_WRAPPER_OBJECTS_ONLY.jsonl": "e7fcccdfb86af7c690b90f9bdb70be67f861618f3d644270c7b08ad9e588e224",
+      "05_dry_run/SCORING_231_CANDIDATE_WRAPPER_OBJECTS_ONLY.jsonl": "5d55367e44b7a258eff74254a0e10b2b7135eb3f997ef600d61cb8f4c18cf748",
+      "06_non_active_candidates/COMMON_INPUT_FREEZE_ADDITIONS_CANDIDATE.json": "98f4f42b4014f3f06f3a2ba823ff70fb13e0dffa15083b7ab8ba8c4bc647ac3d",
+      "06_non_active_candidates/EXEC_R4_PRODUCTION_DISPATCH_INTEGRATION_PATCH_CANDIDATE.json": "24fafe7dc36c3f04b73fee413a6cabb66bbbb2bcafa0a460e8a2d6516027099b",
+      "06_non_active_candidates/SOURCE_ADMISSION_CORPUS_SCHEMA_RULE_ROOT_CANDIDATE.json": "3eb4a78f6487286a6321e466d5a3cc2f6f645be959c51a33dd0046e3a4007346",
+      "06_non_active_candidates/SOURCE_ADMISSION_REGISTRY_ROOT_CANDIDATE.json": "e1f20c4a4352997e3a969a1d281e8ff0aa4314a6748edd82ad2b0a6eee013d1c",
+      "07_verification/R5_INDEPENDENT_VERIFICATION.json": "ad33b7b5168af4d54486b1d8216e9889b5e13811f218ab98a86355da12788860",
+      "07_verification/R5_TERMINAL_STATE.json": "4c5be582b81212e49c278bbb82a6ba8908fbf09d6cdf8d9385dc7e9dcec23e0f",
+      "07_verification/R5_WRAPPER_MATERIALIZATION_REPORT.md": "4b1b29a0c6a0c599a750faa17ccc8ef30c16b93e068b70c66b5cfccdeb7d970c",
+      "FILE_LIST.txt": "d6591cf3d8412f6ff40a83ceea4d733277e5d700a8f984a49560225dfc106261",
+      "r5_wrapper.py": "ce847a16203de5d163d8b241a0c04a998c29568525de220240644c1931089b7e",
+      "tests/test_r5_materialization.py": "49947da8ade3de17ac81f073728e4096e8f96f3172dcc683be00b76cd1fb9503",
+      "tools/materialize_r5.py": "63442dd119885a0a4bfddaccb642107e1bff72f1a08a6e71c0fc690204c56502",
+      "tools/package_r5.py": "73944be4f5d4f3ba843b17c9ba78c0591c9dbce349c6402ef13cc0452f178fc9",
+      "tools/verify_r5.py": "ef0c922dc4ca2812ab9be82e8e27f720414f5af96391c77b9b0536f86d6a569d"
+    },
+    "path": "/home/cph/fa1b2de-bso-a2-transition-r2-design-patch/FA1B2de_Current86_Exact317_SourceAuth_Binding_R5_Wrapper_Materialization",
+    "sha256sums_sha256": "5f1746499c2ca5ba966b3f716e6b8ca87844cf4cd0a1316ec215b25cc092fdc1"
+  },
+  "schema": "FA1B2DE_CURRENT86_BINDING_R6_INPUT_AUTHENTICATION_V1",
+  "stage": "BINDING_R6_PRODUCTION_SOURCE_AUTHORITY_ACTIVATION_GOVERNANCE_DESIGN"
+}

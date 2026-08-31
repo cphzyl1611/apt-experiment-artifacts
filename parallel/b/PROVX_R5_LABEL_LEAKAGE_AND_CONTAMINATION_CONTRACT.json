@@ -1,0 +1,81 @@
+{
+  "stage": "PROVX-R5",
+  "status": "FROZEN_DENIAL_AND_AUDIT_CONTRACT",
+  "contract_id": "provx-track-l-leakage-contamination-v1",
+  "encoder": {
+    "id": "provx-adapted-live-v1",
+    "dimension": 32,
+    "schema_sha256": "53caab007f9cea84e83a5fb92ddea0cb9082cb816d19752db896cc58c675f68a",
+    "input_rule": "Only collector-visible normalized entity/event attributes, counts, degrees, and timestamps may contribute to x."
+  },
+  "label_separation": {
+    "class_label_location": "run/group manifest and supervised target tensor only",
+    "encoder_access": false,
+    "forbidden_as_features": [
+      "class label or one-hot target",
+      "ground-truth alignment or annotation",
+      "red-team/adversary indicator",
+      "playbook identity or action identity",
+      "success/failure/outcome field",
+      "analyst-selected alert or detection result",
+      "_VULN",
+      "_LINE",
+      "_SAMPLE",
+      "sample_labels_all.pkl"
+    ],
+    "allowed_identifier_use": "Host/entity/run IDs may be used transiently for deterministic de-duplication, node ordering, grouping, and manifest joins; their raw values and hashes are not model features."
+  },
+  "feature_leakage_controls": {
+    "host_and_path": "Replace hostnames, usernames, paths, domains, and stable source identifiers with a per-corpus keyed de-identification mapping before model input. Preserve only presence/type/count semantics required by the R3 schema.",
+    "command_lines": "Do not pass literal command-line, action-name, playbook-name, ground-truth, or tool identifiers. Parse only declared process presence/type and normalized event class; record scrub counts.",
+    "event_tokens": "Map tokens through the frozen R3 vocabulary. Unrecognized tokens route to event_other_norm; no label-derived token map may be added during acquisition.",
+    "time": "Use relative collector timing within a group/subgraph only; do not expose absolute engagement date, red-team schedule, or partition ID.",
+    "graph": "Edges are collector-visible causal relations only. Ground-truth edges, analyst annotations, and post-hoc subgraph expansion are forbidden.",
+    "encoder_fitting": "R3/R4 use fixed constants and no fitted vocabulary/statistics. If a future transform is fitted, train groups alone may fit it and a new contract/version is required."
+  },
+  "contamination_denylists": {
+    "formal_dataset": {
+      "name": "FA1B2de",
+      "playbooks": 53,
+      "raw_actions": 1796,
+      "denial": "No raw records, graphs, labels, outcomes, action IDs, playbook IDs, hashes, or derived statistics enter Track-L train, validation, calibration, adapter fixtures, seed selection, or retry decisions."
+    },
+    "artifact_track_o": ["packaged Sample tensors as Track-L training examples", "_VULN", "_LINE", "_SAMPLE", "auxiliary evaluation labels"],
+    "post_hoc_inputs": ["formal benchmark results", "failed/successful trial selection", "analyst-selected ground truth", "validation/test outcomes used to change the frozen split or encoder"],
+    "action_execution": "No FA1B2de or other unapproved APT action is executed as part of R5."
+  },
+  "audit_algorithm": {
+    "audit_id": "provx-track-l-contamination-audit-v1",
+    "before_partition_assignment": [
+      "Scan source/provider manifests, filenames, metadata, labels, and annotations for denylisted formal identifiers and quarantine matches.",
+      "Compute SHA-256 for every raw object, canonical record, graph, and encoded tensor; compare exact hashes to any available formal/evaluation manifest.",
+      "Canonicalize record identity as (deidentified_host_id, normalized_timestamp_ms, canonical_entity_ids, event_class, source_record_id) and quarantine duplicates across prospective groups.",
+      "Detect overlapping UTC windows and shared source object IDs across groups; quarantine both groups rather than assigning one arbitrarily.",
+      "Verify labels are present only in the target/manifest channel and run the encoder with labels/identifiers removed."
+    ],
+    "after_partition_assignment": [
+      "Recompute raw/graph/feature hashes and assert no hash occurs in more than one partition.",
+      "Run feature-column provenance checks: every nonzero feature has a declared R3 source field and no forbidden field is in its dependency trace.",
+      "Audit class counts and group counts without moving a group; failure blocks training release.",
+      "Compare train/validation/calibration source revisions, host/run IDs, and time windows for cross-group overlap."
+    ],
+    "decision_rule": "Any unresolved hit, duplicate, overlap, or provenance gap yields CONTAMINATION_UNRESOLVED and blocks acquisition/training. There is no silent deletion or relabeling."
+  },
+  "required_evidence": [
+    "immutable source and object manifest",
+    "raw/graph/feature checksum lists",
+    "denylist scan report including zero-hit result",
+    "cross-group duplicate and time-overlap report",
+    "feature dependency/provenance report",
+    "class-count and partition audit",
+    "reviewer sign-off before training gate"
+  ],
+  "state": {
+    "formal_material_scanned": false,
+    "corpus_acquired": false,
+    "contamination_audit_executed": false,
+    "contract_frozen": true,
+    "detector_trained": false,
+    "formal_experiment_executed": false
+  }
+}

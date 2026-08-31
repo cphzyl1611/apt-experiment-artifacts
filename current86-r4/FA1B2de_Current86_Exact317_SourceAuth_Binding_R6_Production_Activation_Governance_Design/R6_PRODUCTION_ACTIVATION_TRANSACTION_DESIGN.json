@@ -1,0 +1,260 @@
+{
+  "activation_execution_performed": false,
+  "activation_status": "DESIGN_ONLY_NOT_EXECUTED",
+  "commit_point": "ATOMIC_REPLACE_SINGLE_AUTHORITY_CONSUMER_POINTER_AFTER_VERIFIER_PASS",
+  "design_only": true,
+  "exact_write_install_sequence": [
+    "1. Acquire the authority-store activation lock and read the current single activation pointer.",
+    "2. Re-hash every protected input, R5 candidate, manifest, checkpoint, extractor, and exact317 target commitment; reject any drift.",
+    "3. Enumerate all authority roots and reject any newer or conflicting root for the four roles.",
+    "4. Write the four immutable candidate root objects and one proposed post-state manifest into an isolated, read-only-after-write staging directory named by transaction_id.",
+    "5. Run the independent activation verifier against staging; require every check to pass and the human decision record to contain the exact approval action.",
+    "6. Write a commit record containing transaction_id, pre_state root IDs, post_state root IDs, and all content hashes; fsync staged files and the commit record.",
+    "7. Atomically replace one authority-consumer activation pointer with the committed post-state pointer; this is the sole visibility commit point.",
+    "8. Re-read the pointer and run the post-commit independent verifier before allowing any production evaluator to consume it."
+  ],
+  "hard_boundary": {
+    "active_source_authority_created_now": false,
+    "binding_publication_now": false,
+    "field_pins_created_now": 0,
+    "git_ref_mutation_now": false,
+    "p0_executed_now": false,
+    "p1_executed_now": false,
+    "source_auth_executed_now": false
+  },
+  "human_activation_decision_required": "APPROVE_EXACT_PRODUCTION_SOURCE_AUTHORITY_ACTIVATION",
+  "post_state_candidate": {
+    "exact317_target_manifest_sha256": "d8d55d369fe433bf7b93a3c332b8ac9a517a9146b28fa223370ff3ec946955ac",
+    "field_pin_count": 0,
+    "root_artifacts": {
+      "EXEC_R4_PRODUCTION_DISPATCH_INTEGRATION": {
+        "artifact": {
+          "byte_length": 1829,
+          "path": "R5/06_non_active_candidates/EXEC_R4_PRODUCTION_DISPATCH_INTEGRATION_PATCH_CANDIDATE.json",
+          "sha256": "24fafe7dc36c3f04b73fee413a6cabb66bbbb2bcafa0a460e8a2d6516027099b"
+        },
+        "root_id": "3f1f169c1ada9fbddd381727114b5b4a0a422b1bd4016c6ec5ff5b6461a02aa8",
+        "status": "PROSPECTIVE_POST_COMMIT_ROOT"
+      },
+      "SOURCE_ADMISSION_CORPUS_SCHEMA_RULE_ROOT": {
+        "artifact": {
+          "byte_length": 1723,
+          "path": "R5/06_non_active_candidates/SOURCE_ADMISSION_CORPUS_SCHEMA_RULE_ROOT_CANDIDATE.json",
+          "sha256": "3eb4a78f6487286a6321e466d5a3cc2f6f645be959c51a33dd0046e3a4007346"
+        },
+        "root_id": "f88d911080e97e8e1e58010fd5e551f91127ec6b1ae77d2a3d28af07f71ef52f",
+        "status": "PROSPECTIVE_POST_COMMIT_ROOT"
+      },
+      "SOURCE_ADMISSION_REGISTRY_ROOT": {
+        "artifact": {
+          "byte_length": 27215,
+          "path": "R5/06_non_active_candidates/SOURCE_ADMISSION_REGISTRY_ROOT_CANDIDATE.json",
+          "sha256": "e1f20c4a4352997e3a969a1d281e8ff0aa4314a6748edd82ad2b0a6eee013d1c"
+        },
+        "root_id": "8f9596729361f8c6620c98c18344c8cf31073e35085b3eb408fc5212ebd41d6a",
+        "status": "PROSPECTIVE_POST_COMMIT_ROOT"
+      },
+      "SOURCE_AUTH_COMMON_INPUT_FREEZE_AND_RUNTIME_WHITELIST": {
+        "artifact": {
+          "byte_length": 1761,
+          "path": "R5/06_non_active_candidates/COMMON_INPUT_FREEZE_ADDITIONS_CANDIDATE.json",
+          "sha256": "98f4f42b4014f3f06f3a2ba823ff70fb13e0dffa15083b7ab8ba8c4bc647ac3d"
+        },
+        "root_id": "5d868125294dcd4d5f643f2fef820b89b056925a925d0b0f98fcf7408c41009d",
+        "status": "PROSPECTIVE_POST_COMMIT_ROOT"
+      }
+    },
+    "root_ids": {
+      "EXEC_R4_PRODUCTION_DISPATCH_INTEGRATION": "3f1f169c1ada9fbddd381727114b5b4a0a422b1bd4016c6ec5ff5b6461a02aa8",
+      "SOURCE_ADMISSION_CORPUS_SCHEMA_RULE_ROOT": "f88d911080e97e8e1e58010fd5e551f91127ec6b1ae77d2a3d28af07f71ef52f",
+      "SOURCE_ADMISSION_REGISTRY_ROOT": "8f9596729361f8c6620c98c18344c8cf31073e35085b3eb408fc5212ebd41d6a",
+      "SOURCE_AUTH_COMMON_INPUT_FREEZE_AND_RUNTIME_WHITELIST": "5d868125294dcd4d5f643f2fef820b89b056925a925d0b0f98fcf7408c41009d"
+    },
+    "runtime_whitelist_and_common_input_freeze": {
+      "base_common_input_freeze_sha256": "2aa3753e8fc806767032ea867581b6191188ad8dd45624b0010f8e7e35c238eb",
+      "base_runtime_whitelist_sha256": "837e4cb8e7885dca33427712a94ff9343c60755055adadc48a2b084741d060fb",
+      "candidate_artifact_sha256": "98f4f42b4014f3f06f3a2ba823ff70fb13e0dffa15083b7ab8ba8c4bc647ac3d",
+      "checkpoint_sha256s": {
+        "R4_WRAPPER_C0_60": "a91844ffa4de66247fe69dbfe05dc2314a26698b2d751e644c64454e5e28b8b8",
+        "R4_WRAPPER_RAW_LEGACY_26": "77a09653ad4d1e058ace1207ddef36c197486b26e59c43ab2d326c9a67bd61d9",
+        "R4_WRAPPER_SCORING_231": "fa5783b9e850fa63496593cf50b85bcbd8c16aa7a8ad81646f672716b7cdbeed"
+      },
+      "extractor_sha256s": {
+        "R4_WRAPPER_C0_60": "ec84d8007b4e7c9e3e029ce84723c8b27427d9b35ddc1dd3b83582db5deb4a5b",
+        "R4_WRAPPER_RAW_LEGACY_26": "4b1943320ea3bdc4132a38792bfada6d5b05a657254205cbb36eea2fc4444ae9",
+        "R4_WRAPPER_SCORING_231": "d7c46ac740b21d8e788016a416a6c68ef99fb94a169282fcbfecedfbdd13e531"
+      },
+      "manifest_sha256s": {
+        "R4_WRAPPER_C0_60": "e68188c0b156f4a011376f47e0779ca2e5c099fd5e63d47bcdd909147d65bc2b",
+        "R4_WRAPPER_RAW_LEGACY_26": "49c5a6f7277bfe3c1cc860e437e6908b37da1365f67e8dbf96263dd0aa4c9b90",
+        "R4_WRAPPER_SCORING_231": "8e16276a8a550eccfd137d6e6e7cd6ce015c0e15eef69e5292eb0cd41a470a02"
+      },
+      "production_authority_inputs_r1_sha256sums_sha256": "d00c3bb53f423b4379c659a760d89060d881967802a2aa163ceef26f52e5013c"
+    },
+    "source_auth_execution_count": 0,
+    "wrapper_dispatch": {
+      "R4_WRAPPER_C0_60": {
+        "entrypoint": "04_extractors/c0_exact_row_extractor.py",
+        "entrypoint_sha256": "ec84d8007b4e7c9e3e029ce84723c8b27427d9b35ddc1dd3b83582db5deb4a5b",
+        "schema_or_contract_id": "R4_WRAPPER_C0_60_SCHEMA_V1",
+        "source_side": "RAW",
+        "target_count": 60
+      },
+      "R4_WRAPPER_RAW_LEGACY_26": {
+        "entrypoint": "04_extractors/raw_positional_extractor.py",
+        "entrypoint_sha256": "4b1943320ea3bdc4132a38792bfada6d5b05a657254205cbb36eea2fc4444ae9",
+        "schema_or_contract_id": "R4_WRAPPER_RAW_LEGACY_26_SCHEMA_V1",
+        "source_side": "RAW",
+        "target_count": 26
+      },
+      "R4_WRAPPER_SCORING_231": {
+        "entrypoint": "04_extractors/scoring_exact_id_row_extractor.py",
+        "entrypoint_sha256": "d7c46ac740b21d8e788016a416a6c68ef99fb94a169282fcbfecedfbdd13e531",
+        "schema_or_contract_id": "R4_WRAPPER_SCORING_231_SCHEMA_V1",
+        "source_side": "CANDIDATE",
+        "target_count": 231
+      }
+    }
+  },
+  "pre_state": {
+    "exec_r4_base_package_sha256sums_sha256": "06722fddd39d4d55a0cd1e4834bb63491112d13442aec1cc067219fb5bd232f6",
+    "production_authority_visible": false,
+    "root_ids": {
+      "EXEC_R4_PRODUCTION_DISPATCH_INTEGRATION": "EXEC_R4_BASELINE_SYNTHETIC_ONLY",
+      "SOURCE_ADMISSION_CORPUS_SCHEMA_RULE_ROOT": "ABSENT_NO_ACTIVE_PRODUCTION_ROOT",
+      "SOURCE_ADMISSION_REGISTRY_ROOT": "ABSENT_NO_ACTIVE_PRODUCTION_ROOT",
+      "SOURCE_AUTH_COMMON_INPUT_FREEZE_AND_RUNTIME_WHITELIST": "ABSENT_NO_EXECUTABLE_FREEZE"
+    }
+  },
+  "previous_wrapper_approval_is_not_activation_approval": true,
+  "rollback": {
+    "after_commit_point": "never mutate the committed post-state in place; use a separately reviewed compensating transaction that atomically restores the recorded pre-state pointer",
+    "before_commit_point": [
+      "do not replace the consumer pointer",
+      "mark the staged transaction aborted with the reason",
+      "remove or quarantine only the isolated uncommitted staging directory",
+      "leave all pre-state roots and GOV-R4/EXEC-R4 files unchanged"
+    ],
+    "partial_activation_recovery": "FAIL_CLOSED_NO_ACTIVATION; production evaluator must reject an incomplete or pointer/hash-mismatched transaction"
+  },
+  "schema": "FA1B2DE_CURRENT86_R6_PRODUCTION_ACTIVATION_TRANSACTION_DESIGN_V1",
+  "semantic_preservation": [
+    "GOV-R4 and EXEC-R4 are immutable inputs and are not rewritten.",
+    "Exact317 remains exactly 86 RAW plus 231 CANDIDATE with no target expansion.",
+    "No alternate locator, semantic fallback, ranking, similarity, LLM choice, or cross-route substitution is permitted.",
+    "Source admission does not select or pin a field and does not publish a binding.",
+    "Scoring and binding authority remain unmutated."
+  ],
+  "transaction_id": "e8a0a97a33d47ac68c8ded4af1af109fa010d979acf9736fd5dffdebf96c5208",
+  "transaction_id_basis": {
+    "approved_r4_target_commitments_sha256": "de56fb25894633e67a206ed2627e2a89d06d1155f9deaff4713fe28adc8c1104",
+    "approved_r4_wrapper_specs_sha256": "79ebd0f79bcdd4b38ff4c9dc2ccd48d18c706a2d047be4b102d51b2671181474",
+    "approved_rule_ids": [
+      "R4_WRAPPER_C0_60",
+      "R4_WRAPPER_RAW_LEGACY_26",
+      "R4_WRAPPER_SCORING_231"
+    ],
+    "common_input_freeze_runtime_base": {
+      "base_common_input_freeze_candidate": {
+        "byte_length": 5820,
+        "path": "PRODUCTION-AUTHORITY-INPUTS-R1/COMMON_INPUT_FREEZE_CANDIDATE.json",
+        "sha256": "2aa3753e8fc806767032ea867581b6191188ad8dd45624b0010f8e7e35c238eb"
+      },
+      "base_runtime_whitelist_candidate": {
+        "byte_length": 3480,
+        "path": "PRODUCTION-AUTHORITY-INPUTS-R1/RUNTIME_WHITELIST_CANDIDATE.json",
+        "sha256": "837e4cb8e7885dca33427712a94ff9343c60755055adadc48a2b084741d060fb"
+      },
+      "r5_additions": {
+        "byte_length": 1761,
+        "path": "R5/06_non_active_candidates/COMMON_INPUT_FREEZE_ADDITIONS_CANDIDATE.json",
+        "sha256": "98f4f42b4014f3f06f3a2ba823ff70fb13e0dffa15083b7ab8ba8c4bc647ac3d"
+      }
+    },
+    "dispatch": {
+      "R4_WRAPPER_C0_60": {
+        "entrypoint": "04_extractors/c0_exact_row_extractor.py",
+        "entrypoint_sha256": "ec84d8007b4e7c9e3e029ce84723c8b27427d9b35ddc1dd3b83582db5deb4a5b",
+        "schema_or_contract_id": "R4_WRAPPER_C0_60_SCHEMA_V1",
+        "source_side": "RAW",
+        "target_count": 60
+      },
+      "R4_WRAPPER_RAW_LEGACY_26": {
+        "entrypoint": "04_extractors/raw_positional_extractor.py",
+        "entrypoint_sha256": "4b1943320ea3bdc4132a38792bfada6d5b05a657254205cbb36eea2fc4444ae9",
+        "schema_or_contract_id": "R4_WRAPPER_RAW_LEGACY_26_SCHEMA_V1",
+        "source_side": "RAW",
+        "target_count": 26
+      },
+      "R4_WRAPPER_SCORING_231": {
+        "entrypoint": "04_extractors/scoring_exact_id_row_extractor.py",
+        "entrypoint_sha256": "d7c46ac740b21d8e788016a416a6c68ef99fb94a169282fcbfecedfbdd13e531",
+        "schema_or_contract_id": "R4_WRAPPER_SCORING_231_SCHEMA_V1",
+        "source_side": "CANDIDATE",
+        "target_count": 231
+      }
+    },
+    "exec_r4_package_sha256sums_sha256": "06722fddd39d4d55a0cd1e4834bb63491112d13442aec1cc067219fb5bd232f6",
+    "gov_r4_package_sha256sums_sha256": "233cfbda4676d447b82273d8defaf40a66b2d8bf0a8b3e1e58f5c471cd12fd63",
+    "post_state_root_ids": {
+      "EXEC_R4_PRODUCTION_DISPATCH_INTEGRATION": "3f1f169c1ada9fbddd381727114b5b4a0a422b1bd4016c6ec5ff5b6461a02aa8",
+      "SOURCE_ADMISSION_CORPUS_SCHEMA_RULE_ROOT": "f88d911080e97e8e1e58010fd5e551f91127ec6b1ae77d2a3d28af07f71ef52f",
+      "SOURCE_ADMISSION_REGISTRY_ROOT": "8f9596729361f8c6620c98c18344c8cf31073e35085b3eb408fc5212ebd41d6a",
+      "SOURCE_AUTH_COMMON_INPUT_FREEZE_AND_RUNTIME_WHITELIST": "5d868125294dcd4d5f643f2fef820b89b056925a925d0b0f98fcf7408c41009d"
+    },
+    "pre_state_root_ids": {
+      "EXEC_R4_PRODUCTION_DISPATCH_INTEGRATION": "EXEC_R4_BASELINE_SYNTHETIC_ONLY",
+      "SOURCE_ADMISSION_CORPUS_SCHEMA_RULE_ROOT": "ABSENT_NO_ACTIVE_PRODUCTION_ROOT",
+      "SOURCE_ADMISSION_REGISTRY_ROOT": "ABSENT_NO_ACTIVE_PRODUCTION_ROOT",
+      "SOURCE_AUTH_COMMON_INPUT_FREEZE_AND_RUNTIME_WHITELIST": "ABSENT_NO_EXECUTABLE_FREEZE"
+    },
+    "production_authority_inputs_r1_sha256sums_sha256": "d00c3bb53f423b4379c659a760d89060d881967802a2aa163ceef26f52e5013c",
+    "protected_source_state": {
+      "authentication_status": "PASS",
+      "authority_reads_raw_bytes_from_pinned_commit": true,
+      "raw_playbook_git": {
+        "commit": "a699ebe4fa14cf25768fd0e5475b994a72b60dec",
+        "repository": "/home/cph/experiment",
+        "tree": "5ccafffe7e7785535fc276d352487b1d680947e9"
+      },
+      "source_artifacts": {
+        "c0_source": {
+          "byte_length": 2484224,
+          "path": "/home/cph/experiment-artifacts/tier-de1c0-handoff-20260823-083725/tier_de1c0_typed_operation_semantics.jsonl",
+          "sha256": "0036c42fb02026182274a7ac2a33b103b03b1e527856eb33b5ad650ceddd5c32"
+        },
+        "raw_registry": {
+          "byte_length": 2025927,
+          "path": "/home/cph/experiment-artifacts/fa1b2de-bso-r-20260825T100958Z/inputs/project_snapshots/raw_action_registry.jsonl",
+          "sha256": "53c85157f9fd0849ae19b1cf403333ad0d0af2a7d761b0498540dd92d66c1e93"
+        },
+        "scoring_snapshot": {
+          "byte_length": 1348627,
+          "path": "/home/cph/experiment-artifacts/fa1b2de-bso-r-20260825T100958Z/inputs/c2/c2_scoring_snapshot_post_c1.jsonl",
+          "sha256": "748a3808290f9e78f71c18d4553c77ae208517fd31d163fc2b3008cfcb57f1bb"
+        }
+      }
+    },
+    "r4_package_sha256sums_sha256": "9aaa523bd7dce92bf865ee8283ddf61e339d6a804f90b264fa87e700dde2e2cd",
+    "r5_package_sha256sums_sha256": "5f1746499c2ca5ba966b3f716e6b8ca87844cf4cd0a1316ec215b25cc092fdc1",
+    "review_commit": "90513ab76a2d392398fefd0456ad53a4660a3e8a",
+    "route_commitment_sha256s": {
+      "R4_WRAPPER_C0_60": "bbd7692ea3c0b146deb29d9f26c74ea2fe748056471dadc61fe0e748ca3bf6f4",
+      "R4_WRAPPER_RAW_LEGACY_26": "3c9ed2c6df01720185ca07324a0de6b41978794426f86a6b2487297a999240a6",
+      "R4_WRAPPER_SCORING_231": "3baa14e28e18ba3ed7162f524cd70ac9619098ac05b4ebbf6b4b1ed8907d240f"
+    },
+    "target_id_set_sha256": "9eb09a4d27b7b95bf72f8c1aa60c877f30bbd7992f8ebdb4e937b930cbd8f6ad",
+    "target_manifest_sha256": "d8d55d369fe433bf7b93a3c332b8ac9a517a9146b28fa223370ff3ec946955ac"
+  },
+  "visibility_and_atomicity": {
+    "consumer_pointer_binds": [
+      "transaction_id",
+      "pre_state_root_ids",
+      "post_state_root_ids",
+      "artifact_sha256s"
+    ],
+    "partial_root_visibility": "FORBIDDEN",
+    "production_sees": "only the fully committed pre-state or fully committed post-state pointer",
+    "staging_visibility": "not mounted by production evaluator"
+  }
+}

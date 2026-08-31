@@ -1,0 +1,102 @@
+{
+  "stage": "PROVX-R5",
+  "status": "FROZEN_PREACQUISITION_SPLIT_CONTRACT",
+  "split_contract_id": "provx-track-l-group-split-v1",
+  "encoder": {
+    "id": "provx-adapted-live-v1",
+    "dimension": 32,
+    "schema_sha256": "53caab007f9cea84e83a5fb92ddea0cb9082cb816d19752db896cc58c675f68a"
+  },
+  "assignment_algorithm": {
+    "identity": "group_digest = SHA-256(canonical UTF-8 JSON of {source_id, canonical_group_key, source_revision})",
+    "canonical_json": "sorted keys, compact separators, UTF-8; no whitespace normalization after canonicalization",
+    "bucket": "integer value of the first 8 hexadecimal digest characters modulo 20",
+    "mapping": {"0-13": "train", "14-16": "validation", "17-19": "calibration"},
+    "ratios": {"train": 0.70, "validation": 0.15, "calibration": 0.15},
+    "retry_policy": "No alternate seed, bucket map, or post-hoc reassignment is permitted when a candidate split is inconvenient. A failed minimum-count or coverage check blocks release and requires a new protocol version.",
+    "materialization": "Compute and persist group_digest, bucket, assigned_partition, and contract SHA-256 before any detector fitting.",
+    "group_key_canonicalization": "Each source-specific key is serialized as an ordered JSON array of canonical scalar values; Unicode NFC and UTF-8 are applied, and no raw identifier is passed to the model."
+  },
+  "source_grouping": [
+    {
+      "source_id": "separately_generated_benign_traces",
+      "canonical_group_key": ["deidentified_host_id", "run_id", "collection_day", "workload_family"],
+      "boundary": "whole isolated host/run/day/workload group; no event-level split"
+    },
+    {
+      "source_id": "authorized_non_formal_adversary_emulation",
+      "canonical_group_key": ["deidentified_host_id", "scenario_family", "scenario_id", "run_id"],
+      "boundary": "whole emulation scenario and run; all records emitted by a scenario stay together"
+    },
+    {
+      "source_id": "official_optc",
+      "canonical_group_key": ["deidentified_hostname", "utc_day", "source_run_or_file", "selected_window_start_utc"],
+      "boundary": "whole bounded host/day/run/window group; red-team overlap and benign background in one selected window stay together"
+    },
+    {
+      "source_id": "official_tc_e3",
+      "canonical_group_key": ["performer", "good_topic", "deidentified_host_id", "engagement_run", "selected_window_start_utc"],
+      "boundary": "whole performer/topic/host/run/window group"
+    }
+  ],
+  "partition_roles": {
+    "stage_a_reserved_non_scored_mininet": {
+      "partition": "smoke_only",
+      "fit_or_calibration": false,
+      "note": "Stage A is not part of the detector split and cannot be promoted after seeing results."
+    },
+    "train": {
+      "allowed": ["Stage B benign/background", "Stage C authorized positive", "approved official bounded groups"],
+      "operations": ["detector parameter fitting", "training-only inverse-frequency sampler"],
+      "formal_fa1b2de": false
+    },
+    "validation": {
+      "allowed": ["Stage B and Stage C groups assigned by the fixed hash map"],
+      "operations": ["early stopping", "model selection", "predeclared metric reporting"],
+      "formal_fa1b2de": false
+    },
+    "calibration": {
+      "allowed": ["Stage B and Stage C groups assigned by the fixed hash map"],
+      "operations": ["optional threshold/alert calibration under the fixed R5 rule only"],
+      "formal_fa1b2de": false
+    },
+    "formal_test": {
+      "membership": "FA1B2de: all 53 playbooks and 1796 raw actions",
+      "operations_before_final_run": [],
+      "formal_fa1b2de": true,
+      "training_tuning_calibration": false
+    }
+  },
+  "minimum_release_checks": {
+    "minimum_total_groups": 36,
+    "minimum_groups_per_partition": {"train": 1, "validation": 1, "calibration": 1},
+    "minimum_groups_per_class_per_partition": {"train": 1, "validation": 1, "calibration": 1},
+    "required_event_coverage": "Each train/validation/calibration partition must contain process, file, and socket records, or explicit zero/unknown counters with no silent omission.",
+    "class_balance_policy": "Do not synthesize or relabel groups to satisfy counts. If a minimum fails, mark the corpus blocked and request a source/subset change.",
+    "audit_before_training": true
+  },
+  "exclusion_rules": [
+    "Any FA1B2de playbook, raw action, label, outcome, or derived graph is excluded from every R5 partition.",
+    "A host/run/scenario group with uncertain authorization or incomplete provenance is quarantined.",
+    "An event crossing a selected time-window boundary is assigned to the containing group only; overlapping windows are disallowed.",
+    "Stage A smoke traces, R4 golden fixtures, packaged Sample tensors, and Track O evaluation metadata are excluded from Track-L fitting and calibration.",
+    "No group may be reassigned after validation or calibration metrics are observed."
+  ],
+  "manifest_requirements": [
+    "split_contract_id and split_contract_sha256",
+    "source revision and authorization",
+    "canonical group key fields and group_digest",
+    "partition assignment and assignment algorithm version",
+    "raw/graph/feature hashes and encoder/schema hashes",
+    "label provenance and class counts",
+    "duplicate/cross-group audit results",
+    "creation timestamp and reviewer identity"
+  ],
+  "state": {
+    "group_manifest_materialized": false,
+    "data_acquired": false,
+    "split_frozen": true,
+    "detector_trained": false,
+    "formal_experiment_executed": false
+  }
+}

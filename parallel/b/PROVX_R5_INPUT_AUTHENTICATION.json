@@ -1,0 +1,124 @@
+{
+  "stage": "PROVX-R5",
+  "status": "PASS_INPUTS_AUTHENTICATED",
+  "purpose": "Authenticate the frozen R3/R4 contracts and pinned review authority before corpus selection; no corpus acquisition or training is authorized by this file.",
+  "prompt": {
+    "path": "Prompt_3_PROVX_R5_Training_Corpus_Selection_and_Freeze_Design.md",
+    "sha256": "742547fe31fb8093b9cace8b1816a8ee9e6752cc9a74abab98fe8e103a8b8436",
+    "hash_algorithm": "SHA-256"
+  },
+  "pinned_state": {
+    "track_o": "EXACT_OFFICIAL_ARTIFACT_REPRODUCTION_BASELINE",
+    "track_l": "PROVX_ADAPTED_LIVE_DEPLOYMENT",
+    "encoder_id": "provx-adapted-live-v1",
+    "encoder_dimension": 32,
+    "encoder_r4": "PASS",
+    "golden_fixture_determinism": "PASS",
+    "model_interface_32d": "PASS",
+    "detector_trained": false,
+    "formal_experiment_executed": false
+  },
+  "r3_inputs": [
+    {
+      "path": "PROVX_R3_ADAPTED_LIVE_FEATURE_SCHEMA.json",
+      "sha256": "53caab007f9cea84e83a5fb92ddea0cb9082cb816d19752db896cc58c675f68a",
+      "role": "frozen 32-dimensional Track-L adapter schema"
+    },
+    {
+      "path": "PROVX_R3_TRAIN_EVAL_SEPARATION_CONTRACT.json",
+      "sha256": "7c2b0bf1c53dfa18adc8f1f5ef5a76d020a077baf48621842cbd15175ec60436",
+      "role": "binding exclusion of FA1B2de and train/evaluation roles"
+    },
+    {
+      "path": "PROVX_R3_PHASE2_SEED_POLICY.json",
+      "sha256": "ea00a2912c0f1c2b806a5201ea9b0f6f6d7a5e3bff65565a01ae06f411fd3f45",
+      "role": "external Phase-II seed authority"
+    }
+  ],
+  "r4_inputs": [
+    {
+      "path": "PROVX_R4_ENCODER_IMPLEMENTATION.py",
+      "sha256": "013d9b77297308843144ccfce4c3eec4b03dc3cc5172dabd6eb3320e7bc46547",
+      "role": "pure 32-dimensional encoder implementation"
+    },
+    {
+      "path": "PROVX_R4_ENCODER_TESTS.py",
+      "sha256": "481d527b895a0e3ebd8059fc32db1a3dfe596d67be2a5196dfb8d83712d36daf",
+      "role": "encoder unit-test suite"
+    },
+    {
+      "path": "PROVX_R4_GOLDEN_FIXTURES.jsonl",
+      "sha256": "72aecfe3f79f2668010bcf338565ca04f3177aab41ae36826d8e6a6e3dd2aa4e",
+      "role": "deterministic encoder fixtures"
+    },
+    {
+      "path": "PROVX_R4_GOLDEN_TENSOR_HASHES.json",
+      "sha256": "27b7aeb52f90ddb62240e72a558f2807eec2325813df3ec3fe581567caaa8c48",
+      "role": "golden tensor and canonical-output hashes"
+    },
+    {
+      "path": "PROVX_R4_ENCODER_VERIFICATION.json",
+      "sha256": "30b5f2655b950d7ecf8f18e5109471b9a015c49246eea219bbb3cae2039cf276",
+      "role": "R4 test and boundary attestation"
+    },
+    {
+      "path": "PROVX_R4_32D_MODEL_INTERFACE_CHECK.json",
+      "sha256": "86c848a7047625be88aa8a4ec03cdc2e998db4bda992b0cbbb758e6dbdaca406",
+      "role": "untrained 32D model tensor-interface check"
+    },
+    {
+      "path": "PROVX_R4_TRAINING_CORPUS_PREFLIGHT.json",
+      "sha256": "565563b0458dcae023f468dbe5d945e1830824c01dddb13bed8532655cbf33ef",
+      "role": "candidate-source feasibility preflight"
+    },
+    {
+      "path": "PROVX_R4_TRAINING_PROTOCOL_DESIGN.json",
+      "sha256": "ebd5f5cd042d7b0d9af0869a1cabc2c34030abc73d7577cb5edda5ea326c917e",
+      "role": "pre-R5 training design candidates"
+    },
+    {
+      "path": "PROVX_R4_ADAPTED_ENCODER_REPORT.md",
+      "sha256": "42d8f0e6c989f254fead54f14e862543b6f39435b5550b5f48da56a5ff048e34",
+      "role": "R4 human-readable report"
+    }
+  ],
+  "review_authority": {
+    "repository": "https://github.com/cphzyl1611/apt-experiment-artifacts",
+    "commit": "90513ab76a2d392398fefd0456ad53a4660a3e8a",
+    "commit_url": "https://github.com/cphzyl1611/apt-experiment-artifacts/commit/90513ab76a2d392398fefd0456ad53a4660a3e8a",
+    "api_url": "https://api.github.com/repos/cphzyl1611/apt-experiment-artifacts/commits/90513ab76a2d392398fefd0456ad53a4660a3e8a",
+    "api_response_sha256": "b4897494838f3c5452ad9947619382e61e6f9014c1459c12c3fb615df6502b4a",
+    "message": "round5",
+    "author": "cphzyl1611",
+    "authored_at_utc": "2026-08-31T07:36:31Z",
+    "parent": "ef8de674bdc7900b8c5145551dbcf80baf823531",
+    "local_git_repository": false,
+    "interpretation": "The commit is recorded as review authority only; no local Git association or authority mutation is claimed."
+  },
+  "review_commit_byte_comparison": {
+    "raw_base": "https://raw.githubusercontent.com/cphzyl1611/apt-experiment-artifacts/90513ab76a2d392398fefd0456ad53a4660a3e8a/parallel/b/",
+    "comparison_method": "Read-only HTTPS retrieval followed by SHA-256 and byte comparison.",
+    "status": "PASS_ALL_R4_FILES_MATCH",
+    "files": [
+      {"path": "PROVX_R4_ENCODER_IMPLEMENTATION.py", "remote_sha256": "013d9b77297308843144ccfce4c3eec4b03dc3cc5172dabd6eb3320e7bc46547", "local_matches": true},
+      {"path": "PROVX_R4_ENCODER_TESTS.py", "remote_sha256": "481d527b895a0e3ebd8059fc32db1a3dfe596d67be2a5196dfb8d83712d36daf", "local_matches": true},
+      {"path": "PROVX_R4_GOLDEN_FIXTURES.jsonl", "remote_sha256": "72aecfe3f79f2668010bcf338565ca04f3177aab41ae36826d8e6a6e3dd2aa4e", "local_matches": true},
+      {"path": "PROVX_R4_GOLDEN_TENSOR_HASHES.json", "remote_sha256": "27b7aeb52f90ddb62240e72a558f2807eec2325813df3ec3fe581567caaa8c48", "local_matches": true},
+      {"path": "PROVX_R4_ENCODER_VERIFICATION.json", "remote_sha256": "30b5f2655b950d7ecf8f18e5109471b9a015c49246eea219bbb3cae2039cf276", "local_matches": true},
+      {"path": "PROVX_R4_32D_MODEL_INTERFACE_CHECK.json", "remote_sha256": "86c848a7047625be88aa8a4ec03cdc2e998db4bda992b0cbbb758e6dbdaca406", "local_matches": true},
+      {"path": "PROVX_R4_TRAINING_CORPUS_PREFLIGHT.json", "remote_sha256": "565563b0458dcae023f468dbe5d945e1830824c01dddb13bed8532655cbf33ef", "local_matches": true},
+      {"path": "PROVX_R4_TRAINING_PROTOCOL_DESIGN.json", "remote_sha256": "ebd5f5cd042d7b0d9af0869a1cabc2c34030abc73d7577cb5edda5ea326c917e", "local_matches": true},
+      {"path": "PROVX_R4_ADAPTED_ENCODER_REPORT.md", "remote_sha256": "42d8f0e6c989f254fead54f14e862543b6f39435b5550b5f48da56a5ff048e34", "local_matches": true}
+    ],
+    "r3_presence": "R3 contracts are authenticated from the local workspace; they are not claimed to be present under parallel/b in this R4 review commit."
+  },
+  "scope_attestation": {
+    "large_external_corpus_downloaded": false,
+    "fa1b2de_acquired": false,
+    "fa1b2de_actions_executed": false,
+    "detector_trained": false,
+    "formal_experiment_executed": false,
+    "packaged_21d_checkpoint_loaded_for_track_l": false,
+    "authority_mutated": false
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "activation_allowed_without_human_decision": false,
+  "all_observed_preconditions_pass": true,
+  "decision_gate": {
+    "current_decision": null,
+    "required_action": "APPROVE_EXACT_PRODUCTION_SOURCE_AUTHORITY_ACTIVATION",
+    "status": "PENDING_NO_DEFAULT"
+  },
+  "design_only": true,
+  "failure_mode": "FAIL_CLOSED_NO_ACTIVATION",
+  "preconditions": [
+    {
+      "expected": {
+        "exec_r4_sha256sums_sha256": "06722fddd39d4d55a0cd1e4834bb63491112d13442aec1cc067219fb5bd232f6",
+        "gov_r4_sha256sums_sha256": "233cfbda4676d447b82273d8defaf40a66b2d8bf0a8b3e1e58f5c471cd12fd63",
+        "pinned_review_commit": "90513ab76a2d392398fefd0456ad53a4660a3e8a",
+        "r4_wrapper_governance_sha256sums_sha256": "9aaa523bd7dce92bf865ee8283ddf61e339d6a804f90b264fa87e700dde2e2cd",
+        "r5_sha256sums_sha256": "5f1746499c2ca5ba966b3f716e6b8ca87844cf4cd0a1316ec215b25cc092fdc1"
+      },
+      "id": "OUTER_PACKAGE_HASHES",
+      "requirement": "R4 wrapper governance, EXEC-R4, GOV-R4, and R5 package envelopes are unchanged",
+      "verification_status": "PASS"
+    },
+    {
+      "expected": {
+        "candidate_side_total": 231,
+        "raw_side_total": 86,
+        "sha256": "d8d55d369fe433bf7b93a3c332b8ac9a517a9146b28fa223370ff3ec946955ac",
+        "target_id_set_sha256": "7f54dccb4a663c2450de09347be8d40c678094509027141df0c2576d311892fc",
+        "target_total": 317
+      },
+      "id": "EXACT317_MANIFEST",
+      "requirement": "the exact317 manifest identity and target ID universe are unchanged",
+      "verification_status": "PASS"
+    },
+    {
+      "expected": {
+        "approval": "APPROVE_EXACT_CANONICAL_WRAPPER_RULE",
+        "rule_ids": [
+          "R4_WRAPPER_C0_60",
+          "R4_WRAPPER_RAW_LEGACY_26",
+          "R4_WRAPPER_SCORING_231"
+        ]
+      },
+      "id": "APPROVED_RULE_IDS",
+      "requirement": "exactly the three explicitly approved R4 wrapper rule IDs are present",
+      "verification_status": "PASS"
+    },
+    {
+      "expected": {
+        "checkpoint_sha256": "a91844ffa4de66247fe69dbfe05dc2314a26698b2d751e644c64454e5e28b8b8",
+        "extractor_sha256": "ec84d8007b4e7c9e3e029ce84723c8b27427d9b35ddc1dd3b83582db5deb4a5b",
+        "manifest_sha256": "e68188c0b156f4a011376f47e0779ca2e5c099fd5e63d47bcdd909147d65bc2b",
+        "target_count": 60
+      },
+      "id": "EXACT_R4_WRAPPER_C0_60_MATERIALIZATION",
+      "requirement": "exact extractor, manifest, checkpoint, and target commitment hashes match R5",
+      "verification_status": "PASS"
+    },
+    {
+      "expected": {
+        "checkpoint_sha256": "77a09653ad4d1e058ace1207ddef36c197486b26e59c43ab2d326c9a67bd61d9",
+        "extractor_sha256": "4b1943320ea3bdc4132a38792bfada6d5b05a657254205cbb36eea2fc4444ae9",
+        "manifest_sha256": "49c5a6f7277bfe3c1cc860e437e6908b37da1365f67e8dbf96263dd0aa4c9b90",
+        "target_count": 26
+      },
+      "id": "EXACT_R4_WRAPPER_RAW_LEGACY_26_MATERIALIZATION",
+      "requirement": "exact extractor, manifest, checkpoint, and target commitment hashes match R5",
+      "verification_status": "PASS"
+    },
+    {
+      "expected": {
+        "checkpoint_sha256": "fa5783b9e850fa63496593cf50b85bcbd8c16aa7a8ad81646f672716b7cdbeed",
+        "extractor_sha256": "d7c46ac740b21d8e788016a416a6c68ef99fb94a169282fcbfecedfbdd13e531",
+        "manifest_sha256": "8e16276a8a550eccfd137d6e6e7cd6ce015c0e15eef69e5292eb0cd41a470a02",
+        "target_count": 231
+      },
+      "id": "EXACT_R4_WRAPPER_SCORING_231_MATERIALIZATION",
+      "requirement": "exact extractor, manifest, checkpoint, and target commitment hashes match R5",
+      "verification_status": "PASS"
+    },
+    {
+      "expected": {
+        "candidate": 231,
+        "cross_route_substitution": 0,
+        "duplicates": 0,
+        "raw": 86,
+        "total": 317,
+        "union": "Exact317"
+      },
+      "id": "DRY_RUN_CONSERVATION",
+      "requirement": "R5 dry-run is exact317-conserving and candidate-only",
+      "verification_status": "PASS"
+    },
+    {
+      "expected": {
+        "binding_publication": false,
+        "field_pins_created": 0,
+        "p0_executed": false,
+        "p1_executed": false,
+        "source_auth_executed": 0
+      },
+      "id": "AUTHORITY_ZERO_STATE",
+      "requirement": "activation begins with no source-auth execution or downstream decisions",
+      "verification_status": "PASS"
+    },
+    {
+      "expected": {
+        "conflict_count": 0,
+        "newer_root_count": 0,
+        "same_role_different_hash_count": 0
+      },
+      "future_check": "re-enumerate under activation lock; any nonzero value yields FAIL_CLOSED_NO_ACTIVATION",
+      "id": "NO_NEWER_CONFLICTING_ROOTS",
+      "requirement": "no newer conflicting authority root exists for any role or target set",
+      "verification_status": "PASS"
+    },
+    {
+      "expected": {
+        "c0_source_sha256": "0036c42fb02026182274a7ac2a33b103b03b1e527856eb33b5ad650ceddd5c32",
+        "raw_git_commit": "a699ebe4fa14cf25768fd0e5475b994a72b60dec",
+        "raw_git_tree": "5ccafffe7e7785535fc276d352487b1d680947e9",
+        "raw_registry_sha256": "53c85157f9fd0849ae19b1cf403333ad0d0af2a7d761b0498540dd92d66c1e93",
+        "scoring_snapshot_sha256": "748a3808290f9e78f71c18d4553c77ae208517fd31d163fc2b3009cfcb57f1bb"
+      },
+      "future_check": "re-hash and re-resolve pinned Git bytes immediately before staging",
+      "id": "PROTECTED_INPUT_STATE_NO_DRIFT",
+      "requirement": "RAW Git commit/tree and authenticated corpus bytes remain unchanged",
+      "verification_status": "PASS"
+    }
+  ],
+  "schema": "FA1B2DE_CURRENT86_R6_ACTIVATION_PRECONDITIONS_V1",
+  "transaction_id": "e8a0a97a33d47ac68c8ded4af1af109fa010d979acf9736fd5dffdebf96c5208"
+}

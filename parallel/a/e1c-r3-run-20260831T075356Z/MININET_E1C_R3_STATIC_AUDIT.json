@@ -1,0 +1,55 @@
+{
+  "schema": "MININET_E1C_R3_STATIC_AUDIT_V1",
+  "audited_at_utc": "2026-08-31T08:45:30Z",
+  "harness_path": "/home/cph/experiment-parallel/e0-a/e1c-r3-run-20260831T075356Z/mininet_e1c_r3_auditd_bounded_smoke.py",
+  "harness_sha256": "4dcc55d5c2cff633da4617b34f246790e274b4d22599fb9a404a68fd59c988f3",
+  "test_path": "/home/cph/experiment-parallel/e0-a/e1c-r3-run-20260831T075356Z/test_e1c_r3_harness.py",
+  "test_sha256": "a388bee70431d9e7896f734c02f24332567d1927a5697c7dc37efd30816b6842",
+  "fresh_validation": {
+    "red_reproduction": {
+      "result": "PASS_REPRODUCED",
+      "failure": "TypeError: Object of type bytes is not JSON serializable",
+      "against": "/home/cph/experiment-parallel/e0-a/e1c-r2-run-20260831T061204Z/mininet_e1c_r2_corrected_smoke.py:write_json_atomic"
+    },
+    "py_compile": {"exit_code": 0, "result": "PASS"},
+    "unit_tests": {"tests_run": 8, "failures": 0, "errors": 0, "exit_code": 0, "result": "PASS"},
+    "static_self_check": {"exit_code": 0, "result": "PASS"}
+  },
+  "static_checks": {
+    "python_ast_parse": true,
+    "recursive_json_safe_policy": true,
+    "all_persisted_structures_json_safe": true,
+    "bytes_base64_and_optional_utf8": true,
+    "no_str_bytes_coercion": true,
+    "no_nat_or_external_network": true,
+    "no_apt_actions": true,
+    "no_model_execution": true,
+    "no_mn_cleanup": true,
+    "no_broad_rule_delete": true,
+    "exact_residual_rule_classification": true,
+    "fail_closed_unrelated_rules": true,
+    "transactional_journal_with_fsync": true,
+    "historical_empty_baseline_gate": true,
+    "per_syscall_probe_present": true,
+    "no_unsupported_compound_rule": true,
+    "blocking_ready_handshake": true,
+    "live_pid_netns_cgroup_socket_persistence": true,
+    "all_four_namespace_assertions": true,
+    "tcpdump_bounded_topology_lifetime": true,
+    "exact_finally_cleanup": true,
+    "strace_not_primary_collector": true,
+    "persistent_audit_rules_not_written": true
+  },
+  "boundaries": {
+    "no_automatic_sudo": true,
+    "no_audit_rule_mutation_during_preparation": true,
+    "no_apt_actions": true,
+    "no_provx_execution": true,
+    "no_formal_experiment": true,
+    "no_mn_dash_c": true,
+    "no_external_or_nat_attachment": true,
+    "no_r1_or_r2_artifact_overwrite": true,
+    "preexisting_ovs_daemons_not_run_owned": true
+  },
+  "pass": true
+}

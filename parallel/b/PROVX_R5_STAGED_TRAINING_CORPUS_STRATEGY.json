@@ -1,0 +1,126 @@
+{
+  "stage": "PROVX-R5",
+  "status": "FROZEN_DESIGN_NOT_ACQUIRED",
+  "strategy_id": "provx-track-l-staged-corpus-v1",
+  "track": "TRACK_L",
+  "encoder": {
+    "id": "provx-adapted-live-v1",
+    "dimension": 32,
+    "schema": "PROVX_R3_ADAPTED_LIVE_FEATURE_SCHEMA.json",
+    "schema_sha256": "53caab007f9cea84e83a5fb92ddea0cb9082cb816d19752db896cc58c675f68a",
+    "checkpoint_boundary": "A new 32-input detector must be trained and authenticated; the packaged 21-input checkpoint is Track O only."
+  },
+  "route_decision": {
+    "selected_route": "STAGE_A_RESERVED_VALIDATION_THEN_STAGE_B_CONTROLLED_BENIGN_THEN_STAGE_C_AUTHORIZED_POSITIVE_WITH_OFFICIAL_SUBSET_FALLBACK",
+    "primary_positive_source": "authorized_non_formal_adversary_emulation",
+    "official_sources": ["official_optc", "official_tc_e3"],
+    "official_role": "bounded fallback or diversity augmentation after separate authorization and manifest freeze; never an implicit full-dataset download",
+    "rationale": [
+      "The same collector and normalized record contract can be used for controlled benign and authorized positive traces.",
+      "Run/host/scenario boundaries are observable and permit deterministic leakage-resistant splits.",
+      "OpTC is approximately terabyte-scale and TC E3 requires high-burden Avro/CDM normalization, so neither is acquired by default.",
+      "A bounded official subset remains available if local positive coverage is insufficient and a human approves it."
+    ]
+  },
+  "stages": [
+    {
+      "stage_id": "A",
+      "name": "adapter_collector_validation",
+      "source_id": "reserved_non_scored_mininet",
+      "status": "BLOCKED_UNTIL_MININET_E1C_PASSES",
+      "role": "round-trip and safety validation only; never detector performance",
+      "allowed_material": ["reserved non-scored Mininet traces", "benign process/file/socket traces", "synthetic events"],
+      "minimum_admission": {
+        "isolated_environment": true,
+        "collector_auditd_or_equivalent_enabled": true,
+        "round_trip": "raw collector record -> canonical record -> graph -> x[*,32] and edge_index",
+        "required_checks": ["stable IDs", "UTC timestamp ordering", "finite tensors", "unknown-field accounting", "raw/graph/feature hashes", "loss/error counters"],
+        "generator_seed_disjoint_from_training": true
+      },
+      "partition_use": {
+        "detector_training": false,
+        "detector_tuning": false,
+        "calibration": false,
+        "validation": "schema/collector smoke validation only"
+      },
+      "stop_conditions": ["Mininet E1C has not passed", "collector loss cannot be bounded", "a trace is reused in any later formal evaluation"]
+    },
+    {
+      "stage_id": "B",
+      "name": "benign_training_background",
+      "source_id": "separately_generated_benign_traces",
+      "status": "FROZEN_SELECTION_DESIGN_NOT_COLLECTED",
+      "role": "negative/background training, validation, and calibration groups",
+      "minimum_collection_design": {
+        "isolated_hosts": 4,
+        "run_groups": 24,
+        "workload_families": ["process_lifecycle", "package_and_service", "file_read_write", "archive_and_search", "socket_client_server", "scheduled_or_batch"],
+        "coverage_requirement": "Every admitted run contains process, file, and socket records or records an explicit zero/unknown count; no silent omission.",
+        "run_manifest_required": ["source_id", "host_id", "run_id", "collection_start_utc", "collection_end_utc", "workload_family", "generator_config_sha256", "collector_config_sha256", "raw_record_hashes", "graph_hashes", "encoder_id", "encoder_sha256", "label_provenance", "authorization"],
+        "group_disjointness": "A complete host/run/workload group is indivisible. Repeated workload recipes use fresh host/run IDs and are assigned as whole groups."
+      },
+      "partition_use": {
+        "detector_training": true,
+        "validation": true,
+        "calibration": true,
+        "formal_test": false
+      },
+      "label": "benign_by_controlled_generation",
+      "label_boundary": "The benign label is manifest metadata and is not passed to the encoder."
+    },
+    {
+      "stage_id": "C",
+      "name": "positive_adversary",
+      "status": "FROZEN_SELECTION_DESIGN_NOT_COLLECTED",
+      "primary_source": {
+        "source_id": "authorized_non_formal_adversary_emulation",
+        "role": "positive training groups",
+        "minimum_collection_design": {
+          "isolated_hosts": 4,
+          "scenario_groups": 12,
+          "scenario_families": ["credential_or_secret_access", "discovery_and_enumeration", "persistence_or_execution", "collection_or_network_activity"],
+          "authorization": "Written authorization, isolated infrastructure, safety review, cleanup plan, and retention approval are prerequisites.",
+          "prohibition": "No FA1B2de playbook/action, no copied formal action sequence, and no live host enforcement."
+        },
+        "partition_use": {"detector_training": true, "validation": true, "calibration": true, "formal_test": false}
+      },
+      "fallback_sources": [
+        {
+          "source_id": "official_optc",
+          "role": "bounded positive/background augmentation if the official subset gate passes",
+          "selection_reference": "PROVX_R5_OFFICIAL_CORPUS_SUBSET_ACQUISITION_DESIGN.json"
+        },
+        {
+          "source_id": "official_tc_e3",
+          "role": "bounded positive/background augmentation if the official subset gate passes",
+          "selection_reference": "PROVX_R5_OFFICIAL_CORPUS_SUBSET_ACQUISITION_DESIGN.json"
+        }
+      ],
+      "label_boundary": "Emulation or official ground truth is retained in manifest/partition metadata only; action IDs, annotations, and outcome fields are excluded from live features."
+    }
+  ],
+  "role_matrix": {
+    "benign_background": ["stage_b"],
+    "positive_adversary": ["stage_c_primary", "stage_c_official_fallback"],
+    "validation": ["stage_b", "stage_c"],
+    "calibration": ["stage_b", "stage_c"],
+    "adapter_smoke_only": ["stage_a"],
+    "formal_fa1b2de": ["never in R5 corpus; reserved held-out evaluation only"]
+  },
+  "global_exclusions": [
+    "FA1B2de 53 playbooks and 1796 raw actions",
+    "any formal labels, outcomes, playbook identity, or action identity",
+    "packaged Sample tensors and _VULN/_LINE/_SAMPLE as Track-L inputs",
+    "random event-level splitting",
+    "post-hoc source or run selection based on formal results",
+    "any corpus acquired before the separate human acquisition decision"
+  ],
+  "acquisition_state": {
+    "corpus_acquired": false,
+    "large_external_download_performed": false,
+    "apt_actions_executed": false,
+    "detector_trained": false,
+    "formal_experiment_executed": false,
+    "next_gate": "human acquisition decision packet followed by source-hash and split-manifest gates"
+  }
+}

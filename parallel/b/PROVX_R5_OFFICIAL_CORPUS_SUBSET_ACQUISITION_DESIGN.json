@@ -1,0 +1,113 @@
+{
+  "stage": "PROVX-R5",
+  "status": "DESIGN_FROZEN_NOT_ACQUIRED",
+  "design_id": "provx-track-l-official-subset-v1",
+  "purpose": "Define a bounded, reproducible official-source fallback without downloading either corpus in R5.",
+  "common_acquisition_rules": {
+    "approval_required": true,
+    "approval_choice": "APPROVE_BOUNDED_TRAINING_CORPUS_ACQUISITION",
+    "no_implicit_full_download": true,
+    "manifest_before_transfer": "Create and review a candidate manifest containing source revision, provider object IDs, candidate host/day/run/topic IDs, and estimated byte counts before any data transfer.",
+    "checksum_method": {
+      "per_object": "SHA-256 over the exact downloaded bytes; preserve provider filename/object ID and byte length.",
+      "manifest": "SHA-256 over canonical UTF-8 JSON (sorted keys, compact separators) of the ordered object records and selection rule.",
+      "post_extract": "SHA-256 every extracted file and retain an immutable sorted checksum list; do not trust filenames alone.",
+      "resume_rule": "A failed or partial transfer is quarantined and never admitted by size alone."
+    },
+    "normalization_boundary": "Decode only after integrity verification. Map source records to the R3 canonical entity/event contract, then invoke provx-adapted-live-v1. Ground-truth, labels, analyst annotations, playbook/action IDs, and source identifiers remain manifest metadata and never enter x.",
+    "license_and_release": "Both official READMEs describe a public-domain/public-release, as-is distribution with no warranty; the external Google Drive/provider terms and any access authorization must be rechecked and recorded at acquisition. Preserve the source NOTICE/README files.",
+    "formal_exclusion": "No FA1B2de playbook/action, label, outcome, or derived record may be acquired or admitted through this design."
+  },
+  "sources": [
+    {
+      "source_id": "official_optc",
+      "dataset": "Operationally Transparent Cyber (OpTC)",
+      "official_repository_url": "https://github.com/FiveDirections/OpTC-data",
+      "official_data_url": "https://drive.google.com/drive/u/0/folders/1n3kkS3KR31KUegn42yk3-e6JkZvf0Caa",
+      "revision": "master HEAD 5b108604f11f767aa11ea79ff827595f3fad15fd",
+      "documentation_hashes": {
+        "README.md": "bbbeca5d5a861ffc765a6d42ddd19cb84acb93861226b4b93887bb950e121074",
+        "ecar.md": "1df4539c49963cc49b783580033fe1ec68bbae684abf29da83c47b5d26d16b",
+        "errata.md": "4044970eae0db4f67055fa2c0e5bb99824628c13d991fcef01dcc5ec06e8d062"
+      },
+      "official_facts": {
+        "documented_scale": "approximately one terabyte compressed JSON-compatible data; approximately 500 collected hosts from a two-week evaluation",
+        "release_terms": "README states public domain and Distribution A: approved for public release, distribution unlimited; data is as-is and without warranty.",
+        "labels": "OpTCRedTeamGroundTruth.pdf and associated red-team documentation; labels are partition metadata only.",
+        "record_fields_used_for_mapping": ["timestamp_ms", "id", "hostname", "objectID", "object", "action", "actorID", "pid", "tid", "principal", "properties"],
+        "known_quality_constraint": "Apply the pinned errata, including duplicate-process and malformed-record handling, before candidate admission."
+      },
+      "bounded_selection": {
+        "selection_id": "optc-eight-host-three-window-v1",
+        "candidate_unit": "host_id + UTC calendar day + source run/file",
+        "eligible_host": "Host has at least two complete benign-only UTC days before red-team activity and at least one complete UTC day with a ground-truth-overlapping red-team interval; all selected files pass errata checks and required process/file/socket coverage.",
+        "host_order": "Before de-identification, sort the provider's canonical hostname bytes in UTF-8 order and select the first 8 eligible hosts; then apply the frozen keyed de-identification mapping and persist its mapping hash. If fewer than 8 qualify, stop and request a smaller/different subset rather than silently relaxing criteria.",
+        "day_order": "For each selected host, select the two earliest complete benign-only UTC days and the earliest complete ground-truth-overlap day.",
+        "window_rule": "Within each selected host/day/run, select the earliest contiguous 3600-second UTC window whose record-count/loss audit passes. For the overlap day, the window must intersect at least one documented red-team interval; retain the full window as one indivisible group.",
+        "target_groups": 24,
+        "expected_size": "Subset size is not discoverable from official documentation before manifesting; enforce a hard ceiling of 20 GiB compressed transfer and 50 GiB expanded storage. Exceeding either ceiling stops acquisition and invokes REQUEST_SMALLER_OR_DIFFERENT_SUBSET.",
+        "positive_negative_roles": "The two benign windows are negative/background groups; the overlap window is positive only for records aligned to the independently manifested ground-truth interval. Unaligned background remains negative and is not relabeled by proximity.",
+        "selection_failure": "Missing ground truth, incomplete windows, or insufficient qualifying hosts causes a blocked subset, not substitution of arbitrary hosts/days."
+      },
+      "normalization_requirements": [
+        "Canonicalize eCAR event/object/action tokens to the R3 event classes; retain unknown tokens as other and count them.",
+        "Map process identity from actorID/pid/ppid/start-time evidence, file identity from objectID/path/hash, and socket identity/endpoints from documented properties; do not use red-team fields.",
+        "Normalize timestamp_ms to UTC epoch milliseconds and construct causal edges only from collector-visible actor/object relationships.",
+        "De-identify host/path/user identifiers with a versioned keyed mapping before split assignment; the mapping key is not a feature.",
+        "Record rejected records, clipping, unknown fields, duplicate coalescing, node_map, edge_map, and raw hashes in the run manifest."
+      ]
+    },
+    {
+      "source_id": "official_tc_e3",
+      "dataset": "DARPA Transparent Computing Engagement 3",
+      "official_repository_url": "https://github.com/darpa-i2o/Transparent-Computing",
+      "official_data_url": "https://drive.google.com/open?id=1QlbUFWAGq3Hpl8wVdzOdIoZLFxkII4EK",
+      "revision": "master HEAD 244ae2401032ce92ac3b72f49b8039cae67d60d6",
+      "documentation_hashes": {
+        "README.md": "176c5fb6684f63718d8e169948711c87a1f51a5e852b0a1882e87301a192db43",
+        "README-E3.md": "441be7b5f8781efc48e22f671b3efe1fff380879390dd85788af46d95b77bbb1"
+      },
+      "official_facts": {
+        "documented_scale": "Exact release size is not stated in the pinned README; files are hosted externally because of their size.",
+        "release_terms": "README-E3 states public domain/public release, as-is and without warranty; confirm provider terms and authorization at acquisition.",
+        "labels": "ground truth/tc_ground_truth_report_e3_update.pdf and ACT/engagement annotations; labels remain partition metadata.",
+        "schema": "CDM Avro records with performer-specific data trees; preserve CDM schema revision and parser version.",
+        "performers": ["cadets", "clearscope", "fivedirections", "theia", "trace"]
+      },
+      "bounded_selection": {
+        "selection_id": "tc-e3-one-good-topic-performer-two-window-v1",
+        "candidate_unit": "performer + good topic + engagement run + host",
+        "eligible_topic": "Use only the official README-E3 'Topics containing good data' list; for each of the five named performers, sort eligible topic names by UTF-8 byte order and select the first topic.",
+        "window_rule": "For each selected topic, select the earliest complete contiguous 3600-second benign window and the earliest complete contiguous 3600-second window intersecting a documented ground-truth activity interval. Keep each window and performer/topic/host/run group indivisible.",
+        "target_groups": 10,
+        "expected_size": "Not discoverable before an official file manifest; enforce a hard ceiling of 10 GiB compressed transfer and 30 GiB expanded storage. Exceeding either ceiling stops acquisition and invokes REQUEST_SMALLER_OR_DIFFERENT_SUBSET.",
+        "positive_negative_roles": "The benign window is background/negative. The ground-truth-overlap window contributes positive labels only where the independent ground-truth alignment says so; remaining records retain their declared background role.",
+        "selection_failure": "If a performer has no complete good topic/window or ground-truth alignment, do not replace it with an unlisted topic; stop and request a smaller/different subset."
+      },
+      "normalization_requirements": [
+        "Decode Avro/CDM with the pinned schema and parser version; preserve performer/topic/source IDs in metadata only.",
+        "Map process, file, socket/system-component entities and causal interactions to the R3 canonical entity/event contract; version every performer-specific mapping.",
+        "Normalize timestamps to UTC epoch milliseconds, resolve identities deterministically, and retain unknown/invalid record counters rather than coercing silently.",
+        "Apply the same de-identification, node/edge ordering, duplicate policy, and 32D encoder hash as local Track-L traces.",
+        "Keep ground-truth report joins outside feature construction and record exact alignment windows and label provenance in the manifest."
+      ]
+    }
+  ],
+  "acquisition_stop_conditions": [
+    "human approval is absent",
+    "provider object identity or source revision cannot be pinned",
+    "per-object or extracted-file SHA-256 verification fails",
+    "selection criteria cannot be satisfied without post-hoc relaxation",
+    "transfer/storage ceiling is exceeded",
+    "any overlap with FA1B2de or its 1796 raw actions is detected",
+    "normalization cannot produce finite x[*,32] under provx-adapted-live-v1"
+  ],
+  "r5_state": {
+    "official_data_downloaded": false,
+    "official_data_acquired": false,
+    "subset_manifest_created": false,
+    "human_approval_performed": false,
+    "detector_trained": false,
+    "formal_experiment_executed": false
+  }
+}

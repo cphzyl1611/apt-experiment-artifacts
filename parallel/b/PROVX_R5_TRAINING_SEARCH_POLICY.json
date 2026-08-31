@@ -1,0 +1,133 @@
+{
+  "stage": "PROVX-R5",
+  "status": "FROZEN_BOUNDED_SEARCH_NOT_EXECUTED",
+  "policy_id": "provx-track-l-training-search-v1",
+  "track": "TRACK_L",
+  "encoder": {
+    "id": "provx-adapted-live-v1",
+    "dimension": 32,
+    "schema_path": "PROVX_R3_ADAPTED_LIVE_FEATURE_SCHEMA.json",
+    "schema_sha256": "53caab007f9cea84e83a5fb92ddea0cb9082cb816d19752db896cc58c675f68a",
+    "implementation_sha256": "013d9b77297308843144ccfce4c3eec4b03dc3cc5172dabd6eb3320e7bc46547",
+    "golden_tensor_hash_manifest": "PROVX_R4_GOLDEN_TENSOR_HASHES.json",
+    "golden_tensor_hash_manifest_sha256": "27b7aeb52f90ddb62240e72a558f2807eec2325813df3ec3fe581567caaa8c48"
+  },
+  "architecture_candidates": [
+    {
+      "architecture_id": "gcn64x256x2",
+      "class": "provx_usenix.detector.Detector",
+      "gnn_model": "GCNConv",
+      "input_feature_dim": 32,
+      "gnn_hidden_size": 64,
+      "gnn_feature_dim_size": 256,
+      "num_gnn_layers": 2,
+      "graph_pooling": "mean",
+      "dropout_rate": 0.1,
+      "num_classes": 2,
+      "residual": false
+    }
+  ],
+  "optimizer_loss_candidates": [
+    {
+      "config_id": "cfg-01-adamw-ce-sampler",
+      "optimizer": "torch.optim.AdamW",
+      "loss": "torch.nn.functional.cross_entropy",
+      "learning_rate": 0.005,
+      "weight_decay": 0.0,
+      "class_balance": "inverse_frequency_weighted_sampler",
+      "sampler_multiplier": 3
+    },
+    {
+      "config_id": "cfg-02-adam-weighted-ce",
+      "optimizer": "torch.optim.Adam",
+      "loss": "class_weighted_cross_entropy",
+      "learning_rate": 0.001,
+      "weight_decay": 0.0,
+      "class_balance": "training_group_frequency_weights",
+      "sampler": "none"
+    }
+  ],
+  "candidate_grid_authority": {
+    "learning_rate_candidates": [0.005, 0.001],
+    "grid_size": 2,
+    "pairing_rule": "Only the two complete tuples above may be evaluated; no architecture/optimizer/loss/learning-rate cross-product or unregistered candidate is allowed.",
+    "batch_size": 32,
+    "max_epochs": 50,
+    "gradient_clip_norm": 1.0
+  },
+  "training_data_boundary": {
+    "fit_partitions": ["train"],
+    "validation_partition": "validation",
+    "calibration_partition": "calibration",
+    "stage_a_smoke": "never fit, tune, or calibrate",
+    "formal_fa1b2de": "never fit, tune, calibrate, or select",
+    "encoder_statistics": "none; R3/R4 constants are fixed. A future fitted transform requires a new policy version and train-only fitting."
+  },
+  "class_balance": {
+    "cfg_01_sampler": "Sample training groups with inverse class-frequency weights, capped at sampler_multiplier=3 relative to uniform; sampling is replacement-enabled, train-only, and seeded.",
+    "cfg_02_loss_weights": "For K=2, weight_c = total_training_groups/(K * training_groups_c), computed once from train groups and persisted; no validation/calibration/formal counts are used.",
+    "zero_class_rule": "A missing class in any required partition blocks release; do not synthesize labels or alter the split."
+  },
+  "early_stopping": {
+    "enabled": true,
+    "monitor": "validation_balanced_accuracy",
+    "patience_epochs": 10,
+    "minimum_delta": 0.0,
+    "restore_best": true,
+    "epoch_indexing": "one-based",
+    "within_run_tie_break": "earliest epoch, then lowest validation loss"
+  },
+  "randomness": {
+    "primary_training_seed": 1,
+    "predeclared_sensitivity_seeds": [7, 17],
+    "sensitivity_role": "Optional robustness reruns after the primary configuration/epoch is frozen; sensitivity results cannot select a different configuration for formal evaluation.",
+    "seed_sources": ["Python random", "PYTHONHASHSEED", "NumPy", "Torch CPU", "Torch CUDA if used", "sampler generator"],
+    "deterministic_algorithms": "Request deterministic PyTorch algorithms where supported and record any backend exception in the run manifest.",
+    "phase2_primary_seed": 314159,
+    "phase2_separation": "314159 is reserved for the later external Phase-II evaluation and is never a training-search seed."
+  },
+  "model_selection": {
+    "metric_primary": "validation balanced accuracy",
+    "metric_secondary": ["validation binary F1", "validation loss"],
+    "selection_order": "Highest primary metric, then highest secondary F1, then lowest validation loss, then lexicographically first config_id, then earliest selected epoch.",
+    "validation_only": true,
+    "formal_results_used": false,
+    "sensitivity_used": false
+  },
+  "calibration": {
+    "default_rule": "Use argmax over the two detector logits; no probability calibration is needed for the default binary output.",
+    "optional_threshold_rule": "Only if a thresholded alert is explicitly required, evaluate thresholds 0.00, 0.01, ..., 1.00 on calibration groups, select highest calibration balanced accuracy, then lowest threshold; persist the chosen threshold before formal evaluation.",
+    "temperature_scaling": false,
+    "formal_partition_access": false,
+    "new_policy_required_for_change": true
+  },
+  "checkpoint_contract": {
+    "filename": "provx-track-l-v1__enc-provx-adapted-live-v1__cfg-<config_id>__seed-<seed>__epoch-<eee>.pt",
+    "manifest_identity_inputs": [
+      "policy_id",
+      "encoder_id",
+      "encoder_implementation_sha256",
+      "schema_sha256",
+      "training_corpus_manifest_sha256",
+      "split_contract_id",
+      "split_manifest_sha256",
+      "architecture_id and complete architecture",
+      "config_id and complete optimizer/loss/balance tuple",
+      "training_seed",
+      "selected_epoch",
+      "dependency_lock_sha256",
+      "validation metrics",
+      "calibration rule and chosen value if any"
+    ],
+    "identity_hash": "SHA-256 of canonical sorted-key JSON of manifest_identity_inputs",
+    "checkpoint_sha256": "SHA-256 of exact serialized checkpoint bytes; unavailable until a separately authorized training run",
+    "required_metadata": ["identity_hash", "checkpoint_sha256", "encoder/schema hashes", "corpus/split hashes", "seed/RNG sources", "selected epoch", "validation metrics", "calibration value"],
+    "packaged_21d_checkpoint": "never loaded or warm-started"
+  },
+  "execution_state": {
+    "search_executed": false,
+    "detector_trained": false,
+    "checkpoint_created": false,
+    "formal_experiment_executed": false
+  }
+}

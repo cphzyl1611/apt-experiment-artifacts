@@ -1,0 +1,30 @@
+{
+  "activation_execution_performed": false,
+  "active_source_authority_created": false,
+  "allowed_human_actions": [
+    "APPROVE_EXACT_PRODUCTION_SOURCE_AUTHORITY_ACTIVATION",
+    "REJECT_KEEP_NON_ACTIVE",
+    "REQUEST_REMEDIATION"
+  ],
+  "approved_rule_ids": [
+    "R4_WRAPPER_C0_60",
+    "R4_WRAPPER_RAW_LEGACY_26",
+    "R4_WRAPPER_SCORING_231"
+  ],
+  "binding_publication": false,
+  "decision": null,
+  "decision_packet_id": "34576e06af7d8489e2f2910cb9bb4c44360c4912704bd5bda504bee6e2b7d529",
+  "decision_status": "PENDING_NO_DEFAULT",
+  "decision_timestamp": null,
+  "design_only": true,
+  "exact317_manifest_sha256": "d8d55d369fe433bf7b93a3c332b8ac9a517a9146b28fa223370ff3ec946955ac",
+  "field_pins_created": 0,
+  "human_origin": null,
+  "no_default_action": true,
+  "p0_executed": false,
+  "p1_executed": false,
+  "previous_wrapper_approval_is_not_activation_approval": true,
+  "schema": "FA1B2DE_CURRENT86_R6_HUMAN_ACTIVATION_DECISION_PACKET_V1",
+  "source_auth_executed": false,
+  "transaction_id": "e8a0a97a33d47ac68c8ded4af1af109fa010d979acf9736fd5dffdebf96c5208"
+}

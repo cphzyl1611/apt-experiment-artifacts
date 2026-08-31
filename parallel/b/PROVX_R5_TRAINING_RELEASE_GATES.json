@@ -1,0 +1,51 @@
+{
+  "stage": "PROVX-R5",
+  "status": "DESIGN_GATES_PASS_ACQUISITION_AND_TRAINING_GATES_CLOSED",
+  "gate_contract_id": "provx-track-l-release-gates-v1",
+  "frozen_inputs": {
+    "encoder_id": "provx-adapted-live-v1",
+    "dimension": 32,
+    "schema_sha256": "53caab007f9cea84e83a5fb92ddea0cb9082cb816d19752db896cc58c675f68a",
+    "implementation_sha256": "013d9b77297308843144ccfce4c3eec4b03dc3cc5172dabd6eb3320e7bc46547",
+    "golden_hash_manifest_sha256": "27b7aeb52f90ddb62240e72a558f2807eec2325813df3ec3fe581567caaa8c48",
+    "model_interface_check": "PROVX_R4_32D_MODEL_INTERFACE_CHECK.json: PASS_INTERFACE_ONLY"
+  },
+  "design_gates": [
+    {"id": "D0", "name": "R3/R4 input authentication", "required_evidence": "PROVX_R5_INPUT_AUTHENTICATION.json", "pass": true},
+    {"id": "D1", "name": "staged corpus roles and exclusions frozen", "required_evidence": "PROVX_R5_STAGED_TRAINING_CORPUS_STRATEGY.json", "pass": true},
+    {"id": "D2", "name": "official subset design bounded", "required_evidence": "PROVX_R5_OFFICIAL_CORPUS_SUBSET_ACQUISITION_DESIGN.json", "pass": true},
+    {"id": "D3", "name": "group split contract frozen", "required_evidence": "PROVX_R5_TRAIN_VALIDATION_SPLIT_CONTRACT.json", "pass": true},
+    {"id": "D4", "name": "leakage/contamination denial frozen", "required_evidence": "PROVX_R5_LABEL_LEAKAGE_AND_CONTAMINATION_CONTRACT.json", "pass": true},
+    {"id": "D5", "name": "bounded training search frozen", "required_evidence": "PROVX_R5_TRAINING_SEARCH_POLICY.json", "pass": true}
+  ],
+  "acquisition_gates": [
+    {"id": "A0", "name": "human corpus decision", "condition": "One allowed choice is recorded with scope and reviewer authority.", "pass": false, "current": "PENDING_HUMAN_APPROVAL"},
+    {"id": "A1", "name": "source authorization and release terms", "condition": "Written authorization/terms and retention approval are attached for every source.", "pass": false},
+    {"id": "A2", "name": "pre-transfer object manifest", "condition": "Exact provider object IDs, source revisions, selected groups, and byte estimates are frozen before transfer.", "pass": false},
+    {"id": "A3", "name": "bounded transfer and checksums", "condition": "Only approved caps are transferred; per-object and extracted-file SHA-256 lists verify.", "pass": false},
+    {"id": "A4", "name": "encoder compatibility", "condition": "Raw records normalize to finite x [N,32], edge_index [2,E] under the authenticated encoder; adapter errors are accounted for.", "pass": false}
+  ],
+  "training_release_gates": [
+    {"id": "T0", "name": "corpus hash manifest", "condition": "Immutable raw/graph/feature checksum manifests are complete.", "pass": false},
+    {"id": "T1", "name": "materialized split manifest", "condition": "Every group has a deterministic digest, partition, source, and contract hash; no overlap.", "pass": false},
+    {"id": "T2", "name": "contamination audit", "condition": "Denylist, duplicate, cross-group, time-overlap, and feature-dependency audits are clear.", "pass": false},
+    {"id": "T3", "name": "class-count and coverage audit", "condition": "Required classes and process/file/socket coverage exist in train/validation/calibration without reassignment.", "pass": false},
+    {"id": "T4", "name": "train/eval exclusion check", "condition": "FA1B2de and Track O evaluation metadata are absent from all Track-L fitting/tuning/calibration inputs.", "pass": false},
+    {"id": "T5", "name": "search registration", "condition": "The exact R5 candidate grid, seeds, dependency lock, and calibration rule are recorded before fitting.", "pass": false},
+    {"id": "T6", "name": "separate human training authorization", "condition": "A later reviewer authorizes detector training after T0-T5 pass.", "pass": false}
+  ],
+  "formal_evaluation_gate": {
+    "id": "F0",
+    "condition": "A new authenticated 32D checkpoint, frozen calibration, and formal-evaluation manifest exist; R3 exclusion remains binding.",
+    "pass": false,
+    "fa1b2de_used_in_r5": false
+  },
+  "current_state": {
+    "design_ready_for_acquisition_review": true,
+    "corpus_acquired": false,
+    "detector_trained": false,
+    "formal_experiment_executed": false,
+    "packaged_21d_checkpoint_loaded_for_track_l": false,
+    "next_action": "Record a human acquisition choice; do not proceed automatically."
+  }
+}

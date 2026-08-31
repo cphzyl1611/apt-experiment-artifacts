@@ -1,0 +1,55 @@
+{
+  "stage": "PROVX-R5",
+  "status": "PENDING_HUMAN_APPROVAL",
+  "packet_id": "provx-track-l-corpus-acquisition-decision-v1",
+  "decision_authority": "A human reviewer must choose one of the prompt-authorized decisions; R5 records no approval.",
+  "recommended_decision": "APPROVE_BOUNDED_TRAINING_CORPUS_ACQUISITION",
+  "recommended_scope": {
+    "first_release": ["separately_generated_benign_traces", "authorized_non_formal_adversary_emulation"],
+    "official_fallback": "Acquire official OpTC or TC E3 only if the first-release coverage gate fails and a subsequent approval names the exact source/subset design ID.",
+    "stage_a": "Reserved Mininet remains smoke-only until E1C passes; it is not silently promoted to detector training.",
+    "caps": {"optc_compressed_gib": 20, "optc_expanded_gib": 50, "tc_e3_compressed_gib": 10, "tc_e3_expanded_gib": 30},
+    "prohibitions": ["full terabyte-scale download", "FA1B2de or its 1796 raw actions", "APT action execution", "packaged 21D checkpoint for Track L"]
+  },
+  "allowed_choices": [
+    {
+      "choice": "APPROVE_BOUNDED_TRAINING_CORPUS_ACQUISITION",
+      "effect": "Authorize only the named bounded source(s), after source/object manifest, license/authorization, checksums, split contract, and contamination plan are reviewed. This is not authorization to train; training has a separate gate."
+    },
+    {
+      "choice": "REJECT_CORPUS_ROUTE",
+      "effect": "Acquire nothing and mark the Track-L training route blocked; retain Track O reproduction only."
+    },
+    {
+      "choice": "REQUEST_SMALLER_OR_DIFFERENT_SUBSET",
+      "effect": "Return to R5 design with an explicitly named source/host/day/run/engagement subset; no transfer occurs under the current packet."
+    }
+  ],
+  "approval_prerequisites": [
+    "Reviewer has read PROVX_R5_STAGED_TRAINING_CORPUS_STRATEGY.json and PROVX_R5_OFFICIAL_CORPUS_SUBSET_ACQUISITION_DESIGN.json.",
+    "Reviewer confirms Stage B/C run-level groups, source authorization, and exact caps.",
+    "Reviewer confirms FA1B2de and all 53/1796 formal materials remain held out.",
+    "Reviewer records scope, decision, identity, timestamp, and signature in an immutable decision record."
+  ],
+  "post_approval_actions": [
+    "Create the source/provider object manifest before transfer.",
+    "Acquire only the approved bounded scope and verify per-object and extracted-file SHA-256.",
+    "Materialize group IDs and deterministic train/validation/calibration assignment under PROVX_R5_TRAIN_VALIDATION_SPLIT_CONTRACT.json.",
+    "Run the label-leakage, duplicate, cross-group, class-count, and encoder compatibility audits.",
+    "Request the separate training release decision only after all gates pass."
+  ],
+  "approval_record": {
+    "decision": null,
+    "scope": null,
+    "reviewer": null,
+    "reviewed_at_utc": null,
+    "signature_or_authority_reference": null
+  },
+  "state": {
+    "human_approval_performed": false,
+    "corpus_acquired": false,
+    "detector_trained": false,
+    "formal_experiment_executed": false,
+    "stop_until_decision": true
+  }
+}
