@@ -1,0 +1,23 @@
+{
+  "schema": "MININET_E1C_R6R2_FRESH_RUNTIME_BOUNDARY_V1",
+  "review_date": "2026-09-01",
+  "review_result": "BLOCKED",
+  "privileged_command_executed": "NO",
+  "mininet_executed": "NO",
+  "auditctl_mutation_executed": "NO",
+  "privileged_micro_probe_executed": "NO",
+  "auditd_configuration_changed": "NO",
+  "persistent_rules_d_edited": "NO",
+  "external_experiment_network_action": "NO",
+  "repository_authentication_network_read": "YES",
+  "runtime_evidence_present": false,
+  "human_runtime_required": true,
+  "exact_human_command": "sudo /usr/bin/python3 /home/cph/experiment-parallel/e0-a/e1c-r6-run-20260901T060350Z/mininet_e1c_r6_file_access_closure_smoke.py --run-privileged",
+  "boundary_observation": "Only non-privileged parser, unit, compile, JSON, static, and whitespace checks were run. The exact command above is reported for a human and was not executed by this review.",
+  "blockers": [
+    "poll_audit_evidence() does not put a timeout on the ausearch subprocess, so the 2.0-second maximum is not enforced for a hung command",
+    "the PASS event is synthesized from serial/key/path text without validating raw audit event semantics or same-record association"
+  ],
+  "historical_evidence_boundary": "Existing privileged R3/R4/R5/R6 evidence was read only for downstream non-regression context and is not represented as fresh runtime evidence.",
+  "status": "BLOCKED"
+}

@@ -1,0 +1,106 @@
+{
+  "schema": "MININET_E1C_R6R2_FRESH_CODE_BOUNDARY_AUDIT_V1",
+  "review_date": "2026-09-01",
+  "source_commit": "99f9c0d7fe8b4ecec896837b3991e8d23ebbb608",
+  "source_blob": "fbaea4f8a67e459c8415c14721e7539d6e81a7ea",
+  "checks": {
+    "r6r1_bounded_poll_preserved": {
+      "status": "BLOCKED",
+      "evidence": "The loop uses monotonic start/deadline, max_wait clamped to 2.0 seconds, and poll_interval clamped to 0.1 seconds; configured constant is 0.05 seconds (lines 216-280). However, the runner call has no subprocess timeout (lines 244-247), so a hung ausearch can exceed the claimed maximum wait before the deadline is checked."
+    },
+    "maximum_evidence_wait_seconds": 2.0,
+    "configured_poll_interval_seconds": 0.05,
+    "poll_interval_upper_clamp_seconds": 0.1,
+    "exact_key_required": {
+      "status": "PASS",
+      "evidence": "Audit keys are restricted by the exact token regex and exact-token matching is required before PASS (lines 230, 253-267)."
+    },
+    "exact_path_required": {
+      "status": "PASS",
+      "evidence": "_exact_file() rejects non-absolute, wildcard, directory, and slash-terminated paths; polling requires the exact watched path (lines 73-83, 229, 253-267)."
+    },
+    "parseable_raw_serial_required": {
+      "status": "PASS",
+      "evidence": "parse_audit_serial() accepts only msg=audit(<numeric epoch>[.<fraction>]:<integer>) raw syntax (line 204)."
+    },
+    "micro_probe_verdict_pass_required": {
+      "status": "PASS",
+      "evidence": "A parsed serial plus exact key/path is converted to an audit permission-filter event and must satisfy micro_probe_verdict() == PASS (lines 255-267)."
+    },
+    "fail_closed_timeout": {
+      "status": "BLOCKED",
+      "evidence": "A normal no-evidence response returns BLOCKED and _default_micro_probe records AUDIT_EVIDENCE_MISSING (lines 277-288, 364-370, 1791-1801), but the absent runner timeout means a hung ausearch is not fail-closed at 2.0 seconds."
+    },
+    "exact_inverse_audit_rule_cleanup": {
+      "status": "PASS",
+      "evidence": "delete_rule_from_add() changes only -a to -d for the exact path+perm=rw+pid rule, and production removals execute in finally (lines 85-108, 1665-1671)."
+    },
+    "temporary_probe_file_cleanup": {
+      "status": "PASS",
+      "evidence": "The temporary probe path is unlinked in the probe finally block (lines 380-388)."
+    },
+    "baseline_restoration": {
+      "status": "PASS",
+      "evidence": "Probe cleanup rechecks the clean baseline and production post-cleanup requires the historical empty-rule hash and no canonical rules (lines 390-404, 1690-1712)."
+    },
+    "audit_rule_scope_unchanged": {
+      "status": "PASS",
+      "evidence": "The rule builder remains exact path + perm=rw + live pid + random key; tests reject wildcards and assert no -S/all broad rule. No system-wide read/write rule is introduced."
+    },
+    "micro_probe_evidence_integrity": {
+      "status": "BLOCKED",
+      "evidence": "Lines 255-267 synthesize an AUDIT_FILESYSTEM_PERMISSION_FILTER/FILE_READ_OR_WRITE event from a parseable serial plus key/path text. The raw record type, syscall, requested access, permission-filter provenance, and same-record key/path association are not parsed or validated, permitting a false PASS from unrelated text."
+    },
+    "no_auditctl_D": true,
+    "no_persistent_rules_d_edits": true,
+    "no_auditd_configuration_change": true,
+    "downstream_real_r5_derived_mininet_smoke_intact": {
+      "status": "PASS",
+      "evidence": "The privileged gate calls _reviewed_mininet_smoke(), which invokes _run_reviewed_mininet_smoke(); the real Mininet topology remains after the probe gate (lines 1497-1505, 1774-1813)."
+    },
+    "all_eight_required_event_classes_contract": "PASS",
+    "static_self_check": "PASS"
+  },
+  "static_boundary_observations": {
+    "no_sudo_or_automatic_privileged_escalation": true,
+    "no_mininet_cleanup_command": true,
+    "no_external_nat_or_apt_action": true,
+    "no_strace_or_tcpdump_as_audit_substitute": true,
+    "exact_cleanup_finally_gate": true
+  },
+  "independent_negative_recomputation": {
+    "fixture": "msg=audit(1788264578.381:999): key=e1c6probeuntyped name=/tmp/e1c-r6-untyped.txt type=UNRELATED",
+    "expected_with_strict_audit_validation": "BLOCKED",
+    "committed_poll_result": "PASS",
+    "observation": "The current poller accepted a parseable serial and matching key/path even though the fixture supplied no permission-filter event semantics."
+  },
+  "review_findings": [
+    {
+      "id": "R6R2-BOUND-001",
+      "severity": "BLOCKER",
+      "title": "ausearch invocation is not time-bounded",
+      "location": "parallel/a/e1c-r6-run-20260901T060350Z/mininet_e1c_r6_file_access_closure_smoke.py:244-247",
+      "impact": "The 2.0-second evidence wait is only checked after runner() returns; a hung /usr/sbin/ausearch can stall the privileged path beyond the required maximum.",
+      "fresh_observation": true
+    },
+    {
+      "id": "R6R2-EVIDENCE-002",
+      "severity": "BLOCKER",
+      "title": "PASS gate fabricates audit semantics from weak text predicates",
+      "location": "parallel/a/e1c-r6-run-20260901T060350Z/mininet_e1c_r6_file_access_closure_smoke.py:255-267",
+      "impact": "A serial plus key/path text is promoted to an audit-backed file-access event without validating raw event identity, syscall/permission semantics, or same-record linkage.",
+      "fresh_observation": true
+    },
+    {
+      "id": "R6R2-TEST-003",
+      "severity": "REVIEW_GAP",
+      "title": "Interpreted-mode regression fixture does not assert its mock argv",
+      "location": "parallel/a/e1c-r6-run-20260901T060350Z/test_e1c_r6_harness.py:test_original_immediate_lookup_reproduces_visibility_race",
+      "impact": "The fixture still directly recomputes the interpreted parser failure, but it does not independently assert that the historical immediate lookup used -i.",
+      "fresh_observation": true
+    }
+  ],
+  "non_blocking_observation": "The polling function computes exact key/path predicates once for accumulated diagnostics and again for the PASS condition (lines 253-267). This is a small duplication heuristic, not a behavioral or specification failure.",
+  "historical_evidence_boundary": "The R6R1/R6R2 contracts were consulted for non-regression vocabulary; every PASS above is based on current committed source, current tests, or the fresh static self-check.",
+  "status": "BLOCKED"
+}

@@ -1,0 +1,71 @@
+{
+  "schema": "MININET_E1C_R6R2_FRESH_INPUT_AUTHENTICATION_V1",
+  "review_date": "2026-09-01",
+  "review_kind": "INDEPENDENT_COMMITTED_BYTES_TARGETED_FRESH_REVIEW",
+  "read_only_review_inputs": true,
+  "repository": {
+    "origin": "https://github.com/cphzyl1611/apt-experiment-artifacts.git",
+    "origin_authenticated": true,
+    "origin_authentication_observation": "git ls-remote origin refs/heads/main refs/heads/artifact/e0-a returned main at 99f9c0d7fe8b4ecec896837b3991e8d23ebbb608 and no artifact/e0-a ref",
+    "current_branch": "artifact/e0-a",
+    "current_head": "99f9c0d7fe8b4ecec896837b3991e8d23ebbb608",
+    "origin_main_head": "99f9c0d7fe8b4ecec896837b3991e8d23ebbb608",
+    "pinned_r6r2_materialization_commit": "a471ee6ca09253a381d96a228ab58a1f652bd0b9",
+    "repository_recovery_commit": "ee28eb41220d080b225f1dbc752c114656ef2299",
+    "pinned_commit_exists": true,
+    "pinned_commit_is_ancestor_of_current_head": true,
+    "recovery_commit_is_ancestor_of_current_head": true,
+    "commit_authentication": "PASS"
+  },
+  "reviewed_committed_paths": [
+    "parallel/a/e1c-r6-run-20260901T060350Z/mininet_e1c_r6_file_access_closure_smoke.py",
+    "parallel/a/e1c-r6-run-20260901T060350Z/test_e1c_r6_harness.py",
+    "parallel/a/MININET_E1C_R6R2_RAW_AUSEARCH_SERIAL_PARSER_REMEDIATION/"
+  ],
+  "materialized_blob_authentication": {
+    "parallel/a/e1c-r6-run-20260901T060350Z/mininet_e1c_r6_file_access_closure_smoke.py": {
+      "a471ee6_blob": "fbaea4f8a67e459c8415c14721e7539d6e81a7ea",
+      "head_blob": "fbaea4f8a67e459c8415c14721e7539d6e81a7ea",
+      "equal": true
+    },
+    "parallel/a/e1c-r6-run-20260901T060350Z/test_e1c_r6_harness.py": {
+      "a471ee6_blob": "653c3bfc4c89148027ff017021c487661cb79e9d",
+      "head_blob": "653c3bfc4c89148027ff017021c487661cb79e9d",
+      "equal": true
+    },
+    "parallel/a/MININET_E1C_R6R2_RAW_AUSEARCH_SERIAL_PARSER_REMEDIATION/MININET_E1C_R6R2_RAW_AUSEARCH_SERIAL_PARSER_REMEDIATION.md": {
+      "a471ee6_blob": "e285fccbdbf8229a4d42b3dd0a3ce5abc6a1b3cc",
+      "head_blob": "e285fccbdbf8229a4d42b3dd0a3ce5abc6a1b3cc",
+      "equal": true
+    },
+    "parallel/a/MININET_E1C_R6R2_RAW_AUSEARCH_SERIAL_PARSER_REMEDIATION/R6R2_DEFECT_REPRODUCTION.json": {
+      "a471ee6_blob": "c70f1fdc350c8a1f3ccdd3473562fa3a3ac41cf7",
+      "head_blob": "c70f1fdc350c8a1f3ccdd3473562fa3a3ac41cf7",
+      "equal": true
+    },
+    "parallel/a/MININET_E1C_R6R2_RAW_AUSEARCH_SERIAL_PARSER_REMEDIATION/R6R2_RAW_AUSEARCH_CONTRACT.json": {
+      "a471ee6_blob": "866ff114660f51203049fd8fb3665769071052b1",
+      "head_blob": "866ff114660f51203049fd8fb3665769071052b1",
+      "equal": true
+    },
+    "parallel/a/MININET_E1C_R6R2_RAW_AUSEARCH_SERIAL_PARSER_REMEDIATION/R6R2_STATIC_BOUNDARY_AUDIT.json": {
+      "a471ee6_blob": "f74894cee912fd6a7fe278d09a7e0ed1fea9c8bc",
+      "head_blob": "f74894cee912fd6a7fe278d09a7e0ed1fea9c8bc",
+      "equal": true
+    },
+    "parallel/a/MININET_E1C_R6R2_RAW_AUSEARCH_SERIAL_PARSER_REMEDIATION/R6R2_TEST_RERUN.json": {
+      "a471ee6_blob": "1b26a0767fc9bba28b8af255a12ce92f18159993",
+      "head_blob": "1b26a0767fc9bba28b8af255a12ce92f18159993",
+      "equal": true
+    }
+  },
+  "current_r6r2_bytes_equal_a471": "PASS",
+  "evidence_package_preservation": {
+    "a471_to_recovery_scoped_diff_empty": true,
+    "a471_to_head_scoped_diff_empty": true,
+    "observation": "The R6R2 harness, tests, and evidence package paths have no tree diff from a471ee6 through ee28eb recovery and HEAD 99f9c0d7; later HEAD changes are outside those paths.",
+    "preserved_unchanged_after_recovery_and_binding_commits": true
+  },
+  "historical_evidence_boundary": "The prior R6R2 remediation package was read as historical context only. Commit ancestry, tree blobs, and scoped diffs above are fresh observations for this review.",
+  "status": "PASS"
+}
