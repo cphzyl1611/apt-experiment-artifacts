@@ -639,15 +639,11 @@ def write_envelope() -> dict[str, Any]:
     required = [PACKAGE / relative for relative in OUTPUTS]
     for path in required:
         require(path.is_file(), f"required R8 output missing before envelope: {path.name}")
-    file_list = sorted(path.relative_to(PACKAGE).as_posix() for path in required)
-    (PACKAGE / "FILE_LIST.txt").write_text("\n".join(file_list) + "\n", encoding="utf-8")
-    entries = []
-    for relative in file_list + ["FILE_LIST.txt"]:
-        if relative == "SHA256SUMS.txt":
-            continue
-        entries.append(f"{sha256_file(PACKAGE / relative)}  ./{relative}")
+    inventory = sorted([*OUTPUTS, "FILE_LIST.txt"])
+    (PACKAGE / "FILE_LIST.txt").write_text("\n".join(inventory) + "\n", encoding="utf-8")
+    entries = [f"{sha256_file(PACKAGE / relative)}  ./{relative}" for relative in inventory]
     (PACKAGE / "SHA256SUMS.txt").write_text("\n".join(entries) + "\n", encoding="utf-8")
-    return {"file_count": len(entries), "files": file_list + ["FILE_LIST.txt"]}
+    return {"file_count": len(inventory), "files": inventory}
 
 
 def materialize() -> dict[str, Any]:
