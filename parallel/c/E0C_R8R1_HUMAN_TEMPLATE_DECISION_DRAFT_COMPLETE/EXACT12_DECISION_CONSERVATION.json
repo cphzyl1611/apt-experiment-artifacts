@@ -1,0 +1,58 @@
+{
+  "schema_version": "e0c-r8r1-exact12-final-human-decision-conservation-v1",
+  "status": "PASS",
+  "decision_draft": {
+    "path": "parallel/c/E0C_R8R1_HUMAN_TEMPLATE_DECISION_DRAFT.jsonl",
+    "preexisting_record_count": 8,
+    "new_user_decision_record_count": 4,
+    "final_record_count": 12,
+    "first_8_records_byte_for_byte_unchanged": true,
+    "first_8_records_sha256": "4d0e06fb14cc803dfe85a9169d487f1a81ea53d929b2f5e396190e4d9877fcfb",
+    "completed_draft_sha256": "dbab1909e0f1b1e687709846e2a16eb0cf13c4fb47dc2faa5951226a06dea0f0",
+    "completed_draft_git_blob_sha1": "dbb1d455ea64a910fd9b1e0b80c03a14702c930c"
+  },
+  "target_conservation": {
+    "frozen_template_count": 12,
+    "frozen_raw_coverage": 203,
+    "frozen_orders": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    "decision_orders": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    "order_conservation": "PASS",
+    "unique_template_id_count": 12,
+    "duplicate_template_ids": [],
+    "identity_conservation": "PASS",
+    "member_set_conservation": "PASS",
+    "member_overlap": 0,
+    "member_drift": 0,
+    "member_expansion_count": 0,
+    "template_ids": [
+      "r4-template-120-process_command_execution",
+      "r4-template-136-process_command_execution",
+      "r4-template-107-process_command_execution",
+      "r4-template-159-process_command_execution",
+      "r4-template-130-process_command_execution",
+      "r4-template-152-process_command_execution",
+      "r4-template-069-persistence_configuration",
+      "r4-template-009-credential_store_access",
+      "r4-template-006-credential_store_access",
+      "r4-template-048-network_c2_beacon",
+      "r4-template-035-file_resource_operation",
+      "r4-template-071-persistence_configuration"
+    ]
+  },
+  "decision_counts": {
+    "APPROVE_TEMPLATE_FOR_MEMBER_SET": 0,
+    "REJECT_TEMPLATE_KEEP_MEMBERS_MANUAL": 0,
+    "REQUEST_SPLIT_OR_MORE_EVIDENCE": 12
+  },
+  "boundary_counts": {
+    "automatic_human_decision": 0,
+    "applied_splits": 0,
+    "status_mutations": 0,
+    "binding_or_scoring_authority_created": 0,
+    "formal_execution_authorizations": 0,
+    "denominator_changes": 0
+  },
+  "denominator_change": "NO",
+  "formal_experiment_executed": "NO",
+  "next_action": "TARGETED_FRESH_REVIEW_OF_COMPLETE_EXACT12_HUMAN_DECISION_DRAFT"
+}

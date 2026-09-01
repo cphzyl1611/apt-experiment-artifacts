@@ -1,0 +1,37 @@
+{
+  "schema_version": "e0c-r8r1-exact12-zero-mutation-boundary-v1",
+  "status": "PASS",
+  "materialization_scope": {
+    "updated_path": "parallel/c/E0C_R8R1_HUMAN_TEMPLATE_DECISION_DRAFT.jsonl",
+    "created_path_prefix": "parallel/c/E0C_R8R1_HUMAN_TEMPLATE_DECISION_DRAFT_COMPLETE/",
+    "new_decision_records": 4
+  },
+  "frozen_boundary": {
+    "existing_r8_or_r8r1_frozen_packet_mutations": 0,
+    "member_set_changes": 0,
+    "member_expansions": 0,
+    "template_splits_defined": 0,
+    "template_splits_applied": 0,
+    "replay_status_mutations": 0,
+    "binding_or_scoring_authority_created": 0,
+    "formal_execution_authorizations": 0,
+    "denominator_changes": 0,
+    "parallel_a_changes": 0,
+    "parallel_b_changes": 0,
+    "current86_r4_changes": 0
+  },
+  "draft_record_controls": {
+    "non_authoritative_record_count": 12,
+    "member_expansion_false_count": 12,
+    "applied_split_false_count": 12,
+    "status_mutation_false_count": 12,
+    "binding_or_scoring_authority_created_false_count": 12,
+    "formal_execution_authorized_false_count": 12,
+    "denominator_change_no_count": 12,
+    "split_note_explicitly_defines_no_split_count": 12
+  },
+  "frozen_packet_sha256_before_and_after": "cb7b49546631887fe403e31fae77a1fbee91f2905a363186b90c0b30c9dfe533",
+  "denominator_change": "NO",
+  "formal_experiment_executed": "NO",
+  "targeted_fresh_review_of_completed_draft_performed": "NO"
+}

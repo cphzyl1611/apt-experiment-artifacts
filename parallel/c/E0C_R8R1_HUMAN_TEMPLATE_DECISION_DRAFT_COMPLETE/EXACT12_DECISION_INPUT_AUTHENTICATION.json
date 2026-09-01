@@ -1,0 +1,100 @@
+{
+  "schema_version": "e0c-r8r1-exact12-final-human-decision-draft-input-authentication-v1",
+  "task": "E0C_R8R1_EXACT12_FINAL_HUMAN_DECISION_DRAFT_MATERIALIZATION",
+  "status": "PASS",
+  "repository_authentication": {
+    "origin": "https://github.com/cphzyl1611/apt-experiment-artifacts.git",
+    "current_branch": "artifact/e0-c",
+    "pre_materialization_head": "99f9c0d7fe8b4ecec896837b3991e8d23ebbb608",
+    "remote_main_at_authentication": "99f9c0d7fe8b4ecec896837b3991e8d23ebbb608",
+    "remote_artifact_e0_c_at_authentication": null,
+    "anchors_present": {
+      "r8r1_targeted_fresh_review": "d304a8dbbe41a0f4aae8d9cf3047a5fec7044b13",
+      "recovered_user_decisions": "ee28eb41220d080b225f1dbc752c114656ef2299",
+      "clean_main_binding_append": "99f9c0d7fe8b4ecec896837b3991e8d23ebbb608"
+    }
+  },
+  "committed_review_input_authentication": {
+    "r8r1_review_outputs_unchanged_from_commit": "d304a8dbbe41a0f4aae8d9cf3047a5fec7044b13",
+    "worktree_blobs_match_head": true,
+    "files": [
+      {
+        "path": "parallel/c/E0C_R8_HUMAN_DECISION_PACKET.json",
+        "sha256": "cb7b49546631887fe403e31fae77a1fbee91f2905a363186b90c0b30c9dfe533",
+        "git_blob_sha1": "10dd73bb93f6d92df7ea4f5e3ccf5ed83dbb5db1"
+      },
+      {
+        "path": "parallel/c/E0C_R8_INPUT_AUTHENTICATION.json",
+        "sha256": "4b0021c7393e7e473023e46e1fbbe70f7cb5e6b1e292cb293116d074fa32f91e",
+        "git_blob_sha1": "096ef4436f5a1d5238a9bf12a8bdde821dc13a50"
+      },
+      {
+        "path": "parallel/c/E0C_R8_EXACT12_STRUCTURED_HETEROGENEITY.json",
+        "sha256": "0e77c06499cd2f489089d948a2d485b8b345ff691e6fd4544e7052840d9816b6",
+        "git_blob_sha1": "2177806468dcea983d7256d5545dda9ae5fd23ed"
+      },
+      {
+        "path": "parallel/c/E0C_R8_EXACT12_CANDIDATE_SPLIT_EVIDENCE.jsonl",
+        "sha256": "368fda9b2da49c4607b43286fb89d91ddaa90b01c969d5bccc4e708fa030b6af",
+        "git_blob_sha1": "676f38100d09e4304e41102b75f0d0840e093e56"
+      },
+      {
+        "path": "parallel/c/E0C_R8R1_TARGETED_FRESH_REVIEW/E0C_R8R1_TARGETED_INPUT_AUTHENTICATION.json",
+        "sha256": "5225f5ac28c1ab3d90c6ad9d444ad55d2751a05db5be1752350107a05d380763",
+        "git_blob_sha1": "3cd5294c902d421e6e0c63bc7c310e44e2dbbcb2"
+      },
+      {
+        "path": "parallel/c/E0C_R8R1_TARGETED_FRESH_REVIEW/E0C_R8R1_TARGETED_OUTPUT_COMPARISON.json",
+        "sha256": "519f30fdffda15841c831f388b328fc3b4385a92474ae9fafa8cc5ab217ce57c",
+        "git_blob_sha1": "c392b2bf6c2fa3e9cbfdd635229d10dded0ed38a"
+      }
+    ]
+  },
+  "member_set_commitment": {
+    "algorithm": "SHA-256",
+    "canonicalization": "member keys sorted lexicographically and joined with LF, with no trailing LF"
+  },
+  "frozen_exact12": {
+    "template_count": 12,
+    "raw_coverage": 203,
+    "unique_raw_member_count": 203,
+    "member_overlap": 0,
+    "member_drift_against_r6_enriched_packets": 0,
+    "blocked31_overlap": 0,
+    "structured_split_evidence_template_count": 0,
+    "union_member_set_sha256": "ffeb2704a1c971b89129e1959ae721bbc9ef159153a5f0a20f8abda13edb441a",
+    "templates": [
+      {"frozen_order": 1, "template_id": "r4-template-120-process_command_execution", "member_count": 49, "member_set_sha256": "3ceca8928cf0c95f4006ffbf91d677cf3cee9287d7beea4996adfa752703bc33", "member_set_reference": "E0C_R8_HUMAN_DECISION_PACKET.json#/templates/0/member_keys"},
+      {"frozen_order": 2, "template_id": "r4-template-136-process_command_execution", "member_count": 28, "member_set_sha256": "fc076c1fbcef34272b7bb80b611fa0b3a560a940833e960976d45388355d100a", "member_set_reference": "E0C_R8_HUMAN_DECISION_PACKET.json#/templates/1/member_keys"},
+      {"frozen_order": 3, "template_id": "r4-template-107-process_command_execution", "member_count": 27, "member_set_sha256": "aeead35be23d0b2f06d1b7085ce3c33e1cdc08c87f92fe9e972eea608809ee0e", "member_set_reference": "E0C_R8_HUMAN_DECISION_PACKET.json#/templates/2/member_keys"},
+      {"frozen_order": 4, "template_id": "r4-template-159-process_command_execution", "member_count": 17, "member_set_sha256": "e5f22f069e236fde74af499ec46117c82ea2ce067d39b759421f6865cd548439", "member_set_reference": "E0C_R8_HUMAN_DECISION_PACKET.json#/templates/3/member_keys"},
+      {"frozen_order": 5, "template_id": "r4-template-130-process_command_execution", "member_count": 17, "member_set_sha256": "b9e9db68106f21ada95ece8e6158f9954372e9e28b908b1e98d886a679280449", "member_set_reference": "E0C_R8_HUMAN_DECISION_PACKET.json#/templates/4/member_keys"},
+      {"frozen_order": 6, "template_id": "r4-template-152-process_command_execution", "member_count": 12, "member_set_sha256": "ed38669390f755e5d316080187f6eff0d819475d59c828fa527d0ec66755ce35", "member_set_reference": "E0C_R8_HUMAN_DECISION_PACKET.json#/templates/5/member_keys"},
+      {"frozen_order": 7, "template_id": "r4-template-069-persistence_configuration", "member_count": 10, "member_set_sha256": "7347ef4f412bf89b0ee6fad51fe44eabb96c64606d8b7d293b0b656ed8e86b42", "member_set_reference": "E0C_R8_HUMAN_DECISION_PACKET.json#/templates/6/member_keys"},
+      {"frozen_order": 8, "template_id": "r4-template-009-credential_store_access", "member_count": 9, "member_set_sha256": "9ae166dab66173192bbcbcd89bc86757c290e9d8db2d23a0350cd6df890636f4", "member_set_reference": "E0C_R8_HUMAN_DECISION_PACKET.json#/templates/7/member_keys"},
+      {"frozen_order": 9, "template_id": "r4-template-006-credential_store_access", "member_count": 9, "member_set_sha256": "776cc6ca57d025ad62efeed4d6f55f8a34a6dafe4517cc6a8a388519de3e6e8d", "member_set_reference": "E0C_R8_HUMAN_DECISION_PACKET.json#/templates/8/member_keys"},
+      {"frozen_order": 10, "template_id": "r4-template-048-network_c2_beacon", "member_count": 9, "member_set_sha256": "f7ea287ecdda9343ad41d24096b9a4ab8a4a567d0f40c0d3b708a384e65c9db4", "member_set_reference": "E0C_R8_HUMAN_DECISION_PACKET.json#/templates/9/member_keys"},
+      {"frozen_order": 11, "template_id": "r4-template-035-file_resource_operation", "member_count": 8, "member_set_sha256": "ae5c70bcbce560f3194a63c6336b1021b4a3f947601958b75ae98245331b8a52", "member_set_reference": "E0C_R8_HUMAN_DECISION_PACKET.json#/templates/10/member_keys"},
+      {"frozen_order": 12, "template_id": "r4-template-071-persistence_configuration", "member_count": 8, "member_set_sha256": "939db086e6af0f4a8c6fb04d039ff8a379b0b0dc9cf5ebe9cbd76bb4e3b9cb28", "member_set_reference": "E0C_R8_HUMAN_DECISION_PACKET.json#/templates/11/member_keys"}
+    ]
+  },
+  "preexisting_decision_draft": {
+    "path": "parallel/c/E0C_R8R1_HUMAN_TEMPLATE_DECISION_DRAFT.jsonl",
+    "committed_git_blob_sha1": "8af7ae36341b797a2113654de8e515887de1cc2d",
+    "first_8_records_sha256": "4d0e06fb14cc803dfe85a9169d487f1a81ea53d929b2f5e396190e4d9877fcfb",
+    "record_count": 8,
+    "frozen_orders": [1, 2, 3, 4, 5, 6, 7, 8],
+    "unique_template_ids": 8,
+    "decision_origin": "USER_EXPLICIT",
+    "draft_authority": "NON_AUTHORITATIVE",
+    "automatic_human_decision": false,
+    "human_decision": "REQUEST_SPLIT_OR_MORE_EVIDENCE",
+    "duplicate_template_ids": []
+  },
+  "batch_3_user_decisions": [
+    {"frozen_order": 9, "template_id": "r4-template-006-credential_store_access", "human_decision": "REQUEST_SPLIT_OR_MORE_EVIDENCE"},
+    {"frozen_order": 10, "template_id": "r4-template-048-network_c2_beacon", "human_decision": "REQUEST_SPLIT_OR_MORE_EVIDENCE"},
+    {"frozen_order": 11, "template_id": "r4-template-035-file_resource_operation", "human_decision": "REQUEST_SPLIT_OR_MORE_EVIDENCE"},
+    {"frozen_order": 12, "template_id": "r4-template-071-persistence_configuration", "human_decision": "REQUEST_SPLIT_OR_MORE_EVIDENCE"}
+  ]
+}
