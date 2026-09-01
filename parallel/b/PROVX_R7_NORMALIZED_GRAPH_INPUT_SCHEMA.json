@@ -1,0 +1,68 @@
+{
+  "event_to_encoder_class": {
+    "FILE_CREATE_OR_OPEN": "read_open",
+    "FILE_DELETE": "close_delete",
+    "PROCESS_EXIT": "close_delete",
+    "PROCESS_START_OR_EXEC": "execute",
+    "SOCKET_ACCEPT": "connect_send",
+    "SOCKET_BIND": "connect_send",
+    "SOCKET_CONNECT": "connect_send"
+  },
+  "forbidden": [
+    "FILE_READ_OR_WRITE synthesis",
+    "pcap-derived provenance edges",
+    "analyst labels",
+    "21D checkpoint",
+    "host actions"
+  ],
+  "mandatory_by_event": {
+    "FILE_CREATE_OR_OPEN": [
+      "path or file_identity.paths"
+    ],
+    "FILE_DELETE": [
+      "path or file_identity.paths"
+    ],
+    "PROCESS_EXIT": [
+      "pid",
+      "pid_start_time_ticks"
+    ],
+    "PROCESS_START_OR_EXEC": [
+      "pid",
+      "pid_start_time_ticks"
+    ],
+    "SOCKET_ACCEPT": [
+      "socket_identity.family",
+      "socket_identity endpoint"
+    ],
+    "SOCKET_BIND": [
+      "socket_identity.family",
+      "socket_identity endpoint"
+    ],
+    "SOCKET_CONNECT": [
+      "socket_identity.family",
+      "socket_identity endpoint"
+    ]
+  },
+  "mandatory_common": [
+    "run_id",
+    "event_id",
+    "event_type",
+    "raw_serial",
+    "raw_event_sha256",
+    "timestamp_source",
+    "pid",
+    "pid_start_time_ticks",
+    "ppid",
+    "logical_host_id",
+    "netns_inode",
+    "join_status"
+  ],
+  "node_types": {
+    "FILE": "host_id + canonical path",
+    "OTHER": "not emitted without explicit stable identity",
+    "PROCESS": "host_id + pid + pid_start_time_ticks",
+    "SOCKET": "host_id + canonical family/endpoints"
+  },
+  "schema": "PROVX_R7_NORMALIZED_GRAPH_INPUT_SCHEMA_V1",
+  "status": "FROZEN_FOR_STAGE_A_DEVELOPMENT_FIXTURE"
+}

@@ -1,0 +1,24 @@
+{
+  "schema": "MININET_E1C_R6_RAW_LINK_RED_EVIDENCE_V1",
+  "reproduced": true,
+  "r5_observed": {
+    "normalized_field": "raw_event_sha256",
+    "raw_field": "raw_sha256",
+    "historical_boolean": false,
+    "independent_serial_matches": "28/28",
+    "independent_decoded_byte_hash_matches": "28/28"
+  },
+  "red_fixture": {
+    "raw": {"serial": 1, "raw_sha256": "sha256(raw_bytes)"},
+    "normalized": {"raw_serial": 1, "raw_event_sha256": "sha256(raw_bytes)"},
+    "incorrect_join_expression": "normalized.raw_event_sha256 == raw.raw_event_sha256",
+    "incorrect_result": false,
+    "correct_join_expression": "normalized.raw_event_sha256 == raw.raw_sha256",
+    "correct_result": true
+  },
+  "r6_verifier": {
+    "joins_by": ["exact audit serial", "normalized.raw_event_sha256 to raw.raw_sha256"],
+    "detects": ["serial mismatch", "raw hash mismatch", "duplicate serial", "missing raw record"],
+    "tests_passed": 5
+  }
+}

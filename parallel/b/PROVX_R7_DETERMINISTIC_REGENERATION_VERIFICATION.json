@@ -1,0 +1,13 @@
+{
+  "edge_index_hash_identical": true,
+  "graph_hash_identical": true,
+  "graph_hashes": [
+    "b24b424d0e530a9d03c2bf01ed6a193447e3fa75b9725b978d7c27a0998b9acd",
+    "b24b424d0e530a9d03c2bf01ed6a193447e3fa75b9725b978d7c27a0998b9acd"
+  ],
+  "regenerations": 2,
+  "run_id": "e1c-r5-run-20260831T111849Z",
+  "schema": "PROVX_R7_DETERMINISTIC_REGENERATION_VERIFICATION_V1",
+  "status": "PASS",
+  "x_hash_identical": true
+}

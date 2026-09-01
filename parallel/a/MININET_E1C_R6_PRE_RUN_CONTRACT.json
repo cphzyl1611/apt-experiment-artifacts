@@ -1,0 +1,71 @@
+{
+  "schema": "MININET_E1C_R6_PRE_RUN_CONTRACT_V1",
+  "run_id": "e1c-r6-run-20260901T060350Z",
+  "collector": {
+    "decision": "AUDITD_PRIMARY_CANDIDATE",
+    "strategy": "AUDIT_FILESYSTEM_PERMISSION_FILTER",
+    "rule_template": ["/usr/sbin/auditctl", "-a", "always,exit", "-F", "arch=b64", "-F", "path=<exact-precreated-file>", "-F", "perm=rw", "-F", "pid=<exact-live-child>", "-k", "e1c_r6_file_access"],
+    "persistent_rule_file_edits": false,
+    "global_direct_read_write_rules": false
+  },
+  "topology": {
+    "hosts": ["h1", "h2"],
+    "switch": "s1",
+    "network": "10.0.0.0/24",
+    "tcp_port": 18080,
+    "nat": false,
+    "external_links": false
+  },
+  "micro_probe_gate": [
+    "verify exact clean no-rules baseline",
+    "pre-create isolated benign probe file",
+    "insert only exact path+perm=rw+pid rule",
+    "perform bounded benign read and write",
+    "collect keyed audit records and normalize permission evidence",
+    "require FILE_READ_OR_WRITE evidence_basis AUDIT_FILESYSTEM_PERMISSION_FILTER",
+    "remove exact inverse rule",
+    "prove clean baseline and zero loss/backlog"
+  ],
+  "full_smoke_after_probe": {
+    "required_classes": ["PROCESS_START_OR_EXEC", "PROCESS_EXIT", "FILE_CREATE_OR_OPEN", "FILE_READ_OR_WRITE", "FILE_DELETE", "SOCKET_BIND", "SOCKET_CONNECT", "SOCKET_ACCEPT"],
+    "minimum_each": 1,
+    "file_delete_probe_separate_inode": true,
+    "post_exec_identity_validation": true,
+    "child_state_protocol": true
+  },
+  "cleanup": {
+    "remove_only_successfully_added_rules": true,
+    "same_root_cleanup": true,
+    "no_global_rule_delete": true,
+    "no_mn_dash_c": true,
+    "exit_codes": {"PASS": 0, "PARTIAL": 3, "BLOCKED": 2, "UNEXPECTED_EXCEPTION": 1}
+  },
+  "required_outputs": [
+    "MININET_E1C_R6_AUDIT_PRE_STATE.json",
+    "MININET_E1C_R6_TRANSIENT_RULE_CONTRACT.json",
+    "MININET_E1C_R6_RAW_AUDIT_EVIDENCE.jsonl",
+    "MININET_E1C_R6_NORMALIZED_EVENTS.jsonl",
+    "MININET_E1C_R6_PID_NETNS_JOIN.jsonl",
+    "MININET_E1C_R6_STRACE_ORACLE_COMPARISON.json",
+    "MININET_E1C_R6_COVERAGE_AND_LOSS_AUDIT.json",
+    "MININET_E1C_R6_POST_CLEANUP_AUDIT.json",
+    "MININET_E1C_R6_AUDITD_SMOKE_REPORT.md"
+  ],
+  "boundaries": {
+    "no_apt_actions": true,
+    "no_automatic_sudo": true,
+    "no_provx": true,
+    "no_formal_experiment": true
+  },
+  "exact_human_command": "sudo /usr/bin/python3 /home/cph/experiment-parallel/e0-a/e1c-r6-run-20260901T060350Z/mininet_e1c_r6_file_access_closure_smoke.py --run-privileged",
+  "terminal": {
+    "MININET_E1C_R6_PREPARATION": "PASS",
+    "R5_FILE_RW_ROOT_CAUSE": "DIRECT_READ_WRITE_SYSCALL_RULE_STRATEGY_INSUFFICIENT_FOR_BOUNDED_FILE_ACCESS",
+    "BOUNDED_FILE_ACCESS_RULE_DESIGN": "PASS",
+    "R5_RAW_LINK_BOOLEAN_DEFECT_REPRODUCED": "YES",
+    "R6_RAW_LINK_VERIFIER_FIXED": "YES",
+    "HUMAN_PRIVILEGED_RUN_REQUIRED": "YES",
+    "NEXT_ACTION": "HUMAN_RUN_EXACT_SUDO_COMMAND",
+    "STOP": true
+  }
+}

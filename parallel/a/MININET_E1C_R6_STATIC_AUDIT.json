@@ -1,0 +1,59 @@
+{
+  "schema": "MININET_E1C_R6_STATIC_AUDIT_V1",
+  "audited_at_utc": "2026-09-01T06:00:00Z",
+  "harness_path": "/home/cph/experiment-parallel/e0-a/e1c-r6-run-20260901T060350Z/mininet_e1c_r6_file_access_closure_smoke.py",
+  "harness_sha256": "d7f857f2903e3f0bb9bfe6b407dd4acddf3b12dd9508043eaeb322d8641d9dd2",
+  "test_path": "/home/cph/experiment-parallel/e0-a/e1c-r6-run-20260901T060350Z/test_e1c_r6_harness.py",
+  "test_sha256": "8f2e18dc726ffcdc6028b914f05465b0806d3de20c607deb1042c18fd8ab98af",
+  "fresh_validation": {
+    "py_compile": {"exit_code": 0, "result": "PASS"},
+    "unit_tests": {"tests_run": 16, "failures": 0, "errors": 0, "exit_code": 0, "result": "PASS"},
+    "static_self_check": {"result": "PASS"}
+  },
+  "static_checks": {
+    "python_ast_parse": true,
+    "exact_path_perm_pid_rule": true,
+    "bounded_file_rules": true,
+    "no_global_direct_read_write_rules": true,
+    "no_syscall_selector_in_file_rule": true,
+    "no_wildcard_path": true,
+    "pid_filtered_rule": true,
+    "permission_filter_semantics_retained": true,
+    "raw_audit_preserved_and_hashed": true,
+    "raw_link_checker_joins_serial_then_raw_sha256": true,
+    "baseline_restore_gate_present": true,
+    "reviewed_path_wired_from_run_privileged": true,
+    "placeholder_gate_removed": true,
+    "probe_to_smoke_gate": true,
+    "exact_inverse_cleanup_only": true,
+    "no_broad_delete": true,
+    "no_mn_c": true,
+    "no_nat_or_external_links": true,
+    "no_apt_commands": true,
+    "no_automatic_sudo": true,
+    "no_provx_or_formal_benchmark": true
+  },
+  "runtime_limitations_recorded": [
+    "auditctl mutation and ausearch collection require root and are deferred to the exact human command",
+    "the R6 privileged entry point is intentionally gated and does not execute during preparation",
+    "filesystem isolation is not claimed"
+  ],
+  "failed_human_invocation_review": {
+    "micro_probe_executed": false,
+    "mininet_executed": false,
+    "audit_rule_mutation_reached": false,
+    "run_owned_processes": 0,
+    "run_owned_interfaces": 0,
+    "residue": "NONE"
+  },
+  "formal_experiment_executed": false,
+  "apt_action_executed": false,
+  "automatic_sudo_invoked": false,
+  "audit_status": "PASS_READY_FOR_HUMAN_PRIVILEGED_RUN",
+  "terminal": {
+    "MININET_E1C_R6_PREPARATION": "PASS",
+    "HUMAN_PRIVILEGED_RUN_REQUIRED": "YES",
+    "NEXT_ACTION": "HUMAN_RUN_EXACT_SUDO_COMMAND",
+    "STOP": true
+  }
+}

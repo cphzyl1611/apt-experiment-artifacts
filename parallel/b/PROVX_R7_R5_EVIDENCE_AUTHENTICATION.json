@@ -1,0 +1,266 @@
+{
+  "all_required_artifacts_authenticated": true,
+  "audit_lost_events": 0,
+  "duplicate_raw_serials": [],
+  "file_read_or_write_present": false,
+  "hard_boundaries": {
+    "apt_action_executed": false,
+    "auditctl_dash_D_observed_in_rule_journal": false,
+    "external_nat_attachment": false,
+    "formal_experiment_executed": false,
+    "mn_cleanup_command_executed": false,
+    "preexisting_ovs_daemons_excluded": true,
+    "provx_executed": false
+  },
+  "historical_discrepancy_recorded": true,
+  "historical_normalized_raw_links_valid": false,
+  "independent_recomputation": {
+    "consumed_records": 28,
+    "decoded_byte_hash_links": "28/28",
+    "raw_event_sha256_matches_raw_sha256": "28/28",
+    "serial_links": "28/28",
+    "status": "PASS"
+  },
+  "link_failures": [],
+  "namespace_assertions": {
+    "LOGICAL_HOST_JOIN_FAILURE_COUNT": 0,
+    "LOGICAL_HOST_JOIN_SUCCESS_COUNT": 4,
+    "all_four_pass": true,
+    "child_pid_netns_evidence_captured_while_alive": true,
+    "h1_child_netns != h2_shell_netns": "PASS",
+    "h1_child_netns == h1_shell_netns": "PASS",
+    "h2_child_netns != h1_shell_netns": "PASS",
+    "h2_child_netns == h2_shell_netns": "PASS",
+    "post_exec_identity_all_pass": true,
+    "socket_evidence_captured_while_listener_alive": true
+  },
+  "network": {
+    "PCAP_SHA256": "78f32b500600739b5a67111b6f7566f76139d6bb491c4105b887ea17f9951e86",
+    "TCP_HANDSHAKE_COMPLETED": true,
+    "both_hosts_used_same_port": true,
+    "distinct_netns": true,
+    "intended_tcp_port": 18080,
+    "pcap_exists": true,
+    "tcpdump_ran_inside_topology": true
+  },
+  "normalized_class_counts": {
+    "FILE_CREATE_OR_OPEN": 6,
+    "FILE_DELETE": 2,
+    "FILE_READ_OR_WRITE": 0,
+    "PROCESS_EXIT": 4,
+    "PROCESS_START_OR_EXEC": 10,
+    "SOCKET_ACCEPT": 1,
+    "SOCKET_BIND": 4,
+    "SOCKET_CONNECT": 1
+  },
+  "normalized_event_count": 28,
+  "pid_netns_join_record_count": 4,
+  "pinned_latest_fixed_commit": "107ef9f69a734a10b320d552cfe18a6cb9a2ac0c",
+  "pinned_review_commit": "64854aeb8ad688b4423d600193fa6be5c2cbc390",
+  "raw_record_count": 108,
+  "raw_serials_unique": true,
+  "required_artifact_authentication": {
+    "MININET_E1C_R5_AUDITD_SMOKE_REPORT.md": {
+      "actual_sha256": "37360bc79543b48d9778725d144d28c6de60b6391dbb932009793d76bc180de2",
+      "bytes": 42151,
+      "expected_sha256": "37360bc79543b48d9778725d144d28c6de60b6391dbb932009793d76bc180de2",
+      "path": "/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/MININET_E1C_R5_AUDITD_SMOKE_REPORT.md",
+      "present": true,
+      "status": "PASS"
+    },
+    "MININET_E1C_R5_AUDIT_PRE_STATE.json": {
+      "actual_sha256": "2ccd570399f69ef78c603c5b7deae5e3ab76e887624492d1a88dd64ae32a9952",
+      "bytes": 1923,
+      "expected_sha256": "2ccd570399f69ef78c603c5b7deae5e3ab76e887624492d1a88dd64ae32a9952",
+      "path": "/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/MININET_E1C_R5_AUDIT_PRE_STATE.json",
+      "present": true,
+      "status": "PASS"
+    },
+    "MININET_E1C_R5_CHILD_PROCESS_EVIDENCE.json": {
+      "actual_sha256": "4f81342dd14a953d56570cb9a393b8800072259cfc0093e3541fcd7f9fb8198f",
+      "bytes": 5009,
+      "expected_sha256": "4f81342dd14a953d56570cb9a393b8800072259cfc0093e3541fcd7f9fb8198f",
+      "path": "/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/MININET_E1C_R5_CHILD_PROCESS_EVIDENCE.json",
+      "present": true,
+      "status": "PASS"
+    },
+    "MININET_E1C_R5_CHILD_STATE_TRANSITIONS.jsonl": {
+      "actual_sha256": "122fd0274daaa21d357a461cca83ef943dc2903cb8d35bc78f2298ed3155bca2",
+      "bytes": 6618,
+      "expected_sha256": "122fd0274daaa21d357a461cca83ef943dc2903cb8d35bc78f2298ed3155bca2",
+      "path": "/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/MININET_E1C_R5_CHILD_STATE_TRANSITIONS.jsonl",
+      "present": true,
+      "status": "PASS"
+    },
+    "MININET_E1C_R5_COVERAGE_AND_LOSS.json": {
+      "actual_sha256": "7a112991031630de4bd544513058c7e54fb7fe15217bdf76c2810a7555ce199e",
+      "bytes": 20829,
+      "expected_sha256": "7a112991031630de4bd544513058c7e54fb7fe15217bdf76c2810a7555ce199e",
+      "path": "/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/MININET_E1C_R5_COVERAGE_AND_LOSS.json",
+      "present": true,
+      "status": "PASS"
+    },
+    "MININET_E1C_R5_EARLY_CHILD_FAILURES.jsonl": {
+      "actual_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "expected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path": "/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/MININET_E1C_R5_EARLY_CHILD_FAILURES.jsonl",
+      "present": true,
+      "status": "PASS"
+    },
+    "MININET_E1C_R5_NORMALIZED_EVENTS.jsonl": {
+      "actual_sha256": "8e9563aa31106a7af008de18b48ff3b86d58f47e967b409b97c831049b5f08f6",
+      "bytes": 64892,
+      "expected_sha256": "8e9563aa31106a7af008de18b48ff3b86d58f47e967b409b97c831049b5f08f6",
+      "path": "/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/MININET_E1C_R5_NORMALIZED_EVENTS.jsonl",
+      "present": true,
+      "status": "PASS"
+    },
+    "MININET_E1C_R5_PID_NETNS_JOIN.jsonl": {
+      "actual_sha256": "983ad6802b0a53c7126be52bb88811ea0fe8c919c347ec80d784f80416585009",
+      "bytes": 9564,
+      "expected_sha256": "983ad6802b0a53c7126be52bb88811ea0fe8c919c347ec80d784f80416585009",
+      "path": "/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/MININET_E1C_R5_PID_NETNS_JOIN.jsonl",
+      "present": true,
+      "status": "PASS"
+    },
+    "MININET_E1C_R5_POST_CLEANUP.json": {
+      "actual_sha256": "295b9c72ef28dbc0fde75c374710cd5c9e50ed86e945225aa37fb67f12887f10",
+      "bytes": 41221,
+      "expected_sha256": "295b9c72ef28dbc0fde75c374710cd5c9e50ed86e945225aa37fb67f12887f10",
+      "path": "/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/MININET_E1C_R5_POST_CLEANUP.json",
+      "present": true,
+      "status": "PASS"
+    },
+    "MININET_E1C_R5_PRIVILEGED_RUN_RESULT.json": {
+      "actual_sha256": "107ec8264257494ba5ecac34eeaa3ec38e1a8b1aff415430ef5254825deed2b1",
+      "bytes": 250,
+      "expected_sha256": "107ec8264257494ba5ecac34eeaa3ec38e1a8b1aff415430ef5254825deed2b1",
+      "path": "/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/MININET_E1C_R5_PRIVILEGED_RUN_RESULT.json",
+      "present": true,
+      "status": "PASS"
+    },
+    "MININET_E1C_R5_RAW_AUDIT_EVIDENCE.jsonl": {
+      "actual_sha256": "53f89816610a4a2e22a7c3c3baa84a672b00e9d43ec3abe487dc2d3778817558",
+      "bytes": 304318,
+      "expected_sha256": "53f89816610a4a2e22a7c3c3baa84a672b00e9d43ec3abe487dc2d3778817558",
+      "path": "/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/MININET_E1C_R5_RAW_AUDIT_EVIDENCE.jsonl",
+      "present": true,
+      "status": "PASS"
+    },
+    "MININET_E1C_R5_RESIDUAL_REMEDIATION.json": {
+      "actual_sha256": "ddbeb3c78d9eb0cc2dc1cdc8ad209b42784af8331b2000bb76c4e808ca7244dc",
+      "bytes": 4416,
+      "expected_sha256": "ddbeb3c78d9eb0cc2dc1cdc8ad209b42784af8331b2000bb76c4e808ca7244dc",
+      "path": "/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/MININET_E1C_R5_RESIDUAL_REMEDIATION.json",
+      "present": true,
+      "status": "PASS"
+    },
+    "MININET_E1C_R5_RULE_REMEDIATION_JOURNAL.jsonl": {
+      "actual_sha256": "f4ef69edad383e51572247aed347f9287cf72a3e282cf8ec7c042b05e85dfa14",
+      "bytes": 241680,
+      "expected_sha256": "f4ef69edad383e51572247aed347f9287cf72a3e282cf8ec7c042b05e85dfa14",
+      "path": "/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/MININET_E1C_R5_RULE_REMEDIATION_JOURNAL.jsonl",
+      "present": true,
+      "status": "PASS"
+    },
+    "MININET_E1C_R5_SMOKE.pcap": {
+      "actual_sha256": "78f32b500600739b5a67111b6f7566f76139d6bb491c4105b887ea17f9951e86",
+      "bytes": 547,
+      "expected_sha256": "78f32b500600739b5a67111b6f7566f76139d6bb491c4105b887ea17f9951e86",
+      "path": "/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/MININET_E1C_R5_SMOKE.pcap",
+      "present": true,
+      "status": "PASS"
+    },
+    "MININET_E1C_R5_TRANSIENT_RULE_CONTRACT.json": {
+      "actual_sha256": "bcb2c9c7dce050b66826016b6a28321f069b85b68b7950e76f489c8dfffc2a6b",
+      "bytes": 134381,
+      "expected_sha256": "bcb2c9c7dce050b66826016b6a28321f069b85b68b7950e76f489c8dfffc2a6b",
+      "path": "/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/MININET_E1C_R5_TRANSIENT_RULE_CONTRACT.json",
+      "present": true,
+      "status": "PASS"
+    }
+  },
+  "required_classes": [
+    "PROCESS_START_OR_EXEC",
+    "PROCESS_EXIT",
+    "FILE_CREATE_OR_OPEN",
+    "FILE_READ_OR_WRITE",
+    "FILE_DELETE",
+    "SOCKET_BIND",
+    "SOCKET_CONNECT",
+    "SOCKET_ACCEPT"
+  ],
+  "review_runtime_classification": "PARTIAL_MISSING_REQUIRED_EVENT_CLASS",
+  "reviewed_artifact_hashes": {
+    "MININET_E1C_R5_AUDITD_SMOKE_REPORT.md": {
+      "bytes": 42151,
+      "sha256": "37360bc79543b48d9778725d144d28c6de60b6391dbb932009793d76bc180de2"
+    },
+    "MININET_E1C_R5_AUDIT_PRE_STATE.json": {
+      "bytes": 1923,
+      "sha256": "2ccd570399f69ef78c603c5b7deae5e3ab76e887624492d1a88dd64ae32a9952"
+    },
+    "MININET_E1C_R5_CHILD_PROCESS_EVIDENCE.json": {
+      "bytes": 5009,
+      "sha256": "4f81342dd14a953d56570cb9a393b8800072259cfc0093e3541fcd7f9fb8198f"
+    },
+    "MININET_E1C_R5_CHILD_STATE_TRANSITIONS.jsonl": {
+      "bytes": 6618,
+      "sha256": "122fd0274daaa21d357a461cca83ef943dc2903cb8d35bc78f2298ed3155bca2"
+    },
+    "MININET_E1C_R5_COVERAGE_AND_LOSS.json": {
+      "bytes": 20829,
+      "sha256": "7a112991031630de4bd544513058c7e54fb7fe15217bdf76c2810a7555ce199e"
+    },
+    "MININET_E1C_R5_EARLY_CHILD_FAILURES.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "MININET_E1C_R5_NORMALIZED_EVENTS.jsonl": {
+      "bytes": 64892,
+      "sha256": "8e9563aa31106a7af008de18b48ff3b86d58f47e967b409b97c831049b5f08f6"
+    },
+    "MININET_E1C_R5_PID_NETNS_JOIN.jsonl": {
+      "bytes": 9564,
+      "sha256": "983ad6802b0a53c7126be52bb88811ea0fe8c919c347ec80d784f80416585009"
+    },
+    "MININET_E1C_R5_POST_CLEANUP.json": {
+      "bytes": 41221,
+      "sha256": "295b9c72ef28dbc0fde75c374710cd5c9e50ed86e945225aa37fb67f12887f10"
+    },
+    "MININET_E1C_R5_PRIVILEGED_RUN_RESULT.json": {
+      "bytes": 250,
+      "sha256": "107ec8264257494ba5ecac34eeaa3ec38e1a8b1aff415430ef5254825deed2b1"
+    },
+    "MININET_E1C_R5_RAW_AUDIT_EVIDENCE.jsonl": {
+      "bytes": 304318,
+      "sha256": "53f89816610a4a2e22a7c3c3baa84a672b00e9d43ec3abe487dc2d3778817558"
+    },
+    "MININET_E1C_R5_RESIDUAL_REMEDIATION.json": {
+      "bytes": 4416,
+      "sha256": "ddbeb3c78d9eb0cc2dc1cdc8ad209b42784af8331b2000bb76c4e808ca7244dc"
+    },
+    "MININET_E1C_R5_RULE_REMEDIATION_JOURNAL.jsonl": {
+      "bytes": 241680,
+      "sha256": "f4ef69edad383e51572247aed347f9287cf72a3e282cf8ec7c042b05e85dfa14"
+    },
+    "MININET_E1C_R5_SMOKE.pcap": {
+      "bytes": 547,
+      "sha256": "78f32b500600739b5a67111b6f7566f76139d6bb491c4105b887ea17f9951e86"
+    },
+    "MININET_E1C_R5_TRANSIENT_RULE_CONTRACT.json": {
+      "bytes": 134381,
+      "sha256": "bcb2c9c7dce050b66826016b6a28321f069b85b68b7950e76f489c8dfffc2a6b"
+    }
+  },
+  "run_id": "e1c-r5-run-20260831T111849Z",
+  "schema": "PROVX_R7_R5_EVIDENCE_AUTHENTICATION_V1",
+  "source_files": {
+    "MININET_E1C_R5_NORMALIZED_EVENTS.jsonl": "8e9563aa31106a7af008de18b48ff3b86d58f47e967b409b97c831049b5f08f6",
+    "MININET_E1C_R5_PID_NETNS_JOIN.jsonl": "983ad6802b0a53c7126be52bb88811ea0fe8c919c347ec80d784f80416585009",
+    "MININET_E1C_R5_RAW_AUDIT_EVIDENCE.jsonl": "53f89816610a4a2e22a7c3c3baa84a672b00e9d43ec3abe487dc2d3778817558",
+    "MININET_E1C_R5_RUNTIME_EVIDENCE_REVIEW.json": "e43cd0d266fc324566d4236450be675d69b08c1310a26e8f4fd2fbc178077dcb"
+  },
+  "source_review": "/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z/MININET_E1C_R5_RUNTIME_EVIDENCE_REVIEW.json"
+}

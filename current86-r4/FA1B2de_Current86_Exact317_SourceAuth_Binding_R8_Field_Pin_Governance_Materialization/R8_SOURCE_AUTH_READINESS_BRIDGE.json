@@ -1,0 +1,37 @@
+{
+  "activation_gate": "FAIL_CLOSED_NO_SOURCE_AUTH_WITHOUT_EXPLICIT_APPROVED_FIELD_PIN",
+  "active_r7_consumer_pointer_sha256": "02394a7fc7c5f337dfbfff521467759f80e14f8d5d27ca9e01653eec3f0d592c",
+  "active_r7_transaction_id": "e8a0a97a33d47ac68c8ded4af1af109fa010d979acf9736fd5dffdebf96c5208",
+  "allowed_future_human_actions": [
+    "APPROVE_EXACT_FIELD_PIN",
+    "REJECT_FIELD_CANDIDATES_KEEP_BLOCKED",
+    "REQUEST_MORE_EVIDENCE"
+  ],
+  "authority_boundary": {
+    "active_source_authority_mutated": false,
+    "binding_publication": false,
+    "field_pins_created": 0,
+    "git_ref_mutation": false,
+    "p0_executed": false,
+    "p1_executed": false,
+    "source_auth_executed": false
+  },
+  "bridge_execution_status": "DESIGNED_NOT_EXECUTED",
+  "design_only": true,
+  "field_pin_authority_status": "BLOCKED_UNTIL_EXPLICIT_APPROVAL",
+  "per_target_requires": "APPROVED_EXACT_FIELD_PIN",
+  "readiness_checks": {
+    "active_r7_authority_authenticated": true,
+    "all_human_decisions_null": true,
+    "all_packets_evidence_complete": true,
+    "all_selected_pointers_null": true,
+    "exact317_packets_materialized": true,
+    "field_pin_registry_created": false,
+    "source_auth_called": false
+  },
+  "schema": "FA1B2DE_CURRENT86_SOURCE_AUTH_READINESS_BRIDGE_R8_DESIGN_ONLY_V1",
+  "scope": "EXACT317_ONLY",
+  "source_auth_execution_status": "NOT_EXECUTED",
+  "target_total": 317,
+  "unapproved_target_state": "BLOCKED"
+}

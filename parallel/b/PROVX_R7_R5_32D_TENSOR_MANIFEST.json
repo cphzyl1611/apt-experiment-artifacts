@@ -1,0 +1,36 @@
+{
+  "checkpoint_loaded": false,
+  "detector_trained": false,
+  "edge_index": {
+    "dtype": "int64",
+    "sha256": "f29e051b027b7fd5eb20b995cf82f5906b2eaceda75dd12c76ebae24c0dabd21",
+    "shape": [
+      2,
+      22
+    ]
+  },
+  "encoded_json_sha256": "2b3af65efc88ac34b00067cb36f306cd84ea6256bf9667796e15c77d55add90e",
+  "encoder_id": "provx-adapted-live-v1",
+  "encoder_sha256": "f27984513a39a004534f7bb409e3ff6410c48b442645656435c0534e64a15188",
+  "formal_experiment_executed": false,
+  "graph_sha256": "b24b424d0e530a9d03c2bf01ed6a193447e3fa75b9725b978d7c27a0998b9acd",
+  "hash_chain": {
+    "edge_index_sha256": "f29e051b027b7fd5eb20b995cf82f5906b2eaceda75dd12c76ebae24c0dabd21",
+    "evidence_authentication_sha256": "513caf8dc6a5e8becf1501823b9048aa17008b5f3ba03f91178488d5c32a273d",
+    "graph_manifest_sha256": "a58b2fa5dfd31d82dd6958339faf2d4650a28125e742ee2463486737e528e84a",
+    "graph_reversibility_sha256": "e13ab2c6ff7ad8bc577f984fd27d59c18828f8531fd23f1dac680b5049658ee1",
+    "x_sha256": "605d1e2133589f9ae68d104ac62c2092d1d7238becf2a4cd99f9e7d34b9b621d"
+  },
+  "run_id": "e1c-r5-run-20260831T111849Z",
+  "schema": "PROVX_R7_R5_32D_TENSOR_MANIFEST_V1",
+  "schema_sha256": "53caab007f9cea84e83a5fb92ddea0cb9082cb816d19752db896cc58c675f68a",
+  "x": {
+    "dtype": "float32",
+    "finite": true,
+    "sha256": "605d1e2133589f9ae68d104ac62c2092d1d7238becf2a4cd99f9e7d34b9b621d",
+    "shape": [
+      10,
+      32
+    ]
+  }
+}

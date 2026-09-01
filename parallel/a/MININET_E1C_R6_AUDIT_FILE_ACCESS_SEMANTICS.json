@@ -1,0 +1,26 @@
+{
+  "schema": "MININET_E1C_R6_AUDIT_FILE_ACCESS_SEMANTICS_V1",
+  "documentation": {
+    "manual_path": "/usr/share/man/man8/auditctl.8.gz",
+    "sha256_uncompressed": "86ae76addb37615a43cfcb32106184d818584a6fd199760dbb7ee34b09526744",
+    "local_documentation_reviewed": true,
+    "path_semantics": "full path of file to watch; exit list only",
+    "dir": "full directory path; recursive subtree watch; exit list only",
+    "perm": "may be used without a syscall; kernel selects syscalls satisfying requested permissions",
+    "permission_r": "read access requested; open flags are inspected",
+    "permission_w": "write access requested; open flags are inspected",
+    "direct_read_write_omission": "direct read/write calls are omitted because they overwhelm logs",
+    "legacy_watch": "-w is backward-compatible; syscall-form path/dir is more expressive",
+    "wildcards": "not supported"
+  },
+  "r6_design": {
+    "rule_form": "syscall-form filesystem permission filter",
+    "path_scope": "one exact pre-created file per logical host",
+    "process_scope": "one exact live post-exec child pid",
+    "requested_access": "rw",
+    "global_direct_read_write_audit": false,
+    "directory_watch": false,
+    "wildcard": false
+  },
+  "local_docs_conflict": false
+}

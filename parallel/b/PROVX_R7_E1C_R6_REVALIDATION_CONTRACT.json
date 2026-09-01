@@ -1,0 +1,24 @@
+{
+  "corpus_acquisition": false,
+  "formal_experiment": false,
+  "promotion_rule": "Stage-A full collector-adapter PASS remains NO until FILE_READ_OR_WRITE is present and all release gates pass",
+  "required_inputs": [
+    "fresh authenticated runtime review",
+    "raw audit JSONL",
+    "normalized JSONL",
+    "PID/netns joins",
+    "coverage/loss",
+    "pcap hash"
+  ],
+  "revalidation_steps": [
+    "recompute serial and decoded-byte SHA256 links",
+    "reject any failed links",
+    "require FILE_READ_OR_WRITE > 0",
+    "rebuild with the frozen schema",
+    "regenerate twice and compare graph/tensor hashes",
+    "verify 32D finite float32 and int64 edge_index"
+  ],
+  "schema": "PROVX_R7_E1C_R6_REVALIDATION_CONTRACT_V1",
+  "status": "WAITING_FOR_E1C_R6_FILE_RW",
+  "training": false
+}
