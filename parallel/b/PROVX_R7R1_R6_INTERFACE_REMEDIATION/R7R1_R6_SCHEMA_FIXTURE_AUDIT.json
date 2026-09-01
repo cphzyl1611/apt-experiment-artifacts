@@ -1,0 +1,45 @@
+{
+  "schema": "PROVX_R7R1_R6_SCHEMA_FIXTURE_AUDIT_V1",
+  "fixture_classification": "SYNTHETIC_SCHEMA_ONLY_NOT_RUNTIME_EVIDENCE",
+  "run_id": "e1c-r6-run-20260901T060350Z",
+  "explicit_descriptor": {
+    "status": "PASS",
+    "filenames_are_accepted_only_when_bound": true,
+    "all_selected_input_hashes_authenticated": true,
+    "raw_normalized_serial_link": "PASS (1/1)",
+    "raw_normalized_decoded_byte_hash_link": "PASS (1/1)",
+    "raw_normalized_raw_event_sha256_link": "PASS (1/1)"
+  },
+  "joined_file_read_or_write": {
+    "event_type": "FILE_READ_OR_WRITE",
+    "evidence_basis": "AUDIT_FILESYSTEM_PERMISSION_FILTER",
+    "logical_host_id": "h1",
+    "pid": 123,
+    "pid_start_time_ticks": 99,
+    "netns_inode": 4026532669,
+    "exact_watched_path": "/tmp/r6-bound-file",
+    "file_identity_path": "/tmp/r6-bound-file",
+    "raw_serial": 1,
+    "raw_event_sha256_linked": true,
+    "graph_edge": "PROCESS -> FILE",
+    "edge_event_class": "write",
+    "host_scoped_file_id": "host:h1|path:/tmp/r6-bound-file",
+    "status": "PASS"
+  },
+  "cross_host_same_path": {
+    "input_hosts": [
+      "h1",
+      "h2"
+    ],
+    "same_path": "/tmp/r6-bound-file",
+    "distinct_file_ids": [
+      "host:h1|path:/tmp/r6-bound-file",
+      "host:h2|path:/tmp/r6-bound-file"
+    ],
+    "collision": false,
+    "status": "PASS"
+  },
+  "frozen_32d_encoder_change_required": false,
+  "runtime_evidence_present": false,
+  "stage_a_full_collector_adapter_pass": "NO"
+}

@@ -1,0 +1,73 @@
+{
+  "schema": "PROVX_R7R1_R6_NEGATIVE_TEST_AUDIT_V1",
+  "fixture_classification": "SYNTHETIC_SCHEMA_ONLY_NOT_RUNTIME_EVIDENCE",
+  "fail_closed_cases": [
+    {
+      "case": "tampered selected raw audit file",
+      "boundary": "selected input SHA-256 authentication",
+      "expected": "AdapterError: selected runtime evidence file authentication failed",
+      "status": "PASS"
+    },
+    {
+      "case": "tampered normalized raw_event_sha256",
+      "boundary": "raw-normalized link authentication",
+      "expected": "AdapterError: raw/normalized evidence link authentication failed",
+      "status": "PASS"
+    },
+    {
+      "case": "tampered pcap_sha256 in explicitly bound hash source",
+      "boundary": "pcap authentication",
+      "expected": "AdapterError: pcap hash source does not authenticate pcap",
+      "status": "PASS"
+    },
+    {
+      "case": "missing pcap_hash_source binding",
+      "boundary": "RuntimeInputDescriptor construction",
+      "expected": "AdapterError: pcap_hash_source must be explicitly bound",
+      "status": "PASS"
+    },
+    {
+      "case": "normalized event run_id differs from descriptor run_id",
+      "boundary": "run boundary",
+      "expected": "AdapterError: runtime evidence row run_id does not match descriptor",
+      "status": "PASS"
+    },
+    {
+      "case": "join netns differs from normalized event netns",
+      "boundary": "PID/netns join",
+      "expected": "quarantine: pid_netns_join_not_authenticated",
+      "status": "PASS"
+    },
+    {
+      "case": "missing watched_path",
+      "boundary": "FILE_READ_OR_WRITE permission-filter evidence",
+      "expected": "quarantine: missing_file_read_write_permission_evidence",
+      "status": "PASS"
+    },
+    {
+      "case": "missing evidence_basis, requested_access, or underlying_syscall",
+      "boundary": "FILE_READ_OR_WRITE permission-filter evidence",
+      "expected": "quarantine: missing_file_read_write_permission_evidence",
+      "status": "PASS"
+    },
+    {
+      "case": "missing exact file identity or raw-event hash",
+      "boundary": "file/evidence identity",
+      "expected": "quarantine",
+      "status": "PASS"
+    },
+    {
+      "case": "unjoined logical host",
+      "boundary": "logical-host identity",
+      "expected": "quarantine",
+      "status": "PASS"
+    },
+    {
+      "case": "same path on two distinct joined logical hosts",
+      "boundary": "FILE canonical identity",
+      "expected": "two distinct host-scoped FILE nodes; no collision",
+      "status": "PASS"
+    }
+  ],
+  "runtime_evidence_present": false
+}

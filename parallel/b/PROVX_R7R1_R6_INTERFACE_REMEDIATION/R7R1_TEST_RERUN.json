@@ -1,0 +1,41 @@
+{
+  "schema": "PROVX_R7R1_TEST_RERUN_V1",
+  "command_results": [
+    {
+      "command": "python -B PROVX_R7R1_INTERFACE_REMEDIATION_TESTS.py",
+      "result": "PASS",
+      "tests": 12
+    },
+    {
+      "command": "python PROVX_R7_GRAPH_ADAPTER_TESTS.py",
+      "result": "PASS",
+      "tests": 5
+    },
+    {
+      "command": "python PROVX_R4_ENCODER_TESTS.py",
+      "result": "PASS",
+      "tests": 7
+    },
+    {
+      "command": "python -m py_compile PROVX_R7_NORMALIZED_TO_GRAPH_ADAPTER.py PROVX_R7R1_INTERFACE_REMEDIATION_TESTS.py PROVX_R7_GRAPH_ADAPTER_TESTS.py PROVX_R4_ENCODER_TESTS.py",
+      "result": "PASS"
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS"
+    },
+    {
+      "command": "python PROVX_R7_FRESH_INDEPENDENT_REVIEW_TESTS.py",
+      "result": "NOT_APPLICABLE_TO_D304_CONTINUATION",
+      "tests": 3,
+      "failures": 1,
+      "reason": "The historical harness requires EXPECTED_COMMIT=2ff2b21cd313c5b91567adfe05691d3e25aabb87. Its independent R5 graph/tensor constants remain the required values, but authenticated main is d304a8dbbe41a0f4aae8d9cf3047a5fec7044b13. Altering that historical review would violate the no-rewrite boundary."
+    }
+  ],
+  "bytecode_hygiene": {
+    "generated_tracked_cache_files_restored_to_HEAD": true,
+    "remediation_package_contains_pycache_or_pyc": false
+  },
+  "frozen_encoder_changed": false,
+  "runtime_evidence_present": false
+}

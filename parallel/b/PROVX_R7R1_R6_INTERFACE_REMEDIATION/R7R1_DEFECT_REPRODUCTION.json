@@ -1,0 +1,33 @@
+{
+  "schema": "PROVX_R7R1_FILE_IDENTITY_DEFECT_REPRODUCTION_V1",
+  "defect": "non-R5 FILE entity identity omitted the authenticated logical-host boundary",
+  "reproduction_test": "test_non_r5_same_path_on_distinct_joined_hosts_has_distinct_file_nodes",
+  "pre_fix_observation": {
+    "run_id": "e1c-r6-run-20260901T060350Z",
+    "event_type": "FILE_READ_OR_WRITE",
+    "path": "/tmp/r6-bound-file",
+    "logical_hosts": [
+      "h1",
+      "h2"
+    ],
+    "pre_fix_file_node_ids": [
+      "path:/tmp/r6-bound-file"
+    ],
+    "result": "FAIL: two joined hosts collapsed into one FILE graph node"
+  },
+  "root_cause": "_file_entity(host, event) received host but returned id=path:<path> for every run.",
+  "minimal_fix": {
+    "r5": "run_id == R5_RUN_ID retains id=path:<path> byte-for-byte",
+    "non_r5": "id=host:<logical-host>|path:<canonical-path>",
+    "encoder_change": false
+  },
+  "post_fix_assertion": {
+    "expected_file_node_ids": [
+      "host:h1|path:/tmp/r6-bound-file",
+      "host:h2|path:/tmp/r6-bound-file"
+    ],
+    "expected_edge_event_class": "write",
+    "status": "PASS"
+  },
+  "runtime_evidence_present": false
+}

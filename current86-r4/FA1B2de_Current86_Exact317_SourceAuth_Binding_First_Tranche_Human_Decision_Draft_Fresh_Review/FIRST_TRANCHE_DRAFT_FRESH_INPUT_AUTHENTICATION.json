@@ -1,0 +1,296 @@
+{
+  "schema": "FA1B2DE_CURRENT86_FIRST_TRANCHE_DRAFT_FRESH_INPUT_AUTHENTICATION_V1",
+  "review_type": "BINDING_FIRST_TRANCHE_HUMAN_DECISION_DRAFT_FRESH_INDEPENDENT_REVIEW",
+  "review_date": "2026-09-01",
+  "read_only_scope": true,
+  "repository": {
+    "origin_expected": "https://github.com/cphzyl1611/apt-experiment-artifacts.git",
+    "origin_authenticated": "https://github.com/cphzyl1611/apt-experiment-artifacts.git",
+    "origin_match": true,
+    "checkout_path": "/home/cph/fa1b2de-review-artifacts",
+    "current_head_authenticated": "d304a8dbbe41a0f4aae8d9cf3047a5fec7044b13",
+    "worktree_clean_before_fresh_package": true
+  },
+  "pinned_draft_commit": {
+    "commit": "fb6991a677dc166fd5fed6b16dfd3c768e3b4295",
+    "exists_as_commit": true,
+    "is_ancestor_of_authenticated_head": true,
+    "parent": "95de139dcf3cb143892fef9532b28866ee08b106",
+    "expected_parent_for_draft_delta": "95de139dcf3cb143892fef9532b28866ee08b106",
+    "parent_match": true
+  },
+  "r8r1_ancestry": {
+    "commit": "665a84f3ede268f17f58cecc933706a0506e687f",
+    "exists_as_commit": true,
+    "is_ancestor_of_authenticated_head": true,
+    "status": "PASS"
+  },
+  "human_draft_package": {
+    "expected_file_count": 5,
+    "actual_file_count": 5,
+    "expected_paths": [
+      "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_First_Tranche_Human_Decision_Draft/FIRST_TRANCHE_INPUT_AUTHENTICATION.json",
+      "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_First_Tranche_Human_Decision_Draft/FIRST_TRANCHE_HUMAN_DECISION_DRAFT.jsonl",
+      "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_First_Tranche_Human_Decision_Draft/FIRST_TRANCHE_DECISION_CONSERVATION.json",
+      "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_First_Tranche_Human_Decision_Draft/FIRST_TRANCHE_SYSTEMIC_BLOCKER_CHECK.json",
+      "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_First_Tranche_Human_Decision_Draft/FIRST_TRANCHE_HUMAN_REVIEW_REPORT.md"
+    ],
+    "actual_paths_at_head": [
+      "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_First_Tranche_Human_Decision_Draft/FIRST_TRANCHE_INPUT_AUTHENTICATION.json",
+      "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_First_Tranche_Human_Decision_Draft/FIRST_TRANCHE_HUMAN_DECISION_DRAFT.jsonl",
+      "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_First_Tranche_Human_Decision_Draft/FIRST_TRANCHE_DECISION_CONSERVATION.json",
+      "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_First_Tranche_Human_Decision_Draft/FIRST_TRANCHE_SYSTEMIC_BLOCKER_CHECK.json",
+      "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_First_Tranche_Human_Decision_Draft/FIRST_TRANCHE_HUMAN_REVIEW_REPORT.md"
+    ],
+    "committed": true
+  },
+  "draft_commit_delta": {
+    "from_commit": "95de139dcf3cb143892fef9532b28866ee08b106",
+    "to_commit": "fb6991a677dc166fd5fed6b16dfd3c768e3b4295",
+    "changed_files": [
+      {
+        "status": "A",
+        "path": "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_First_Tranche_Human_Decision_Draft/FIRST_TRANCHE_DECISION_CONSERVATION.json"
+      },
+      {
+        "status": "A",
+        "path": "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_First_Tranche_Human_Decision_Draft/FIRST_TRANCHE_HUMAN_DECISION_DRAFT.jsonl"
+      },
+      {
+        "status": "A",
+        "path": "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_First_Tranche_Human_Decision_Draft/FIRST_TRANCHE_HUMAN_REVIEW_REPORT.md"
+      },
+      {
+        "status": "A",
+        "path": "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_First_Tranche_Human_Decision_Draft/FIRST_TRANCHE_INPUT_AUTHENTICATION.json"
+      },
+      {
+        "status": "A",
+        "path": "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_First_Tranche_Human_Decision_Draft/FIRST_TRANCHE_SYSTEMIC_BLOCKER_CHECK.json"
+      }
+    ],
+    "only_expected_five_files_introduced": true,
+    "all_five_are_additions": true,
+    "historical_binding_authority_paths_modified": [],
+    "no_historical_binding_authority_file_modified": true
+  },
+  "historical_package_envelopes": {
+    "r8": {
+      "file_list_path_count": 12,
+      "sha256sums_path_count": 12,
+      "path_sets_equal": true,
+      "all_listed_checksums_verified": true,
+      "file_list_paths": [
+        "FILE_LIST.txt",
+        "R8_EXACT317_FIELD_PIN_CANDIDATE_PACKETS.jsonl",
+        "R8_FIELD_PIN_CANDIDATE_CLASSIFICATION.json",
+        "R8_FIELD_PIN_GOVERNANCE_REPORT.md",
+        "R8_FIELD_PIN_REVIEW_BATCHES.json",
+        "R8_FIRST_HUMAN_FIELD_PIN_REVIEW_SHEETS.md",
+        "R8_FIRST_HUMAN_FIELD_PIN_TRANCHE.json",
+        "R8_INPUT_AUTHENTICATION.json",
+        "R8_SOURCE_AUTH_READINESS_BRIDGE.json",
+        "tests/test_r8_materialization.py",
+        "tools/materialize_r8.py",
+        "tools/verify_r8.py"
+      ],
+      "checks": {
+        "FILE_LIST.txt": {
+          "listed": true,
+          "checksummed": true,
+          "observed_sha256": "4d27312f13d6c4e12355c53446ccd22024709d1e1977b998baedd29845128d04",
+          "expected_sha256": "4d27312f13d6c4e12355c53446ccd22024709d1e1977b998baedd29845128d04",
+          "sha256_match": true
+        },
+        "R8_EXACT317_FIELD_PIN_CANDIDATE_PACKETS.jsonl": {
+          "listed": true,
+          "checksummed": true,
+          "observed_sha256": "f0e571f7fb94030d7247a17f5c6c78d067a471cc306dcdc209371e704d4cb502",
+          "expected_sha256": "f0e571f7fb94030d7247a17f5c6c78d067a471cc306dcdc209371e704d4cb502",
+          "sha256_match": true
+        },
+        "R8_FIELD_PIN_CANDIDATE_CLASSIFICATION.json": {
+          "listed": true,
+          "checksummed": true,
+          "observed_sha256": "81431d57768c57621a178d5f244b1e8abf118afa57aec04faf38a09f678ea380",
+          "expected_sha256": "81431d57768c57621a178d5f244b1e8abf118afa57aec04faf38a09f678ea380",
+          "sha256_match": true
+        },
+        "R8_FIELD_PIN_GOVERNANCE_REPORT.md": {
+          "listed": true,
+          "checksummed": true,
+          "observed_sha256": "67db8dabd2b1891f7ab316814880320531f3933b00631a3eda622a5811016d84",
+          "expected_sha256": "67db8dabd2b1891f7ab316814880320531f3933b00631a3eda622a5811016d84",
+          "sha256_match": true
+        },
+        "R8_FIELD_PIN_REVIEW_BATCHES.json": {
+          "listed": true,
+          "checksummed": true,
+          "observed_sha256": "3f306d82022135bbba4fe20adab04efbf535d20f5f901351b61678b8df7f01e7",
+          "expected_sha256": "3f306d82022135bbba4fe20adab04efbf535d20f5f901351b61678b8df7f01e7",
+          "sha256_match": true
+        },
+        "R8_FIRST_HUMAN_FIELD_PIN_REVIEW_SHEETS.md": {
+          "listed": true,
+          "checksummed": true,
+          "observed_sha256": "31c69709455dbf1c4d10ca8fc58daee1392cf08c53b0aa3b6ed59cc15c1d7841",
+          "expected_sha256": "31c69709455dbf1c4d10ca8fc58daee1392cf08c53b0aa3b6ed59cc15c1d7841",
+          "sha256_match": true
+        },
+        "R8_FIRST_HUMAN_FIELD_PIN_TRANCHE.json": {
+          "listed": true,
+          "checksummed": true,
+          "observed_sha256": "29a5060afeaa5b23ff168d203ce9a7d7ba0d8e6c509f58c363f04e2fa020966b",
+          "expected_sha256": "29a5060afeaa5b23ff168d203ce9a7d7ba0d8e6c509f58c363f04e2fa020966b",
+          "sha256_match": true
+        },
+        "R8_INPUT_AUTHENTICATION.json": {
+          "listed": true,
+          "checksummed": true,
+          "observed_sha256": "4d04ef585e9d0997f84d788589b501e90ae1b098ef5c3a46b36d58f3e595cbd7",
+          "expected_sha256": "4d04ef585e9d0997f84d788589b501e90ae1b098ef5c3a46b36d58f3e595cbd7",
+          "sha256_match": true
+        },
+        "R8_SOURCE_AUTH_READINESS_BRIDGE.json": {
+          "listed": true,
+          "checksummed": true,
+          "observed_sha256": "607aef2cdab597951831e0bd7e318305a97a04bb53612eb1ea65e20122fe3531",
+          "expected_sha256": "607aef2cdab597951831e0bd7e318305a97a04bb53612eb1ea65e20122fe3531",
+          "sha256_match": true
+        },
+        "tests/test_r8_materialization.py": {
+          "listed": true,
+          "checksummed": true,
+          "observed_sha256": "02ca679a783af28b66d824f47c2305683e573d8d6ae1f27693cdb79b4e03c84d",
+          "expected_sha256": "02ca679a783af28b66d824f47c2305683e573d8d6ae1f27693cdb79b4e03c84d",
+          "sha256_match": true
+        },
+        "tools/materialize_r8.py": {
+          "listed": true,
+          "checksummed": true,
+          "observed_sha256": "e61263e7c93ab6c584166ea3847bf65ed528f076afbded0da74cedcbc51a564d",
+          "expected_sha256": "e61263e7c93ab6c584166ea3847bf65ed528f076afbded0da74cedcbc51a564d",
+          "sha256_match": true
+        },
+        "tools/verify_r8.py": {
+          "listed": true,
+          "checksummed": true,
+          "observed_sha256": "c463204980710676642e3a08e496e95bb9b14516aa40d4a41f0d241ca528bab4",
+          "expected_sha256": "c463204980710676642e3a08e496e95bb9b14516aa40d4a41f0d241ca528bab4",
+          "sha256_match": true
+        }
+      }
+    },
+    "r8r1_targeted_review": {
+      "file_list_path_count": 3,
+      "sha256sums_path_count": 3,
+      "path_sets_equal": true,
+      "all_listed_checksums_verified": true,
+      "file_list_paths": [
+        "FILE_LIST.txt",
+        "R8R1_TARGETED_FRESH_REVIEW.json",
+        "R8R1_TARGETED_FRESH_REVIEW_REPORT.md"
+      ],
+      "checks": {
+        "FILE_LIST.txt": {
+          "listed": true,
+          "checksummed": true,
+          "observed_sha256": "264624cb697f1a2fad60990cff2f0e8f7622e9423fb813f499b44aebd34adddc",
+          "expected_sha256": "264624cb697f1a2fad60990cff2f0e8f7622e9423fb813f499b44aebd34adddc",
+          "sha256_match": true
+        },
+        "R8R1_TARGETED_FRESH_REVIEW.json": {
+          "listed": true,
+          "checksummed": true,
+          "observed_sha256": "f5812b6e077b1185cccfc45fcdbf1a84ec0c079542ed4e46fc55b5d7a15ee24d",
+          "expected_sha256": "f5812b6e077b1185cccfc45fcdbf1a84ec0c079542ed4e46fc55b5d7a15ee24d",
+          "sha256_match": true
+        },
+        "R8R1_TARGETED_FRESH_REVIEW_REPORT.md": {
+          "listed": true,
+          "checksummed": true,
+          "observed_sha256": "9ee08c65b62690fb36ed33f693265d991a81bdcc523081654ab49bbad766e4c6",
+          "expected_sha256": "9ee08c65b62690fb36ed33f693265d991a81bdcc523081654ab49bbad766e4c6",
+          "sha256_match": true
+        }
+      }
+    },
+    "r8r1_envelope_remediation": {
+      "file_list_path_count": 6,
+      "sha256sums_path_count": 6,
+      "path_sets_equal": true,
+      "all_listed_checksums_verified": true,
+      "file_list_paths": [
+        "FILE_LIST.txt",
+        "R8R1_ENVELOPE_DEFECT_REPRODUCTION.json",
+        "R8R1_ENVELOPE_PATHSET_VERIFICATION.json",
+        "R8R1_ENVELOPE_REMEDIATION_REPORT.md",
+        "R8R1_SUBSTANTIVE_ARTIFACT_NONREGRESSION.json",
+        "R8R1_TEST_AND_VERIFIER_RESULT.json"
+      ],
+      "checks": {
+        "FILE_LIST.txt": {
+          "listed": true,
+          "checksummed": true,
+          "observed_sha256": "b3cb02675fdbdaeb6c01f46c2c4ddf1ac9c342c8029ed2aaf34e31fabcdddfab",
+          "expected_sha256": "b3cb02675fdbdaeb6c01f46c2c4ddf1ac9c342c8029ed2aaf34e31fabcdddfab",
+          "sha256_match": true
+        },
+        "R8R1_ENVELOPE_DEFECT_REPRODUCTION.json": {
+          "listed": true,
+          "checksummed": true,
+          "observed_sha256": "de1d8d467c765da0b88b68a7a96d5e739e90e854defc32b8a91583b8cb9e7ffe",
+          "expected_sha256": "de1d8d467c765da0b88b68a7a96d5e739e90e854defc32b8a91583b8cb9e7ffe",
+          "sha256_match": true
+        },
+        "R8R1_ENVELOPE_PATHSET_VERIFICATION.json": {
+          "listed": true,
+          "checksummed": true,
+          "observed_sha256": "da8d05efdf2798a50e4502b67f25a07bdb264620f1efcf3a41859cc7875ee0f8",
+          "expected_sha256": "da8d05efdf2798a50e4502b67f25a07bdb264620f1efcf3a41859cc7875ee0f8",
+          "sha256_match": true
+        },
+        "R8R1_ENVELOPE_REMEDIATION_REPORT.md": {
+          "listed": true,
+          "checksummed": true,
+          "observed_sha256": "ec1cc74f424ffbc1eabafc54a4339eb917880ef08f6aee564babd41c753421ea",
+          "expected_sha256": "ec1cc74f424ffbc1eabafc54a4339eb917880ef08f6aee564babd41c753421ea",
+          "sha256_match": true
+        },
+        "R8R1_SUBSTANTIVE_ARTIFACT_NONREGRESSION.json": {
+          "listed": true,
+          "checksummed": true,
+          "observed_sha256": "52a1f4dc18547584818f7d1a79db88bed537fe4312092abd0d1c9a16fcb8018e",
+          "expected_sha256": "52a1f4dc18547584818f7d1a79db88bed537fe4312092abd0d1c9a16fcb8018e",
+          "sha256_match": true
+        },
+        "R8R1_TEST_AND_VERIFIER_RESULT.json": {
+          "listed": true,
+          "checksummed": true,
+          "observed_sha256": "c0de44328ea73aadec4b3ed0134453831338a74a95e8ab45b090bf797302506b",
+          "expected_sha256": "c0de44328ea73aadec4b3ed0134453831338a74a95e8ab45b090bf797302506b",
+          "sha256_match": true
+        }
+      }
+    }
+  },
+  "committed_draft_authentication_envelope": {
+    "path": "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_First_Tranche_Human_Decision_Draft/FIRST_TRANCHE_INPUT_AUTHENTICATION.json",
+    "embedded_values": {
+      "embedded_current_head": "665a84f3ede268f17f58cecc933706a0506e687f",
+      "embedded_pinned_binding_commit": "665a84f3ede268f17f58cecc933706a0506e687f",
+      "authenticated_current_head": "d304a8dbbe41a0f4aae8d9cf3047a5fec7044b13",
+      "authenticated_pinned_draft_commit": "fb6991a677dc166fd5fed6b16dfd3c768e3b4295",
+      "embedded_current_head_matches_authenticated_head": false,
+      "embedded_pinned_binding_commit_matches_pinned_draft_commit": false,
+      "disposition": "BLOCKING_AUTHENTICATION_DISCREPANCY"
+    },
+    "independent_git_lineage_passes": false,
+    "stale_metadata_is_a_gate_failure": true
+  },
+  "gate_status": {
+    "DRAFT_COMMIT_AUTHENTICATION": "BLOCKED",
+    "R8R1_ANCESTRY": "PASS",
+    "overall_input_authentication": "BLOCKED"
+  }
+}

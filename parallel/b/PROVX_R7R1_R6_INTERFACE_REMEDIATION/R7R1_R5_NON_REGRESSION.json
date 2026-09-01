@@ -1,0 +1,23 @@
+{
+  "schema": "PROVX_R7R1_R5_NON_REGRESSION_V1",
+  "evidence_route": "/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z",
+  "run_id": "e1c-r5-run-20260831T111849Z",
+  "regeneration_count": 2,
+  "consumed_normalized_records": 28,
+  "quarantined_normalized_records": 6,
+  "node_count": 10,
+  "edge_count": 22,
+  "graph_sha256": "b24b424d0e530a9d03c2bf01ed6a193447e3fa75b9725b978d7c27a0998b9acd",
+  "tensor_x_sha256": "605d1e2133589f9ae68d104ac62c2092d1d7238becf2a4cd99f9e7d34b9b621d",
+  "edge_index_sha256": "f29e051b027b7fd5eb20b995cf82f5906b2eaceda75dd12c76ebae24c0dabd21",
+  "reverse_regeneration": {
+    "graph_sha256": "b24b424d0e530a9d03c2bf01ed6a193447e3fa75b9725b978d7c27a0998b9acd",
+    "tensor_x_sha256": "605d1e2133589f9ae68d104ac62c2092d1d7238becf2a4cd99f9e7d34b9b621d",
+    "edge_index_sha256": "f29e051b027b7fd5eb20b995cf82f5906b2eaceda75dd12c76ebae24c0dabd21"
+  },
+  "r5_legacy_file_id_format": "path:<canonical-path>",
+  "R5_COMPATIBILITY_ROUTE": "PASS",
+  "R5_GRAPH_HASH_NON_REGRESSION": "PASS",
+  "R5_TENSOR_HASH_NON_REGRESSION": "PASS",
+  "R5_EDGE_INDEX_HASH_NON_REGRESSION": "PASS"
+}

@@ -1,0 +1,667 @@
+{
+  "schema": "FA1B2DE_CURRENT86_FIRST_TRANCHE_DRAFT_FRESH_SYSTEMIC_BLOCKER_AUDIT_V1",
+  "review_date": "2026-09-01",
+  "source_bytes": {
+    "draft_systemic_blocker_check": "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_First_Tranche_Human_Decision_Draft/FIRST_TRANCHE_SYSTEMIC_BLOCKER_CHECK.json",
+    "r8_candidate_packets": "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_R8_Field_Pin_Governance_Materialization/R8_EXACT317_FIELD_PIN_CANDIDATE_PACKETS.jsonl",
+    "exact317_manifest": "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Execution_Contract_R4/00_lineage/EXACT317_TARGET_MANIFEST.json",
+    "source_auth_contract": "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Execution_Contract_R4/03_contracts/SOURCE_AUTH_EXECUTION_CONTRACT_R4.json",
+    "ec_b2_fail_closed_contract": "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Execution_Contract_R4/11_r4_patch_contract/EC_B2_FAIL_CLOSED_AUTHORITY_EVALUATION.json",
+    "r8_readiness_bridge": "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_R8_Field_Pin_Governance_Materialization/R8_SOURCE_AUTH_READINESS_BRIDGE.json"
+  },
+  "governing_contract_recomputation": {
+    "required_source_artifact_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+    "required_source_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+    "contract_ec_b2": "CLOSED_CANDIDATE",
+    "contract_production_authority_roots": "MISSING_AND_FAIL_CLOSED",
+    "contract_source_auth_execution_readiness": "BLOCKED_MISSING_AUTHORITY_INPUTS",
+    "contract_source_auth_executed": "NO",
+    "ec_b2_invalid_or_unsupported_result": "FAIL_CLOSED",
+    "bridge_activation_gate": "FAIL_CLOSED_NO_SOURCE_AUTH_WITHOUT_EXPLICIT_APPROVED_FIELD_PIN",
+    "bridge_unapproved_target_state": "BLOCKED"
+  },
+  "final_eight_target_order": [
+    291,
+    215,
+    88,
+    182,
+    300,
+    218,
+    115,
+    148
+  ],
+  "final_eight_details": [
+    {
+      "target_index": 291,
+      "source_binding_target_id": "53bba0285b0487933d3674d3bcb2c8507b3b7dbcbff79d6e58e3b64fc3d13fe2",
+      "frozen_packet_candidate_classification": "MULTIPLE_CANDIDATE_POINTERS",
+      "frozen_packet_candidate_count": 18,
+      "required_source_artifact_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "required_source_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+      "input_gap_reason_code": "ONLY_C2R1_DERIVED_COMPARATIVE_INTRINSIC_PRESENT",
+      "stage_a": {
+        "readiness": "ADMISSION_BLOCKED_MISSING_PROVENANCE",
+        "admission_status": "ADMISSION_NOT_READY_MISSING_PROVENANCE",
+        "canonical_object_id_available": false,
+        "provenance_complete": false
+      },
+      "stage_b": {
+        "status": "FIELD_PIN_NOT_EXPOSED_GATED_ON_ADMISSION",
+        "enabled": false,
+        "scalar_leaf_selection_allowed": false
+      },
+      "selected_canonical_pointer": null,
+      "unique_authoritative_field_mapping_evidence": false,
+      "recorded_systemic_blocker_match": true,
+      "checks": {
+        "target_identity_matches_packet_and_manifest": true,
+        "source_side_candidate": true,
+        "source_object_key_matches": true,
+        "source_object_locator_matches": true,
+        "source_object_row_hash_matches": true,
+        "required_source_class_matches_contract": true,
+        "required_source_fact_type_matches_contract": true,
+        "input_gap_reason_only_c2r1": true,
+        "candidate_classification_multiple": true,
+        "no_selected_canonical_pointer": true,
+        "stage_a_missing_provenance": true,
+        "stage_b_gated": true,
+        "no_authoritative_field_mapping": true,
+        "packet_evidence_only": true,
+        "draft_more_evidence_and_no_selection": true
+      },
+      "independently_recomputed_blocker": true,
+      "status": "PASS"
+    },
+    {
+      "target_index": 215,
+      "source_binding_target_id": "67f3eef7b606ebedadba5f29930e91835eb5bde88b97755df7b159bd109c8250",
+      "frozen_packet_candidate_classification": "MULTIPLE_CANDIDATE_POINTERS",
+      "frozen_packet_candidate_count": 18,
+      "required_source_artifact_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "required_source_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+      "input_gap_reason_code": "ONLY_C2R1_DERIVED_COMPARATIVE_INTRINSIC_PRESENT",
+      "stage_a": {
+        "readiness": "ADMISSION_BLOCKED_MISSING_PROVENANCE",
+        "admission_status": "ADMISSION_NOT_READY_MISSING_PROVENANCE",
+        "canonical_object_id_available": false,
+        "provenance_complete": false
+      },
+      "stage_b": {
+        "status": "FIELD_PIN_NOT_EXPOSED_GATED_ON_ADMISSION",
+        "enabled": false,
+        "scalar_leaf_selection_allowed": false
+      },
+      "selected_canonical_pointer": null,
+      "unique_authoritative_field_mapping_evidence": false,
+      "recorded_systemic_blocker_match": true,
+      "checks": {
+        "target_identity_matches_packet_and_manifest": true,
+        "source_side_candidate": true,
+        "source_object_key_matches": true,
+        "source_object_locator_matches": true,
+        "source_object_row_hash_matches": true,
+        "required_source_class_matches_contract": true,
+        "required_source_fact_type_matches_contract": true,
+        "input_gap_reason_only_c2r1": true,
+        "candidate_classification_multiple": true,
+        "no_selected_canonical_pointer": true,
+        "stage_a_missing_provenance": true,
+        "stage_b_gated": true,
+        "no_authoritative_field_mapping": true,
+        "packet_evidence_only": true,
+        "draft_more_evidence_and_no_selection": true
+      },
+      "independently_recomputed_blocker": true,
+      "status": "PASS"
+    },
+    {
+      "target_index": 88,
+      "source_binding_target_id": "68101eaee0eab845e763d3078c57fee8e1d54379a66b489a78d457c2bf0930f2",
+      "frozen_packet_candidate_classification": "MULTIPLE_CANDIDATE_POINTERS",
+      "frozen_packet_candidate_count": 18,
+      "required_source_artifact_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "required_source_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+      "input_gap_reason_code": "ONLY_C2R1_DERIVED_COMPARATIVE_INTRINSIC_PRESENT",
+      "stage_a": {
+        "readiness": "ADMISSION_BLOCKED_MISSING_PROVENANCE",
+        "admission_status": "ADMISSION_NOT_READY_MISSING_PROVENANCE",
+        "canonical_object_id_available": false,
+        "provenance_complete": false
+      },
+      "stage_b": {
+        "status": "FIELD_PIN_NOT_EXPOSED_GATED_ON_ADMISSION",
+        "enabled": false,
+        "scalar_leaf_selection_allowed": false
+      },
+      "selected_canonical_pointer": null,
+      "unique_authoritative_field_mapping_evidence": false,
+      "recorded_systemic_blocker_match": true,
+      "checks": {
+        "target_identity_matches_packet_and_manifest": true,
+        "source_side_candidate": true,
+        "source_object_key_matches": true,
+        "source_object_locator_matches": true,
+        "source_object_row_hash_matches": true,
+        "required_source_class_matches_contract": true,
+        "required_source_fact_type_matches_contract": true,
+        "input_gap_reason_only_c2r1": true,
+        "candidate_classification_multiple": true,
+        "no_selected_canonical_pointer": true,
+        "stage_a_missing_provenance": true,
+        "stage_b_gated": true,
+        "no_authoritative_field_mapping": true,
+        "packet_evidence_only": true,
+        "draft_more_evidence_and_no_selection": true
+      },
+      "independently_recomputed_blocker": true,
+      "status": "PASS"
+    },
+    {
+      "target_index": 182,
+      "source_binding_target_id": "6859aafbd73df2d0b2a8250853e8fdab466d4fc52a7707ed0ca6c62a52d1ea66",
+      "frozen_packet_candidate_classification": "MULTIPLE_CANDIDATE_POINTERS",
+      "frozen_packet_candidate_count": 18,
+      "required_source_artifact_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "required_source_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+      "input_gap_reason_code": "ONLY_C2R1_DERIVED_COMPARATIVE_INTRINSIC_PRESENT",
+      "stage_a": {
+        "readiness": "ADMISSION_BLOCKED_MISSING_PROVENANCE",
+        "admission_status": "ADMISSION_NOT_READY_MISSING_PROVENANCE",
+        "canonical_object_id_available": false,
+        "provenance_complete": false
+      },
+      "stage_b": {
+        "status": "FIELD_PIN_NOT_EXPOSED_GATED_ON_ADMISSION",
+        "enabled": false,
+        "scalar_leaf_selection_allowed": false
+      },
+      "selected_canonical_pointer": null,
+      "unique_authoritative_field_mapping_evidence": false,
+      "recorded_systemic_blocker_match": true,
+      "checks": {
+        "target_identity_matches_packet_and_manifest": true,
+        "source_side_candidate": true,
+        "source_object_key_matches": true,
+        "source_object_locator_matches": true,
+        "source_object_row_hash_matches": true,
+        "required_source_class_matches_contract": true,
+        "required_source_fact_type_matches_contract": true,
+        "input_gap_reason_only_c2r1": true,
+        "candidate_classification_multiple": true,
+        "no_selected_canonical_pointer": true,
+        "stage_a_missing_provenance": true,
+        "stage_b_gated": true,
+        "no_authoritative_field_mapping": true,
+        "packet_evidence_only": true,
+        "draft_more_evidence_and_no_selection": true
+      },
+      "independently_recomputed_blocker": true,
+      "status": "PASS"
+    },
+    {
+      "target_index": 300,
+      "source_binding_target_id": "7bd222c3b146447c05ea2631ebc8f10666d63a6eb9c372eeb9aa68517735c6c7",
+      "frozen_packet_candidate_classification": "MULTIPLE_CANDIDATE_POINTERS",
+      "frozen_packet_candidate_count": 18,
+      "required_source_artifact_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "required_source_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+      "input_gap_reason_code": "ONLY_C2R1_DERIVED_COMPARATIVE_INTRINSIC_PRESENT",
+      "stage_a": {
+        "readiness": "ADMISSION_BLOCKED_MISSING_PROVENANCE",
+        "admission_status": "ADMISSION_NOT_READY_MISSING_PROVENANCE",
+        "canonical_object_id_available": false,
+        "provenance_complete": false
+      },
+      "stage_b": {
+        "status": "FIELD_PIN_NOT_EXPOSED_GATED_ON_ADMISSION",
+        "enabled": false,
+        "scalar_leaf_selection_allowed": false
+      },
+      "selected_canonical_pointer": null,
+      "unique_authoritative_field_mapping_evidence": false,
+      "recorded_systemic_blocker_match": true,
+      "checks": {
+        "target_identity_matches_packet_and_manifest": true,
+        "source_side_candidate": true,
+        "source_object_key_matches": true,
+        "source_object_locator_matches": true,
+        "source_object_row_hash_matches": true,
+        "required_source_class_matches_contract": true,
+        "required_source_fact_type_matches_contract": true,
+        "input_gap_reason_only_c2r1": true,
+        "candidate_classification_multiple": true,
+        "no_selected_canonical_pointer": true,
+        "stage_a_missing_provenance": true,
+        "stage_b_gated": true,
+        "no_authoritative_field_mapping": true,
+        "packet_evidence_only": true,
+        "draft_more_evidence_and_no_selection": true
+      },
+      "independently_recomputed_blocker": true,
+      "status": "PASS"
+    },
+    {
+      "target_index": 218,
+      "source_binding_target_id": "7c79be47802efebbf7125f910b443d9df7681feba71a139c87374a61de738827",
+      "frozen_packet_candidate_classification": "MULTIPLE_CANDIDATE_POINTERS",
+      "frozen_packet_candidate_count": 18,
+      "required_source_artifact_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "required_source_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+      "input_gap_reason_code": "ONLY_C2R1_DERIVED_COMPARATIVE_INTRINSIC_PRESENT",
+      "stage_a": {
+        "readiness": "ADMISSION_BLOCKED_MISSING_PROVENANCE",
+        "admission_status": "ADMISSION_NOT_READY_MISSING_PROVENANCE",
+        "canonical_object_id_available": false,
+        "provenance_complete": false
+      },
+      "stage_b": {
+        "status": "FIELD_PIN_NOT_EXPOSED_GATED_ON_ADMISSION",
+        "enabled": false,
+        "scalar_leaf_selection_allowed": false
+      },
+      "selected_canonical_pointer": null,
+      "unique_authoritative_field_mapping_evidence": false,
+      "recorded_systemic_blocker_match": true,
+      "checks": {
+        "target_identity_matches_packet_and_manifest": true,
+        "source_side_candidate": true,
+        "source_object_key_matches": true,
+        "source_object_locator_matches": true,
+        "source_object_row_hash_matches": true,
+        "required_source_class_matches_contract": true,
+        "required_source_fact_type_matches_contract": true,
+        "input_gap_reason_only_c2r1": true,
+        "candidate_classification_multiple": true,
+        "no_selected_canonical_pointer": true,
+        "stage_a_missing_provenance": true,
+        "stage_b_gated": true,
+        "no_authoritative_field_mapping": true,
+        "packet_evidence_only": true,
+        "draft_more_evidence_and_no_selection": true
+      },
+      "independently_recomputed_blocker": true,
+      "status": "PASS"
+    },
+    {
+      "target_index": 115,
+      "source_binding_target_id": "7ed67d666e3f1f3b80b64d7e678ab88b8caaed05c12e943c8bd619f385e704da",
+      "frozen_packet_candidate_classification": "MULTIPLE_CANDIDATE_POINTERS",
+      "frozen_packet_candidate_count": 18,
+      "required_source_artifact_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "required_source_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+      "input_gap_reason_code": "ONLY_C2R1_DERIVED_COMPARATIVE_INTRINSIC_PRESENT",
+      "stage_a": {
+        "readiness": "ADMISSION_BLOCKED_MISSING_PROVENANCE",
+        "admission_status": "ADMISSION_NOT_READY_MISSING_PROVENANCE",
+        "canonical_object_id_available": false,
+        "provenance_complete": false
+      },
+      "stage_b": {
+        "status": "FIELD_PIN_NOT_EXPOSED_GATED_ON_ADMISSION",
+        "enabled": false,
+        "scalar_leaf_selection_allowed": false
+      },
+      "selected_canonical_pointer": null,
+      "unique_authoritative_field_mapping_evidence": false,
+      "recorded_systemic_blocker_match": true,
+      "checks": {
+        "target_identity_matches_packet_and_manifest": true,
+        "source_side_candidate": true,
+        "source_object_key_matches": true,
+        "source_object_locator_matches": true,
+        "source_object_row_hash_matches": true,
+        "required_source_class_matches_contract": true,
+        "required_source_fact_type_matches_contract": true,
+        "input_gap_reason_only_c2r1": true,
+        "candidate_classification_multiple": true,
+        "no_selected_canonical_pointer": true,
+        "stage_a_missing_provenance": true,
+        "stage_b_gated": true,
+        "no_authoritative_field_mapping": true,
+        "packet_evidence_only": true,
+        "draft_more_evidence_and_no_selection": true
+      },
+      "independently_recomputed_blocker": true,
+      "status": "PASS"
+    },
+    {
+      "target_index": 148,
+      "source_binding_target_id": "7f772ded1d8901ff5a9f881ec8fd927d94604f6d646585c93ff83b92b943810f",
+      "frozen_packet_candidate_classification": "MULTIPLE_CANDIDATE_POINTERS",
+      "frozen_packet_candidate_count": 18,
+      "required_source_artifact_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "required_source_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+      "input_gap_reason_code": "ONLY_C2R1_DERIVED_COMPARATIVE_INTRINSIC_PRESENT",
+      "stage_a": {
+        "readiness": "ADMISSION_BLOCKED_MISSING_PROVENANCE",
+        "admission_status": "ADMISSION_NOT_READY_MISSING_PROVENANCE",
+        "canonical_object_id_available": false,
+        "provenance_complete": false
+      },
+      "stage_b": {
+        "status": "FIELD_PIN_NOT_EXPOSED_GATED_ON_ADMISSION",
+        "enabled": false,
+        "scalar_leaf_selection_allowed": false
+      },
+      "selected_canonical_pointer": null,
+      "unique_authoritative_field_mapping_evidence": false,
+      "recorded_systemic_blocker_match": true,
+      "checks": {
+        "target_identity_matches_packet_and_manifest": true,
+        "source_side_candidate": true,
+        "source_object_key_matches": true,
+        "source_object_locator_matches": true,
+        "source_object_row_hash_matches": true,
+        "required_source_class_matches_contract": true,
+        "required_source_fact_type_matches_contract": true,
+        "input_gap_reason_only_c2r1": true,
+        "candidate_classification_multiple": true,
+        "no_selected_canonical_pointer": true,
+        "stage_a_missing_provenance": true,
+        "stage_b_gated": true,
+        "no_authoritative_field_mapping": true,
+        "packet_evidence_only": true,
+        "draft_more_evidence_and_no_selection": true
+      },
+      "independently_recomputed_blocker": true,
+      "status": "PASS"
+    }
+  ],
+  "final_eight_all_match": true,
+  "first_sixteen_target_order": [
+    110,
+    273,
+    210,
+    98,
+    147,
+    277,
+    188,
+    301,
+    143,
+    250,
+    233,
+    287,
+    146,
+    293,
+    114,
+    284
+  ],
+  "first_sixteen_decision_consistency_details": [
+    {
+      "target_index": 110,
+      "human_action": "REQUEST_MORE_EVIDENCE",
+      "checks": {
+        "recorded_action_request_more_evidence": true,
+        "no_approved_pointer": true,
+        "no_candidate_pointer_value_hash": true,
+        "packet_is_evidence_only": true,
+        "packet_blocked_until_explicit_field_pin_approval": true,
+        "packet_selected_pointer_null": true,
+        "packet_field_pin_created_false": true,
+        "bridge_activation_gate_fail_closed": true,
+        "bridge_unapproved_target_state_blocked": true
+      },
+      "consistent_with_governing_fail_closed_rule": true,
+      "new_human_decision_inferred": false
+    },
+    {
+      "target_index": 273,
+      "human_action": "REQUEST_MORE_EVIDENCE",
+      "checks": {
+        "recorded_action_request_more_evidence": true,
+        "no_approved_pointer": true,
+        "no_candidate_pointer_value_hash": true,
+        "packet_is_evidence_only": true,
+        "packet_blocked_until_explicit_field_pin_approval": true,
+        "packet_selected_pointer_null": true,
+        "packet_field_pin_created_false": true,
+        "bridge_activation_gate_fail_closed": true,
+        "bridge_unapproved_target_state_blocked": true
+      },
+      "consistent_with_governing_fail_closed_rule": true,
+      "new_human_decision_inferred": false
+    },
+    {
+      "target_index": 210,
+      "human_action": "REQUEST_MORE_EVIDENCE",
+      "checks": {
+        "recorded_action_request_more_evidence": true,
+        "no_approved_pointer": true,
+        "no_candidate_pointer_value_hash": true,
+        "packet_is_evidence_only": true,
+        "packet_blocked_until_explicit_field_pin_approval": true,
+        "packet_selected_pointer_null": true,
+        "packet_field_pin_created_false": true,
+        "bridge_activation_gate_fail_closed": true,
+        "bridge_unapproved_target_state_blocked": true
+      },
+      "consistent_with_governing_fail_closed_rule": true,
+      "new_human_decision_inferred": false
+    },
+    {
+      "target_index": 98,
+      "human_action": "REQUEST_MORE_EVIDENCE",
+      "checks": {
+        "recorded_action_request_more_evidence": true,
+        "no_approved_pointer": true,
+        "no_candidate_pointer_value_hash": true,
+        "packet_is_evidence_only": true,
+        "packet_blocked_until_explicit_field_pin_approval": true,
+        "packet_selected_pointer_null": true,
+        "packet_field_pin_created_false": true,
+        "bridge_activation_gate_fail_closed": true,
+        "bridge_unapproved_target_state_blocked": true
+      },
+      "consistent_with_governing_fail_closed_rule": true,
+      "new_human_decision_inferred": false
+    },
+    {
+      "target_index": 147,
+      "human_action": "REQUEST_MORE_EVIDENCE",
+      "checks": {
+        "recorded_action_request_more_evidence": true,
+        "no_approved_pointer": true,
+        "no_candidate_pointer_value_hash": true,
+        "packet_is_evidence_only": true,
+        "packet_blocked_until_explicit_field_pin_approval": true,
+        "packet_selected_pointer_null": true,
+        "packet_field_pin_created_false": true,
+        "bridge_activation_gate_fail_closed": true,
+        "bridge_unapproved_target_state_blocked": true
+      },
+      "consistent_with_governing_fail_closed_rule": true,
+      "new_human_decision_inferred": false
+    },
+    {
+      "target_index": 277,
+      "human_action": "REQUEST_MORE_EVIDENCE",
+      "checks": {
+        "recorded_action_request_more_evidence": true,
+        "no_approved_pointer": true,
+        "no_candidate_pointer_value_hash": true,
+        "packet_is_evidence_only": true,
+        "packet_blocked_until_explicit_field_pin_approval": true,
+        "packet_selected_pointer_null": true,
+        "packet_field_pin_created_false": true,
+        "bridge_activation_gate_fail_closed": true,
+        "bridge_unapproved_target_state_blocked": true
+      },
+      "consistent_with_governing_fail_closed_rule": true,
+      "new_human_decision_inferred": false
+    },
+    {
+      "target_index": 188,
+      "human_action": "REQUEST_MORE_EVIDENCE",
+      "checks": {
+        "recorded_action_request_more_evidence": true,
+        "no_approved_pointer": true,
+        "no_candidate_pointer_value_hash": true,
+        "packet_is_evidence_only": true,
+        "packet_blocked_until_explicit_field_pin_approval": true,
+        "packet_selected_pointer_null": true,
+        "packet_field_pin_created_false": true,
+        "bridge_activation_gate_fail_closed": true,
+        "bridge_unapproved_target_state_blocked": true
+      },
+      "consistent_with_governing_fail_closed_rule": true,
+      "new_human_decision_inferred": false
+    },
+    {
+      "target_index": 301,
+      "human_action": "REQUEST_MORE_EVIDENCE",
+      "checks": {
+        "recorded_action_request_more_evidence": true,
+        "no_approved_pointer": true,
+        "no_candidate_pointer_value_hash": true,
+        "packet_is_evidence_only": true,
+        "packet_blocked_until_explicit_field_pin_approval": true,
+        "packet_selected_pointer_null": true,
+        "packet_field_pin_created_false": true,
+        "bridge_activation_gate_fail_closed": true,
+        "bridge_unapproved_target_state_blocked": true
+      },
+      "consistent_with_governing_fail_closed_rule": true,
+      "new_human_decision_inferred": false
+    },
+    {
+      "target_index": 143,
+      "human_action": "REQUEST_MORE_EVIDENCE",
+      "checks": {
+        "recorded_action_request_more_evidence": true,
+        "no_approved_pointer": true,
+        "no_candidate_pointer_value_hash": true,
+        "packet_is_evidence_only": true,
+        "packet_blocked_until_explicit_field_pin_approval": true,
+        "packet_selected_pointer_null": true,
+        "packet_field_pin_created_false": true,
+        "bridge_activation_gate_fail_closed": true,
+        "bridge_unapproved_target_state_blocked": true
+      },
+      "consistent_with_governing_fail_closed_rule": true,
+      "new_human_decision_inferred": false
+    },
+    {
+      "target_index": 250,
+      "human_action": "REQUEST_MORE_EVIDENCE",
+      "checks": {
+        "recorded_action_request_more_evidence": true,
+        "no_approved_pointer": true,
+        "no_candidate_pointer_value_hash": true,
+        "packet_is_evidence_only": true,
+        "packet_blocked_until_explicit_field_pin_approval": true,
+        "packet_selected_pointer_null": true,
+        "packet_field_pin_created_false": true,
+        "bridge_activation_gate_fail_closed": true,
+        "bridge_unapproved_target_state_blocked": true
+      },
+      "consistent_with_governing_fail_closed_rule": true,
+      "new_human_decision_inferred": false
+    },
+    {
+      "target_index": 233,
+      "human_action": "REQUEST_MORE_EVIDENCE",
+      "checks": {
+        "recorded_action_request_more_evidence": true,
+        "no_approved_pointer": true,
+        "no_candidate_pointer_value_hash": true,
+        "packet_is_evidence_only": true,
+        "packet_blocked_until_explicit_field_pin_approval": true,
+        "packet_selected_pointer_null": true,
+        "packet_field_pin_created_false": true,
+        "bridge_activation_gate_fail_closed": true,
+        "bridge_unapproved_target_state_blocked": true
+      },
+      "consistent_with_governing_fail_closed_rule": true,
+      "new_human_decision_inferred": false
+    },
+    {
+      "target_index": 287,
+      "human_action": "REQUEST_MORE_EVIDENCE",
+      "checks": {
+        "recorded_action_request_more_evidence": true,
+        "no_approved_pointer": true,
+        "no_candidate_pointer_value_hash": true,
+        "packet_is_evidence_only": true,
+        "packet_blocked_until_explicit_field_pin_approval": true,
+        "packet_selected_pointer_null": true,
+        "packet_field_pin_created_false": true,
+        "bridge_activation_gate_fail_closed": true,
+        "bridge_unapproved_target_state_blocked": true
+      },
+      "consistent_with_governing_fail_closed_rule": true,
+      "new_human_decision_inferred": false
+    },
+    {
+      "target_index": 146,
+      "human_action": "REQUEST_MORE_EVIDENCE",
+      "checks": {
+        "recorded_action_request_more_evidence": true,
+        "no_approved_pointer": true,
+        "no_candidate_pointer_value_hash": true,
+        "packet_is_evidence_only": true,
+        "packet_blocked_until_explicit_field_pin_approval": true,
+        "packet_selected_pointer_null": true,
+        "packet_field_pin_created_false": true,
+        "bridge_activation_gate_fail_closed": true,
+        "bridge_unapproved_target_state_blocked": true
+      },
+      "consistent_with_governing_fail_closed_rule": true,
+      "new_human_decision_inferred": false
+    },
+    {
+      "target_index": 293,
+      "human_action": "REQUEST_MORE_EVIDENCE",
+      "checks": {
+        "recorded_action_request_more_evidence": true,
+        "no_approved_pointer": true,
+        "no_candidate_pointer_value_hash": true,
+        "packet_is_evidence_only": true,
+        "packet_blocked_until_explicit_field_pin_approval": true,
+        "packet_selected_pointer_null": true,
+        "packet_field_pin_created_false": true,
+        "bridge_activation_gate_fail_closed": true,
+        "bridge_unapproved_target_state_blocked": true
+      },
+      "consistent_with_governing_fail_closed_rule": true,
+      "new_human_decision_inferred": false
+    },
+    {
+      "target_index": 114,
+      "human_action": "REQUEST_MORE_EVIDENCE",
+      "checks": {
+        "recorded_action_request_more_evidence": true,
+        "no_approved_pointer": true,
+        "no_candidate_pointer_value_hash": true,
+        "packet_is_evidence_only": true,
+        "packet_blocked_until_explicit_field_pin_approval": true,
+        "packet_selected_pointer_null": true,
+        "packet_field_pin_created_false": true,
+        "bridge_activation_gate_fail_closed": true,
+        "bridge_unapproved_target_state_blocked": true
+      },
+      "consistent_with_governing_fail_closed_rule": true,
+      "new_human_decision_inferred": false
+    },
+    {
+      "target_index": 284,
+      "human_action": "REQUEST_MORE_EVIDENCE",
+      "checks": {
+        "recorded_action_request_more_evidence": true,
+        "no_approved_pointer": true,
+        "no_candidate_pointer_value_hash": true,
+        "packet_is_evidence_only": true,
+        "packet_blocked_until_explicit_field_pin_approval": true,
+        "packet_selected_pointer_null": true,
+        "packet_field_pin_created_false": true,
+        "bridge_activation_gate_fail_closed": true,
+        "bridge_unapproved_target_state_blocked": true
+      },
+      "consistent_with_governing_fail_closed_rule": true,
+      "new_human_decision_inferred": false
+    }
+  ],
+  "first_sixteen_consistent_with_fail_closed_rule": true,
+  "systemic_blocker_recomputation": "PASS",
+  "no_new_human_decision_inferred": true
+}

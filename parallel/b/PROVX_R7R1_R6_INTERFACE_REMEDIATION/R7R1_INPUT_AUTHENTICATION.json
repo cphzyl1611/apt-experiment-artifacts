@@ -1,0 +1,42 @@
+{
+  "schema": "PROVX_R7R1_R6_INPUT_AUTHENTICATION_V1",
+  "generated_on": "2026-09-01",
+  "audit_scope": "PROVX_R7R1_R6_INTERFACE_REMEDIATION_CONTINUATION",
+  "baseline_source_authentication": {
+    "repository": "/home/cph/fa1b2de-review-artifacts",
+    "current_head_at_audit_start": "d304a8dbbe41a0f4aae8d9cf3047a5fec7044b13",
+    "origin_main_at_audit_start": "d304a8dbbe41a0f4aae8d9cf3047a5fec7044b13",
+    "d304_partial_implementation_is_head": true,
+    "d304_partial_implementation_is_ancestor": true,
+    "D304_PARTIAL_IMPLEMENTATION_AUTHENTICATION": "PASS",
+    "preserved_unrelated_untracked_path": "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_First_Tranche_Human_Decision_Draft_Fresh_Review/"
+  },
+  "runtime_input_descriptor_contract": {
+    "selection": "explicit RuntimeInputDescriptor only",
+    "run_id": "e1c-r6-run-20260901T060350Z",
+    "required_bound_paths": [
+      "raw audit JSONL",
+      "normalized JSONL",
+      "PID/netns join JSONL",
+      "coverage/loss JSON",
+      "runtime review/result JSON",
+      "pcap",
+      "explicit pcap hash source"
+    ],
+    "selected_file_authentication": "all seven selected labels authenticated in the synthetic schema-only fixture",
+    "raw_normalized_evidence_link": "serial, decoded bytes, and raw-event SHA-256 each recomputed as 1/1",
+    "run_boundary": "every review, coverage, raw, normalized, and join run_id must equal the descriptor run_id",
+    "discovery_policy": "no filename guessing, latest-run discovery, or mutable-directory selection"
+  },
+  "historical_r5_compatibility": {
+    "descriptor_route": "RuntimeInputDescriptor.for_r5(evidence_dir)",
+    "file_node_id_format": "path:<canonical-path>",
+    "status": "PRESERVED"
+  },
+  "runtime_evidence": {
+    "present": false,
+    "synthetic_fixture_only": true,
+    "synthetic_runtime_result_marker": "SYNTHETIC_SCHEMA_FIXTURE_ONLY / NOT_RUNTIME_EVIDENCE",
+    "stage_a_full_collector_adapter_pass": "NO"
+  }
+}
