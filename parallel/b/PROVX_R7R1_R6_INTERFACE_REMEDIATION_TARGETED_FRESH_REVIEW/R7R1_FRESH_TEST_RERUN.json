@@ -1,0 +1,52 @@
+{
+  "schema": "PROVX_R7R1_FRESH_TEST_RERUN_V1",
+  "review_date": "2026-09-01",
+  "runs": [
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python -B PROVX_R7R1_INTERFACE_REMEDIATION_TESTS.py",
+      "passed": 12,
+      "total": 12,
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python -B PROVX_R7_GRAPH_ADAPTER_TESTS.py",
+      "passed": 5,
+      "total": 5,
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python -B PROVX_R4_ENCODER_TESTS.py",
+      "passed": 7,
+      "total": 7,
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "command": "PYTHONPYCACHEPREFIX=/tmp/provx-r7r1-pyc-20260901 python -m py_compile PROVX_R7_NORMALIZED_TO_GRAPH_ADAPTER.py PROVX_R7R1_INTERFACE_REMEDIATION_TESTS.py PROVX_R7_GRAPH_ADAPTER_TESTS.py PROVX_R4_ENCODER_TESTS.py",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "command": "git diff --no-index --check <d304-tree> <cde-tree>",
+      "exit_code": 1,
+      "output_empty_of_whitespace_errors": true,
+      "status": "PASS"
+    },
+    {
+      "command": "python json.load validation over this review package",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "command": "python PROVX_R7_FRESH_INDEPENDENT_REVIEW_TESTS.py",
+      "status": "NOT_APPLICABLE_TO_CONTINUATION",
+      "reason": "Historical harness remains pinned to 2ff2b21cd313c5b91567adfe05691d3e25aabb87; it was not rewritten. Current committed checks and R5 constants were independently recomputed."
+    }
+  ],
+  "combined_current_suites": "24/24 PASS",
+  "committed_delta_contains_no_pycache_or_pyc": true,
+  "push_executed": false,
+  "status": "PASS"
+}

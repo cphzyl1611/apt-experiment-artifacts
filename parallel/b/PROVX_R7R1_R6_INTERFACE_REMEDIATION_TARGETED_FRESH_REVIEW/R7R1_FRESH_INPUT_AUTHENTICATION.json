@@ -1,0 +1,37 @@
+{
+  "schema": "PROVX_R7R1_FRESH_INPUT_AUTHENTICATION_V1",
+  "review_date": "2026-09-01",
+  "read_only_review": true,
+  "repository": {
+    "origin": "https://github.com/cphzyl1611/apt-experiment-artifacts.git",
+    "origin_match": true,
+    "authenticated_current_head": "cde75a82e7938db6d5903d16885bf35ceb17aa68",
+    "pinned_remediation_commit": "cde75a82e7938db6d5903d16885bf35ceb17aa68",
+    "pinned_commit_exists": true,
+    "historical_base": "d304a8dbbe41a0f4aae8d9cf3047a5fec7044b13",
+    "historical_base_exists": true,
+    "pinned_is_ancestor_of_current_head": true,
+    "pinned_parent_is_historical_base": true
+  },
+  "scope_delta": {
+    "total_changed_files": 15,
+    "e0b_expected_changed_files": 9,
+    "e0b_changed_files": [
+      "parallel/b/PROVX_R7_NORMALIZED_TO_GRAPH_ADAPTER.py",
+      "parallel/b/PROVX_R7R1_INTERFACE_REMEDIATION_TESTS.py",
+      "parallel/b/PROVX_R7R1_R6_INTERFACE_REMEDIATION/PROVX_R7R1_R6_INTERFACE_REMEDIATION.md",
+      "parallel/b/PROVX_R7R1_R6_INTERFACE_REMEDIATION/R7R1_DEFECT_REPRODUCTION.json",
+      "parallel/b/PROVX_R7R1_R6_INTERFACE_REMEDIATION/R7R1_INPUT_AUTHENTICATION.json",
+      "parallel/b/PROVX_R7R1_R6_INTERFACE_REMEDIATION/R7R1_NEGATIVE_TEST_AUDIT.json",
+      "parallel/b/PROVX_R7R1_R6_INTERFACE_REMEDIATION/R7R1_R5_NON_REGRESSION.json",
+      "parallel/b/PROVX_R7R1_R6_INTERFACE_REMEDIATION/R7R1_R6_SCHEMA_FIXTURE_AUDIT.json",
+      "parallel/b/PROVX_R7R1_R6_INTERFACE_REMEDIATION/R7R1_TEST_RERUN.json"
+    ],
+    "unrelated_binding_file_count": 6,
+    "unrelated_binding_files_excluded": true,
+    "frozen_encoder_source_modified": false,
+    "committed_pycache_or_pyc_in_cde_delta": false,
+    "scope_status": "PASS"
+  },
+  "commit_authentication": "PASS"
+}

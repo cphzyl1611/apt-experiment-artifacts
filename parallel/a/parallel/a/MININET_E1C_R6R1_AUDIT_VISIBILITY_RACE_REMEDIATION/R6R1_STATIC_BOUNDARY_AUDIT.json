@@ -1,0 +1,33 @@
+{
+  "schema": "MININET_E1C_R6R1_STATIC_BOUNDARY_AUDIT_V1",
+  "checked_at": "2026-09-01",
+  "authenticated_repository": "https://github.com/cphzyl1611/apt-experiment-artifacts.git",
+  "authenticated_checkout": "/home/cph/fa1b2de-review-artifacts",
+  "current_head": "d304a8dbbe41a0f4aae8d9cf3047a5fec7044b13",
+  "f8d62fd_is_ancestor": "YES",
+  "reviewed_e0a_paths_unchanged_since_f8d62fd": "YES",
+  "harness_sha256": "de20c41b440815935dffefdfd3cf7b927f27ae09ece32a3b66fe844c59ebd2ff",
+  "test_sha256": "956cd9d43c302e73a364635aaa39bb20cb42fea249ea547b870ec973891808d8",
+  "bounded_visibility_poll_implemented": "PASS",
+  "max_visibility_wait_bounded": "PASS",
+  "exact_key_and_path_required": "PASS",
+  "fail_closed_timeout": "PASS",
+  "cleanup_and_baseline_restoration": "PASS",
+  "audit_rule_scope_unchanged": "PASS",
+  "static_self_check": "PASS",
+  "boundaries": {
+    "exact_absolute_precreated_file": true,
+    "perm_rw": true,
+    "exact_live_child_pid": true,
+    "random_probe_key": true,
+    "separate_disposable_delete_inode": true,
+    "no_system_wide_read_write_audit": true,
+    "no_auditctl_D": true,
+    "no_persistent_rules_d_edits": true,
+    "no_mn_c": true,
+    "no_nat_or_external_network": true,
+    "no_strace_or_tcpdump_as_audit_substitute": true,
+    "real_r5_derived_mininet_smoke_preserved": true,
+    "all_eight_event_classes_contract_preserved": true
+  }
+}

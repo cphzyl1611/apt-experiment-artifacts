@@ -1,0 +1,32 @@
+{
+  "schema": "PROVX_R7R1_FRESH_DEFECT_RECOMPUTATION_V1",
+  "review_date": "2026-09-01",
+  "fixture_classification": "SYNTHETIC_SCHEMA_ONLY_NOT_RUNTIME_EVIDENCE",
+  "event_fixture": {
+    "event_type": "FILE_READ_OR_WRITE",
+    "same_path": "/tmp/r6-bound-file",
+    "logical_hosts": ["h1", "h2"],
+    "events_valid_and_joined": true,
+    "quarantined_events": 0,
+    "edge_event_class": "write"
+  },
+  "pre_fix_at_d304": {
+    "file_node_ids": ["path:/tmp/r6-bound-file"],
+    "collision_reproduced": true,
+    "observation": "Two authenticated logical hosts sharing one path collapsed to one FILE node."
+  },
+  "post_fix_at_cde": {
+    "file_node_ids": [
+      "host:h1|path:/tmp/r6-bound-file",
+      "host:h2|path:/tmp/r6-bound-file"
+    ],
+    "distinct_file_node_count": 2,
+    "collision_closed": true
+  },
+  "r5_compatibility_check": {
+    "run_id": "e1c-r5-run-20260831T111849Z",
+    "file_identity_format": "path:<canonical-path>",
+    "status": "PASS"
+  },
+  "status": "PASS"
+}

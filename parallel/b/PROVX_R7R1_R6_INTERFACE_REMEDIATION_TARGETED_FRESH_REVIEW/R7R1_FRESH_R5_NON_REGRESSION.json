@@ -1,0 +1,29 @@
+{
+  "schema": "PROVX_R7R1_FRESH_R5_NON_REGRESSION_V1",
+  "review_date": "2026-09-01",
+  "evidence_route": "/home/cph/experiment-parallel/e0-a/e1c-r5-run-20260831T111849Z",
+  "run_id": "e1c-r5-run-20260831T111849Z",
+  "fresh_recomputation_count": 1,
+  "counts": {
+    "consumed_normalized_records": 28,
+    "quarantined_normalized_records": 6,
+    "nodes": 10,
+    "edges": 22,
+    "all_match": true
+  },
+  "hashes": {
+    "graph_sha256": "b24b424d0e530a9d03c2bf01ed6a193447e3fa75b9725b978d7c27a0998b9acd",
+    "tensor_x_sha256": "605d1e2133589f9ae68d104ac62c2092d1d7238becf2a4cd99f9e7d34b9b621d",
+    "edge_index_sha256": "f29e051b027b7fd5eb20b995cf82f5906b2eaceda75dd12c76ebae24c0dabd21",
+    "graph_match": true,
+    "tensor_x_match": true,
+    "edge_index_match": true
+  },
+  "reversed_input_determinism": {
+    "graph_hash_equal": true,
+    "tensor_x_hash_equal": true,
+    "edge_index_hash_equal": true
+  },
+  "r5_legacy_file_identity_preserved": "PASS",
+  "status": "PASS"
+}

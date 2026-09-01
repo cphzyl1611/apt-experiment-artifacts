@@ -1,0 +1,20 @@
+{
+  "schema": "PROVX_R7R1_FRESH_ENCODER_BOUNDARY_AUDIT_V1",
+  "review_date": "2026-09-01",
+  "frozen_encoder": {
+    "implementation": "parallel/b/PROVX_R4_ENCODER_IMPLEMENTATION.py",
+    "base_sha256": "013d9b77297308843144ccfce4c3eec4b03dc3cc5172dabd6eb3320e7bc46547",
+    "remediation_sha256": "013d9b77297308843144ccfce4c3eec4b03dc3cc5172dabd6eb3320e7bc46547",
+    "changed": false,
+    "contract_unchanged": true
+  },
+  "execution_boundary": {
+    "detector_checkpoint_loaded": false,
+    "training_executed": false,
+    "provx_inference_executed": false,
+    "formal_experiment_executed": false,
+    "mininet_or_sudo_executed": false,
+    "runtime_evidence_present": false
+  },
+  "status": "PASS"
+}

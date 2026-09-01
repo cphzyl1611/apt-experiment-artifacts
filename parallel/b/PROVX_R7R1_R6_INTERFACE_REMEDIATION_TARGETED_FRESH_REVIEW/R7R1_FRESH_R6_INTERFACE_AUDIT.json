@@ -1,0 +1,36 @@
+{
+  "schema": "PROVX_R7R1_FRESH_R6_INTERFACE_AUDIT_V1",
+  "review_date": "2026-09-01",
+  "fixture_classification": "SYNTHETIC_SCHEMA_ONLY_NOT_RUNTIME_EVIDENCE",
+  "runtime_evidence_present": false,
+  "run_id": "e1c-r6-run-20260901T060350Z",
+  "checks": {
+    "explicit_RuntimeInputDescriptor": "PASS",
+    "no_filename_or_latest_run_guessing": "PASS",
+    "selected_input_sha256_authentication": "PASS",
+    "raw_normalized_serial_linkage": "PASS",
+    "raw_normalized_decoded_bytes_hash_linkage": "PASS",
+    "raw_normalized_raw_event_sha256_linkage": "PASS",
+    "pcap_authentication_fail_closed": "PASS",
+    "run_id_consistency": "PASS",
+    "pid_netns_logical_host_join_consistency": "PASS",
+    "file_read_or_write_requires_AUDIT_FILESYSTEM_PERMISSION_FILTER": "PASS",
+    "exact_watched_path_required": "PASS",
+    "process_to_file_mapping": "PASS",
+    "event_class_write": "PASS",
+    "host_scoped_non_r5_file_identity": "PASS",
+    "missing_or_inconsistent_evidence_quarantines_or_rejects": "PASS"
+  },
+  "negative_cases_recomputed": [
+    "tampered selected raw file",
+    "tampered raw_event_sha256 link",
+    "tampered pcap hash source",
+    "missing pcap hash binding",
+    "inconsistent run_id",
+    "inconsistent PID/netns join",
+    "missing permission evidence",
+    "missing exact file identity",
+    "unjoined logical host"
+  ],
+  "status": "PASS"
+}

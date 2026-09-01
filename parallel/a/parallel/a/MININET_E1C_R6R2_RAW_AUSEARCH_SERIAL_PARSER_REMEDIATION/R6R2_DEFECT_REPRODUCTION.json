@@ -1,0 +1,17 @@
+{
+  "schema": "MININET_E1C_R6R2_DEFECT_REPRODUCTION_V1",
+  "classification": "INTERPRETED_AUSEARCH_TIMESTAMP_SERIAL_PARSE_MISMATCH",
+  "interpreted_timestamp_example": "msg=audit(09/01/2026 08:09:38.381:1056)",
+  "interpreted_timestamp_parse_result_before_fix": null,
+  "interpreted_timestamp_defect_reproduced": "YES",
+  "raw_timestamp_example": "msg=audit(1788264578.381:1056)",
+  "raw_timestamp_parse_result_after_fix": 1056,
+  "red_test": "test_poll_uses_raw_ausearch_mode_and_parses_raw_serial",
+  "red_observation": "Before remediation the polling seam invoked -i instead of --raw and the raw-mode assertion failed.",
+  "exact_key_and_path_runtime_facts": "CONFIRMED_BY_USER",
+  "audit_lost": 0,
+  "audit_backlog": 0,
+  "rule_baseline": "CLEAN",
+  "privileged_command_executed": "NO",
+  "mininet_executed": "NO"
+}
