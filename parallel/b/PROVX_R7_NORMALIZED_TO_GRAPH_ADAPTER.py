@@ -412,14 +412,15 @@ def _process_entity(host: str, pid: int, start_ticks: int, event: dict[str, Any]
     return entity
 
 
-def _file_entity(host: str, event: dict[str, Any]) -> dict[str, Any]:
+def _file_entity(host: str, event: dict[str, Any], *, run_id: str) -> dict[str, Any]:
     path = _text(event.get("path"))
     paths = _file_identity_paths(event)
     if not path:
         path = next((_text(value) for value in reversed(paths) if _text(value)), "")
     if not path:
         raise AdapterError("file identity path is required")
-    return {"host_id": host, "type": "FILE", "id": f"path:{path}", "path": path}
+    file_id = f"path:{path}" if run_id == R5_RUN_ID else f"host:{host}|path:{path}"
+    return {"host_id": host, "type": "FILE", "id": file_id, "path": path}
 
 
 def _socket_entity(host: str, event: dict[str, Any]) -> dict[str, Any]:
@@ -555,7 +556,7 @@ def build_graph(records: Iterable[dict[str, Any]], joins: Iterable[dict[str, Any
 
         if event_type in {"FILE_CREATE_OR_OPEN", "FILE_READ_OR_WRITE", "FILE_DELETE"}:
             try:
-                destination = _file_entity(host, event)
+                destination = _file_entity(host, event, run_id=run_id)
             except AdapterError as exc:
                 quarantine.append({"raw_serial": event.get("raw_serial"), "event_id": event.get("event_id"), "reason": str(exc)})
                 continue
