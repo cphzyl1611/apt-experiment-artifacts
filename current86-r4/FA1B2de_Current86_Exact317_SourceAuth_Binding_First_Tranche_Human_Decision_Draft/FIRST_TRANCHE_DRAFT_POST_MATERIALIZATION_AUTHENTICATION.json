@@ -1,0 +1,209 @@
+{
+  "schema": "FA1B2DE_CURRENT86_FIRST_TRANCHE_DRAFT_POST_MATERIALIZATION_AUTHENTICATION_V1",
+  "artifact_role": "APPEND_ONLY_COMMITTED_DRAFT_PROVENANCE_ANCHOR",
+  "created_at_utc": "2026-09-01T12:27:56Z",
+  "repository": {
+    "origin_expected": "https://github.com/cphzyl1611/apt-experiment-artifacts.git",
+    "origin_authenticated": "https://github.com/cphzyl1611/apt-experiment-artifacts.git",
+    "origin_match": true,
+    "branch": "main",
+    "current_remote_head_before_remediation": "cde75a82e7938db6d5903d16885bf35ceb17aa68",
+    "remote_head_check": "PASS",
+    "remote_head_check_method": "git ls-remote origin refs/heads/main"
+  },
+  "lineage": {
+    "historical_r8r1_input_authority": {
+      "commit": "665a84f3ede268f17f58cecc933706a0506e687f",
+      "role": "HISTORICAL_R8R1_INPUT_AUTHORITY",
+      "is_ancestor_of_committed_draft": true,
+      "status": "PASS"
+    },
+    "committed_human_decision_draft": {
+      "commit": "fb6991a677dc166fd5fed6b16dfd3c768e3b4295",
+      "role": "COMMITTED_HUMAN_DECISION_DRAFT_POST_MATERIALIZATION",
+      "is_ancestor_of_current_remote_main": true,
+      "status": "PASS"
+    },
+    "ancestry_checks": {
+      "r8r1_to_draft": {
+        "from_commit": "665a84f3ede268f17f58cecc933706a0506e687f",
+        "to_commit": "fb6991a677dc166fd5fed6b16dfd3c768e3b4295",
+        "is_ancestor": true,
+        "status": "PASS"
+      },
+      "draft_to_current_remote_main": {
+        "from_commit": "fb6991a677dc166fd5fed6b16dfd3c768e3b4295",
+        "to_commit": "cde75a82e7938db6d5903d16885bf35ceb17aa68",
+        "is_ancestor": true,
+        "status": "PASS"
+      }
+    }
+  },
+  "provenance_roles": {
+    "historical_input_authentication": {
+      "path": "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_First_Tranche_Human_Decision_Draft/FIRST_TRANCHE_INPUT_AUTHENTICATION.json",
+      "role": "HISTORICAL_PRE_DECISION_INPUT_AUTHENTICATION_SNAPSHOT_PINNED_TO_R8R1_STATE",
+      "historical_current_head": "665a84f3ede268f17f58cecc933706a0506e687f",
+      "historical_pinned_binding_commit": "665a84f3ede268f17f58cecc933706a0506e687f",
+      "sha256_current_committed_bytes": "b3f7ec3b7298404a4c53e50b2a69493d1244f8fa0dc6a547a88aff7db89d1cdf",
+      "bytes_preserved": true,
+      "preservation_status": "PASS"
+    },
+    "post_materialization_authentication": {
+      "path": "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_First_Tranche_Human_Decision_Draft/FIRST_TRANCHE_DRAFT_POST_MATERIALIZATION_AUTHENTICATION.json",
+      "role": "COMMITTED_DRAFT_PROVENANCE_ANCHOR_PINNED_TO_FB6991A",
+      "pinned_committed_draft_commit": "fb6991a677dc166fd5fed6b16dfd3c768e3b4295",
+      "current_remote_main_at_authentication": "cde75a82e7938db6d5903d16885bf35ceb17aa68",
+      "authentication_status": "PASS"
+    },
+    "distinction_explicit": true
+  },
+  "committed_draft_files": [
+    {
+      "path": "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_First_Tranche_Human_Decision_Draft/FIRST_TRANCHE_INPUT_AUTHENTICATION.json",
+      "introduced_by_commit": "fb6991a677dc166fd5fed6b16dfd3c768e3b4295",
+      "present_at_current_remote_main": true,
+      "unchanged_since_draft_commit": true,
+      "sha256": "b3f7ec3b7298404a4c53e50b2a69493d1244f8fa0dc6a547a88aff7db89d1cdf"
+    },
+    {
+      "path": "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_First_Tranche_Human_Decision_Draft/FIRST_TRANCHE_HUMAN_DECISION_DRAFT.jsonl",
+      "introduced_by_commit": "fb6991a677dc166fd5fed6b16dfd3c768e3b4295",
+      "present_at_current_remote_main": true,
+      "unchanged_since_draft_commit": true,
+      "sha256": "dcc577412226a67da9d7e94e184db207498fb128736544bb90abe1bc4a6787c3"
+    },
+    {
+      "path": "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_First_Tranche_Human_Decision_Draft/FIRST_TRANCHE_DECISION_CONSERVATION.json",
+      "introduced_by_commit": "fb6991a677dc166fd5fed6b16dfd3c768e3b4295",
+      "present_at_current_remote_main": true,
+      "unchanged_since_draft_commit": true,
+      "sha256": "9e0af11f25966086c5fe49d75b28cac00bb66569e21486f25e19c8328e1b3bcd"
+    },
+    {
+      "path": "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_First_Tranche_Human_Decision_Draft/FIRST_TRANCHE_SYSTEMIC_BLOCKER_CHECK.json",
+      "introduced_by_commit": "fb6991a677dc166fd5fed6b16dfd3c768e3b4295",
+      "present_at_current_remote_main": true,
+      "unchanged_since_draft_commit": true,
+      "sha256": "2ed76513b3f736602f21307e55d169baa70870464a11e9e2fb7f97c4e97ded1f"
+    },
+    {
+      "path": "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_First_Tranche_Human_Decision_Draft/FIRST_TRANCHE_HUMAN_REVIEW_REPORT.md",
+      "introduced_by_commit": "fb6991a677dc166fd5fed6b16dfd3c768e3b4295",
+      "present_at_current_remote_main": true,
+      "unchanged_since_draft_commit": true,
+      "sha256": "c0d3e01b06c84dd7139e5b3c2904e290dc871f37d83a5a6ff88643be39133a8a"
+    }
+  ],
+  "committed_draft_file_count": 5,
+  "committed_draft_bytes_authenticated": "PASS",
+  "draft_file_change_check": {
+    "all_five_paths_present_at_current_remote_main": true,
+    "all_five_paths_unchanged_from_draft_commit": true,
+    "sha256_recomputed_from_current_committed_bytes": true,
+    "status": "PASS"
+  },
+  "decision_conservation": {
+    "first_tranche_count": 24,
+    "human_decision_record_count": 24,
+    "frozen_order": [
+      110,
+      273,
+      210,
+      98,
+      147,
+      277,
+      188,
+      301,
+      143,
+      250,
+      233,
+      287,
+      146,
+      293,
+      114,
+      284,
+      291,
+      215,
+      88,
+      182,
+      300,
+      218,
+      115,
+      148
+    ],
+    "committed_record_order": [
+      110,
+      273,
+      210,
+      98,
+      147,
+      277,
+      188,
+      301,
+      143,
+      250,
+      233,
+      287,
+      146,
+      293,
+      114,
+      284,
+      291,
+      215,
+      88,
+      182,
+      300,
+      218,
+      115,
+      148
+    ],
+    "exact_frozen_order": true,
+    "unique_target_ids": 24,
+    "target_ids_unique": true,
+    "action_counts": {
+      "APPROVE": 0,
+      "REJECT": 0,
+      "MORE_EVIDENCE": 24
+    },
+    "all_actions_are_request_more_evidence": true,
+    "status": "PASS"
+  },
+  "remediation_boundary": {
+    "defect_class": "PROVENANCE_LAYER_AMBIGUITY_STALENESS",
+    "substantive_decision_or_linkage_failure": false,
+    "blocked_fresh_review_package_preserved": true,
+    "blocked_fresh_review_package_path": "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_First_Tranche_Human_Decision_Draft_Fresh_Review/",
+    "human_decision_records_mutated": false,
+    "field_pins_created": 0,
+    "source_auth_executed": false,
+    "p0_executed": false,
+    "p1_executed": false,
+    "binding_publication": false,
+    "r7_r8_r8r1_authority_mutated": false
+  },
+  "BINDING_FIRST_TRANCHE_DRAFT_PROVENANCE_METADATA_REMEDIATION": "PASS_READY_FOR_TARGETED_FRESH_REVIEW",
+  "CURRENT_REMOTE_HEAD_BEFORE_REMEDIATION": "cde75a82e7938db6d5903d16885bf35ceb17aa68",
+  "R8R1_TO_DRAFT_ANCESTRY": "PASS",
+  "DRAFT_TO_CURRENT_HEAD_ANCESTRY": "PASS",
+  "HISTORICAL_INPUT_AUTHENTICATION_PRESERVED": "PASS",
+  "POST_MATERIALIZATION_AUTHENTICATION_CREATED": "YES",
+  "COMMITTED_DRAFT_FILE_COUNT": 5,
+  "COMMITTED_DRAFT_BYTES_AUTHENTICATED": "PASS",
+  "FIRST_TRANCHE_COUNT": 24,
+  "HUMAN_DECISION_RECORD_COUNT": 24,
+  "APPROVE_COUNT": 0,
+  "REJECT_COUNT": 0,
+  "MORE_EVIDENCE_COUNT": 24,
+  "HUMAN_DECISIONS_MUTATED": "NO",
+  "FIELD_PINS_CREATED": 0,
+  "SOURCE_AUTH_EXECUTED": "NO",
+  "P0_EXECUTED": "NO",
+  "P1_EXECUTED": "NO",
+  "BINDING_PUBLICATION": "NO",
+  "R7_R8_R8R1_AUTHORITY_MUTATED": "NO",
+  "STAGED_SCOPE": "PASS",
+  "PUSH_EXECUTED": "PENDING",
+  "NEXT_ACTION": "TARGETED_FRESH_REVIEW_OF_DRAFT_PROVENANCE_REMEDIATION",
+  "STOP": true
+}
