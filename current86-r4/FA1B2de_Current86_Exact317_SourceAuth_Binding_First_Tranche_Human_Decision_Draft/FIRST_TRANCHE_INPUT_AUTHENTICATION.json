@@ -1,0 +1,28 @@
+{
+  "schema": "FA1B2DE_CURRENT86_FIRST_TRANCHE_INPUT_AUTHENTICATION_V1",
+  "repository_origin": "https://github.com/cphzyl1611/apt-experiment-artifacts.git",
+  "current_head": "665a84f3ede268f17f58cecc933706a0506e687f",
+  "pinned_binding_commit": "665a84f3ede268f17f58cecc933706a0506e687f",
+  "pinned_commit_is_ancestor": true,
+  "r8r1_targeted_review": {
+    "path": "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_R8R1_Targeted_Fresh_Review",
+    "authentication": "PASS",
+    "overall_status": "PASS_READY_FOR_EXPLICIT_HUMAN_FIELD_PIN_REVIEW",
+    "all_listed_checksums": "PASS",
+    "inventory_path_set_equality": "PASS",
+    "r7_envelope_convention": "PASS",
+    "substantive_r8_artifact_bytes_unchanged": true,
+    "targeted_review_reuse_of_prior_317_audit": true,
+    "full_r8_fresh_review_required": false
+  },
+  "r7_active_authority_unchanged": true,
+  "exact317_unchanged": true,
+  "first_tranche_count": 24,
+  "first_tranche_decisions_before_batch": "null",
+  "field_pins_created": 0,
+  "source_auth_executed": false,
+  "p0_executed": false,
+  "p1_executed": false,
+  "binding_publication": false,
+  "authentication_scope": "READ_ONLY_SUPPORT_AND_EXPLICIT_HUMAN_DECISION_CAPTURE"
+}

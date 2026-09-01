@@ -1,0 +1,30 @@
+{
+  "schema": "FA1B2DE_CURRENT86_FIRST_TRANCHE_DECISION_CONSERVATION_V1",
+  "status": "COMPLETE_READY_FOR_FRESH_REVIEW",
+  "first_tranche_count": 24,
+  "human_decisions_captured": 24,
+  "captured_target_indices": [110, 273, 210, 98, 147, 277, 188, 301, 143, 250, 233, 287, 146, 293, 114, 284, 291, 215, 88, 182, 300, 218, 115, 148],
+  "captured_actions": {
+    "APPROVE_EXACT_FIELD_PIN": 0,
+    "REJECT_FIELD_CANDIDATES_KEEP_BLOCKED": 0,
+    "REQUEST_MORE_EVIDENCE": 24
+  },
+  "uncaptured_target_count": 0,
+  "uncaptured_target_indices": [],
+  "systemic_blocker_check": {
+    "artifact": "FIRST_TRANCHE_SYSTEMIC_BLOCKER_CHECK.json",
+    "result": "ALL_8_SHARE_ONLY_C2R1_DERIVED_COMPARATIVE_INTRINSIC_PRESENT_PLUS_NO_AUTHORITATIVE_FIELD_MAPPING",
+    "unique_authoritative_field_mapping_evidence": false,
+    "automatic_human_decisions_created": false,
+    "stop_for_human_confirmation": false,
+    "human_confirmation_received": true
+  },
+  "prior_decision_for_captured_targets": null,
+  "field_pins_created": 0,
+  "source_auth_executed": false,
+  "p0_executed": false,
+  "p1_executed": false,
+  "binding_publication": false,
+  "authority_mutation": false,
+  "append_only": true
+}

@@ -1,0 +1,382 @@
+{
+  "schema": "FA1B2DE_CURRENT86_FIRST_TRANCHE_SYSTEMIC_BLOCKER_CHECK_V1",
+  "check_timestamp_utc": "2026-09-01T10:40:57Z",
+  "authority_status": "NON_AUTHORITATIVE_SUPPORT_ONLY",
+  "authenticated_repository_origin": "https://github.com/cphzyl1611/apt-experiment-artifacts.git",
+  "pinned_binding_commit": "665a84f3ede268f17f58cecc933706a0506e687f",
+  "current_head_authentication": "PASS_LOCAL_HEAD_95de139dcf3cb143892fef9532b28866ee08b106_ANCESTOR_CHECK_PASS",
+  "r8r1_targeted_review_authentication": "PASS",
+  "first_tranche_count": 24,
+  "human_decisions_captured_before_check": 16,
+  "remaining_target_count": 8,
+  "remaining_target_indices": [
+    291,
+    215,
+    88,
+    182,
+    300,
+    218,
+    115,
+    148
+  ],
+  "all_remaining_share_input_gap_reason": true,
+  "all_remaining_share_pointer_semantics": true,
+  "all_remaining_share_required_source_class_and_fact_type": true,
+  "all_remaining_share_stage_a_block": true,
+  "all_remaining_share_stage_b_gate": true,
+  "all_remaining_have_no_authoritative_field_mapping": true,
+  "systemic_blocker": "ONLY_C2R1_DERIVED_COMPARATIVE_INTRINSIC_PRESENT + NO_AUTHORITATIVE_FIELD_MAPPING",
+  "decision_created_automatically": false,
+  "field_pins_created": 0,
+  "source_auth_executed": false,
+  "p0_executed": false,
+  "p1_executed": false,
+  "binding_publication": false,
+  "stop_for_human_confirmation": true,
+  "targets": [
+    {
+      "target_index": 291,
+      "source_binding_target_id": "53bba0285b0487933d3674d3bcb2c8507b3b7dbcbff79d6e58e3b64fc3d13fe2",
+      "source_side": "CANDIDATE",
+      "bound_candidate_scoring_id": "ebe46a3743a70d93de9ea5c2d99250e06312f0bc791de5c901fcc693ea6b6acd",
+      "required_source_artifact_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "required_source_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+      "input_gap_reason_code": "ONLY_C2R1_DERIVED_COMPARATIVE_INTRINSIC_PRESENT",
+      "pointer_semantics": "All listed leaves are evidence-only; no ranking, recommendation, semantic inference, or selected pointer.",
+      "stage_a": {
+        "readiness": "ADMISSION_BLOCKED_MISSING_PROVENANCE",
+        "admission_status": "ADMISSION_NOT_READY_MISSING_PROVENANCE",
+        "canonical_object_id_available": false,
+        "provenance_complete": false
+      },
+      "stage_b": {
+        "status": "FIELD_PIN_NOT_EXPOSED_GATED_ON_ADMISSION",
+        "enabled": false,
+        "scalar_leaf_selection_allowed": false
+      },
+      "candidate_source_object": {
+        "source_key": "scoring:ebe46a3743a70d93de9ea5c2d99250e06312f0bc791de5c901fcc693ea6b6acd",
+        "source_locator": "jsonl:231",
+        "jsonl_line": 231,
+        "row_bytes_sha256": "5cc7561ee29dc2740efe6859b7185bc1d2a1fa0397d08357b1695ce07e392d44",
+        "active_source_object_sha256": "5cc7561ee29dc2740efe6859b7185bc1d2a1fa0397d08357b1695ce07e392d44"
+      },
+      "candidate_classification": "MULTIPLE_CANDIDATE_POINTERS",
+      "candidate_count": 18,
+      "candidate_pointer_set_sha256": "b8eb9e2ec5f3c90b96370bc41e3eb13a6094a19c3de02665a0104df36260cb37",
+      "selected_canonical_pointer": null,
+      "unique_authoritative_field_mapping_evidence": false,
+      "mapping_evidence_basis": [
+        "candidate_object_id=null",
+        "provenance_chain_complete=false",
+        "stage_b.enabled=false",
+        "stage_b.scalar_leaf_selection_allowed=false",
+        "stage_b.status=FIELD_PIN_NOT_EXPOSED_GATED_ON_ADMISSION",
+        "candidate.selected_canonical_pointer=null",
+        "candidate.field_pin_created=false"
+      ],
+      "systemic_blocker_match": true
+    },
+    {
+      "target_index": 215,
+      "source_binding_target_id": "67f3eef7b606ebedadba5f29930e91835eb5bde88b97755df7b159bd109c8250",
+      "source_side": "CANDIDATE",
+      "bound_candidate_scoring_id": "9d28438013ace855d3d5eab9f9f96429bf81f7ec1a1023b0323d1109fe66e12d",
+      "required_source_artifact_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "required_source_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+      "input_gap_reason_code": "ONLY_C2R1_DERIVED_COMPARATIVE_INTRINSIC_PRESENT",
+      "pointer_semantics": "All listed leaves are evidence-only; no ranking, recommendation, semantic inference, or selected pointer.",
+      "stage_a": {
+        "readiness": "ADMISSION_BLOCKED_MISSING_PROVENANCE",
+        "admission_status": "ADMISSION_NOT_READY_MISSING_PROVENANCE",
+        "canonical_object_id_available": false,
+        "provenance_complete": false
+      },
+      "stage_b": {
+        "status": "FIELD_PIN_NOT_EXPOSED_GATED_ON_ADMISSION",
+        "enabled": false,
+        "scalar_leaf_selection_allowed": false
+      },
+      "candidate_source_object": {
+        "source_key": "scoring:9d28438013ace855d3d5eab9f9f96429bf81f7ec1a1023b0323d1109fe66e12d",
+        "source_locator": "jsonl:246",
+        "jsonl_line": 246,
+        "row_bytes_sha256": "5b69784cb6926f9fc9d1540b9563a0e3aad7d96f91950f7741e10f8a7dd527e9",
+        "active_source_object_sha256": "5b69784cb6926f9fc9d1540b9563a0e3aad7d96f91950f7741e10f8a7dd527e9"
+      },
+      "candidate_classification": "MULTIPLE_CANDIDATE_POINTERS",
+      "candidate_count": 18,
+      "candidate_pointer_set_sha256": "29f15d3bbfbbf6ff8f6d055efa0c2ac01dc0db2ab2425901a06a81f3148a7ec8",
+      "selected_canonical_pointer": null,
+      "unique_authoritative_field_mapping_evidence": false,
+      "mapping_evidence_basis": [
+        "candidate_object_id=null",
+        "provenance_chain_complete=false",
+        "stage_b.enabled=false",
+        "stage_b.scalar_leaf_selection_allowed=false",
+        "stage_b.status=FIELD_PIN_NOT_EXPOSED_GATED_ON_ADMISSION",
+        "candidate.selected_canonical_pointer=null",
+        "candidate.field_pin_created=false"
+      ],
+      "systemic_blocker_match": true
+    },
+    {
+      "target_index": 88,
+      "source_binding_target_id": "68101eaee0eab845e763d3078c57fee8e1d54379a66b489a78d457c2bf0930f2",
+      "source_side": "CANDIDATE",
+      "bound_candidate_scoring_id": "04744be860199b3ecbc71b016a631e6fe561774ccc83b3dbce15275fc033189b",
+      "required_source_artifact_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "required_source_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+      "input_gap_reason_code": "ONLY_C2R1_DERIVED_COMPARATIVE_INTRINSIC_PRESENT",
+      "pointer_semantics": "All listed leaves are evidence-only; no ranking, recommendation, semantic inference, or selected pointer.",
+      "stage_a": {
+        "readiness": "ADMISSION_BLOCKED_MISSING_PROVENANCE",
+        "admission_status": "ADMISSION_NOT_READY_MISSING_PROVENANCE",
+        "canonical_object_id_available": false,
+        "provenance_complete": false
+      },
+      "stage_b": {
+        "status": "FIELD_PIN_NOT_EXPOSED_GATED_ON_ADMISSION",
+        "enabled": false,
+        "scalar_leaf_selection_allowed": false
+      },
+      "candidate_source_object": {
+        "source_key": "scoring:04744be860199b3ecbc71b016a631e6fe561774ccc83b3dbce15275fc033189b",
+        "source_locator": "jsonl:126",
+        "jsonl_line": 126,
+        "row_bytes_sha256": "97a537f0caac78e649eb825e01dc2ffd2b2dd6e434e4d1a5bf5bfed9ef437868",
+        "active_source_object_sha256": "97a537f0caac78e649eb825e01dc2ffd2b2dd6e434e4d1a5bf5bfed9ef437868"
+      },
+      "candidate_classification": "MULTIPLE_CANDIDATE_POINTERS",
+      "candidate_count": 18,
+      "candidate_pointer_set_sha256": "631e1136e0fd53f668fcf6d1015b419eea6168f19a8abe614b8105f83714e5fd",
+      "selected_canonical_pointer": null,
+      "unique_authoritative_field_mapping_evidence": false,
+      "mapping_evidence_basis": [
+        "candidate_object_id=null",
+        "provenance_chain_complete=false",
+        "stage_b.enabled=false",
+        "stage_b.scalar_leaf_selection_allowed=false",
+        "stage_b.status=FIELD_PIN_NOT_EXPOSED_GATED_ON_ADMISSION",
+        "candidate.selected_canonical_pointer=null",
+        "candidate.field_pin_created=false"
+      ],
+      "systemic_blocker_match": true
+    },
+    {
+      "target_index": 182,
+      "source_binding_target_id": "6859aafbd73df2d0b2a8250853e8fdab466d4fc52a7707ed0ca6c62a52d1ea66",
+      "source_side": "CANDIDATE",
+      "bound_candidate_scoring_id": "6fc16f0d61682190d8a991d71d5251081cb51e8824a08dc99c1c4403596fff6e",
+      "required_source_artifact_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "required_source_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+      "input_gap_reason_code": "ONLY_C2R1_DERIVED_COMPARATIVE_INTRINSIC_PRESENT",
+      "pointer_semantics": "All listed leaves are evidence-only; no ranking, recommendation, semantic inference, or selected pointer.",
+      "stage_a": {
+        "readiness": "ADMISSION_BLOCKED_MISSING_PROVENANCE",
+        "admission_status": "ADMISSION_NOT_READY_MISSING_PROVENANCE",
+        "canonical_object_id_available": false,
+        "provenance_complete": false
+      },
+      "stage_b": {
+        "status": "FIELD_PIN_NOT_EXPOSED_GATED_ON_ADMISSION",
+        "enabled": false,
+        "scalar_leaf_selection_allowed": false
+      },
+      "candidate_source_object": {
+        "source_key": "scoring:6fc16f0d61682190d8a991d71d5251081cb51e8824a08dc99c1c4403596fff6e",
+        "source_locator": "jsonl:262",
+        "jsonl_line": 262,
+        "row_bytes_sha256": "1724de7da44d8dbd070840a927c585556a4a49601ef389fe99f9c528757cf8f1",
+        "active_source_object_sha256": "1724de7da44d8dbd070840a927c585556a4a49601ef389fe99f9c528757cf8f1"
+      },
+      "candidate_classification": "MULTIPLE_CANDIDATE_POINTERS",
+      "candidate_count": 18,
+      "candidate_pointer_set_sha256": "09b43ae7ec200ce9ad6e0ca8c592f0b02984baab7463efc171b0f53c9d07381f",
+      "selected_canonical_pointer": null,
+      "unique_authoritative_field_mapping_evidence": false,
+      "mapping_evidence_basis": [
+        "candidate_object_id=null",
+        "provenance_chain_complete=false",
+        "stage_b.enabled=false",
+        "stage_b.scalar_leaf_selection_allowed=false",
+        "stage_b.status=FIELD_PIN_NOT_EXPOSED_GATED_ON_ADMISSION",
+        "candidate.selected_canonical_pointer=null",
+        "candidate.field_pin_created=false"
+      ],
+      "systemic_blocker_match": true
+    },
+    {
+      "target_index": 300,
+      "source_binding_target_id": "7bd222c3b146447c05ea2631ebc8f10666d63a6eb9c372eeb9aa68517735c6c7",
+      "source_side": "CANDIDATE",
+      "bound_candidate_scoring_id": "f7344da1f96086ed6f8666b8838bd15c5134f860015d0e5beeef9d4fb318773d",
+      "required_source_artifact_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "required_source_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+      "input_gap_reason_code": "ONLY_C2R1_DERIVED_COMPARATIVE_INTRINSIC_PRESENT",
+      "pointer_semantics": "All listed leaves are evidence-only; no ranking, recommendation, semantic inference, or selected pointer.",
+      "stage_a": {
+        "readiness": "ADMISSION_BLOCKED_MISSING_PROVENANCE",
+        "admission_status": "ADMISSION_NOT_READY_MISSING_PROVENANCE",
+        "canonical_object_id_available": false,
+        "provenance_complete": false
+      },
+      "stage_b": {
+        "status": "FIELD_PIN_NOT_EXPOSED_GATED_ON_ADMISSION",
+        "enabled": false,
+        "scalar_leaf_selection_allowed": false
+      },
+      "candidate_source_object": {
+        "source_key": "scoring:f7344da1f96086ed6f8666b8838bd15c5134f860015d0e5beeef9d4fb318773d",
+        "source_locator": "jsonl:51",
+        "jsonl_line": 51,
+        "row_bytes_sha256": "1ebbbd1f8b0354d4fc2838c2e693de757bcc552444f4b0968ff735ae64983604",
+        "active_source_object_sha256": "1ebbbd1f8b0354d4fc2838c2e693de757bcc552444f4b0968ff735ae64983604"
+      },
+      "candidate_classification": "MULTIPLE_CANDIDATE_POINTERS",
+      "candidate_count": 18,
+      "candidate_pointer_set_sha256": "02d2da2ac9baf480120a571ebc2a4a473a7188d335be1b8c750013668923343c",
+      "selected_canonical_pointer": null,
+      "unique_authoritative_field_mapping_evidence": false,
+      "mapping_evidence_basis": [
+        "candidate_object_id=null",
+        "provenance_chain_complete=false",
+        "stage_b.enabled=false",
+        "stage_b.scalar_leaf_selection_allowed=false",
+        "stage_b.status=FIELD_PIN_NOT_EXPOSED_GATED_ON_ADMISSION",
+        "candidate.selected_canonical_pointer=null",
+        "candidate.field_pin_created=false"
+      ],
+      "systemic_blocker_match": true
+    },
+    {
+      "target_index": 218,
+      "source_binding_target_id": "7c79be47802efebbf7125f910b443d9df7681feba71a139c87374a61de738827",
+      "source_side": "CANDIDATE",
+      "bound_candidate_scoring_id": "a6b68bf8ce1e098fba2786bb7acf62c5fb6cb64733582b6c695e9d5ea4e22dbe",
+      "required_source_artifact_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "required_source_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+      "input_gap_reason_code": "ONLY_C2R1_DERIVED_COMPARATIVE_INTRINSIC_PRESENT",
+      "pointer_semantics": "All listed leaves are evidence-only; no ranking, recommendation, semantic inference, or selected pointer.",
+      "stage_a": {
+        "readiness": "ADMISSION_BLOCKED_MISSING_PROVENANCE",
+        "admission_status": "ADMISSION_NOT_READY_MISSING_PROVENANCE",
+        "canonical_object_id_available": false,
+        "provenance_complete": false
+      },
+      "stage_b": {
+        "status": "FIELD_PIN_NOT_EXPOSED_GATED_ON_ADMISSION",
+        "enabled": false,
+        "scalar_leaf_selection_allowed": false
+      },
+      "candidate_source_object": {
+        "source_key": "scoring:a6b68bf8ce1e098fba2786bb7acf62c5fb6cb64733582b6c695e9d5ea4e22dbe",
+        "source_locator": "jsonl:237",
+        "jsonl_line": 237,
+        "row_bytes_sha256": "97eb8cc683b4cc04ee5c4572ed5c0bb7689caeef66348ba4322a55e8ad275292",
+        "active_source_object_sha256": "97eb8cc683b4cc04ee5c4572ed5c0bb7689caeef66348ba4322a55e8ad275292"
+      },
+      "candidate_classification": "MULTIPLE_CANDIDATE_POINTERS",
+      "candidate_count": 18,
+      "candidate_pointer_set_sha256": "dbe5007cc14ed5011f9be4f815c9c30f0235b6469dc6f0443846fc66f364c63a",
+      "selected_canonical_pointer": null,
+      "unique_authoritative_field_mapping_evidence": false,
+      "mapping_evidence_basis": [
+        "candidate_object_id=null",
+        "provenance_chain_complete=false",
+        "stage_b.enabled=false",
+        "stage_b.scalar_leaf_selection_allowed=false",
+        "stage_b.status=FIELD_PIN_NOT_EXPOSED_GATED_ON_ADMISSION",
+        "candidate.selected_canonical_pointer=null",
+        "candidate.field_pin_created=false"
+      ],
+      "systemic_blocker_match": true
+    },
+    {
+      "target_index": 115,
+      "source_binding_target_id": "7ed67d666e3f1f3b80b64d7e678ab88b8caaed05c12e943c8bd619f385e704da",
+      "source_side": "CANDIDATE",
+      "bound_candidate_scoring_id": "1fdfc3284a6bdfc2ef9bac7a265b7407a8b44bdabff8a9c262055ef17d528ac2",
+      "required_source_artifact_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "required_source_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+      "input_gap_reason_code": "ONLY_C2R1_DERIVED_COMPARATIVE_INTRINSIC_PRESENT",
+      "pointer_semantics": "All listed leaves are evidence-only; no ranking, recommendation, semantic inference, or selected pointer.",
+      "stage_a": {
+        "readiness": "ADMISSION_BLOCKED_MISSING_PROVENANCE",
+        "admission_status": "ADMISSION_NOT_READY_MISSING_PROVENANCE",
+        "canonical_object_id_available": false,
+        "provenance_complete": false
+      },
+      "stage_b": {
+        "status": "FIELD_PIN_NOT_EXPOSED_GATED_ON_ADMISSION",
+        "enabled": false,
+        "scalar_leaf_selection_allowed": false
+      },
+      "candidate_source_object": {
+        "source_key": "scoring:1fdfc3284a6bdfc2ef9bac7a265b7407a8b44bdabff8a9c262055ef17d528ac2",
+        "source_locator": "jsonl:61",
+        "jsonl_line": 61,
+        "row_bytes_sha256": "c390024cd5770cf444a2433c776017cc3843e673f948cb06cfc9821490e4ccab",
+        "active_source_object_sha256": "c390024cd5770cf444a2433c776017cc3843e673f948cb06cfc9821490e4ccab"
+      },
+      "candidate_classification": "MULTIPLE_CANDIDATE_POINTERS",
+      "candidate_count": 18,
+      "candidate_pointer_set_sha256": "d29b1f208c2256a95f5100317d89a07edde234ce7ad9589af9841b0531516ce8",
+      "selected_canonical_pointer": null,
+      "unique_authoritative_field_mapping_evidence": false,
+      "mapping_evidence_basis": [
+        "candidate_object_id=null",
+        "provenance_chain_complete=false",
+        "stage_b.enabled=false",
+        "stage_b.scalar_leaf_selection_allowed=false",
+        "stage_b.status=FIELD_PIN_NOT_EXPOSED_GATED_ON_ADMISSION",
+        "candidate.selected_canonical_pointer=null",
+        "candidate.field_pin_created=false"
+      ],
+      "systemic_blocker_match": true
+    },
+    {
+      "target_index": 148,
+      "source_binding_target_id": "7f772ded1d8901ff5a9f881ec8fd927d94604f6d646585c93ff83b92b943810f",
+      "source_side": "CANDIDATE",
+      "bound_candidate_scoring_id": "3eb7ae795e012ec7dea46be6b1546193dd4284dbe741232699b31f7a65ea3673",
+      "required_source_artifact_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "required_source_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+      "input_gap_reason_code": "ONLY_C2R1_DERIVED_COMPARATIVE_INTRINSIC_PRESENT",
+      "pointer_semantics": "All listed leaves are evidence-only; no ranking, recommendation, semantic inference, or selected pointer.",
+      "stage_a": {
+        "readiness": "ADMISSION_BLOCKED_MISSING_PROVENANCE",
+        "admission_status": "ADMISSION_NOT_READY_MISSING_PROVENANCE",
+        "canonical_object_id_available": false,
+        "provenance_complete": false
+      },
+      "stage_b": {
+        "status": "FIELD_PIN_NOT_EXPOSED_GATED_ON_ADMISSION",
+        "enabled": false,
+        "scalar_leaf_selection_allowed": false
+      },
+      "candidate_source_object": {
+        "source_key": "scoring:3eb7ae795e012ec7dea46be6b1546193dd4284dbe741232699b31f7a65ea3673",
+        "source_locator": "jsonl:242",
+        "jsonl_line": 242,
+        "row_bytes_sha256": "5e9bedf27028e0e083415d867eb79cfaf7289d9f21fbd3fc1e88828dccc83668",
+        "active_source_object_sha256": "5e9bedf27028e0e083415d867eb79cfaf7289d9f21fbd3fc1e88828dccc83668"
+      },
+      "candidate_classification": "MULTIPLE_CANDIDATE_POINTERS",
+      "candidate_count": 18,
+      "candidate_pointer_set_sha256": "5d5c404370b5dd2a0bcb79a7d3ae8d87c164456ce1218d9e22f96e31f62870d1",
+      "selected_canonical_pointer": null,
+      "unique_authoritative_field_mapping_evidence": false,
+      "mapping_evidence_basis": [
+        "candidate_object_id=null",
+        "provenance_chain_complete=false",
+        "stage_b.enabled=false",
+        "stage_b.scalar_leaf_selection_allowed=false",
+        "stage_b.status=FIELD_PIN_NOT_EXPOSED_GATED_ON_ADMISSION",
+        "candidate.selected_canonical_pointer=null",
+        "candidate.field_pin_created=false"
+      ],
+      "systemic_blocker_match": true
+    }
+  ]
+}
