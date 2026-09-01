@@ -1,0 +1,114 @@
+{
+  "schema": "PROVX_R7R1_R6R2_CONSUMER_CONTRACT_AUDIT_V1",
+  "review_date": "2026-09-01",
+  "consumer": {
+    "path": "parallel/b/PROVX_R7_NORMALIZED_TO_GRAPH_ADAPTER.py",
+    "sha256": "7e33886b9ac628e8c4f312317127d95c181e40bebc2c5059cc9022ed4555ad6e",
+    "git_blob": "3efd33f8aa37d5fdf150ff5b2fed433a471186bc",
+    "authenticated_from_remediation_through_source_head": true
+  },
+  "runtime_descriptor_contract": {
+    "required_fields": [
+      "run_id",
+      "raw_path",
+      "normalized_path",
+      "join_path",
+      "coverage_path",
+      "runtime_review_path",
+      "pcap_path",
+      "pcap_hash_source"
+    ],
+    "expected_sha256_required_for_every_selected_path": true,
+    "filename_discovery_or_latest_run_guessing": false,
+    "runtime_review_run_id_must_match": true,
+    "coverage_run_id_must_match": true,
+    "row_run_id_when_present_must_match": true,
+    "pcap_sha256_must_be_present_in_explicit_hash_source": true,
+    "failure_mode": "AdapterError"
+  },
+  "raw_record_contract": {
+    "serial": "unique integer in serial or raw_serial",
+    "raw_bytes_b64": "valid base64 audit-event bytes",
+    "raw_sha256": "SHA-256 of decoded raw_bytes_b64",
+    "duplicate_serials": "reject"
+  },
+  "normalized_common_contract": {
+    "required_fields": [
+      "run_id",
+      "event_id",
+      "event_type",
+      "raw_serial",
+      "raw_event_bytes_b64",
+      "raw_event_sha256",
+      "timestamp_source or timestamp_ms",
+      "pid",
+      "pid_start_time_ticks",
+      "ppid",
+      "logical_host_id",
+      "netns_inode",
+      "join_status"
+    ],
+    "raw_serial": "unique integer matching one raw record",
+    "raw_event_bytes_b64": "valid base64 and byte-equal to matching raw record",
+    "raw_event_sha256": "64 hexadecimal characters and equal to hashes recomputed from normalized and raw decoded bytes",
+    "timestamp": "finite numeric source convertible to deterministic integer milliseconds",
+    "event_id": "non-empty stable evidence identity",
+    "failure_mode": "authentication reject or graph quarantine"
+  },
+  "pid_netns_join_contract": {
+    "lookup_key": [
+      "logical_host_id",
+      "pid"
+    ],
+    "event_join_status": "JOINED",
+    "event_netns_inode": "integer equal to joined row netns_inode",
+    "event_pid_start_time_ticks": "integer equal to joined row process.start_ticks or start_ticks",
+    "missing_or_inconsistent_join": "quarantine"
+  },
+  "file_read_or_write_contract": {
+    "event_type": "FILE_READ_OR_WRITE",
+    "path_identity": "path or file_identity.paths",
+    "evidence_basis": "AUDIT_FILESYSTEM_PERMISSION_FILTER",
+    "watched_path": "non-empty absolute path also present in path/file_identity.paths",
+    "requested_access": [
+      "r",
+      "w",
+      "rw"
+    ],
+    "underlying_syscall": "non-empty",
+    "edge_direction": "PROCESS_TO_FILE",
+    "encoder_event_class": "write",
+    "missing_permission_evidence": "quarantine"
+  },
+  "file_identity_contract": {
+    "r5": "path:<path>",
+    "non_r5_including_r6": "host:<logical_host_id>|path:<path>",
+    "same_path_on_different_hosts_collides": false
+  },
+  "fail_closed_contract": [
+    "selected file missing or SHA-256 mismatch",
+    "runtime or coverage run_id mismatch",
+    "raw or normalized serial invalid or duplicated",
+    "raw/normalized decoded-byte or SHA-256 mismatch",
+    "missing explicit pcap hash source or pcap hash mismatch",
+    "missing event evidence identity",
+    "unjoined or inconsistent PID/netns/logical-host identity",
+    "missing file identity",
+    "missing or inconsistent permission-filter evidence",
+    "invalid timestamp"
+  ],
+  "r6r2_compatibility_matrix": {
+    "adds_required_field_r7r1_cannot_consume": false,
+    "removes_r7r1_required_field": false,
+    "changes_required_field_meaning": false,
+    "changes_host_path_identity_rule": false,
+    "changes_event_class_mapping": false,
+    "changes_raw_link_authentication_requirement": false,
+    "changes_fail_closed_rule": false,
+    "micro_probe_diagnostics_enter_normalized_event_contract": false,
+    "micro_probe_serial_parser_is_used_by_final_normalized_event_builder": false,
+    "final_raw_group_parser_and_normalized_event_builder_changed": false
+  },
+  "r7r1_consumer_contract_compatible": "PASS",
+  "status": "PASS_INTERFACE_NEUTRAL"
+}

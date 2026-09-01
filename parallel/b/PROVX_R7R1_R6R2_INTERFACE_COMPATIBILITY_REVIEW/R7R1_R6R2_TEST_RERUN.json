@@ -1,0 +1,56 @@
+{
+  "schema": "PROVX_R7R1_R6R2_TEST_RERUN_V1",
+  "review_date": "2026-09-01",
+  "non_privileged": true,
+  "runs": [
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 -m unittest -v PROVX_R7R1_INTERFACE_REMEDIATION_TESTS.py",
+      "working_directory": "parallel/b",
+      "passed": 12,
+      "total": 12,
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 -m unittest -v PROVX_R7_GRAPH_ADAPTER_TESTS.py",
+      "working_directory": "parallel/b",
+      "passed": 5,
+      "total": 5,
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 -m unittest -v PROVX_R4_ENCODER_TESTS.py",
+      "working_directory": "parallel/b",
+      "passed": 7,
+      "total": 7,
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 -m unittest -v test_e1c_r6_harness.py",
+      "working_directory": "parallel/a/e1c-r6-run-20260901T060350Z",
+      "classification": "SUPPLEMENTARY_R6R2_DELTA_EVIDENCE",
+      "passed": 33,
+      "total": 33,
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "command": "python3 JSON validation over the five review-package JSON files",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "status": "PASS"
+    }
+  ],
+  "required_e0b_suites": "24/24 PASS",
+  "supplementary_r6r2_suite": "33/33 PASS",
+  "pycache_or_pyc_written": false,
+  "privileged_command_executed": false,
+  "mininet_executed": false,
+  "status": "PASS"
+}

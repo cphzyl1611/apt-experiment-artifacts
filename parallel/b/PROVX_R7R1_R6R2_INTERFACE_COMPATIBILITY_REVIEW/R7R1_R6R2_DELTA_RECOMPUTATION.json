@@ -1,0 +1,122 @@
+{
+  "schema": "PROVX_R7R1_R6R2_DELTA_RECOMPUTATION_V1",
+  "review_date": "2026-09-01",
+  "materialization_commit": "a471ee6ca09253a381d96a228ab58a1f652bd0b9",
+  "direct_parent": "674222444d6e675b50aba5d6194e9dd01015acbd",
+  "source_head": "99f9c0d7fe8b4ecec896837b3991e8d23ebbb608",
+  "materialized_paths_byte_equal_at_source_head": true,
+  "committed_delta": {
+    "changed_file_count": 7,
+    "production_harness": {
+      "path": "parallel/a/e1c-r6-run-20260901T060350Z/mininet_e1c_r6_file_access_closure_smoke.py",
+      "parent_git_blob": "8116e73574598255091ca6b9b73b323bd96e71e5",
+      "materialized_git_blob": "fbaea4f8a67e459c8415c14721e7539d6e81a7ea",
+      "parent_sha256": "402e94bcdb6740c9b6fd644af5cce7ba080c2a677f357181aad82649108137d6",
+      "materialized_sha256": "73353b4fa4f60b8e696e4e1330beef0f0b9f32d73c535778bf2884d836256b97",
+      "added_lines": 91,
+      "deleted_lines": 14
+    },
+    "test_harness": {
+      "path": "parallel/a/e1c-r6-run-20260901T060350Z/test_e1c_r6_harness.py",
+      "parent_git_blob": "4fa67c1e50b19edb5973bac72295611dff97bcfd",
+      "materialized_git_blob": "653c3bfc4c89148027ff017021c487661cb79e9d",
+      "parent_sha256": "dbb2a84c49d9f9ff63998a0e826f30e8a748a4d6e9cc2d85065324d3182f3ef2",
+      "materialized_sha256": "372fc055913c03efa598e14dd8af895931e9b6a924d0782d059022f4a0912141",
+      "added_lines": 195,
+      "deleted_lines": 0
+    }
+  },
+  "semantic_delta": {
+    "affected_path": "pre-Mininet privileged micro-probe evidence visibility gate",
+    "evidence_retrieval_before": [
+      "/usr/sbin/ausearch",
+      "-k",
+      "<exact_random_key>",
+      "-i"
+    ],
+    "evidence_retrieval_after": [
+      "/usr/sbin/ausearch",
+      "-k",
+      "<exact_random_key>",
+      "--raw"
+    ],
+    "serial_parser_before": "audit\\([^:]+:(\\d+)\\)",
+    "serial_parser_after": "\\bmsg=audit\\((?:\\d+(?:\\.\\d+)?):(\\d+)\\)",
+    "serial_result_type_after": "integer",
+    "bounded_polling": {
+      "historical_fact": "ADDED_BY_R6R2_NOT_PRESENT_IN_DIRECT_PARENT",
+      "monotonic_deadline": true,
+      "default_wait_seconds": 2.0,
+      "maximum_wait_seconds": 2.0,
+      "default_interval_seconds": 0.05,
+      "maximum_interval_seconds": 0.1,
+      "timeout_verdict": "BLOCKED",
+      "timeout_state": "AUDIT_EVIDENCE_MISSING"
+    },
+    "exact_key_token_required": true,
+    "exact_watched_path_token_required": true,
+    "micro_probe_diagnostics_added": [
+      "poll_attempts",
+      "elapsed_visibility_latency",
+      "final_ausearch_returncode",
+      "key_seen",
+      "path_seen",
+      "audit_serial",
+      "evidence_mode"
+    ],
+    "final_mininet_collection_before_and_after": "/usr/sbin/ausearch -k <run_key> --raw",
+    "final_mininet_collection_changed": false
+  },
+  "unchanged_committed_semantics": {
+    "event_type": {
+      "value": "FILE_READ_OR_WRITE",
+      "source_segment_sha256_parent_and_materialized": "77eb95bc0f143449ff08394bfa58e8665659baa80a0d3130dc5cf21ce8f94a5c"
+    },
+    "evidence_basis": {
+      "value": "AUDIT_FILESYSTEM_PERMISSION_FILTER",
+      "source_segment_sha256_parent_and_materialized": "8eb8733fd3dfd2435f16552a3cb3d627a5035abe6ff722ac249e274c7fcbf9be"
+    },
+    "exact_audit_rule_builder": {
+      "rule": "arch=b64 + exact path + perm=rw + exact pid + exact random key",
+      "source_segment_sha256_parent_and_materialized": "76e7b30964b1b861c544262f726178e74c3c7a3c345406c86c2308629369b86b"
+    },
+    "exact_inverse_rule_removal": {
+      "source_segment_sha256_parent_and_materialized": "281209df3d2119a4ef0372d8a5966b3dbd963f6e33196b109111b49667d3d344"
+    },
+    "filesystem_permission_normalizer": {
+      "source_segment_sha256_parent_and_materialized": "30f4dd9fb2134a7b7255166d4051e0ecd1c489f5da8751ce25d345007133dc02"
+    },
+    "raw_link_verifier": {
+      "source_segment_sha256_parent_and_materialized": "fce9f77028e2d0f38031c829ee33a63b1f385f073921a598d654716257e87167"
+    },
+    "raw_group_parser": {
+      "source_segment_sha256_parent_and_materialized": "d9fc1fbb6816b44dfe9620cc648f2d91a2e2c6507e058d692d9735781692849c"
+    },
+    "normalized_runtime_event_builder": {
+      "source_segment_sha256_parent_and_materialized": "7edf526bb55c96482930b0cf5febe65d7811e3d120610023192b6acdd4234010"
+    },
+    "watched_path_semantics": "exact intersection of configured permission paths with audited PATH name fields",
+    "raw_serial_semantics": "unique integer audit event serial propagated from unchanged raw-group parsing into raw and normalized records",
+    "normalized_event_schema_changed": false,
+    "audit_rule_widened": false
+  },
+  "committed_review_artifact_discrepancies": [
+    {
+      "classification": "NON_BLOCKING_PROVENANCE_WORDING_ERROR",
+      "finding": "The R6R2 prose says bounded polling was preserved, but the direct parent performed one immediate interpreted lookup. R6R2 added bounded polling.",
+      "interface_effect": "NONE"
+    },
+    {
+      "classification": "NON_BLOCKING_PROVENANCE_HEAD_MISMATCH",
+      "finding": "R6R2_STATIC_BOUNDARY_AUDIT.json names cde75a82 as current_head while its recorded harness and test SHA-256 values first match a471ee6c.",
+      "interface_effect": "NONE_BECAUSE_CODE_BYTES_WERE_INDEPENDENTLY_AUTHENTICATED"
+    }
+  ],
+  "file_read_or_write_event_class_preserved": "PASS",
+  "audit_filesystem_permission_filter_preserved": "PASS",
+  "watched_path_semantics_preserved": "PASS",
+  "raw_serial_semantics_preserved": "PASS",
+  "normalized_schema_changed": false,
+  "r6r2_delta_authentication": "PASS",
+  "status": "PASS"
+}

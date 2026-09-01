@@ -1,0 +1,26 @@
+{
+  "schema": "PROVX_R7R1_R6R2_ENCODER_BOUNDARY_V1",
+  "review_date": "2026-09-01",
+  "frozen_encoder": {
+    "path": "parallel/b/PROVX_R4_ENCODER_IMPLEMENTATION.py",
+    "bytes": 22559,
+    "sha256_at_cde75a82": "013d9b77297308843144ccfce4c3eec4b03dc3cc5172dabd6eb3320e7bc46547",
+    "sha256_at_a471ee6c": "013d9b77297308843144ccfce4c3eec4b03dc3cc5172dabd6eb3320e7bc46547",
+    "sha256_at_ee28eb41": "013d9b77297308843144ccfce4c3eec4b03dc3cc5172dabd6eb3320e7bc46547",
+    "sha256_at_source_head": "013d9b77297308843144ccfce4c3eec4b03dc3cc5172dabd6eb3320e7bc46547",
+    "changed": false,
+    "dimension": 32,
+    "contract_unchanged": true
+  },
+  "execution_boundary": {
+    "runtime_r6_evidence_present": false,
+    "runtime_r6_evidence_fabricated_or_synthesized": false,
+    "detector_checkpoint_loaded": false,
+    "detector_training_executed": false,
+    "provx_inference_executed": false,
+    "formal_experiment_executed": false,
+    "privileged_command_executed": false,
+    "mininet_executed": false
+  },
+  "status": "PASS"
+}

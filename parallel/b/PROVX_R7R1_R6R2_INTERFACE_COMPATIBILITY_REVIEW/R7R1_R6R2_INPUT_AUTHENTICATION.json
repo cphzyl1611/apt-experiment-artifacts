@@ -1,0 +1,74 @@
+{
+  "schema": "PROVX_R7R1_R6R2_INPUT_AUTHENTICATION_V1",
+  "review_date": "2026-09-01",
+  "review_type": "COMMITTED_BYTES_INTERFACE_COMPATIBILITY_ONLY",
+  "repository_authentication": {
+    "origin": "https://github.com/cphzyl1611/apt-experiment-artifacts.git",
+    "origin_match": true,
+    "local_branch": "artifact/e0-b",
+    "source_head": "99f9c0d7fe8b4ecec896837b3991e8d23ebbb608",
+    "remote_main_head_at_review": "99f9c0d7fe8b4ecec896837b3991e8d23ebbb608",
+    "remote_artifact_e0_b_present_at_review_start": false,
+    "e0b_r7r1_remediation_commit": "cde75a82e7938db6d5903d16885bf35ceb17aa68",
+    "r6r2_materialization_commit": "a471ee6ca09253a381d96a228ab58a1f652bd0b9",
+    "repository_recovery_commit": "ee28eb41220d080b225f1dbc752c114656ef2299",
+    "all_required_commits_are_ancestors_of_source_head": true,
+    "status": "PASS"
+  },
+  "e0b_recovered_bytes": {
+    "adapter": {
+      "path": "parallel/b/PROVX_R7_NORMALIZED_TO_GRAPH_ADAPTER.py",
+      "bytes": 41298,
+      "sha256": "7e33886b9ac628e8c4f312317127d95c181e40bebc2c5059cc9022ed4555ad6e",
+      "git_blob": "3efd33f8aa37d5fdf150ff5b2fed433a471186bc",
+      "git_blob_at_cde75a82": "3efd33f8aa37d5fdf150ff5b2fed433a471186bc",
+      "git_blob_at_a471ee6c": "3efd33f8aa37d5fdf150ff5b2fed433a471186bc",
+      "git_blob_at_ee28eb41": "3efd33f8aa37d5fdf150ff5b2fed433a471186bc",
+      "git_blob_at_source_head": "3efd33f8aa37d5fdf150ff5b2fed433a471186bc",
+      "byte_equal_across_required_commits": true
+    },
+    "r7r1_tests": {
+      "path": "parallel/b/PROVX_R7R1_INTERFACE_REMEDIATION_TESTS.py",
+      "bytes": 11234,
+      "sha256": "b22ba7f20c926b24ea522c998976b6b0c7cb246b2a11a19bb9ff2bb29c508f0d",
+      "git_blob": "a05564971d032e3727df184acaafec765942bc3f",
+      "git_blob_at_cde75a82": "a05564971d032e3727df184acaafec765942bc3f",
+      "git_blob_at_a471ee6c": "a05564971d032e3727df184acaafec765942bc3f",
+      "git_blob_at_ee28eb41": "a05564971d032e3727df184acaafec765942bc3f",
+      "git_blob_at_source_head": "a05564971d032e3727df184acaafec765942bc3f",
+      "byte_equal_across_required_commits": true
+    },
+    "status": "PASS"
+  },
+  "identity_invariants": {
+    "r5_legacy_file_identity": {
+      "rule": "path:<path>",
+      "adapter_reference": "PROVX_R7_NORMALIZED_TO_GRAPH_ADAPTER.py:415-423",
+      "status": "PASS"
+    },
+    "non_r5_file_identity": {
+      "rule": "host:<logical_host_id>|path:<path>",
+      "adapter_reference": "PROVX_R7_NORMALIZED_TO_GRAPH_ADAPTER.py:415-423",
+      "status": "PASS"
+    },
+    "cross_host_same_path_collision": {
+      "expected_distinct_ids": [
+        "host:h1|path:/tmp/r6-bound-file",
+        "host:h2|path:/tmp/r6-bound-file"
+      ],
+      "test_reference": "PROVX_R7R1_INTERFACE_REMEDIATION_TESTS.py:test_non_r5_same_path_on_distinct_joined_hosts_has_distinct_file_nodes",
+      "status": "CLOSED"
+    }
+  },
+  "scope_boundaries": {
+    "implementation_modified": false,
+    "existing_tests_modified": false,
+    "parallel_a_modified": false,
+    "parallel_c_modified": false,
+    "current86_r4_modified": false,
+    "pycache_or_pyc_written": false,
+    "runtime_evidence_present": false
+  },
+  "e0b_implementation_authentication": "PASS",
+  "status": "PASS"
+}
