@@ -1,0 +1,46 @@
+{
+  "candidate_side": 231,
+  "cross_route_substitution": 0,
+  "dry_run_count": 317,
+  "dry_run_order_exact": true,
+  "dry_run_sha256": "884dec61cc33e13d12c439e202568c8e592650b82f98acca22b5eb0b4f4eaa82",
+  "dry_run_target_ids_match_manifest": true,
+  "duplicates": 0,
+  "expected_dry_run_sha256": "884dec61cc33e13d12c439e202568c8e592650b82f98acca22b5eb0b4f4eaa82",
+  "expected_manifest_sha256": "d8d55d369fe433bf7b93a3c332b8ac9a517a9146b28fa223370ff3ec946955ac",
+  "expected_skeleton_sha256": "d55bc015d21b3fb4a6edc7ef9aa0caf5abca1da177da2df232f1dd97bd6f8573",
+  "manifest_indices_exact": true,
+  "manifest_sha256": "d8d55d369fe433bf7b93a3c332b8ac9a517a9146b28fa223370ff3ec946955ac",
+  "manifest_target_count": 317,
+  "manifest_target_ids_unique": true,
+  "missing_indices": [],
+  "raw_side": 86,
+  "route_details": {
+    "R4_WRAPPER_C0_60": {
+      "expected_count": 60,
+      "expected_side": "RAW",
+      "observed_count": 60,
+      "overlap_with_prior_routes": [],
+      "unique": true
+    },
+    "R4_WRAPPER_RAW_LEGACY_26": {
+      "expected_count": 26,
+      "expected_side": "RAW",
+      "observed_count": 26,
+      "overlap_with_prior_routes": [],
+      "unique": true
+    },
+    "R4_WRAPPER_SCORING_231": {
+      "expected_count": 231,
+      "expected_side": "CANDIDATE",
+      "observed_count": 231,
+      "overlap_with_prior_routes": [],
+      "unique": true
+    }
+  },
+  "route_union_indices_exact": true,
+  "skeleton_count": 317,
+  "skeleton_decisions_null": true,
+  "skeleton_sha256": "d55bc015d21b3fb4a6edc7ef9aa0caf5abca1da177da2df232f1dd97bd6f8573",
+  "status": "PASS"
+}

@@ -1,0 +1,12 @@
+{
+  "all_unapproved_targets_blocked": true,
+  "binding_publication": false,
+  "bridge_design_only": true,
+  "bridge_execution_status": "DESIGNED_NOT_EXECUTED",
+  "field_pins_created": 0,
+  "no_preselected_pointers": true,
+  "p0_executed": false,
+  "p1_executed": false,
+  "source_auth_executed": false,
+  "status": "PASS"
+}

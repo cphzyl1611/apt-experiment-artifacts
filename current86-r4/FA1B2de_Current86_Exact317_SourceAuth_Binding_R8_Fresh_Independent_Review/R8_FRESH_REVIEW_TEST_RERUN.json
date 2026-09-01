@@ -1,0 +1,21 @@
+{
+  "runs": [
+    {
+      "command": "/home/cph/miniconda3/bin/python -I -m unittest discover -s tests -v",
+      "cwd": "/home/cph/fa1b2de-bso-a2-transition-r2-design-patch/FA1B2de_Current86_Exact317_SourceAuth_Binding_R8_Field_Pin_Governance_Materialization",
+      "returncode": 0,
+      "status": "PASS",
+      "stderr": "test_batches_and_first_tranche_are_exact_and_presentation_only (test_r8_materialization.R8MaterializationTests.test_batches_and_first_tranche_are_exact_and_presentation_only) ... ok\ntest_materialized_package_conserves_exact317_and_keeps_field_pins_unselected (test_r8_materialization.R8MaterializationTests.test_materialized_package_conserves_exact317_and_keeps_field_pins_unselected) ... ok\ntest_r8_materializer_module_exists_and_exports_contract (test_r8_materialization.R8MaterializationTests.test_r8_materializer_module_exists_and_exports_contract) ... ok\ntest_r8_outputs_have_no_authoritative_or_downstream_activation (test_r8_materialization.R8MaterializationTests.test_r8_outputs_have_no_authoritative_or_downstream_activation) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.064s\n\nOK\n",
+      "stdout": ""
+    },
+    {
+      "command": "/home/cph/miniconda3/bin/python -I tools/verify_r8.py",
+      "cwd": "/home/cph/fa1b2de-bso-a2-transition-r2-design-patch/FA1B2de_Current86_Exact317_SourceAuth_Binding_R8_Field_Pin_Governance_Materialization",
+      "returncode": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "{\n  \"active_r7_consumer_pointer_sha256\": \"02394a7fc7c5f337dfbfff521467759f80e14f8d5d27ca9e01653eec3f0d592c\",\n  \"authority_boundary\": {\n    \"active_r7_authority_authenticated\": true,\n    \"binding_authority_mutated\": false,\n    \"binding_publication\": false,\n    \"field_pins_created\": 0,\n    \"git_ref_mutation\": false,\n    \"p0_executed\": false,\n    \"p1_executed\": false,\n    \"scoring_authority_mutated\": false,\n    \"source_auth_executed\": false\n  },\n  \"classification_counts\": {\n    \"MULTIPLE_CANDIDATE_POINTERS\": 317,\n    \"NO_CANDIDATE_POINTER\": 0,\n    \"SINGLE_CANDIDATE_POINTER\": 0\n  },\n  \"exact317\": {\n    \"candidate\": 231,\n    \"cross_route_substitution\": 0,\n    \"duplicates\": 0,\n    \"missing\": 0,\n    \"raw\": 86,\n    \"routes\": {\n      \"R4_WRAPPER_C0_60\": 60,\n      \"R4_WRAPPER_RAW_LEGACY_26\": 26,\n      \"R4_WRAPPER_SCORING_231\": 231\n    },\n    \"total\": 317,\n    \"union\": \"Exact317\"\n  },\n  \"field_pin_packets\": 317,\n  \"first_human_review_tranche_count\": 24,\n  \"independent\": true,\n  \"next_action\": \"FRESH_REVIEW_OF_BINDING_R8_FIELD_PIN_GOVERNANCE_MATERIALIZATION\",\n  \"pinned_r8_review_commit\": \"107ef9f69a734a10b320d552cfe18a6cb9a2ac0c\",\n  \"pinned_r8_review_tree\": \"26b5c3a56e86fb5c11d50fc86bd99d6b940239fc\",\n  \"schema\": \"FA1B2DE_CURRENT86_BINDING_R8_INDEPENDENT_VERIFICATION_V1\",\n  \"stop\": true,\n  \"verification_status\": \"PASS\"\n}\n"
+    }
+  ],
+  "status": "PASS"
+}

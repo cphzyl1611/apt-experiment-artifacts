@@ -1,0 +1,126 @@
+{
+  "ALL_CHECKS_PASS": true,
+  "CLAIMED_HASHES_MATCH": {
+    "edge_index": true,
+    "graph": true,
+    "tensor_x": true
+  },
+  "COMMIT_AUTHENTICATION": {
+    "commit_matches_expected": true,
+    "commit_tree": "4eb78c5fbc40a5ee883b930c050db072d3cbceba",
+    "current_repository_commit": "2ff2b21cd313c5b91567adfe05691d3e25aabb87",
+    "expected_repository_commit": "2ff2b21cd313c5b91567adfe05691d3e25aabb87",
+    "repository": "/home/cph/fa1b2de-review-artifacts",
+    "tracked_r7_r4_sources": {
+      "PROVX_R4_ENCODER_IMPLEMENTATION.py": {
+        "bytes": 22559,
+        "sha256": "013d9b77297308843144ccfce4c3eec4b03dc3cc5172dabd6eb3320e7bc46547"
+      },
+      "PROVX_R4_ENCODER_TESTS.py": {
+        "bytes": 4341,
+        "sha256": "481d527b895a0e3ebd8059fc32db1a3dfe596d67be2a5196dfb8d83712d36daf"
+      },
+      "PROVX_R7_GRAPH_ADAPTER_TESTS.py": {
+        "bytes": 3787,
+        "sha256": "8851711c352a0d6e431565e840444d6772875e3b24abb2cdce55977af55bf13c"
+      },
+      "PROVX_R7_NORMALIZED_GRAPH_INPUT_SCHEMA.json": {
+        "bytes": 1654,
+        "sha256": "9cd5ef4a12c7bc74055c2eb1bcd5fad7cae427b652a18c7b37c00df78511451e"
+      },
+      "PROVX_R7_NORMALIZED_TO_GRAPH_ADAPTER.py": {
+        "bytes": 30966,
+        "sha256": "9359568acdff98f7eed1374f15bbb12c99c03829a49b6ac3f733d65db2b8a92a"
+      }
+    },
+    "working_tree_clean": false
+  },
+  "CONSUMED_NORMALIZED_RECORDS": 28,
+  "CORPUS_ACQUIRED": "NO",
+  "CURRENT_REPOSITORY_COMMIT": "2ff2b21cd313c5b91567adfe05691d3e25aabb87",
+  "DETECTOR_TRAINED": "NO",
+  "E1C_R6_REVALIDATION_CONTRACT": {
+    "full_pass_promoted": false,
+    "promotion_rule": "Stage-A full collector-adapter PASS remains NO until FILE_READ_OR_WRITE is present and all release gates pass",
+    "requires_file_read_or_write": true,
+    "status": "WAITING_FOR_E1C_R6_FILE_RW"
+  },
+  "EDGE_COUNT": 22,
+  "EDGE_INDEX_SHA256": "f29e051b027b7fd5eb20b995cf82f5906b2eaceda75dd12c76ebae24c0dabd21",
+  "EDGE_SOURCE_HASH_EVIDENCE": true,
+  "ENCODER_32D_INTERFACE": "PASS",
+  "ENCODER_OUTPUT": {
+    "edge_index_dtype": "int64",
+    "edge_index_shape": [
+      2,
+      22
+    ],
+    "x_dtype": "float32",
+    "x_finite": true,
+    "x_shape": [
+      10,
+      32
+    ]
+  },
+  "FILE_READ_OR_WRITE_EDGE_SYNTHESIZED": "NO",
+  "FILE_READ_OR_WRITE_PRESENT": "NO",
+  "FILE_READ_OR_WRITE_SOURCE_COUNT": 0,
+  "FORMAL_EXPERIMENT_EXECUTED": "NO",
+  "GRAPH_DETERMINISM": "PASS",
+  "GRAPH_RECOMPUTATION": "PASS",
+  "GRAPH_SHA256": "b24b424d0e530a9d03c2bf01ed6a193447e3fa75b9725b978d7c27a0998b9acd",
+  "HISTORICAL_DISCREPANCY_TREATMENT": "artifact-quality discrepancy only; not repaired",
+  "HISTORICAL_NORMALIZED_RAW_LINKS_VALID": false,
+  "NEXT_ACTION": "WAIT_FOR_MININET_E1C_R6_RUNTIME_EVIDENCE",
+  "NODE_COUNT": 10,
+  "PCAP_PROVENANCE_EDGE_EVIDENCE": "NO",
+  "PID_ONLY_CROSS_HOST_MERGE": "PASS",
+  "PROVX_INFERENCE_EXECUTED": "NO",
+  "PROVX_R7_FRESH_INDEPENDENT_REVIEW": "PASS_PARTIAL_WAITING_FOR_E1C_R6_FILE_RW",
+  "QUARANTINED_NORMALIZED_RECORDS": 6,
+  "QUARANTINE_IDENTITY_CHECK": "PASS",
+  "QUARANTINE_SERIALS": [
+    697,
+    698,
+    699,
+    700,
+    701,
+    703
+  ],
+  "R5_INPUT_AUTHENTICATION": "PASS",
+  "R5_RAW_LINK_RECOMPUTATION": "PASS",
+  "R5_SOURCE_FILE_SHA256": {
+    "MININET_E1C_R5_NORMALIZED_EVENTS.jsonl": "8e9563aa31106a7af008de18b48ff3b86d58f47e967b409b97c831049b5f08f6",
+    "MININET_E1C_R5_PID_NETNS_JOIN.jsonl": "983ad6802b0a53c7126be52bb88811ea0fe8c919c347ec80d784f80416585009",
+    "MININET_E1C_R5_RAW_AUDIT_EVIDENCE.jsonl": "53f89816610a4a2e22a7c3c3baa84a672b00e9d43ec3abe487dc2d3778817558",
+    "MININET_E1C_R5_RUNTIME_EVIDENCE_REVIEW.json": "e43cd0d266fc324566d4236450be675d69b08c1310a26e8f4fd2fbc178077dcb"
+  },
+  "RAW_NORMALIZED_GRAPH_REVERSIBILITY": "PASS",
+  "REVERSED_INPUT_HASHES": {
+    "edge_index_identical": true,
+    "edge_index_sha256": "f29e051b027b7fd5eb20b995cf82f5906b2eaceda75dd12c76ebae24c0dabd21",
+    "graph_sha256": "b24b424d0e530a9d03c2bf01ed6a193447e3fa75b9725b978d7c27a0998b9acd",
+    "tensor_x_identical": true,
+    "tensor_x_sha256": "605d1e2133589f9ae68d104ac62c2092d1d7238becf2a4cd99f9e7d34b9b621d"
+  },
+  "STAGE_A_FULL_COLLECTOR_ADAPTER_PASS": "NO",
+  "STOP": true,
+  "SYNTHESIZED_FILE_READ_OR_WRITE_EDGE_COUNT": 0,
+  "TENSOR_X_SHA256": "605d1e2133589f9ae68d104ac62c2092d1d7238becf2a4cd99f9e7d34b9b621d",
+  "TESTS": {
+    "r4": {
+      "command": "python PROVX_R4_ENCODER_TESTS.py",
+      "returncode": 0,
+      "stderr": ".......\n----------------------------------------------------------------------\nRan 7 tests in 0.020s\n\nOK\n",
+      "stdout": ""
+    },
+    "r7": {
+      "command": "python PROVX_R7_GRAPH_ADAPTER_TESTS.py",
+      "returncode": 0,
+      "stderr": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.024s\n\nOK\n",
+      "stdout": ""
+    }
+  },
+  "review_scope": "PROVX_R7_STAGE_A_PARTIAL_ADAPTER_FRESH_INDEPENDENT_REVIEW",
+  "schema": "PROVX_R7_FRESH_INDEPENDENT_REVIEW_V1"
+}

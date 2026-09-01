@@ -1,0 +1,16 @@
+{
+  "all_317_multiple": true,
+  "descriptive_only": true,
+  "recomputed_counts": {
+    "MULTIPLE_CANDIDATE_POINTERS": 317,
+    "NO_CANDIDATE_POINTER": 0,
+    "SINGLE_CANDIDATE_POINTER": 0
+  },
+  "reported_counts": {
+    "MULTIPLE_CANDIDATE_POINTERS": 317,
+    "NO_CANDIDATE_POINTER": 0,
+    "SINGLE_CANDIDATE_POINTER": 0
+  },
+  "selection_performed": false,
+  "status": "PASS"
+}

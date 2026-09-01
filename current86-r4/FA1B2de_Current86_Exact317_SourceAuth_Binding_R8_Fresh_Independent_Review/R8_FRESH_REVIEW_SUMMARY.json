@@ -1,0 +1,8 @@
+{
+  "failures": [
+    "r8_package_authentication"
+  ],
+  "next_action": "REMEDIATE_R8_MATERIALIZATION",
+  "overall_status": "BLOCKED",
+  "reviewed_artifacts_mutated": false
+}
