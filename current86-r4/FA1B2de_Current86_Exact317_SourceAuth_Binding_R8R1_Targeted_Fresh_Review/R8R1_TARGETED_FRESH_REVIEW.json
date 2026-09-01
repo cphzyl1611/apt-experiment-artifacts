@@ -1,0 +1,65 @@
+{
+  "schema": "FA1B2DE_CURRENT86_BINDING_R8R1_TARGETED_FRESH_REVIEW_V1",
+  "review_type": "BINDING_R8R1_TARGETED_FRESH_REVIEW",
+  "repository_origin": "https://github.com/cphzyl1611/apt-experiment-artifacts.git",
+  "current_repository_commit": "6842f28151dce9f57e451ab5ba3b6b86f1a906d1",
+  "current_repository_parent": "f8d62fd36e40f3e0d0f8111022c4e43eb10bfc24",
+  "historical_full_fresh_review_commit": "822079ec58e90f2d1a00fa967a8bd7f77ff9614d",
+  "historical_r8_materialization_commit": "2ff2b21cd313c5b91567adfe05691d3e25aabb87",
+  "repository_head_authentication": "PASS",
+  "parent_lineage_authentication": "PASS",
+  "r8r1_remediation_authentication": "PASS",
+  "r8r1_remediation_report_checksum_verified": true,
+  "inventory": {
+    "file_list_path_count": 12,
+    "sha256sums_path_count": 12,
+    "path_sets_equal": true,
+    "file_list_self_listed": true,
+    "file_list_checksummed": true,
+    "sha256sums_self_listed": false,
+    "sha256sums_self_checksummed": false,
+    "all_listed_checksums_verified": true,
+    "r7_convention": "PASS"
+  },
+  "substantive_r8_artifacts": {
+    "baseline_commit": "2ff2b21cd313c5b91567adfe05691d3e25aabb87",
+    "artifact_count": 8,
+    "all_bytes_unchanged": true,
+    "reuse_prior_317_audit": true,
+    "prior_full_review_substantive_status": "PASS",
+    "full_r8_fresh_review_required": false
+  },
+  "scoped_changed_paths": {
+    "expected": [
+      "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_R8_Field_Pin_Governance_Materialization/FILE_LIST.txt",
+      "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_R8_Field_Pin_Governance_Materialization/SHA256SUMS.txt",
+      "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_R8_Field_Pin_Governance_Materialization/tests/__pycache__/test_r8_materialization.cpython-313.pyc",
+      "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_R8_Field_Pin_Governance_Materialization/tests/test_r8_materialization.py",
+      "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_R8_Field_Pin_Governance_Materialization/tools/materialize_r8.py",
+      "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_R8R1_Envelope_Remediation/FILE_LIST.txt",
+      "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_R8R1_Envelope_Remediation/R8R1_ENVELOPE_DEFECT_REPRODUCTION.json",
+      "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_R8R1_Envelope_Remediation/R8R1_ENVELOPE_PATHSET_VERIFICATION.json",
+      "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_R8R1_Envelope_Remediation/R8R1_ENVELOPE_REMEDIATION_REPORT.md",
+      "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_R8R1_Envelope_Remediation/R8R1_SUBSTANTIVE_ARTIFACT_NONREGRESSION.json",
+      "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_R8R1_Envelope_Remediation/R8R1_TEST_AND_VERIFIER_RESULT.json",
+      "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_R8R1_Envelope_Remediation/SHA256SUMS.txt"
+    ],
+    "unexpected": [],
+    "status": "PASS"
+  },
+  "reruns": {
+    "r8_targeted_tests": "5/5",
+    "r8_supplied_independent_verifier": "PASS",
+    "historical_blocked_review_unchanged": true
+  },
+  "r7_active_authority_unchanged": true,
+  "active_r7_consumer_pointer_sha256": "02394a7fc7c5f337dfbfff521467759f80e14f8d5d27ca9e01653eec3f0d592c",
+  "field_pins_created": 0,
+  "source_auth_executed": false,
+  "p0_executed": false,
+  "p1_executed": false,
+  "binding_publication": false,
+  "overall_status": "PASS_READY_FOR_EXPLICIT_HUMAN_FIELD_PIN_REVIEW",
+  "next_action": "EXPLICIT_HUMAN_FIELD_PIN_REVIEW_OF_FIRST_TRANCHE",
+  "stop": true
+}
