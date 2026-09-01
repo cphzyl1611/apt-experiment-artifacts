@@ -56,6 +56,201 @@ class FilePermissionRuleTests(unittest.TestCase):
 
 
 class MicroProbeTests(unittest.TestCase):
+    def test_interpreted_timestamp_with_clock_colons_reproduces_old_parser_failure(self):
+        interpreted = (
+            'msg=audit(09/01/2026 08:09:38.381:1056): '
+            'key="e1c6probeclock" name="/tmp/e1c-r6-probe-clock.txt"'
+        )
+        self.assertIsNone(harness.parse_audit_serial(interpreted))
+
+    def test_poll_uses_raw_ausearch_mode_and_parses_raw_serial(self):
+        path = "/tmp/e1c-r6-probe-raw.txt"
+        key = "e1c6proberaw"
+        raw = f'msg=audit(1788264578.381:1056): key={key} name={path}\n'
+
+        def runner(argv, **kwargs):
+            self.assertEqual(argv, ["/usr/sbin/ausearch", "-k", key, "--raw"])
+            return mock.Mock(returncode=0, stdout=raw, stderr="")
+
+        result = harness.poll_audit_evidence(
+            key, path, runner=runner, monotonic=lambda: 0.0,
+            sleep=lambda _: None, max_wait=0.1, poll_interval=0.01,
+        )
+        self.assertEqual(result["verdict"], "PASS")
+        self.assertEqual(result["audit_serial"], 1056)
+        self.assertEqual(result["evidence_mode"], "RAW")
+
+    def test_original_immediate_lookup_reproduces_visibility_race(self):
+        path = "/tmp/e1c-r6-probe-race.txt"
+        key = "e1c6proberace"
+        output = f'type=SYSCALL msg=audit(1.2:76): key="{key}"\nname="{path}"\n'
+        responses = ["", output]
+
+        def runner(argv, **kwargs):
+            return mock.Mock(returncode=0, stdout=responses.pop(0), stderr="")
+
+        immediate = runner(["/usr/sbin/ausearch", "-k", key, "-i"])
+        self.assertIsNone(harness.parse_audit_serial(immediate.stdout))
+        result = harness.poll_audit_evidence(
+            key, path, runner=runner, monotonic=lambda: 0.0,
+            sleep=lambda _: None, max_wait=0.1, poll_interval=0.01,
+        )
+        self.assertEqual(result["verdict"], "PASS")
+        self.assertEqual(result["poll_attempts"], 1)
+
+    def test_audit_evidence_visible_immediately_passes(self):
+        path = "/tmp/e1c-r6-probe-immediate.txt"
+        key = "e1c6probeimmediate"
+        output = f'type=SYSCALL msg=audit(1.2:77): key="{key}"\nname="{path}"\n'
+        calls = []
+
+        def runner(argv, **kwargs):
+            calls.append(argv)
+            return mock.Mock(returncode=0, stdout=output, stderr="")
+
+        result = harness.poll_audit_evidence(
+            key, path, runner=runner, monotonic=lambda: 0.0, sleep=lambda _: None,
+        )
+        self.assertEqual(result["verdict"], "PASS")
+        self.assertEqual(result["poll_attempts"], 1)
+        self.assertTrue(result["key_seen"])
+        self.assertTrue(result["path_seen"])
+        self.assertEqual(result["audit_serial"], 77)
+        self.assertEqual(calls[0], ["/usr/sbin/ausearch", "-k", key, "--raw"])
+
+    def test_audit_evidence_delayed_visibility_passes(self):
+        path = "/tmp/e1c-r6-probe-delayed.txt"
+        key = "e1c6probedelayed"
+        output = f'type=SYSCALL msg=audit(1.2:78): key="{key}"\nname="{path}"\n'
+        responses = ["", "", output]
+        clock = iter([0.0, 0.01, 0.02, 0.03])
+        now = [0.0]
+
+        def monotonic():
+            value = now[0]
+            now[0] += 0.01
+            return value
+
+        def runner(argv, **kwargs):
+            return mock.Mock(returncode=0, stdout=responses.pop(0), stderr="")
+
+        result = harness.poll_audit_evidence(
+            key, path, runner=runner, monotonic=monotonic, sleep=lambda _: None,
+            max_wait=0.2, poll_interval=0.01,
+        )
+        self.assertEqual(result["verdict"], "PASS")
+        self.assertEqual(result["poll_attempts"], 3)
+        self.assertGreaterEqual(result["elapsed_visibility_latency"], 0.0)
+
+    def test_key_without_exact_path_keeps_polling_then_blocks(self):
+        path = "/tmp/e1c-r6-probe-missing-path.txt"
+        key = "e1c6probemissingpath"
+        output = f'type=SYSCALL msg=audit(1.2:79): key="{key}"\nname="/tmp/other.txt"\n'
+        calls = []
+        now = [0.0]
+
+        def monotonic():
+            value = now[0]
+            now[0] += 0.11
+            return value
+
+        def runner(argv, **kwargs):
+            calls.append(argv)
+            return mock.Mock(returncode=0, stdout=output, stderr="")
+
+        result = harness.poll_audit_evidence(
+            key, path, runner=runner, monotonic=monotonic, sleep=lambda _: None,
+            max_wait=0.2, poll_interval=0.01,
+        )
+        self.assertEqual(result["verdict"], "BLOCKED")
+        self.assertGreaterEqual(result["poll_attempts"], 2)
+        self.assertTrue(result["key_seen"])
+        self.assertFalse(result["path_seen"])
+        self.assertEqual(result["audit_serial"], 79)
+
+    def test_raw_path_without_exact_key_blocks(self):
+        path = "/tmp/e1c-r6-probe-missing-key.txt"
+        key = "e1c6probemissingkey"
+        output = 'msg=audit(1788264578.381:80): key=otherkey name="%s"\n' % path
+        now = [0.0]
+
+        def monotonic():
+            value = now[0]
+            now[0] += 0.11
+            return value
+
+        result = harness.poll_audit_evidence(
+            key, path,
+            runner=lambda argv, **kwargs: mock.Mock(returncode=0, stdout=output, stderr=""),
+            monotonic=monotonic, sleep=lambda _: None, max_wait=0.2, poll_interval=0.01,
+        )
+        self.assertEqual(result["verdict"], "BLOCKED")
+        self.assertFalse(result["key_seen"])
+        self.assertTrue(result["path_seen"])
+        self.assertEqual(result["audit_serial"], 80)
+
+    def test_raw_malformed_or_missing_serial_blocks(self):
+        path = "/tmp/e1c-r6-probe-malformed.txt"
+        key = "e1c6probemalformed"
+        output = f'msg=audit(not-a-serial): key={key} name={path}\n'
+        result = harness.poll_audit_evidence(
+            key, path,
+            runner=lambda argv, **kwargs: mock.Mock(returncode=1, stdout=output, stderr="bad"),
+            monotonic=lambda: 0.0, sleep=lambda _: None, max_wait=0.0,
+        )
+        self.assertEqual(result["verdict"], "BLOCKED")
+        self.assertIsNone(result["audit_serial"])
+        self.assertTrue(result["key_seen"])
+        self.assertTrue(result["path_seen"])
+
+    def test_audit_evidence_timeout_blocks_closed(self):
+        key = "e1c6probetimeout"
+        path = "/tmp/e1c-r6-probe-timeout.txt"
+        now = [0.0]
+
+        def monotonic():
+            value = now[0]
+            now[0] += 0.11
+            return value
+
+        result = harness.poll_audit_evidence(
+            key, path,
+            runner=lambda argv, **kwargs: mock.Mock(returncode=1, stdout="", stderr="not found"),
+            monotonic=monotonic, sleep=lambda _: None, max_wait=0.2, poll_interval=0.01,
+        )
+        self.assertEqual(result["verdict"], "BLOCKED")
+        self.assertEqual(result["final_ausearch_returncode"], 1)
+        self.assertFalse(result["key_seen"])
+        self.assertFalse(result["path_seen"])
+
+    def test_timeout_probe_cleanup_and_restoration_still_occurs(self):
+        calls = []
+
+        def runner(argv, **kwargs):
+            calls.append(argv)
+            if argv[0] == "/usr/sbin/auditctl" and argv[1] == "-l":
+                return mock.Mock(returncode=0, stdout="No rules\n", stderr="")
+            if argv[0] == "/usr/sbin/auditctl" and argv[1] == "-s":
+                return mock.Mock(returncode=0, stdout="lost 0\nbacklog 0\n", stderr="")
+            return mock.Mock(returncode=0, stdout="", stderr="")
+
+        with mock.patch.object(harness, "_audit_baseline_clean", return_value=True), \
+             mock.patch.object(harness.subprocess, "run", side_effect=runner), \
+             mock.patch.object(harness.tempfile, "NamedTemporaryFile") as temp_file:
+            handle = mock.Mock(name="probe-handle")
+            handle.name = "/tmp/e1c-r6-probe-timeout-cleanup.txt"
+            temp_file.return_value = handle
+            with mock.patch.object(harness.subprocess, "Popen") as popen:
+                child = mock.Mock(pid=4321, returncode=0)
+                child.poll.return_value = 0
+                popen.return_value = child
+                with mock.patch.object(harness.os, "unlink") as unlink:
+                    result = harness._default_micro_probe()
+        self.assertEqual(result["verdict"], "BLOCKED")
+        self.assertIn("RULE_REMOVED_BASELINE_RESTORED", result["states"])
+        self.assertTrue(unlink.called)
+        self.assertTrue(any(argv[1] == "-d" for argv in calls if argv and argv[0] == "/usr/sbin/auditctl"))
+
     def test_default_smoke_is_real_reviewed_callable(self):
         self.assertEqual(harness._reviewed_mininet_smoke.__name__, "_reviewed_mininet_smoke")
         self.assertIn("_run_reviewed_mininet_smoke", harness._reviewed_mininet_smoke.__code__.co_names)

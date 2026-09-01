@@ -1,0 +1,21 @@
+{
+  "schema": "MININET_E1C_R6R2_TEST_RERUN_V1",
+  "r6r2_targeted": {"passed": 33, "total": 33, "status": "PASS"},
+  "r3_regression": {"passed": 8, "total": 8, "status": "PASS"},
+  "r4_regression": {"passed": 7, "total": 7, "status": "PASS"},
+  "r5_regression": {"passed": 12, "total": 12, "status": "PASS"},
+  "py_compile": "PASS",
+  "json_validation": "PASS",
+  "static_boundary": "PASS",
+  "red_reproduction": {
+    "status": "PASS",
+    "observation": "The raw-mode contract failed before implementation because polling invoked -i; the exact interpreted clock-colon parser fixture returned no serial."
+  },
+  "execution_constraints": {
+    "sudo_executed": "NO",
+    "mininet_executed": "NO",
+    "auditd_config_changed": "NO",
+    "push_executed": "NO"
+  },
+  "r5_sandbox_note": "The unchanged R5 suite was run with approved local-socket sandbox access and passed 12/12."
+}

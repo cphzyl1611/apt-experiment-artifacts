@@ -66,6 +66,8 @@ CHILD_PROCESS_PATH = RUN_DIR / "MININET_E1C_R6_CHILD_PROCESS_EVIDENCE.json"
 EVENT_TYPE = "FILE_READ_OR_WRITE"
 EVIDENCE_BASIS = "AUDIT_FILESYSTEM_PERMISSION_FILTER"
 EXIT_CODES = {"PASS": 0, "PARTIAL": 3, "BLOCKED": 2}
+AUDIT_EVIDENCE_MAX_WAIT_SECONDS = 2.0
+AUDIT_EVIDENCE_POLL_INTERVAL_SECONDS = 0.05
 
 
 def _exact_file(path: str) -> str:
@@ -199,8 +201,91 @@ def verify_raw_event_links(
 
 
 def parse_audit_serial(text: str) -> int | None:
-    match = re.search(r"audit\([^:]+:(\d+)\)", text)
+    match = re.search(r"\bmsg=audit\((?:\d+(?:\.\d+)?):(\d+)\)", text)
     return int(match.group(1)) if match else None
+
+
+def _contains_exact_audit_text(text: str, value: str) -> bool:
+    """Match one exact key/path token, not a longer adjacent token."""
+    return re.search(
+        rf"(?<![A-Za-z0-9_./:-]){re.escape(value)}(?![A-Za-z0-9_./:-])",
+        text,
+    ) is not None
+
+
+def poll_audit_evidence(
+    audit_key: str,
+    watched_path: str,
+    runner: Callable[..., Any] | None = None,
+    monotonic: Callable[[], float] | None = None,
+    sleep: Callable[[float], Any] | None = None,
+    max_wait: float = AUDIT_EVIDENCE_MAX_WAIT_SECONDS,
+    poll_interval: float = AUDIT_EVIDENCE_POLL_INTERVAL_SECONDS,
+) -> dict[str, Any]:
+    """Poll one exact ausearch key until complete evidence becomes visible."""
+    runner = runner or subprocess.run
+    monotonic = monotonic or time.monotonic
+    sleep = sleep or time.sleep
+    _exact_file(watched_path)
+    if not isinstance(audit_key, str) or not re.fullmatch(r"[A-Za-z0-9_.:-]+", audit_key):
+        raise ValueError("audit key contains unsupported characters")
+    bounded_wait = min(max(float(max_wait), 0.0), AUDIT_EVIDENCE_MAX_WAIT_SECONDS)
+    bounded_interval = min(max(float(poll_interval), 0.0), 0.1)
+    started = monotonic()
+    deadline = started + bounded_wait
+    attempts = 0
+    final_returncode: int | None = None
+    final_stdout = ""
+    final_serial: int | None = None
+    key_seen = False
+    path_seen = False
+    while True:
+        attempts += 1
+        evidence = runner(
+            ["/usr/sbin/ausearch", "-k", audit_key, "--raw"],
+            check=False, capture_output=True, text=True,
+        )
+        final_returncode = getattr(evidence, "returncode", None)
+        final_stdout = getattr(evidence, "stdout", "") or ""
+        if isinstance(final_stdout, bytes):
+            final_stdout = final_stdout.decode(errors="replace")
+        final_serial = parse_audit_serial(final_stdout)
+        key_seen = key_seen or _contains_exact_audit_text(final_stdout, audit_key)
+        path_seen = path_seen or _contains_exact_audit_text(final_stdout, watched_path)
+        events = []
+        if final_serial is not None and key_seen and path_seen:
+            events = [{
+                "event_type": EVENT_TYPE,
+                "evidence_basis": EVIDENCE_BASIS,
+                "watched_path": watched_path,
+                "raw_serial": final_serial,
+            }]
+        if (
+            final_serial is not None
+            and _contains_exact_audit_text(final_stdout, audit_key)
+            and _contains_exact_audit_text(final_stdout, watched_path)
+            and micro_probe_verdict(events) == "PASS"
+        ):
+            return {
+                "verdict": "PASS", "audit_serial": final_serial,
+                "evidence_stdout": final_stdout, "poll_attempts": attempts,
+                "elapsed_visibility_latency": max(0.0, monotonic() - started),
+                "final_ausearch_returncode": final_returncode,
+                "key_seen": key_seen, "path_seen": path_seen,
+                "evidence_mode": "RAW",
+            }
+        now = monotonic()
+        if now >= deadline:
+            break
+        sleep(min(bounded_interval, max(0.0, deadline - now)))
+    return {
+        "verdict": "BLOCKED", "audit_serial": final_serial,
+        "evidence_stdout": final_stdout, "poll_attempts": attempts,
+        "elapsed_visibility_latency": max(0.0, monotonic() - started),
+        "final_ausearch_returncode": final_returncode,
+        "key_seen": key_seen, "path_seen": path_seen,
+        "evidence_mode": "RAW",
+    }
 
 
 def audit_filesystem_semantics() -> dict[str, Any]:
@@ -279,22 +364,14 @@ def _default_micro_probe() -> dict[str, Any]:
             result = {"verdict": "BLOCKED", "states": states + ["BENIGN_READ_WRITE_FAILED"]}
         else:
             states.append("BENIGN_READ_WRITE_PERFORMED")
-            evidence = subprocess.run(
-                ["/usr/sbin/ausearch", "-k", audit_key, "-i"],
-                check=False, capture_output=True, text=True,
-            )
-            serial = parse_audit_serial(evidence.stdout)
-            events = [] if serial is None else [{
-                "event_type": EVENT_TYPE, "evidence_basis": EVIDENCE_BASIS,
-                "watched_path": path, "raw_serial": serial,
-            }]
-            if micro_probe_verdict(events) != "PASS" or path not in evidence.stdout:
-                result = {"verdict": "BLOCKED", "states": states + ["AUDIT_EVIDENCE_MISSING"]}
+            evidence = poll_audit_evidence(audit_key, path)
+            if evidence.get("verdict") != "PASS":
+                result = {"verdict": "BLOCKED", "states": states + ["AUDIT_EVIDENCE_MISSING"], **evidence}
             else:
                 states.append("AUDIT_EVIDENCE_PASS")
                 result = {"verdict": "PASS", "states": states, "rule": add,
-                          "inverse_rule": delete, "audit_serial": serial,
-                          "audit_key": audit_key, "evidence_stdout": evidence.stdout}
+                          "inverse_rule": delete, "audit_serial": evidence.get("audit_serial"),
+                          "audit_key": audit_key, **evidence}
     finally:
         if "child" in locals() and child.poll() is None:
             child.kill()
