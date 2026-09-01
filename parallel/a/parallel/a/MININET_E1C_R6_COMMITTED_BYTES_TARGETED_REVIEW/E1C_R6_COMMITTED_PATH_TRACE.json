@@ -1,0 +1,26 @@
+{
+  "schema": "MININET_E1C_R6_COMMITTED_PATH_TRACE_V1",
+  "source": "parallel/a/e1c-r6-run-20260901T060350Z/mininet_e1c_r6_file_access_closure_smoke.py",
+  "trace": [
+    "main(--run-privileged) line 1755 calls execute_reviewed_r6_path() with no injected arguments",
+    "execute_reviewed_r6_path line 1714 invokes the default _default_micro_probe callable",
+    "probe verdict must be PASS",
+    "probe states must contain AUDIT_EVIDENCE_PASS",
+    "probe final state must be RULE_REMOVED_BASELINE_RESTORED",
+    "only then line 1726 invokes the default _reviewed_mininet_smoke callable",
+    "_reviewed_mininet_smoke line 1701 maps the real _run_reviewed_mininet_smoke exit code",
+    "_run_reviewed_mininet_smoke lines 1370-1668 imports Mininet, adds s1/h1/h2, runs bounded smoke, and executes cleanup in finally"
+  ],
+  "callback_free_default_trace_static": true,
+  "main_privileged_calls_execute_no_args": true,
+  "default_probe_callable_present": true,
+  "default_smoke_callable_present": true,
+  "micro_probe_restoration_gate": true,
+  "smoke_reachable_only_after_probe_restoration": true,
+  "real_mininet_import_and_topology": true,
+  "real_smoke_body_line_span": [1370, 1668],
+  "placeholder_gate_absent": true,
+  "unconditional_pass_absent": true,
+  "cleanup_exception_path_present": true,
+  "runtime_note": "No sudo, Mininet, or callback-free privileged runtime was executed during this targeted review."
+}

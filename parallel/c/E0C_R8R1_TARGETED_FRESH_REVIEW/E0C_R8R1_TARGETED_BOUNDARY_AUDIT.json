@@ -1,0 +1,14 @@
+{
+  "all_decisions_null": true,
+  "allowed_decisions_only": true,
+  "applied_splits": 0,
+  "authority_mutation": "NO",
+  "denominator_change": "NO",
+  "forbidden_inference_keys_found": [],
+  "formal_experiment_executed": "NO",
+  "human_decision_packet_unchanged_sha256": true,
+  "human_decisions_created": 0,
+  "review_complexity_is_aid_only": true,
+  "status": "PASS",
+  "status_mutations": 0
+}

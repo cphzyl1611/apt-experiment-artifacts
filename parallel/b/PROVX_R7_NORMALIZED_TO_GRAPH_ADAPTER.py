@@ -11,6 +11,7 @@ training or host actions.
 from __future__ import annotations
 
 import base64
+import binascii
 import hashlib
 import json
 import math
@@ -39,6 +40,82 @@ REQUIRED_CLASSES = [
 
 class AdapterError(ValueError):
     """Raised for an input that cannot satisfy the frozen adapter contract."""
+
+
+@dataclass(frozen=True)
+class RuntimeInputDescriptor:
+    """Explicit, immutable binding for one authenticated runtime evidence set.
+
+    No discovery or filename guessing is performed.  A caller must bind every
+    input path (and expected SHA-256) before authentication or graph building.
+    ``for_r5`` is the compatibility-preserving historical default; R6 callers
+    construct this descriptor explicitly with the R6 run ID and paths.
+    """
+
+    run_id: str
+    raw_path: Path
+    normalized_path: Path
+    join_path: Path
+    coverage_path: Path
+    runtime_review_path: Path
+    pcap_path: Path
+    pcap_hash_source: Path | None = None
+    expected_sha256: dict[str, str] | None = None
+
+    def __post_init__(self) -> None:
+        if not _text(self.run_id):
+            raise AdapterError("runtime descriptor run_id is required")
+        for name in (
+            "raw_path", "normalized_path", "join_path", "coverage_path",
+            "runtime_review_path", "pcap_path",
+        ):
+            value = getattr(self, name)
+            if not isinstance(value, Path):
+                object.__setattr__(self, name, Path(value))
+        if self.pcap_hash_source is not None and not isinstance(self.pcap_hash_source, Path):
+            object.__setattr__(self, "pcap_hash_source", Path(self.pcap_hash_source))
+        if self.pcap_hash_source is None:
+            raise AdapterError("pcap_hash_source must be explicitly bound")
+        if self.expected_sha256 is not None and not isinstance(self.expected_sha256, dict):
+            raise AdapterError("expected_sha256 must be a mapping")
+
+    @classmethod
+    def for_r5(cls, evidence_dir: str | Path) -> "RuntimeInputDescriptor":
+        """Return the explicit descriptor for the historical R5 fixture."""
+        root = Path(evidence_dir)
+        review_path = root / REVIEW_NAME
+        review = json.loads(review_path.read_text(encoding="utf-8"))
+        expected = {
+            name: (value.get("sha256") if isinstance(value, dict) else value)
+            for name, value in review.get("artifact_hashes_sha256", {}).items()
+        }
+        expected[REVIEW_NAME] = sha256_bytes(review_path.read_bytes())
+        return cls(
+            run_id=R5_RUN_ID,
+            raw_path=root / RAW_NAME,
+            normalized_path=root / NORMALIZED_NAME,
+            join_path=root / JOIN_NAME,
+            coverage_path=root / "MININET_E1C_R5_COVERAGE_AND_LOSS.json",
+            runtime_review_path=review_path,
+            pcap_path=root / "MININET_E1C_R5_SMOKE.pcap",
+            pcap_hash_source=root / "MININET_E1C_R5_POST_CLEANUP.json",
+            expected_sha256=expected,
+        )
+
+    @property
+    def selected_paths(self) -> dict[str, Path]:
+        paths = {
+            "raw": self.raw_path,
+            "normalized": self.normalized_path,
+            "join": self.join_path,
+            "coverage": self.coverage_path,
+            "runtime_review": self.runtime_review_path,
+            "pcap": self.pcap_path,
+        }
+        if self.pcap_hash_source is None:  # Guarded by __post_init__; narrows the type.
+            raise AdapterError("pcap_hash_source must be explicitly bound")
+        paths["pcap_hash_source"] = self.pcap_hash_source
+        return paths
 
 
 def canonical_json(value: Any) -> str:
@@ -92,20 +169,85 @@ def load_jsonl(path: str | Path) -> list[dict[str, Any]]:
     return rows
 
 
-def authenticate_r5_evidence(evidence_dir: str | Path) -> dict[str, Any]:
-    """Authenticate the R5 review and recompute every normalized/raw link."""
-    root = Path(evidence_dir)
-    review_path = root / REVIEW_NAME
-    review = json.loads(review_path.read_text(encoding="utf-8"))
-    if review.get("run_id") != R5_RUN_ID:
-        raise AdapterError("unexpected R5 run_id")
-    raw = load_jsonl(root / RAW_NAME)
-    normalized = load_jsonl(root / NORMALIZED_NAME)
-    joins = load_jsonl(root / JOIN_NAME)
+def _json_object(path: Path) -> dict[str, Any]:
+    try:
+        value = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise AdapterError(f"invalid JSON object at {path}") from exc
+    if not isinstance(value, dict):
+        raise AdapterError(f"JSON document is not an object: {path}")
+    return value
+
+
+def _expected_hash_for(path: Path, expected_sha256: dict[str, str]) -> str | None:
+    """Resolve only an explicitly supplied exact-path or basename binding."""
+    for key in (str(path), path.name):
+        if key in expected_sha256:
+            value = expected_sha256[key]
+            if isinstance(value, dict):
+                value = value.get("sha256")
+            if isinstance(value, str) and re.fullmatch(r"[0-9a-fA-F]{64}", value):
+                return value.lower()
+            return None
+    return None
+
+
+def _recursive_values(value: Any, key: str) -> list[Any]:
+    values: list[Any] = []
+    if isinstance(value, dict):
+        for name, child in value.items():
+            if name == key:
+                values.append(child)
+            values.extend(_recursive_values(child, key))
+    elif isinstance(value, list):
+        for child in value:
+            values.extend(_recursive_values(child, key))
+    return values
+
+
+def authenticate_runtime_evidence(descriptor: RuntimeInputDescriptor) -> dict[str, Any]:
+    """Authenticate one explicitly bound runtime evidence set.
+
+    Every graph input is selected by the immutable descriptor and must have an
+    expected SHA-256 before any JSONL row is made available to the adapter.
+    Links are recomputed from the encoded raw bytes; a failed link is fatal.
+    """
+    if not isinstance(descriptor, RuntimeInputDescriptor):
+        raise AdapterError("runtime evidence requires RuntimeInputDescriptor")
+    expected_sha256 = descriptor.expected_sha256 or {}
+    selected_authentication: dict[str, Any] = {}
+    for label, path in descriptor.selected_paths.items():
+        expected = _expected_hash_for(path, expected_sha256)
+        present = path.exists() and path.is_file()
+        actual = sha256_bytes(path.read_bytes()) if present else None
+        selected_authentication[label] = {
+            "path": str(path), "present": present, "expected_sha256": expected,
+            "actual_sha256": actual, "bytes": path.stat().st_size if present else None,
+            "status": "PASS" if present and expected is not None and actual == expected else "BLOCKED",
+        }
+    if not all(row["status"] == "PASS" for row in selected_authentication.values()):
+        raise AdapterError("selected runtime evidence file authentication failed")
+
+    review_path = descriptor.runtime_review_path
+    review = _json_object(review_path)
+    if review.get("run_id") != descriptor.run_id:
+        raise AdapterError("runtime review run_id does not match descriptor")
+    raw = load_jsonl(descriptor.raw_path)
+    normalized = load_jsonl(descriptor.normalized_path)
+    joins = load_jsonl(descriptor.join_path)
+    coverage = _json_object(descriptor.coverage_path)
+    if coverage.get("run_id") != descriptor.run_id:
+        raise AdapterError("coverage run_id does not match descriptor")
+
+    for row in raw + normalized + joins:
+        row_run_id = row.get("run_id")
+        if row_run_id is not None and row_run_id != descriptor.run_id:
+            raise AdapterError("runtime evidence row run_id does not match descriptor")
+
     raw_by_serial: dict[int, dict[str, Any]] = {}
     raw_serial_duplicates: list[int] = []
     for row in raw:
-        serial = row.get("serial")
+        serial = row.get("serial", row.get("raw_serial"))
         if not isinstance(serial, int):
             raise AdapterError("raw serial must be an integer")
         if serial in raw_by_serial:
@@ -116,8 +258,14 @@ def authenticate_r5_evidence(evidence_dir: str | Path) -> dict[str, Any]:
     hash_pass: list[int] = []
     link_pass: list[int] = []
     link_failures: list[dict[str, Any]] = []
+    normalized_serials: set[int] = set()
     for row in normalized:
         serial = row.get("raw_serial")
+        if not isinstance(serial, int):
+            raise AdapterError("normalized raw_serial must be an integer")
+        if serial in normalized_serials:
+            raise AdapterError("duplicate normalized raw_serial")
+        normalized_serials.add(serial)
         raw_row = raw_by_serial.get(serial)
         checks = {
             "serial_present": raw_row is not None,
@@ -137,7 +285,7 @@ def authenticate_r5_evidence(evidence_dir: str | Path) -> dict[str, Any]:
                     row.get("raw_event_sha256") == raw_row.get("raw_sha256")
                     and blob == raw_blob
                 )
-            except (ValueError, TypeError):
+            except (binascii.Error, ValueError, TypeError):
                 pass
         if checks["normalized_hash_matches_decoded"] and checks["raw_hash_matches_decoded"]:
             hash_pass.append(serial)
@@ -146,11 +294,22 @@ def authenticate_r5_evidence(evidence_dir: str | Path) -> dict[str, Any]:
         else:
             link_failures.append({"raw_serial": serial, "checks": checks})
 
+    if link_failures or raw_serial_duplicates:
+        raise AdapterError("raw/normalized evidence link authentication failed")
+
+    if descriptor.pcap_hash_source is None:  # Guarded by descriptor construction.
+        raise AdapterError("pcap_hash_source must be explicitly bound")
+    pcap_hash_values = _recursive_values(_json_object(descriptor.pcap_hash_source), "pcap_sha256")
+    pcap_hashes = {str(value).lower() for value in pcap_hash_values if isinstance(value, str) and value}
+    actual_pcap_hash = sha256_bytes(descriptor.pcap_path.read_bytes())
+    if not pcap_hashes or actual_pcap_hash not in pcap_hashes:
+        raise AdapterError("pcap hash source does not authenticate pcap")
+
     review_links = review.get("normalized_raw_link_review", {})
     expected_artifacts = review.get("artifact_hashes_sha256", {})
     artifact_authentication: dict[str, Any] = {}
     for name, expected in expected_artifacts.items():
-        path = root / name
+        path = review_path.parent / name
         present = path.exists() and path.is_file()
         actual = sha256_bytes(path.read_bytes()) if present else None
         artifact_authentication[name] = {
@@ -159,8 +318,8 @@ def authenticate_r5_evidence(evidence_dir: str | Path) -> dict[str, Any]:
             "status": "PASS" if present and actual == (expected.get("sha256") if isinstance(expected, dict) else expected) else "BLOCKED",
         }
     return {
-        "schema": "PROVX_R7_R5_EVIDENCE_AUTHENTICATION_V1",
-        "run_id": R5_RUN_ID,
+        "schema": "PROVX_R7_RUNTIME_EVIDENCE_AUTHENTICATION_V1",
+        "run_id": descriptor.run_id,
         "source_review": str(review_path),
         "pinned_review_commit": R5_REVIEW_COMMIT,
         "pinned_latest_fixed_commit": PINNED_LATEST_FIXED_COMMIT,
@@ -168,6 +327,8 @@ def authenticate_r5_evidence(evidence_dir: str | Path) -> dict[str, Any]:
         "reviewed_artifact_hashes": review.get("artifact_hashes_sha256", {}),
         "required_artifact_authentication": artifact_authentication,
         "all_required_artifacts_authenticated": all(row["status"] == "PASS" for row in artifact_authentication.values()),
+        "selected_file_authentication": selected_authentication,
+        "all_selected_files_authenticated": all(row["status"] == "PASS" for row in selected_authentication.values()),
         "raw_record_count": len(raw),
         "normalized_event_count": len(normalized),
         "pid_netns_join_record_count": len(joins),
@@ -193,12 +354,24 @@ def authenticate_r5_evidence(evidence_dir: str | Path) -> dict[str, Any]:
         "namespace_assertions": review.get("namespace_assertions", {}),
         "network": review.get("network", {}),
         "hard_boundaries": review.get("hard_boundaries", {}),
-        "source_files": {name: sha256_bytes((root / name).read_bytes()) for name in (REVIEW_NAME, RAW_NAME, NORMALIZED_NAME, JOIN_NAME)},
+        "coverage": coverage,
+        "source_files": {label: sha256_bytes(path.read_bytes()) for label, path in descriptor.selected_paths.items()},
         "_raw": raw,
         "_normalized": normalized,
         "_joins": joins,
         "_consumed_serials": sorted(link_pass),
     }
+
+
+def authenticate_r5_evidence(evidence_dir: str | Path) -> dict[str, Any]:
+    """Compatibility wrapper preserving the historical R5 route."""
+    auth = authenticate_runtime_evidence(RuntimeInputDescriptor.for_r5(evidence_dir))
+    # Keep the historical schema marker for callers that persisted this object.
+    auth["schema"] = "PROVX_R7_R5_EVIDENCE_AUTHENTICATION_V1"
+    auth["run_id"] = R5_RUN_ID
+    auth["pinned_review_commit"] = R5_REVIEW_COMMIT
+    auth["pinned_latest_fixed_commit"] = PINNED_LATEST_FIXED_COMMIT
+    return auth
 
 
 def _join_by_pid(joins: Iterable[dict[str, Any]]) -> dict[tuple[str, int], dict[str, Any]]:
@@ -210,6 +383,12 @@ def _join_by_pid(joins: Iterable[dict[str, Any]]) -> dict[tuple[str, int], dict[
         if _text(host) and isinstance(pid, int):
             result[(_text(host), pid)] = row
     return result
+
+
+def _file_identity_paths(event: dict[str, Any]) -> list[str]:
+    identity = event.get("file_identity")
+    values = identity.get("paths", []) if isinstance(identity, dict) else []
+    return [_text(value) for value in values] if isinstance(values, list) else []
 
 
 def _process_entity(host: str, pid: int, start_ticks: int, event: dict[str, Any]) -> dict[str, Any]:
@@ -235,9 +414,8 @@ def _process_entity(host: str, pid: int, start_ticks: int, event: dict[str, Any]
 
 def _file_entity(host: str, event: dict[str, Any]) -> dict[str, Any]:
     path = _text(event.get("path"))
-    identity = event.get("file_identity") or {}
-    paths = identity.get("paths", []) if isinstance(identity, dict) else []
-    if not path and isinstance(paths, list):
+    paths = _file_identity_paths(event)
+    if not path:
         path = next((_text(value) for value in reversed(paths) if _text(value)), "")
     if not path:
         raise AdapterError("file identity path is required")
@@ -282,6 +460,7 @@ def _event_class(event_type: str) -> str:
         "PROCESS_START_OR_EXEC": "execute",
         "PROCESS_EXIT": "close_delete",
         "FILE_CREATE_OR_OPEN": "read_open",
+        "FILE_READ_OR_WRITE": "write",
         "FILE_DELETE": "close_delete",
         "SOCKET_BIND": "connect_send",
         "SOCKET_CONNECT": "connect_send",
@@ -324,13 +503,33 @@ def build_graph(records: Iterable[dict[str, Any]], joins: Iterable[dict[str, Any
             reason = "missing_or_unjoined_logical_host_identity"
         elif not isinstance(pid, int) or not isinstance(ticks, int):
             reason = "missing_process_pid_or_start_time_identity"
-        elif (host, pid) not in join_by_pid and event.get("join_status") == "JOINED":
+        elif (host, pid) not in join_by_pid:
             reason = "pid_netns_join_not_authenticated"
-        elif event.get("event_type") in {"FILE_CREATE_OR_OPEN", "FILE_DELETE"} and not _text(event.get("path")) and not (event.get("file_identity") or {}).get("paths"):
-            reason = "missing_file_identity"
-        elif event.get("event_type") in {"SOCKET_BIND", "SOCKET_CONNECT", "SOCKET_ACCEPT"} and not isinstance(event.get("socket_identity"), dict):
-            reason = "missing_socket_identity"
         else:
+            join = join_by_pid[(host, pid)]
+            join_process = join.get("process", {}) if isinstance(join.get("process"), dict) else {}
+            join_ticks = join_process.get("start_ticks", join.get("start_ticks"))
+            if (
+                join.get("join_status") != "JOINED"
+                or join.get("netns_inode") != event.get("netns_inode")
+                or join_ticks != ticks
+            ):
+                reason = "pid_netns_join_not_authenticated"
+        file_paths = _file_identity_paths(event)
+        if reason is None and event.get("event_type") in {"FILE_CREATE_OR_OPEN", "FILE_READ_OR_WRITE", "FILE_DELETE"} and not _text(event.get("path")) and not file_paths:
+            reason = "missing_file_identity"
+        elif reason is None and event.get("event_type") == "FILE_READ_OR_WRITE" and (
+            event.get("evidence_basis") != "AUDIT_FILESYSTEM_PERMISSION_FILTER"
+            or not _text(event.get("watched_path"))
+            or not _text(event.get("watched_path")).startswith("/")
+            or event.get("requested_access") not in {"r", "w", "rw"}
+            or not _text(event.get("underlying_syscall"))
+            or _text(event.get("watched_path")) not in set(file_paths + [_text(event.get("path"))])
+        ):
+            reason = "missing_file_read_write_permission_evidence"
+        elif reason is None and event.get("event_type") in {"SOCKET_BIND", "SOCKET_CONNECT", "SOCKET_ACCEPT"} and not isinstance(event.get("socket_identity"), dict):
+            reason = "missing_socket_identity"
+        elif reason is None:
             try:
                 _timestamp_ms(event)
             except (AdapterError, TypeError, ValueError) as exc:
@@ -354,7 +553,7 @@ def build_graph(records: Iterable[dict[str, Any]], joins: Iterable[dict[str, Any
         entities[process_id] = process
         entity_refs.setdefault(process_id, set()).add(str(event.get("event_id", event.get("raw_serial"))))
 
-        if event_type in {"FILE_CREATE_OR_OPEN", "FILE_DELETE"}:
+        if event_type in {"FILE_CREATE_OR_OPEN", "FILE_READ_OR_WRITE", "FILE_DELETE"}:
             try:
                 destination = _file_entity(host, event)
             except AdapterError as exc:
@@ -455,7 +654,7 @@ def build_graph(records: Iterable[dict[str, Any]], joins: Iterable[dict[str, Any
         "orphan_policy": "quarantine unjoined or missing process/file/socket identity; never guess",
         "run_boundary": run_id, "host_boundary": "logical_host_id plus authenticated netns join",
         "timestamp_policy": "collector timestamp_source normalized to integer epoch milliseconds; stable event_id tie-break",
-        "file_read_or_write_present": False,
+        "file_read_or_write_present": any(item["event_type"] == "write" for item in edge_map),
     }
     return GraphBuild(encoder_records, node_map, edge_map, reversibility, quarantine, manifest)
 
@@ -475,18 +674,33 @@ def encode_graph(graph: GraphBuild, *, run_id: str = R5_RUN_ID) -> tuple[Encoded
     return encoded, tensor_manifest
 
 
-def write_r7_outputs(evidence_dir: str | Path, output_dir: str | Path = ".") -> dict[str, Any]:
+def write_r7_outputs(
+    evidence_dir: str | Path | None = None,
+    output_dir: str | Path = ".",
+    *,
+    descriptor: RuntimeInputDescriptor | None = None,
+) -> dict[str, Any]:
+    """Regenerate adapter outputs from an explicitly authenticated descriptor.
+
+    The positional ``evidence_dir`` form remains the reproducible historical
+    R5 default.  A future R6 route must pass ``descriptor=`` explicitly.
+    """
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
-    auth = authenticate_r5_evidence(evidence_dir)
+    if descriptor is None:
+        if evidence_dir is None:
+            raise AdapterError("evidence_dir or explicit descriptor is required")
+        descriptor = RuntimeInputDescriptor.for_r5(evidence_dir)
+    auth = authenticate_runtime_evidence(descriptor)
     consumed = [row for row in auth["_normalized"] if row.get("raw_serial") in set(auth["_consumed_serials"])]
-    graph = build_graph(consumed, auth["_joins"], run_id=R5_RUN_ID)
-    encoded, tensor_manifest = encode_graph(graph)
-    regen = build_graph(list(reversed(consumed)), auth["_joins"], run_id=R5_RUN_ID)
-    regen_encoded, regen_tensor = encode_graph(regen)
+    run_id = descriptor.run_id
+    graph = build_graph(consumed, auth["_joins"], run_id=run_id)
+    encoded, tensor_manifest = encode_graph(graph, run_id=run_id)
+    regen = build_graph(list(reversed(consumed)), auth["_joins"], run_id=run_id)
+    regen_encoded, regen_tensor = encode_graph(regen, run_id=run_id)
     graph_hashes = [graph.manifest["graph_sha256"], regen.manifest["graph_sha256"]]
     deterministic = {
-        "schema": "PROVX_R7_DETERMINISTIC_REGENERATION_VERIFICATION_V1", "run_id": R5_RUN_ID,
+        "schema": "PROVX_R7_DETERMINISTIC_REGENERATION_VERIFICATION_V1", "run_id": run_id,
         "regenerations": 2, "graph_hashes": graph_hashes,
         "graph_hash_identical": graph_hashes[0] == graph_hashes[1],
         "x_hash_identical": tensor_manifest["x"]["sha256"] == regen_tensor["x"]["sha256"],
@@ -521,10 +735,10 @@ def normalized_graph_schema() -> dict[str, Any]:
     return {
         "schema": "PROVX_R7_NORMALIZED_GRAPH_INPUT_SCHEMA_V1", "status": "FROZEN_FOR_STAGE_A_DEVELOPMENT_FIXTURE",
         "mandatory_common": ["run_id", "event_id", "event_type", "raw_serial", "raw_event_sha256", "timestamp_source", "pid", "pid_start_time_ticks", "ppid", "logical_host_id", "netns_inode", "join_status"],
-        "mandatory_by_event": {"PROCESS_START_OR_EXEC": ["pid", "pid_start_time_ticks"], "PROCESS_EXIT": ["pid", "pid_start_time_ticks"], "FILE_CREATE_OR_OPEN": ["path or file_identity.paths"], "FILE_DELETE": ["path or file_identity.paths"], "SOCKET_BIND": ["socket_identity.family", "socket_identity endpoint"], "SOCKET_CONNECT": ["socket_identity.family", "socket_identity endpoint"], "SOCKET_ACCEPT": ["socket_identity.family", "socket_identity endpoint"]},
+        "mandatory_by_event": {"PROCESS_START_OR_EXEC": ["pid", "pid_start_time_ticks"], "PROCESS_EXIT": ["pid", "pid_start_time_ticks"], "FILE_CREATE_OR_OPEN": ["path or file_identity.paths"], "FILE_READ_OR_WRITE": ["path or file_identity.paths", "evidence_basis=AUDIT_FILESYSTEM_PERMISSION_FILTER", "watched_path", "requested_access", "underlying_syscall"], "FILE_DELETE": ["path or file_identity.paths"], "SOCKET_BIND": ["socket_identity.family", "socket_identity endpoint"], "SOCKET_CONNECT": ["socket_identity.family", "socket_identity endpoint"], "SOCKET_ACCEPT": ["socket_identity.family", "socket_identity endpoint"]},
         "node_types": {"PROCESS": "host_id + pid + pid_start_time_ticks", "FILE": "host_id + canonical path", "SOCKET": "host_id + canonical family/endpoints", "OTHER": "not emitted without explicit stable identity"},
-        "event_to_encoder_class": {"PROCESS_START_OR_EXEC": "execute", "PROCESS_EXIT": "close_delete", "FILE_CREATE_OR_OPEN": "read_open", "FILE_DELETE": "close_delete", "SOCKET_BIND": "connect_send", "SOCKET_CONNECT": "connect_send", "SOCKET_ACCEPT": "connect_send"},
-        "forbidden": ["FILE_READ_OR_WRITE synthesis", "pcap-derived provenance edges", "analyst labels", "21D checkpoint", "host actions"],
+        "event_to_encoder_class": {"PROCESS_START_OR_EXEC": "execute", "PROCESS_EXIT": "close_delete", "FILE_CREATE_OR_OPEN": "read_open", "FILE_READ_OR_WRITE": "write", "FILE_DELETE": "close_delete", "SOCKET_BIND": "connect_send", "SOCKET_CONNECT": "connect_send", "SOCKET_ACCEPT": "connect_send"},
+        "forbidden": ["FILE_READ_OR_WRITE synthesis without authenticated evidence", "pcap-derived provenance edges", "analyst labels", "21D checkpoint", "host actions"],
     }
 
 

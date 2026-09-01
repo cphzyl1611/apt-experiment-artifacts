@@ -1,0 +1,27 @@
+{
+  "candidate_split_evidence_valid": true,
+  "decision_sheet_unknown_fractions_match": true,
+  "previously_mismatched_fields_rechecked": [
+    "unknown_member_count",
+    "known_member_count",
+    "unknown_fraction",
+    "coverage",
+    "distinct_values",
+    "members_per_value",
+    "unknown_burden",
+    "review_complexity"
+  ],
+  "remediation_output_hashes_match": true,
+  "review_complexity_aid_only": true,
+  "review_complexity_match": true,
+  "review_complexity_mismatch_count": 0,
+  "review_complexity_mismatches": [],
+  "status": "PASS",
+  "structured_distribution_mismatch_count": 0,
+  "structured_distribution_mismatches": [],
+  "structured_heterogeneity_match": true,
+  "templates_with_no_structured_split_evidence": 12,
+  "templates_with_structured_split_evidence": 0,
+  "unknown_fractions_match": true,
+  "unknown_member_counts_match": true
+}

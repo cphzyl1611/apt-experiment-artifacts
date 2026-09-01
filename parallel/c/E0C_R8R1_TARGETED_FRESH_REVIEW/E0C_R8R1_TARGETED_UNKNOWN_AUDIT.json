@@ -1,0 +1,28 @@
+{
+  "authenticated_exact12_mixed_collection_cells": 0,
+  "independent_cases": {
+    "all_unknown_collection": {
+      "canonical": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+      "is_unknown": true
+    },
+    "all_unknown_sentinel_collection": {
+      "canonical": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+      "is_unknown": true
+    },
+    "empty_collection": {
+      "canonical": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+      "is_unknown": true
+    },
+    "mixed_collection": {
+      "canonical": "[\"HTTP\",\"UNKNOWN\"]",
+      "is_unknown": true
+    },
+    "scalar_unknown": {
+      "canonical": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+      "is_unknown": true
+    }
+  },
+  "mixed_collection_rule": "retain canonical JSON and count the entire field cell as UNKNOWN-bearing; never use UNKNOWN as an authenticated split boundary",
+  "no_unauthenticated_semantics_invented": true,
+  "status": "PASS"
+}
