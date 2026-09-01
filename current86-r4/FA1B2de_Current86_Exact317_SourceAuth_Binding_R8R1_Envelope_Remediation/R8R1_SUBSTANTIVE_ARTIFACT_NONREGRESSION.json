@@ -1,0 +1,22 @@
+{
+  "schema": "FA1B2DE_CURRENT86_BINDING_R8R1_SUBSTANTIVE_ARTIFACT_NONREGRESSION_V1",
+  "baseline_commit": "2ff2b21cd313c5b91567adfe05691d3e25aabb87",
+  "comparison": "working-tree bytes versus git-show bytes from baseline_commit",
+  "artifacts": {
+    "R8_EXACT317_FIELD_PIN_CANDIDATE_PACKETS.jsonl": "f0e571f7fb94030d7247a17f5c6c78d067a471cc306dcdc209371e704d4cb502",
+    "R8_FIELD_PIN_CANDIDATE_CLASSIFICATION.json": "81431d57768c57621a178d5f244b1e8abf118afa57aec04faf38a09f678ea380",
+    "R8_FIELD_PIN_GOVERNANCE_REPORT.md": "67db8dabd2b1891f7ab316814880320531f3933b00631a3eda622a5811016d84",
+    "R8_FIELD_PIN_REVIEW_BATCHES.json": "3f306d82022135bbba4fe20adab04efbf535d20f5f901351b61678b8df7f01e7",
+    "R8_FIRST_HUMAN_FIELD_PIN_REVIEW_SHEETS.md": "31c69709455dbf1c4d10ca8fc58daee1392cf08c53b0aa3b6ed59cc15c1d7841",
+    "R8_FIRST_HUMAN_FIELD_PIN_TRANCHE.json": "29a5060afeaa5b23ff168d203ce9a7d7ba0d8e6c509f58c363f04e2fa020966b",
+    "R8_INPUT_AUTHENTICATION.json": "4d04ef585e9d0997f84d788589b501e90ae1b098ef5c3a46b36d58f3e595cbd7",
+    "R8_SOURCE_AUTH_READINESS_BRIDGE.json": "607aef2cdab597951831e0bd7e318305a97a04bb53612eb1ea65e20122fe3531"
+  },
+  "all_artifact_hashes_match_baseline": true,
+  "substantive_r8_artifact_bytes_unchanged": "PASS",
+  "field_pins_created": 0,
+  "source_auth_executed": false,
+  "p0_executed": false,
+  "p1_executed": false,
+  "binding_publication": false
+}

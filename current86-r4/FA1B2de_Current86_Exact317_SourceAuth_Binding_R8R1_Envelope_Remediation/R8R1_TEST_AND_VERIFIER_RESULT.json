@@ -1,0 +1,38 @@
+{
+  "schema": "FA1B2DE_CURRENT86_BINDING_R8R1_TEST_AND_VERIFIER_RESULT_V1",
+  "tdd_red_phase": {
+    "command": "python -m unittest discover -s tests -v",
+    "tests_run": 5,
+    "tests_passed": 4,
+    "tests_failed": 1,
+    "expected_failure": "FILE_LIST.txt was absent from FILE_LIST paths but present in SHA256SUMS paths",
+    "status": "EXPECTED_FAIL"
+  },
+  "targeted_tests": {
+    "command": "python -m unittest discover -s tests -v",
+    "tests_run": 5,
+    "tests_passed": 5,
+    "tests_failed": 0,
+    "status": "PASS"
+  },
+  "supplied_independent_verifier": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 python -I tools/verify_r8.py",
+    "independent": true,
+    "verification_status": "PASS",
+    "status": "PASS"
+  },
+  "checksum_verification": {
+    "command": "sha256sum -c SHA256SUMS.txt",
+    "verified_paths": 12,
+    "failures": 0,
+    "status": "PASS"
+  },
+  "exact_path_set_verification": {
+    "file_list_paths": 12,
+    "sha256sums_paths": 12,
+    "sets_equal": true,
+    "status": "PASS"
+  },
+  "historical_blocked_fresh_review_report_rewritten": false,
+  "overall_status": "PASS"
+}

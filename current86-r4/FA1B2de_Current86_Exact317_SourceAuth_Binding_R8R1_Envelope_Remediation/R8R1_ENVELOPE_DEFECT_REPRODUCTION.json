@@ -1,0 +1,28 @@
+{
+  "schema": "FA1B2DE_CURRENT86_BINDING_R8R1_ENVELOPE_DEFECT_REPRODUCTION_V1",
+  "task": "BINDING_R8R1_ENVELOPE_INVENTORY_REMEDIATION",
+  "repository_origin": "https://github.com/cphzyl1611/apt-experiment-artifacts.git",
+  "expected_pre_remediation_head": "822079ec58e90f2d1a00fa967a8bd7f77ff9614d",
+  "authenticated_pre_remediation_head": "822079ec58e90f2d1a00fa967a8bd7f77ff9614d",
+  "final_authenticated_repository_head": "f8d62fd36e40f3e0d0f8111022c4e43eb10bfc24",
+  "expected_head_is_ancestor_of_final_head": true,
+  "concurrent_head_advance_detected": true,
+  "historical_r8_materialization_commit": "2ff2b21cd313c5b91567adfe05691d3e25aabb87",
+  "reproduced_from": "committed bytes at historical R8 materialization commit",
+  "file_list_path_count": 11,
+  "sha256sums_path_count": 12,
+  "file_list_only_paths": [],
+  "sha256sums_only_paths": [
+    "FILE_LIST.txt"
+  ],
+  "inventory_path_set_equality": "BLOCKED",
+  "all_twelve_committed_checksums_match": true,
+  "producer_root_cause": {
+    "function": "write_envelope",
+    "file": "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_R8_Field_Pin_Governance_Materialization/tools/materialize_r8.py",
+    "before": "FILE_LIST.txt was written from OUTPUTS, while SHA256SUMS.txt was written from OUTPUTS plus FILE_LIST.txt",
+    "deterministic": true
+  },
+  "original_blocker_reproduced": true,
+  "status": "PASS"
+}

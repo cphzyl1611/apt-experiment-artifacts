@@ -1,0 +1,17 @@
+{
+  "schema": "FA1B2DE_CURRENT86_BINDING_R8R1_ENVELOPE_PATHSET_VERIFICATION_V1",
+  "r7_envelope_convention_applied": true,
+  "r8_materialization_package": "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_R8_Field_Pin_Governance_Materialization",
+  "file_list_path_count": 12,
+  "sha256sums_path_count": 12,
+  "file_list_paths_equal_sha256sums_paths": true,
+  "file_list_only_paths": [],
+  "sha256sums_only_paths": [],
+  "file_list_self_listed": true,
+  "file_list_checksummed": true,
+  "sha256sums_self_listed": false,
+  "sha256sums_self_checksummed": false,
+  "file_list_sha256": "4d27312f13d6c4e12355c53446ccd22024709d1e1977b998baedd29845128d04",
+  "sha256sums_sha256": "817a3650843f46f81ae4e406a22c4b7144d3989314bfaa2a95d7211a47704a8d",
+  "verification": "PASS"
+}
