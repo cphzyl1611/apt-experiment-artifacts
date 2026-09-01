@@ -1,0 +1,63 @@
+{
+  "schema": "MININET_E1C_R6_COMMITTED_TEST_RERUN_V1",
+  "runs": [
+    {
+      "label": "R6 targeted tests",
+      "command": "python3 -m unittest -v parallel/a/e1c-r6-run-20260901T060350Z/test_e1c_r6_harness.py",
+      "passed": 23,
+      "total": 23,
+      "failures": 0,
+      "errors": 0,
+      "exit_code": 0
+    },
+    {
+      "label": "R3 regression",
+      "command": "python3 -m unittest -v parallel/a/e1c-r3-run-20260831T075356Z/test_e1c_r3_harness.py",
+      "passed": 8,
+      "total": 8,
+      "failures": 0,
+      "errors": 0,
+      "exit_code": 0
+    },
+    {
+      "label": "R4 regression",
+      "command": "python3 -m unittest -v parallel/a/e1c-r4-run-20260831T105503Z/test_e1c_r4_harness.py",
+      "passed": 7,
+      "total": 7,
+      "failures": 0,
+      "errors": 0,
+      "exit_code": 0
+    },
+    {
+      "label": "R5 regression",
+      "command": "python3 -m unittest -v parallel/a/e1c-r5-run-20260831T111849Z/test_e1c_r5_harness.py",
+      "passed": 12,
+      "total": 12,
+      "failures": 0,
+      "errors": 0,
+      "exit_code": 0
+    },
+    {
+      "label": "py_compile",
+      "command": "python3 py_compile for R6 harness and R6 tests with doraise=True",
+      "result": "PASS",
+      "exit_code": 0
+    },
+    {
+      "label": "JSON validation",
+      "command": "python3 json.load for MININET_E1C_R6_PRE_RUN_CONTRACT.json and MININET_E1C_R6_STATIC_AUDIT.json",
+      "result": "PASS",
+      "exit_code": 0
+    },
+    {
+      "label": "static boundary",
+      "command": "python3 parallel/a/e1c-r6-run-20260901T060350Z/mininet_e1c_r6_file_access_closure_smoke.py --static-self-check",
+      "result": "PASS",
+      "exit_code": 0
+    }
+  ],
+  "privileged_command_executed": false,
+  "mininet_executed": false,
+  "push_executed": false,
+  "status": "PASS"
+}

@@ -1,0 +1,37 @@
+{
+  "schema": "MININET_E1C_R6_COMMITTED_STATIC_BOUNDARY_V1",
+  "static_self_check_command": "python3 parallel/a/e1c-r6-run-20260901T060350Z/mininet_e1c_r6_file_access_closure_smoke.py --static-self-check",
+  "static_self_check_exit_code": 0,
+  "static_self_check_pass": true,
+  "checks": {
+    "real_default_mininet_smoke": true,
+    "micro_probe_cleanup_restore_gate": true,
+    "all_eight_event_classes_contract": true,
+    "exact_bounded_read_write_rules": true,
+    "separate_disposable_delete_inode": true,
+    "no_nat_or_external_network": true,
+    "no_system_wide_read_write_audit": true,
+    "no_auditctl_D": true,
+    "no_mn_c": true,
+    "no_apt_actions": true,
+    "no_automatic_sudo": true,
+    "no_persistent_rule_edits": true,
+    "recursive_json_safe_evidence": true,
+    "cleanup_finally_and_fsync_journal": true,
+    "strace_not_primary_collector": true,
+    "child_diagnostics_and_identity_checks": true
+  },
+  "static_source_assertions": {
+    "main_privileged_calls_execute_no_args": true,
+    "execute_default_probe_callable": true,
+    "execute_default_smoke_callable": true,
+    "execute_requires_probe_pass_and_restoration": true,
+    "smoke_accepts_only_pass_or_partial": true,
+    "reviewed_smoke_delegates_to_run_body": true,
+    "run_body_adds_real_switch_and_hosts": true,
+    "run_body_has_try_finally": true,
+    "placeholder_absent": true,
+    "unconditional_pass_absent": true
+  },
+  "status": "PASS"
+}

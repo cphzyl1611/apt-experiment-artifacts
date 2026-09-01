@@ -1,0 +1,54 @@
+{
+  "schema": "MININET_E1C_R6_COMMITTED_INPUT_AUTHENTICATION_V1",
+  "repository": "https://github.com/cphzyl1611/apt-experiment-artifacts.git",
+  "authenticated_checkout": "/home/cph/fa1b2de-review-artifacts",
+  "branch": "main",
+  "current_head": "f8d62fd36e40f3e0d0f8111022c4e43eb10bfc24",
+  "pinned_commit": "ab0d0161189ee7c98cd4eb2810cd2341de37f341",
+  "ab0d016_is_ancestor": true,
+  "e0a_paths_changed_after_ab0d016": false,
+  "worktree_note": "Checkout contains unrelated dirty current86-r4 files; none of the five reviewed paths are dirty.",
+  "paths": [
+    {
+      "path": "parallel/a/e1c-r6-run-20260901T060350Z/mininet_e1c_r6_file_access_closure_smoke.py",
+      "current_git_blob": "8116e73574598255091ca6b9b73b323bd96e71e5",
+      "ab0d016_git_blob": "8116e73574598255091ca6b9b73b323bd96e71e5",
+      "current_sha256": "402e94bcdb6740c9b6fd644af5cce7ba080c2a677f357181aad82649108137d6",
+      "changed_after_ab0d016": false
+    },
+    {
+      "path": "parallel/a/e1c-r6-run-20260901T060350Z/test_e1c_r6_harness.py",
+      "current_git_blob": "4fa67c1e50b19edb5973bac72295611dff97bcfd",
+      "ab0d016_git_blob": "4fa67c1e50b19edb5973bac72295611dff97bcfd",
+      "current_sha256": "dbb2a84c49d9f9ff63998a0e826f30e8a748a4d6e9cc2d85065324d3182f3ef2",
+      "changed_after_ab0d016": false
+    },
+    {
+      "path": "parallel/a/MININET_E1C_R6_PRE_RUN_CONTRACT.json",
+      "current_git_blob": "2072711f3431faa805f545f5d5e22b03671d7c5e",
+      "ab0d016_git_blob": "2072711f3431faa805f545f5d5e22b03671d7c5e",
+      "current_sha256": "01e7e9a9ed0ee6c506e31b22b5b8ec2ff7a7c7aacb93b1d0ec3e9ef6d2508409",
+      "changed_after_ab0d016": false
+    },
+    {
+      "path": "parallel/a/MININET_E1C_R6_R5_FILE_RW_ROOT_CAUSE.md",
+      "current_git_blob": "b57a8be3de67e4c90e10130687c4cc9becce6cdf",
+      "ab0d016_git_blob": "b57a8be3de67e4c90e10130687c4cc9becce6cdf",
+      "current_sha256": "9302e6153b99c593c8f81eaf0a5b2b2a4df09ec60b23b78bd0e1835779aa15fa",
+      "changed_after_ab0d016": false
+    },
+    {
+      "path": "parallel/a/MININET_E1C_R6_STATIC_AUDIT.json",
+      "current_git_blob": "2f0444d3caacd06f0ab00d293614567f3f046191",
+      "ab0d016_git_blob": "2f0444d3caacd06f0ab00d293614567f3f046191",
+      "current_sha256": "cb735c95d190b01963e2380ad7264d2078491e3b848213ee3a235559afdfc2c8",
+      "changed_after_ab0d016": false
+    }
+  ],
+  "authentication_commands": [
+    "git -C /home/cph/fa1b2de-review-artifacts rev-parse HEAD",
+    "git -C /home/cph/fa1b2de-review-artifacts merge-base --is-ancestor ab0d0161189ee7c98cd4eb2810cd2341de37f341 HEAD",
+    "git diff --name-status ab0d0161189ee7c98cd4eb2810cd2341de37f341..HEAD -- <five reviewed paths>"
+  ],
+  "status": "PASS"
+}
