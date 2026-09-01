@@ -1,0 +1,122 @@
+{
+  "schema": "FA1B2DE_CURRENT86_BINDING_FIRST_TRANCHE_DRAFT_PROVENANCE_REMEDIATION_TARGETED_FRESH_REVIEW_INPUT_AUTHENTICATION_V1",
+  "review_name": "BINDING_FIRST_TRANCHE_DRAFT_PROVENANCE_REMEDIATION_TARGETED_FRESH_REVIEW",
+  "review_timestamp_utc": "2026-09-01T13:51:14Z",
+  "review_scope": "READ_ONLY_COMMITTED_BYTE_RECOMPUTATION",
+  "committed_byte_source": {
+    "method": "git show <commit>:<path>, git diff-tree, git ls-tree, git merge-base --is-ancestor, sha256sum",
+    "worktree_artifact_bytes_used": false,
+    "reason": "The independent checkout contained unrelated pre-existing worktree deletions; all Binding evidence was read from Git objects."
+  },
+  "repository_authentication": {
+    "expected_origin": "https://github.com/cphzyl1611/apt-experiment-artifacts.git",
+    "authenticated_fetch_origin": "https://github.com/cphzyl1611/apt-experiment-artifacts.git",
+    "authenticated_push_origin": "https://github.com/cphzyl1611/apt-experiment-artifacts.git",
+    "current_remote_branch": "main",
+    "current_remote_main": "4239ef5da8e2cdcfb89159a706a5482eb3efd376",
+    "current_remote_main_method": "fresh git ls-remote --heads origin main; local origin/main matched",
+    "status": "PASS"
+  },
+  "pinned_commits": {
+    "historical_r8r1_input_authority": "665a84f3ede268f17f58cecc933706a0506e687f",
+    "committed_human_decision_draft": "fb6991a677dc166fd5fed6b16dfd3c768e3b4295",
+    "pre_remediation_head": "cde75a82e7938db6d5903d16885bf35ceb17aa68",
+    "remediation": "674222444d6e675b50aba5d6194e9dd01015acbd"
+  },
+  "commit_authentication": {
+    "remediation_commit_exists": true,
+    "remediation_commit_is_ancestor_of_current_remote_main": true,
+    "remediation_direct_parent": "cde75a82e7938db6d5903d16885bf35ceb17aa68",
+    "expected_direct_parent": "cde75a82e7938db6d5903d16885bf35ceb17aa68",
+    "status": "PASS"
+  },
+  "remediation_delta": {
+    "comparison": "cde75a82e7938db6d5903d16885bf35ceb17aa68..674222444d6e675b50aba5d6194e9dd01015acbd",
+    "method": "git diff-tree --no-commit-id --name-status -r",
+    "entries": [
+      {
+        "status": "A",
+        "path": "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_First_Tranche_Human_Decision_Draft/FIRST_TRANCHE_DRAFT_POST_MATERIALIZATION_AUTHENTICATION.json"
+      }
+    ],
+    "file_count": 1,
+    "one_file_append_only_delta": "PASS",
+    "new_file_absent_at_parent": true,
+    "new_file_present_at_remediation": true
+  },
+  "pre_existing_artifact_preservation": {
+    "method": "independent pre-remediation/remediation blob identity comparison over protected path families",
+    "protected_families": [
+      {
+        "family": "first_tranche_committed_draft",
+        "pre_existing_file_count": 5,
+        "changed_file_count": 0
+      },
+      {
+        "family": "R7",
+        "pre_existing_file_count": 29,
+        "changed_file_count": 0
+      },
+      {
+        "family": "R8",
+        "pre_existing_file_count": 16,
+        "changed_file_count": 0
+      },
+      {
+        "family": "R8R1",
+        "pre_existing_file_count": 11,
+        "changed_file_count": 0
+      },
+      {
+        "family": "scoring",
+        "pre_existing_file_count": 32,
+        "changed_file_count": 0
+      },
+      {
+        "family": "source_auth",
+        "pre_existing_file_count": 409,
+        "changed_file_count": 0
+      },
+      {
+        "family": "P0_P1",
+        "pre_existing_file_count": 5453,
+        "changed_file_count": 0
+      },
+      {
+        "family": "publication",
+        "pre_existing_file_count": 0,
+        "changed_file_count": 0
+      }
+    ],
+    "all_protected_pre_existing_artifact_bytes_preserved": true,
+    "status": "PASS"
+  },
+  "provenance_roles": {
+    "historical_input_authentication": {
+      "path": "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_First_Tranche_Human_Decision_Draft/FIRST_TRANCHE_INPUT_AUTHENTICATION.json",
+      "role": "HISTORICAL_PRE_DECISION_INPUT_AUTHENTICATION_SNAPSHOT_PINNED_TO_R8R1_STATE",
+      "historical_current_head": "665a84f3ede268f17f58cecc933706a0506e687f",
+      "historical_pinned_binding_commit": "665a84f3ede268f17f58cecc933706a0506e687f",
+      "scope": "READ_ONLY_SUPPORT_AND_EXPLICIT_HUMAN_DECISION_CAPTURE",
+      "sha256": "b3f7ec3b7298404a4c53e50b2a69493d1244f8fa0dc6a547a88aff7db89d1cdf",
+      "bytes_preserved_from_committed_draft_through_current_remote_main": true,
+      "status": "PASS"
+    },
+    "post_materialization_authentication": {
+      "path": "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_First_Tranche_Human_Decision_Draft/FIRST_TRANCHE_DRAFT_POST_MATERIALIZATION_AUTHENTICATION.json",
+      "artifact_role": "APPEND_ONLY_COMMITTED_DRAFT_PROVENANCE_ANCHOR",
+      "pinned_committed_draft_commit": "fb6991a677dc166fd5fed6b16dfd3c768e3b4295",
+      "sha256": "c7483de2981f816201f96fa855ebbb9fcc552176c29842a7aec4091270b49db1",
+      "status": "PASS"
+    },
+    "roles_are_distinct": true,
+    "history_rewritten": false,
+    "conclusion": "The remediation layers a new committed-draft provenance anchor over the preserved historical input snapshot."
+  },
+  "terminal": {
+    "COMMIT_AUTHENTICATION": "PASS",
+    "ONE_FILE_APPEND_ONLY_DELTA": "PASS",
+    "HISTORICAL_INPUT_AUTHENTICATION_PRESERVED": "PASS",
+    "POST_MATERIALIZATION_AUTHENTICATION": "PASS"
+  }
+}

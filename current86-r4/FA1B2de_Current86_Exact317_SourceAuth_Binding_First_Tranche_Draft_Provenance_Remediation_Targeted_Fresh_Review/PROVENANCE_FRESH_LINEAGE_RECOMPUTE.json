@@ -1,0 +1,43 @@
+{
+  "schema": "FA1B2DE_CURRENT86_BINDING_FIRST_TRANCHE_DRAFT_PROVENANCE_REMEDIATION_TARGETED_FRESH_REVIEW_LINEAGE_RECOMPUTE_V1",
+  "review_timestamp_utc": "2026-09-01T13:51:14Z",
+  "method": "git merge-base --is-ancestor <ancestor> <descendant>; Git exit status was independently evaluated for every relationship",
+  "booleans_from_remediation_artifact_trusted": false,
+  "current_remote_main": "4239ef5da8e2cdcfb89159a706a5482eb3efd376",
+  "relationships": [
+    {
+      "name": "R8R1_TO_DRAFT_ANCESTRY",
+      "ancestor": "665a84f3ede268f17f58cecc933706a0506e687f",
+      "descendant": "fb6991a677dc166fd5fed6b16dfd3c768e3b4295",
+      "is_ancestor": true,
+      "status": "PASS"
+    },
+    {
+      "name": "DRAFT_TO_PRE_REMEDIATION_HEAD_ANCESTRY",
+      "ancestor": "fb6991a677dc166fd5fed6b16dfd3c768e3b4295",
+      "descendant": "cde75a82e7938db6d5903d16885bf35ceb17aa68",
+      "is_ancestor": true,
+      "status": "PASS"
+    },
+    {
+      "name": "PRE_REMEDIATION_TO_REMEDIATION_PARENT",
+      "parent": "cde75a82e7938db6d5903d16885bf35ceb17aa68",
+      "child": "674222444d6e675b50aba5d6194e9dd01015acbd",
+      "direct_parent_confirmed": true,
+      "status": "PASS"
+    },
+    {
+      "name": "REMEDIATION_TO_CURRENT_MAIN_ANCESTRY",
+      "ancestor": "674222444d6e675b50aba5d6194e9dd01015acbd",
+      "descendant": "4239ef5da8e2cdcfb89159a706a5482eb3efd376",
+      "is_ancestor": true,
+      "status": "PASS"
+    }
+  ],
+  "terminal": {
+    "R8R1_TO_DRAFT_ANCESTRY": "PASS",
+    "DRAFT_TO_PRE_REMEDIATION_HEAD_ANCESTRY": "PASS",
+    "PRE_REMEDIATION_TO_REMEDIATION_PARENT": "PASS",
+    "REMEDIATION_TO_CURRENT_MAIN_ANCESTRY": "PASS"
+  }
+}

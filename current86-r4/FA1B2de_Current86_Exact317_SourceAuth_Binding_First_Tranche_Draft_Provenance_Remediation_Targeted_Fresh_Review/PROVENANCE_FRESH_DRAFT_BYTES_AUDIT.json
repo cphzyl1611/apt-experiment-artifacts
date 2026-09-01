@@ -1,0 +1,53 @@
+{
+  "schema": "FA1B2DE_CURRENT86_BINDING_FIRST_TRANCHE_DRAFT_PROVENANCE_REMEDIATION_TARGETED_FRESH_REVIEW_DRAFT_BYTES_AUDIT_V1",
+  "review_timestamp_utc": "2026-09-01T13:51:14Z",
+  "committed_draft_commit": "fb6991a677dc166fd5fed6b16dfd3c768e3b4295",
+  "current_remote_main": "4239ef5da8e2cdcfb89159a706a5482eb3efd376",
+  "method": "git cat-file -e for presence, Git blob identity comparison from fb6991a through current remote main, and SHA-256 recomputation over git show committed bytes",
+  "draft_root": "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_First_Tranche_Human_Decision_Draft",
+  "files": [
+    {
+      "path": "FIRST_TRANCHE_INPUT_AUTHENTICATION.json",
+      "sha256": "b3f7ec3b7298404a4c53e50b2a69493d1244f8fa0dc6a547a88aff7db89d1cdf",
+      "present_at_current_remote_main": true,
+      "introduced_by_committed_draft": true,
+      "unchanged_since_committed_draft": true
+    },
+    {
+      "path": "FIRST_TRANCHE_HUMAN_DECISION_DRAFT.jsonl",
+      "sha256": "dcc577412226a67da9d7e94e184db207498fb128736544bb90abe1bc4a6787c3",
+      "present_at_current_remote_main": true,
+      "introduced_by_committed_draft": true,
+      "unchanged_since_committed_draft": true
+    },
+    {
+      "path": "FIRST_TRANCHE_DECISION_CONSERVATION.json",
+      "sha256": "9e0af11f25966086c5fe49d75b28cac00bb66569e21486f25e19c8328e1b3bcd",
+      "present_at_current_remote_main": true,
+      "introduced_by_committed_draft": true,
+      "unchanged_since_committed_draft": true
+    },
+    {
+      "path": "FIRST_TRANCHE_SYSTEMIC_BLOCKER_CHECK.json",
+      "sha256": "2ed76513b3f736602f21307e55d169baa70870464a11e9e2fb7f97c4e97ded1f",
+      "present_at_current_remote_main": true,
+      "introduced_by_committed_draft": true,
+      "unchanged_since_committed_draft": true
+    },
+    {
+      "path": "FIRST_TRANCHE_HUMAN_REVIEW_REPORT.md",
+      "sha256": "c0d3e01b06c84dd7139e5b3c2904e290dc871f37d83a5a6ff88643be39133a8a",
+      "present_at_current_remote_main": true,
+      "introduced_by_committed_draft": true,
+      "unchanged_since_committed_draft": true
+    }
+  ],
+  "exact_file_count": 5,
+  "all_sha256_recomputed_from_committed_bytes": true,
+  "all_five_present_at_current_remote_main": true,
+  "all_five_unchanged_since_fb6991a": true,
+  "terminal": {
+    "COMMITTED_DRAFT_FILE_COUNT": 5,
+    "COMMITTED_DRAFT_BYTES_AUTHENTICATED": "PASS"
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "schema": "FA1B2DE_CURRENT86_BINDING_FIRST_TRANCHE_DRAFT_PROVENANCE_REMEDIATION_TARGETED_FRESH_REVIEW_DECISION_CONSERVATION_V1",
+  "review_timestamp_utc": "2026-09-01T13:51:14Z",
+  "committed_draft_commit": "fb6991a677dc166fd5fed6b16dfd3c768e3b4295",
+  "method": "Independent parse of frozen first tranche and committed decision JSONL; target, source, locator, line, hash, pointer-hash, scalar-value-hash, and selection state recomputed from committed Git objects.",
+  "frozen_target_order": [
+    110,
+    273,
+    210,
+    98,
+    147,
+    277,
+    188,
+    301,
+    143,
+    250,
+    233,
+    287,
+    146,
+    293,
+    114,
+    284,
+    291,
+    215,
+    88,
+    182,
+    300,
+    218,
+    115,
+    148
+  ],
+  "decision_conservation": {
+    "first_tranche_count": 24,
+    "decision_record_count": 24,
+    "committed_record_order_equals_frozen_order": true,
+    "unique_target_identities": 24,
+    "all_targets_unique": true,
+    "action_counts": {
+      "APPROVE_EXACT_FIELD_PIN": 0,
+      "REJECT_FIELD_CANDIDATES_KEEP_BLOCKED": 0,
+      "REQUEST_MORE_EVIDENCE": 24
+    },
+    "all_decision_origins": [
+      "EXPLICIT_HUMAN_USER"
+    ],
+    "all_decisions_explicitly_human_origin": true,
+    "selected_pointer_count": 0,
+    "authoritative_field_pin_id_count": 0,
+    "all_approved_pointer_values_null": true,
+    "all_candidate_pointer_value_hash_values_null": true
+  },
+  "candidate_packet_linkage": {
+    "candidate_packet_path": "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_R8_Field_Pin_Governance_Materialization/R8_EXACT317_FIELD_PIN_CANDIDATE_PACKETS.jsonl",
+    "packet_count": 317,
+    "candidate_packet_count": 231,
+    "raw_packet_count": 86,
+    "all_24_draft_records_match_candidate_side_packets": true,
+    "target_identity_source_key_locator_and_jsonl_line_match": true,
+    "draft_pointer_hash_sets_match_packet_pointer_hash_sets": true,
+    "scalar_value_hashes_recomputed": true,
+    "status": "PASS"
+  },
+  "source_object_linkage": {
+    "source_object_path": "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_R5_Wrapper_Materialization/05_dry_run/SCORING_231_CANDIDATE_WRAPPER_OBJECTS_ONLY.jsonl",
+    "all_24_draft_records_match_committed_source_rows": true,
+    "source_objects_recanonicalized_as_compact_json": true,
+    "source_object_sha256_recomputed": true,
+    "first_verified_link": {
+      "target_identity": 110,
+      "source_key": "scoring:1e1a5c6fc0ea60252cb79211b5e6b9f4a8b46dfc2d5cc85a17dd108ceadae881",
+      "source_locator": "jsonl:182",
+      "source_jsonl_line": 182,
+      "source_object_sha256": "d8d177293199b22da792f2943958ad4674f3fc52a1c7cf739cf352865a41f436"
+    },
+    "status": "PASS"
+  },
+  "systemic_blocker_recomputation": {
+    "final_eight_target_identities": [
+      291,
+      215,
+      88,
+      182,
+      300,
+      218,
+      115,
+      148
+    ],
+    "result": "ONLY_C2R1_DERIVED_COMPARATIVE_INTRINSIC_PRESENT",
+    "authoritative_field_mapping": "NO_AUTHORITATIVE_FIELD_MAPPING",
+    "stage_a": "ADMISSION_NOT_READY_MISSING_PROVENANCE",
+    "stage_b": "FIELD_PIN_NOT_EXPOSED_GATED_ON_ADMISSION",
+    "selected_canonical_pointer_count": 0,
+    "all_eight_human_origin_request_more_evidence": true,
+    "status": "PASS"
+  },
+  "substantive_gate_conclusion": "Candidate packet linkage, source object linkage, and systemic blocker recomputation remain passing. The earlier blocker was provenance-layer ambiguity only; the 24 human decisions were neither reopened nor redesigned.",
+  "terminal": {
+    "FIRST_TRANCHE_COUNT": 24,
+    "HUMAN_DECISION_RECORD_COUNT": 24,
+    "TARGET_ORDER_CONSERVATION": "PASS",
+    "TARGET_IDENTITY_CONSERVATION": "PASS",
+    "APPROVE_EXACT_FIELD_PIN_COUNT": 0,
+    "REJECT_FIELD_CANDIDATES_KEEP_BLOCKED_COUNT": 0,
+    "REQUEST_MORE_EVIDENCE_COUNT": 24,
+    "HUMAN_ORIGIN_AUDIT": "PASS",
+    "CANDIDATE_PACKET_LINKAGE": "PASS",
+    "SOURCE_OBJECT_LINKAGE": "PASS",
+    "SYSTEMIC_BLOCKER_RECOMPUTATION": "PASS"
+  }
+}

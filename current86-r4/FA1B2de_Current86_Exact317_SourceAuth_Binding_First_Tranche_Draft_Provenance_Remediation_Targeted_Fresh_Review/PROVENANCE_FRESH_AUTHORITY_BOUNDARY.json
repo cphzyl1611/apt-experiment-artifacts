@@ -1,0 +1,27 @@
+{
+  "schema": "FA1B2DE_CURRENT86_BINDING_FIRST_TRANCHE_DRAFT_PROVENANCE_REMEDIATION_TARGETED_FRESH_REVIEW_AUTHORITY_BOUNDARY_V1",
+  "review_timestamp_utc": "2026-09-01T13:51:14Z",
+  "method": "Committed-byte inspection of R7 state and protected path-family blob comparison across pre-remediation, remediation, and current remote main.",
+  "r7_active_authority": {
+    "path": "current86-r4/FA1B2de_Current86_Exact317_SourceAuth_Binding_R7_Production_Source_Authority_Activation/R7_POST_ACTIVATION_STATE.json",
+    "state": "COMMITTED_POST_ACTIVATION",
+    "state_artifact_sha256": "a1e1bbce6a2e3738011c299a95989054486bba74901261e3d2046758a125a306",
+    "consumer_pointer_sha256": "02394a7fc7c5f337dfbfff521467759f80e14f8d5d27ca9e01653eec3f0d592c",
+    "source_auth_execution_count": 0,
+    "field_pin_registry": "ABSENT",
+    "tree_identical_at_pre_remediation_remediation_and_current_main": true,
+    "status": "PASS"
+  },
+  "zero_state": {
+    "FIELD_PINS_CREATED": 0,
+    "SOURCE_AUTH_EXECUTED": "NO",
+    "P0_EXECUTED": "NO",
+    "P1_EXECUTED": "NO",
+    "BINDING_PUBLICATION": "NO",
+    "R7_R8_R8R1_AUTHORITY_MUTATED": "NO"
+  },
+  "authority_boundary_conclusion": "No source-auth execution, field-pin materialization, P0/P1 execution, publication, or R7/R8/R8R1 authority mutation occurred. The active R7 authority remains unchanged.",
+  "terminal": {
+    "R7_ACTIVE_AUTHORITY_UNCHANGED": "PASS"
+  }
+}
