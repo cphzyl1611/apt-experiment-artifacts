@@ -1,0 +1,56 @@
+{
+  "all_unknown_collection": {
+    "canonical": [
+      "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+      "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+      "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+    ],
+    "inputs": [
+      [
+        "UNKNOWN"
+      ],
+      [
+        "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+      ],
+      [
+        "UNKNOWN"
+      ]
+    ],
+    "is_unknown": [
+      true,
+      true,
+      true
+    ]
+  },
+  "authenticated_exact12_mixed_collection_cells": 0,
+  "empty_collection": {
+    "all_unknown": true,
+    "canonical": [
+      "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+      "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+      "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
+    ],
+    "inputs": [
+      [],
+      {},
+      ""
+    ]
+  },
+  "mixed_collection": {
+    "canonical": "[\"HTTP\",\"UNKNOWN\"]",
+    "input": [
+      "UNKNOWN",
+      "HTTP"
+    ],
+    "is_unknown": true,
+    "rule": "retain canonical JSON so known source evidence remains visible, but count the entire field cell as UNKNOWN-bearing and exclude it from candidate split boundaries"
+  },
+  "scalar_unknown": {
+    "canonical": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+    "input": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE",
+    "is_unknown": true
+  },
+  "schema_version": "e0c-r8r1-unknown-normalization-contract-v1",
+  "source_semantics": "No semantics are invented for unauthenticated source values.",
+  "status": "PASS"
+}

@@ -1,0 +1,48 @@
+{
+  "artifact_sha256": {
+    "E0C_R8_FRESH_INDEPENDENT_REVIEW.json": "6af27263d54a411f1890628d941b2aa2f5f8566dc7d9f62336343c6055f86254",
+    "E0C_R8_FRESH_INDEPENDENT_REVIEW.md": "2b6db413fc938497dd40e1c52b9fa250ce5e375caa162a2cf6835c9b13dbc225"
+  },
+  "defect_evidence": {
+    "next_action": "REMEDIATE_E0C_R8",
+    "published_mismatch_count": 80,
+    "published_output_audit_status": "BLOCKED",
+    "structured_heterogeneity_recomputation": "BLOCKED",
+    "terminal_status": "BLOCKED"
+  },
+  "expected_artifact_sha256": {
+    "E0C_R8_FRESH_INDEPENDENT_REVIEW.json": "6af27263d54a411f1890628d941b2aa2f5f8566dc7d9f62336343c6055f86254",
+    "E0C_R8_FRESH_INDEPENDENT_REVIEW.md": "2b6db413fc938497dd40e1c52b9fa250ce5e375caa162a2cf6835c9b13dbc225"
+  },
+  "historical_report_unchanged": true,
+  "materialization_blob_authentication": {
+    "commit": "822079ec58e90f2d1a00fa967a8bd7f77ff9614d",
+    "files": {
+      "E0C_R8_FRESH_INDEPENDENT_REVIEW.json": {
+        "local_git_blob_sha1": "56ca75acd92c793347496043573c8bb1e81df190",
+        "match": true,
+        "materialization_remote_git_blob_sha1": "56ca75acd92c793347496043573c8bb1e81df190"
+      },
+      "E0C_R8_FRESH_INDEPENDENT_REVIEW.md": {
+        "local_git_blob_sha1": "5de9033889f7e595d1056b39cc0b6cc2daee1edd",
+        "match": true,
+        "materialization_remote_git_blob_sha1": "5de9033889f7e595d1056b39cc0b6cc2daee1edd"
+      }
+    },
+    "status": "PASS"
+  },
+  "materialization_commit": "822079ec58e90f2d1a00fa967a8bd7f77ff9614d",
+  "original_defect_reproduced_by_fresh_review": true,
+  "red_regression_transcript": {
+    "command": "python -m unittest -v test_exp_e0c_r8r1_unknown_normalization.py (before remediation patch)",
+    "failed_tests": [
+      "test_all_unknown_collection_collapses_to_scalar_unknown",
+      "test_mixed_collection_preserves_known_value_and_counts_unknown_evidence"
+    ],
+    "output": "test_all_unknown_collection_collapses_to_scalar_unknown ... FAIL\ntest_empty_collection_is_unknown ... ok\ntest_mixed_collection_preserves_known_value_and_counts_unknown_evidence ... FAIL\n\n----------------------------------------------------------------------\nRan 3 tests in 0.001s\n\nFAILED (failures=2)\n",
+    "return_code": 1,
+    "status": "FAIL_EXPECTED_BEFORE_FIX"
+  },
+  "schema_version": "e0c-r8r1-defect-reproduction-v1",
+  "status": "PASS"
+}

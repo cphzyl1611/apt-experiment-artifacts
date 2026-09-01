@@ -1,0 +1,111 @@
+{
+  "schema": "PROVX_R7_R6_INTERFACE_FIELD_CROSSWALK_V1",
+  "review_mode": "QUICK_REVIEW_READ_ONLY",
+  "current_head": "6842f28151dce9f57e451ab5ba3b6b86f1a906d1",
+  "r6_run_id": "e1c-r6-run-20260901T060350Z",
+  "r7_contract": "PROVX_R7_E1C_R6_REVALIDATION_CONTRACT_V1",
+  "required_input_crosswalk": [
+    {
+      "r7_required_input": "fresh authenticated runtime review",
+      "r6_producer_source": [
+        "MININET_E1C_R6_PRIVILEGED_RUN_RESULT.json",
+        "MININET_E1C_R6_AUDITD_SMOKE_REPORT.md"
+      ],
+      "r6_contract_source": "MININET_E1C_R6_PRE_RUN_CONTRACT.json required_outputs and exact privileged command",
+      "compatibility": "PASS",
+      "runtime_condition": "Must be produced by the successful privileged run and independently authenticated after arrival."
+    },
+    {
+      "r7_required_input": "raw audit JSONL",
+      "r6_producer_source": "MININET_E1C_R6_RAW_AUDIT_EVIDENCE.jsonl",
+      "r6_contract_source": "MININET_E1C_R6_PRE_RUN_CONTRACT.json required_outputs",
+      "compatibility": "PASS",
+      "evidence_fields": ["serial", "raw_bytes_b64", "raw_sha256", "raw_text"]
+    },
+    {
+      "r7_required_input": "normalized JSONL",
+      "r6_producer_source": "MININET_E1C_R6_NORMALIZED_EVENTS.jsonl",
+      "r6_contract_source": "normalize_audit_record in mininet_e1c_r6_file_access_closure_smoke.py",
+      "compatibility": "PASS",
+      "evidence_fields": ["event_id", "event_type", "run_id", "raw_serial", "raw_event_bytes_b64", "raw_event_sha256", "timestamp_source"]
+    },
+    {
+      "r7_required_input": "PID/netns joins",
+      "r6_producer_source": "MININET_E1C_R6_PID_NETNS_JOIN.jsonl",
+      "r6_contract_source": "MININET_E1C_R6_PRE_RUN_CONTRACT.json required_outputs and post-exec identity gate",
+      "compatibility": "PASS",
+      "identity_fields": ["pid", "start_ticks", "netns_inode", "logical_host_id", "join_status"]
+    },
+    {
+      "r7_required_input": "coverage/loss",
+      "r6_producer_source": "MININET_E1C_R6_COVERAGE_AND_LOSS_AUDIT.json",
+      "r6_contract_source": "MININET_E1C_R6_PRE_RUN_CONTRACT.json required_outputs",
+      "compatibility": "PASS",
+      "fields": ["normalized_class_counts", "missing_required_classes", "audit_lost_events", "raw_record_count", "normalized_event_count", "raw_link_failures"]
+    },
+    {
+      "r7_required_input": "pcap hash",
+      "r6_producer_source": [
+        "MININET_E1C_R6_SMOKE.pcap",
+        "MININET_E1C_R6_COVERAGE_AND_LOSS_AUDIT.json",
+        "MININET_E1C_R6_POST_CLEANUP_AUDIT.json"
+      ],
+      "r6_contract_source": "PCAP_PATH plus pcap_sha256 writes in the R6 producer",
+      "compatibility": "PASS",
+      "provenance_role": "Hash/authentication metadata only; pcap is not a provenance graph edge source."
+    }
+  ],
+  "normalized_common_field_crosswalk": [
+    {"field": "run_id", "r6_source": "normalize_audit_record -> RUN_ID", "r7_use": "run boundary", "status": "PASS"},
+    {"field": "event_id", "r6_source": "sha256(RUN_ID|serial|event_type|raw_sha256)", "r7_use": "stable event evidence identity and tie-break", "status": "PASS"},
+    {"field": "event_type", "r6_source": "EVENT_TYPE or CLASS_FOR_SYSCALL", "r7_use": "frozen event-class mapping", "status": "PASS_FOR_EXISTING_CLASSES; FILE_READ_OR_WRITE_MAPPING_GAP"},
+    {"field": "raw_serial", "r6_source": "raw record serial", "r7_use": "exact raw join", "status": "PASS"},
+    {"field": "raw_event_sha256", "r6_source": "sha256(raw bytes)", "r7_use": "decoded-byte/raw hash link", "status": "PASS"},
+    {"field": "timestamp_source", "r6_source": "raw audit timestamp", "r7_use": "deterministic timestamp ordering", "status": "PASS"},
+    {"field": "pid", "r6_source": "audit pid", "r7_use": "process identity", "status": "PASS"},
+    {"field": "pid_start_time_ticks", "r6_source": "PID/netns join start_ticks", "r7_use": "process identity", "status": "PASS"},
+    {"field": "ppid", "r6_source": "audit ppid", "r7_use": "authenticated parent relation when available", "status": "PASS"},
+    {"field": "logical_host_id", "r6_source": "PID/netns join", "r7_use": "host boundary", "status": "PASS"},
+    {"field": "netns_inode", "r6_source": "PID/netns join", "r7_use": "logical-host authentication", "status": "PASS"},
+    {"field": "join_status", "r6_source": "JOINED iff logical host join exists", "r7_use": "quarantine gate", "status": "PASS"}
+  ],
+  "event_specific_identity_crosswalk": [
+    {"r6_event_class": "PROCESS_START_OR_EXEC", "r6_fields": ["pid", "pid_start_time_ticks", "executable"], "r7_entity": "PROCESS", "frozen_encoder_class": "execute", "status": "PASS"},
+    {"r6_event_class": "PROCESS_EXIT", "r6_fields": ["pid", "pid_start_time_ticks", "executable"], "r7_entity": "PROCESS", "frozen_encoder_class": "close_delete", "status": "PASS"},
+    {"r6_event_class": "FILE_CREATE_OR_OPEN", "r6_fields": ["path", "file_identity.paths", "pid", "logical_host_id"], "r7_entity": "host-scoped FILE", "frozen_encoder_class": "read_open", "status": "PASS"},
+    {"r6_event_class": "FILE_DELETE", "r6_fields": ["path", "file_identity.paths", "pid", "logical_host_id"], "r7_entity": "host-scoped FILE", "frozen_encoder_class": "close_delete", "status": "PASS"},
+    {"r6_event_class": "SOCKET_BIND/CONNECT/ACCEPT", "r6_fields": ["socket_identity.family", "local_address", "local_port", "remote_address", "remote_port", "pid", "logical_host_id"], "r7_entity": "host-scoped SOCKET", "frozen_encoder_class": "connect_send", "status": "PASS"},
+    {"r6_event_class": "FILE_READ_OR_WRITE", "r6_fields": ["evidence_basis", "watched_path", "requested_access", "underlying_syscall", "file_identity.paths", "path", "pid", "logical_host_id", "raw_serial", "raw_event_sha256"], "r7_entity": "host-scoped FILE required", "frozen_encoder_class": "write after explicit adapter mapping", "status": "BLOCKED_CURRENT_ADAPTER_MAPPING_MISSING", "reason": "R7 _event_class has no FILE_READ_OR_WRITE case; R7 graph file branch only handles FILE_CREATE_OR_OPEN and FILE_DELETE; fallback is process self-loop with event class other."}
+  ],
+  "permission_filter_crosswalk": {
+    "r6_event_type": "FILE_READ_OR_WRITE",
+    "evidence_basis": "AUDIT_FILESYSTEM_PERMISSION_FILTER",
+    "requested_access": "r|w|rw derived from permission-filter flags",
+    "underlying_syscall": "retained separately; not inferred as the event class",
+    "watched_path": "exact pre-created absolute file",
+    "mapping_target": "write",
+    "frozen_encoder_support": "event_write_norm at index 21 and write event rank 2",
+    "adapter_compatibility": "BLOCKED until R7 explicitly maps this class to a file edge and write class",
+    "encoder_change_required": false
+  },
+  "adapter_input_wiring_crosswalk": {
+    "current_r7_authentication": {
+      "run_id": "e1c-r5-run-20260831T111849Z",
+      "raw_filename": "MININET_E1C_R5_RAW_AUDIT_EVIDENCE.jsonl",
+      "normalized_filename": "MININET_E1C_R5_NORMALIZED_EVENTS.jsonl",
+      "join_filename": "MININET_E1C_R5_PID_NETNS_JOIN.jsonl",
+      "runtime_review_filename": "MININET_E1C_R5_RUNTIME_EVIDENCE_REVIEW.json"
+    },
+    "r6_producer_run_id": "e1c-r6-run-20260901T060350Z",
+    "r6_filenames_are_distinct": true,
+    "compatibility": "BLOCKED_CURRENT_ADAPTER_WIRING_IS_R5_PINNED",
+    "reason": "Existing R7 authenticate_r5_evidence uses R5 constants and filenames; it has no R6 input-path parameter or R6 run-id route."
+  },
+  "promotion_gate_crosswalk": {
+    "r7_promotion_rule": "Stage-A full collector-adapter PASS remains NO until FILE_READ_OR_WRITE is present and all release gates pass",
+    "r6_pre_run_requires_file_rw": true,
+    "runtime_evidence_present": false,
+    "full_pass_promoted": false,
+    "status": "PRESERVED"
+  }
+}

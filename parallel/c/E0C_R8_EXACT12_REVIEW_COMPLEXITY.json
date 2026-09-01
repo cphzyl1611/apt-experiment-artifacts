@@ -11,8 +11,8 @@
       "interpretation": "REVIEW_AID_ONLY_NOT_AN_APPROVE_REJECT_OR_SPLIT_RECOMMENDATION",
       "member_count": 49,
       "template_id": "r4-template-120-process_command_execution",
-      "unknown_cell_count": 147,
-      "unknown_fraction": 0.23076923076923078
+      "unknown_cell_count": 245,
+      "unknown_fraction": 0.38461538461538464
     },
     {
       "candidate_split_count": 0,
@@ -21,8 +21,8 @@
       "interpretation": "REVIEW_AID_ONLY_NOT_AN_APPROVE_REJECT_OR_SPLIT_RECOMMENDATION",
       "member_count": 28,
       "template_id": "r4-template-136-process_command_execution",
-      "unknown_cell_count": 84,
-      "unknown_fraction": 0.23076923076923078
+      "unknown_cell_count": 140,
+      "unknown_fraction": 0.38461538461538464
     },
     {
       "candidate_split_count": 0,
@@ -31,8 +31,8 @@
       "interpretation": "REVIEW_AID_ONLY_NOT_AN_APPROVE_REJECT_OR_SPLIT_RECOMMENDATION",
       "member_count": 27,
       "template_id": "r4-template-107-process_command_execution",
-      "unknown_cell_count": 81,
-      "unknown_fraction": 0.23076923076923078
+      "unknown_cell_count": 135,
+      "unknown_fraction": 0.38461538461538464
     },
     {
       "candidate_split_count": 0,
@@ -41,8 +41,8 @@
       "interpretation": "REVIEW_AID_ONLY_NOT_AN_APPROVE_REJECT_OR_SPLIT_RECOMMENDATION",
       "member_count": 17,
       "template_id": "r4-template-159-process_command_execution",
-      "unknown_cell_count": 51,
-      "unknown_fraction": 0.23076923076923078
+      "unknown_cell_count": 85,
+      "unknown_fraction": 0.38461538461538464
     },
     {
       "candidate_split_count": 0,
@@ -51,8 +51,8 @@
       "interpretation": "REVIEW_AID_ONLY_NOT_AN_APPROVE_REJECT_OR_SPLIT_RECOMMENDATION",
       "member_count": 17,
       "template_id": "r4-template-130-process_command_execution",
-      "unknown_cell_count": 51,
-      "unknown_fraction": 0.23076923076923078
+      "unknown_cell_count": 85,
+      "unknown_fraction": 0.38461538461538464
     },
     {
       "candidate_split_count": 0,
@@ -61,8 +61,8 @@
       "interpretation": "REVIEW_AID_ONLY_NOT_AN_APPROVE_REJECT_OR_SPLIT_RECOMMENDATION",
       "member_count": 12,
       "template_id": "r4-template-152-process_command_execution",
-      "unknown_cell_count": 36,
-      "unknown_fraction": 0.23076923076923078
+      "unknown_cell_count": 60,
+      "unknown_fraction": 0.38461538461538464
     },
     {
       "candidate_split_count": 0,
@@ -71,8 +71,8 @@
       "interpretation": "REVIEW_AID_ONLY_NOT_AN_APPROVE_REJECT_OR_SPLIT_RECOMMENDATION",
       "member_count": 10,
       "template_id": "r4-template-069-persistence_configuration",
-      "unknown_cell_count": 30,
-      "unknown_fraction": 0.23076923076923078
+      "unknown_cell_count": 50,
+      "unknown_fraction": 0.38461538461538464
     },
     {
       "candidate_split_count": 0,
@@ -81,8 +81,8 @@
       "interpretation": "REVIEW_AID_ONLY_NOT_AN_APPROVE_REJECT_OR_SPLIT_RECOMMENDATION",
       "member_count": 9,
       "template_id": "r4-template-009-credential_store_access",
-      "unknown_cell_count": 27,
-      "unknown_fraction": 0.23076923076923078
+      "unknown_cell_count": 45,
+      "unknown_fraction": 0.38461538461538464
     },
     {
       "candidate_split_count": 0,
@@ -91,8 +91,8 @@
       "interpretation": "REVIEW_AID_ONLY_NOT_AN_APPROVE_REJECT_OR_SPLIT_RECOMMENDATION",
       "member_count": 9,
       "template_id": "r4-template-006-credential_store_access",
-      "unknown_cell_count": 27,
-      "unknown_fraction": 0.23076923076923078
+      "unknown_cell_count": 45,
+      "unknown_fraction": 0.38461538461538464
     },
     {
       "candidate_split_count": 0,
@@ -121,8 +121,8 @@
       "interpretation": "REVIEW_AID_ONLY_NOT_AN_APPROVE_REJECT_OR_SPLIT_RECOMMENDATION",
       "member_count": 8,
       "template_id": "r4-template-071-persistence_configuration",
-      "unknown_cell_count": 24,
-      "unknown_fraction": 0.23076923076923078
+      "unknown_cell_count": 40,
+      "unknown_fraction": 0.38461538461538464
     }
   ]
 }

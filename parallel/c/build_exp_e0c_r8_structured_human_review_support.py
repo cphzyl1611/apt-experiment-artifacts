@@ -108,14 +108,40 @@ def _json_value(value: Any) -> str:
     if isinstance(value, (list, tuple, set)):
         values = [_json_value(item) for item in value]
         values = sorted(set(values))
-        return UNKNOWN if not values else json.dumps(values, ensure_ascii=False, separators=(",", ":"))
+        # A collection made entirely from unresolved source values carries no
+        # authenticated grouping value.  Keep it as the scalar sentinel rather
+        # than serializing it (for example, ["UNKNOWN"]), which would later be
+        # mistaken for a known value.  Mixed collections retain their exact
+        # canonical JSON so any known source evidence remains visible; their
+        # UNKNOWN evidence is counted conservatively by _is_unknown().
+        return UNKNOWN if not values or all(_is_unknown(item) for item in values) else json.dumps(values, ensure_ascii=False, separators=(",", ":"))
     if isinstance(value, Mapping):
         return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
     return str(value)
 
 
-def _is_unknown(value: str) -> bool:
-    return value == UNKNOWN or value.startswith("UNKNOWN")
+def _is_unknown(value: Any) -> bool:
+    """Return whether a canonical value contains unresolved source evidence.
+
+    Canonical mixed collections are JSON strings.  Parse only JSON arrays so a
+    mixed collection such as ["HTTP", "UNKNOWN"] preserves its known value
+    while remaining UNKNOWN-bearing for coverage and split eligibility.
+    """
+    if value is None:
+        return True
+    if not isinstance(value, str):
+        return False
+    if value == UNKNOWN or value == "UNKNOWN" or value.startswith("UNKNOWN"):
+        return True
+    if value.startswith("[") and value.endswith("]"):
+        try:
+            members = json.loads(value)
+        except json.JSONDecodeError:
+            return False
+        if not isinstance(members, list):
+            return False
+        return not members or any(_is_unknown(member) for member in members)
+    return False
 
 
 def _provenance_flag(ref: Mapping[str, Any], key: str) -> str:

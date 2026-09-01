@@ -9,7 +9,7 @@ Allowed human actions: `APPROVE_TEMPLATE_FOR_MEMBER_SET`, `REJECT_TEMPLATE_KEEP_
 - Members: `49`; member-set SHA256: `3ceca8928cf0c95f4006ffbf91d677cf3cee9287d7beea4996adfa752703bc33`
 - Strongest cohesion evidence: source action type / OS / telemetry distributions are shown exactly below; no free-text semantics were inferred.
 - Strongest structured heterogeneity evidence: `NONE`
-- UNKNOWN burden: `147` cells (`0.231` of structured cells)
+- UNKNOWN burden: `245` cells (`0.385` of structured cells)
 - Candidate split evidence: `NO_STRUCTURED_SPLIT_EVIDENCE` (`0` candidates)
 - Consequence of keeping template: retain the exact member set for explicit human review; all members remain `MANUAL_DESIGN_REQUIRED`.
 - Consequence of splitting: only a later explicit human request could define a split; no split is applied by R8.
@@ -20,10 +20,10 @@ Allowed human actions: `APPROVE_TEMPLATE_FOR_MEMBER_SET`, `REJECT_TEMPLATE_KEEP_
 - Structured field distributions:
   - `source_action_type`: host_cli=49
   - `os_platform`: windows=49
-  - `explicit_protocol_service`: ["UNKNOWN"]=49
+  - `explicit_protocol_service`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=49
   - `explicit_required_protocol`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=49
   - `explicit_required_service_class`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=49
-  - `service_prerequisites`: ["UNKNOWN"]=49
+  - `service_prerequisites`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=49
   - `telemetry_surface_flags`: {"requires_external_service_emulation":"STRUCTURED_EVIDENCE_PRESENT","requires_file_telemetry":"STRUCTURED_EVIDENCE_PRESENT","requires_host_process_telemetry":"STRUCTURED_EVIDEN...=49
   - `host_process_file_socket_network_requirements`: {"requires_file_telemetry":"STRUCTURED_EVIDENCE_PRESENT","requires_host_process_telemetry":"STRUCTURED_EVIDENCE_PRESENT","requires_network_fabric":"STRUCTURED_EVIDENCE_PRESENT",...=49
   - `destructive_state_flag`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=49
@@ -39,7 +39,7 @@ Decision: `null` (awaiting explicit human action).
 - Members: `28`; member-set SHA256: `fc076c1fbcef34272b7bb80b611fa0b3a560a940833e960976d45388355d100a`
 - Strongest cohesion evidence: source action type / OS / telemetry distributions are shown exactly below; no free-text semantics were inferred.
 - Strongest structured heterogeneity evidence: `NONE`
-- UNKNOWN burden: `84` cells (`0.231` of structured cells)
+- UNKNOWN burden: `140` cells (`0.385` of structured cells)
 - Candidate split evidence: `NO_STRUCTURED_SPLIT_EVIDENCE` (`0` candidates)
 - Consequence of keeping template: retain the exact member set for explicit human review; all members remain `MANUAL_DESIGN_REQUIRED`.
 - Consequence of splitting: only a later explicit human request could define a split; no split is applied by R8.
@@ -50,10 +50,10 @@ Decision: `null` (awaiting explicit human action).
 - Structured field distributions:
   - `source_action_type`: host_cli=28
   - `os_platform`: windows=28
-  - `explicit_protocol_service`: ["UNKNOWN"]=28
+  - `explicit_protocol_service`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=28
   - `explicit_required_protocol`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=28
   - `explicit_required_service_class`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=28
-  - `service_prerequisites`: ["UNKNOWN"]=28
+  - `service_prerequisites`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=28
   - `telemetry_surface_flags`: {"requires_external_service_emulation":"STRUCTURED_EVIDENCE_PRESENT","requires_file_telemetry":"STRUCTURED_EVIDENCE_PRESENT","requires_host_process_telemetry":"STRUCTURED_EVIDEN...=28
   - `host_process_file_socket_network_requirements`: {"requires_file_telemetry":"STRUCTURED_EVIDENCE_PRESENT","requires_host_process_telemetry":"STRUCTURED_EVIDENCE_PRESENT","requires_network_fabric":"STRUCTURED_EVIDENCE_PRESENT",...=28
   - `destructive_state_flag`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=28
@@ -69,7 +69,7 @@ Decision: `null` (awaiting explicit human action).
 - Members: `27`; member-set SHA256: `aeead35be23d0b2f06d1b7085ce3c33e1cdc08c87f92fe9e972eea608809ee0e`
 - Strongest cohesion evidence: source action type / OS / telemetry distributions are shown exactly below; no free-text semantics were inferred.
 - Strongest structured heterogeneity evidence: `NONE`
-- UNKNOWN burden: `81` cells (`0.231` of structured cells)
+- UNKNOWN burden: `135` cells (`0.385` of structured cells)
 - Candidate split evidence: `NO_STRUCTURED_SPLIT_EVIDENCE` (`0` candidates)
 - Consequence of keeping template: retain the exact member set for explicit human review; all members remain `MANUAL_DESIGN_REQUIRED`.
 - Consequence of splitting: only a later explicit human request could define a split; no split is applied by R8.
@@ -80,10 +80,10 @@ Decision: `null` (awaiting explicit human action).
 - Structured field distributions:
   - `source_action_type`: host_cli=27
   - `os_platform`: windows=27
-  - `explicit_protocol_service`: ["UNKNOWN"]=27
+  - `explicit_protocol_service`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=27
   - `explicit_required_protocol`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=27
   - `explicit_required_service_class`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=27
-  - `service_prerequisites`: ["UNKNOWN"]=27
+  - `service_prerequisites`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=27
   - `telemetry_surface_flags`: {"requires_external_service_emulation":"STRUCTURED_EVIDENCE_PRESENT","requires_file_telemetry":"STRUCTURED_EVIDENCE_PRESENT","requires_host_process_telemetry":"STRUCTURED_EVIDEN...=27
   - `host_process_file_socket_network_requirements`: {"requires_file_telemetry":"STRUCTURED_EVIDENCE_PRESENT","requires_host_process_telemetry":"STRUCTURED_EVIDENCE_PRESENT","requires_network_fabric":"STRUCTURED_EVIDENCE_PRESENT",...=27
   - `destructive_state_flag`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=27
@@ -99,7 +99,7 @@ Decision: `null` (awaiting explicit human action).
 - Members: `17`; member-set SHA256: `e5f22f069e236fde74af499ec46117c82ea2ce067d39b759421f6865cd548439`
 - Strongest cohesion evidence: source action type / OS / telemetry distributions are shown exactly below; no free-text semantics were inferred.
 - Strongest structured heterogeneity evidence: `NONE`
-- UNKNOWN burden: `51` cells (`0.231` of structured cells)
+- UNKNOWN burden: `85` cells (`0.385` of structured cells)
 - Candidate split evidence: `NO_STRUCTURED_SPLIT_EVIDENCE` (`0` candidates)
 - Consequence of keeping template: retain the exact member set for explicit human review; all members remain `MANUAL_DESIGN_REQUIRED`.
 - Consequence of splitting: only a later explicit human request could define a split; no split is applied by R8.
@@ -110,10 +110,10 @@ Decision: `null` (awaiting explicit human action).
 - Structured field distributions:
   - `source_action_type`: host_cli=17
   - `os_platform`: windows=17
-  - `explicit_protocol_service`: ["UNKNOWN"]=17
+  - `explicit_protocol_service`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=17
   - `explicit_required_protocol`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=17
   - `explicit_required_service_class`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=17
-  - `service_prerequisites`: ["UNKNOWN"]=17
+  - `service_prerequisites`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=17
   - `telemetry_surface_flags`: {"requires_external_service_emulation":"STRUCTURED_EVIDENCE_PRESENT","requires_file_telemetry":"STRUCTURED_EVIDENCE_PRESENT","requires_host_process_telemetry":"STRUCTURED_EVIDEN...=17
   - `host_process_file_socket_network_requirements`: {"requires_file_telemetry":"STRUCTURED_EVIDENCE_PRESENT","requires_host_process_telemetry":"STRUCTURED_EVIDENCE_PRESENT","requires_network_fabric":"STRUCTURED_EVIDENCE_PRESENT",...=17
   - `destructive_state_flag`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=17
@@ -129,7 +129,7 @@ Decision: `null` (awaiting explicit human action).
 - Members: `17`; member-set SHA256: `b9e9db68106f21ada95ece8e6158f9954372e9e28b908b1e98d886a679280449`
 - Strongest cohesion evidence: source action type / OS / telemetry distributions are shown exactly below; no free-text semantics were inferred.
 - Strongest structured heterogeneity evidence: `NONE`
-- UNKNOWN burden: `51` cells (`0.231` of structured cells)
+- UNKNOWN burden: `85` cells (`0.385` of structured cells)
 - Candidate split evidence: `NO_STRUCTURED_SPLIT_EVIDENCE` (`0` candidates)
 - Consequence of keeping template: retain the exact member set for explicit human review; all members remain `MANUAL_DESIGN_REQUIRED`.
 - Consequence of splitting: only a later explicit human request could define a split; no split is applied by R8.
@@ -140,10 +140,10 @@ Decision: `null` (awaiting explicit human action).
 - Structured field distributions:
   - `source_action_type`: host_cli=17
   - `os_platform`: windows=17
-  - `explicit_protocol_service`: ["UNKNOWN"]=17
+  - `explicit_protocol_service`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=17
   - `explicit_required_protocol`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=17
   - `explicit_required_service_class`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=17
-  - `service_prerequisites`: ["UNKNOWN"]=17
+  - `service_prerequisites`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=17
   - `telemetry_surface_flags`: {"requires_external_service_emulation":"STRUCTURED_EVIDENCE_PRESENT","requires_file_telemetry":"STRUCTURED_EVIDENCE_PRESENT","requires_host_process_telemetry":"STRUCTURED_EVIDEN...=17
   - `host_process_file_socket_network_requirements`: {"requires_file_telemetry":"STRUCTURED_EVIDENCE_PRESENT","requires_host_process_telemetry":"STRUCTURED_EVIDENCE_PRESENT","requires_network_fabric":"STRUCTURED_EVIDENCE_PRESENT",...=17
   - `destructive_state_flag`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=17
@@ -159,7 +159,7 @@ Decision: `null` (awaiting explicit human action).
 - Members: `12`; member-set SHA256: `ed38669390f755e5d316080187f6eff0d819475d59c828fa527d0ec66755ce35`
 - Strongest cohesion evidence: source action type / OS / telemetry distributions are shown exactly below; no free-text semantics were inferred.
 - Strongest structured heterogeneity evidence: `NONE`
-- UNKNOWN burden: `36` cells (`0.231` of structured cells)
+- UNKNOWN burden: `60` cells (`0.385` of structured cells)
 - Candidate split evidence: `NO_STRUCTURED_SPLIT_EVIDENCE` (`0` candidates)
 - Consequence of keeping template: retain the exact member set for explicit human review; all members remain `MANUAL_DESIGN_REQUIRED`.
 - Consequence of splitting: only a later explicit human request could define a split; no split is applied by R8.
@@ -170,10 +170,10 @@ Decision: `null` (awaiting explicit human action).
 - Structured field distributions:
   - `source_action_type`: host_cli=12
   - `os_platform`: windows=12
-  - `explicit_protocol_service`: ["UNKNOWN"]=12
+  - `explicit_protocol_service`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=12
   - `explicit_required_protocol`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=12
   - `explicit_required_service_class`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=12
-  - `service_prerequisites`: ["UNKNOWN"]=12
+  - `service_prerequisites`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=12
   - `telemetry_surface_flags`: {"requires_external_service_emulation":"STRUCTURED_EVIDENCE_PRESENT","requires_file_telemetry":"STRUCTURED_EVIDENCE_PRESENT","requires_host_process_telemetry":"STRUCTURED_EVIDEN...=12
   - `host_process_file_socket_network_requirements`: {"requires_file_telemetry":"STRUCTURED_EVIDENCE_PRESENT","requires_host_process_telemetry":"STRUCTURED_EVIDENCE_PRESENT","requires_network_fabric":"STRUCTURED_EVIDENCE_PRESENT",...=12
   - `destructive_state_flag`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=12
@@ -189,7 +189,7 @@ Decision: `null` (awaiting explicit human action).
 - Members: `10`; member-set SHA256: `7347ef4f412bf89b0ee6fad51fe44eabb96c64606d8b7d293b0b656ed8e86b42`
 - Strongest cohesion evidence: source action type / OS / telemetry distributions are shown exactly below; no free-text semantics were inferred.
 - Strongest structured heterogeneity evidence: `NONE`
-- UNKNOWN burden: `30` cells (`0.231` of structured cells)
+- UNKNOWN burden: `50` cells (`0.385` of structured cells)
 - Candidate split evidence: `NO_STRUCTURED_SPLIT_EVIDENCE` (`0` candidates)
 - Consequence of keeping template: retain the exact member set for explicit human review; all members remain `MANUAL_DESIGN_REQUIRED`.
 - Consequence of splitting: only a later explicit human request could define a split; no split is applied by R8.
@@ -200,10 +200,10 @@ Decision: `null` (awaiting explicit human action).
 - Structured field distributions:
   - `source_action_type`: host_cli=10
   - `os_platform`: windows=10
-  - `explicit_protocol_service`: ["UNKNOWN"]=10
+  - `explicit_protocol_service`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=10
   - `explicit_required_protocol`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=10
   - `explicit_required_service_class`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=10
-  - `service_prerequisites`: ["UNKNOWN"]=10
+  - `service_prerequisites`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=10
   - `telemetry_surface_flags`: {"requires_external_service_emulation":"STRUCTURED_EVIDENCE_PRESENT","requires_file_telemetry":"STRUCTURED_EVIDENCE_PRESENT","requires_host_process_telemetry":"STRUCTURED_EVIDEN...=10
   - `host_process_file_socket_network_requirements`: {"requires_file_telemetry":"STRUCTURED_EVIDENCE_PRESENT","requires_host_process_telemetry":"STRUCTURED_EVIDENCE_PRESENT","requires_network_fabric":"STRUCTURED_EVIDENCE_PRESENT",...=10
   - `destructive_state_flag`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=10
@@ -219,7 +219,7 @@ Decision: `null` (awaiting explicit human action).
 - Members: `9`; member-set SHA256: `9ae166dab66173192bbcbcd89bc86757c290e9d8db2d23a0350cd6df890636f4`
 - Strongest cohesion evidence: source action type / OS / telemetry distributions are shown exactly below; no free-text semantics were inferred.
 - Strongest structured heterogeneity evidence: `NONE`
-- UNKNOWN burden: `27` cells (`0.231` of structured cells)
+- UNKNOWN burden: `45` cells (`0.385` of structured cells)
 - Candidate split evidence: `NO_STRUCTURED_SPLIT_EVIDENCE` (`0` candidates)
 - Consequence of keeping template: retain the exact member set for explicit human review; all members remain `MANUAL_DESIGN_REQUIRED`.
 - Consequence of splitting: only a later explicit human request could define a split; no split is applied by R8.
@@ -230,10 +230,10 @@ Decision: `null` (awaiting explicit human action).
 - Structured field distributions:
   - `source_action_type`: host_cli=9
   - `os_platform`: windows=9
-  - `explicit_protocol_service`: ["UNKNOWN"]=9
+  - `explicit_protocol_service`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=9
   - `explicit_required_protocol`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=9
   - `explicit_required_service_class`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=9
-  - `service_prerequisites`: ["UNKNOWN"]=9
+  - `service_prerequisites`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=9
   - `telemetry_surface_flags`: {"requires_external_service_emulation":"STRUCTURED_EVIDENCE_PRESENT","requires_file_telemetry":"STRUCTURED_EVIDENCE_PRESENT","requires_host_process_telemetry":"STRUCTURED_EVIDEN...=9
   - `host_process_file_socket_network_requirements`: {"requires_file_telemetry":"STRUCTURED_EVIDENCE_PRESENT","requires_host_process_telemetry":"STRUCTURED_EVIDENCE_PRESENT","requires_network_fabric":"STRUCTURED_EVIDENCE_PRESENT",...=9
   - `destructive_state_flag`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=9
@@ -249,7 +249,7 @@ Decision: `null` (awaiting explicit human action).
 - Members: `9`; member-set SHA256: `776cc6ca57d025ad62efeed4d6f55f8a34a6dafe4517cc6a8a388519de3e6e8d`
 - Strongest cohesion evidence: source action type / OS / telemetry distributions are shown exactly below; no free-text semantics were inferred.
 - Strongest structured heterogeneity evidence: `NONE`
-- UNKNOWN burden: `27` cells (`0.231` of structured cells)
+- UNKNOWN burden: `45` cells (`0.385` of structured cells)
 - Candidate split evidence: `NO_STRUCTURED_SPLIT_EVIDENCE` (`0` candidates)
 - Consequence of keeping template: retain the exact member set for explicit human review; all members remain `MANUAL_DESIGN_REQUIRED`.
 - Consequence of splitting: only a later explicit human request could define a split; no split is applied by R8.
@@ -260,10 +260,10 @@ Decision: `null` (awaiting explicit human action).
 - Structured field distributions:
   - `source_action_type`: host_cli=9
   - `os_platform`: windows=9
-  - `explicit_protocol_service`: ["UNKNOWN"]=9
+  - `explicit_protocol_service`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=9
   - `explicit_required_protocol`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=9
   - `explicit_required_service_class`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=9
-  - `service_prerequisites`: ["UNKNOWN"]=9
+  - `service_prerequisites`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=9
   - `telemetry_surface_flags`: {"requires_external_service_emulation":"STRUCTURED_EVIDENCE_PRESENT","requires_file_telemetry":"STRUCTURED_EVIDENCE_PRESENT","requires_host_process_telemetry":"STRUCTURED_EVIDEN...=9
   - `host_process_file_socket_network_requirements`: {"requires_file_telemetry":"STRUCTURED_EVIDENCE_PRESENT","requires_host_process_telemetry":"STRUCTURED_EVIDENCE_PRESENT","requires_network_fabric":"STRUCTURED_EVIDENCE_PRESENT",...=9
   - `destructive_state_flag`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=9
@@ -339,7 +339,7 @@ Decision: `null` (awaiting explicit human action).
 - Members: `8`; member-set SHA256: `939db086e6af0f4a8c6fb04d039ff8a379b0b0dc9cf5ebe9cbd76bb4e3b9cb28`
 - Strongest cohesion evidence: source action type / OS / telemetry distributions are shown exactly below; no free-text semantics were inferred.
 - Strongest structured heterogeneity evidence: `NONE`
-- UNKNOWN burden: `24` cells (`0.231` of structured cells)
+- UNKNOWN burden: `40` cells (`0.385` of structured cells)
 - Candidate split evidence: `NO_STRUCTURED_SPLIT_EVIDENCE` (`0` candidates)
 - Consequence of keeping template: retain the exact member set for explicit human review; all members remain `MANUAL_DESIGN_REQUIRED`.
 - Consequence of splitting: only a later explicit human request could define a split; no split is applied by R8.
@@ -350,10 +350,10 @@ Decision: `null` (awaiting explicit human action).
 - Structured field distributions:
   - `source_action_type`: host_cli=8
   - `os_platform`: windows=8
-  - `explicit_protocol_service`: ["UNKNOWN"]=8
+  - `explicit_protocol_service`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=8
   - `explicit_required_protocol`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=8
   - `explicit_required_service_class`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=8
-  - `service_prerequisites`: ["UNKNOWN"]=8
+  - `service_prerequisites`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=8
   - `telemetry_surface_flags`: {"requires_external_service_emulation":"STRUCTURED_EVIDENCE_PRESENT","requires_file_telemetry":"STRUCTURED_EVIDENCE_PRESENT","requires_host_process_telemetry":"STRUCTURED_EVIDEN...=8
   - `host_process_file_socket_network_requirements`: {"requires_file_telemetry":"STRUCTURED_EVIDENCE_PRESENT","requires_host_process_telemetry":"STRUCTURED_EVIDENCE_PRESENT","requires_network_fabric":"STRUCTURED_EVIDENCE_PRESENT",...=8
   - `destructive_state_flag`: UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE=8

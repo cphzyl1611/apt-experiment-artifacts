@@ -405,15 +405,15 @@
         },
         "explicit_protocol_service": {
           "coverage": {
-            "known_fraction": 1.0,
-            "known_member_count": 49,
-            "unknown_member_count": 0
+            "known_fraction": 0.0,
+            "known_member_count": 0,
+            "unknown_member_count": 49
           },
           "distinct_value_count": 1,
           "distinct_values": [
-            "[\"UNKNOWN\"]"
+            "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
           ],
-          "known_member_count": 49,
+          "known_member_count": 0,
           "member_count": 49,
           "members_by_value": [
             {
@@ -470,7 +470,7 @@
                 "6000062::S07::A004",
                 "6000063::S04::A001"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
           "members_per_value": [
@@ -528,11 +528,11 @@
                 "6000062::S07::A004",
                 "6000063::S04::A001"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
-          "unknown_fraction": 0.0,
-          "unknown_member_count": 0
+          "unknown_fraction": 1.0,
+          "unknown_member_count": 49
         },
         "explicit_required_protocol": {
           "coverage": {
@@ -1191,15 +1191,15 @@
         },
         "service_prerequisites": {
           "coverage": {
-            "known_fraction": 1.0,
-            "known_member_count": 49,
-            "unknown_member_count": 0
+            "known_fraction": 0.0,
+            "known_member_count": 0,
+            "unknown_member_count": 49
           },
           "distinct_value_count": 1,
           "distinct_values": [
-            "[\"UNKNOWN\"]"
+            "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
           ],
-          "known_member_count": 49,
+          "known_member_count": 0,
           "member_count": 49,
           "members_by_value": [
             {
@@ -1256,7 +1256,7 @@
                 "6000062::S07::A004",
                 "6000063::S04::A001"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
           "members_per_value": [
@@ -1314,11 +1314,11 @@
                 "6000062::S07::A004",
                 "6000063::S04::A001"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
-          "unknown_fraction": 0.0,
-          "unknown_member_count": 0
+          "unknown_fraction": 1.0,
+          "unknown_member_count": 49
         },
         "source_action_type": {
           "coverage": {
@@ -2165,15 +2165,15 @@
         },
         "explicit_protocol_service": {
           "coverage": {
-            "known_fraction": 1.0,
-            "known_member_count": 49,
-            "unknown_member_count": 0
+            "known_fraction": 0.0,
+            "known_member_count": 0,
+            "unknown_member_count": 49
           },
           "distinct_value_count": 1,
           "distinct_values": [
-            "[\"UNKNOWN\"]"
+            "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
           ],
-          "known_member_count": 49,
+          "known_member_count": 0,
           "member_count": 49,
           "members_by_value": [
             {
@@ -2230,7 +2230,7 @@
                 "6000062::S07::A004",
                 "6000063::S04::A001"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
           "members_per_value": [
@@ -2288,11 +2288,11 @@
                 "6000062::S07::A004",
                 "6000063::S04::A001"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
-          "unknown_fraction": 0.0,
-          "unknown_member_count": 0
+          "unknown_fraction": 1.0,
+          "unknown_member_count": 49
         },
         "explicit_required_protocol": {
           "coverage": {
@@ -2951,15 +2951,15 @@
         },
         "service_prerequisites": {
           "coverage": {
-            "known_fraction": 1.0,
-            "known_member_count": 49,
-            "unknown_member_count": 0
+            "known_fraction": 0.0,
+            "known_member_count": 0,
+            "unknown_member_count": 49
           },
           "distinct_value_count": 1,
           "distinct_values": [
-            "[\"UNKNOWN\"]"
+            "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
           ],
-          "known_member_count": 49,
+          "known_member_count": 0,
           "member_count": 49,
           "members_by_value": [
             {
@@ -3016,7 +3016,7 @@
                 "6000062::S07::A004",
                 "6000063::S04::A001"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
           "members_per_value": [
@@ -3074,11 +3074,11 @@
                 "6000062::S07::A004",
                 "6000063::S04::A001"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
-          "unknown_fraction": 0.0,
-          "unknown_member_count": 0
+          "unknown_fraction": 1.0,
+          "unknown_member_count": 49
         },
         "source_action_type": {
           "coverage": {
@@ -3477,8 +3477,8 @@
       "template_id": "r4-template-120-process_command_execution",
       "unknown_burden": {
         "field_count": 13,
-        "unknown_cell_count": 147,
-        "unknown_fraction": 0.23076923076923078
+        "unknown_cell_count": 245,
+        "unknown_fraction": 0.38461538461538464
       }
     },
     {
@@ -3755,15 +3755,15 @@
         },
         "explicit_protocol_service": {
           "coverage": {
-            "known_fraction": 1.0,
-            "known_member_count": 28,
-            "unknown_member_count": 0
+            "known_fraction": 0.0,
+            "known_member_count": 0,
+            "unknown_member_count": 28
           },
           "distinct_value_count": 1,
           "distinct_values": [
-            "[\"UNKNOWN\"]"
+            "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
           ],
-          "known_member_count": 28,
+          "known_member_count": 0,
           "member_count": 28,
           "members_by_value": [
             {
@@ -3799,7 +3799,7 @@
                 "6000056::S06::A001",
                 "6000062::S06::A001"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
           "members_per_value": [
@@ -3836,11 +3836,11 @@
                 "6000056::S06::A001",
                 "6000062::S06::A001"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
-          "unknown_fraction": 0.0,
-          "unknown_member_count": 0
+          "unknown_fraction": 1.0,
+          "unknown_member_count": 28
         },
         "explicit_required_protocol": {
           "coverage": {
@@ -4289,15 +4289,15 @@
         },
         "service_prerequisites": {
           "coverage": {
-            "known_fraction": 1.0,
-            "known_member_count": 28,
-            "unknown_member_count": 0
+            "known_fraction": 0.0,
+            "known_member_count": 0,
+            "unknown_member_count": 28
           },
           "distinct_value_count": 1,
           "distinct_values": [
-            "[\"UNKNOWN\"]"
+            "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
           ],
-          "known_member_count": 28,
+          "known_member_count": 0,
           "member_count": 28,
           "members_by_value": [
             {
@@ -4333,7 +4333,7 @@
                 "6000056::S06::A001",
                 "6000062::S06::A001"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
           "members_per_value": [
@@ -4370,11 +4370,11 @@
                 "6000056::S06::A001",
                 "6000062::S06::A001"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
-          "unknown_fraction": 0.0,
-          "unknown_member_count": 0
+          "unknown_fraction": 1.0,
+          "unknown_member_count": 28
         },
         "source_action_type": {
           "coverage": {
@@ -4948,15 +4948,15 @@
         },
         "explicit_protocol_service": {
           "coverage": {
-            "known_fraction": 1.0,
-            "known_member_count": 28,
-            "unknown_member_count": 0
+            "known_fraction": 0.0,
+            "known_member_count": 0,
+            "unknown_member_count": 28
           },
           "distinct_value_count": 1,
           "distinct_values": [
-            "[\"UNKNOWN\"]"
+            "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
           ],
-          "known_member_count": 28,
+          "known_member_count": 0,
           "member_count": 28,
           "members_by_value": [
             {
@@ -4992,7 +4992,7 @@
                 "6000056::S06::A001",
                 "6000062::S06::A001"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
           "members_per_value": [
@@ -5029,11 +5029,11 @@
                 "6000056::S06::A001",
                 "6000062::S06::A001"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
-          "unknown_fraction": 0.0,
-          "unknown_member_count": 0
+          "unknown_fraction": 1.0,
+          "unknown_member_count": 28
         },
         "explicit_required_protocol": {
           "coverage": {
@@ -5482,15 +5482,15 @@
         },
         "service_prerequisites": {
           "coverage": {
-            "known_fraction": 1.0,
-            "known_member_count": 28,
-            "unknown_member_count": 0
+            "known_fraction": 0.0,
+            "known_member_count": 0,
+            "unknown_member_count": 28
           },
           "distinct_value_count": 1,
           "distinct_values": [
-            "[\"UNKNOWN\"]"
+            "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
           ],
-          "known_member_count": 28,
+          "known_member_count": 0,
           "member_count": 28,
           "members_by_value": [
             {
@@ -5526,7 +5526,7 @@
                 "6000056::S06::A001",
                 "6000062::S06::A001"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
           "members_per_value": [
@@ -5563,11 +5563,11 @@
                 "6000056::S06::A001",
                 "6000062::S06::A001"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
-          "unknown_fraction": 0.0,
-          "unknown_member_count": 0
+          "unknown_fraction": 1.0,
+          "unknown_member_count": 28
         },
         "source_action_type": {
           "coverage": {
@@ -5840,8 +5840,8 @@
       "template_id": "r4-template-136-process_command_execution",
       "unknown_burden": {
         "field_count": 13,
-        "unknown_cell_count": 84,
-        "unknown_fraction": 0.23076923076923078
+        "unknown_cell_count": 140,
+        "unknown_fraction": 0.38461538461538464
       }
     },
     {
@@ -6112,15 +6112,15 @@
         },
         "explicit_protocol_service": {
           "coverage": {
-            "known_fraction": 1.0,
-            "known_member_count": 27,
-            "unknown_member_count": 0
+            "known_fraction": 0.0,
+            "known_member_count": 0,
+            "unknown_member_count": 27
           },
           "distinct_value_count": 1,
           "distinct_values": [
-            "[\"UNKNOWN\"]"
+            "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
           ],
-          "known_member_count": 27,
+          "known_member_count": 0,
           "member_count": 27,
           "members_by_value": [
             {
@@ -6155,7 +6155,7 @@
                 "6000053::S08::A002",
                 "6000054::S03::A002"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
           "members_per_value": [
@@ -6191,11 +6191,11 @@
                 "6000053::S08::A002",
                 "6000054::S03::A002"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
-          "unknown_fraction": 0.0,
-          "unknown_member_count": 0
+          "unknown_fraction": 1.0,
+          "unknown_member_count": 27
         },
         "explicit_required_protocol": {
           "coverage": {
@@ -6634,15 +6634,15 @@
         },
         "service_prerequisites": {
           "coverage": {
-            "known_fraction": 1.0,
-            "known_member_count": 27,
-            "unknown_member_count": 0
+            "known_fraction": 0.0,
+            "known_member_count": 0,
+            "unknown_member_count": 27
           },
           "distinct_value_count": 1,
           "distinct_values": [
-            "[\"UNKNOWN\"]"
+            "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
           ],
-          "known_member_count": 27,
+          "known_member_count": 0,
           "member_count": 27,
           "members_by_value": [
             {
@@ -6677,7 +6677,7 @@
                 "6000053::S08::A002",
                 "6000054::S03::A002"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
           "members_per_value": [
@@ -6713,11 +6713,11 @@
                 "6000053::S08::A002",
                 "6000054::S03::A002"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
-          "unknown_fraction": 0.0,
-          "unknown_member_count": 0
+          "unknown_fraction": 1.0,
+          "unknown_member_count": 27
         },
         "source_action_type": {
           "coverage": {
@@ -7278,15 +7278,15 @@
         },
         "explicit_protocol_service": {
           "coverage": {
-            "known_fraction": 1.0,
-            "known_member_count": 27,
-            "unknown_member_count": 0
+            "known_fraction": 0.0,
+            "known_member_count": 0,
+            "unknown_member_count": 27
           },
           "distinct_value_count": 1,
           "distinct_values": [
-            "[\"UNKNOWN\"]"
+            "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
           ],
-          "known_member_count": 27,
+          "known_member_count": 0,
           "member_count": 27,
           "members_by_value": [
             {
@@ -7321,7 +7321,7 @@
                 "6000053::S08::A002",
                 "6000054::S03::A002"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
           "members_per_value": [
@@ -7357,11 +7357,11 @@
                 "6000053::S08::A002",
                 "6000054::S03::A002"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
-          "unknown_fraction": 0.0,
-          "unknown_member_count": 0
+          "unknown_fraction": 1.0,
+          "unknown_member_count": 27
         },
         "explicit_required_protocol": {
           "coverage": {
@@ -7800,15 +7800,15 @@
         },
         "service_prerequisites": {
           "coverage": {
-            "known_fraction": 1.0,
-            "known_member_count": 27,
-            "unknown_member_count": 0
+            "known_fraction": 0.0,
+            "known_member_count": 0,
+            "unknown_member_count": 27
           },
           "distinct_value_count": 1,
           "distinct_values": [
-            "[\"UNKNOWN\"]"
+            "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
           ],
-          "known_member_count": 27,
+          "known_member_count": 0,
           "member_count": 27,
           "members_by_value": [
             {
@@ -7843,7 +7843,7 @@
                 "6000053::S08::A002",
                 "6000054::S03::A002"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
           "members_per_value": [
@@ -7879,11 +7879,11 @@
                 "6000053::S08::A002",
                 "6000054::S03::A002"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
-          "unknown_fraction": 0.0,
-          "unknown_member_count": 0
+          "unknown_fraction": 1.0,
+          "unknown_member_count": 27
         },
         "source_action_type": {
           "coverage": {
@@ -8150,8 +8150,8 @@
       "template_id": "r4-template-107-process_command_execution",
       "unknown_burden": {
         "field_count": 13,
-        "unknown_cell_count": 81,
-        "unknown_fraction": 0.23076923076923078
+        "unknown_cell_count": 135,
+        "unknown_fraction": 0.38461538461538464
       }
     },
     {
@@ -8362,15 +8362,15 @@
         },
         "explicit_protocol_service": {
           "coverage": {
-            "known_fraction": 1.0,
-            "known_member_count": 17,
-            "unknown_member_count": 0
+            "known_fraction": 0.0,
+            "known_member_count": 0,
+            "unknown_member_count": 17
           },
           "distinct_value_count": 1,
           "distinct_values": [
-            "[\"UNKNOWN\"]"
+            "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
           ],
-          "known_member_count": 17,
+          "known_member_count": 0,
           "member_count": 17,
           "members_by_value": [
             {
@@ -8395,7 +8395,7 @@
                 "6000061::S06::A003",
                 "6000062::S04::A002"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
           "members_per_value": [
@@ -8421,11 +8421,11 @@
                 "6000061::S06::A003",
                 "6000062::S04::A002"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
-          "unknown_fraction": 0.0,
-          "unknown_member_count": 0
+          "unknown_fraction": 1.0,
+          "unknown_member_count": 17
         },
         "explicit_required_protocol": {
           "coverage": {
@@ -8764,15 +8764,15 @@
         },
         "service_prerequisites": {
           "coverage": {
-            "known_fraction": 1.0,
-            "known_member_count": 17,
-            "unknown_member_count": 0
+            "known_fraction": 0.0,
+            "known_member_count": 0,
+            "unknown_member_count": 17
           },
           "distinct_value_count": 1,
           "distinct_values": [
-            "[\"UNKNOWN\"]"
+            "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
           ],
-          "known_member_count": 17,
+          "known_member_count": 0,
           "member_count": 17,
           "members_by_value": [
             {
@@ -8797,7 +8797,7 @@
                 "6000061::S06::A003",
                 "6000062::S04::A002"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
           "members_per_value": [
@@ -8823,11 +8823,11 @@
                 "6000061::S06::A003",
                 "6000062::S04::A002"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
-          "unknown_fraction": 0.0,
-          "unknown_member_count": 0
+          "unknown_fraction": 1.0,
+          "unknown_member_count": 17
         },
         "source_action_type": {
           "coverage": {
@@ -9258,15 +9258,15 @@
         },
         "explicit_protocol_service": {
           "coverage": {
-            "known_fraction": 1.0,
-            "known_member_count": 17,
-            "unknown_member_count": 0
+            "known_fraction": 0.0,
+            "known_member_count": 0,
+            "unknown_member_count": 17
           },
           "distinct_value_count": 1,
           "distinct_values": [
-            "[\"UNKNOWN\"]"
+            "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
           ],
-          "known_member_count": 17,
+          "known_member_count": 0,
           "member_count": 17,
           "members_by_value": [
             {
@@ -9291,7 +9291,7 @@
                 "6000061::S06::A003",
                 "6000062::S04::A002"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
           "members_per_value": [
@@ -9317,11 +9317,11 @@
                 "6000061::S06::A003",
                 "6000062::S04::A002"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
-          "unknown_fraction": 0.0,
-          "unknown_member_count": 0
+          "unknown_fraction": 1.0,
+          "unknown_member_count": 17
         },
         "explicit_required_protocol": {
           "coverage": {
@@ -9660,15 +9660,15 @@
         },
         "service_prerequisites": {
           "coverage": {
-            "known_fraction": 1.0,
-            "known_member_count": 17,
-            "unknown_member_count": 0
+            "known_fraction": 0.0,
+            "known_member_count": 0,
+            "unknown_member_count": 17
           },
           "distinct_value_count": 1,
           "distinct_values": [
-            "[\"UNKNOWN\"]"
+            "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
           ],
-          "known_member_count": 17,
+          "known_member_count": 0,
           "member_count": 17,
           "members_by_value": [
             {
@@ -9693,7 +9693,7 @@
                 "6000061::S06::A003",
                 "6000062::S04::A002"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
           "members_per_value": [
@@ -9719,11 +9719,11 @@
                 "6000061::S06::A003",
                 "6000062::S04::A002"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
-          "unknown_fraction": 0.0,
-          "unknown_member_count": 0
+          "unknown_fraction": 1.0,
+          "unknown_member_count": 17
         },
         "source_action_type": {
           "coverage": {
@@ -9930,8 +9930,8 @@
       "template_id": "r4-template-159-process_command_execution",
       "unknown_burden": {
         "field_count": 13,
-        "unknown_cell_count": 51,
-        "unknown_fraction": 0.23076923076923078
+        "unknown_cell_count": 85,
+        "unknown_fraction": 0.38461538461538464
       }
     },
     {
@@ -10142,15 +10142,15 @@
         },
         "explicit_protocol_service": {
           "coverage": {
-            "known_fraction": 1.0,
-            "known_member_count": 17,
-            "unknown_member_count": 0
+            "known_fraction": 0.0,
+            "known_member_count": 0,
+            "unknown_member_count": 17
           },
           "distinct_value_count": 1,
           "distinct_values": [
-            "[\"UNKNOWN\"]"
+            "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
           ],
-          "known_member_count": 17,
+          "known_member_count": 0,
           "member_count": 17,
           "members_by_value": [
             {
@@ -10175,7 +10175,7 @@
                 "6000054::S03::A003",
                 "6000056::S03::A002"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
           "members_per_value": [
@@ -10201,11 +10201,11 @@
                 "6000054::S03::A003",
                 "6000056::S03::A002"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
-          "unknown_fraction": 0.0,
-          "unknown_member_count": 0
+          "unknown_fraction": 1.0,
+          "unknown_member_count": 17
         },
         "explicit_required_protocol": {
           "coverage": {
@@ -10544,15 +10544,15 @@
         },
         "service_prerequisites": {
           "coverage": {
-            "known_fraction": 1.0,
-            "known_member_count": 17,
-            "unknown_member_count": 0
+            "known_fraction": 0.0,
+            "known_member_count": 0,
+            "unknown_member_count": 17
           },
           "distinct_value_count": 1,
           "distinct_values": [
-            "[\"UNKNOWN\"]"
+            "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
           ],
-          "known_member_count": 17,
+          "known_member_count": 0,
           "member_count": 17,
           "members_by_value": [
             {
@@ -10577,7 +10577,7 @@
                 "6000054::S03::A003",
                 "6000056::S03::A002"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
           "members_per_value": [
@@ -10603,11 +10603,11 @@
                 "6000054::S03::A003",
                 "6000056::S03::A002"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
-          "unknown_fraction": 0.0,
-          "unknown_member_count": 0
+          "unknown_fraction": 1.0,
+          "unknown_member_count": 17
         },
         "source_action_type": {
           "coverage": {
@@ -11038,15 +11038,15 @@
         },
         "explicit_protocol_service": {
           "coverage": {
-            "known_fraction": 1.0,
-            "known_member_count": 17,
-            "unknown_member_count": 0
+            "known_fraction": 0.0,
+            "known_member_count": 0,
+            "unknown_member_count": 17
           },
           "distinct_value_count": 1,
           "distinct_values": [
-            "[\"UNKNOWN\"]"
+            "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
           ],
-          "known_member_count": 17,
+          "known_member_count": 0,
           "member_count": 17,
           "members_by_value": [
             {
@@ -11071,7 +11071,7 @@
                 "6000054::S03::A003",
                 "6000056::S03::A002"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
           "members_per_value": [
@@ -11097,11 +11097,11 @@
                 "6000054::S03::A003",
                 "6000056::S03::A002"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
-          "unknown_fraction": 0.0,
-          "unknown_member_count": 0
+          "unknown_fraction": 1.0,
+          "unknown_member_count": 17
         },
         "explicit_required_protocol": {
           "coverage": {
@@ -11440,15 +11440,15 @@
         },
         "service_prerequisites": {
           "coverage": {
-            "known_fraction": 1.0,
-            "known_member_count": 17,
-            "unknown_member_count": 0
+            "known_fraction": 0.0,
+            "known_member_count": 0,
+            "unknown_member_count": 17
           },
           "distinct_value_count": 1,
           "distinct_values": [
-            "[\"UNKNOWN\"]"
+            "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
           ],
-          "known_member_count": 17,
+          "known_member_count": 0,
           "member_count": 17,
           "members_by_value": [
             {
@@ -11473,7 +11473,7 @@
                 "6000054::S03::A003",
                 "6000056::S03::A002"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
           "members_per_value": [
@@ -11499,11 +11499,11 @@
                 "6000054::S03::A003",
                 "6000056::S03::A002"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
-          "unknown_fraction": 0.0,
-          "unknown_member_count": 0
+          "unknown_fraction": 1.0,
+          "unknown_member_count": 17
         },
         "source_action_type": {
           "coverage": {
@@ -11710,8 +11710,8 @@
       "template_id": "r4-template-130-process_command_execution",
       "unknown_burden": {
         "field_count": 13,
-        "unknown_cell_count": 51,
-        "unknown_fraction": 0.23076923076923078
+        "unknown_cell_count": 85,
+        "unknown_fraction": 0.38461538461538464
       }
     },
     {
@@ -11892,15 +11892,15 @@
         },
         "explicit_protocol_service": {
           "coverage": {
-            "known_fraction": 1.0,
-            "known_member_count": 12,
-            "unknown_member_count": 0
+            "known_fraction": 0.0,
+            "known_member_count": 0,
+            "unknown_member_count": 12
           },
           "distinct_value_count": 1,
           "distinct_values": [
-            "[\"UNKNOWN\"]"
+            "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
           ],
-          "known_member_count": 12,
+          "known_member_count": 0,
           "member_count": 12,
           "members_by_value": [
             {
@@ -11920,7 +11920,7 @@
                 "6000063::S06::A001",
                 "6000063::S06::A002"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
           "members_per_value": [
@@ -11941,11 +11941,11 @@
                 "6000063::S06::A001",
                 "6000063::S06::A002"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
-          "unknown_fraction": 0.0,
-          "unknown_member_count": 0
+          "unknown_fraction": 1.0,
+          "unknown_member_count": 12
         },
         "explicit_required_protocol": {
           "coverage": {
@@ -12234,15 +12234,15 @@
         },
         "service_prerequisites": {
           "coverage": {
-            "known_fraction": 1.0,
-            "known_member_count": 12,
-            "unknown_member_count": 0
+            "known_fraction": 0.0,
+            "known_member_count": 0,
+            "unknown_member_count": 12
           },
           "distinct_value_count": 1,
           "distinct_values": [
-            "[\"UNKNOWN\"]"
+            "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
           ],
-          "known_member_count": 12,
+          "known_member_count": 0,
           "member_count": 12,
           "members_by_value": [
             {
@@ -12262,7 +12262,7 @@
                 "6000063::S06::A001",
                 "6000063::S06::A002"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
           "members_per_value": [
@@ -12283,11 +12283,11 @@
                 "6000063::S06::A001",
                 "6000063::S06::A002"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
-          "unknown_fraction": 0.0,
-          "unknown_member_count": 0
+          "unknown_fraction": 1.0,
+          "unknown_member_count": 12
         },
         "source_action_type": {
           "coverage": {
@@ -12653,15 +12653,15 @@
         },
         "explicit_protocol_service": {
           "coverage": {
-            "known_fraction": 1.0,
-            "known_member_count": 12,
-            "unknown_member_count": 0
+            "known_fraction": 0.0,
+            "known_member_count": 0,
+            "unknown_member_count": 12
           },
           "distinct_value_count": 1,
           "distinct_values": [
-            "[\"UNKNOWN\"]"
+            "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
           ],
-          "known_member_count": 12,
+          "known_member_count": 0,
           "member_count": 12,
           "members_by_value": [
             {
@@ -12681,7 +12681,7 @@
                 "6000063::S06::A001",
                 "6000063::S06::A002"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
           "members_per_value": [
@@ -12702,11 +12702,11 @@
                 "6000063::S06::A001",
                 "6000063::S06::A002"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
-          "unknown_fraction": 0.0,
-          "unknown_member_count": 0
+          "unknown_fraction": 1.0,
+          "unknown_member_count": 12
         },
         "explicit_required_protocol": {
           "coverage": {
@@ -12995,15 +12995,15 @@
         },
         "service_prerequisites": {
           "coverage": {
-            "known_fraction": 1.0,
-            "known_member_count": 12,
-            "unknown_member_count": 0
+            "known_fraction": 0.0,
+            "known_member_count": 0,
+            "unknown_member_count": 12
           },
           "distinct_value_count": 1,
           "distinct_values": [
-            "[\"UNKNOWN\"]"
+            "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
           ],
-          "known_member_count": 12,
+          "known_member_count": 0,
           "member_count": 12,
           "members_by_value": [
             {
@@ -13023,7 +13023,7 @@
                 "6000063::S06::A001",
                 "6000063::S06::A002"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
           "members_per_value": [
@@ -13044,11 +13044,11 @@
                 "6000063::S06::A001",
                 "6000063::S06::A002"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
-          "unknown_fraction": 0.0,
-          "unknown_member_count": 0
+          "unknown_fraction": 1.0,
+          "unknown_member_count": 12
         },
         "source_action_type": {
           "coverage": {
@@ -13225,8 +13225,8 @@
       "template_id": "r4-template-152-process_command_execution",
       "unknown_burden": {
         "field_count": 13,
-        "unknown_cell_count": 36,
-        "unknown_fraction": 0.23076923076923078
+        "unknown_cell_count": 60,
+        "unknown_fraction": 0.38461538461538464
       }
     },
     {
@@ -13395,15 +13395,15 @@
         },
         "explicit_protocol_service": {
           "coverage": {
-            "known_fraction": 1.0,
-            "known_member_count": 10,
-            "unknown_member_count": 0
+            "known_fraction": 0.0,
+            "known_member_count": 0,
+            "unknown_member_count": 10
           },
           "distinct_value_count": 1,
           "distinct_values": [
-            "[\"UNKNOWN\"]"
+            "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
           ],
-          "known_member_count": 10,
+          "known_member_count": 0,
           "member_count": 10,
           "members_by_value": [
             {
@@ -13421,7 +13421,7 @@
                 "6000054::S07::A003",
                 "6000062::S05::A001"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
           "members_per_value": [
@@ -13440,11 +13440,11 @@
                 "6000054::S07::A003",
                 "6000062::S05::A001"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
-          "unknown_fraction": 0.0,
-          "unknown_member_count": 0
+          "unknown_fraction": 1.0,
+          "unknown_member_count": 10
         },
         "explicit_required_protocol": {
           "coverage": {
@@ -13713,15 +13713,15 @@
         },
         "service_prerequisites": {
           "coverage": {
-            "known_fraction": 1.0,
-            "known_member_count": 10,
-            "unknown_member_count": 0
+            "known_fraction": 0.0,
+            "known_member_count": 0,
+            "unknown_member_count": 10
           },
           "distinct_value_count": 1,
           "distinct_values": [
-            "[\"UNKNOWN\"]"
+            "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
           ],
-          "known_member_count": 10,
+          "known_member_count": 0,
           "member_count": 10,
           "members_by_value": [
             {
@@ -13739,7 +13739,7 @@
                 "6000054::S07::A003",
                 "6000062::S05::A001"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
           "members_per_value": [
@@ -13758,11 +13758,11 @@
                 "6000054::S07::A003",
                 "6000062::S05::A001"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
-          "unknown_fraction": 0.0,
-          "unknown_member_count": 0
+          "unknown_fraction": 1.0,
+          "unknown_member_count": 10
         },
         "source_action_type": {
           "coverage": {
@@ -14102,15 +14102,15 @@
         },
         "explicit_protocol_service": {
           "coverage": {
-            "known_fraction": 1.0,
-            "known_member_count": 10,
-            "unknown_member_count": 0
+            "known_fraction": 0.0,
+            "known_member_count": 0,
+            "unknown_member_count": 10
           },
           "distinct_value_count": 1,
           "distinct_values": [
-            "[\"UNKNOWN\"]"
+            "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
           ],
-          "known_member_count": 10,
+          "known_member_count": 0,
           "member_count": 10,
           "members_by_value": [
             {
@@ -14128,7 +14128,7 @@
                 "6000054::S07::A003",
                 "6000062::S05::A001"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
           "members_per_value": [
@@ -14147,11 +14147,11 @@
                 "6000054::S07::A003",
                 "6000062::S05::A001"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
-          "unknown_fraction": 0.0,
-          "unknown_member_count": 0
+          "unknown_fraction": 1.0,
+          "unknown_member_count": 10
         },
         "explicit_required_protocol": {
           "coverage": {
@@ -14420,15 +14420,15 @@
         },
         "service_prerequisites": {
           "coverage": {
-            "known_fraction": 1.0,
-            "known_member_count": 10,
-            "unknown_member_count": 0
+            "known_fraction": 0.0,
+            "known_member_count": 0,
+            "unknown_member_count": 10
           },
           "distinct_value_count": 1,
           "distinct_values": [
-            "[\"UNKNOWN\"]"
+            "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
           ],
-          "known_member_count": 10,
+          "known_member_count": 0,
           "member_count": 10,
           "members_by_value": [
             {
@@ -14446,7 +14446,7 @@
                 "6000054::S07::A003",
                 "6000062::S05::A001"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
           "members_per_value": [
@@ -14465,11 +14465,11 @@
                 "6000054::S07::A003",
                 "6000062::S05::A001"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
-          "unknown_fraction": 0.0,
-          "unknown_member_count": 0
+          "unknown_fraction": 1.0,
+          "unknown_member_count": 10
         },
         "source_action_type": {
           "coverage": {
@@ -14634,8 +14634,8 @@
       "template_id": "r4-template-069-persistence_configuration",
       "unknown_burden": {
         "field_count": 13,
-        "unknown_cell_count": 30,
-        "unknown_fraction": 0.23076923076923078
+        "unknown_cell_count": 50,
+        "unknown_fraction": 0.38461538461538464
       }
     },
     {
@@ -14798,15 +14798,15 @@
         },
         "explicit_protocol_service": {
           "coverage": {
-            "known_fraction": 1.0,
-            "known_member_count": 9,
-            "unknown_member_count": 0
+            "known_fraction": 0.0,
+            "known_member_count": 0,
+            "unknown_member_count": 9
           },
           "distinct_value_count": 1,
           "distinct_values": [
-            "[\"UNKNOWN\"]"
+            "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
           ],
-          "known_member_count": 9,
+          "known_member_count": 0,
           "member_count": 9,
           "members_by_value": [
             {
@@ -14823,7 +14823,7 @@
                 "6000026::S05::A006",
                 "6000031::S05::A003"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
           "members_per_value": [
@@ -14841,11 +14841,11 @@
                 "6000026::S05::A006",
                 "6000031::S05::A003"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
-          "unknown_fraction": 0.0,
-          "unknown_member_count": 0
+          "unknown_fraction": 1.0,
+          "unknown_member_count": 9
         },
         "explicit_required_protocol": {
           "coverage": {
@@ -15104,15 +15104,15 @@
         },
         "service_prerequisites": {
           "coverage": {
-            "known_fraction": 1.0,
-            "known_member_count": 9,
-            "unknown_member_count": 0
+            "known_fraction": 0.0,
+            "known_member_count": 0,
+            "unknown_member_count": 9
           },
           "distinct_value_count": 1,
           "distinct_values": [
-            "[\"UNKNOWN\"]"
+            "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
           ],
-          "known_member_count": 9,
+          "known_member_count": 0,
           "member_count": 9,
           "members_by_value": [
             {
@@ -15129,7 +15129,7 @@
                 "6000026::S05::A006",
                 "6000031::S05::A003"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
           "members_per_value": [
@@ -15147,11 +15147,11 @@
                 "6000026::S05::A006",
                 "6000031::S05::A003"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
-          "unknown_fraction": 0.0,
-          "unknown_member_count": 0
+          "unknown_fraction": 1.0,
+          "unknown_member_count": 9
         },
         "source_action_type": {
           "coverage": {
@@ -15478,15 +15478,15 @@
         },
         "explicit_protocol_service": {
           "coverage": {
-            "known_fraction": 1.0,
-            "known_member_count": 9,
-            "unknown_member_count": 0
+            "known_fraction": 0.0,
+            "known_member_count": 0,
+            "unknown_member_count": 9
           },
           "distinct_value_count": 1,
           "distinct_values": [
-            "[\"UNKNOWN\"]"
+            "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
           ],
-          "known_member_count": 9,
+          "known_member_count": 0,
           "member_count": 9,
           "members_by_value": [
             {
@@ -15503,7 +15503,7 @@
                 "6000026::S05::A006",
                 "6000031::S05::A003"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
           "members_per_value": [
@@ -15521,11 +15521,11 @@
                 "6000026::S05::A006",
                 "6000031::S05::A003"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
-          "unknown_fraction": 0.0,
-          "unknown_member_count": 0
+          "unknown_fraction": 1.0,
+          "unknown_member_count": 9
         },
         "explicit_required_protocol": {
           "coverage": {
@@ -15784,15 +15784,15 @@
         },
         "service_prerequisites": {
           "coverage": {
-            "known_fraction": 1.0,
-            "known_member_count": 9,
-            "unknown_member_count": 0
+            "known_fraction": 0.0,
+            "known_member_count": 0,
+            "unknown_member_count": 9
           },
           "distinct_value_count": 1,
           "distinct_values": [
-            "[\"UNKNOWN\"]"
+            "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
           ],
-          "known_member_count": 9,
+          "known_member_count": 0,
           "member_count": 9,
           "members_by_value": [
             {
@@ -15809,7 +15809,7 @@
                 "6000026::S05::A006",
                 "6000031::S05::A003"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
           "members_per_value": [
@@ -15827,11 +15827,11 @@
                 "6000026::S05::A006",
                 "6000031::S05::A003"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
-          "unknown_fraction": 0.0,
-          "unknown_member_count": 0
+          "unknown_fraction": 1.0,
+          "unknown_member_count": 9
         },
         "source_action_type": {
           "coverage": {
@@ -15990,8 +15990,8 @@
       "template_id": "r4-template-009-credential_store_access",
       "unknown_burden": {
         "field_count": 13,
-        "unknown_cell_count": 27,
-        "unknown_fraction": 0.23076923076923078
+        "unknown_cell_count": 45,
+        "unknown_fraction": 0.38461538461538464
       }
     },
     {
@@ -16154,15 +16154,15 @@
         },
         "explicit_protocol_service": {
           "coverage": {
-            "known_fraction": 1.0,
-            "known_member_count": 9,
-            "unknown_member_count": 0
+            "known_fraction": 0.0,
+            "known_member_count": 0,
+            "unknown_member_count": 9
           },
           "distinct_value_count": 1,
           "distinct_values": [
-            "[\"UNKNOWN\"]"
+            "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
           ],
-          "known_member_count": 9,
+          "known_member_count": 0,
           "member_count": 9,
           "members_by_value": [
             {
@@ -16179,7 +16179,7 @@
                 "6000048::S06::A002",
                 "6000063::S07::A002"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
           "members_per_value": [
@@ -16197,11 +16197,11 @@
                 "6000048::S06::A002",
                 "6000063::S07::A002"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
-          "unknown_fraction": 0.0,
-          "unknown_member_count": 0
+          "unknown_fraction": 1.0,
+          "unknown_member_count": 9
         },
         "explicit_required_protocol": {
           "coverage": {
@@ -16460,15 +16460,15 @@
         },
         "service_prerequisites": {
           "coverage": {
-            "known_fraction": 1.0,
-            "known_member_count": 9,
-            "unknown_member_count": 0
+            "known_fraction": 0.0,
+            "known_member_count": 0,
+            "unknown_member_count": 9
           },
           "distinct_value_count": 1,
           "distinct_values": [
-            "[\"UNKNOWN\"]"
+            "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
           ],
-          "known_member_count": 9,
+          "known_member_count": 0,
           "member_count": 9,
           "members_by_value": [
             {
@@ -16485,7 +16485,7 @@
                 "6000048::S06::A002",
                 "6000063::S07::A002"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
           "members_per_value": [
@@ -16503,11 +16503,11 @@
                 "6000048::S06::A002",
                 "6000063::S07::A002"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
-          "unknown_fraction": 0.0,
-          "unknown_member_count": 0
+          "unknown_fraction": 1.0,
+          "unknown_member_count": 9
         },
         "source_action_type": {
           "coverage": {
@@ -16834,15 +16834,15 @@
         },
         "explicit_protocol_service": {
           "coverage": {
-            "known_fraction": 1.0,
-            "known_member_count": 9,
-            "unknown_member_count": 0
+            "known_fraction": 0.0,
+            "known_member_count": 0,
+            "unknown_member_count": 9
           },
           "distinct_value_count": 1,
           "distinct_values": [
-            "[\"UNKNOWN\"]"
+            "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
           ],
-          "known_member_count": 9,
+          "known_member_count": 0,
           "member_count": 9,
           "members_by_value": [
             {
@@ -16859,7 +16859,7 @@
                 "6000048::S06::A002",
                 "6000063::S07::A002"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
           "members_per_value": [
@@ -16877,11 +16877,11 @@
                 "6000048::S06::A002",
                 "6000063::S07::A002"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
-          "unknown_fraction": 0.0,
-          "unknown_member_count": 0
+          "unknown_fraction": 1.0,
+          "unknown_member_count": 9
         },
         "explicit_required_protocol": {
           "coverage": {
@@ -17140,15 +17140,15 @@
         },
         "service_prerequisites": {
           "coverage": {
-            "known_fraction": 1.0,
-            "known_member_count": 9,
-            "unknown_member_count": 0
+            "known_fraction": 0.0,
+            "known_member_count": 0,
+            "unknown_member_count": 9
           },
           "distinct_value_count": 1,
           "distinct_values": [
-            "[\"UNKNOWN\"]"
+            "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
           ],
-          "known_member_count": 9,
+          "known_member_count": 0,
           "member_count": 9,
           "members_by_value": [
             {
@@ -17165,7 +17165,7 @@
                 "6000048::S06::A002",
                 "6000063::S07::A002"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
           "members_per_value": [
@@ -17183,11 +17183,11 @@
                 "6000048::S06::A002",
                 "6000063::S07::A002"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
-          "unknown_fraction": 0.0,
-          "unknown_member_count": 0
+          "unknown_fraction": 1.0,
+          "unknown_member_count": 9
         },
         "source_action_type": {
           "coverage": {
@@ -17346,8 +17346,8 @@
       "template_id": "r4-template-006-credential_store_access",
       "unknown_burden": {
         "field_count": 13,
-        "unknown_cell_count": 27,
-        "unknown_fraction": 0.23076923076923078
+        "unknown_cell_count": 45,
+        "unknown_fraction": 0.38461538461538464
       }
     },
     {
@@ -20163,15 +20163,15 @@
         },
         "explicit_protocol_service": {
           "coverage": {
-            "known_fraction": 1.0,
-            "known_member_count": 8,
-            "unknown_member_count": 0
+            "known_fraction": 0.0,
+            "known_member_count": 0,
+            "unknown_member_count": 8
           },
           "distinct_value_count": 1,
           "distinct_values": [
-            "[\"UNKNOWN\"]"
+            "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
           ],
-          "known_member_count": 8,
+          "known_member_count": 0,
           "member_count": 8,
           "members_by_value": [
             {
@@ -20187,7 +20187,7 @@
                 "6000054::S07::A001",
                 "6000062::S03::A004"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
           "members_per_value": [
@@ -20204,11 +20204,11 @@
                 "6000054::S07::A001",
                 "6000062::S03::A004"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
-          "unknown_fraction": 0.0,
-          "unknown_member_count": 0
+          "unknown_fraction": 1.0,
+          "unknown_member_count": 8
         },
         "explicit_required_protocol": {
           "coverage": {
@@ -20457,15 +20457,15 @@
         },
         "service_prerequisites": {
           "coverage": {
-            "known_fraction": 1.0,
-            "known_member_count": 8,
-            "unknown_member_count": 0
+            "known_fraction": 0.0,
+            "known_member_count": 0,
+            "unknown_member_count": 8
           },
           "distinct_value_count": 1,
           "distinct_values": [
-            "[\"UNKNOWN\"]"
+            "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
           ],
-          "known_member_count": 8,
+          "known_member_count": 0,
           "member_count": 8,
           "members_by_value": [
             {
@@ -20481,7 +20481,7 @@
                 "6000054::S07::A001",
                 "6000062::S03::A004"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
           "members_per_value": [
@@ -20498,11 +20498,11 @@
                 "6000054::S07::A001",
                 "6000062::S03::A004"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
-          "unknown_fraction": 0.0,
-          "unknown_member_count": 0
+          "unknown_fraction": 1.0,
+          "unknown_member_count": 8
         },
         "source_action_type": {
           "coverage": {
@@ -20816,15 +20816,15 @@
         },
         "explicit_protocol_service": {
           "coverage": {
-            "known_fraction": 1.0,
-            "known_member_count": 8,
-            "unknown_member_count": 0
+            "known_fraction": 0.0,
+            "known_member_count": 0,
+            "unknown_member_count": 8
           },
           "distinct_value_count": 1,
           "distinct_values": [
-            "[\"UNKNOWN\"]"
+            "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
           ],
-          "known_member_count": 8,
+          "known_member_count": 0,
           "member_count": 8,
           "members_by_value": [
             {
@@ -20840,7 +20840,7 @@
                 "6000054::S07::A001",
                 "6000062::S03::A004"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
           "members_per_value": [
@@ -20857,11 +20857,11 @@
                 "6000054::S07::A001",
                 "6000062::S03::A004"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
-          "unknown_fraction": 0.0,
-          "unknown_member_count": 0
+          "unknown_fraction": 1.0,
+          "unknown_member_count": 8
         },
         "explicit_required_protocol": {
           "coverage": {
@@ -21110,15 +21110,15 @@
         },
         "service_prerequisites": {
           "coverage": {
-            "known_fraction": 1.0,
-            "known_member_count": 8,
-            "unknown_member_count": 0
+            "known_fraction": 0.0,
+            "known_member_count": 0,
+            "unknown_member_count": 8
           },
           "distinct_value_count": 1,
           "distinct_values": [
-            "[\"UNKNOWN\"]"
+            "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
           ],
-          "known_member_count": 8,
+          "known_member_count": 0,
           "member_count": 8,
           "members_by_value": [
             {
@@ -21134,7 +21134,7 @@
                 "6000054::S07::A001",
                 "6000062::S03::A004"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
           "members_per_value": [
@@ -21151,11 +21151,11 @@
                 "6000054::S07::A001",
                 "6000062::S03::A004"
               ],
-              "value": "[\"UNKNOWN\"]"
+              "value": "UNKNOWN_NOT_DERIVABLE_FROM_AUTHENTICATED_SOURCE"
             }
           ],
-          "unknown_fraction": 0.0,
-          "unknown_member_count": 0
+          "unknown_fraction": 1.0,
+          "unknown_member_count": 8
         },
         "source_action_type": {
           "coverage": {
@@ -21308,8 +21308,8 @@
       "template_id": "r4-template-071-persistence_configuration",
       "unknown_burden": {
         "field_count": 13,
-        "unknown_cell_count": 24,
-        "unknown_fraction": 0.23076923076923078
+        "unknown_cell_count": 40,
+        "unknown_fraction": 0.38461538461538464
       }
     }
   ]

@@ -1,0 +1,85 @@
+{
+  "schema": "PROVX_R7_R6_INTERFACE_INPUT_AUTHENTICATION_V1",
+  "review": "PROVX_R7_E1C_R6_INTERFACE_READINESS_QUICK_AUDIT",
+  "review_mode": "QUICK_REVIEW_READ_ONLY",
+  "repository": "https://github.com/cphzyl1611/apt-experiment-artifacts.git",
+  "current_head": "6842f28151dce9f57e451ab5ba3b6b86f1a906d1",
+  "ab0d016": "ab0d0161189ee7c98cd4eb2810cd2341de37f341",
+  "ab0d016_is_ancestor": true,
+  "merge_base": "ab0d0161189ee7c98cd4eb2810cd2341de37f341",
+  "head_authentication": {
+    "rev_parse": "6842f28151dce9f57e451ab5ba3b6b86f1a906d1",
+    "ancestor_command": "git merge-base --is-ancestor ab0d0161189ee7c98cd4eb2810cd2341de37f341 HEAD",
+    "ancestor_exit_code": 0,
+    "ancestor_result": "YES",
+    "working_tree_status_at_check": "CLEAN",
+    "binding_note": "HEAD advanced during this quick audit; only committed parallel/a and parallel/b blobs were read and no concurrent Binding files were changed."
+  },
+  "pinned_r6_materialization": {
+    "commit": "ab0d0161189ee7c98cd4eb2810cd2341de37f341",
+    "producer_path": "parallel/a/e1c-r6-run-20260901T060350Z/mininet_e1c_r6_file_access_closure_smoke.py",
+    "pre_run_contract_path": "parallel/a/MININET_E1C_R6_PRE_RUN_CONTRACT.json",
+    "producer_sha256": "402e94bcdb6740c9b6fd644af5cce7ba080c2a677f357181aad82649108137d6",
+    "pre_run_contract_sha256": "01e7e9a9ed0ee6c506e31b22b5b8ec2ff7a7c7aacb93b1d0ec3e9ef6d2508409",
+    "file_access_semantics_sha256": "d759d6adb9e6ad7b22e5fd4f328ab9c2ab8ceb294c126ee61edebb54356e303c"
+  },
+  "existing_r7_contract": {
+    "path": "parallel/b/PROVX_R7_E1C_R6_REVALIDATION_CONTRACT.json",
+    "sha256": "06f143e8642f8025036877edbf31c5b0d68b7f3c391bce1341309e588758487b",
+    "schema": "PROVX_R7_E1C_R6_REVALIDATION_CONTRACT_V1",
+    "status": "WAITING_FOR_E1C_R6_FILE_RW",
+    "required_inputs": [
+      "fresh authenticated runtime review",
+      "raw audit JSONL",
+      "normalized JSONL",
+      "PID/netns joins",
+      "coverage/loss",
+      "pcap hash"
+    ],
+    "promotion_rule": "Stage-A full collector-adapter PASS remains NO until FILE_READ_OR_WRITE is present and all release gates pass"
+  },
+  "runtime_evidence": {
+    "present": false,
+    "reason": "R6 run directory contains producer and test source only; no privileged result/raw/normalized/join/coverage/pcap outputs are present.",
+    "invented_runtime_evidence": false
+  },
+  "quick_review_scope_controls": {
+    "r5_graph_regenerated": false,
+    "r5_32d_tensor_regenerated": false,
+    "r7_adapter_modified": false,
+    "r4_encoder_modified": false,
+    "training_executed": false,
+    "inference_executed": false,
+    "push_executed": false
+  },
+  "r7_adapter_wiring_assessment": {
+    "r5_run_id_hardcoded": true,
+    "r5_input_filenames_hardcoded": true,
+    "r6_output_filenames_match_r5": false,
+    "r6_runtime_path_selectable_by_existing_adapter": false,
+    "file_read_or_write_event_mapping_present": false,
+    "deterministic_interface_incompatibility": true,
+    "encoder_change_required": false,
+    "required_change_class": "R7 adapter input/path and event-to-edge mapping contract, not encoder definition"
+  },
+  "terminal": {
+    "PROVX_R7_E1C_R6_INTERFACE_READINESS": "BLOCKED",
+    "CURRENT_HEAD": "6842f28151dce9f57e451ab5ba3b6b86f1a906d1",
+    "AB0D016_IS_ANCESTOR": "YES",
+    "R6_REQUIRED_OUTPUT_PATHS": "PASS",
+    "R6_NORMALIZED_SCHEMA_COMPATIBILITY": "PASS",
+    "RAW_LINK_COMPATIBILITY": "PASS",
+    "PID_NETNS_JOIN_COMPATIBILITY": "PASS",
+    "FILE_READ_OR_WRITE_ADAPTER_COMPATIBILITY": "BLOCKED",
+    "FROZEN_32D_ENCODER_CHANGE_REQUIRED": "NO",
+    "RUNTIME_EVIDENCE_PRESENT": "NO",
+    "STAGE_A_FULL_COLLECTOR_ADAPTER_PASS": "NO",
+    "CORPUS_ACQUIRED": "NO",
+    "DETECTOR_TRAINED": "NO",
+    "PROVX_INFERENCE_EXECUTED": "NO",
+    "FORMAL_EXPERIMENT_EXECUTED": "NO",
+    "PUSH_EXECUTED": "NO",
+    "NEXT_ACTION": "REMEDIATE_R6_PROVX_INTERFACE",
+    "STOP": true
+  }
+}

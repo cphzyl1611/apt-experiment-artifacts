@@ -33,7 +33,7 @@ class E0CR8FreshIndependentReviewTests(unittest.TestCase):
         self.assertEqual(self.review["template_ids"], EXPECTED_TEMPLATE_IDS)
 
     def test_structured_recomputation_has_no_candidate_split_evidence(self):
-        self.assertEqual(self.review["structured_heterogeneity_recomputation"], "BLOCKED")
+        self.assertEqual(self.review["structured_heterogeneity_recomputation"], "PASS")
         self.assertEqual(self.review["templates_with_structured_split_evidence"], 0)
         self.assertEqual(self.review["templates_with_no_structured_split_evidence"], 12)
         for template in self.review["templates"]:
@@ -41,7 +41,7 @@ class E0CR8FreshIndependentReviewTests(unittest.TestCase):
             self.assertEqual(template["candidate_split_count"], 0)
             self.assertEqual(template["heterogeneous_fields"], [])
 
-    def test_unknown_list_values_are_counted_as_unknown_and_expose_published_drift(self):
+    def test_unknown_list_values_are_counted_as_unknown_and_match_remediated_publish(self):
         for template in self.review["templates"]:
             expected_unknown_fields = 3 if template["template_id"] in {
                 "r4-template-048-network_c2_beacon",
@@ -52,9 +52,9 @@ class E0CR8FreshIndependentReviewTests(unittest.TestCase):
                 template["member_count"] * expected_unknown_fields,
             )
         published = self.review["r8_published_output_audit"]
-        self.assertEqual(published["status"], "BLOCKED")
-        self.assertFalse(published["structured_heterogeneity_matches_fresh_recompute"])
-        self.assertEqual(published["structured_heterogeneity_mismatch_count"], 80)
+        self.assertEqual(published["status"], "PASS")
+        self.assertTrue(published["structured_heterogeneity_matches_fresh_recompute"])
+        self.assertEqual(published["structured_heterogeneity_mismatch_count"], 0)
 
     def test_policy_and_packet_audits_are_non_mutating_and_null(self):
         self.assertTrue(self.review["no_unauthorized_inference"])
@@ -79,7 +79,12 @@ class E0CR8FreshIndependentReviewTests(unittest.TestCase):
                 },
             )
             data = json.loads((output / "E0C_R8_FRESH_INDEPENDENT_REVIEW.json").read_text())
-            self.assertEqual(data["terminal"]["next_action"], "REMEDIATE_E0C_R8")
+            self.assertEqual(data["terminal"]["next_action"], "EXPLICIT_HUMAN_TEMPLATE_DECISIONS")
+
+    def test_historical_blocked_review_report_is_not_rewritten(self):
+        historical = json.loads((ROOT / "E0C_R8_FRESH_INDEPENDENT_REVIEW.json").read_text())
+        self.assertEqual(historical["terminal"]["status"], "BLOCKED")
+        self.assertEqual(historical["terminal"]["next_action"], "REMEDIATE_E0C_R8")
 
 
 if __name__ == "__main__":

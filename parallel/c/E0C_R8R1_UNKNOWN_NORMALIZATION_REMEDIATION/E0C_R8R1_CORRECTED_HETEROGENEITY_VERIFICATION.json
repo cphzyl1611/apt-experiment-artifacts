@@ -1,0 +1,168 @@
+{
+  "after_output_sha256": {
+    "E0C_R8_EXACT12_CANDIDATE_SPLIT_EVIDENCE.jsonl": "368fda9b2da49c4607b43286fb89d91ddaa90b01c969d5bccc4e708fa030b6af",
+    "E0C_R8_EXACT12_REVIEW_COMPLEXITY.json": "48952a2ea9e480447c5cd751bf42741da1fd0e93554cc1696067203d60cd6e23",
+    "E0C_R8_EXACT12_STRUCTURED_HETEROGENEITY.json": "0e77c06499cd2f489089d948a2d485b8b345ff691e6fd4544e7052840d9816b6",
+    "E0C_R8_HUMAN_DECISION_PACKET.json": "cb7b49546631887fe403e31fae77a1fbee91f2905a363186b90c0b30c9dfe533",
+    "E0C_R8_HUMAN_DECISION_SUPPORT_SHEETS.md": "1136d775ecec0e5714ace00e11711c93b64c40a039d17dc675ff39b03f37cb98",
+    "E0C_R8_INPUT_AUTHENTICATION.json": "4b0021c7393e7e473023e46e1fbbe70f7cb5e6b1e292cb293116d074fa32f91e",
+    "E0C_R8_STRUCTURED_COHESION_REVIEW_REPORT.md": "7e2bd4f1a09cbb375bf6bd9403dedd3bef3a253a7293784c7db12a52c95d9f60"
+  },
+  "before_output_sha256": {
+    "E0C_R8_EXACT12_CANDIDATE_SPLIT_EVIDENCE.jsonl": "368fda9b2da49c4607b43286fb89d91ddaa90b01c969d5bccc4e708fa030b6af",
+    "E0C_R8_EXACT12_REVIEW_COMPLEXITY.json": "3a4a037f1cbfcfc8dc50a3e8b5ae4c1a894f384da0befb1789b4a2d4f6615a98",
+    "E0C_R8_EXACT12_STRUCTURED_HETEROGENEITY.json": "1e10abeec16b003f6566f18785386403ddffefef9d2857b5dab501fa57bdcaf8",
+    "E0C_R8_HUMAN_DECISION_PACKET.json": "cb7b49546631887fe403e31fae77a1fbee91f2905a363186b90c0b30c9dfe533",
+    "E0C_R8_HUMAN_DECISION_SUPPORT_SHEETS.md": "a89ebed9384f66eb4ab34e528a66fc675c564fcf9ab24f54227aeefbe82ca867",
+    "E0C_R8_INPUT_AUTHENTICATION.json": "4b0021c7393e7e473023e46e1fbbe70f7cb5e6b1e292cb293116d074fa32f91e",
+    "E0C_R8_STRUCTURED_COHESION_REVIEW_REPORT.md": "7e2bd4f1a09cbb375bf6bd9403dedd3bef3a253a7293784c7db12a52c95d9f60"
+  },
+  "historical_pre_remediation_output_sha256": {
+    "E0C_R8_EXACT12_CANDIDATE_SPLIT_EVIDENCE.jsonl": "368fda9b2da49c4607b43286fb89d91ddaa90b01c969d5bccc4e708fa030b6af",
+    "E0C_R8_EXACT12_REVIEW_COMPLEXITY.json": "3a4a037f1cbfcfc8dc50a3e8b5ae4c1a894f384da0befb1789b4a2d4f6615a98",
+    "E0C_R8_EXACT12_STRUCTURED_HETEROGENEITY.json": "1e10abeec16b003f6566f18785386403ddffefef9d2857b5dab501fa57bdcaf8",
+    "E0C_R8_HUMAN_DECISION_PACKET.json": "cb7b49546631887fe403e31fae77a1fbee91f2905a363186b90c0b30c9dfe533",
+    "E0C_R8_HUMAN_DECISION_SUPPORT_SHEETS.md": "a89ebed9384f66eb4ab34e528a66fc675c564fcf9ab24f54227aeefbe82ca867",
+    "E0C_R8_INPUT_AUTHENTICATION.json": "4b0021c7393e7e473023e46e1fbbe70f7cb5e6b1e292cb293116d074fa32f91e",
+    "E0C_R8_STRUCTURED_COHESION_REVIEW_REPORT.md": "7e2bd4f1a09cbb375bf6bd9403dedd3bef3a253a7293784c7db12a52c95d9f60"
+  },
+  "independent_review_terminal": {
+    "all_members_manual_design_required": "PASS",
+    "applied_splits": 0,
+    "blocked31_overlap": 0,
+    "current_repository_commit": "2ff2b21cd313c5b91567adfe05691d3e25aabb87",
+    "denominator_change": "NO",
+    "exact12_authentication": "PASS",
+    "formal_experiment_executed": "NO",
+    "human_decision_packet_audit": "PASS",
+    "human_decisions_created": 0,
+    "member_overlap": 0,
+    "member_set_drift": 0,
+    "next_action": "EXPLICIT_HUMAN_TEMPLATE_DECISIONS",
+    "raw_coverage": 203,
+    "status": "PASS_READY_FOR_EXPLICIT_HUMAN_TEMPLATE_DECISIONS",
+    "status_mutations": 0,
+    "stop": true,
+    "structured_heterogeneity_recomputation": "PASS",
+    "template_count": 12,
+    "templates_with_no_structured_split_evidence": 12,
+    "templates_with_structured_split_evidence": 0
+  },
+  "schema_version": "e0c-r8r1-corrected-heterogeneity-verification-v1",
+  "status": "PASS",
+  "verification": {
+    "candidate_split_evidence_output_valid": true,
+    "decision_sheet_unknown_fractions_match": true,
+    "fresh_recomputation_source": "review_exp_e0c_r8_fresh_independent_review.py (does not import the R8 builder)",
+    "review_complexity_aid_only": true,
+    "review_complexity_mismatch_count": 0,
+    "review_complexity_mismatches": [],
+    "review_complexity_values_match_fresh_recompute": true,
+    "status": "PASS",
+    "structured_distribution_mismatch_count": 0,
+    "structured_distribution_mismatches": [],
+    "structured_heterogeneity_matches_fresh_recompute": true,
+    "template_results": [
+      {
+        "candidate_split_status": "NO_STRUCTURED_SPLIT_EVIDENCE",
+        "heterogeneous_fields": [],
+        "member_count": 49,
+        "template_id": "r4-template-120-process_command_execution",
+        "unknown_cell_count": 245,
+        "unknown_fraction": 0.38461538461538464
+      },
+      {
+        "candidate_split_status": "NO_STRUCTURED_SPLIT_EVIDENCE",
+        "heterogeneous_fields": [],
+        "member_count": 28,
+        "template_id": "r4-template-136-process_command_execution",
+        "unknown_cell_count": 140,
+        "unknown_fraction": 0.38461538461538464
+      },
+      {
+        "candidate_split_status": "NO_STRUCTURED_SPLIT_EVIDENCE",
+        "heterogeneous_fields": [],
+        "member_count": 27,
+        "template_id": "r4-template-107-process_command_execution",
+        "unknown_cell_count": 135,
+        "unknown_fraction": 0.38461538461538464
+      },
+      {
+        "candidate_split_status": "NO_STRUCTURED_SPLIT_EVIDENCE",
+        "heterogeneous_fields": [],
+        "member_count": 17,
+        "template_id": "r4-template-159-process_command_execution",
+        "unknown_cell_count": 85,
+        "unknown_fraction": 0.38461538461538464
+      },
+      {
+        "candidate_split_status": "NO_STRUCTURED_SPLIT_EVIDENCE",
+        "heterogeneous_fields": [],
+        "member_count": 17,
+        "template_id": "r4-template-130-process_command_execution",
+        "unknown_cell_count": 85,
+        "unknown_fraction": 0.38461538461538464
+      },
+      {
+        "candidate_split_status": "NO_STRUCTURED_SPLIT_EVIDENCE",
+        "heterogeneous_fields": [],
+        "member_count": 12,
+        "template_id": "r4-template-152-process_command_execution",
+        "unknown_cell_count": 60,
+        "unknown_fraction": 0.38461538461538464
+      },
+      {
+        "candidate_split_status": "NO_STRUCTURED_SPLIT_EVIDENCE",
+        "heterogeneous_fields": [],
+        "member_count": 10,
+        "template_id": "r4-template-069-persistence_configuration",
+        "unknown_cell_count": 50,
+        "unknown_fraction": 0.38461538461538464
+      },
+      {
+        "candidate_split_status": "NO_STRUCTURED_SPLIT_EVIDENCE",
+        "heterogeneous_fields": [],
+        "member_count": 9,
+        "template_id": "r4-template-009-credential_store_access",
+        "unknown_cell_count": 45,
+        "unknown_fraction": 0.38461538461538464
+      },
+      {
+        "candidate_split_status": "NO_STRUCTURED_SPLIT_EVIDENCE",
+        "heterogeneous_fields": [],
+        "member_count": 9,
+        "template_id": "r4-template-006-credential_store_access",
+        "unknown_cell_count": 45,
+        "unknown_fraction": 0.38461538461538464
+      },
+      {
+        "candidate_split_status": "NO_STRUCTURED_SPLIT_EVIDENCE",
+        "heterogeneous_fields": [],
+        "member_count": 9,
+        "template_id": "r4-template-048-network_c2_beacon",
+        "unknown_cell_count": 27,
+        "unknown_fraction": 0.23076923076923078
+      },
+      {
+        "candidate_split_status": "NO_STRUCTURED_SPLIT_EVIDENCE",
+        "heterogeneous_fields": [],
+        "member_count": 8,
+        "template_id": "r4-template-035-file_resource_operation",
+        "unknown_cell_count": 24,
+        "unknown_fraction": 0.23076923076923078
+      },
+      {
+        "candidate_split_status": "NO_STRUCTURED_SPLIT_EVIDENCE",
+        "heterogeneous_fields": [],
+        "member_count": 8,
+        "template_id": "r4-template-071-persistence_configuration",
+        "unknown_cell_count": 40,
+        "unknown_fraction": 0.38461538461538464
+      }
+    ],
+    "templates_with_no_structured_split_evidence": 12,
+    "templates_with_structured_split_evidence": 0,
+    "unknown_fractions_match": true,
+    "unknown_member_counts_match": true
+  }
+}
