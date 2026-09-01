@@ -37,16 +37,19 @@ RED reproduction in `MININET_E1C_R6_RAW_LINK_RED_EVIDENCE.json`.
 
 ## R6 implementation-gap finding
 
-The failed human invocation reached the root-only branch in `main()` at the
-former lines 234–238. After checking `os.geteuid() == 0`, that branch printed
-`R6 privileged execution is gated to the separately reviewed micro-probe/full-run implementation.`
-and returned exit code 2; it never called a probe, `auditctl`, `ausearch`, or
-Mininet. The earlier preparation artifacts described the intended design and
-pure helper tests, but incorrectly treated those design helpers as if they
-were wired to the executable entry point. This is an implementation-gap
-defect, not evidence about collector behavior.
+The pushed harness exposed a root-only branch in `main()` that called
+`execute_reviewed_r6_path()`, but `_reviewed_mininet_smoke()` was an unconditional
+`BLOCKED` placeholder. The existing reachability test injected a fake `smoke`
+callback, so it proved only callback ordering, not the default runtime path.
+The earlier preparation artifacts therefore overstated readiness. This was an
+implementation-gap defect, not evidence about collector behavior.
 
 R6 now routes the root branch through `execute_reviewed_r6_path()`: the exact
-probe must pass and restore the baseline before `_reviewed_mininet_smoke()` is
-reachable. The regression test proves the former gate text is absent and the
-reviewed path is entered.
+probe must pass, remove its inverse rule, and explicitly observe a clean
+baseline (`RULE_REMOVED_BASELINE_RESTORED`) before `_reviewed_mininet_smoke()`
+is reachable. A probe result that merely claims `AUDIT_EVIDENCE_PASS` cannot
+open the smoke gate. The full smoke keeps the watched read/write inode
+pre-created and uses a separate disposable inode for `FILE_DELETE`. The
+regression test proves the former gate text is absent, the reviewed path is
+entered only after the explicit restoration state, and cleanup handling is
+preserved.

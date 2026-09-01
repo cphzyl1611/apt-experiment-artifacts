@@ -56,6 +56,25 @@ class FilePermissionRuleTests(unittest.TestCase):
 
 
 class MicroProbeTests(unittest.TestCase):
+    def test_default_smoke_is_real_reviewed_callable(self):
+        self.assertEqual(harness._reviewed_mininet_smoke.__name__, "_reviewed_mininet_smoke")
+        self.assertIn("_run_reviewed_mininet_smoke", harness._reviewed_mininet_smoke.__code__.co_names)
+        self.assertNotIn("MININET_SMOKE_REQUIRES_HUMAN_REVIEWED_RUNTIME", harness._reviewed_mininet_smoke.__doc__ or "")
+
+    def test_default_path_calls_real_smoke_only_after_probe_pass(self):
+        with mock.patch.object(
+            harness, "_default_micro_probe",
+            return_value={"verdict": "PASS", "states": [
+                "CLEAN_BASELINE_VERIFIED", "AUDIT_EVIDENCE_PASS",
+                "RULE_REMOVED_BASELINE_RESTORED",
+            ]},
+        ), mock.patch.object(
+            harness, "_run_reviewed_mininet_smoke", return_value=0,
+        ) as smoke:
+            result = harness.execute_reviewed_r6_path()
+        self.assertEqual(result["verdict"], "PASS")
+        smoke.assert_called_once_with()
+
     def test_probe_requires_audit_backed_file_access_event(self):
         self.assertEqual(harness.micro_probe_verdict([]), "BLOCKED")
         event = {
@@ -103,6 +122,13 @@ class MicroProbeTests(unittest.TestCase):
             harness.validate_micro_probe_state(["FILE_PRECREATED", "RULE_ADDED"]),
             "BLOCKED",
         )
+        def clean_runner(argv, **kwargs):
+            return mock.Mock(stdout="No rules\n" if argv[-1] == "-l" else "lost 0\nbacklog 0\n")
+        self.assertTrue(harness._audit_baseline_clean(runner=clean_runner))
+
+        def stale_runner(argv, **kwargs):
+            return mock.Mock(stdout="No rules\n" if argv[-1] == "-l" else "lost 0\nbacklog 1\n")
+        self.assertFalse(harness._audit_baseline_clean(runner=stale_runner))
 
     def test_run_privileged_enters_reviewed_path_not_placeholder_gate(self):
         output = io.StringIO()
@@ -125,11 +151,68 @@ class MicroProbeTests(unittest.TestCase):
         self.assertEqual(blocked["verdict"], "BLOCKED")
         self.assertEqual(smoke_calls, [])
         passed = harness.execute_reviewed_r6_path(
-            probe=lambda: {"verdict": "PASS", "states": ["CLEAN_BASELINE_VERIFIED", "AUDIT_EVIDENCE_PASS"]},
+            probe=lambda: {"verdict": "PASS", "states": [
+                "CLEAN_BASELINE_VERIFIED", "AUDIT_EVIDENCE_PASS",
+                "RULE_REMOVED_BASELINE_RESTORED",
+            ]},
             smoke=lambda: smoke_calls.append(True) or {"verdict": "PASS"},
         )
         self.assertEqual(passed["verdict"], "PASS")
         self.assertEqual(smoke_calls, [True])
+
+    def test_probe_pass_requires_cleanup_before_smoke(self):
+        observed = []
+        unproven = harness.execute_reviewed_r6_path(
+            probe=lambda: {"verdict": "PASS", "states": ["CLEAN_BASELINE_VERIFIED", "AUDIT_EVIDENCE_PASS"]},
+            smoke=lambda: observed.append(True) or {"verdict": "PASS"},
+        )
+        self.assertEqual(unproven["verdict"], "BLOCKED")
+        self.assertEqual(observed, [])
+        result = harness.execute_reviewed_r6_path(
+            probe=lambda: {"verdict": "PASS", "states": [
+                "CLEAN_BASELINE_VERIFIED", "AUDIT_EVIDENCE_PASS",
+                "RULE_REMOVED_BASELINE_RESTORED",
+            ]},
+            smoke=lambda: observed.append(True) or {"verdict": "PASS"},
+        )
+        self.assertEqual(result["verdict"], "PASS")
+        self.assertEqual(observed, [True])
+        self.assertLess(result["states"].index("RULE_REMOVED_BASELINE_RESTORED"), result["states"].index("MININET_EXECUTED"))
+
+    def test_smoke_exception_has_cleanup_and_baseline_states(self):
+        result = harness.execute_reviewed_r6_path(
+            probe=lambda: {"verdict": "PASS", "states": [
+                "CLEAN_BASELINE_VERIFIED", "AUDIT_EVIDENCE_PASS",
+                "RULE_REMOVED_BASELINE_RESTORED",
+            ]},
+            smoke=lambda: (_ for _ in ()).throw(RuntimeError("smoke failed")),
+        )
+        self.assertEqual(result["verdict"], "BLOCKED")
+        self.assertEqual(result["states"][-2:], ["CLEANUP", "BASELINE_RESTORED"])
+
+    def test_smoke_partial_is_preserved_with_cleanup(self):
+        result = harness.execute_reviewed_r6_path(
+            probe=lambda: {"verdict": "PASS", "states": [
+                "CLEAN_BASELINE_VERIFIED", "AUDIT_EVIDENCE_PASS",
+                "RULE_REMOVED_BASELINE_RESTORED",
+            ]},
+            smoke=lambda: {"verdict": "PARTIAL"},
+        )
+        self.assertEqual(result["verdict"], "PARTIAL")
+        self.assertEqual(result["states"][-2:], ["CLEANUP", "BASELINE_RESTORED"])
+
+    def test_probe_exception_is_blocked_without_smoke(self):
+        smoke_calls = []
+        result = harness.execute_reviewed_r6_path(
+            probe=lambda: (_ for _ in ()).throw(RuntimeError("probe failed")),
+            smoke=lambda: smoke_calls.append(True) or {"verdict": "PASS"},
+        )
+        self.assertEqual(result["verdict"], "BLOCKED")
+        self.assertEqual(smoke_calls, [])
+
+    def test_all_required_classes_are_runtime_contract(self):
+        self.assertEqual(len(harness.REQUIRED_CLASSES), 8)
+        self.assertIn("FILE_READ_OR_WRITE", harness.REQUIRED_CLASSES)
 
 
 class FilesystemNormalizationTests(unittest.TestCase):

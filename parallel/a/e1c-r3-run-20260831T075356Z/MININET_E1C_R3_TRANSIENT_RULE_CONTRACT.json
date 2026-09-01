@@ -1,0 +1,12 @@
+{
+  "audit_key": "e1c30cd510e09357",
+  "probe_key": "e1c3probe9adae5266d",
+  "removal": [],
+  "rule_specs": [],
+  "run_id": "e1c-r3-run-20260831T075356Z",
+  "schema": "MININET_E1C_R3_TRANSIENT_RULE_CONTRACT_V1",
+  "status": "REMOVAL_FAILED",
+  "successful_add_count": 0,
+  "supported_syscalls": [],
+  "syscall_probes": []
+}

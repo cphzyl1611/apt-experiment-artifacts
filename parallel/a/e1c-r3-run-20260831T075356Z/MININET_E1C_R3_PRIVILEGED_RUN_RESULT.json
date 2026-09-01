@@ -1,0 +1,8 @@
+{
+  "classification": "BLOCKED",
+  "formal_experiment_executed": false,
+  "run_id": "e1c-r3-run-20260831T075356Z",
+  "runtime_error": null,
+  "schema": "MININET_E1C_R3_PRIVILEGED_RUN_RESULT_V1",
+  "status": "COMPLETED"
+}

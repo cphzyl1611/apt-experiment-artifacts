@@ -67,5 +67,23 @@ class R8MaterializationTests(unittest.TestCase):
     self.assertEqual(tranche["field_pins_created"], 0)
 
 
+ def test_envelope_inventory_path_sets_are_exact_and_self_bound(self) -> None:
+    file_list_paths = {
+        line.strip()
+        for line in (PACKAGE / "FILE_LIST.txt").read_text(encoding="utf-8").splitlines()
+        if line.strip()
+    }
+    checksum_paths = {
+        line.split("  ./", 1)[1]
+        for line in (PACKAGE / "SHA256SUMS.txt").read_text(encoding="utf-8").splitlines()
+        if line.strip()
+    }
+    self.assertEqual(file_list_paths, checksum_paths)
+    self.assertIn("FILE_LIST.txt", file_list_paths)
+    self.assertIn("FILE_LIST.txt", checksum_paths)
+    self.assertNotIn("SHA256SUMS.txt", file_list_paths)
+    self.assertNotIn("SHA256SUMS.txt", checksum_paths)
+
+
 if __name__ == "__main__":
     unittest.main()

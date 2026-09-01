@@ -1,20 +1,59 @@
 {
-  "schema": "MININET_E1C_R6_PRE_RUN_CONTRACT_V1",
-  "run_id": "e1c-r6-run-20260901T060350Z",
+  "boundaries": {
+    "no_apt_actions": true,
+    "no_automatic_sudo": true,
+    "no_formal_experiment": true,
+    "no_provx": true
+  },
+  "cleanup": {
+    "exit_codes": {
+      "BLOCKED": 2,
+      "PARTIAL": 3,
+      "PASS": 0,
+      "UNEXPECTED_EXCEPTION": 1
+    },
+    "no_global_rule_delete": true,
+    "no_mn_dash_c": true,
+    "remove_only_successfully_added_rules": true,
+    "same_root_cleanup": true
+  },
   "collector": {
     "decision": "AUDITD_PRIMARY_CANDIDATE",
-    "strategy": "AUDIT_FILESYSTEM_PERMISSION_FILTER",
-    "rule_template": ["/usr/sbin/auditctl", "-a", "always,exit", "-F", "arch=b64", "-F", "path=<exact-precreated-file>", "-F", "perm=rw", "-F", "pid=<exact-live-child>", "-k", "e1c_r6_file_access"],
+    "global_direct_read_write_rules": false,
     "persistent_rule_file_edits": false,
-    "global_direct_read_write_rules": false
+    "rule_template": [
+      "/usr/sbin/auditctl",
+      "-a",
+      "always,exit",
+      "-F",
+      "arch=b64",
+      "-F",
+      "path=<exact-precreated-file>",
+      "-F",
+      "perm=rw",
+      "-F",
+      "pid=<exact-live-child>",
+      "-k",
+      "e1c_r6_file_access"
+    ],
+    "strategy": "AUDIT_FILESYSTEM_PERMISSION_FILTER"
   },
-  "topology": {
-    "hosts": ["h1", "h2"],
-    "switch": "s1",
-    "network": "10.0.0.0/24",
-    "tcp_port": 18080,
-    "nat": false,
-    "external_links": false
+  "exact_human_command": "sudo /usr/bin/python3 /home/cph/experiment-parallel/e0-a/e1c-r6-run-20260901T060350Z/mininet_e1c_r6_file_access_closure_smoke.py --run-privileged",
+  "full_smoke_after_probe": {
+    "child_state_protocol": true,
+    "file_delete_probe_separate_inode": true,
+    "minimum_each": 1,
+    "post_exec_identity_validation": true,
+    "required_classes": [
+      "PROCESS_START_OR_EXEC",
+      "PROCESS_EXIT",
+      "FILE_CREATE_OR_OPEN",
+      "FILE_READ_OR_WRITE",
+      "FILE_DELETE",
+      "SOCKET_BIND",
+      "SOCKET_CONNECT",
+      "SOCKET_ACCEPT"
+    ]
   },
   "micro_probe_gate": [
     "verify exact clean no-rules baseline",
@@ -24,21 +63,13 @@
     "collect keyed audit records and normalize permission evidence",
     "require FILE_READ_OR_WRITE evidence_basis AUDIT_FILESYSTEM_PERMISSION_FILTER",
     "remove exact inverse rule",
-    "prove clean baseline and zero loss/backlog"
+    "prove clean baseline and zero loss/backlog",
+    "require explicit RULE_REMOVED_BASELINE_RESTORED state before smoke"
   ],
-  "full_smoke_after_probe": {
-    "required_classes": ["PROCESS_START_OR_EXEC", "PROCESS_EXIT", "FILE_CREATE_OR_OPEN", "FILE_READ_OR_WRITE", "FILE_DELETE", "SOCKET_BIND", "SOCKET_CONNECT", "SOCKET_ACCEPT"],
-    "minimum_each": 1,
-    "file_delete_probe_separate_inode": true,
-    "post_exec_identity_validation": true,
-    "child_state_protocol": true
-  },
-  "cleanup": {
-    "remove_only_successfully_added_rules": true,
-    "same_root_cleanup": true,
-    "no_global_rule_delete": true,
-    "no_mn_dash_c": true,
-    "exit_codes": {"PASS": 0, "PARTIAL": 3, "BLOCKED": 2, "UNEXPECTED_EXCEPTION": 1}
+  "review_authentication": {
+    "expected_current_main": "2ff2b21cd313c5b91567adfe05691d3e25aabb87",
+    "workspace_git_rev_parse": "NOT_A_GIT_REPOSITORY",
+    "status": "UNAVAILABLE_NO_GIT_METADATA"
   },
   "required_outputs": [
     "MININET_E1C_R6_AUDIT_PRE_STATE.json",
@@ -51,21 +82,43 @@
     "MININET_E1C_R6_POST_CLEANUP_AUDIT.json",
     "MININET_E1C_R6_AUDITD_SMOKE_REPORT.md"
   ],
-  "boundaries": {
-    "no_apt_actions": true,
-    "no_automatic_sudo": true,
-    "no_provx": true,
-    "no_formal_experiment": true
-  },
-  "exact_human_command": "sudo /usr/bin/python3 /home/cph/experiment-parallel/e0-a/e1c-r6-run-20260901T060350Z/mininet_e1c_r6_file_access_closure_smoke.py --run-privileged",
+  "run_id": "e1c-r6-run-20260901T060350Z",
+  "schema": "MININET_E1C_R6_PRE_RUN_CONTRACT_V1",
   "terminal": {
-    "MININET_E1C_R6_PREPARATION": "PASS",
-    "R5_FILE_RW_ROOT_CAUSE": "DIRECT_READ_WRITE_SYSCALL_RULE_STRATEGY_INSUFFICIENT_FOR_BOUNDED_FILE_ACCESS",
     "BOUNDED_FILE_ACCESS_RULE_DESIGN": "PASS",
-    "R5_RAW_LINK_BOOLEAN_DEFECT_REPRODUCED": "YES",
-    "R6_RAW_LINK_VERIFIER_FIXED": "YES",
+    "CLAIMED_READINESS_CONSISTENT_WITH_PUSHED_CODE": "NO",
+    "EXACT_SUDO_COMMAND": "sudo /usr/bin/python3 /home/cph/experiment-parallel/e0-a/e1c-r6-run-20260901T060350Z/mininet_e1c_r6_file_access_closure_smoke.py --run-privileged",
+    "FULL_SMOKE_REACHABLE_ONLY_AFTER_PROBE_PASS": "PASS",
     "HUMAN_PRIVILEGED_RUN_REQUIRED": "YES",
+    "MICRO_PROBE_GATE_WIRED": "PASS",
+    "MININET_E1C_R6_PREPARATION": "PASS",
+    "MININET_E1C_R6_PRIVILEGED_PATH_FRESH_REVIEW": "PASS",
     "NEXT_ACTION": "HUMAN_RUN_EXACT_SUDO_COMMAND",
+    "PRIVILEGED_COMMAND_EXECUTED": "NO",
+    "PUSHED_HARNESS_DEFAULT_FULL_SMOKE_WAS_PLACEHOLDER": "YES",
+    "R3_REGRESSION": "8/8",
+    "R4_REGRESSION": "7/7",
+    "R5_FILE_RW_ROOT_CAUSE": "DIRECT_READ_WRITE_SYSCALL_RULE_STRATEGY_INSUFFICIENT_FOR_BOUNDED_FILE_ACCESS",
+    "R5_RAW_LINK_BOOLEAN_DEFECT_REPRODUCED": "YES",
+    "R5_REGRESSION": "12/12",
+    "R6_PRIVILEGED_PATH_IMPLEMENTATION": "PASS_READY_FOR_HUMAN_PRIVILEGED_RUN",
+    "R6_RAW_LINK_VERIFIER_FIXED": "YES",
+    "R6_TARGETED_TESTS": "23/23",
+    "REAL_DEFAULT_MININET_SMOKE_WIRED": "PASS",
+    "STATIC_BOUNDARY": "PASS",
+    "SEPARATE_DELETE_INODE": "PASS",
+    "PROBE_CLEANUP_RESTORATION_EXPLICIT": "PASS",
     "STOP": true
+  },
+  "topology": {
+    "external_links": false,
+    "hosts": [
+      "h1",
+      "h2"
+    ],
+    "nat": false,
+    "network": "10.0.0.0/24",
+    "switch": "s1",
+    "tcp_port": 18080
   }
 }

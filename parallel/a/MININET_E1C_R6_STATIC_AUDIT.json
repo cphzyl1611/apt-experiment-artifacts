@@ -1,59 +1,90 @@
 {
-  "schema": "MININET_E1C_R6_STATIC_AUDIT_V1",
-  "audited_at_utc": "2026-09-01T06:00:00Z",
-  "harness_path": "/home/cph/experiment-parallel/e0-a/e1c-r6-run-20260901T060350Z/mininet_e1c_r6_file_access_closure_smoke.py",
-  "harness_sha256": "d7f857f2903e3f0bb9bfe6b407dd4acddf3b12dd9508043eaeb322d8641d9dd2",
-  "test_path": "/home/cph/experiment-parallel/e0-a/e1c-r6-run-20260901T060350Z/test_e1c_r6_harness.py",
-  "test_sha256": "8f2e18dc726ffcdc6028b914f05465b0806d3de20c607deb1042c18fd8ab98af",
-  "fresh_validation": {
-    "py_compile": {"exit_code": 0, "result": "PASS"},
-    "unit_tests": {"tests_run": 16, "failures": 0, "errors": 0, "exit_code": 0, "result": "PASS"},
-    "static_self_check": {"result": "PASS"}
+  "apt_action_executed": false,
+  "audit_status": "PASS_READY_FOR_HUMAN_PRIVILEGED_RUN",
+  "audited_at_utc": "2026-09-01T08:03:58Z",
+  "automatic_sudo_invoked": false,
+  "failed_human_invocation_review": {
+    "audit_rule_mutation_reached": false,
+    "micro_probe_executed": false,
+    "mininet_executed": false,
+    "residue": "NONE",
+    "run_owned_interfaces": 0,
+    "run_owned_processes": 0
   },
-  "static_checks": {
-    "python_ast_parse": true,
-    "exact_path_perm_pid_rule": true,
-    "bounded_file_rules": true,
-    "no_global_direct_read_write_rules": true,
-    "no_syscall_selector_in_file_rule": true,
-    "no_wildcard_path": true,
-    "pid_filtered_rule": true,
-    "permission_filter_semantics_retained": true,
-    "raw_audit_preserved_and_hashed": true,
-    "raw_link_checker_joins_serial_then_raw_sha256": true,
-    "baseline_restore_gate_present": true,
-    "reviewed_path_wired_from_run_privileged": true,
-    "placeholder_gate_removed": true,
-    "probe_to_smoke_gate": true,
-    "exact_inverse_cleanup_only": true,
-    "no_broad_delete": true,
-    "no_mn_c": true,
-    "no_nat_or_external_links": true,
-    "no_apt_commands": true,
-    "no_automatic_sudo": true,
-    "no_provx_or_formal_benchmark": true
+  "formal_experiment_executed": false,
+  "fresh_validation": {
+    "py_compile": {
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    "static_self_check": {
+      "result": "PASS"
+    },
+    "unit_tests": {
+      "errors": 0,
+      "exit_code": 0,
+      "failures": 0,
+      "result": "PASS",
+      "tests_run": 23
+    }
+  },
+  "harness_path": "/home/cph/experiment-parallel/e0-a/e1c-r6-run-20260901T060350Z/mininet_e1c_r6_file_access_closure_smoke.py",
+  "harness_sha256": "402e94bcdb6740c9b6fd644af5cce7ba080c2a677f357181aad82649108137d6",
+  "test_path": "/home/cph/experiment-parallel/e0-a/e1c-r6-run-20260901T060350Z/test_e1c_r6_harness.py",
+  "test_sha256": "dbb2a84c49d9f9ff63998a0e826f30e8a748a4d6e9cc2d85065324d3182f3ef2",
+  "commit_authentication": {
+    "status": "UNAVAILABLE_NO_GIT_METADATA",
+    "expected_current_main": "2ff2b21cd313c5b91567adfe05691d3e25aabb87",
+    "workspace_git_rev_parse": "NOT_A_GIT_REPOSITORY"
   },
   "runtime_limitations_recorded": [
     "auditctl mutation and ausearch collection require root and are deferred to the exact human command",
     "the R6 privileged entry point is intentionally gated and does not execute during preparation",
     "filesystem isolation is not claimed"
   ],
-  "failed_human_invocation_review": {
-    "micro_probe_executed": false,
-    "mininet_executed": false,
-    "audit_rule_mutation_reached": false,
-    "run_owned_processes": 0,
-    "run_owned_interfaces": 0,
-    "residue": "NONE"
+  "schema": "MININET_E1C_R6_STATIC_AUDIT_V1",
+  "static_checks": {
+    "baseline_restore_gate_present": true,
+    "probe_cleanup_restore_gate": true,
+    "bounded_file_rules": true,
+    "exact_inverse_cleanup_only": true,
+    "exact_path_perm_pid_rule": true,
+    "no_apt_commands": true,
+    "no_automatic_sudo": true,
+    "no_broad_delete": true,
+    "no_global_direct_read_write_rules": true,
+    "no_mn_c": true,
+    "no_nat_or_external_links": true,
+    "no_provx_or_formal_benchmark": true,
+    "no_syscall_selector_in_file_rule": true,
+    "no_wildcard_path": true,
+    "permission_filter_semantics_retained": true,
+    "pid_filtered_rule": true,
+    "placeholder_gate_removed": true,
+    "probe_to_smoke_gate": true,
+    "separate_delete_inode": true,
+    "python_ast_parse": true,
+    "raw_audit_preserved_and_hashed": true,
+    "raw_link_checker_joins_serial_then_raw_sha256": true,
+    "reviewed_path_wired_from_run_privileged": true
   },
-  "formal_experiment_executed": false,
-  "apt_action_executed": false,
-  "automatic_sudo_invoked": false,
-  "audit_status": "PASS_READY_FOR_HUMAN_PRIVILEGED_RUN",
   "terminal": {
-    "MININET_E1C_R6_PREPARATION": "PASS",
-    "HUMAN_PRIVILEGED_RUN_REQUIRED": "YES",
+    "CLAIMED_READINESS_CONSISTENT_WITH_PUSHED_CODE": "NO",
+    "EXACT_SUDO_COMMAND": "sudo /usr/bin/python3 /home/cph/experiment-parallel/e0-a/e1c-r6-run-20260901T060350Z/mininet_e1c_r6_file_access_closure_smoke.py --run-privileged",
+    "FULL_SMOKE_REACHABLE_ONLY_AFTER_PROBE_PASS": "PASS",
+    "MICRO_PROBE_GATE_WIRED": "PASS",
+    "MININET_E1C_R6_PRIVILEGED_PATH_FRESH_REVIEW": "PASS",
     "NEXT_ACTION": "HUMAN_RUN_EXACT_SUDO_COMMAND",
+    "PRIVILEGED_COMMAND_EXECUTED": "NO",
+    "PUSHED_HARNESS_DEFAULT_FULL_SMOKE_WAS_PLACEHOLDER": "YES",
+    "R3_REGRESSION": "8/8",
+    "R4_REGRESSION": "7/7",
+    "R5_REGRESSION": "12/12",
+    "R6_PRIVILEGED_PATH_IMPLEMENTATION": "PASS_READY_FOR_HUMAN_PRIVILEGED_RUN",
+    "R6_TARGETED_TESTS": "23/23",
+    "REAL_DEFAULT_MININET_SMOKE_WIRED": "PASS",
+    "STATIC_BOUNDARY": "PASS",
     "STOP": true
-  }
+  },
+  "test_count": 23
 }
