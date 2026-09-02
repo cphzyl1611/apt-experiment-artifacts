@@ -1,0 +1,66 @@
+{
+  "schema": "MININET_E1C_R6R3_TIMEOUT_BYPASS_REMEDIATION_TEST_RESULT_V1",
+  "review_date": "2026-09-02",
+  "overall": "PASS_READY_FOR_TARGETED_FRESH_REVIEW",
+  "tests": {
+    "r6r3_targeted_collector_tests": {
+      "command": "PYTHONPYCACHEPREFIX=/tmp/e0a-r6r3-targeted-pycache python -m unittest -v test_e1c_r6_harness.MicroProbeTests.test_production_collector_routes_ausearch_through_bounded_runner test_e1c_r6_harness.MicroProbeTests.test_production_collector_passes_remaining_deadline_to_ausearch test_e1c_r6_harness.MicroProbeTests.test_production_collector_timeout_expiration_fails_closed test_e1c_r6_harness.MicroProbeTests.test_production_ausearch_receives_remaining_bounded_timeout test_e1c_r6_harness.MicroProbeTests.test_production_ausearch_skips_expired_deadline test_e1c_r6_harness.MicroProbeTests.test_production_ausearch_timeout_expired_fails_closed test_e1c_r6_harness.MicroProbeTests.test_production_ausearch_late_success_fails_closed",
+      "passed": 7,
+      "total": 7,
+      "status": "PASS"
+    },
+    "r6_full_targeted_suite": {
+      "command": "PYTHONPYCACHEPREFIX=/tmp/e0a-r6-pycache python -m unittest -v test_e1c_r6_harness",
+      "passed": 53,
+      "total": 53,
+      "status": "PASS"
+    },
+    "r6r2_historical_non_regression": {
+      "source_parent_commit": "73bbe957846ca7f4ad84abb417f488af22f74f8a",
+      "command": "PYTHONPYCACHEPREFIX=/tmp/e0a-r6r2-pycache-3 python -m unittest -v <the exact 33 test IDs listed by the pinned parent test file, qualified by their current owning classes>",
+      "passed": 33,
+      "total": 33,
+      "status": "PASS"
+    },
+    "r3_regression": {
+      "command": "PYTHONPYCACHEPREFIX=/tmp/e0a-r3-pycache python -m unittest -v test_e1c_r3_harness",
+      "passed": 8,
+      "total": 8,
+      "status": "PASS"
+    },
+    "r4_regression": {
+      "command": "PYTHONPYCACHEPREFIX=/tmp/e0a-r4-pycache python -m unittest -v test_e1c_r4_harness",
+      "passed": 7,
+      "total": 7,
+      "status": "PASS"
+    },
+    "r5_regression": {
+      "command": "PYTHONPYCACHEPREFIX=/tmp/e0a-r5-escalated-pycache python -m unittest -v test_e1c_r5_harness",
+      "passed": 12,
+      "total": 12,
+      "status": "PASS",
+      "environment_note": "The sandbox-only run denied IPv4 socket creation; the exact suite passed 12/12 in the approved non-privileged escalated rerun."
+    }
+  },
+  "verification": {
+    "py_compile": "PASS",
+    "git_diff_check": "PASS",
+    "static_self_check": "PASS",
+    "independent_ast_boundary_check": "PASS"
+  },
+  "preservation": {
+    "r6r1_bounded_polling": "PASS",
+    "r6r2_raw_parsing": "PASS",
+    "exact_key_and_path": "PASS",
+    "serial_validation": "PASS",
+    "cleanup_and_baseline_restoration": "PASS"
+  },
+  "execution_constraints": {
+    "sudo_executed": "NO",
+    "mininet_executed": "NO",
+    "auditd_configuration_modified": "NO",
+    "artifact_repository_modified": "NO",
+    "push_executed": "NO"
+  }
+}
+

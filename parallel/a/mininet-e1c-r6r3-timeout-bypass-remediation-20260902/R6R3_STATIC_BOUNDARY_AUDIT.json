@@ -1,0 +1,52 @@
+{
+  "schema": "MININET_E1C_R6R3_TIMEOUT_BYPASS_STATIC_BOUNDARY_AUDIT_V1",
+  "review_date": "2026-09-02",
+  "status": "PASS",
+  "static_self_check": {
+    "command": "python parallel/a/e1c-r6-run-20260901T060350Z/mininet_e1c_r6_file_access_closure_smoke.py --static-self-check",
+    "result": "PASS",
+    "production_ausearch_bounded": true,
+    "production_ausearch_fail_closed": true,
+    "unbounded_ausearch_calls": [],
+    "no_automatic_sudo": true,
+    "no_mn_cleanup": true,
+    "no_persistent_rule_edits": true,
+    "no_broad_rule_delete": true,
+    "no_nat_or_external_network": true,
+    "strace_not_primary_collector": true,
+    "real_default_smoke": true,
+    "exact_cleanup_finally_present": true
+  },
+  "independent_ast_boundary_check": {
+    "result": "PASS",
+    "python_ast_parse": true,
+    "poller_ausearch_argv_is_bounded": true,
+    "production_helper_ausearch_argv_present": true,
+    "production_helper_passes_timeout_remaining": true,
+    "collector_calls_bounded_helper": true,
+    "production_smoke_calls_collector": true,
+    "reviewed_smoke_calls_production_smoke": true,
+    "execute_path_references_reviewed_smoke": true,
+    "privileged_main_references_execute_path": true,
+    "run_command_bytes_default_timeout_30_is_not_production_ausearch": true,
+    "direct_run_command_bytes_ausearch_calls": [],
+    "fail_closed_tokens": true
+  },
+  "source_scope": {
+    "changed_files": [
+      "parallel/a/e1c-r6-run-20260901T060350Z/mininet_e1c_r6_file_access_closure_smoke.py",
+      "parallel/a/e1c-r6-run-20260901T060350Z/test_e1c_r6_harness.py"
+    ],
+    "git_diff_check": "PASS",
+    "tracked_generated_bytecode_changes": false
+  },
+  "forbidden_runtime_actions": {
+    "sudo": "NO",
+    "mininet": "NO",
+    "auditctl_mutation": "NO",
+    "auditd_configuration_change": "NO",
+    "artifact_repository_mutation": "NO",
+    "push": "NO"
+  }
+}
+

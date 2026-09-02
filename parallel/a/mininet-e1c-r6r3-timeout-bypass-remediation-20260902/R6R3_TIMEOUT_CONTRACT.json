@@ -1,0 +1,52 @@
+{
+  "schema": "MININET_E1C_R6R3_TIMEOUT_BYPASS_REMEDIATION_CONTRACT_V1",
+  "review_date": "2026-09-02",
+  "status": "PASS_READY_FOR_TARGETED_FRESH_REVIEW",
+  "bounded_evidence_window_seconds": 2.0,
+  "deadline_clock": "monotonic",
+  "production_entrypoint": "main(--run-privileged)",
+  "production_call_chain": [
+    "main",
+    "execute_reviewed_r6_path",
+    "_reviewed_mininet_smoke",
+    "_run_reviewed_mininet_smoke",
+    "collect_production_audit_evidence",
+    "run_bounded_ausearch_bytes",
+    "runner(/usr/sbin/ausearch --raw, timeout=remaining)"
+  ],
+  "argv_contract": [
+    "/usr/sbin/ausearch",
+    "-k",
+    "<exact_random_key>",
+    "--raw"
+  ],
+  "production_timeout_contract": {
+    "deadline_is_absolute": true,
+    "remaining_budget_recomputed_before_invocation": true,
+    "timeout_is_finite": true,
+    "timeout_is_strictly_positive_before_invocation": true,
+    "timeout_is_no_greater_than_remaining_budget": true,
+    "timeout_is_no_greater_than_max_window": true,
+    "fixed_run_command_bytes_timeout_30_unreachable": true,
+    "expired_deadline_skips_invocation": true,
+    "subprocess_timeout_expired_fails_closed": true,
+    "late_success_after_deadline_fails_closed": true,
+    "timeout_does_not_retry_or_extend_window": true
+  },
+  "failure_reasons": [
+    "AUSEARCH_DEADLINE_EXPIRED",
+    "AUSEARCH_TIMEOUT",
+    "AUSEARCH_EXECUTION_ERROR"
+  ],
+  "collector_failure_behavior": "raise TimeoutError; outer smoke records runtime_error and executes cleanup finally",
+  "preserved_contracts": {
+    "r6r1_bounded_polling": true,
+    "r6r2_raw_ausearch_parsing": true,
+    "exact_audit_key": true,
+    "exact_watched_path": true,
+    "same_serial_validation": true,
+    "cleanup_and_baseline_restoration": true,
+    "audit_configuration_unchanged": true
+  }
+}
+

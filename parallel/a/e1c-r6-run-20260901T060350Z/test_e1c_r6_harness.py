@@ -4,9 +4,11 @@
 from __future__ import annotations
 
 import base64
+import ast
 import contextlib
 import hashlib
 import io
+import inspect
 import json
 import subprocess
 import sys
@@ -109,6 +111,147 @@ class FilePermissionRuleTests(unittest.TestCase):
 
 
 class MicroProbeTests(unittest.TestCase):
+    def test_production_collector_routes_ausearch_through_bounded_runner(self):
+        source = inspect.getsource(harness._run_reviewed_mininet_smoke)
+        self.assertIn("collect_production_audit_evidence", source)
+        collector_source = inspect.getsource(harness.collect_production_audit_evidence)
+        self.assertIn("run_bounded_ausearch_bytes", collector_source)
+        self.assertIn("failure_reason", collector_source)
+
+        tree = ast.parse(harness.HARNESS_PATH.read_text(encoding="utf-8"))
+        unbounded_calls = []
+        for node in ast.walk(tree):
+            if not isinstance(node, ast.Call):
+                continue
+            if not isinstance(node.func, ast.Name) or node.func.id != "run_command_bytes":
+                continue
+            if not node.args or not isinstance(node.args[0], (ast.List, ast.Tuple)):
+                continue
+            values = {
+                item.value for item in node.args[0].elts
+                if isinstance(item, ast.Constant) and isinstance(item.value, str)
+            }
+            if "/usr/sbin/ausearch" in values:
+                unbounded_calls.append(node.lineno)
+        self.assertEqual(unbounded_calls, [])
+
+    def test_production_collector_passes_remaining_deadline_to_ausearch(self):
+        key = "e1c6collector-deadline"
+        calls = []
+
+        def runner(argv, **kwargs):
+            calls.append((argv, kwargs))
+            return mock.Mock(returncode=0, stdout=b"raw-audit", stderr=b"")
+
+        result = harness.collect_production_audit_evidence(
+            key,
+            deadline=12.0,
+            runner=runner,
+            monotonic=lambda: 10.25,
+        )
+
+        self.assertEqual(result["returncode"], 0)
+        self.assertEqual(result["stdout"], b"raw-audit")
+        self.assertEqual(calls[0][0], ["/usr/sbin/ausearch", "-k", key, "--raw"])
+        self.assertEqual(calls[0][1]["timeout"], 1.75)
+        self.assertLessEqual(calls[0][1]["timeout"], harness.AUDIT_EVIDENCE_MAX_WAIT_SECONDS)
+
+    def test_production_collector_timeout_expiration_fails_closed(self):
+        calls = []
+
+        def runner(argv, **kwargs):
+            calls.append(kwargs)
+            raise subprocess.TimeoutExpired(argv, kwargs["timeout"], output=b"partial", stderr=b"late")
+
+        with self.assertRaisesRegex(TimeoutError, "AUSEARCH_TIMEOUT"):
+            harness.collect_production_audit_evidence(
+                "e1c6collector-timeout",
+                deadline=12.0,
+                runner=runner,
+                monotonic=lambda: 10.0,
+            )
+
+        self.assertEqual(len(calls), 1)
+        self.assertGreater(calls[0]["timeout"], 0.0)
+        self.assertLessEqual(calls[0]["timeout"], harness.AUDIT_EVIDENCE_MAX_WAIT_SECONDS)
+
+    def test_production_ausearch_receives_remaining_bounded_timeout(self):
+        key = "e1c6production-deadline"
+        calls = []
+
+        def runner(argv, **kwargs):
+            calls.append((argv, kwargs))
+            return mock.Mock(returncode=0, stdout=b"raw-audit", stderr=b"")
+
+        result = harness.run_bounded_ausearch_bytes(
+            key,
+            deadline=12.0,
+            runner=runner,
+            monotonic=lambda: 10.25,
+        )
+
+        self.assertEqual(result["returncode"], 0)
+        self.assertEqual(result["stdout"], b"raw-audit")
+        self.assertEqual(calls[0][0], ["/usr/sbin/ausearch", "-k", key, "--raw"])
+        self.assertEqual(calls[0][1]["timeout"], 1.75)
+        self.assertLessEqual(calls[0][1]["timeout"], harness.AUDIT_EVIDENCE_MAX_WAIT_SECONDS)
+
+    def test_production_ausearch_skips_expired_deadline(self):
+        calls = []
+
+        def runner(*args, **kwargs):
+            calls.append((args, kwargs))
+            self.fail("ausearch must not run after the evidence deadline")
+
+        result = harness.run_bounded_ausearch_bytes(
+            "e1c6production-expired",
+            deadline=12.0,
+            runner=runner,
+            monotonic=lambda: 12.0,
+        )
+
+        self.assertEqual(calls, [])
+        self.assertIsNone(result["returncode"])
+        self.assertEqual(result["failure_reason"], "AUSEARCH_DEADLINE_EXPIRED")
+        self.assertTrue(result["ausearch_timeout"])
+
+    def test_production_ausearch_timeout_expired_fails_closed(self):
+        calls = []
+
+        def runner(argv, **kwargs):
+            calls.append(kwargs)
+            raise subprocess.TimeoutExpired(argv, kwargs["timeout"], output=b"partial", stderr=b"late")
+
+        result = harness.run_bounded_ausearch_bytes(
+            "e1c6production-timeout",
+            deadline=12.0,
+            runner=runner,
+            monotonic=lambda: 10.0,
+        )
+
+        self.assertEqual(result["failure_reason"], "AUSEARCH_TIMEOUT")
+        self.assertTrue(result["ausearch_timeout"])
+        self.assertEqual(result["stdout"], b"partial")
+        self.assertEqual(result["stderr"], b"late")
+        self.assertEqual(len(calls), 1)
+        self.assertGreater(calls[0]["timeout"], 0)
+
+    def test_production_ausearch_late_success_fails_closed(self):
+        clock = iter([10.0, 12.0])
+
+        def runner(argv, **kwargs):
+            return mock.Mock(returncode=0, stdout=b"late-success", stderr=b"")
+
+        result = harness.run_bounded_ausearch_bytes(
+            "e1c6production-late",
+            deadline=12.0,
+            runner=runner,
+            monotonic=lambda: next(clock),
+        )
+
+        self.assertEqual(result["failure_reason"], "AUSEARCH_DEADLINE_EXPIRED")
+        self.assertTrue(result["ausearch_timeout"])
+
     def test_interpreted_timestamp_with_clock_colons_reproduces_old_parser_failure(self):
         interpreted = (
             'msg=audit(09/01/2026 08:09:38.381:1056): '
@@ -557,6 +700,9 @@ class MicroProbeTests(unittest.TestCase):
     def test_static_self_check_is_safe(self):
         checks = harness.static_self_check()
         self.assertTrue(checks["static_safety"])
+        self.assertTrue(checks["production_ausearch_bounded"])
+        self.assertTrue(checks["production_ausearch_fail_closed"])
+        self.assertEqual(checks["unbounded_ausearch_calls"], [])
 
     def test_probe_state_machine_requires_ordered_gate(self):
         self.assertEqual(

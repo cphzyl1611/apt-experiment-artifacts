@@ -644,6 +644,90 @@ def run_command_bytes(argv, timeout=30):
         return {"argv": list(argv), "returncode": None, "stdout": b"", "stderr": f"{type(exc).__name__}: {exc}".encode()}
 
 
+def _bytes_output(value: Any) -> bytes:
+    if value is None:
+        return b""
+    if isinstance(value, bytes):
+        return value
+    if isinstance(value, str):
+        return value.encode()
+    return str(value).encode()
+
+
+def run_bounded_ausearch_bytes(
+    audit_key: str,
+    deadline: float,
+    runner: Callable[..., Any] | None = None,
+    monotonic: Callable[[], float] | None = None,
+) -> dict[str, Any]:
+    """Run one raw ausearch call without escaping the evidence deadline."""
+    runner = runner or subprocess.run
+    monotonic = monotonic or time.monotonic
+    if not isinstance(audit_key, str) or not re.fullmatch(r"[A-Za-z0-9_.:-]+", audit_key):
+        raise ValueError("audit key contains unsupported characters")
+    argv = ["/usr/sbin/ausearch", "-k", audit_key, "--raw"]
+    try:
+        requested_deadline = float(deadline)
+    except (TypeError, ValueError):
+        requested_deadline = math.nan
+    started = monotonic()
+    bounded_deadline = min(
+        requested_deadline,
+        started + AUDIT_EVIDENCE_MAX_WAIT_SECONDS,
+    ) if math.isfinite(requested_deadline) and math.isfinite(started) else math.nan
+    remaining = bounded_deadline - started
+    if not math.isfinite(remaining) or remaining <= 0.0:
+        return {
+            "argv": argv, "returncode": None, "stdout": b"", "stderr": b"",
+            "failure_reason": "AUSEARCH_DEADLINE_EXPIRED", "ausearch_timeout": True,
+        }
+    try:
+        proc = runner(argv, capture_output=True, check=False, timeout=remaining)
+    except subprocess.TimeoutExpired as exc:
+        return {
+            "argv": argv, "returncode": None,
+            "stdout": _bytes_output(getattr(exc, "output", None)),
+            "stderr": _bytes_output(getattr(exc, "stderr", None)),
+            "failure_reason": "AUSEARCH_TIMEOUT", "ausearch_timeout": True,
+        }
+    except Exception as exc:
+        return {
+            "argv": argv, "returncode": None, "stdout": b"",
+            "stderr": f"{type(exc).__name__}: {exc}".encode(),
+            "failure_reason": "AUSEARCH_EXECUTION_ERROR", "ausearch_timeout": False,
+        }
+    result = {
+        "argv": argv,
+        "returncode": getattr(proc, "returncode", None),
+        "stdout": _bytes_output(getattr(proc, "stdout", None)),
+        "stderr": _bytes_output(getattr(proc, "stderr", None)),
+    }
+    completed = monotonic()
+    if not math.isfinite(completed) or completed >= bounded_deadline:
+        result.update({
+            "failure_reason": "AUSEARCH_DEADLINE_EXPIRED",
+            "ausearch_timeout": True,
+        })
+    return result
+
+
+def collect_production_audit_evidence(
+    audit_key: str,
+    deadline: float | None = None,
+    runner: Callable[..., Any] | None = None,
+    monotonic: Callable[[], float] | None = None,
+) -> dict[str, Any]:
+    """Collect raw production evidence and fail closed on deadline failure."""
+    monotonic = monotonic or time.monotonic
+    audit_deadline = deadline if deadline is not None else monotonic() + AUDIT_EVIDENCE_MAX_WAIT_SECONDS
+    audit_raw = run_bounded_ausearch_bytes(
+        audit_key, audit_deadline, runner=runner, monotonic=monotonic,
+    )
+    if audit_raw.get("failure_reason"):
+        raise TimeoutError(f"bounded ausearch failed closed: {audit_raw['failure_reason']}")
+    return audit_raw
+
+
 def proc_link(pid, name):
     return os.readlink(f"/proc/{int(pid)}/ns/{name}")
 
@@ -1467,6 +1551,7 @@ def static_self_check():
     source = HARNESS_PATH.read_text(encoding="utf-8")
     tree = ast.parse(source)
     commands = []
+    unbounded_ausearch_calls = []
     for node in ast.walk(tree):
         if not isinstance(node, ast.Call) or not node.args:
             continue
@@ -1478,6 +1563,8 @@ def static_self_check():
             values = [item.value for item in arg.elts if isinstance(item, ast.Constant) and isinstance(item.value, str)]
             if values:
                 commands.append(values)
+            if name == "run_command_bytes" and "/usr/sbin/ausearch" in values:
+                unbounded_ausearch_calls.append(node.lineno)
     flattened = [" ".join(command) for command in commands]
     dash_c = "-" + "c"; dash_D = "-" + "D"; pkg = "apt" + "-get"; model = "pro" + "vx"
     no_mn_cleanup = not any(len(cmd) > 1 and cmd[0] == "mn" and cmd[1] == dash_c for cmd in commands)
@@ -1495,6 +1582,17 @@ def static_self_check():
     no_automatic_sudo = not any(command and command[0].endswith("sudo") for command in commands)
     no_persistent_rule_edits = not any("rules.d" in command for command in flattened)
     real_default_smoke = all(token in source for token in ("def _reviewed_mininet_smoke", "def _run_reviewed_mininet_smoke", "from mininet.net import Mininet", "net.addHost"))
+    production_ausearch_bounded = (
+        "def run_bounded_ausearch_bytes" in source
+        and "def collect_production_audit_evidence" in source
+        and "collect_production_audit_evidence(key)" in source
+        and "run_bounded_ausearch_bytes(" in source
+        and not unbounded_ausearch_calls
+    )
+    production_ausearch_fail_closed = all(token in source for token in (
+        '"AUSEARCH_TIMEOUT"', '"AUSEARCH_DEADLINE_EXPIRED"',
+        'if audit_raw.get("failure_reason")',
+    ))
     probe_cleanup_restore_gate = all(token in source for token in (
         "RULE_REMOVED_BASELINE_RESTORED", "RULE_REMOVED_BASELINE_NOT_RESTORED",
         "_audit_baseline_clean",
@@ -1510,6 +1608,9 @@ def static_self_check():
         "no_mn_cleanup": no_mn_cleanup, "no_broad_rule_delete": no_broad_delete, "bounded_read_write_rules": bounded_rw,
         "no_direct_read_write_rules": no_direct_rw_rules, "no_automatic_sudo": no_automatic_sudo,
         "no_persistent_rule_edits": no_persistent_rule_edits, "real_default_smoke": real_default_smoke,
+        "production_ausearch_bounded": production_ausearch_bounded,
+        "unbounded_ausearch_calls": unbounded_ausearch_calls,
+        "production_ausearch_fail_closed": production_ausearch_fail_closed,
         "probe_gate_wired": probe_gate_wired, "probe_cleanup_restore_gate": probe_cleanup_restore_gate,
         "all_required_classes_contract": all_required_classes_contract,
         "supported_syscall_probe_present": "query_supported_syscalls" in source, "blocking_handshake_present": "listener.accept()" in source and "create_connection" in source,
@@ -1525,7 +1626,7 @@ def static_self_check():
         "exact_cleanup_finally_present": "finally:" in source and "mutation" in source,
         "strace_not_primary_collector": not any("strace" in command.lower() for command in flattened), "commands_inspected": commands,
     }
-    result["pass"] = all(result[key] for key in ("python_ast_parse", "no_nat_or_external_network", "no_apt_actions", "no_model_execution", "no_mn_cleanup", "no_broad_rule_delete", "bounded_read_write_rules", "no_direct_read_write_rules", "no_automatic_sudo", "no_persistent_rule_edits", "real_default_smoke", "probe_gate_wired", "probe_cleanup_restore_gate", "all_required_classes_contract", "supported_syscall_probe_present", "blocking_handshake_present", "live_netns_socket_persistence_present", "early_child_diagnostics_present", "child_error_persistence_present", "explicit_child_states_present", "namespace_three_state_present", "post_exec_identity_validation_present", "clean_root_baseline_fail_closed", "recursive_json_safe_present", "journal_fsync_present", "exact_cleanup_finally_present", "strace_not_primary_collector"))
+    result["pass"] = all(result[key] for key in ("python_ast_parse", "no_nat_or_external_network", "no_apt_actions", "no_model_execution", "no_mn_cleanup", "no_broad_rule_delete", "bounded_read_write_rules", "no_direct_read_write_rules", "no_automatic_sudo", "no_persistent_rule_edits", "real_default_smoke", "production_ausearch_bounded", "production_ausearch_fail_closed", "probe_gate_wired", "probe_cleanup_restore_gate", "all_required_classes_contract", "supported_syscall_probe_present", "blocking_handshake_present", "live_netns_socket_persistence_present", "early_child_diagnostics_present", "child_error_persistence_present", "explicit_child_states_present", "namespace_three_state_present", "post_exec_identity_validation_present", "clean_root_baseline_fail_closed", "recursive_json_safe_present", "journal_fsync_present", "exact_cleanup_finally_present", "strace_not_primary_collector"))
     result["static_safety"] = result["pass"]
     return result
 
@@ -1751,7 +1852,7 @@ def _run_reviewed_mininet_smoke():
             try: tcpdump_proc.wait(timeout=5)
             except subprocess.TimeoutExpired: tcpdump_proc.terminate(); tcpdump_proc.wait(timeout=5)
         time.sleep(0.5)
-        audit_raw = run_command_bytes(["/usr/sbin/ausearch", "-k", key, "--raw"])
+        audit_raw = collect_production_audit_evidence(key)
         raw_records = parse_audit_groups(audit_raw.get("stdout", b""), key.encode())
         pid_joins = {row["pid"]: row for row in read_jsonl(JOIN_PATH) if "pid" in row}
         write_jsonl_atomic(RAW_PATH, [{"schema": "MININET_E1C_R6_RAW_AUDIT_EVIDENCE_V1", "run_id": RUN_ID, "audit_key": key, **{k: v for k, v in record.items() if k not in {"raw_bytes", "raw_text"}}, "raw_text": record["raw_text"]} for record in raw_records])
