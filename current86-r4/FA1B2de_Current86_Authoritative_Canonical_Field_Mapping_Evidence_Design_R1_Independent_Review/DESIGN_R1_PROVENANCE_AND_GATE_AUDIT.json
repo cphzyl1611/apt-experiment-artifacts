@@ -1,0 +1,84 @@
+{
+  "schema": "FA1B2DE_CURRENT86_CANONICAL_FIELD_MAPPING_EVIDENCE_DESIGN_R1_INDEPENDENT_REVIEW_PROVENANCE_AND_GATE_V1",
+  "review_date": "2026-09-01",
+  "provenance_chain_contract": "BLOCKED",
+  "conflict_absence_policy": "PASS",
+  "stage_a_stage_b_separation": "PASS",
+  "required_chain": [
+    {
+      "ordinal": 1,
+      "link": "GOVERNED_SOURCE_AUTHORITY",
+      "present_in_design": true,
+      "cryptographically_recomputable": ["authority artifact hash", "activation record hash", "authorized class/fact-type tuple", "scope membership"],
+      "governance_asserted": ["the governance authority is entitled to activate the source authority"]
+    },
+    {
+      "ordinal": 2,
+      "link": "AUTHENTICATED_IMMUTABLE_SOURCE_ARTIFACT_AND_EXACT_SOURCE_OBJECT",
+      "present_in_design": true,
+      "cryptographically_recomputable": ["artifact hash", "signed release or pinned commit/tree proof", "locator hash", "object bytes and hash", "extractor hash", "exact-one cardinality"],
+      "governance_asserted": ["the source owner or issuer authorizes the artifact and scope"]
+    },
+    {
+      "ordinal": 3,
+      "link": "CANONICAL_FIELD_IDENTITY",
+      "present_in_design": true,
+      "cryptographically_recomputable": ["exact RFC6901 resolution", "type and representation", "canonical value hash", "field identity hash"],
+      "governance_asserted": ["the schema and semantics definition establishes what is canonical intrinsic"]
+    },
+    {
+      "ordinal": 4,
+      "link": "MAPPING_EVIDENCE_RECORD",
+      "present_in_design": true,
+      "cryptographically_recomputable": ["target conservation", "source and field link hashes", "conflict and lineage references"],
+      "governance_asserted": ["the record is admitted as an eligible evidence claim only under the defined governance process"],
+      "status": "BLOCKED_BY_SCHEMA-001_AND_SCHEMA-002"
+    },
+    {
+      "ordinal": 5,
+      "link": "INDEPENDENT_STAGE_A_ADMISSION",
+      "present_in_design": true,
+      "cryptographically_recomputable": ["all preceding links", "conflict set", "active lineage", "decision identity"],
+      "governance_asserted": ["the independent reviewer is authorized to issue the admission decision"],
+      "status": "BLOCKED_BY_MAPPING_RECORD_CYCLE"
+    },
+    {
+      "ordinal": 6,
+      "link": "LATER_STAGE_B_EXPOSURE_ONLY",
+      "present_in_design": true,
+      "cryptographically_recomputable": ["Stage A status", "candidate packet hash", "tuple equality"],
+      "governance_asserted": ["the later human field-pin decision is separately governed"],
+      "status": "STRUCTURALLY_SEPARATED_BUT_TUPLE_CHECK_UNDER_SPECIFIED"
+    },
+    {
+      "ordinal": 7,
+      "link": "SEPARATE_GOVERNED_HUMAN_FIELD_PIN_DECISION",
+      "present_in_design": true,
+      "cryptographically_recomputable": ["the decision references the exact admitted tuple and preserves the immutable evidence lineage"],
+      "governance_asserted": ["the human authority approves, rejects, or requests more evidence under a separately governed act"],
+      "automatic_action": false,
+      "creates_authority_from_reviewer_preference": false
+    }
+  ],
+  "conflict_and_absence_states": {
+    "AUTHORITATIVE_MAPPING_ABSENT": "PASS_FAIL_CLOSED",
+    "MULTIPLE_AUTHORITATIVE_MAPPINGS_CONFLICT": "PASS_FAIL_CLOSED",
+    "SOURCE_AUTHORITY_UNRESOLVED": "PASS_FAIL_CLOSED",
+    "SOURCE_OBJECT_UNAUTHENTICATED": "PASS_FAIL_CLOSED",
+    "FIELD_IDENTITY_AMBIGUOUS": "PASS_FAIL_CLOSED",
+    "CANONICAL_POINTER_MISSING": "PASS_FAIL_CLOSED",
+    "EVIDENCE_STALE_OR_SUPERSEDED": "PASS_FAIL_CLOSED",
+    "heuristic_conflict_winner": "PROHIBITED"
+  },
+  "stage_separation_checks": {
+    "stage_a_prerequisites_explicit": true,
+    "stage_b_inaccessible_on_stage_a_failure": true,
+    "automatic_candidate_selection": false,
+    "candidate_ranking_as_authority": false,
+    "future_human_approval_separately_governed": true,
+    "stage_a_creates_field_pin": false,
+    "stage_b_creates_field_pin": false,
+    "source_auth_executed_by_gate": false
+  },
+  "overall_provenance_and_gate_result": "BLOCKED"
+}

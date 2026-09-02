@@ -1,0 +1,71 @@
+{
+  "schema": "FA1B2DE_CURRENT86_CANONICAL_FIELD_MAPPING_EVIDENCE_DESIGN_R1_INDEPENDENT_REVIEW_TRANSACTION_AND_VERIFICATION_V1",
+  "review_date": "2026-09-01",
+  "append_only_transaction_model": "BLOCKED",
+  "independent_verification_plan": "BLOCKED",
+  "transaction_checks": {
+    "append_only_creation_explicit": true,
+    "review_before_activation_explicit": true,
+    "supersession_and_revocation_lineage_explicit": true,
+    "historical_mutation_prohibited": true,
+    "record_atomicity_explicit": true,
+    "snapshot_recomputation_gates_explicit": true,
+    "zero_unauthorized_pin_creation_explicit": true,
+    "multi_target_conservation_explicit": true,
+    "rollback_preserves_history": true
+  },
+  "verification_checks": {
+    "origin_and_ref_authentication_required": true,
+    "immutable_source_bytes_required": true,
+    "exact_target_conservation_required": true,
+    "exact_pointer_and_field_recomputation_required": true,
+    "conflict_recomputation_required": true,
+    "stage_a_independent_decision_required": true,
+    "stage_b_disabled_on_failed_stage_a": true,
+    "candidate_ranking_prohibited": true,
+    "unauthorized_pin_creation_check_required": true,
+    "mapping_record_identity_recomputation_operationally_defined": false
+  },
+  "blocking_findings": [
+    {
+      "finding_id": "TX-001",
+      "severity": "BLOCKER",
+      "statement": "The append-only order is stated, but the schema requires a future Stage A decision hash inside the mapping record that must be appended before that decision exists.",
+      "locations": [
+        "CANONICAL_MAPPING_TRANSACTION_MODEL.md:24-32",
+        "CANONICAL_FIELD_MAPPING_EVIDENCE_SCHEMA.json:212-225"
+      ],
+      "effect": "The transaction cannot produce a valid acyclic sequence of immutable records under the stated requirements.",
+      "remediation": "Repair the record dependency graph before implementation or activation planning."
+    },
+    {
+      "finding_id": "TX-002",
+      "severity": "BLOCKER",
+      "statement": "The verification plan requires recomputation of mapping_record_id, but the design does not define its canonical identity preimage or excluded fields.",
+      "locations": [
+        "CANONICAL_MAPPING_EVIDENCE_VERIFICATION_PLAN.md:25-30",
+        "CANONICAL_FIELD_IDENTITY_MODEL.md:38 and 73"
+      ],
+      "effect": "Independent verification cannot establish record identity from the design alone.",
+      "remediation": "Define a deterministic mapping-record identity contract."
+    },
+    {
+      "finding_id": "TX-003",
+      "severity": "BLOCKER",
+      "statement": "The Stage B tuple equality check includes candidate_object_id without a schema-defined source or immutable candidate-packet linkage field.",
+      "locations": [
+        "STAGE_A_STAGE_B_GATE_CONTRACT.json:35-40"
+      ],
+      "effect": "The Stage B verification gate cannot be independently recomputed from the defined records.",
+      "remediation": "Define the candidate identity linkage or remove the undefined member from the equality contract."
+    }
+  ],
+  "required_reverification_after_remediation": [
+    "recompute the dependency graph without forward references",
+    "recompute mapping record identities from the normative preimage",
+    "recompute Stage B tuple equality from explicit immutable fields",
+    "re-run all 24 target conservation checks",
+    "reconfirm zero pins, zero source-auth, zero P0/P1, zero publication, and unchanged R7/R8/R8R1"
+  ],
+  "overall_transaction_and_verification_result": "BLOCKED"
+}

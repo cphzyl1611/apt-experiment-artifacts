@@ -1,0 +1,54 @@
+{
+  "schema": "FA1B2DE_CURRENT86_CANONICAL_FIELD_MAPPING_EVIDENCE_DESIGN_R1_INDEPENDENT_REVIEW_INPUT_AUTHENTICATION_V1",
+  "review_date": "2026-09-01",
+  "review_type": "BINDING_AUTHORITATIVE_CANONICAL_FIELD_MAPPING_EVIDENCE_DESIGN_R1_INDEPENDENT_REVIEW",
+  "repository_origin": "https://github.com/cphzyl1611/apt-experiment-artifacts.git",
+  "track_branch": "artifact/binding",
+  "main_push_executed": "NO",
+  "pinned_design_commit": "4205621501d4a16aca384dae72af1022a5187560",
+  "pinned_design_parent": "99f9c0d7fe8b4ecec896837b3991e8d23ebbb608",
+  "current_head": "4205621501d4a16aca384dae72af1022a5187560",
+  "current_head_matches_pinned_design": true,
+  "origin_artifact_binding_tracking_ref": "4205621501d4a16aca384dae72af1022a5187560",
+  "origin_main_tracking_ref": "99f9c0d7fe8b4ecec896837b3991e8d23ebbb608",
+  "live_origin_ref_check": {
+    "command": "git ls-remote origin artifact/binding",
+    "result": "UNAVAILABLE_NETWORK",
+    "interpretation": "The local origin/artifact/binding tracking ref and commit metadata provide the available repository authentication; no contrary remote result was obtained."
+  },
+  "design_package_path": "current86-r4/FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1",
+  "exact_design_file_count": 10,
+  "design_file_names": [
+    "AUTHORITATIVE_SOURCE_CLASS_POLICY.md",
+    "BINDING_AUTHORITATIVE_CANONICAL_FIELD_MAPPING_EVIDENCE_DESIGN.md",
+    "CANONICAL_FIELD_IDENTITY_MODEL.md",
+    "CANONICAL_FIELD_MAPPING_DISPOSITION_POLICY.md",
+    "CANONICAL_FIELD_MAPPING_EVIDENCE_SCHEMA.json",
+    "CANONICAL_FIELD_MAPPING_PROVENANCE_CONTRACT.json",
+    "CANONICAL_MAPPING_EVIDENCE_VERIFICATION_PLAN.md",
+    "CANONICAL_MAPPING_TRANSACTION_MODEL.md",
+    "FIRST_TRANCHE_24_MAPPING_EVIDENCE_REQUIREMENTS.jsonl",
+    "STAGE_A_STAGE_B_GATE_CONTRACT.json"
+  ],
+  "package_authentication": "PASS",
+  "checks": {
+    "origin_matches_expected": true,
+    "branch_matches_expected": true,
+    "pinned_commit_resolves": true,
+    "pinned_commit_is_current_head": true,
+    "pinned_commit_parent_matches_main_tracking": true,
+    "exactly_ten_design_files_added_by_pinned_commit": true,
+    "all_ten_files_are_in_intended_design_directory": true,
+    "design_directory_unchanged_since_pinned_commit": true,
+    "no_unrelated_path_changes_since_pinned_commit": true,
+    "worktree_clean_before_review_artifacts": true
+  },
+  "verification_basis": [
+    "git show --name-status --stat 4205621501d4a16aca384dae72af1022a5187560",
+    "git diff --quiet 4205621501d4a16aca384dae72af1022a5187560 -- current86-r4/FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1",
+    "git status --porcelain=v1",
+    "git branch --show-current",
+    "git rev-parse HEAD",
+    "git remote get-url origin"
+  ]
+}

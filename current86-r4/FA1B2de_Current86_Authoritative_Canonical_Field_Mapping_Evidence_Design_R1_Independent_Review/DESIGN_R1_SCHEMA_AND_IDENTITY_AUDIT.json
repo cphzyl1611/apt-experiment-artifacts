@@ -1,0 +1,68 @@
+{
+  "schema": "FA1B2DE_CURRENT86_CANONICAL_FIELD_MAPPING_EVIDENCE_DESIGN_R1_INDEPENDENT_REVIEW_SCHEMA_AND_IDENTITY_V1",
+  "review_date": "2026-09-01",
+  "canonical_field_identity_model": "PASS",
+  "mapping_evidence_schema": "BLOCKED",
+  "canonical_field_identity_checks": {
+    "different_source_objects_remain_distinct": true,
+    "same_pointer_under_different_schemas_remains_distinct": true,
+    "different_authorities_remain_distinct": true,
+    "different_canonicalization_profiles_remain_distinct": true,
+    "different_semantic_field_identities_remain_distinct": true,
+    "identity_tuple_contains_authority_artifact_object_schema_semantics_pointer_type_representation_and_profile": true,
+    "identity_excludes_timestamps_display_text_urls_and_comments": true,
+    "canonical_field_identity_is_not_a_field_pin": true
+  },
+  "mapping_schema_coverage": {
+    "target": true,
+    "authority": true,
+    "immutable_artifact_or_object": true,
+    "locator": true,
+    "canonical_identity": true,
+    "pointer_or_path": true,
+    "type_representation_canonicalization": true,
+    "provenance": true,
+    "conflict_and_admission": true,
+    "lineage_supersession_revocation": true,
+    "field_pin_id_created_or_implied": false,
+    "selected_candidate_authority_created_or_implied": false,
+    "source_auth_execution_created_or_implied": false,
+    "automatic_stage_b_selection_created_or_implied": false
+  },
+  "blocking_findings": [
+    {
+      "finding_id": "SCHEMA-001",
+      "severity": "BLOCKER",
+      "locations": [
+        "CANONICAL_FIELD_MAPPING_EVIDENCE_SCHEMA.json:215-225",
+        "CANONICAL_MAPPING_TRANSACTION_MODEL.md:30-31"
+      ],
+      "statement": "Every mapping evidence record requires admission.stage_a_decision_record_sha256, while the transaction order requires the mapping evidence record to be appended before the independent Stage A decision record exists.",
+      "impact": "A conforming record must forward-reference a not-yet-created decision, or the decision must reference a record that cannot yet validate. The specified record order and required schema field cannot both be satisfied without an unstated bootstrap rule.",
+      "required_remediation": "Define an acyclic pre-admission record shape or make the Stage A decision reference the already immutable mapping record without requiring the mapping record to contain a hash of the future decision."
+    },
+    {
+      "finding_id": "SCHEMA-002",
+      "severity": "BLOCKER",
+      "locations": [
+        "CANONICAL_FIELD_MAPPING_EVIDENCE_SCHEMA.json:32-33",
+        "CANONICAL_MAPPING_EVIDENCE_VERIFICATION_PLAN.md:25-30",
+        "CANONICAL_FIELD_IDENTITY_MODEL.md:38 and 73"
+      ],
+      "statement": "mapping_record_id is constrained only to a SHA-256-shaped string, but the package does not normatively define its identity basis, canonical preimage, excluded fields, or exact recomputation procedure.",
+      "impact": "The independent verifier cannot recompute the supplied mapping_record_id or distinguish a content address from an identity hash. The verification plan's required equality check is therefore under-specified.",
+      "required_remediation": "Specify the exact mapping identity tuple, canonical serialization, excluded fields, hash preimage, and relationship to the Stage A decision hash."
+    },
+    {
+      "finding_id": "SCHEMA-003",
+      "severity": "BLOCKER",
+      "locations": [
+        "STAGE_A_STAGE_B_GATE_CONTRACT.json:35-40"
+      ],
+      "statement": "Stage B requires byte-for-byte equality of a tuple containing candidate_object_id, but the mapping evidence schema defines neither candidate_object_id nor a candidate-packet hash/reference that supplies it.",
+      "impact": "An independent evaluator cannot derive or verify the required equality from the specified mapping record, Stage A decision, and candidate packet contract. The gate is not operationally checkable as written.",
+      "required_remediation": "Define the exact candidate-packet identity and candidate_object_id source, or remove the candidate-only member from the admitted canonical tuple and specify an explicit immutable cross-record linkage."
+    }
+  ],
+  "overall_schema_and_identity_result": "BLOCKED"
+}
