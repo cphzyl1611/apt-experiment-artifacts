@@ -6,6 +6,11 @@
   "type": "object",
   "additionalProperties": false,
   "$defs": {
+    "reference": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?:[A-Za-z][A-Za-z0-9+.-]*://[^\\s]+|[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.:/#-]+)*(?:#[A-Za-z0-9_.:/-]+)?)$"
+    },
     "split_proposal": {
       "type": "object",
       "additionalProperties": false,
@@ -22,7 +27,7 @@
         "child_partition_ids",
         "child_partitions",
         "conservation_result",
-        "independent_partition_review_reference",
+        "independent_review_reference",
         "approval_reference",
         "applied",
         "execution_authorized",
@@ -246,9 +251,8 @@
             }
           }
         },
-        "independent_partition_review_reference": {
-          "type": "string",
-          "minLength": 1
+        "independent_review_reference": {
+          "$ref": "#/$defs/reference"
         },
         "approval_reference": {
           "type": ["string", "null"]
@@ -382,7 +386,7 @@
         "resolution_outcome",
         "outcome_authoritative",
         "evidence_manifest_reference",
-        "review_record_reference",
+        "independent_review_reference",
         "member_conservation_check",
         "execution_authorized",
         "status_mutation",
@@ -404,10 +408,16 @@
           "type": "boolean"
         },
         "evidence_manifest_reference": {
-          "type": ["string", "null"]
+          "oneOf": [
+            {"type": "null"},
+            {"$ref": "#/$defs/reference"}
+          ]
         },
-        "review_record_reference": {
-          "type": ["string", "null"]
+        "independent_review_reference": {
+          "oneOf": [
+            {"type": "null"},
+            {"$ref": "#/$defs/reference"}
+          ]
         },
         "member_conservation_check": {
           "type": "object",
@@ -474,8 +484,18 @@
             }
           },
           "then": {
-            "required": ["split_proposal"],
+            "required": [
+              "split_proposal",
+              "evidence_manifest_reference",
+              "independent_review_reference"
+            ],
             "properties": {
+              "evidence_manifest_reference": {
+                "$ref": "#/$defs/reference"
+              },
+              "independent_review_reference": {
+                "$ref": "#/$defs/reference"
+              },
               "split_proposal": {
                 "$ref": "#/$defs/split_proposal"
               }

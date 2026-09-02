@@ -42,7 +42,11 @@
     ],
     "acceptance": "A split proposal passes only when both the structural JSON Schema and validate_e0c_r2.py return valid with zero errors.",
     "recomputation_is_authoritative_over_submitted_claims": true,
-    "schema_cannot_be_treated_as_sufficient_without_semantic_validator": true
+    "schema_cannot_be_treated_as_sufficient_without_semantic_validator": true,
+    "operative_governance_references": {
+      "future_resolution.evidence_manifest_reference": "required_non_null_non_empty_and_structurally_valid",
+      "future_resolution.independent_review_reference": "required_non_null_non_empty_and_structurally_valid"
+    }
   },
   "conservation_invariants": {
     "child_union_equals_parent_exactly": true,
@@ -92,8 +96,9 @@
     "parent_member_set_sha256": "required",
     "recomputed_child_hashes": "required",
     "conservation_result": "required",
-    "evidence_manifest_reference": "required",
-    "independent_review_reference": "required",
+    "evidence_manifest_reference": "future_resolution_required_non_null_before_application",
+    "independent_review_reference": "future_resolution_required_non_null_before_application",
+    "split_proposal.independent_review_reference": "required",
     "approval_reference": "required_before_application",
     "applied": false,
     "execution_authorized": false,

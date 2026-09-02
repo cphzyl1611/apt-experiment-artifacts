@@ -1,6 +1,6 @@
-# E0C Exact12 Split-or-More-Evidence Resolution Design R2
+# E0C Exact12 Split-or-More-Evidence Resolution Design R2R1
 
-E0C_SPLIT_RESOLUTION_DESIGN_R2 = PASS_READY_FOR_INDEPENDENT_REVIEW
+E0C_EXACT12_SPLIT_RESOLUTION_DESIGN_R2R1 = PASS_READY_FOR_INDEPENDENT_REVIEW
 DESIGN_DATE = 2026-09-02
 
 ## Remediation Scope
@@ -41,6 +41,8 @@ crosswalk row and recomputes:
 - sum of child counts;
 - cross-template overlap and Blocked31 overlap;
 - submitted conservation claims against recomputed values;
+- non-null, non-empty, structurally valid governance references for operative
+  split records;
 - unapplied split, zero status mutation, zero execution authority, and `NO`
   denominator change.
 
@@ -61,7 +63,8 @@ a split, mutate a status, change the denominator, or authorize execution.
 
 ## Negative Fixtures
 
-The `fixtures/` directory contains one valid synthetic proposal fixture and nine
+The `fixtures/` directory contains one valid synthetic proposal fixture and
+thirteen
 negative synthetic fixtures. They are validation inputs only and are not future
 decisions or source evidence.
 
@@ -74,8 +77,12 @@ The negative fixtures cover:
 - duplicate child ID;
 - incomplete child partition;
 - overlapping child partition;
-- false conservation claim paired with an incomplete partition;
+- isolated false conservation claim;
 - member outside the frozen parent.
+
+Four additional fixtures cover null, missing, and malformed operative governance
+references. Every negative fixture declares expected failure code(s), and the
+harness requires those codes rather than accepting an unspecified rejection.
 
 The executable test harness proves that the valid fixture is accepted and all
 negative fixtures are rejected.
@@ -99,7 +106,7 @@ state:
 ## Required Terminal
 
 ```text
-E0C_SPLIT_RESOLUTION_DESIGN_R2 = PASS_READY_FOR_INDEPENDENT_REVIEW
+E0C_EXACT12_SPLIT_RESOLUTION_DESIGN_R2R1 = PASS_READY_FOR_INDEPENDENT_REVIEW
 FROZEN_TEMPLATE_COUNT = 12
 FROZEN_RAW_COVERAGE = 203
 CURRENT_REQUEST_MORE_EVIDENCE_COUNT = 12

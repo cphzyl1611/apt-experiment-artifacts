@@ -18,6 +18,7 @@ from copy import deepcopy
 import hashlib
 import json
 from pathlib import Path
+import re
 import sys
 from typing import Any, Iterable, Mapping
 
@@ -38,6 +39,35 @@ EXPECTED_SOURCE_DECISION = "REQUEST_SPLIT_OR_MORE_EVIDENCE"
 EXPECTED_RESOLUTION_STATE = "REQUEST_MORE_EVIDENCE"
 EXPECTED_PLANNING_STATUS = "MANUAL_DESIGN_REQUIRED"
 EXPECTED_SPLIT_STATUS = "NO_CURRENT_SPLIT"
+REFERENCE_PATTERN = re.compile(
+    r"^(?:[A-Za-z][A-Za-z0-9+.-]*://[^\s]+|"
+    r"[A-Za-z0-9][A-Za-z0-9_.-]*(?:/[A-Za-z0-9_.-]+)*"
+    r"(?:#[A-Za-z0-9_./:-]+)?)$"
+)
+
+FIXTURE_EXPECTED_ERROR_CODES = {
+    "NEGATIVE_MALFORMED_CHILD_COUNT": ["R2_CHILD_COUNT_MISMATCH"],
+    "NEGATIVE_MALFORMED_CHILD_HASH": ["R2_CHILD_HASH_MISMATCH"],
+    "NEGATIVE_INVALID_PARENT_IDENTITY": ["R2_PARENT_IDENTITY_MISMATCH"],
+    "NEGATIVE_DUPLICATE_CHILD_ID": ["R2_DUPLICATE_CHILD_ID"],
+    "NEGATIVE_INCOMPLETE_CHILD_PARTITION": ["R2_INCOMPLETE_CHILD_PARTITION"],
+    "NEGATIVE_OVERLAPPING_CHILD_PARTITION": ["R2_OVERLAPPING_CHILD_PARTITION"],
+    "NEGATIVE_FALSE_CONSERVATION_CLAIM": ["C2_FALSE_CONSERVATION_CLAIM"],
+    "NEGATIVE_INVALID_PARENT_HASH": ["R2_PARENT_HASH_MISMATCH"],
+    "NEGATIVE_MEMBER_OUTSIDE_PARENT": ["R2_MEMBER_OUTSIDE_PARENT"],
+    "NEGATIVE_NULL_EVIDENCE_MANIFEST_REFERENCE": [
+        "C1_GOVERNANCE_EVIDENCE_MANIFEST_REFERENCE_REQUIRED"
+    ],
+    "NEGATIVE_NULL_INDEPENDENT_REVIEW_REFERENCE": [
+        "C1_GOVERNANCE_INDEPENDENT_REVIEW_REFERENCE_REQUIRED"
+    ],
+    "NEGATIVE_MISSING_GOVERNANCE_REFERENCE": [
+        "C1_GOVERNANCE_EVIDENCE_MANIFEST_REFERENCE_REQUIRED"
+    ],
+    "NEGATIVE_MALFORMED_GOVERNANCE_REFERENCE": [
+        "C1_GOVERNANCE_EVIDENCE_MANIFEST_REFERENCE_MALFORMED"
+    ],
+}
 
 
 class ValidationResult:
@@ -47,8 +77,21 @@ class ValidationResult:
         self.checks = checks
 
 
+def _reject_duplicate_keys(pairs: list[tuple[str, Any]]) -> dict[str, Any]:
+    result: dict[str, Any] = {}
+    for key, value in pairs:
+        if key in result:
+            raise ValueError(f"duplicate JSON object key: {key!r}")
+        result[key] = value
+    return result
+
+
+def parse_json_text(text: str) -> Any:
+    return json.loads(text, object_pairs_hook=_reject_duplicate_keys)
+
+
 def load_json(path: Path) -> Any:
-    return json.loads(path.read_text(encoding="utf-8"))
+    return parse_json_text(path.read_text(encoding="utf-8"))
 
 
 def load_jsonl(path: Path) -> list[dict[str, Any]]:
@@ -56,7 +99,7 @@ def load_jsonl(path: Path) -> list[dict[str, Any]]:
     for line_number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
         if not line.strip():
             continue
-        value = json.loads(line)
+        value = parse_json_text(line)
         if not isinstance(value, dict):
             raise ValueError(f"{path}:{line_number}: expected object")
         rows.append(value)
@@ -197,6 +240,45 @@ def _compare_value(actual: Mapping[str, Any], key: str, expected: Any, prefix: s
         errors.append(f"{prefix}.{key}: expected {expected!r}, got {actual.get(key)!r}")
 
 
+def _coded_compare_value(
+    actual: Mapping[str, Any],
+    key: str,
+    expected: Any,
+    prefix: str,
+    code: str,
+    errors: list[str],
+) -> None:
+    if actual.get(key) != expected:
+        errors.append(
+            f"{code}: {prefix}.{key}: expected {expected!r}, got {actual.get(key)!r}"
+        )
+
+
+def _governance_reference_errors(future: Mapping[str, Any]) -> list[str]:
+    errors: list[str] = []
+    references = (
+        (
+            "evidence_manifest_reference",
+            "C1_GOVERNANCE_EVIDENCE_MANIFEST_REFERENCE_REQUIRED",
+            "C1_GOVERNANCE_EVIDENCE_MANIFEST_REFERENCE_MALFORMED",
+        ),
+        (
+            "independent_review_reference",
+            "C1_GOVERNANCE_INDEPENDENT_REVIEW_REFERENCE_REQUIRED",
+            "C1_GOVERNANCE_INDEPENDENT_REVIEW_REFERENCE_MALFORMED",
+        ),
+    )
+    for field, required_code, malformed_code in references:
+        value = future.get(field)
+        if value is None or value == "":
+            errors.append(f"{required_code}: future_resolution.{field} is required")
+        elif not isinstance(value, str) or REFERENCE_PATTERN.fullmatch(value) is None:
+            errors.append(
+                f"{malformed_code}: future_resolution.{field} must be a valid reference"
+            )
+    return errors
+
+
 def validate_record(
     record: Mapping[str, Any],
     crosswalk_rows: list[dict[str, Any]],
@@ -232,6 +314,8 @@ def validate_record(
         return ValidationResult(False, errors, checks)
     if future.get("resolution_outcome") != "JUSTIFIED_SPLIT_PROPOSAL":
         errors.append("strict split validator requires resolution_outcome JUSTIFIED_SPLIT_PROPOSAL")
+    else:
+        errors.extend(_governance_reference_errors(future))
     if future.get("outcome_authoritative") is not False:
         errors.append("future_resolution.outcome_authoritative must remain false for an unapplied proposal")
     _compare_value(future, "execution_authorized", False, "future_resolution", errors)
@@ -252,7 +336,8 @@ def validate_record(
         "parent_member_set_reference": expected_identity["member_set_reference"],
     }
     for key, expected_value in parent_expected.items():
-        _compare_value(proposal, key, expected_value, parent_prefix, errors)
+        code = "R2_PARENT_HASH_MISMATCH" if key == "parent_member_set_sha256" else "R2_PARENT_IDENTITY_MISMATCH"
+        _coded_compare_value(proposal, key, expected_value, parent_prefix, code, errors)
 
     parent_keys = set(parent_row["frozen_identity"]["member_keys"])
     children = proposal.get("child_partitions")
@@ -290,18 +375,18 @@ def validate_record(
         hash_ok = child.get("member_set_sha256") == actual_hash
         if not count_ok:
             errors.append(
-                f"{parent_prefix}.child_partitions[{index}].member_count must equal member_keys length"
+                f"R2_CHILD_COUNT_MISMATCH: {parent_prefix}.child_partitions[{index}].member_count must equal member_keys length"
             )
         if not hash_ok:
             errors.append(
-                f"{parent_prefix}.child_partitions[{index}].member_set_sha256 must equal canonical member-key hash"
+                f"R2_CHILD_HASH_MISMATCH: {parent_prefix}.child_partitions[{index}].member_set_sha256 must equal canonical member-key hash"
             )
         if len(key_strings) != len(set(key_strings)):
             errors.append(f"{parent_prefix}.child_partitions[{index}] contains duplicate member keys")
         outside = sorted(set(key_strings) - parent_keys)
         if outside:
             errors.append(
-                f"{parent_prefix}.child_partitions[{index}] contains members outside the frozen parent: {outside}"
+                f"R2_MEMBER_OUTSIDE_PARENT: {parent_prefix}.child_partitions[{index}] contains members outside the frozen parent: {outside}"
             )
         child_hash_results.append({
             "child_id": child_id,
@@ -312,7 +397,7 @@ def validate_record(
 
     duplicate_child_ids = sorted({child_id for child_id, count in Counter(child_ids).items() if count > 1})
     if duplicate_child_ids:
-        errors.append(f"{parent_prefix}.child_partitions child_id values must be unique: {duplicate_child_ids}")
+        errors.append(f"R2_DUPLICATE_CHILD_ID: {parent_prefix}.child_partitions child_id values must be unique: {duplicate_child_ids}")
     if len(set(child_orders)) != len(child_orders):
         errors.append(f"{parent_prefix}.child_partitions child_order values must be unique")
     expected_orders = list(range(1, len(children) + 1))
@@ -340,6 +425,14 @@ def validate_record(
         for right in child_sets[index + 1 :]:
             pairwise_overlap_count += len(left & right)
     union_equals_parent = union_keys == parent_keys and len(union_keys) == len(parent_keys)
+    if unassigned_member_count:
+        errors.append(
+            f"R2_INCOMPLETE_CHILD_PARTITION: {unassigned_member_count} parent members are unassigned"
+        )
+    if pairwise_overlap_count:
+        errors.append(
+            f"R2_OVERLAPPING_CHILD_PARTITION: pairwise overlap count is {pairwise_overlap_count}"
+        )
     child_member_count_sum = sum(len(child.get("member_keys", [])) for child in children if isinstance(child, Mapping) and isinstance(child.get("member_keys"), list))
     count_conserved = child_member_count_sum == expected_identity["member_count"] and duplicate_member_count == 0 and unassigned_member_count == 0
     hashes_recomputed = all(item["member_count_matches"] and item["member_hash_matches"] for item in child_hash_results)
@@ -374,7 +467,14 @@ def validate_record(
         errors.append(f"{parent_prefix}.conservation_result must be an object")
     else:
         for key, expected_value in computed_conservation.items():
-            _compare_value(submitted_conservation, key, expected_value, f"{parent_prefix}.conservation_result", errors)
+            _coded_compare_value(
+                submitted_conservation,
+                key,
+                expected_value,
+                f"{parent_prefix}.conservation_result",
+                "C2_FALSE_CONSERVATION_CLAIM",
+                errors,
+            )
         if submitted_conservation.get("conservation_check_reference") in (None, ""):
             errors.append(f"{parent_prefix}.conservation_result.conservation_check_reference is required")
 
@@ -391,7 +491,14 @@ def validate_record(
         errors.append("future_resolution.member_conservation_check must be an object")
     else:
         for key, expected_value in expected_top_level.items():
-            _compare_value(top_level_conservation, key, expected_value, "future_resolution.member_conservation_check", errors)
+            _coded_compare_value(
+                top_level_conservation,
+                key,
+                expected_value,
+                "future_resolution.member_conservation_check",
+                "C2_FALSE_CONSERVATION_CLAIM",
+                errors,
+            )
 
     _compare_value(proposal, "applied", False, parent_prefix, errors)
     _compare_value(proposal, "execution_authorized", False, parent_prefix, errors)
@@ -460,7 +567,7 @@ def build_valid_record(crosswalk_rows: list[dict[str, Any]]) -> dict[str, Any]:
             "blocked31_overlap_count": 0,
             "conservation_check_reference": "fixture://conservation-check",
         },
-        "independent_partition_review_reference": "fixture://independent-review",
+        "independent_review_reference": "fixture://independent-partition-review",
         "approval_reference": None,
         "applied": False,
         "execution_authorized": False,
@@ -495,7 +602,7 @@ def build_valid_record(crosswalk_rows: list[dict[str, Any]]) -> dict[str, Any]:
             "resolution_outcome": "JUSTIFIED_SPLIT_PROPOSAL",
             "outcome_authoritative": False,
             "evidence_manifest_reference": "fixture://evidence-manifest",
-            "review_record_reference": "fixture://review-record",
+            "independent_review_reference": "fixture://governance-review",
             "member_conservation_check": {
                 "parent_member_count": identity["member_count"],
                 "child_member_count": child_sum,
@@ -544,10 +651,8 @@ def build_negative_records(valid_record: Mapping[str, Any]) -> dict[str, dict[st
     fixtures["NEGATIVE_OVERLAPPING_CHILD_PARTITION"] = record
 
     record = deepcopy(valid_record)
-    record["future_resolution"]["split_proposal"]["conservation_result"]["child_union_equals_parent"] = True
-    record["future_resolution"]["split_proposal"]["conservation_result"]["unassigned_member_count"] = 0
-    record["future_resolution"]["split_proposal"]["conservation_result"]["duplicate_member_count"] = 0
-    record["future_resolution"]["split_proposal"]["child_partitions"][1]["member_keys"].pop()
+    record["future_resolution"]["split_proposal"]["conservation_result"]["child_member_count_sum"] = 48
+    record["future_resolution"]["member_conservation_check"]["child_member_count"] = 48
     fixtures["NEGATIVE_FALSE_CONSERVATION_CLAIM"] = record
 
     record = deepcopy(valid_record)
@@ -559,6 +664,22 @@ def build_negative_records(valid_record: Mapping[str, Any]) -> dict[str, dict[st
         "9999999::S99::A999"
     )
     fixtures["NEGATIVE_MEMBER_OUTSIDE_PARENT"] = record
+
+    record = deepcopy(valid_record)
+    record["future_resolution"]["evidence_manifest_reference"] = None
+    fixtures["NEGATIVE_NULL_EVIDENCE_MANIFEST_REFERENCE"] = record
+
+    record = deepcopy(valid_record)
+    record["future_resolution"]["independent_review_reference"] = None
+    fixtures["NEGATIVE_NULL_INDEPENDENT_REVIEW_REFERENCE"] = record
+
+    record = deepcopy(valid_record)
+    del record["future_resolution"]["evidence_manifest_reference"]
+    fixtures["NEGATIVE_MISSING_GOVERNANCE_REFERENCE"] = record
+
+    record = deepcopy(valid_record)
+    record["future_resolution"]["evidence_manifest_reference"] = "not a valid reference"
+    fixtures["NEGATIVE_MALFORMED_GOVERNANCE_REFERENCE"] = record
 
     return fixtures
 
@@ -575,7 +696,12 @@ def generate_fixtures(crosswalk_rows: list[dict[str, Any]], fixture_dir: Path) -
         (fixture_dir / filename).write_text(
             json.dumps(record, indent=2, ensure_ascii=True) + "\n", encoding="utf-8"
         )
-        manifest.append({"fixture_id": fixture_id, "filename": filename, "expected": "REJECT"})
+        manifest.append({
+            "fixture_id": fixture_id,
+            "filename": filename,
+            "expected": "REJECT",
+            "expected_error_codes": FIXTURE_EXPECTED_ERROR_CODES[fixture_id],
+        })
     (fixture_dir / "FIXTURE_MANIFEST.json").write_text(
         json.dumps({"fixture_type": "NON_AUTHORITATIVE_SPLIT_VALIDATION_ONLY", "fixtures": manifest}, indent=2) + "\n",
         encoding="utf-8",
@@ -589,14 +715,26 @@ def validate_fixture_directory(
     schema = load_json(SCHEMA_FILE)
     valid_path = fixture_dir / "VALID_SPLIT_PROPOSAL_FIXTURE.json"
     valid_result = validate_record(load_json(valid_path), crosswalk_rows, schema=schema)
+    fixture_manifest = load_json(fixture_dir / "FIXTURE_MANIFEST.json")
+    expected_by_filename = {
+        item["filename"]: item.get("expected_error_codes", [])
+        for item in fixture_manifest["fixtures"]
+    }
     negative_results = []
     for path in sorted(fixture_dir.glob("NEGATIVE_*.json")):
         result = validate_record(load_json(path), crosswalk_rows, schema=schema)
+        expected_error_codes = expected_by_filename.get(path.name, [])
+        expected_failure_reasons_satisfied = bool(expected_error_codes) and all(
+            any(error.startswith(code + ":") for error in result.errors)
+            for code in expected_error_codes
+        )
         negative_results.append({
             "filename": path.name,
             "status": "REJECTED" if not result.valid else "ACCEPTED",
             "error_count": len(result.errors),
             "errors": result.errors,
+            "expected_error_codes": expected_error_codes,
+            "expected_failure_reasons_satisfied": expected_failure_reasons_satisfied,
         })
     return {
         "valid_fixture": {
@@ -607,6 +745,9 @@ def validate_fixture_directory(
         },
         "negative_fixtures": negative_results,
         "all_negative_rejected": all(item["status"] == "REJECTED" for item in negative_results),
+        "all_expected_failure_reasons_satisfied": all(
+            item["expected_failure_reasons_satisfied"] for item in negative_results
+        ),
     }
 
 
@@ -618,13 +759,19 @@ def build_evidence(package_dir: Path = PACKAGE_DIR) -> dict[str, Any]:
     classes = [item["evidence_class"] for item in load_json(package_dir / "MORE_EVIDENCE_ACQUISITION_CONTRACT.json")["evidence_request_classes"]]
     fixture_results = validate_fixture_directory(rows, package_dir / "fixtures")
     boundary = load_json(package_dir / "ZERO_MUTATION_BOUNDARY.json")
+    all_fixture_checks_pass = (
+        fixture_results["valid_fixture"]["status"] == "ACCEPTED"
+        and fixture_results["all_negative_rejected"]
+        and fixture_results["all_expected_failure_reasons_satisfied"]
+    )
     terminal = {
-        "E0C_SPLIT_RESOLUTION_DESIGN_R2": "PASS_READY_FOR_INDEPENDENT_REVIEW" if baseline.valid and fixture_results["valid_fixture"]["status"] == "ACCEPTED" and fixture_results["all_negative_rejected"] and {"PARTITION", "GOVERNANCE"}.issubset(classes) else "BLOCKED",
+        "E0C_EXACT12_SPLIT_RESOLUTION_DESIGN_R2R1": "PASS_READY_FOR_INDEPENDENT_REVIEW" if baseline.valid and all_fixture_checks_pass and {"PARTITION", "GOVERNANCE"}.issubset(classes) else "BLOCKED",
         "FROZEN_TEMPLATE_COUNT": baseline.checks["template_count"],
         "FROZEN_RAW_COVERAGE": baseline.checks["raw_count_sum"],
         "CURRENT_REQUEST_MORE_EVIDENCE_COUNT": sum(row["current_state"]["resolution_state"] == EXPECTED_RESOLUTION_STATE for row in rows),
         "SCHEMA_META_VALIDATION": "PASS",
-        "STRICT_SEMANTIC_VALIDATION": "PASS" if fixture_results["valid_fixture"]["status"] == "ACCEPTED" and fixture_results["all_negative_rejected"] else "BLOCKED",
+        "STRICT_SEMANTIC_VALIDATION": "PASS" if all_fixture_checks_pass else "BLOCKED",
+        "NEGATIVE_FIXTURE_REASONS": "PASS" if fixture_results["all_expected_failure_reasons_satisfied"] else "BLOCKED",
         "PARTITION_EVIDENCE_CLASS_PRESENT": "PASS" if "PARTITION" in classes else "BLOCKED",
         "GOVERNANCE_EVIDENCE_CLASS_PRESENT": "PASS" if "GOVERNANCE" in classes else "BLOCKED",
         "EXACT12_MEMBER_CONSERVATION": "PASS" if baseline.valid else "BLOCKED",
@@ -677,7 +824,11 @@ def main(argv: list[str] | None = None) -> int:
         print(f"valid_fixture={fixture_results['valid_fixture']['status']}")
         print(f"negative_fixtures={len(fixture_results['negative_fixtures'])}")
         print(f"all_negative_rejected={fixture_results['all_negative_rejected']}")
-        if fixture_results["valid_fixture"]["status"] != "ACCEPTED" or not fixture_results["all_negative_rejected"]:
+        if (
+            fixture_results["valid_fixture"]["status"] != "ACCEPTED"
+            or not fixture_results["all_negative_rejected"]
+            or not fixture_results["all_expected_failure_reasons_satisfied"]
+        ):
             return 1
     print("baseline=PASS")
     print("strict_validation=PASS")

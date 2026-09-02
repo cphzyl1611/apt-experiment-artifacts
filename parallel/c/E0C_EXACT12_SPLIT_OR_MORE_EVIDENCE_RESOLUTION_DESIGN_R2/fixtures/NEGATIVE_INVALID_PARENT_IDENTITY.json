@@ -26,7 +26,7 @@
     "resolution_outcome": "JUSTIFIED_SPLIT_PROPOSAL",
     "outcome_authoritative": false,
     "evidence_manifest_reference": "fixture://evidence-manifest",
-    "review_record_reference": "fixture://review-record",
+    "independent_review_reference": "fixture://governance-review",
     "member_conservation_check": {
       "parent_member_count": 49,
       "child_member_count": 49,
@@ -152,7 +152,7 @@
         "blocked31_overlap_count": 0,
         "conservation_check_reference": "fixture://conservation-check"
       },
-      "independent_partition_review_reference": "fixture://independent-review",
+      "independent_review_reference": "fixture://independent-partition-review",
       "approval_reference": null,
       "applied": false,
       "execution_authorized": false,

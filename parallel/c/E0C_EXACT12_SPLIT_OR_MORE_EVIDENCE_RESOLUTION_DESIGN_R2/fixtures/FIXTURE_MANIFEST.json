@@ -4,47 +4,106 @@
     {
       "fixture_id": "NEGATIVE_MALFORMED_CHILD_COUNT",
       "filename": "NEGATIVE_MALFORMED_CHILD_COUNT.json",
-      "expected": "REJECT"
+      "expected": "REJECT",
+      "expected_error_codes": [
+        "R2_CHILD_COUNT_MISMATCH"
+      ]
     },
     {
       "fixture_id": "NEGATIVE_MALFORMED_CHILD_HASH",
       "filename": "NEGATIVE_MALFORMED_CHILD_HASH.json",
-      "expected": "REJECT"
+      "expected": "REJECT",
+      "expected_error_codes": [
+        "R2_CHILD_HASH_MISMATCH"
+      ]
     },
     {
       "fixture_id": "NEGATIVE_INVALID_PARENT_IDENTITY",
       "filename": "NEGATIVE_INVALID_PARENT_IDENTITY.json",
-      "expected": "REJECT"
+      "expected": "REJECT",
+      "expected_error_codes": [
+        "R2_PARENT_IDENTITY_MISMATCH"
+      ]
     },
     {
       "fixture_id": "NEGATIVE_DUPLICATE_CHILD_ID",
       "filename": "NEGATIVE_DUPLICATE_CHILD_ID.json",
-      "expected": "REJECT"
+      "expected": "REJECT",
+      "expected_error_codes": [
+        "R2_DUPLICATE_CHILD_ID"
+      ]
     },
     {
       "fixture_id": "NEGATIVE_INCOMPLETE_CHILD_PARTITION",
       "filename": "NEGATIVE_INCOMPLETE_CHILD_PARTITION.json",
-      "expected": "REJECT"
+      "expected": "REJECT",
+      "expected_error_codes": [
+        "R2_INCOMPLETE_CHILD_PARTITION"
+      ]
     },
     {
       "fixture_id": "NEGATIVE_OVERLAPPING_CHILD_PARTITION",
       "filename": "NEGATIVE_OVERLAPPING_CHILD_PARTITION.json",
-      "expected": "REJECT"
+      "expected": "REJECT",
+      "expected_error_codes": [
+        "R2_OVERLAPPING_CHILD_PARTITION"
+      ]
     },
     {
       "fixture_id": "NEGATIVE_FALSE_CONSERVATION_CLAIM",
       "filename": "NEGATIVE_FALSE_CONSERVATION_CLAIM.json",
-      "expected": "REJECT"
+      "expected": "REJECT",
+      "expected_error_codes": [
+        "C2_FALSE_CONSERVATION_CLAIM"
+      ]
     },
     {
       "fixture_id": "NEGATIVE_INVALID_PARENT_HASH",
       "filename": "NEGATIVE_INVALID_PARENT_HASH.json",
-      "expected": "REJECT"
+      "expected": "REJECT",
+      "expected_error_codes": [
+        "R2_PARENT_HASH_MISMATCH"
+      ]
     },
     {
       "fixture_id": "NEGATIVE_MEMBER_OUTSIDE_PARENT",
       "filename": "NEGATIVE_MEMBER_OUTSIDE_PARENT.json",
-      "expected": "REJECT"
+      "expected": "REJECT",
+      "expected_error_codes": [
+        "R2_MEMBER_OUTSIDE_PARENT"
+      ]
+    },
+    {
+      "fixture_id": "NEGATIVE_NULL_EVIDENCE_MANIFEST_REFERENCE",
+      "filename": "NEGATIVE_NULL_EVIDENCE_MANIFEST_REFERENCE.json",
+      "expected": "REJECT",
+      "expected_error_codes": [
+        "C1_GOVERNANCE_EVIDENCE_MANIFEST_REFERENCE_REQUIRED"
+      ]
+    },
+    {
+      "fixture_id": "NEGATIVE_NULL_INDEPENDENT_REVIEW_REFERENCE",
+      "filename": "NEGATIVE_NULL_INDEPENDENT_REVIEW_REFERENCE.json",
+      "expected": "REJECT",
+      "expected_error_codes": [
+        "C1_GOVERNANCE_INDEPENDENT_REVIEW_REFERENCE_REQUIRED"
+      ]
+    },
+    {
+      "fixture_id": "NEGATIVE_MISSING_GOVERNANCE_REFERENCE",
+      "filename": "NEGATIVE_MISSING_GOVERNANCE_REFERENCE.json",
+      "expected": "REJECT",
+      "expected_error_codes": [
+        "C1_GOVERNANCE_EVIDENCE_MANIFEST_REFERENCE_REQUIRED"
+      ]
+    },
+    {
+      "fixture_id": "NEGATIVE_MALFORMED_GOVERNANCE_REFERENCE",
+      "filename": "NEGATIVE_MALFORMED_GOVERNANCE_REFERENCE.json",
+      "expected": "REJECT",
+      "expected_error_codes": [
+        "C1_GOVERNANCE_EVIDENCE_MANIFEST_REFERENCE_MALFORMED"
+      ]
     }
   ]
 }

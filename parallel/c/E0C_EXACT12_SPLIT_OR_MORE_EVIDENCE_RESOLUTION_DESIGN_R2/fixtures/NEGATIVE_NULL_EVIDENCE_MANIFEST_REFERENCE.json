@@ -25,11 +25,11 @@
   "future_resolution": {
     "resolution_outcome": "JUSTIFIED_SPLIT_PROPOSAL",
     "outcome_authoritative": false,
-    "evidence_manifest_reference": "fixture://evidence-manifest",
+    "evidence_manifest_reference": null,
     "independent_review_reference": "fixture://governance-review",
     "member_conservation_check": {
       "parent_member_count": 49,
-      "child_member_count": 48,
+      "child_member_count": 49,
       "union_equals_parent": true,
       "pairwise_overlap_count": 0,
       "count_conserved": true,
@@ -140,7 +140,7 @@
       ],
       "conservation_result": {
         "parent_member_count": 49,
-        "child_member_count_sum": 48,
+        "child_member_count_sum": 49,
         "child_union_equals_parent": true,
         "pairwise_child_overlap_count": 0,
         "unassigned_member_count": 0,
