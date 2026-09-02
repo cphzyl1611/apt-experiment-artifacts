@@ -1,0 +1,35 @@
+{
+  "schema": "BINDING_GOVERNANCE_PRINCIPAL_IDENTITY_PERSONAL_IDENTITY_EXCLUSION_RECOMPUTATION_V1",
+  "status": "PASS",
+  "scope": "all six pinned principal-identity payloads",
+  "REAL_NAME_BOUND": "NO",
+  "EMAIL_BOUND": "NO",
+  "GITHUB_IDENTITY_BOUND": "NO",
+  "LEGAL_IDENTITY_BOUND": "NO",
+  "INSTITUTIONAL_IDENTITY_BOUND": "NO",
+  "CRYPTOGRAPHIC_PUBLIC_KEY_IDENTITY_BOUND": "NO",
+  "PERSONAL_IDENTITY_BOUND": "NO",
+  "payload_inspection": {
+    "all_six_payloads_inspected": true,
+    "personal_identity_value_bound": false,
+    "real_name_value_present": false,
+    "email_value_present": false,
+    "github_identity_value_present": false,
+    "legal_identity_value_present": false,
+    "institutional_identity_value_present": false,
+    "cryptographic_public_key_identity_value_present": false,
+    "operating_system_username_value_present": false
+  },
+  "identity_exclusion_is_not_identity_proof": true,
+  "continuity_references": {
+    "role": "optional immutable governance provenance only",
+    "personal_identity_authentication": false,
+    "authority_grant": false,
+    "replacement_for_current_human_designation": false,
+    "initial_designation_requires_prior_reference": false
+  },
+  "git_commit_author_metadata": {
+    "inspected_as_out_of_payload_provenance": true,
+    "treated_as_principal_identity_binding": false
+  }
+}

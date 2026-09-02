@@ -1,0 +1,42 @@
+{
+  "schema": "BINDING_GOVERNANCE_PRINCIPAL_IDENTITY_AUTHORITY_AND_ZERO_EFFECT_RECOMPUTATION_V1",
+  "status": "PASS",
+  "identity_authority_established": {
+    "PRINCIPAL_IDENTITY_DESIGNATED": "YES",
+    "IDENTITY_CONTINUITY_ESTABLISHED": "YES"
+  },
+  "new_substantive_governance_decisions": 0,
+  "NEW_SUBSTANTIVE_GOVERNANCE_DECISIONS": 0,
+  "NEW_GOVERNANCE_SCOPE_APPROVED": "NO",
+  "SOURCE_AUTHORITY_ACTIVATED": "NO",
+  "OPERATIVE_SOURCE_MANIFEST_ENTRIES": 0,
+  "SOURCE_AUTH_EXECUTED": "NO",
+  "MAPPING_EVIDENCE_RECORDS": 0,
+  "STAGE_A_ADMISSIONS": 0,
+  "STAGE_B_EXPOSURES": 0,
+  "FIELD_PINS_CREATED": 0,
+  "P0_EXECUTED": "NO",
+  "P1_EXECUTED": "NO",
+  "BINDING_PUBLICATION": "NO",
+  "FORMAL_1796_EXPERIMENT_EXECUTED": "NO",
+  "forbidden_authority_or_action_created": {
+    "g1_g2_decision": false,
+    "source_authority": false,
+    "source_owner_authorization": false,
+    "source_artifact_acquisition_authority": false,
+    "canonical_source_manifest_admission": false,
+    "source_auth_execution": false,
+    "mapping_evidence": false,
+    "stage_a": false,
+    "stage_b": false,
+    "field_pin": false,
+    "p0": false,
+    "p1": false,
+    "binding_publication": false,
+    "formal_1796_experiment": false
+  },
+  "preserved_separate_human_decision": "APPROVE_BOTH_G1_AND_G2",
+  "preserved_decision_scope": "FIRST_TRANCHE24_ONLY",
+  "g1_g2_resumed_in_this_task": false,
+  "operational_effect": "IDENTITY_CONTINUITY_ONLY_NO_SUBSTANTIVE_AUTHORITY"
+}

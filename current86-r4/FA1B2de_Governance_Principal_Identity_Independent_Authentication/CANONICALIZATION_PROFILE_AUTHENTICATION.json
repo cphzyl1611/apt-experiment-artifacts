@@ -1,0 +1,25 @@
+{
+  "schema": "BINDING_GOVERNANCE_PRINCIPAL_IDENTITY_CANONICALIZATION_PROFILE_AUTHENTICATION_V1",
+  "status": "PASS",
+  "profile_name": "PROJECT_CANONICAL_JSON_V1",
+  "profile_path": "FA1B2de_Current86_BSO_A2_P0_P1_Execution_Contract_R5/01_canonicalization/PROJECT_CANONICAL_JSON_V1.json",
+  "expected_sha256": "8b7f3e0c11bcef7368e002038b9c7f7cbcf2580aee37506c78d319e18c607c24",
+  "authenticated_exact_file_bytes_sha256": "8b7f3e0c11bcef7368e002038b9c7f7cbcf2580aee37506c78d319e18c607c24",
+  "profile_byte_hash_match": true,
+  "profile": {
+    "arrays": "ORDER_SENSITIVE_UNLESS_SCHEMA_DECLARED_SET",
+    "declared_sets": "FIELD_SPECIFIC_ORDERING_REGISTRY_BEFORE_CANONICALIZATION",
+    "encoding": "UTF-8_WITHOUT_BOM",
+    "filesystem_locale_platform_independence": true,
+    "floating_point": "PROHIBITED",
+    "normative_numbers": "INTEGER_ONLY_EXPLICIT_SCHEMA_RANGE",
+    "object_key_order": "RFC8785_UTF16_CODE_UNIT_ORDER",
+    "raw_file_hash": "SHA256_EXACT_FILE_BYTES",
+    "rfc8785_semantics": true,
+    "schema": "PROJECT_CANONICAL_JSON_V1",
+    "unicode": "NFC_REQUIRED_AND_VALIDATED_NO_SILENT_REWRITE"
+  },
+  "recomputation_uses_authenticated_profile": true,
+  "substitute_procedure_used": false,
+  "profile_path_is_identity_basis_metadata_only": true
+}

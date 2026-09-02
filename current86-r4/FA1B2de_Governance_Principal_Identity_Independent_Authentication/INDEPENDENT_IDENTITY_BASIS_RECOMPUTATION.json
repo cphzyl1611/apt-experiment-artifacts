@@ -1,0 +1,46 @@
+{
+  "schema": "BINDING_GOVERNANCE_PRINCIPAL_IDENTITY_INDEPENDENT_BASIS_RECOMPUTATION_V1",
+  "status": "PASS",
+  "profile_name": "PROJECT_CANONICAL_JSON_V1",
+  "profile_path": "FA1B2de_Current86_BSO_A2_P0_P1_Execution_Contract_R5/01_canonicalization/PROJECT_CANONICAL_JSON_V1.json",
+  "profile_sha256": "8b7f3e0c11bcef7368e002038b9c7f7cbcf2580aee37506c78d319e18c607c24",
+  "basis_members_exactly": [
+    "principal_id",
+    "principal_role",
+    "identity_semantics",
+    "designation_basis",
+    "designation_scope",
+    "project_scope"
+  ],
+  "basis": {
+    "principal_id": "FA1B2DE_PROJECT_OWNER_GOVERNANCE_PRINCIPAL",
+    "principal_role": "PROJECT_OWNER_AND_HUMAN_GOVERNANCE_PRINCIPAL",
+    "identity_semantics": "PROJECT_INTERNAL_ROLE_BASED_PSEUDONYMOUS_IDENTITY",
+    "designation_basis": "EXPLICIT_CURRENT_HUMAN_SELF_DESIGNATION",
+    "designation_scope": "FA1B2DE_PROJECT_GOVERNANCE",
+    "project_scope": "FA1B2de"
+  },
+  "reconstruction_method": {
+    "source": "exact six semantic fields from the authenticated designation and record",
+    "excluded": [
+      "timestamps",
+      "paths",
+      "usernames",
+      "reviewer metadata",
+      "process IDs",
+      "random nonces",
+      "Git metadata",
+      "personal identifiers"
+    ],
+    "object_key_order": "RFC8785_UTF16_CODE_UNIT_ORDER",
+    "encoding": "UTF-8_WITHOUT_BOM",
+    "serialization": "compact JSON with no insignificant whitespace",
+    "stored_canonical_string_copied": false
+  },
+  "independently_recomputed_canonical_json_utf8": "{\"designation_basis\":\"EXPLICIT_CURRENT_HUMAN_SELF_DESIGNATION\",\"designation_scope\":\"FA1B2DE_PROJECT_GOVERNANCE\",\"identity_semantics\":\"PROJECT_INTERNAL_ROLE_BASED_PSEUDONYMOUS_IDENTITY\",\"principal_id\":\"FA1B2DE_PROJECT_OWNER_GOVERNANCE_PRINCIPAL\",\"principal_role\":\"PROJECT_OWNER_AND_HUMAN_GOVERNANCE_PRINCIPAL\",\"project_scope\":\"FA1B2de\"}",
+  "identity_basis_sha256": "3e831ab556e624dd876fd489ffa709cc5edc014ffa04a76747bffcb51071d795",
+  "expected_identity_sha256": "3e831ab556e624dd876fd489ffa709cc5edc014ffa04a76747bffcb51071d795",
+  "identity_sha256_match": true,
+  "principal_semantics_exact_match": true,
+  "project_scope_boundary": "FA1B2de project governance only"
+}
