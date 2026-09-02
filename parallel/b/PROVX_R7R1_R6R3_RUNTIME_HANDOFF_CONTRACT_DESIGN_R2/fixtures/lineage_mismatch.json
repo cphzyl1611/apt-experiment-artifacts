@@ -1,0 +1,10 @@
+{
+  "schema": "PROVX_R7R1_R6R3_AUTHENTICATED_RUNTIME_HANDOFF_R2",
+  "runtime_evidence_present": true,
+  "source_lineage": {
+    "disposition": "AUTHENTICATED",
+    "producer_source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "resolved_commit": "0000000000000000000000000000000000000000",
+    "hashes_match": false
+  }
+}

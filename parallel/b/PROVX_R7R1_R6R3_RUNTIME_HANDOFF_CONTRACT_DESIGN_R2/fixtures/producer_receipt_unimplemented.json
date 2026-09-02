@@ -1,0 +1,10 @@
+{
+  "schema": "PROVX_R7R1_R6R3_AUTHENTICATED_RUNTIME_HANDOFF_R2",
+  "runtime_evidence_present": true,
+  "producer_compatibility": {
+    "receipt_emission_status": "NOT_IMPLEMENTED"
+  },
+  "source_lineage": {
+    "disposition": "SOURCE_LINEAGE_NOT_AUTHENTICATED"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "provx://r7r1/r6r3/authenticated-runtime-handoff/r2/join-identity",
+  "title": "R6R3 PID/Start-Time/Netns Join Identity and Roundtrip Contract R2",
+  "join_schema_id": "R6R3_PID_START_NETNS_JOIN_JSONL_R2",
+  "join_key_fields": ["run_id", "logical_host_id", "pid", "pid_start_time_ticks", "netns_inode", "role"],
+  "join_key_encoding": {
+    "type": "fixed_tuple",
+    "field_order": ["run_id", "logical_host_id", "pid", "pid_start_time_ticks", "netns_inode", "role"],
+    "integer_fields": ["pid", "pid_start_time_ticks", "netns_inode"],
+    "string_fields": ["run_id", "logical_host_id", "role"],
+    "coercion": "REJECT",
+    "missing_field": "REJECT",
+    "null_field": "REJECT"
+  },
+  "normalized_side": {
+    "required_fields": ["run_id", "logical_host_id", "pid", "pid_start_time_ticks", "netns_inode", "role"],
+    "role_source": "normalized_record.role",
+    "role_authenticated": true
+  },
+  "join_side": {
+    "required_fields": ["run_id", "logical_host_id", "pid", "pid_start_time_ticks", "netns_inode", "role", "join_status", "captured_while_alive"],
+    "role_source": "join_record.role",
+    "role_authenticated": true,
+    "join_status_required": "JOINED",
+    "captured_while_alive_required": true
+  },
+  "evaluation": {
+    "index": "join side by exact six-field tuple",
+    "for_each_normalized_process_row": "require exactly one indexed join row",
+    "for_each_join_row": "require its full key is represented by exactly one normalized process-bearing row unless evidence_type is explicitly declared NON_PROCESS_METADATA",
+    "ambiguity": "zero or more than one candidate is BLOCKED",
+    "duplicate": "duplicate full tuples are BLOCKED",
+    "namespace_checks": [
+      "pid > 0",
+      "pid_start_time_ticks > 0",
+      "netns_inode > 0",
+      "logical_host_id belongs to run_identity.logical_hosts",
+      "logical host IDs are unique",
+      "child netns equals declared host shell netns",
+      "distinct logical hosts have distinct declared shell netns where topology requires separation"
+    ],
+    "roundtrip_requirement": "serialize the six fields from either side in field order and recover the identical tuple without inference or dropped role"
+  },
+  "failure_codes": {
+    "missing": "MISSING_JOIN",
+    "ambiguous": "AMBIGUOUS_JOIN",
+    "duplicate": "DUPLICATE_JOIN_KEY",
+    "role_loss": "ROLE_NOT_ROUNDTRIPPABLE",
+    "type_coercion": "JOIN_KEY_TYPE_COERCION",
+    "namespace": "NETNS_JOIN_ASSERTION_FAILED"
+  },
+  "fixture_expectations": {
+    "ambiguous_join.json": "BLOCKED:AMBIGUOUS_JOIN",
+    "role_omitted": "BLOCKED:ROLE_NOT_ROUNDTRIPPABLE",
+    "numeric_string_pid": "BLOCKED:JOIN_KEY_TYPE_COERCION"
+  }
+}

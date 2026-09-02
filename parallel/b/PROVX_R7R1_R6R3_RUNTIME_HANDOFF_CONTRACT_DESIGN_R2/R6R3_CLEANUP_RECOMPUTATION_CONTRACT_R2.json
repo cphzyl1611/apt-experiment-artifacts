@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "provx://r7r1/r6r3/authenticated-runtime-handoff/r2/cleanup-recomputation",
+  "title": "R6R3 Cleanup and Baseline Restoration Recomputation Contract R2",
+  "purpose": "Claims are not trusted. The verifier derives cleanup state from authenticated pre-state, journal, transient contract, residual evidence, and final revalidation artifacts.",
+  "inputs": [
+    {"artifact_id": "r6_audit_pre_state", "schema_id": "R6R3_AUDIT_PRE_STATE_OBJECT_R2", "required": true},
+    {"artifact_id": "r6_rule_remediation_journal", "schema_id": "R6R3_RULE_REMEDIATION_JOURNAL_OBJECT_R2", "required": true},
+    {"artifact_id": "r6_transient_rule_contract", "schema_id": "R6R3_TRANSIENT_RULE_CONTRACT_OBJECT_R2", "required": true},
+    {"artifact_id": "r6_residual_remediation", "schema_id": "R6R3_RESIDUAL_REMEDIATION_OBJECT_R2", "required": true},
+    {"artifact_id": "r6_post_cleanup", "schema_id": "R6R3_POST_CLEANUP_OBJECT_R2", "required": true}
+  ],
+  "derived_sets": {
+    "successful_add_ids": "{entry.rule_id | entry.operation=ADD and entry.result=SUCCESS}",
+    "successful_delete_ids": "{entry.rule_id | entry.operation=DELETE and entry.result=SUCCESS}",
+    "failed_operation_ids": "{entry.rule_id | entry.result=FAILURE}",
+    "allowed_transient_rule_ids": "set(transient_rule_contract.allowed_rule_ids)",
+    "remaining_transient_rule_ids": "set(residual_remediation_evidence.remaining_transient_rules)"
+  },
+  "equations": [
+    {"id": "C001", "assert": "successful_add_ids is nonempty", "failure": "CLEANUP_NO_SUCCESSFUL_ADD"},
+    {"id": "C002", "assert": "successful_delete_ids == successful_add_ids", "failure": "CLEANUP_INVERSE_RULE_SET_MISMATCH"},
+    {"id": "C003", "assert": "successful_add_ids subset_of allowed_transient_rule_ids", "failure": "CLEANUP_RULE_OUTSIDE_TRANSIENT_CONTRACT"},
+    {"id": "C004", "assert": "remaining_transient_rule_ids == empty_set", "failure": "CLEANUP_RESIDUAL_TRANSIENT_RULE"},
+    {"id": "C005", "assert": "residual.baseline_rule_dump_sha256_after == pre_state.baseline_rule_dump_sha256", "failure": "CLEANUP_BASELINE_HASH_MISMATCH"},
+    {"id": "C006", "assert": "residual.persistent_rule_files_sha256_after == pre_state.persistent_rule_files_sha256", "failure": "CLEANUP_PERSISTENT_RULE_FILE_CHANGED"},
+    {"id": "C007", "assert": "journal.global_delete_observed == false", "failure": "CLEANUP_GLOBAL_DELETE_OBSERVED"},
+    {"id": "C008", "assert": "post_cleanup.performed_after_all_reads == true", "failure": "CLEANUP_POST_READ_REVALIDATION_MISSING"},
+    {"id": "C009", "assert": "post_cleanup.audit_lost_events == 0 and post_cleanup.audit_backlog == 0", "failure": "CLEANUP_AUDIT_DRAIN_FAILED"},
+    {"id": "C010", "assert": "all residual process/interface/OVS/tcpdump counts == 0 and topology_residue_zero == true and child_residue_zero == true and tcpdump_residue_zero == true", "failure": "CLEANUP_RESIDUE_REMAINS"}
+  ],
+  "claim_policy": "claimed_inverse_complete and claimed_baseline_restored are diagnostic only; they cannot make a failed equation pass",
+  "failure_policy": "any missing input, malformed object, duplicate key, failed equation, or contradictory evidence blocks"
+}

@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "provx://r7r1/r6r3/authenticated-runtime-handoff/r2/blocker-map",
+  "package": "PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2",
+  "review_basis": "R1 independent review blockers B1-B7",
+  "status": "CLOSED_AT_CONTRACT_LEVEL_READY_FOR_INDEPENDENT_DESIGN_REVIEW",
+  "runtime_evidence_status": "NO_AUTHENTICATED_R6R3_RUNTIME_EVIDENCE_EXISTS",
+  "blockers": [
+    {
+      "blocker_id": "B1",
+      "title": "semantic validation underspecified",
+      "closure_status": "CLOSED_AT_CONTRACT_LEVEL",
+      "evidence": ["R6R3_RUNTIME_HANDOFF_OPERATOR_SEMANTICS_R2.json", "R6R3_RUNTIME_HANDOFF_SCHEMA_R2.json", "R6R3_RUNTIME_ARTIFACT_CONTENT_SCHEMAS_R2.json", "R6R3_RUNTIME_HANDOFF_AUTHENTICATION_RULES_R2.json"],
+      "closure_operators": ["strict_json_object", "strict_jsonl_objects", "manifest_canonical_hash", "same_serial_raw_normalized_bytes", "cleanup_recomputed_from_evidence", "final_canonical_recheck"],
+      "remaining_prerequisite": "Future producer must emit artifacts satisfying the dedicated schemas."
+    },
+    {
+      "blocker_id": "B2",
+      "title": "required artifact IDs not fully path-bound",
+      "closure_status": "CLOSED_AT_CONTRACT_LEVEL",
+      "evidence": ["R6R3_REQUIRED_ARTIFACT_PATH_BINDINGS_R2.json", "R6R3_RUNTIME_HANDOFF_SCHEMA_R2.json"],
+      "closure_operators": ["exact_required_id_set", "exact_artifact_path_binding", "same_exact_runtime_root"],
+      "remaining_prerequisite": "Future producer must supply all twenty exact stable file bindings."
+    },
+    {
+      "blocker_id": "B3",
+      "title": "cleanup claims not independently recomputed",
+      "closure_status": "CLOSED_AT_CONTRACT_LEVEL",
+      "evidence": ["R6R3_CLEANUP_RECOMPUTATION_CONTRACT_R2.json", "R6R3_RUNTIME_HANDOFF_SCHEMA_R2.json"],
+      "closure_operators": ["cleanup_recomputed_from_evidence"],
+      "remaining_prerequisite": "Future producer must emit authenticated pre-state, journal, transient contract, residual evidence, and post-cleanup revalidation."
+    },
+    {
+      "blocker_id": "B4",
+      "title": "privileged-execution receipt undefined and not emitted",
+      "closure_status": "CLOSED_AT_CONTRACT_LEVEL_PRODUCER_PREREQUISITE_OPEN",
+      "evidence": ["R6R3_PRIVILEGED_EXECUTION_RECEIPT_SCHEMA_R2.json", "R6R3_RUNTIME_HANDOFF_SCHEMA_R2.json", "PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2.md"],
+      "closure_operators": ["receipt_exactly_one_invocation", "receipt_matches_privileged_summary"],
+      "remaining_prerequisite": "PRODUCER_RECEIPT_EMISSION_NOT_IMPLEMENTED: current E0-A source snapshot emits no R2 receipt."
+    },
+    {
+      "blocker_id": "B5",
+      "title": "PID/start-time/netns join key not round-trippable",
+      "closure_status": "CLOSED_AT_CONTRACT_LEVEL",
+      "evidence": ["R6R3_JOIN_IDENTITY_AND_ROUNDTRIP_CONTRACT_R2.json", "R6R3_RUNTIME_HANDOFF_SCHEMA_R2.json"],
+      "closure_operators": ["join_key_roundtrip_exact_one"],
+      "remaining_prerequisite": "Future normalized and join records must preserve the exact role-bearing six-field key."
+    },
+    {
+      "blocker_id": "B6",
+      "title": "source lineage not authenticated to committed source",
+      "closure_status": "CLOSED_AT_CONTRACT_LEVEL_FAIL_CLOSED_PREREQUISITE_OPEN",
+      "evidence": ["R6R3_SOURCE_LINEAGE_AUTHENTICATION_R2.md", "R6R3_RUNTIME_HANDOFF_SCHEMA_R2.json", "fixtures/lineage_mismatch.json"],
+      "closure_operators": ["source_artifact_record_lineage"],
+      "remaining_prerequisite": "SOURCE_LINEAGE_NOT_AUTHENTICATED: empty local .git and conflicting prior pins provide no independently resolvable committed producer state."
+    },
+    {
+      "blocker_id": "B7",
+      "title": "exact path semantics ambiguous",
+      "closure_status": "CLOSED_AT_CONTRACT_LEVEL",
+      "evidence": ["R6R3_EXACT_PATH_SEMANTICS_R2.md", "R6R3_REQUIRED_ARTIFACT_PATH_BINDINGS_R2.json", "fixtures/path_traversal.json", "fixtures/symlink_substitution.json"],
+      "closure_operators": ["exact_artifact_path_binding", "same_exact_runtime_root", "final_canonical_recheck"],
+      "remaining_prerequisite": "Future verifier must implement no-follow stable-object semantics or an equivalent fail-closed mechanism."
+    }
+  ],
+  "terminal": "PASS_READY_FOR_INDEPENDENT_DESIGN_REVIEW"
+}

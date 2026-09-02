@@ -1,0 +1,414 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "provx://r7r1/r6r3/authenticated-runtime-handoff/r2/runtime-artifact-content-schemas",
+  "title": "R6R3 Runtime Artifact Content Schemas R2",
+  "description": "Strict content schemas for every manifest-selected runtime artifact. JSONL artifact references identify the schema of each nonblank line. PCAP identifies exact binary bytes rather than parsed packet semantics.",
+  "artifact_schema_refs": {
+    "r6_privileged_result": "#/$defs/privilegedResult",
+    "r6_audit_pre_state": "#/$defs/auditPreState",
+    "r6_lineage": "#/$defs/collectionProvenance",
+    "r6_static_audit": "#/$defs/staticAudit",
+    "r6_pre_run_contract": "#/$defs/preRunContract",
+    "r6_transient_rule_contract": "#/$defs/transientRuleContract",
+    "r6_rule_remediation_journal": "#/$defs/ruleRemediationJournal",
+    "r6_residual_remediation": "#/$defs/residualRemediation",
+    "r6_raw_audit": "#/$defs/rawAuditRecord",
+    "r6_normalized_events": "#/$defs/normalizedEventRecord",
+    "r6_pid_netns_join": "#/$defs/pidNetnsJoinRecord",
+    "r6_strace_oracle_comparison": "#/$defs/straceOracleComparison",
+    "r6_coverage_and_loss": "#/$defs/coverageAndLoss",
+    "r6_post_cleanup": "#/$defs/postCleanup",
+    "r6_child_state_transitions": "#/$defs/childStateTransition",
+    "r6_child_process_evidence": "#/$defs/childProcessEvidence",
+    "r6_early_child_failures": "#/$defs/earlyChildFailure",
+    "r6_audit_smoke_report": "#/$defs/auditSmokeReport",
+    "r6_pcap": "#/$defs/pcapExactBytes",
+    "r6_privileged_execution_receipt": "R6R3_PRIVILEGED_EXECUTION_RECEIPT_SCHEMA_R2.json"
+  },
+  "$defs": {
+    "id": {"type": "string", "minLength": 1, "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"},
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "absolutePath": {"type": "string", "minLength": 2, "pattern": "^/[^\\u0000]*$"},
+    "dateTime": {"type": "string", "format": "date-time"},
+    "eventClass": {"type": "string", "enum": ["PROCESS_START_OR_EXEC", "PROCESS_EXIT", "FILE_CREATE_OR_OPEN", "FILE_READ_OR_WRITE", "FILE_DELETE", "SOCKET_BIND", "SOCKET_CONNECT", "SOCKET_ACCEPT"]},
+    "role": {"type": "string", "enum": ["parent", "child", "shell", "producer"]},
+    "runBound": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema", "run_id", "runtime_root"],
+      "properties": {
+        "schema": {"type": "string", "minLength": 1},
+        "run_id": {"$ref": "#/$defs/id"},
+        "runtime_root": {"$ref": "#/$defs/absolutePath"}
+      }
+    },
+    "privilegedResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema", "run_id", "runtime_root", "status", "classification", "micro_probe_verdict", "micro_probe_cleanup_state", "exit_code", "manifest_sha256"],
+      "properties": {
+        "schema": {"const": "R6R3_PRIVILEGED_RESULT_OBJECT_R2"},
+        "run_id": {"$ref": "#/$defs/id"},
+        "runtime_root": {"$ref": "#/$defs/absolutePath"},
+        "status": {"const": "COMPLETED"},
+        "classification": {"const": "PASS_READY_FOR_GRAPH_NORMALIZATION"},
+        "micro_probe_verdict": {"const": "PASS"},
+        "micro_probe_cleanup_state": {"const": "RULE_REMOVED_BASELINE_RESTORED"},
+        "exit_code": {"const": 0},
+        "manifest_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "auditPreState": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema", "run_id", "runtime_root", "captured_before_mutation", "baseline_rule_dump_sha256", "persistent_rule_files_sha256", "audit_lost_events", "audit_backlog"],
+      "properties": {
+        "schema": {"const": "R6R3_AUDIT_PRE_STATE_OBJECT_R2"},
+        "run_id": {"$ref": "#/$defs/id"},
+        "runtime_root": {"$ref": "#/$defs/absolutePath"},
+        "captured_before_mutation": {"const": true},
+        "baseline_rule_dump_sha256": {"$ref": "#/$defs/sha256"},
+        "persistent_rule_files_sha256": {"$ref": "#/$defs/sha256"},
+        "audit_lost_events": {"const": 0},
+        "audit_backlog": {"const": 0}
+      }
+    },
+    "sourceFile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_id", "path", "sha256"],
+      "properties": {
+        "source_id": {"$ref": "#/$defs/id"},
+        "path": {"$ref": "#/$defs/absolutePath"},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "collectionProvenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema", "run_id", "runtime_root", "manifest_sha256", "source_disposition", "resolved_source_commit", "producer_source", "producer_tests", "collection_start_utc", "collection_end_utc"],
+      "properties": {
+        "schema": {"const": "R6R3_COLLECTION_PROVENANCE_OBJECT_R2"},
+        "run_id": {"$ref": "#/$defs/id"},
+        "runtime_root": {"$ref": "#/$defs/absolutePath"},
+        "manifest_sha256": {"$ref": "#/$defs/sha256"},
+        "source_disposition": {"const": "AUTHENTICATED_COMMITTED_SOURCE"},
+        "resolved_source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "producer_source": {"$ref": "#/$defs/sourceFile"},
+        "producer_tests": {"$ref": "#/$defs/sourceFile"},
+        "collection_start_utc": {"$ref": "#/$defs/dateTime"},
+        "collection_end_utc": {"$ref": "#/$defs/dateTime"}
+      }
+    },
+    "staticAudit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema", "run_id", "runtime_root", "producer_sha256", "tests_sha256", "static_self_check", "forbidden_operations_absent"],
+      "properties": {
+        "schema": {"const": "R6R3_STATIC_AUDIT_OBJECT_R2"},
+        "run_id": {"$ref": "#/$defs/id"},
+        "runtime_root": {"$ref": "#/$defs/absolutePath"},
+        "producer_sha256": {"$ref": "#/$defs/sha256"},
+        "tests_sha256": {"$ref": "#/$defs/sha256"},
+        "static_self_check": {"const": "PASS"},
+        "forbidden_operations_absent": {"const": true}
+      }
+    },
+    "preRunContract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema", "run_id", "runtime_root", "exact_human_command", "producer_path", "producer_sha256", "receipt_required", "required_artifact_ids"],
+      "properties": {
+        "schema": {"const": "R6R3_PRE_RUN_CONTRACT_OBJECT_R2"},
+        "run_id": {"$ref": "#/$defs/id"},
+        "runtime_root": {"$ref": "#/$defs/absolutePath"},
+        "exact_human_command": {"type": "string", "minLength": 1},
+        "producer_path": {"$ref": "#/$defs/absolutePath"},
+        "producer_sha256": {"$ref": "#/$defs/sha256"},
+        "receipt_required": {"const": true},
+        "required_artifact_ids": {"type": "array", "minItems": 20, "maxItems": 20, "uniqueItems": true, "items": {"$ref": "#/$defs/id"}}
+      }
+    },
+    "transientRule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rule_id", "rule_text", "rule_sha256", "audit_key", "watched_path", "pid", "permissions"],
+      "properties": {
+        "rule_id": {"$ref": "#/$defs/id"},
+        "rule_text": {"type": "string", "minLength": 1},
+        "rule_sha256": {"$ref": "#/$defs/sha256"},
+        "audit_key": {"type": "string", "minLength": 1},
+        "watched_path": {"$ref": "#/$defs/absolutePath"},
+        "pid": {"type": "integer", "minimum": 1},
+        "permissions": {"const": "rw"}
+      }
+    },
+    "transientRuleContract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema", "run_id", "runtime_root", "rules", "allowed_rule_ids", "global_delete_forbidden", "persistent_rule_files_must_remain_unchanged"],
+      "properties": {
+        "schema": {"const": "R6R3_TRANSIENT_RULE_CONTRACT_OBJECT_R2"},
+        "run_id": {"$ref": "#/$defs/id"},
+        "runtime_root": {"$ref": "#/$defs/absolutePath"},
+        "rules": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/transientRule"}},
+        "allowed_rule_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/id"}},
+        "global_delete_forbidden": {"const": true},
+        "persistent_rule_files_must_remain_unchanged": {"const": true}
+      }
+    },
+    "journalEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["operation_id", "rule_id", "operation", "result", "rule_sha256", "observed_at_utc"],
+      "properties": {
+        "operation_id": {"$ref": "#/$defs/id"},
+        "rule_id": {"$ref": "#/$defs/id"},
+        "operation": {"enum": ["ADD", "DELETE"]},
+        "result": {"enum": ["SUCCESS", "FAILURE"]},
+        "rule_sha256": {"$ref": "#/$defs/sha256"},
+        "observed_at_utc": {"$ref": "#/$defs/dateTime"}
+      }
+    },
+    "ruleRemediationJournal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema", "run_id", "runtime_root", "entries", "successful_add_ids", "successful_delete_ids", "global_delete_observed"],
+      "properties": {
+        "schema": {"const": "R6R3_RULE_REMEDIATION_JOURNAL_OBJECT_R2"},
+        "run_id": {"$ref": "#/$defs/id"},
+        "runtime_root": {"$ref": "#/$defs/absolutePath"},
+        "entries": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/journalEntry"}},
+        "successful_add_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/id"}},
+        "successful_delete_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/id"}},
+        "global_delete_observed": {"const": false}
+      }
+    },
+    "residualRemediation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema", "run_id", "runtime_root", "remaining_transient_rules", "baseline_rule_dump_sha256_after", "persistent_rule_files_sha256_after", "run_owned_children_remaining", "reserved_test_interfaces_remaining", "reserved_test_ovs_objects_remaining", "tcpdump_process_remaining"],
+      "properties": {
+        "schema": {"const": "R6R3_RESIDUAL_REMEDIATION_OBJECT_R2"},
+        "run_id": {"$ref": "#/$defs/id"},
+        "runtime_root": {"$ref": "#/$defs/absolutePath"},
+        "remaining_transient_rules": {"const": []},
+        "baseline_rule_dump_sha256_after": {"$ref": "#/$defs/sha256"},
+        "persistent_rule_files_sha256_after": {"$ref": "#/$defs/sha256"},
+        "run_owned_children_remaining": {"const": 0},
+        "reserved_test_interfaces_remaining": {"const": 0},
+        "reserved_test_ovs_objects_remaining": {"const": 0},
+        "tcpdump_process_remaining": {"const": 0}
+      }
+    },
+    "rawAuditRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema", "run_id", "serial", "raw_bytes_b64", "raw_sha256", "raw_text", "record_types", "audit_records"],
+      "properties": {
+        "schema": {"const": "R6R3_RAW_AUDIT_RECORD_R2"},
+        "run_id": {"$ref": "#/$defs/id"},
+        "serial": {"type": "integer", "minimum": 1},
+        "raw_bytes_b64": {"type": "string", "minLength": 1, "contentEncoding": "base64"},
+        "raw_sha256": {"$ref": "#/$defs/sha256"},
+        "raw_text": {"type": "string"},
+        "record_types": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "audit_records": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/auditRecord"}}
+      }
+    },
+    "normalizedEventRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema", "run_id", "event_id", "event_type", "raw_serial", "raw_event_bytes_b64", "raw_event_sha256", "logical_host_id", "pid", "pid_start_time_ticks", "netns_inode", "role"],
+      "properties": {
+        "schema": {"const": "R6R3_NORMALIZED_EVENT_RECORD_R2"},
+        "run_id": {"$ref": "#/$defs/id"},
+        "event_id": {"$ref": "#/$defs/id"},
+        "event_type": {"$ref": "#/$defs/eventClass"},
+        "raw_serial": {"type": "integer", "minimum": 1},
+        "raw_event_bytes_b64": {"type": "string", "minLength": 1, "contentEncoding": "base64"},
+        "raw_event_sha256": {"$ref": "#/$defs/sha256"},
+        "logical_host_id": {"$ref": "#/$defs/id"},
+        "pid": {"type": "integer", "minimum": 1},
+        "pid_start_time_ticks": {"type": "integer", "minimum": 1},
+        "netns_inode": {"type": "integer", "minimum": 1},
+        "role": {"$ref": "#/$defs/role"}
+      }
+    },
+    "auditRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["serial", "record_kind", "audit_key", "path_name", "syscall_name", "syscall_success"],
+      "properties": {
+        "serial": {"type": "integer", "minimum": 1},
+        "record_kind": {"enum": ["SYSCALL", "PATH", "OTHER"]},
+        "audit_key": {"type": "string", "minLength": 1},
+        "path_name": {"type": ["string", "null"]},
+        "syscall_name": {"type": ["string", "null"]},
+        "syscall_success": {"type": ["boolean", "null"]}
+      },
+      "allOf": [
+        {"if": {"properties": {"record_kind": {"const": "SYSCALL"}}}, "then": {"required": ["syscall_name", "syscall_success"]}},
+        {"if": {"properties": {"record_kind": {"const": "PATH"}}}, "then": {"required": ["path_name"]}}
+      ]
+    },
+    "pidNetnsJoinRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema", "run_id", "logical_host_id", "pid", "pid_start_time_ticks", "netns_inode", "role", "join_status", "captured_while_alive", "host_shell_netns_inode"],
+      "properties": {
+        "schema": {"const": "R6R3_PID_START_NETNS_JOIN_RECORD_R2"},
+        "run_id": {"$ref": "#/$defs/id"},
+        "logical_host_id": {"$ref": "#/$defs/id"},
+        "pid": {"type": "integer", "minimum": 1},
+        "pid_start_time_ticks": {"type": "integer", "minimum": 1},
+        "netns_inode": {"type": "integer", "minimum": 1},
+        "role": {"$ref": "#/$defs/role"},
+        "join_status": {"const": "JOINED"},
+        "captured_while_alive": {"const": true},
+        "host_shell_netns_inode": {"type": "integer", "minimum": 1}
+      }
+    },
+    "straceOracleComparison": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema", "run_id", "runtime_root", "oracle_only", "used_to_create_audit_events", "comparison_status", "mismatch_count"],
+      "properties": {
+        "schema": {"const": "R6R3_STRACE_ORACLE_COMPARISON_OBJECT_R2"},
+        "run_id": {"$ref": "#/$defs/id"},
+        "runtime_root": {"$ref": "#/$defs/absolutePath"},
+        "oracle_only": {"const": true},
+        "used_to_create_audit_events": {"const": false},
+        "comparison_status": {"const": "PASS"},
+        "mismatch_count": {"const": 0}
+      }
+    },
+    "eventCounts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["PROCESS_START_OR_EXEC", "PROCESS_EXIT", "FILE_CREATE_OR_OPEN", "FILE_READ_OR_WRITE", "FILE_DELETE", "SOCKET_BIND", "SOCKET_CONNECT", "SOCKET_ACCEPT"],
+      "properties": {
+        "PROCESS_START_OR_EXEC": {"type": "integer", "minimum": 1},
+        "PROCESS_EXIT": {"type": "integer", "minimum": 1},
+        "FILE_CREATE_OR_OPEN": {"type": "integer", "minimum": 1},
+        "FILE_READ_OR_WRITE": {"type": "integer", "minimum": 1},
+        "FILE_DELETE": {"type": "integer", "minimum": 1},
+        "SOCKET_BIND": {"type": "integer", "minimum": 1},
+        "SOCKET_CONNECT": {"type": "integer", "minimum": 1},
+        "SOCKET_ACCEPT": {"type": "integer", "minimum": 1}
+      }
+    },
+    "coverageAndLoss": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema", "run_id", "runtime_root", "required_classes", "normalized_class_counts", "raw_record_count", "normalized_event_count", "raw_link_failures", "pid_netns_join_failure_count", "duplicate_raw_serials", "duplicate_event_ids", "audit_lost_events", "audit_backlog", "pcap_sha256"],
+      "properties": {
+        "schema": {"const": "R6R3_COVERAGE_AND_LOSS_OBJECT_R2"},
+        "run_id": {"$ref": "#/$defs/id"},
+        "runtime_root": {"$ref": "#/$defs/absolutePath"},
+        "required_classes": {"const": ["PROCESS_START_OR_EXEC", "PROCESS_EXIT", "FILE_CREATE_OR_OPEN", "FILE_READ_OR_WRITE", "FILE_DELETE", "SOCKET_BIND", "SOCKET_CONNECT", "SOCKET_ACCEPT"]},
+        "normalized_class_counts": {"$ref": "#/$defs/eventCounts"},
+        "raw_record_count": {"type": "integer", "minimum": 1},
+        "normalized_event_count": {"type": "integer", "minimum": 1},
+        "raw_link_failures": {"const": 0},
+        "pid_netns_join_failure_count": {"const": 0},
+        "duplicate_raw_serials": {"const": 0},
+        "duplicate_event_ids": {"const": 0},
+        "audit_lost_events": {"const": 0},
+        "audit_backlog": {"const": 0},
+        "pcap_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "postCleanup": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema", "run_id", "runtime_root", "performed_after_all_reads", "audit_lost_events", "audit_backlog", "baseline_rule_dump_sha256_after", "persistent_rule_files_sha256_after", "baseline_restored", "pcap_sha256"],
+      "properties": {
+        "schema": {"const": "R6R3_POST_CLEANUP_OBJECT_R2"},
+        "run_id": {"$ref": "#/$defs/id"},
+        "runtime_root": {"$ref": "#/$defs/absolutePath"},
+        "performed_after_all_reads": {"const": true},
+        "audit_lost_events": {"const": 0},
+        "audit_backlog": {"const": 0},
+        "baseline_rule_dump_sha256_after": {"$ref": "#/$defs/sha256"},
+        "persistent_rule_files_sha256_after": {"$ref": "#/$defs/sha256"},
+        "baseline_restored": {"const": true},
+        "pcap_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "childStateTransition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema", "run_id", "logical_host_id", "role", "pid", "pid_start_time_ticks", "netns_inode", "from_state", "to_state", "observed_at_utc"],
+      "properties": {
+        "schema": {"const": "R6R3_CHILD_STATE_TRANSITION_RECORD_R2"},
+        "run_id": {"$ref": "#/$defs/id"},
+        "logical_host_id": {"$ref": "#/$defs/id"},
+        "role": {"$ref": "#/$defs/role"},
+        "pid": {"type": "integer", "minimum": 1},
+        "pid_start_time_ticks": {"type": "integer", "minimum": 1},
+        "netns_inode": {"type": "integer", "minimum": 1},
+        "from_state": {"type": "string", "minLength": 1},
+        "to_state": {"type": "string", "minLength": 1},
+        "observed_at_utc": {"$ref": "#/$defs/dateTime"}
+      }
+    },
+    "childProcessEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema", "run_id", "logical_host_id", "role", "pid", "pid_start_time_ticks", "netns_inode", "captured_while_alive", "command_sha256"],
+      "properties": {
+        "schema": {"const": "R6R3_CHILD_PROCESS_EVIDENCE_RECORD_R2"},
+        "run_id": {"$ref": "#/$defs/id"},
+        "logical_host_id": {"$ref": "#/$defs/id"},
+        "role": {"$ref": "#/$defs/role"},
+        "pid": {"type": "integer", "minimum": 1},
+        "pid_start_time_ticks": {"type": "integer", "minimum": 1},
+        "netns_inode": {"type": "integer", "minimum": 1},
+        "captured_while_alive": {"const": true},
+        "command_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "earlyChildFailure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema", "run_id", "logical_host_id", "role", "failure_observed", "failure_code", "observed_at_utc"],
+      "properties": {
+        "schema": {"const": "R6R3_EARLY_CHILD_FAILURE_RECORD_R2"},
+        "run_id": {"$ref": "#/$defs/id"},
+        "logical_host_id": {"$ref": "#/$defs/id"},
+        "role": {"$ref": "#/$defs/role"},
+        "failure_observed": {"type": "boolean"},
+        "failure_code": {"type": ["string", "null"]},
+        "observed_at_utc": {"$ref": "#/$defs/dateTime"}
+      }
+    },
+    "auditSmokeReport": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema", "run_id", "runtime_root", "status", "manifest_sha256", "required_classes", "coverage_artifact_id", "cleanup_artifact_id", "receipt_artifact_id"],
+      "properties": {
+        "schema": {"const": "R6R3_AUDIT_SMOKE_REPORT_OBJECT_R2"},
+        "run_id": {"$ref": "#/$defs/id"},
+        "runtime_root": {"$ref": "#/$defs/absolutePath"},
+        "status": {"const": "PASS"},
+        "manifest_sha256": {"$ref": "#/$defs/sha256"},
+        "required_classes": {"const": ["PROCESS_START_OR_EXEC", "PROCESS_EXIT", "FILE_CREATE_OR_OPEN", "FILE_READ_OR_WRITE", "FILE_DELETE", "SOCKET_BIND", "SOCKET_CONNECT", "SOCKET_ACCEPT"]},
+        "coverage_artifact_id": {"const": "r6_coverage_and_loss"},
+        "cleanup_artifact_id": {"const": "r6_post_cleanup"},
+        "receipt_artifact_id": {"const": "r6_privileged_execution_receipt"}
+      }
+    },
+    "pcapExactBytes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["content_kind", "hash_algorithm", "semantic_parser", "graph_evidence_use"],
+      "properties": {
+        "content_kind": {"const": "EXACT_BINARY_FILE_BYTES"},
+        "hash_algorithm": {"const": "SHA-256"},
+        "semantic_parser": {"const": "NONE_REQUIRED_FOR_AUTHENTICATION"},
+        "graph_evidence_use": {"const": "FORBIDDEN"}
+      }
+    }
+  }
+}

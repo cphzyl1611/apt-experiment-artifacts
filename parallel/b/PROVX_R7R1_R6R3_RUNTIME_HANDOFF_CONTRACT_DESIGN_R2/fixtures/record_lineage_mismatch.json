@@ -1,0 +1,12 @@
+{
+  "raw": {
+    "serial": 7,
+    "raw_bytes_b64": "cmF3LWJ5dGVz",
+    "raw_sha256": "48c2a3cc55bca79baff97910b96c74b906fc5d893a1bc5ccd14d629d3f3ef715"
+  },
+  "normalized": {
+    "raw_serial": 7,
+    "raw_event_bytes_b64": "ZGlmZmVyZW50LWJ5dGVz",
+    "raw_event_sha256": "25e4a8b4235b9eb87928e6bef70ea8d318e31ec5f0be0b8665c95c94cfefe8dd"
+  }
+}

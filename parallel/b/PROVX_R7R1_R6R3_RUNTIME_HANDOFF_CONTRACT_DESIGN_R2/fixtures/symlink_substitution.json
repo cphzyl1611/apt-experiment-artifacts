@@ -1,0 +1,1 @@
+{"path":"/run/root/link/file","runtime_root":"/run/root","symlink_components":["link"],"expected":"BLOCKED:PATH_SYMLINK"}

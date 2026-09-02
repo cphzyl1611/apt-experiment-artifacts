@@ -1,0 +1,11 @@
+{
+  "runtime_root": "/srv/runs/run-1",
+  "entries": [
+    {
+      "artifact_id": "r6_privileged_result",
+      "path": "/srv/runs/run-2/result.json",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "byte_length": 1
+    }
+  ]
+}

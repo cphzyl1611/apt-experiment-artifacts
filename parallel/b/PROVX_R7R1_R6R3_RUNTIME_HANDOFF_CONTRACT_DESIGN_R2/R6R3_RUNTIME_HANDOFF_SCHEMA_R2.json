@@ -1,0 +1,686 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "provx://r7r1/r6r3/authenticated-runtime-handoff/schema/r2",
+  "title": "PROVX R7R1 R6R3 Authenticated Runtime Handoff R2",
+  "description": "Strict handoff envelope for future authenticated R6R3 runtime evidence. A package is consumable only after the R2 rule inventory passes.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "contract_version",
+    "package_type",
+    "handoff_status",
+    "template_status",
+    "runtime_evidence_present",
+    "run_identity",
+    "source_lineage",
+    "hash_lineage",
+    "producer_compatibility",
+    "privileged_execution",
+    "selected_inputs",
+    "file_read_or_write_evidence",
+    "raw_audit_summary",
+    "normalized_event_summary",
+    "identity_join_summary",
+    "event_class_closure",
+    "pcap_authentication",
+    "cleanup_and_restoration",
+    "package_manifest",
+    "canonicalization",
+    "hard_boundaries"
+  ],
+  "properties": {
+    "schema": {"const": "PROVX_R7R1_R6R3_AUTHENTICATED_RUNTIME_HANDOFF_R2"},
+    "contract_version": {"const": "2.0.0"},
+    "package_type": {"const": "R6R3_AUTHENTICATED_RUNTIME_HANDOFF"},
+    "handoff_status": {"const": "E0_A_EMITTED_PENDING_E0B_AUTHENTICATION"},
+    "template_status": {"const": "AUTHENTICATED_RUNTIME_EVIDENCE_ONLY"},
+    "runtime_evidence_present": {"const": true},
+    "run_identity": {"$ref": "#/$defs/runIdentity"},
+    "source_lineage": {"$ref": "#/$defs/sourceLineage"},
+    "hash_lineage": {"$ref": "#/$defs/hashLineage"},
+    "producer_compatibility": {"$ref": "#/$defs/producerCompatibility"},
+    "privileged_execution": {"$ref": "#/$defs/privilegedExecution"},
+    "selected_inputs": {"$ref": "#/$defs/selectedInputs"},
+    "file_read_or_write_evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/fileReadOrWriteEvidence"}
+    },
+    "raw_audit_summary": {"$ref": "#/$defs/rawAuditSummary"},
+    "normalized_event_summary": {"$ref": "#/$defs/normalizedEventSummary"},
+    "identity_join_summary": {"$ref": "#/$defs/identityJoinSummary"},
+    "event_class_closure": {"$ref": "#/$defs/eventClassClosure"},
+    "pcap_authentication": {"$ref": "#/$defs/pcapAuthentication"},
+    "cleanup_and_restoration": {"$ref": "#/$defs/cleanupAndRestoration"},
+    "package_manifest": {"$ref": "#/$defs/packageManifest"},
+    "canonicalization": {"$ref": "#/$defs/canonicalization"},
+    "hard_boundaries": {"$ref": "#/$defs/hardBoundaries"}
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+    },
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "commitSha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "absolutePath": {
+      "type": "string",
+      "minLength": 2,
+      "pattern": "^/[^\\u0000]*$"
+    },
+    "dateTime": {"type": "string", "format": "date-time"},
+    "eventClass": {
+      "type": "string",
+      "enum": [
+        "PROCESS_START_OR_EXEC",
+        "PROCESS_EXIT",
+        "FILE_CREATE_OR_OPEN",
+        "FILE_READ_OR_WRITE",
+        "FILE_DELETE",
+        "SOCKET_BIND",
+        "SOCKET_CONNECT",
+        "SOCKET_ACCEPT"
+      ]
+    },
+    "runtimeArtifactId": {
+      "type": "string",
+      "enum": [
+        "r6_privileged_result",
+        "r6_audit_pre_state",
+        "r6_lineage",
+        "r6_static_audit",
+        "r6_pre_run_contract",
+        "r6_transient_rule_contract",
+        "r6_rule_remediation_journal",
+        "r6_residual_remediation",
+        "r6_raw_audit",
+        "r6_normalized_events",
+        "r6_pid_netns_join",
+        "r6_strace_oracle_comparison",
+        "r6_coverage_and_loss",
+        "r6_post_cleanup",
+        "r6_child_state_transitions",
+        "r6_child_process_evidence",
+        "r6_early_child_failures",
+        "r6_audit_smoke_report",
+        "r6_pcap",
+        "r6_privileged_execution_receipt"
+      ]
+    },
+    "logicalHost": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["logical_host_id", "shell_pid", "shell_pid_start_time_ticks", "shell_netns_inode"],
+      "properties": {
+        "logical_host_id": {"$ref": "#/$defs/id"},
+        "shell_pid": {"type": "integer", "minimum": 1},
+        "shell_pid_start_time_ticks": {"type": "integer", "minimum": 1},
+        "shell_netns_inode": {"type": "integer", "minimum": 1}
+      }
+    },
+    "runIdentity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["run_id", "runtime_root", "logical_hosts", "collection_start_utc", "collection_end_utc", "topology"],
+      "properties": {
+        "run_id": {"$ref": "#/$defs/id"},
+        "runtime_root": {"$ref": "#/$defs/absolutePath"},
+        "logical_hosts": {
+          "type": "array",
+          "minItems": 2,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/logicalHost"}
+        },
+        "collection_start_utc": {"$ref": "#/$defs/dateTime"},
+        "collection_end_utc": {"$ref": "#/$defs/dateTime"},
+        "topology": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["host_ids", "topology_id"],
+          "properties": {
+            "host_ids": {"type": "array", "minItems": 2, "uniqueItems": true, "items": {"$ref": "#/$defs/id"}},
+            "topology_id": {"$ref": "#/$defs/id"}
+          }
+        }
+      }
+    },
+    "sourceFile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_id", "path", "sha256", "file_role"],
+      "properties": {
+        "source_id": {"$ref": "#/$defs/id"},
+        "path": {"$ref": "#/$defs/absolutePath"},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "file_role": {"type": "string", "minLength": 1}
+      }
+    },
+    "sourceLineage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["disposition", "design_source", "committed_source", "future_runtime_producer"],
+      "properties": {
+        "disposition": {"enum": ["AUTHENTICATED_COMMITTED_SOURCE", "SOURCE_LINEAGE_NOT_AUTHENTICATED"]},
+        "design_source": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["package_id", "documents"],
+          "properties": {
+            "package_id": {"const": "PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2"},
+            "documents": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/sourceFile"}}
+          }
+        },
+        "committed_source": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["resolved_commit", "resolution_method", "source_files", "hashes_match"],
+          "properties": {
+            "resolved_commit": {"type": ["string", "null"], "pattern": "^[0-9a-f]{40}$"},
+            "resolution_method": {"enum": ["INDEPENDENT_COMMITTED_STATE_RESOLUTION", "UNRESOLVED_LOCAL_SNAPSHOT"]},
+            "source_files": {"type": "array", "items": {"$ref": "#/$defs/sourceFile"}},
+            "hashes_match": {"type": "boolean"}
+          }
+        },
+        "future_runtime_producer": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["producer_id", "harness", "tests", "receipt_emission_required"],
+          "properties": {
+            "producer_id": {"const": "E0-A_R6R3_PRODUCER"},
+            "harness": {"$ref": "#/$defs/sourceFile"},
+            "tests": {"$ref": "#/$defs/sourceFile"},
+            "receipt_emission_required": {"const": true}
+          }
+        }
+      }
+    },
+    "producerCompatibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["runtime_evidence_boundary", "receipt_emission_status", "required_receipt_schema", "producer_must_fail_closed_without_receipt"],
+      "properties": {
+        "runtime_evidence_boundary": {"const": "FUTURE_AUTHENTICATED_R6R3_RUNTIME_ARTIFACTS_ONLY"},
+        "receipt_emission_status": {"enum": ["IMPLEMENTED", "NOT_IMPLEMENTED"]},
+        "required_receipt_schema": {"const": "R6R3_PRIVILEGED_EXECUTION_RECEIPT_R2"},
+        "producer_must_fail_closed_without_receipt": {"const": true}
+      }
+    },
+    "hashLineage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_to_manifest", "artifact_to_record", "same_serial_link"],
+      "properties": {
+        "source_to_manifest": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["source_entry_ids", "binding_kind", "all_source_hashes_recomputed", "all_source_hashes_match"],
+          "properties": {
+            "source_entry_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/id"}},
+            "binding_kind": {"const": "SOURCE_BYTES_HASHED_AND_BOUND_TO_PACKAGE_MANIFEST"},
+            "all_source_hashes_recomputed": {"const": true},
+            "all_source_hashes_match": {"const": true}
+          }
+        },
+        "artifact_to_record": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["raw_artifact_id", "normalized_artifact_id", "raw_file_hash_recomputed", "normalized_file_hash_recomputed", "record_hashes_recomputed"],
+          "properties": {
+            "raw_artifact_id": {"const": "r6_raw_audit"},
+            "normalized_artifact_id": {"const": "r6_normalized_events"},
+            "raw_file_hash_recomputed": {"const": true},
+            "normalized_file_hash_recomputed": {"const": true},
+            "record_hashes_recomputed": {"const": true}
+          }
+        },
+        "same_serial_link": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["raw_artifact_id", "normalized_artifact_id", "join_field", "exact_bytes_equal_required", "exact_hash_equal_required", "link_failure_count"],
+          "properties": {
+            "raw_artifact_id": {"const": "r6_raw_audit"},
+            "normalized_artifact_id": {"const": "r6_normalized_events"},
+            "join_field": {"const": "raw_serial"},
+            "exact_bytes_equal_required": {"const": true},
+            "exact_hash_equal_required": {"const": true},
+            "link_failure_count": {"const": 0}
+          }
+        }
+      }
+    },
+    "privilegedExecution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["explicit_privileged_execution_fact", "execution_receipt_artifact_id", "human_initiated", "effective_uid", "exact_command", "exit_code", "result_status", "classification", "micro_probe_verdict", "micro_probe_cleanup_state", "mininet_executed"],
+      "properties": {
+        "explicit_privileged_execution_fact": {"const": true},
+        "execution_receipt_artifact_id": {"const": "r6_privileged_execution_receipt"},
+        "human_initiated": {"const": true},
+        "effective_uid": {"const": 0},
+        "exact_command": {"type": "string", "minLength": 1},
+        "exit_code": {"const": 0},
+        "result_status": {"const": "COMPLETED"},
+        "classification": {"const": "PASS_READY_FOR_GRAPH_NORMALIZATION"},
+        "micro_probe_verdict": {"const": "PASS"},
+        "micro_probe_cleanup_state": {"const": "RULE_REMOVED_BASELINE_RESTORED"},
+        "mininet_executed": {"const": true}
+      }
+    },
+    "artifactBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "role", "path", "path_form", "runtime_root", "sha256", "byte_length", "object_identity", "status"],
+      "properties": {
+        "artifact_id": {"$ref": "#/$defs/runtimeArtifactId"},
+        "role": {"type": "string", "minLength": 1},
+        "path": {"$ref": "#/$defs/absolutePath"},
+        "path_form": {"const": "ABSOLUTE_CANONICAL_NO_DOT_NO_SYMLINK"},
+        "runtime_root": {"$ref": "#/$defs/absolutePath"},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "byte_length": {"type": "integer", "minimum": 0},
+        "object_identity": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["device", "inode", "mode_type", "lstat_matches_open_fstat"],
+          "properties": {
+            "device": {"type": "integer", "minimum": 0},
+            "inode": {"type": "integer", "minimum": 1},
+            "mode_type": {"const": "REGULAR_FILE"},
+            "lstat_matches_open_fstat": {"const": true}
+          }
+        },
+        "status": {"const": "BOUND_AND_HASHED"}
+      }
+    },
+    "parsedBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "path_binding_artifact_id", "schema_id", "parser", "authenticated_path_source"],
+      "properties": {
+        "artifact_id": {"$ref": "#/$defs/runtimeArtifactId"},
+        "path_binding_artifact_id": {"$ref": "#/$defs/runtimeArtifactId"},
+        "schema_id": {"type": "string", "minLength": 1},
+        "parser": {"enum": ["STRICT_JSON_OBJECT", "STRICT_JSONL_OBJECTS", "EXACT_BINARY_BYTES"]},
+        "authenticated_path_source": {"const": "selected_inputs.path_bindings[artifact_id].path"}
+      }
+    },
+    "selectedInputs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["runtime_root", "path_bindings", "parsed_bindings"],
+      "properties": {
+        "runtime_root": {"$ref": "#/$defs/absolutePath"},
+        "path_bindings": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["r6_privileged_result", "r6_audit_pre_state", "r6_lineage", "r6_static_audit", "r6_pre_run_contract", "r6_transient_rule_contract", "r6_rule_remediation_journal", "r6_residual_remediation", "r6_raw_audit", "r6_normalized_events", "r6_pid_netns_join", "r6_strace_oracle_comparison", "r6_coverage_and_loss", "r6_post_cleanup", "r6_child_state_transitions", "r6_child_process_evidence", "r6_early_child_failures", "r6_audit_smoke_report", "r6_pcap", "r6_privileged_execution_receipt"],
+          "properties": {
+            "r6_privileged_result": {"$ref": "#/$defs/artifactBinding"},
+            "r6_audit_pre_state": {"$ref": "#/$defs/artifactBinding"},
+            "r6_lineage": {"$ref": "#/$defs/artifactBinding"},
+            "r6_static_audit": {"$ref": "#/$defs/artifactBinding"},
+            "r6_pre_run_contract": {"$ref": "#/$defs/artifactBinding"},
+            "r6_transient_rule_contract": {"$ref": "#/$defs/artifactBinding"},
+            "r6_rule_remediation_journal": {"$ref": "#/$defs/artifactBinding"},
+            "r6_residual_remediation": {"$ref": "#/$defs/artifactBinding"},
+            "r6_raw_audit": {"$ref": "#/$defs/artifactBinding"},
+            "r6_normalized_events": {"$ref": "#/$defs/artifactBinding"},
+            "r6_pid_netns_join": {"$ref": "#/$defs/artifactBinding"},
+            "r6_strace_oracle_comparison": {"$ref": "#/$defs/artifactBinding"},
+            "r6_coverage_and_loss": {"$ref": "#/$defs/artifactBinding"},
+            "r6_post_cleanup": {"$ref": "#/$defs/artifactBinding"},
+            "r6_child_state_transitions": {"$ref": "#/$defs/artifactBinding"},
+            "r6_child_process_evidence": {"$ref": "#/$defs/artifactBinding"},
+            "r6_early_child_failures": {"$ref": "#/$defs/artifactBinding"},
+            "r6_audit_smoke_report": {"$ref": "#/$defs/artifactBinding"},
+            "r6_pcap": {"$ref": "#/$defs/artifactBinding"},
+            "r6_privileged_execution_receipt": {"$ref": "#/$defs/artifactBinding"}
+          }
+        },
+        "parsed_bindings": {
+          "type": "array",
+          "minItems": 20,
+          "maxItems": 20,
+          "items": {"$ref": "#/$defs/parsedBinding"}
+        }
+      }
+    },
+    "fileReadOrWriteEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["event_id", "event_type", "run_id", "logical_host_id", "role", "path", "watched_path", "file_identity_paths", "raw_serial", "raw_event_sha256", "evidence_basis", "requested_access", "underlying_syscall", "audit_key", "syscall_record_serial", "path_record_serial", "same_serial_linkage", "raw_bundle_assertions"],
+      "properties": {
+        "event_id": {"$ref": "#/$defs/id"},
+        "event_type": {"const": "FILE_READ_OR_WRITE"},
+        "run_id": {"$ref": "#/$defs/id"},
+        "logical_host_id": {"$ref": "#/$defs/id"},
+        "role": {"enum": ["parent", "child", "shell", "producer"]},
+        "path": {"$ref": "#/$defs/absolutePath"},
+        "watched_path": {"$ref": "#/$defs/absolutePath"},
+        "file_identity_paths": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/absolutePath"}},
+        "raw_serial": {"type": "integer", "minimum": 1},
+        "raw_event_sha256": {"$ref": "#/$defs/sha256"},
+        "evidence_basis": {"const": "AUDIT_FILESYSTEM_PERMISSION_FILTER"},
+        "requested_access": {"enum": ["r", "w", "rw"]},
+        "underlying_syscall": {"enum": ["openat", "openat2", "read", "write", "pread64", "pwrite64", "readv", "writev", "pwritev2"]},
+        "audit_key": {"type": "string", "minLength": 1},
+        "syscall_record_serial": {"type": "integer", "minimum": 1},
+        "path_record_serial": {"type": "integer", "minimum": 1},
+        "same_serial_linkage": {"const": "PASS"},
+        "raw_bundle_assertions": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["contains_syscall_record", "contains_path_record", "syscall_success", "audit_key_exact", "path_exact"],
+          "properties": {
+            "contains_syscall_record": {"const": true},
+            "contains_path_record": {"const": true},
+            "syscall_success": {"const": true},
+            "audit_key_exact": {"const": true},
+            "path_exact": {"const": true}
+          }
+        }
+      }
+    },
+    "rawAuditSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "record_schema_id", "record_count", "serials_unique", "hashes_recomputed", "duplicate_serials"],
+      "properties": {
+        "artifact_id": {"const": "r6_raw_audit"},
+        "record_schema_id": {"const": "R6R3_RAW_AUDIT_JSONL_R2"},
+        "record_count": {"type": "integer", "minimum": 1},
+        "serials_unique": {"const": true},
+        "hashes_recomputed": {"const": true},
+        "duplicate_serials": {"const": 0}
+      }
+    },
+    "normalizedEventSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "record_schema_id", "event_count", "event_ids_unique", "raw_serials_unique", "hashes_recomputed", "role_preserved"],
+      "properties": {
+        "artifact_id": {"const": "r6_normalized_events"},
+        "record_schema_id": {"const": "R6R3_NORMALIZED_EVENT_JSONL_R2"},
+        "event_count": {"type": "integer", "minimum": 1},
+        "event_ids_unique": {"const": true},
+        "raw_serials_unique": {"const": true},
+        "hashes_recomputed": {"const": true},
+        "role_preserved": {"const": true}
+      }
+    },
+    "joinKey": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["run_id", "logical_host_id", "pid", "pid_start_time_ticks", "netns_inode", "role"],
+      "properties": {
+        "run_id": {"$ref": "#/$defs/id"},
+        "logical_host_id": {"$ref": "#/$defs/id"},
+        "pid": {"type": "integer", "minimum": 1},
+        "pid_start_time_ticks": {"type": "integer", "minimum": 1},
+        "netns_inode": {"type": "integer", "minimum": 1},
+        "role": {"enum": ["parent", "child", "shell", "producer"]}
+      }
+    },
+    "identityJoinSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "join_schema_id", "join_key_fields", "exact_one_required", "all_rows_joined", "join_failure_count", "ambiguous_join_count", "namespace_assertions_pass"],
+      "properties": {
+        "artifact_id": {"const": "r6_pid_netns_join"},
+        "join_schema_id": {"const": "R6R3_PID_START_NETNS_JOIN_JSONL_R2"},
+        "join_key_fields": {"const": ["run_id", "logical_host_id", "pid", "pid_start_time_ticks", "netns_inode", "role"]},
+        "exact_one_required": {"const": true},
+        "all_rows_joined": {"const": true},
+        "join_failure_count": {"const": 0},
+        "ambiguous_join_count": {"const": 0},
+        "namespace_assertions_pass": {"const": true}
+      }
+    },
+    "eventClassClosure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required_classes", "normalized_class_counts", "missing_required_classes", "unexpected_event_classes", "file_read_or_write_count", "counts_recomputed", "duplicate_event_ids", "duplicate_raw_serials"],
+      "properties": {
+        "required_classes": {
+          "const": ["PROCESS_START_OR_EXEC", "PROCESS_EXIT", "FILE_CREATE_OR_OPEN", "FILE_READ_OR_WRITE", "FILE_DELETE", "SOCKET_BIND", "SOCKET_CONNECT", "SOCKET_ACCEPT"]
+        },
+        "normalized_class_counts": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["PROCESS_START_OR_EXEC", "PROCESS_EXIT", "FILE_CREATE_OR_OPEN", "FILE_READ_OR_WRITE", "FILE_DELETE", "SOCKET_BIND", "SOCKET_CONNECT", "SOCKET_ACCEPT"],
+          "properties": {
+            "PROCESS_START_OR_EXEC": {"type": "integer", "minimum": 1},
+            "PROCESS_EXIT": {"type": "integer", "minimum": 1},
+            "FILE_CREATE_OR_OPEN": {"type": "integer", "minimum": 1},
+            "FILE_READ_OR_WRITE": {"type": "integer", "minimum": 1},
+            "FILE_DELETE": {"type": "integer", "minimum": 1},
+            "SOCKET_BIND": {"type": "integer", "minimum": 1},
+            "SOCKET_CONNECT": {"type": "integer", "minimum": 1},
+            "SOCKET_ACCEPT": {"type": "integer", "minimum": 1}
+          }
+        },
+        "missing_required_classes": {"const": []},
+        "unexpected_event_classes": {"const": []},
+        "file_read_or_write_count": {"type": "integer", "minimum": 1},
+        "counts_recomputed": {"const": true},
+        "duplicate_event_ids": {"const": 0},
+        "duplicate_raw_serials": {"const": 0}
+      }
+    },
+    "pcapAuthentication": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required", "artifact_id", "path", "sha256", "hash_source_artifact_ids", "hash_matches_all_sources", "authentication_status", "provenance_only", "used_as_graph_edge_source"],
+      "properties": {
+        "required": {"const": true},
+        "artifact_id": {"const": "r6_pcap"},
+        "path": {"$ref": "#/$defs/absolutePath"},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "hash_source_artifact_ids": {"const": ["r6_pcap", "r6_coverage_and_loss", "r6_post_cleanup"]},
+        "hash_matches_all_sources": {"const": true},
+        "authentication_status": {"const": "PASS"},
+        "provenance_only": {"const": true},
+        "used_as_graph_edge_source": {"const": false}
+      }
+    },
+    "cleanupAndRestoration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "pre_state", "rule_remediation_journal", "transient_rule_contract", "residual_remediation_evidence", "post_cleanup_revalidation", "recomputation_required", "claimed_inverse_complete", "claimed_baseline_restored"],
+      "properties": {
+        "status": {"const": "PASS"},
+        "pre_state": {"$ref": "#/$defs/cleanupPreState"},
+        "rule_remediation_journal": {"$ref": "#/$defs/cleanupJournal"},
+        "transient_rule_contract": {"$ref": "#/$defs/transientRuleContract"},
+        "residual_remediation_evidence": {"$ref": "#/$defs/residualRemediation"},
+        "post_cleanup_revalidation": {"$ref": "#/$defs/postCleanupRevalidation"},
+        "recomputation_required": {"const": true},
+        "claimed_inverse_complete": {"const": true},
+        "claimed_baseline_restored": {"const": true}
+      }
+    },
+    "cleanupPreState": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "baseline_rule_dump_sha256", "persistent_rule_files_sha256", "captured_before_mutation"],
+      "properties": {
+        "artifact_id": {"const": "r6_audit_pre_state"},
+        "baseline_rule_dump_sha256": {"$ref": "#/$defs/sha256"},
+        "persistent_rule_files_sha256": {"$ref": "#/$defs/sha256"},
+        "captured_before_mutation": {"const": true}
+      }
+    },
+    "cleanupJournal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "entries", "successful_add_ids", "successful_delete_ids", "global_delete_observed"],
+      "properties": {
+        "artifact_id": {"const": "r6_rule_remediation_journal"},
+        "entries": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/cleanupJournalEntry"}},
+        "successful_add_ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/id"}},
+        "successful_delete_ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/id"}},
+        "global_delete_observed": {"const": false}
+      }
+    },
+    "cleanupJournalEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rule_id", "operation", "result", "rule_hash"],
+      "properties": {
+        "rule_id": {"$ref": "#/$defs/id"},
+        "operation": {"enum": ["ADD", "DELETE"]},
+        "result": {"enum": ["SUCCESS", "FAILURE"]},
+        "rule_hash": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "transientRuleContract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "allowed_rule_ids", "persistent_rule_files_must_remain_unchanged"],
+      "properties": {
+        "artifact_id": {"const": "r6_transient_rule_contract"},
+        "allowed_rule_ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/id"}},
+        "persistent_rule_files_must_remain_unchanged": {"const": true}
+      }
+    },
+    "residualRemediation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "remaining_transient_rules", "baseline_rule_dump_sha256_after", "persistent_rule_files_sha256_after", "run_owned_children_remaining", "reserved_test_interfaces_remaining", "reserved_test_ovs_objects_remaining", "tcpdump_process_remaining", "topology_residue_zero", "child_residue_zero", "tcpdump_residue_zero"],
+      "properties": {
+        "artifact_id": {"const": "r6_residual_remediation"},
+        "remaining_transient_rules": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/id"}},
+        "baseline_rule_dump_sha256_after": {"$ref": "#/$defs/sha256"},
+        "persistent_rule_files_sha256_after": {"$ref": "#/$defs/sha256"},
+        "run_owned_children_remaining": {"const": 0},
+        "reserved_test_interfaces_remaining": {"const": 0},
+        "reserved_test_ovs_objects_remaining": {"const": 0},
+        "tcpdump_process_remaining": {"const": 0},
+        "topology_residue_zero": {"const": true},
+        "child_residue_zero": {"const": true},
+        "tcpdump_residue_zero": {"const": true}
+      }
+    },
+    "postCleanupRevalidation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "performed_after_all_reads", "audit_lost_events", "audit_backlog", "baseline_restored", "pcap_sha256"],
+      "properties": {
+        "artifact_id": {"const": "r6_post_cleanup"},
+        "performed_after_all_reads": {"const": true},
+        "audit_lost_events": {"const": 0},
+        "audit_backlog": {"const": 0},
+        "baseline_restored": {"const": true},
+        "pcap_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "coverageAndLoss": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "required_classes", "normalized_class_counts", "raw_record_count", "normalized_event_count", "raw_link_failures", "pid_netns_join_failure_count", "audit_lost_events", "audit_backlog", "pcap_sha256"],
+      "properties": {
+        "artifact_id": {"const": "r6_coverage_and_loss"},
+        "required_classes": {"const": ["PROCESS_START_OR_EXEC", "PROCESS_EXIT", "FILE_CREATE_OR_OPEN", "FILE_READ_OR_WRITE", "FILE_DELETE", "SOCKET_BIND", "SOCKET_CONNECT", "SOCKET_ACCEPT"]},
+        "normalized_class_counts": {"$ref": "#/$defs/eventClassCounts"},
+        "raw_record_count": {"type": "integer", "minimum": 1},
+        "normalized_event_count": {"type": "integer", "minimum": 1},
+        "raw_link_failures": {"const": 0},
+        "pid_netns_join_failure_count": {"const": 0},
+        "audit_lost_events": {"const": 0},
+        "audit_backlog": {"const": 0},
+        "pcap_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "eventClassCounts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["PROCESS_START_OR_EXEC", "PROCESS_EXIT", "FILE_CREATE_OR_OPEN", "FILE_READ_OR_WRITE", "FILE_DELETE", "SOCKET_BIND", "SOCKET_CONNECT", "SOCKET_ACCEPT"],
+      "properties": {
+        "PROCESS_START_OR_EXEC": {"type": "integer", "minimum": 1},
+        "PROCESS_EXIT": {"type": "integer", "minimum": 1},
+        "FILE_CREATE_OR_OPEN": {"type": "integer", "minimum": 1},
+        "FILE_READ_OR_WRITE": {"type": "integer", "minimum": 1},
+        "FILE_DELETE": {"type": "integer", "minimum": 1},
+        "SOCKET_BIND": {"type": "integer", "minimum": 1},
+        "SOCKET_CONNECT": {"type": "integer", "minimum": 1},
+        "SOCKET_ACCEPT": {"type": "integer", "minimum": 1}
+      }
+    },
+    "rawRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["run_id", "serial", "raw_bytes_b64", "raw_sha256", "raw_text", "record_types"],
+      "properties": {
+        "run_id": {"$ref": "#/$defs/id"},
+        "serial": {"type": "integer", "minimum": 1},
+        "raw_bytes_b64": {"type": "string", "minLength": 1},
+        "raw_sha256": {"$ref": "#/$defs/sha256"},
+        "raw_text": {"type": "string"},
+        "record_types": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "normalizedRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["run_id", "event_id", "event_type", "raw_serial", "raw_event_bytes_b64", "raw_event_sha256", "logical_host_id", "pid", "pid_start_time_ticks", "netns_inode", "role"],
+      "properties": {
+        "run_id": {"$ref": "#/$defs/id"},
+        "event_id": {"$ref": "#/$defs/id"},
+        "event_type": {"$ref": "#/$defs/eventClass"},
+        "raw_serial": {"type": "integer", "minimum": 1},
+        "raw_event_bytes_b64": {"type": "string", "minLength": 1},
+        "raw_event_sha256": {"$ref": "#/$defs/sha256"},
+        "logical_host_id": {"$ref": "#/$defs/id"},
+        "pid": {"type": "integer", "minimum": 1},
+        "pid_start_time_ticks": {"type": "integer", "minimum": 1},
+        "netns_inode": {"type": "integer", "minimum": 1},
+        "role": {"enum": ["parent", "child", "shell", "producer"]}
+      }
+    },
+    "packageManifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["manifest_sha256", "runtime_root", "runtime_entries", "source_entries", "manifest_hash_scope"],
+      "properties": {
+        "manifest_sha256": {"$ref": "#/$defs/sha256"},
+        "runtime_root": {"$ref": "#/$defs/absolutePath"},
+        "runtime_entries": {"type": "array", "minItems": 20, "maxItems": 20, "items": {"$ref": "#/$defs/artifactBinding"}},
+        "source_entries": {"type": "array", "items": {"$ref": "#/$defs/sourceFile"}},
+        "manifest_hash_scope": {"const": "canonical(package_manifest_without_manifest_sha256)"}
+      }
+    },
+    "canonicalization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["json_encoding", "json_object_keys", "json_separators", "ensure_ascii", "line_ending", "bom", "reject_nan_and_infinity", "preserve_array_order", "manifest_hash_excludes"],
+      "properties": {
+        "json_encoding": {"const": "UTF-8"},
+        "json_object_keys": {"const": "sorted_lexicographically"},
+        "json_separators": {"const": [",", ":"]},
+        "ensure_ascii": {"const": false},
+        "line_ending": {"const": "LF"},
+        "bom": {"const": false},
+        "reject_nan_and_infinity": {"const": true},
+        "preserve_array_order": {"const": true},
+        "manifest_hash_excludes": {"const": ["package_manifest.manifest_sha256"]}
+      }
+    },
+    "hardBoundaries": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["r7r1_adapter_changed", "frozen_32d_encoder_changed", "detector_trained", "provx_inference_executed", "formal_experiment_executed", "privileged_commands_executed_by_e0b", "runtime_data_fabricated", "pcap_is_not_graph_edge_source"],
+      "properties": {
+        "r7r1_adapter_changed": {"const": false},
+        "frozen_32d_encoder_changed": {"const": false},
+        "detector_trained": {"const": false},
+        "provx_inference_executed": {"const": false},
+        "formal_experiment_executed": {"const": false},
+        "privileged_commands_executed_by_e0b": {"const": false},
+        "runtime_data_fabricated": {"const": false},
+        "pcap_is_not_graph_edge_source": {"const": true}
+      }
+    }
+  }
+}
