@@ -1,0 +1,205 @@
+{
+  "review_type": "FA1B2DE_BINDING_R1R1_POST_MATERIALIZATION_EXACT_AUTHENTICATION",
+  "review_date": "2026-09-02",
+  "fact_status": "INDEPENDENTLY_RECOMPUTED",
+  "reviewed_repository": "cphzyl1611/apt-experiment-artifacts",
+  "artifact_worktree": "/home/cph/fa1b2de-artifact-worktrees/binding",
+  "artifact_ref": "artifact/binding",
+  "ref_resolution": {
+    "local_ref": "c61fd3627f18634e6dd4b307e31550ce75348cdb",
+    "origin_ref": "c61fd3627f18634e6dd4b307e31550ce75348cdb",
+    "local_ref_matches_pinned_commit": true,
+    "origin_ref_matches_pinned_commit": true
+  },
+  "commit": {
+    "commit_sha": "c61fd3627f18634e6dd4b307e31550ce75348cdb",
+    "parent_sha": "ca5dc55741c0d78b08b2772a6c7f2c81a712d715",
+    "expected_parent_sha": "ca5dc55741c0d78b08b2772a6c7f2c81a712d715",
+    "parent_matches_expected": true,
+    "subject": "materialize binding: FA1B2DE_BINDING_R1R1_EXACT_ARTIFACT_MATERIALIZATION",
+    "expected_subject": "materialize binding: FA1B2DE_BINDING_R1R1_EXACT_ARTIFACT_MATERIALIZATION",
+    "subject_matches_expected": true
+  },
+  "expected_payload_directory": "current86-r4/FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/",
+  "expected_payload_file_count": 12,
+  "recomputed_payload_file_count": 12,
+  "expected_total_payload_byte_length": 182562,
+  "recomputed_source_total_payload_byte_length": 182562,
+  "recomputed_materialized_total_payload_byte_length": 182562,
+  "total_byte_length_matches_expected": true,
+  "files": [
+    {
+      "file": "AUTHORITATIVE_SOURCE_CLASS_POLICY.md",
+      "source_path": "FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/AUTHORITATIVE_SOURCE_CLASS_POLICY.md",
+      "materialized_git_path": "current86-r4/FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/AUTHORITATIVE_SOURCE_CLASS_POLICY.md",
+      "source_bytes": 7418,
+      "materialized_bytes": 7418,
+      "source_sha256": "e4c953b5167a71e88910d7659294096dde8403070f4ec5d0712baee0eb2b32d3",
+      "materialized_sha256": "e4c953b5167a71e88910d7659294096dde8403070f4ec5d0712baee0eb2b32d3",
+      "byte_for_byte_equal": true,
+      "cmp_result": "PASS"
+    },
+    {
+      "file": "BINDING_AUTHORITATIVE_CANONICAL_FIELD_MAPPING_EVIDENCE_DESIGN.md",
+      "source_path": "FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/BINDING_AUTHORITATIVE_CANONICAL_FIELD_MAPPING_EVIDENCE_DESIGN.md",
+      "materialized_git_path": "current86-r4/FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/BINDING_AUTHORITATIVE_CANONICAL_FIELD_MAPPING_EVIDENCE_DESIGN.md",
+      "source_bytes": 9411,
+      "materialized_bytes": 9411,
+      "source_sha256": "8987306c5be9b8be4b5e97a8d4232a4e8b30fe11de20299aa61726c7259580f1",
+      "materialized_sha256": "8987306c5be9b8be4b5e97a8d4232a4e8b30fe11de20299aa61726c7259580f1",
+      "byte_for_byte_equal": true,
+      "cmp_result": "PASS"
+    },
+    {
+      "file": "CANONICAL_FIELD_IDENTITY_MODEL.md",
+      "source_path": "FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/CANONICAL_FIELD_IDENTITY_MODEL.md",
+      "materialized_git_path": "current86-r4/FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/CANONICAL_FIELD_IDENTITY_MODEL.md",
+      "source_bytes": 7686,
+      "materialized_bytes": 7686,
+      "source_sha256": "e170d978ebcf9519102f93f552f48f675798d37cf2d27c3d607d26e64d4ed1ff",
+      "materialized_sha256": "e170d978ebcf9519102f93f552f48f675798d37cf2d27c3d607d26e64d4ed1ff",
+      "byte_for_byte_equal": true,
+      "cmp_result": "PASS"
+    },
+    {
+      "file": "CANONICAL_FIELD_MAPPING_DISPOSITION_POLICY.md",
+      "source_path": "FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/CANONICAL_FIELD_MAPPING_DISPOSITION_POLICY.md",
+      "materialized_git_path": "current86-r4/FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/CANONICAL_FIELD_MAPPING_DISPOSITION_POLICY.md",
+      "source_bytes": 4159,
+      "materialized_bytes": 4159,
+      "source_sha256": "6c8f3eb506c8f5f45caabc5a9b303fcf2a2bf5c3d520349ef5fd48afba933fb8",
+      "materialized_sha256": "6c8f3eb506c8f5f45caabc5a9b303fcf2a2bf5c3d520349ef5fd48afba933fb8",
+      "byte_for_byte_equal": true,
+      "cmp_result": "PASS"
+    },
+    {
+      "file": "CANONICAL_FIELD_MAPPING_EVIDENCE_SCHEMA.json",
+      "source_path": "FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/CANONICAL_FIELD_MAPPING_EVIDENCE_SCHEMA.json",
+      "materialized_git_path": "current86-r4/FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/CANONICAL_FIELD_MAPPING_EVIDENCE_SCHEMA.json",
+      "source_bytes": 42985,
+      "materialized_bytes": 42985,
+      "source_sha256": "709d098e5da8c21229d2481a2c5498e3ee4e48cf957ed67b9d5b2da039a41a6b",
+      "materialized_sha256": "709d098e5da8c21229d2481a2c5498e3ee4e48cf957ed67b9d5b2da039a41a6b",
+      "byte_for_byte_equal": true,
+      "cmp_result": "PASS"
+    },
+    {
+      "file": "CANONICAL_FIELD_MAPPING_PROVENANCE_CONTRACT.json",
+      "source_path": "FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/CANONICAL_FIELD_MAPPING_PROVENANCE_CONTRACT.json",
+      "materialized_git_path": "current86-r4/FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/CANONICAL_FIELD_MAPPING_PROVENANCE_CONTRACT.json",
+      "source_bytes": 9286,
+      "materialized_bytes": 9286,
+      "source_sha256": "bafc78141773f9b359fbe0c81c06378df8913e45e8f11d0fbc9cff2513151a07",
+      "materialized_sha256": "bafc78141773f9b359fbe0c81c06378df8913e45e8f11d0fbc9cff2513151a07",
+      "byte_for_byte_equal": true,
+      "cmp_result": "PASS"
+    },
+    {
+      "file": "CANONICAL_MAPPING_EVIDENCE_VERIFICATION_PLAN.md",
+      "source_path": "FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/CANONICAL_MAPPING_EVIDENCE_VERIFICATION_PLAN.md",
+      "materialized_git_path": "current86-r4/FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/CANONICAL_MAPPING_EVIDENCE_VERIFICATION_PLAN.md",
+      "source_bytes": 8545,
+      "materialized_bytes": 8545,
+      "source_sha256": "7c2c1a38b1fa15507aa5887453d302cf1ddb870491f55db7b11705a971f5e375",
+      "materialized_sha256": "7c2c1a38b1fa15507aa5887453d302cf1ddb870491f55db7b11705a971f5e375",
+      "byte_for_byte_equal": true,
+      "cmp_result": "PASS"
+    },
+    {
+      "file": "CANONICAL_MAPPING_TRANSACTION_MODEL.md",
+      "source_path": "FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/CANONICAL_MAPPING_TRANSACTION_MODEL.md",
+      "materialized_git_path": "current86-r4/FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/CANONICAL_MAPPING_TRANSACTION_MODEL.md",
+      "source_bytes": 8572,
+      "materialized_bytes": 8572,
+      "source_sha256": "a135952a5f856b47e1a5cb0739e8f0dec4a640b0af938a347769dee389f567e6",
+      "materialized_sha256": "a135952a5f856b47e1a5cb0739e8f0dec4a640b0af938a347769dee389f567e6",
+      "byte_for_byte_equal": true,
+      "cmp_result": "PASS"
+    },
+    {
+      "file": "FIRST_TRANCHE_24_MAPPING_EVIDENCE_REQUIREMENTS.jsonl",
+      "source_path": "FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/FIRST_TRANCHE_24_MAPPING_EVIDENCE_REQUIREMENTS.jsonl",
+      "materialized_git_path": "current86-r4/FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/FIRST_TRANCHE_24_MAPPING_EVIDENCE_REQUIREMENTS.jsonl",
+      "source_bytes": 58346,
+      "materialized_bytes": 58346,
+      "source_sha256": "2c88f67ff154c5d6bfa2deb13dc51588b854e1c35ea74dc44749af8b537cb316",
+      "materialized_sha256": "2c88f67ff154c5d6bfa2deb13dc51588b854e1c35ea74dc44749af8b537cb316",
+      "byte_for_byte_equal": true,
+      "cmp_result": "PASS"
+    },
+    {
+      "file": "R1R1_SELF_REVIEW.json",
+      "source_path": "FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/R1R1_SELF_REVIEW.json",
+      "materialized_git_path": "current86-r4/FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/R1R1_SELF_REVIEW.json",
+      "source_bytes": 6467,
+      "materialized_bytes": 6467,
+      "source_sha256": "903448f20c96e29146efcaf94efbeb14a16d71b875e9b4884c74ad2afebca915",
+      "materialized_sha256": "903448f20c96e29146efcaf94efbeb14a16d71b875e9b4884c74ad2afebca915",
+      "byte_for_byte_equal": true,
+      "cmp_result": "PASS"
+    },
+    {
+      "file": "R1_TO_R1R1_BLOCKER_REMEDIATION_MAP.json",
+      "source_path": "FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/R1_TO_R1R1_BLOCKER_REMEDIATION_MAP.json",
+      "materialized_git_path": "current86-r4/FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/R1_TO_R1R1_BLOCKER_REMEDIATION_MAP.json",
+      "source_bytes": 9609,
+      "materialized_bytes": 9609,
+      "source_sha256": "19cdde59d9dd623216576076608b013bb9b6867c74954d6ddff4149ab52fb6d4",
+      "materialized_sha256": "19cdde59d9dd623216576076608b013bb9b6867c74954d6ddff4149ab52fb6d4",
+      "byte_for_byte_equal": true,
+      "cmp_result": "PASS"
+    },
+    {
+      "file": "STAGE_A_STAGE_B_GATE_CONTRACT.json",
+      "source_path": "FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/STAGE_A_STAGE_B_GATE_CONTRACT.json",
+      "materialized_git_path": "current86-r4/FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/STAGE_A_STAGE_B_GATE_CONTRACT.json",
+      "source_bytes": 10078,
+      "materialized_bytes": 10078,
+      "source_sha256": "69698e1cf04470d1aadb9ddff523ce2dd171edb2a976b8b9a07c34c1dbfb9d29",
+      "materialized_sha256": "69698e1cf04470d1aadb9ddff523ce2dd171edb2a976b8b9a07c34c1dbfb9d29",
+      "byte_for_byte_equal": true,
+      "cmp_result": "PASS"
+    }
+  ],
+  "git_scope": {
+    "changed_file_count": 12,
+    "changed_paths_all_under_expected_directory": true,
+    "changed_statuses": ["A"],
+    "deletion_count": 0,
+    "unexpected_changed_paths": [],
+    "unrelated_file_mutation": false,
+    "archive_materialized": false,
+    "manifest_materialized": false,
+    "generated_cache_materialized": false,
+    "hidden_artifact_materialized": false,
+    "changed_paths": [
+      "current86-r4/FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/AUTHORITATIVE_SOURCE_CLASS_POLICY.md",
+      "current86-r4/FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/BINDING_AUTHORITATIVE_CANONICAL_FIELD_MAPPING_EVIDENCE_DESIGN.md",
+      "current86-r4/FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/CANONICAL_FIELD_IDENTITY_MODEL.md",
+      "current86-r4/FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/CANONICAL_FIELD_MAPPING_DISPOSITION_POLICY.md",
+      "current86-r4/FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/CANONICAL_FIELD_MAPPING_EVIDENCE_SCHEMA.json",
+      "current86-r4/FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/CANONICAL_FIELD_MAPPING_PROVENANCE_CONTRACT.json",
+      "current86-r4/FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/CANONICAL_MAPPING_EVIDENCE_VERIFICATION_PLAN.md",
+      "current86-r4/FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/CANONICAL_MAPPING_TRANSACTION_MODEL.md",
+      "current86-r4/FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/FIRST_TRANCHE_24_MAPPING_EVIDENCE_REQUIREMENTS.jsonl",
+      "current86-r4/FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/R1R1_SELF_REVIEW.json",
+      "current86-r4/FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/R1_TO_R1R1_BLOCKER_REMEDIATION_MAP.json",
+      "current86-r4/FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/STAGE_A_STAGE_B_GATE_CONTRACT.json"
+    ]
+  },
+  "source_archive_exclusion": {
+    "path": "FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/r.zip",
+    "bytes": 45310,
+    "sha256": "f125284f006431597f098b22da1cdc70fa92eeb6bb1212ec13689037ff33f07e",
+    "materialized": false,
+    "reason": "Container archive, excluded from the exact 12-file payload inventory."
+  },
+  "authentication_methods": [
+    "Resolved local and origin artifact refs with git rev-parse.",
+    "Authenticated parent and subject from the pinned commit object.",
+    "Authenticated changed paths and statuses with git diff-tree.",
+    "Recomputed SHA-256 from source file bytes and git-show commit bytes.",
+    "Compared extracted commit files to source files with cmp; all 12 comparisons passed.",
+    "Recomputed byte lengths independently; no Git blob ID was used as the byte-authentication substitute."
+  ]
+}
