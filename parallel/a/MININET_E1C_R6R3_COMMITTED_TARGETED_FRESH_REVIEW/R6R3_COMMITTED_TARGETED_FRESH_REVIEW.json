@@ -1,0 +1,62 @@
+{
+  "schema": "MININET_E1C_R6R3_COMMITTED_TARGETED_FRESH_REVIEW_V1",
+  "review_date": "2026-09-02",
+  "review_status": "BLOCKED",
+  "pinned_r6r3_commit": "6aec9e0ed113c17fd729f8ae359fd6d2c30fff0a",
+  "parent_r6r2_fresh_review_blocker_commit": "73bbe957846ca7f4ad84abb417f488af22f74f8a",
+  "track_branch": "artifact/e0-a",
+  "authentication": {
+    "commit_authentication": "PASS",
+    "candidate_hash_authentication": "PASS",
+    "harness_sha256": "4202d3144974355881a398ffb58b28cb016d3add73e8fe7752012d1c76d06428",
+    "test_sha256": "510a4339830a1641737fbefa152d231a45c98f2bca0f185e1e13d1cf473be14d"
+  },
+  "closure": {
+    "subprocess_deadline_closed": "BLOCKED",
+    "timeout_fail_closed": "BLOCKED",
+    "same_serial_audit_bundle": "PASS",
+    "successful_syscall_required": "PASS",
+    "exact_key_path_required": "PASS",
+    "unrelated_false_pass_closed": "PASS",
+    "raw_mode_preserved": "PASS",
+    "audit_rule_scope_unchanged": "PASS",
+    "cleanup_baseline_restoration": "PASS",
+    "static_boundary": "BLOCKED"
+  },
+  "fresh_blocker": {
+    "severity": "HIGH",
+    "source_file": "parallel/a/e1c-r6-run-20260901T060350Z/mininet_e1c_r6_file_access_closure_smoke.py",
+    "collector_line": 1754,
+    "helper_default_timeout_line": 639,
+    "production_call": "run_command_bytes(['/usr/sbin/ausearch', '-k', key, '--raw'])",
+    "violation": "The collector bypasses the 2.0-second monotonic deadline and can use the helper's 30-second default timeout; its generic exception handling does not provide TimeoutExpired fail-closed behavior.",
+    "required_fix": "Use the remaining-budget deadline contract for the full collector and add collector-path timeout coverage."
+  },
+  "tests": {
+    "r6r3_targeted": {"passed": 46, "total": 46, "status": "PASS"},
+    "r6r2_non_regression": {"passed": 33, "total": 33, "status": "PASS"},
+    "r3_regression": {"passed": 8, "total": 8, "status": "PASS"},
+    "r4_regression": {"passed": 7, "total": 7, "status": "PASS"},
+    "r5_regression": {
+      "passed": 11,
+      "total": 12,
+      "status": "SANDBOX_PARTIAL",
+      "blocked_fixture": "test_real_child_bind_failure_emits_child_error_and_state",
+      "sandbox_error": "PermissionError: [Errno 1] Operation not permitted while creating AF_INET SOCK_STREAM"
+    },
+    "py_compile": "PASS",
+    "candidate_remediation_json_parse": "PASS",
+    "git_diff_check": "PASS"
+  },
+  "constraints": {
+    "privileged_command_executed": "NO",
+    "sudo_executed": "NO",
+    "mininet_executed": "NO",
+    "audit_mutation_executed": "NO",
+    "runtime_experiment_executed": "NO",
+    "main_push_executed": "NO",
+    "track_branch_push_executed": "YES"
+  },
+  "next_action": "REMEDIATE_R6R3_FRESH_REVIEW_BLOCKER",
+  "stop": true
+}
