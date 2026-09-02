@@ -1,0 +1,217 @@
+{
+  "schema": "FA1B2DE_CURRENT86_CANONICAL_FIELD_MAPPING_PROVENANCE_CONTRACT_R1R1_V1",
+  "document_status": "DESIGN_ONLY_NON_AUTHORITATIVE",
+  "purpose": "Define the independently recomputable provenance chain for future canonical field mapping evidence without creating mappings, pins, authority, or execution state.",
+  "record_reference_graph": {
+    "creation_topological_order": [
+      "SOURCE_AUTHORITY_ACTIVATION",
+      "CANONICAL_SOURCE_OBJECT_ACQUISITION",
+      "CANONICAL_FIELD_MAPPING_EVIDENCE",
+      "STAGE_A_ADMISSION_RECORD",
+      "STAGE_B_EXPOSURE_RECORD"
+    ],
+    "edge_semantics": "Each edge runs from an already-existing predecessor to the later record that references it; the reference field named on the edge is stored in the later record.",
+    "edges": [
+      {
+        "from": "SOURCE_AUTHORITY_ACTIVATION",
+        "to": "CANONICAL_SOURCE_OBJECT_ACQUISITION",
+        "reference": "authority_activation_record_sha256"
+      },
+      {
+        "from": "SOURCE_AUTHORITY_ACTIVATION",
+        "to": "CANONICAL_FIELD_MAPPING_EVIDENCE",
+        "reference": "source_authority.authority_activation_record_sha256"
+      },
+      {
+        "from": "CANONICAL_SOURCE_OBJECT_ACQUISITION",
+        "to": "CANONICAL_FIELD_MAPPING_EVIDENCE",
+        "reference": "evidence_acquisition.acquisition_record_sha256"
+      },
+      {
+        "from": "CANONICAL_FIELD_MAPPING_EVIDENCE",
+        "to": "STAGE_A_ADMISSION_RECORD",
+        "reference": "mapping_evidence_record_sha256"
+      },
+      {
+        "from": "STAGE_A_ADMISSION_RECORD",
+        "to": "STAGE_B_EXPOSURE_RECORD",
+        "reference": "stage_a_admission_record_sha256"
+      },
+      {
+        "from": "CANONICAL_FIELD_MAPPING_EVIDENCE",
+        "to": "STAGE_B_EXPOSURE_RECORD",
+        "reference": "mapping_evidence_record_sha256"
+      }
+    ],
+    "direction_definition": "Every stored reference is carried by the later record and points to an already-existing predecessor; the normalized graph edges above are listed as predecessor -> dependent. No predecessor may reference a later record.",
+    "acyclicity_rule": "A verifier must topologically sort all referenced records and fail closed on a missing node, dangling hash, self-reference, backward reference, or cycle.",
+    "evidence_stage_a_cycle_status": "CLOSED"
+  },
+  "mapping_record_identity_procedure": {
+    "profile_id": "MAPR1R1_RECORD_ID_V1",
+    "canonicalization_profile_id": "PROJECT_CANONICAL_JSON_V1",
+    "canonicalization_profile_sha256": "8b7f3e0c11bcef7368e002038b9c7f7cbcf2580aee37506c78d319e18c607c24",
+    "identity_fields_in_contract_order": [
+      "target",
+      "source_authority",
+      "source_artifact",
+      "source_object",
+      "canonical_field",
+      "authenticated_value_sha256",
+      "evidence_acquisition",
+      "provenance_links"
+    ],
+    "identity_bytes": "UTF8(PROJECT_CANONICAL_JSON_V1(record_identity.identity_basis))",
+    "hash_algorithm": "SHA-256",
+    "digest_encoding": "64 lowercase hexadecimal characters",
+    "namespace_prefix": "mapev1_sha256_",
+    "byte_serialization": {
+      "encoding": "UTF-8_WITHOUT_BOM",
+      "object_key_order": "RFC8785_UTF16_CODE_UNIT_ORDER",
+      "whitespace": "NONE_OUTSIDE_JSON_TOKENS",
+      "trailing_newline": "FORBIDDEN",
+      "rfc8785_semantics": true,
+      "unicode": "NFC_REQUIRED_AND_VALIDATED_NO_SILENT_REWRITE",
+      "numbers": "INTEGER_ONLY_EXPLICIT_SCHEMA_RANGE",
+      "arrays": "ORDER_SENSITIVE_UNLESS_SCHEMA_DECLARED_SET"
+    },
+    "formula": "mapev1_sha256_ + SHA256(identity_bytes)",
+    "excluded_identity_inputs": [
+      "record_metadata.created_at_utc",
+      "record_metadata.created_by",
+      "record_metadata.display_label",
+      "record_metadata.human_comments",
+      "record_metadata.urls",
+      "review_metadata",
+      "admission_status",
+      "conflict_recomputation_sha256",
+      "lineage",
+      "supersession_or_revocation_references",
+      "stage_a_admission_record_sha256",
+      "stage_b_exposure_record_sha256",
+      "field_pin_decision",
+      "timestamps",
+      "sequence_or_process_ids",
+      "random_values",
+      "candidate_ranking",
+      "candidate_selection",
+      "reviewer_preference"
+    ],
+    "independent_recomputation_required": true,
+    "duplicate_handling": "Identical mapping ID plus byte-identical full evidence record is an idempotent duplicate; retain one logical record.",
+    "reuse_mismatch_handling": "Same mapping ID with changed identity bytes or full record bytes fails closed as MAPPING_RECORD_ID_REUSE_OR_IDENTITY_MISMATCH.",
+    "hash_collision_handling": "Distinct identity bases with the same SHA-256 fail closed as MAPPING_RECORD_HASH_COLLISION; no timestamp, random salt, truncation, or alternate ID is allowed.",
+    "timestamp_or_random_identity": "FORBIDDEN"
+  },
+  "chain": [
+    {
+      "ordinal": 1,
+      "link": "GOVERNED_SOURCE_AUTHORITY_ACTIVATION",
+      "required_claim": "A separately authenticated governance and source-owner authorization activates an exact source-authority ID, scope, class, fact type, owner or issuer, and version policy.",
+      "required_material": [
+        "source_authority_id",
+        "authority_artifact_sha256",
+        "authority_scope_id",
+        "authorized_source_artifact_class",
+        "authorized_source_fact_type",
+        "source_owner_or_issuer_identity",
+        "governance_proof_sha256",
+        "authority_activation_record_sha256"
+      ],
+      "not_inferable_from": ["candidate_hash", "human_prose", "C2R1_comparative_result", "hash_alone"]
+    },
+    {
+      "ordinal": 2,
+      "link": "CANONICAL_SOURCE_OBJECT_ACQUISITION",
+      "required_claim": "The active authority covers one immutable source artifact and exactly one source object resolved by a pinned acquisition proof and deterministic extraction rule.",
+      "required_material": [
+        "source_artifact_identity",
+        "source_artifact_sha256",
+        "source_version_identity",
+        "source_owner_or_issuer_identity",
+        "acquisition_authentication",
+        "source_object_locator",
+        "source_object_locator_sha256",
+        "source_object_sha256",
+        "object_extraction_rule_id",
+        "object_extraction_rule_sha256",
+        "object_match_cardinality"
+      ],
+      "fail_closed_on": ["mutable_reference", "missing_acquisition_proof", "zero_match", "multiple_matches", "hash_mismatch"]
+    },
+    {
+      "ordinal": 3,
+      "link": "IMMUTABLE_CANONICAL_FIELD_MAPPING_EVIDENCE",
+      "required_claim": "An immutable evidence record binds one frozen target to one exact canonical field identity and complete prior provenance.",
+      "required_material": [
+        "mapping_record_id",
+        "mapping_record_identity",
+        "target",
+        "source_authority",
+        "source_object",
+        "canonical_field",
+        "evidence_acquisition",
+        "provenance_chain",
+        "governance_references",
+        "full_evidence_record_sha256"
+      ],
+      "forbidden_back_references": [
+        "stage_a_admission_record_sha256",
+        "stage_b_exposure_record_sha256",
+        "field_pin_decision",
+        "lineage_record_sha256"
+      ],
+      "created_before_stage_a": true
+    },
+    {
+      "ordinal": 4,
+      "link": "STAGE_A_ADMISSION_REVIEW",
+      "required_claim": "An independent reviewer recomputes the already-created evidence bytes and records admission or a fail-closed non-ready result in a separate append-only record.",
+      "required_material": [
+        "mapping_record_id",
+        "mapping_evidence_record_sha256",
+        "target",
+        "mapping_record_id_recomputed",
+        "canonical_field_identity_recomputed",
+        "provenance_chain_complete",
+        "active_lineage_verified",
+        "conflict_recomputation",
+        "decision_status",
+        "independent_reviewer_identity"
+      ],
+      "admission_ready_condition": "All prior links pass, active lineage is valid, and exactly one active non-equivalent mapping identity remains for the target.",
+      "evidence_mutation": "FORBIDDEN"
+    },
+    {
+      "ordinal": 5,
+      "link": "STAGE_B_CANDIDATE_EXPOSURE_ONLY",
+      "required_claim": "Only a verified ADMISSION_READY Stage A record may expose unchanged R8 candidate material for a separate human pin process.",
+      "required_material": [
+        "stage_a_admission_record_sha256",
+        "mapping_evidence_record_sha256",
+        "exact_target_identity",
+        "packet_locator",
+        "packet_sha256",
+        "candidate_object_id",
+        "candidate_object_sha256",
+        "complete_R8_pointer_set",
+        "exact_tuple_equality_result"
+      ],
+      "mismatch_result": "STAGE_B_NOT_EXPOSED_CANDIDATE_LINK_MISMATCH",
+      "explicit_non_effect": "Exposure does not select a pointer, create a field pin, execute source-auth, authorize P0/P1, or publish."
+    }
+  ],
+  "current_state": {
+    "first_tranche_count": 24,
+    "current_more_evidence_count": 24,
+    "authoritative_mapping_records_created": 0,
+    "field_pins_created": 0,
+    "stage_a_status": "ADMISSION_NOT_READY_MISSING_PROVENANCE",
+    "stage_b_status": "FIELD_PIN_NOT_EXPOSED_GATED_ON_ADMISSION",
+    "source_auth_executed": "NO",
+    "p0_executed": "NO",
+    "p1_executed": "NO",
+    "binding_publication": "NO",
+    "r7_r8_r8r1_authority_mutated": "NO"
+  }
+}

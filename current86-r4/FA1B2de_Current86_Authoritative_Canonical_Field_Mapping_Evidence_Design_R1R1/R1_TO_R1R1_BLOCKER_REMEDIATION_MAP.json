@@ -1,0 +1,195 @@
+{
+  "schema": "FA1B2DE_CURRENT86_R1_TO_R1R1_BLOCKER_REMEDIATION_MAP_V1",
+  "document_status": "DESIGN_ONLY_NON_AUTHORITATIVE",
+  "remediation_scope": "BINDING_CANONICAL_FIELD_MAPPING_EVIDENCE_DESIGN_R1_THREE_BLOCKER_REMEDIATION",
+  "pinned_independent_review": {
+    "review_sha256_or_commit": "ca5dc55741c0d78b08b2772a6c7f2c81a712d715",
+    "reviewed_ref": "artifact/binding",
+    "verdict": "BLOCKED",
+    "next_plan": "REMEDIATE_DESIGN_R1"
+  },
+  "source_and_target_packages": {
+    "source_design_package": "FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1",
+    "target_design_package": "FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1",
+    "target_package_artifact_count": 10,
+    "additional_control_artifact_count": 2,
+    "repository_mutation": "NONE"
+  },
+  "blockers": [
+    {
+      "blocker_id": "B1",
+      "review_blocker": "IMMUTABLE_STAGE_A_FORWARD_REFERENCE_CYCLE",
+      "status": "CLOSED",
+      "root_cause": "The evidence and Stage A lifecycle had not been made an explicitly one-way record graph with a separately hashed admission record.",
+      "remediation": {
+        "model": "Immutable evidence record first, then separate append-only Stage A admission record referencing mapping_record_id and full evidence-record SHA-256.",
+        "record_order": [
+          "SOURCE_AUTHORITY_ACTIVATION",
+          "CANONICAL_SOURCE_OBJECT_ACQUISITION",
+          "CANONICAL_FIELD_MAPPING_EVIDENCE",
+          "STAGE_A_ADMISSION_RECORD",
+          "STAGE_B_EXPOSURE_RECORD"
+        ],
+        "evidence_forbidden_back_references": [
+          "stage_a_admission_record_sha256",
+          "stage_b_exposure_record_sha256",
+          "field_pin_decision",
+          "lineage_record_sha256"
+        ],
+        "lineage": {
+          "supersede": "Requires an existing successor record hash.",
+          "revoke": "Has no successor and leaves historical bytes readable but inactive.",
+          "rollback_reactivate": "References an existing prior valid record and has no successor; it recomputes active state without mutation."
+        },
+        "historical_mutation": "FORBIDDEN"
+      },
+      "remediated_files": [
+        "CANONICAL_FIELD_MAPPING_EVIDENCE_SCHEMA.json",
+        "CANONICAL_MAPPING_TRANSACTION_MODEL.md",
+        "CANONICAL_FIELD_MAPPING_PROVENANCE_CONTRACT.json",
+        "STAGE_A_STAGE_B_GATE_CONTRACT.json",
+        "CANONICAL_MAPPING_EVIDENCE_VERIFICATION_PLAN.md",
+        "BINDING_AUTHORITATIVE_CANONICAL_FIELD_MAPPING_EVIDENCE_DESIGN.md"
+      ],
+      "acceptance_checks": [
+        "Evidence schema has no Stage A back-reference.",
+        "Stage A references evidence ID and full evidence hash.",
+        "Stage A schema represents both ADMISSION_READY and fail-closed ADMISSION_NOT_READY outcomes.",
+        "The verifier requires the identity-basis projection to equal the operative evidence fields byte-for-byte.",
+        "Reference graph has an explicit creation topological order.",
+        "SUPERSEDE successor requirement and REVOKE/ROLLBACK no-successor rules are defined.",
+        "No historical record is edited, deleted, or rewritten."
+      ]
+    },
+    {
+      "blocker_id": "B2",
+      "review_blocker": "UNDEFINED_CANONICAL_MAPPING_RECORD_IDENTITY_PROCEDURE",
+      "status": "CLOSED",
+      "root_cause": "The identity field set, canonicalization details, metadata exclusions, and duplicate/collision outcomes were not complete and internally fixed.",
+      "remediation": {
+        "profile_id": "MAPR1R1_RECORD_ID_V1",
+        "identity_fields_in_exact_contract_order": [
+          "target",
+          "source_authority",
+          "source_artifact",
+          "source_object",
+          "canonical_field",
+          "authenticated_value_sha256",
+          "evidence_acquisition",
+          "provenance_links"
+        ],
+        "canonicalization_profile_id": "PROJECT_CANONICAL_JSON_V1",
+        "canonicalization_profile_sha256": "8b7f3e0c11bcef7368e002038b9c7f7cbcf2580aee37506c78d319e18c607c24",
+        "serialization": {
+          "encoding": "UTF-8_WITHOUT_BOM",
+          "object_key_order": "RFC8785_UTF16_CODE_UNIT_ORDER",
+          "whitespace": "NONE_OUTSIDE_JSON_TOKENS",
+          "trailing_newline": "FORBIDDEN",
+          "unicode": "NFC_REQUIRED_AND_VALIDATED_NO_SILENT_REWRITE",
+          "numbers": "INTEGER_ONLY_EXPLICIT_SCHEMA_RANGE",
+          "arrays": "ORDER_SENSITIVE_UNLESS_SCHEMA_DECLARED_SET"
+        },
+        "hash_algorithm": "SHA-256",
+        "digest_encoding": "64 lowercase hexadecimal characters",
+        "namespace_prefix": "mapev1_sha256_",
+        "mutable_metadata_excluded": true,
+        "independent_recomputation": true,
+        "duplicate_rule": "Same ID and byte-identical full evidence record is an idempotent duplicate.",
+        "reuse_mismatch_rule": "Same ID with changed identity or full bytes fails closed as MAPPING_RECORD_ID_REUSE_OR_IDENTITY_MISMATCH.",
+        "collision_rule": "Distinct identity bases with the same SHA-256 fail closed as MAPPING_RECORD_HASH_COLLISION.",
+        "timestamp_or_random_identity": "FORBIDDEN"
+      },
+      "remediated_files": [
+        "CANONICAL_FIELD_MAPPING_EVIDENCE_SCHEMA.json",
+        "CANONICAL_FIELD_IDENTITY_MODEL.md",
+        "CANONICAL_MAPPING_EVIDENCE_VERIFICATION_PLAN.md",
+        "CANONICAL_MAPPING_TRANSACTION_MODEL.md",
+        "BINDING_AUTHORITATIVE_CANONICAL_FIELD_MAPPING_EVIDENCE_DESIGN.md"
+      ],
+      "acceptance_checks": [
+        "Schema constants match the pinned canonicalization profile.",
+        "Identity basis has exactly eight named members in the fixed contract order.",
+        "No timestamp, random, sequence, process, or reviewer preference enters identity.",
+        "Independent ID and full-record hash recomputation is required.",
+        "Duplicate, reuse mismatch, and collision handling are fail-closed."
+      ]
+    },
+    {
+      "blocker_id": "B3",
+      "review_blocker": "MISSING_CANDIDATE_OBJECT_ID_LINKAGE_FOR_STAGE_B",
+      "status": "CLOSED",
+      "root_cause": "Stage B did not normatively bind the exact existing R8 packet, R5/R8 candidate object identity, target tuple, and complete candidate pointer set.",
+      "remediation": {
+        "packet_identity": {
+          "embedded_identifier": "ABSENT_IN_R8_AND_NOT_INVENTED",
+          "locator_profile": "R8_JSONL_SOURCE_LOCATOR_V1",
+          "packet_hash_profile": "R8_PACKET_RAW_JSONL_LINE_SHA256_V1",
+          "hash_bytes": "Exact UTF-8 bytes of one R8 JSONL record without BOM and excluding only its LF line terminator.",
+          "target_selector": ["packet_locator", "target_index", "source_binding_target_id"]
+        },
+        "candidate_object_identity": {
+          "profile_id": "R5_CANDIDATE_WRAPPER_OBJECT_ID_V1",
+          "identity_basis": ["schema", "authority_status", "route_rule_id", "source_binding_target_id", "source_side", "source_key", "source_locator", "source_file_sha256", "row_bytes_sha256"],
+          "equality": [
+            "R5.candidate_object_id",
+            "R8.candidate_wrapper_object_id",
+            "R8.wrapper_object_hash"
+          ],
+          "candidate_object_sha256_recomputed_from_identity_basis": true,
+          "candidate_source_object_sha256_recomputed": true,
+          "candidate_wrapper_record_sha256_recomputed": true
+        },
+        "target_linkage": "Stage B target must equal evidence and packet target byte-for-byte.",
+        "pointer_set": {
+          "profile_id": "R8_POINTER_SET_V1",
+          "source_field": "R8.candidate_scalar_pointers",
+          "element_fields": ["pointer", "value_sha256", "value_type"],
+          "completeness": "Exact full set; no hidden pruning, truncation, addition, deletion, or normalization.",
+          "ordering": "UTF-16 code-unit pointer order after NFC validation"
+        },
+        "stage_a_gate": "Stage B is permitted only after independent Stage A ADMISSION_READY.",
+        "selection": {
+          "auto_selection": false,
+          "selected_canonical_pointer": null,
+          "selected_candidate_object_id": null,
+          "human_pin_decision_separate": true
+        },
+        "mismatch_disposition": "STAGE_B_NOT_EXPOSED_CANDIDATE_LINK_MISMATCH"
+      },
+      "remediated_files": [
+        "CANONICAL_FIELD_MAPPING_EVIDENCE_SCHEMA.json",
+        "STAGE_A_STAGE_B_GATE_CONTRACT.json",
+        "CANONICAL_MAPPING_EVIDENCE_VERIFICATION_PLAN.md",
+        "BINDING_AUTHORITATIVE_CANONICAL_FIELD_MAPPING_EVIDENCE_DESIGN.md"
+      ],
+      "acceptance_checks": [
+        "No invented packet ID is required.",
+        "R5 and R8 candidate object identities are explicit and equal by recomputation.",
+        "Target and complete pointer-set equality are explicit.",
+        "Any linkage mismatch fails closed with the exact disposition.",
+        "Human pin action remains a separate record and no selection is automatic."
+      ]
+    }
+  ],
+  "preserved_boundaries": {
+    "c2r1_is_authority": false,
+    "human_prose_is_source_authority": false,
+    "hash_alone_is_authority": false,
+    "separate_governance_required": true,
+    "separate_source_owner_required": true,
+    "separate_acquisition_required": true,
+    "first_tranche_count": 24,
+    "current_more_evidence_count": 24,
+    "current_authoritative_field_mappings_created": 0,
+    "field_pins_created": 0,
+    "source_auth_executed": "NO",
+    "p0_executed": "NO",
+    "p1_executed": "NO",
+    "binding_publication": "NO",
+    "r7_r8_r8r1_authority_mutated": "NO",
+    "push_executed": "NO",
+    "artifact_repository_mutated": "NO"
+  },
+  "next_action": "EXACT_MATERIALIZATION_OF_R1R1",
+  "stop": true
+}

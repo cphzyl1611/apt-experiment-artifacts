@@ -1,0 +1,145 @@
+{
+  "schema": "FA1B2DE_CURRENT86_STAGE_A_STAGE_B_CANONICAL_MAPPING_GATE_CONTRACT_R1R1_V1",
+  "document_status": "DESIGN_ONLY_NON_AUTHORITATIVE",
+  "record_reference_graph": {
+    "topological_order": [
+      "SOURCE_AUTHORITY_ACTIVATION",
+      "CANONICAL_SOURCE_OBJECT_ACQUISITION",
+      "CANONICAL_FIELD_MAPPING_EVIDENCE",
+      "STAGE_A_ADMISSION_RECORD",
+      "STAGE_B_EXPOSURE_RECORD"
+    ],
+    "evidence_record_rule": "Create and content-address the immutable evidence record before creating the separate Stage A admission record.",
+    "forbidden_record_reference": "CANONICAL_FIELD_MAPPING_EVIDENCE -> STAGE_A_ADMISSION_RECORD (evidence must not reference the later Stage A record)",
+    "cycle_result": "Any forward reference, self-reference, dangling reference, or cycle fails closed."
+  },
+  "stage_a": {
+    "name": "SOURCE_ADMISSION",
+    "ready_status": "ADMISSION_READY",
+    "required_prerequisites": [
+      "The separately governed source authority activation record exists, is active, is in scope, and authorizes AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE with PINNED_CANONICAL_INTRINSIC_FIELD.",
+      "The canonical source-object acquisition record exists before evidence and binds the authority activation hash, immutable source artifact, acquisition proof, version, deterministic extractor, exact locator, exact-one match, and source-object hash.",
+      "The immutable mapping evidence record exists before Stage A, validates against CANONICAL_FIELD_MAPPING_EVIDENCE_SCHEMA.json, and contains no Stage A, Stage B, field-pin, admission, conflict, or lineage back-reference.",
+      "The Stage A record references the evidence mapping_record_id and exact full evidence-record SHA-256; the evidence bytes are not changed after review.",
+      "The exact frozen target identity and target-manifest SHA-256 validate.",
+      "The exact RFC6901 pointer resolves once in the authenticated source object and its field type, canonical value hash, namespace, schema, semantics, and canonicalization profile match the evidence record.",
+      "The canonical field identity and deterministic mapping_record_id recompute from PROJECT_CANONICAL_JSON_V1 using MAPR1R1_RECORD_ID_V1.",
+      "The verifier projects the eight identity-basis members from the operative evidence fields and requires byte-for-byte equality with record_identity.identity_basis; identity_projection_matches_record is accepted only after that recomputation.",
+      "Conflict recomputation returns AUTHORITATIVE_MAPPING_PRESENT with exactly one active non-equivalent canonical field identity for the target.",
+      "No source authority, source object, extraction rule, mapping evidence record, or required governance reference is revoked, stale, superseded, unresolved, or cyclic."
+    ],
+    "independent_review": {
+      "required": true,
+      "method": "INDEPENDENT_RECOMPUTATION_FROM_IMMUTABLE_BYTES",
+      "review_record": "STAGE_A_ADMISSION_RECORD",
+      "review_record_is_separate_from_evidence": true
+    },
+    "prohibited_inputs": [
+      "C2R1 derived comparative evidence as authority",
+      "candidate ranking or similarity",
+      "human prose or reviewer preference as a source object",
+      "alternate-pointer trial or semantic pointer inference",
+      "a field pin or selected candidate pointer",
+      "a hash without independently authenticated authority and provenance"
+    ],
+    "outputs": {
+      "on_success": "ADMISSION_READY",
+      "on_failure": "A separate STAGE_A_ADMISSION_RECORD with decision.status ADMISSION_NOT_READY, the exact fail-closed disposition, stage_b_enabled false, and FIELD_PIN_NOT_EXPOSED_GATED_ON_ADMISSION",
+      "creates_field_pin": false,
+      "selects_candidate_pointer": false,
+      "enables_stage_b_only": true,
+      "executes_source_auth": false
+    }
+  },
+  "stage_b": {
+    "name": "FIELD_PIN_CANDIDATE_EXPOSURE_ONLY",
+    "current_status_before_stage_a": "FIELD_PIN_NOT_EXPOSED_GATED_ON_ADMISSION",
+    "preconditions_for_exposure": [
+      "Stage A has an independently verified ADMISSION_READY record for the exact target.",
+      "The Stage B record references the exact Stage A admission hash and exact mapping evidence full hash.",
+      "The Stage B target object equals the admitted target byte-for-byte: target_index, source_binding_target_id, and target_manifest_sha256.",
+      "The R8 packet is located by the exact source path and jsonl line selector; no embedded packet ID is assumed because the existing R8 packet schema does not provide one.",
+      "packet_sha256 equals SHA-256 of the exact R8 JSONL record bytes in UTF-8, excluding only the line terminator; packet identity uses R8_PACKET_RAW_JSONL_LINE_SHA256_V1 and R8_JSONL_SOURCE_LOCATOR_V1.",
+      "The candidate object is linked exactly: candidate_object_id equals R5 candidate_object_id, R8 candidate_wrapper_object_id, and R8 wrapper_object_hash; candidate_object_sha256 is the same identity digest recomputed from the declared R5 identity basis under R5_CANDIDATE_WRAPPER_OBJECT_ID_V1, while candidate_source_object_sha256 and candidate_wrapper_record_sha256 are independently recomputed byte hashes.",
+      "The candidate object locator identifies the exact R5 wrapper record and its R8 wrapper-object fields; a missing or conflicting locator fails closed.",
+      "The candidate pointer set is copied completely from R8 candidate_scalar_pointers, each pointer/value hash/type tuple is exact, and R8_POINTER_SET_V1 recomputes a sorted unique pointer set digest.",
+      "The admitted exact RFC6901 pointer is present in that complete candidate pointer set; no pointer is added, removed, reordered semantically, or inferred.",
+      "All tuple linkage checks report true. Any mismatch produces STAGE_B_NOT_EXPOSED_CANDIDATE_LINK_MISMATCH and no Stage B exposure record."
+    ],
+    "packet_identity": {
+      "embedded_packet_identifier_status": "ABSENT_IN_R8_AND_MUST_NOT_BE_INVENTED",
+      "identity_basis": [
+        "packet_schema",
+        "packet_locator_profile",
+        "packet_locator",
+        "packet_sha256",
+        "exact_target_identity"
+      ],
+      "raw_bytes": "The exact UTF-8 bytes of the single R8 JSONL record, without a BOM and without its LF line terminator.",
+      "target_selector": "packet_locator plus target_index and source_binding_target_id"
+    },
+    "candidate_object_identity": {
+      "profile_id": "R5_CANDIDATE_WRAPPER_OBJECT_ID_V1",
+      "r5_field": "candidate_object_id",
+      "r8_fields": ["candidate_wrapper_object_id", "wrapper_object_hash"],
+      "identity_basis": ["schema", "authority_status", "route_rule_id", "source_binding_target_id", "source_side", "source_key", "source_locator", "source_file_sha256", "row_bytes_sha256"],
+      "equality_rule": "SHA-256 of the canonical R5 identity basis equals candidate_object_id, candidate_object_sha256, R5 candidate_object_id, R8 candidate_wrapper_object_id, and R8 wrapper_object_hash byte-for-byte; otherwise exposure is not created.",
+      "source_object_hash": "R8 active_source_object_sha256 is a separate hash of the exact candidate source object bytes.",
+      "candidate_object_is_not_authority": true
+    },
+    "candidate_pointer_set_identity": {
+      "profile_id": "R8_POINTER_SET_V1",
+      "source_field": "candidate_scalar_pointers",
+      "element_shape": ["pointer", "value_sha256", "value_type"],
+      "ordering": "Lexicographic by exact pointer string using UTF-16 code-unit order after validating NFC; arrays are otherwise order-sensitive.",
+      "completeness": "The set must equal the full R8 list for the selected packet, with no hidden pruning or top-k truncation.",
+      "admitted_pointer_rule": "The admitted exact pointer must be a member of the recomputed set; membership is linkage, not human selection."
+    },
+    "tuple_linkage": [
+      "Stage A status equals ADMISSION_READY.",
+      "mapping_record_id and mapping evidence hash equal the Stage A references.",
+      "target equals evidence target and packet target.",
+      "candidate_object_id equals the R5 and R8 object identities and candidate_object_sha256.",
+      "candidate pointer set digest and complete pointer tuples equal R8.",
+      "admitted pointer and canonical intrinsic semantics ID equal the Stage A admitted tuple."
+    ],
+    "exposure_effect": "Expose unchanged candidate material and the admitted tuple to a separate governed human field-pin review only.",
+    "explicit_prohibitions": [
+      "Do not auto-select among one or more candidate pointers.",
+      "Do not set selected_canonical_pointer or selected_candidate_object_id to a non-null value.",
+      "Do not treat candidate cardinality, equal values, or a matching C2R1 pointer as approval.",
+      "Do not create a field pin from Stage A or Stage B exposure.",
+      "Do not change R7, R8, R8R1, the candidate packet, or historical decisions.",
+      "Do not execute source-auth, P0, P1, publication, or a formal experiment."
+    ],
+    "human_action_boundary": {
+      "required": true,
+      "decision_is_separate_record": true,
+      "allowed_future_actions": [
+        "APPROVE_EXACT_FIELD_PIN",
+        "REJECT_FIELD_CANDIDATES_KEEP_BLOCKED",
+        "REQUEST_MORE_EVIDENCE"
+      ],
+      "automatic_action": null,
+      "current_field_pin_count": 0
+    }
+  },
+  "global_invariants": [
+    "No Stage B exposure is permitted unless Stage A passes.",
+    "Stage A passage is necessary but not sufficient to create a field pin.",
+    "A mismatch is fail-closed as STAGE_B_NOT_EXPOSED_CANDIDATE_LINK_MISMATCH.",
+    "C2R1 is not authority, human prose is not source authority, and a hash alone is not authority.",
+    "Governance, source-owner authorization, and acquisition authentication remain separate required concerns."
+  ],
+  "current_state": {
+    "first_tranche_count": 24,
+    "current_more_evidence_count": 24,
+    "current_authoritative_field_mappings_created": 0,
+    "field_pins_created": 0,
+    "source_auth_executed": "NO",
+    "p0_executed": "NO",
+    "p1_executed": "NO",
+    "binding_publication": "NO",
+    "r7_r8_r8r1_authority_mutated": "NO"
+  }
+}
