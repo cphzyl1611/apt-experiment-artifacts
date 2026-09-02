@@ -1,0 +1,240 @@
+{
+  "schema": "FA1B2DE_CURRENT86_STAGE_A_CANONICAL_SOURCE_COHORT_CLASSIFICATION_V1",
+  "status": "PREPARATION_ONLY_NON_AUTHORITATIVE",
+  "scope": "FIRST_TRANCHE_24",
+  "primary_cohort_counts": {
+    "DIRECT_CANONICAL_SOURCE_ALREADY_IDENTIFIED": 0,
+    "CANONICAL_SOURCE_EXISTS_BUT_AUTHENTICATION_MISSING": 0,
+    "CANONICAL_SOURCE_CLASS_IDENTIFIED_SOURCE_OBJECT_MISSING": 24,
+    "SOURCE_OWNER_OR_GOVERNANCE_AUTHORIZATION_MISSING": 0,
+    "NO_CURRENT_CANONICAL_SOURCE_CANDIDATE": 0,
+    "EXCEPTION_REQUIRING_DIFFERENT_SOURCE_EVIDENCE_CLASS": 0
+  },
+  "secondary_cohort_counts": {
+    "SOURCE_OWNER_OR_GOVERNANCE_AUTHORIZATION_MISSING": 24
+  },
+  "cohort_interpretation": {
+    "common_acquisition_cohort": "All 24 can enter one preparation/acquisition control cohort because they share the required canonical class/fact type, the same missing canonical source-manifest/extraction-authority blocker, and the same scoring-candidate lineage family.",
+    "target_specific_work": "The exact canonical artifact, version, object locator, extractor result, schema namespace, and RFC6901 pointer remain target-specific and must not be inferred from the scoring candidate.",
+    "exceptions": "None identified in the frozen first tranche; any future source-owner or source-class divergence must split the cohort before execution."
+  },
+  "target_membership": [
+    {
+      "frozen_order": 1,
+      "target_index": 110,
+      "primary_cohort": "CANONICAL_SOURCE_CLASS_IDENTIFIED_SOURCE_OBJECT_MISSING",
+      "secondary_cohorts": [
+        "SOURCE_OWNER_OR_GOVERNANCE_AUTHORIZATION_MISSING"
+      ],
+      "exception": false
+    },
+    {
+      "frozen_order": 2,
+      "target_index": 273,
+      "primary_cohort": "CANONICAL_SOURCE_CLASS_IDENTIFIED_SOURCE_OBJECT_MISSING",
+      "secondary_cohorts": [
+        "SOURCE_OWNER_OR_GOVERNANCE_AUTHORIZATION_MISSING"
+      ],
+      "exception": false
+    },
+    {
+      "frozen_order": 3,
+      "target_index": 210,
+      "primary_cohort": "CANONICAL_SOURCE_CLASS_IDENTIFIED_SOURCE_OBJECT_MISSING",
+      "secondary_cohorts": [
+        "SOURCE_OWNER_OR_GOVERNANCE_AUTHORIZATION_MISSING"
+      ],
+      "exception": false
+    },
+    {
+      "frozen_order": 4,
+      "target_index": 98,
+      "primary_cohort": "CANONICAL_SOURCE_CLASS_IDENTIFIED_SOURCE_OBJECT_MISSING",
+      "secondary_cohorts": [
+        "SOURCE_OWNER_OR_GOVERNANCE_AUTHORIZATION_MISSING"
+      ],
+      "exception": false
+    },
+    {
+      "frozen_order": 5,
+      "target_index": 147,
+      "primary_cohort": "CANONICAL_SOURCE_CLASS_IDENTIFIED_SOURCE_OBJECT_MISSING",
+      "secondary_cohorts": [
+        "SOURCE_OWNER_OR_GOVERNANCE_AUTHORIZATION_MISSING"
+      ],
+      "exception": false
+    },
+    {
+      "frozen_order": 6,
+      "target_index": 277,
+      "primary_cohort": "CANONICAL_SOURCE_CLASS_IDENTIFIED_SOURCE_OBJECT_MISSING",
+      "secondary_cohorts": [
+        "SOURCE_OWNER_OR_GOVERNANCE_AUTHORIZATION_MISSING"
+      ],
+      "exception": false
+    },
+    {
+      "frozen_order": 7,
+      "target_index": 188,
+      "primary_cohort": "CANONICAL_SOURCE_CLASS_IDENTIFIED_SOURCE_OBJECT_MISSING",
+      "secondary_cohorts": [
+        "SOURCE_OWNER_OR_GOVERNANCE_AUTHORIZATION_MISSING"
+      ],
+      "exception": false
+    },
+    {
+      "frozen_order": 8,
+      "target_index": 301,
+      "primary_cohort": "CANONICAL_SOURCE_CLASS_IDENTIFIED_SOURCE_OBJECT_MISSING",
+      "secondary_cohorts": [
+        "SOURCE_OWNER_OR_GOVERNANCE_AUTHORIZATION_MISSING"
+      ],
+      "exception": false
+    },
+    {
+      "frozen_order": 9,
+      "target_index": 143,
+      "primary_cohort": "CANONICAL_SOURCE_CLASS_IDENTIFIED_SOURCE_OBJECT_MISSING",
+      "secondary_cohorts": [
+        "SOURCE_OWNER_OR_GOVERNANCE_AUTHORIZATION_MISSING"
+      ],
+      "exception": false
+    },
+    {
+      "frozen_order": 10,
+      "target_index": 250,
+      "primary_cohort": "CANONICAL_SOURCE_CLASS_IDENTIFIED_SOURCE_OBJECT_MISSING",
+      "secondary_cohorts": [
+        "SOURCE_OWNER_OR_GOVERNANCE_AUTHORIZATION_MISSING"
+      ],
+      "exception": false
+    },
+    {
+      "frozen_order": 11,
+      "target_index": 233,
+      "primary_cohort": "CANONICAL_SOURCE_CLASS_IDENTIFIED_SOURCE_OBJECT_MISSING",
+      "secondary_cohorts": [
+        "SOURCE_OWNER_OR_GOVERNANCE_AUTHORIZATION_MISSING"
+      ],
+      "exception": false
+    },
+    {
+      "frozen_order": 12,
+      "target_index": 287,
+      "primary_cohort": "CANONICAL_SOURCE_CLASS_IDENTIFIED_SOURCE_OBJECT_MISSING",
+      "secondary_cohorts": [
+        "SOURCE_OWNER_OR_GOVERNANCE_AUTHORIZATION_MISSING"
+      ],
+      "exception": false
+    },
+    {
+      "frozen_order": 13,
+      "target_index": 146,
+      "primary_cohort": "CANONICAL_SOURCE_CLASS_IDENTIFIED_SOURCE_OBJECT_MISSING",
+      "secondary_cohorts": [
+        "SOURCE_OWNER_OR_GOVERNANCE_AUTHORIZATION_MISSING"
+      ],
+      "exception": false
+    },
+    {
+      "frozen_order": 14,
+      "target_index": 293,
+      "primary_cohort": "CANONICAL_SOURCE_CLASS_IDENTIFIED_SOURCE_OBJECT_MISSING",
+      "secondary_cohorts": [
+        "SOURCE_OWNER_OR_GOVERNANCE_AUTHORIZATION_MISSING"
+      ],
+      "exception": false
+    },
+    {
+      "frozen_order": 15,
+      "target_index": 114,
+      "primary_cohort": "CANONICAL_SOURCE_CLASS_IDENTIFIED_SOURCE_OBJECT_MISSING",
+      "secondary_cohorts": [
+        "SOURCE_OWNER_OR_GOVERNANCE_AUTHORIZATION_MISSING"
+      ],
+      "exception": false
+    },
+    {
+      "frozen_order": 16,
+      "target_index": 284,
+      "primary_cohort": "CANONICAL_SOURCE_CLASS_IDENTIFIED_SOURCE_OBJECT_MISSING",
+      "secondary_cohorts": [
+        "SOURCE_OWNER_OR_GOVERNANCE_AUTHORIZATION_MISSING"
+      ],
+      "exception": false
+    },
+    {
+      "frozen_order": 17,
+      "target_index": 291,
+      "primary_cohort": "CANONICAL_SOURCE_CLASS_IDENTIFIED_SOURCE_OBJECT_MISSING",
+      "secondary_cohorts": [
+        "SOURCE_OWNER_OR_GOVERNANCE_AUTHORIZATION_MISSING"
+      ],
+      "exception": false
+    },
+    {
+      "frozen_order": 18,
+      "target_index": 215,
+      "primary_cohort": "CANONICAL_SOURCE_CLASS_IDENTIFIED_SOURCE_OBJECT_MISSING",
+      "secondary_cohorts": [
+        "SOURCE_OWNER_OR_GOVERNANCE_AUTHORIZATION_MISSING"
+      ],
+      "exception": false
+    },
+    {
+      "frozen_order": 19,
+      "target_index": 88,
+      "primary_cohort": "CANONICAL_SOURCE_CLASS_IDENTIFIED_SOURCE_OBJECT_MISSING",
+      "secondary_cohorts": [
+        "SOURCE_OWNER_OR_GOVERNANCE_AUTHORIZATION_MISSING"
+      ],
+      "exception": false
+    },
+    {
+      "frozen_order": 20,
+      "target_index": 182,
+      "primary_cohort": "CANONICAL_SOURCE_CLASS_IDENTIFIED_SOURCE_OBJECT_MISSING",
+      "secondary_cohorts": [
+        "SOURCE_OWNER_OR_GOVERNANCE_AUTHORIZATION_MISSING"
+      ],
+      "exception": false
+    },
+    {
+      "frozen_order": 21,
+      "target_index": 300,
+      "primary_cohort": "CANONICAL_SOURCE_CLASS_IDENTIFIED_SOURCE_OBJECT_MISSING",
+      "secondary_cohorts": [
+        "SOURCE_OWNER_OR_GOVERNANCE_AUTHORIZATION_MISSING"
+      ],
+      "exception": false
+    },
+    {
+      "frozen_order": 22,
+      "target_index": 218,
+      "primary_cohort": "CANONICAL_SOURCE_CLASS_IDENTIFIED_SOURCE_OBJECT_MISSING",
+      "secondary_cohorts": [
+        "SOURCE_OWNER_OR_GOVERNANCE_AUTHORIZATION_MISSING"
+      ],
+      "exception": false
+    },
+    {
+      "frozen_order": 23,
+      "target_index": 115,
+      "primary_cohort": "CANONICAL_SOURCE_CLASS_IDENTIFIED_SOURCE_OBJECT_MISSING",
+      "secondary_cohorts": [
+        "SOURCE_OWNER_OR_GOVERNANCE_AUTHORIZATION_MISSING"
+      ],
+      "exception": false
+    },
+    {
+      "frozen_order": 24,
+      "target_index": 148,
+      "primary_cohort": "CANONICAL_SOURCE_CLASS_IDENTIFIED_SOURCE_OBJECT_MISSING",
+      "secondary_cohorts": [
+        "SOURCE_OWNER_OR_GOVERNANCE_AUTHORIZATION_MISSING"
+      ],
+      "exception": false
+    }
+  ],
+  "fail_closed_rule": "No target moves to a qualifying direct/authenticated cohort until authority activation, canonical source-manifest entry, exact immutable artifact/version, deterministic exact-one object extraction, schema/namespace, and RFC6901 field evidence are independently authenticated."
+}

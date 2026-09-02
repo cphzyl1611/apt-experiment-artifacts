@@ -1,0 +1,260 @@
+{
+  "schema": "FA1B2DE_CURRENT86_STAGE_A_SOURCE_AUTHORITY_OWNER_GAP_REPORT_V1",
+  "status": "PREPARATION_ONLY_NON_AUTHORITATIVE",
+  "scope": "FIRST_TRANCHE_24",
+  "common_gaps": [
+    {
+      "gap_id": "AUTH-01",
+      "missing": "active governed source-authority activation record",
+      "required": "Exact authority ID, class/fact type, scope, owner/issuer, version policy, governance proof, activation record hash.",
+      "applies_to_count": 24
+    },
+    {
+      "gap_id": "AUTH-02",
+      "missing": "source-owner or issuer authorization",
+      "required": "Authenticated authorization by the owner/issuer of the canonical source artifact and object.",
+      "applies_to_count": 24
+    },
+    {
+      "gap_id": "AUTH-03",
+      "missing": "canonical source-manifest entry and extraction authority",
+      "required": "Governed manifest entry naming the immutable artifact, deterministic extractor, exact locator contract, schema, and permitted canonical fact type.",
+      "applies_to_count": 24
+    },
+    {
+      "gap_id": "AUTH-04",
+      "missing": "canonical source object",
+      "required": "One exact source object from an eligible source form; current candidate scoring rows and wrappers are explicitly noncanonical.",
+      "applies_to_count": 24
+    }
+  ],
+  "evidence_basis": {
+    "source_corpus_roots_status": [
+      {
+        "authenticated_refs": [
+          "/home/cph/experiment-artifacts/fa1b2de-bso-r-20260825T100958Z/inputs/project_snapshots/raw_action_registry.jsonl",
+          "/home/cph/experiment-artifacts/fa1b2de-bso-r-20260825T100958Z/bso_r_input_manifest.json",
+          "/home/cph/experiment-artifacts/fa1b2de-bso-r-20260825T100958Z.tar.gz"
+        ],
+        "corpus_id": "RAW_REGISTRY",
+        "declared_source_artifact_class": "AUTHENTICATED_RAW_SOURCE_RECORD",
+        "declared_source_fact_type": "PINNED_RAW_SOURCE_FIELD",
+        "input_manifest_checkpoint": "36aab307425c3df525ae135ad0bb2023d3cb8486bd7c534d502cfa03240a15b7",
+        "logical_artifact_identity": "AUTHENTICATED_RAW_SOURCE_RECORD_SET",
+        "producer_script_sha256": null,
+        "provenance_root_status": "PARTIAL_MISSING_PRODUCER_IDENTITY",
+        "source_archive_sha256_or_null": "eb947f385acdf8275e44cacc20d31c95080c3b1e7f7840f9fa3996a56cc64ec6",
+        "source_artifact_sha256": "53c85157f9fd0849ae19b1cf403333ad0d0af2a7d761b0498540dd92d66c1e93",
+        "source_manifest_sha256": "36aab307425c3df525ae135ad0bb2023d3cb8486bd7c534d502cfa03240a15b7"
+      },
+      {
+        "authenticated_refs": [
+          "/home/cph/experiment-artifacts/tier-de1c0-handoff-20260823-083725/tier_de1c0_typed_operation_semantics.jsonl",
+          "/home/cph/experiment-artifacts/tier-de1c0-handoff-20260823-083725.tar.gz",
+          "/home/cph/experiment-artifacts/fa1b2de-current86-canonical-source-authentication-r1/CURRENT86_Canonical_Source_Authentication_Verdict.json"
+        ],
+        "corpus_id": "C0_TYPED_OPERATION_SEMANTICS",
+        "declared_source_artifact_class": null,
+        "declared_source_fact_type": null,
+        "input_manifest_checkpoint": "CURRENT_AUTHORITY_AND_SNAPSHOT_CHECKPOINT_VERIFIED",
+        "logical_artifact_identity": "C0_TYPED_OPERATION_SEMANTICS:0036c42fb02026182274a7ac2a33b103b03b1e527856eb33b5ad650ceddd5c32",
+        "producer_script_sha256": "c988283ad4b9288555c01870ae9b12029a74a2e8c60a05cfc2eb5fa31160c6af",
+        "provenance_root_status": "COMPLETE_ANCHORS_NONCANONICAL_NO_GOV_R4_ENTRY",
+        "source_archive_sha256_or_null": "339a8d04a767bb69ea24c2b772c2519420a778555aaede34c799bc0242112f27",
+        "source_artifact_sha256": "0036c42fb02026182274a7ac2a33b103b03b1e527856eb33b5ad650ceddd5c32",
+        "source_manifest_sha256": "d18053e55fb1ee7bb538476c6e4ebaa863181fbbc5a6990c09beb4b450ea672f"
+      },
+      {
+        "authenticated_refs": [
+          "/home/cph/experiment-artifacts/fa1b2de-bso-r-20260825T100958Z/inputs/c2/c2_scoring_snapshot_post_c1.jsonl",
+          "/home/cph/experiment-artifacts/fa1b2de-bso-r-20260825T100958Z/inputs/c2/c2_scoring_snapshot_manifest.json",
+          "/home/cph/experiment-artifacts/fa1b2de-bso-r-20260825T100958Z/inputs/c2r1/c2r1_input_manifest.json"
+        ],
+        "corpus_id": "CANDIDATE_SCORING",
+        "declared_source_artifact_class": "AUTHENTICATED_SCORING_ROW_SOURCE",
+        "declared_source_fact_type": "PINNED_SCORING_ROW_FIELD",
+        "input_manifest_checkpoint": "5c1f2535613408ef6ffc8a3e208ccd007800f69150af3f5bba26810de4bc2a4e",
+        "logical_artifact_identity": "AUTHENTICATED_SCORING_ROW_SOURCE_SET",
+        "producer_script_sha256": "d2e608d2e8f1a925b437c0bb605e93a9e815ef17cfe3901ec0253821be4447cb",
+        "provenance_root_status": "COMPLETE_ANCHORED_NONCANONICAL_CLASS",
+        "source_archive_sha256_or_null": "ea0bf2a20f30374f7e99c9a5fed5c663b6df6a7fdeb6b2c70cfe0c7ae56407ab",
+        "source_artifact_sha256": "748a3808290f9e78f71c18d4553c77ae208517fd31d163fc2b3008cfcb57f1bb",
+        "source_manifest_sha256": "099ce0d8da99a41f653d6b43a1e6c4abbc391fd28cf022f527654ea4ef975b74"
+      }
+    ],
+    "recovery_status": "All 24 first-tranche recovery rows are BLOCKED_MISSING_SOURCE_MANIFEST with canonical_source_manifest_entry_found=false.",
+    "r1r1_policy": "FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/AUTHORITATIVE_SOURCE_CLASS_POLICY.md",
+    "r1r1_provenance_contract": "FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/CANONICAL_FIELD_MAPPING_PROVENANCE_CONTRACT.json"
+  },
+  "target_level_gap_references": [
+    {
+      "frozen_order": 1,
+      "target_index": 110,
+      "source_binding_target_id": "3b80df2624bbb1842a1907e2083677ccb8345a347a64fd791ede8b4d6bbbe56c",
+      "recovery_classification": "BLOCKED_MISSING_SOURCE_MANIFEST",
+      "canonical_source_manifest_entry_found": false
+    },
+    {
+      "frozen_order": 2,
+      "target_index": 273,
+      "source_binding_target_id": "4aa9de202bbee7cd080c758ced565a963fa672a8ae64e23c08d1e28bdffd5dcd",
+      "recovery_classification": "BLOCKED_MISSING_SOURCE_MANIFEST",
+      "canonical_source_manifest_entry_found": false
+    },
+    {
+      "frozen_order": 3,
+      "target_index": 210,
+      "source_binding_target_id": "4e34ad6e599200d13778795c16acba9a7ee8038104c7c2c9791a4c35c9e9e609",
+      "recovery_classification": "BLOCKED_MISSING_SOURCE_MANIFEST",
+      "canonical_source_manifest_entry_found": false
+    },
+    {
+      "frozen_order": 4,
+      "target_index": 98,
+      "source_binding_target_id": "8a7688677ce0bf937ce714d6661683aaf4c681b70e1e5b8047c4e803dc30e9e2",
+      "recovery_classification": "BLOCKED_MISSING_SOURCE_MANIFEST",
+      "canonical_source_manifest_entry_found": false
+    },
+    {
+      "frozen_order": 5,
+      "target_index": 147,
+      "source_binding_target_id": "b397a70ec40af9883cf98e7f5ce4536616b6b5af389e7783fba5db648d494796",
+      "recovery_classification": "BLOCKED_MISSING_SOURCE_MANIFEST",
+      "canonical_source_manifest_entry_found": false
+    },
+    {
+      "frozen_order": 6,
+      "target_index": 277,
+      "source_binding_target_id": "0e2a19540c0adeea8fb5e1681422b5a1798c066d844c0b3338fe4574b323268d",
+      "recovery_classification": "BLOCKED_MISSING_SOURCE_MANIFEST",
+      "canonical_source_manifest_entry_found": false
+    },
+    {
+      "frozen_order": 7,
+      "target_index": 188,
+      "source_binding_target_id": "0fe4f60eca8ce1cd969615cdd6354c1d77a99137e0681c94781b019fcbba8f4e",
+      "recovery_classification": "BLOCKED_MISSING_SOURCE_MANIFEST",
+      "canonical_source_manifest_entry_found": false
+    },
+    {
+      "frozen_order": 8,
+      "target_index": 301,
+      "source_binding_target_id": "1239927e55c839a39dc9360b1170e8d7b78b58c0cfd60c3d19c9b39aac5ceb49",
+      "recovery_classification": "BLOCKED_MISSING_SOURCE_MANIFEST",
+      "canonical_source_manifest_entry_found": false
+    },
+    {
+      "frozen_order": 9,
+      "target_index": 143,
+      "source_binding_target_id": "1448e4eac6df355eeeddd973cc9de38afaaa3a898fdca16105f929bf74ae1025",
+      "recovery_classification": "BLOCKED_MISSING_SOURCE_MANIFEST",
+      "canonical_source_manifest_entry_found": false
+    },
+    {
+      "frozen_order": 10,
+      "target_index": 250,
+      "source_binding_target_id": "17b204235fe83a99a464d2f85eb07007287830d5b1f51648565d23e88640abad",
+      "recovery_classification": "BLOCKED_MISSING_SOURCE_MANIFEST",
+      "canonical_source_manifest_entry_found": false
+    },
+    {
+      "frozen_order": 11,
+      "target_index": 233,
+      "source_binding_target_id": "1aa04061904a5311e1e3248617bf998df467964aad52ae0577b084a35d004a17",
+      "recovery_classification": "BLOCKED_MISSING_SOURCE_MANIFEST",
+      "canonical_source_manifest_entry_found": false
+    },
+    {
+      "frozen_order": 12,
+      "target_index": 287,
+      "source_binding_target_id": "1eaa4f5b22905fd84ac843946f20ed8aa97e1e4d91374d727bf62ce68e06560c",
+      "recovery_classification": "BLOCKED_MISSING_SOURCE_MANIFEST",
+      "canonical_source_manifest_entry_found": false
+    },
+    {
+      "frozen_order": 13,
+      "target_index": 146,
+      "source_binding_target_id": "1fc5102458f5b4a68c3aff79360f13cebdbbcdeea701b73d5bfe373d62a06123",
+      "recovery_classification": "BLOCKED_MISSING_SOURCE_MANIFEST",
+      "canonical_source_manifest_entry_found": false
+    },
+    {
+      "frozen_order": 14,
+      "target_index": 293,
+      "source_binding_target_id": "40eda86b5947b8bd3e0918a218b696c8f918bf6d673e5bd493fc506e9a436804",
+      "recovery_classification": "BLOCKED_MISSING_SOURCE_MANIFEST",
+      "canonical_source_manifest_entry_found": false
+    },
+    {
+      "frozen_order": 15,
+      "target_index": 114,
+      "source_binding_target_id": "4de0977bd543da3c1e2e3d4917acafcd91a0507631ef052452e0b57d03aabc23",
+      "recovery_classification": "BLOCKED_MISSING_SOURCE_MANIFEST",
+      "canonical_source_manifest_entry_found": false
+    },
+    {
+      "frozen_order": 16,
+      "target_index": 284,
+      "source_binding_target_id": "538cf3f7d8449da3f8064c7fe17ad5313f14487a91ae05a7dc4a170cdb45dd2e",
+      "recovery_classification": "BLOCKED_MISSING_SOURCE_MANIFEST",
+      "canonical_source_manifest_entry_found": false
+    },
+    {
+      "frozen_order": 17,
+      "target_index": 291,
+      "source_binding_target_id": "53bba0285b0487933d3674d3bcb2c8507b3b7dbcbff79d6e58e3b64fc3d13fe2",
+      "recovery_classification": "BLOCKED_MISSING_SOURCE_MANIFEST",
+      "canonical_source_manifest_entry_found": false
+    },
+    {
+      "frozen_order": 18,
+      "target_index": 215,
+      "source_binding_target_id": "67f3eef7b606ebedadba5f29930e91835eb5bde88b97755df7b159bd109c8250",
+      "recovery_classification": "BLOCKED_MISSING_SOURCE_MANIFEST",
+      "canonical_source_manifest_entry_found": false
+    },
+    {
+      "frozen_order": 19,
+      "target_index": 88,
+      "source_binding_target_id": "68101eaee0eab845e763d3078c57fee8e1d54379a66b489a78d457c2bf0930f2",
+      "recovery_classification": "BLOCKED_MISSING_SOURCE_MANIFEST",
+      "canonical_source_manifest_entry_found": false
+    },
+    {
+      "frozen_order": 20,
+      "target_index": 182,
+      "source_binding_target_id": "6859aafbd73df2d0b2a8250853e8fdab466d4fc52a7707ed0ca6c62a52d1ea66",
+      "recovery_classification": "BLOCKED_MISSING_SOURCE_MANIFEST",
+      "canonical_source_manifest_entry_found": false
+    },
+    {
+      "frozen_order": 21,
+      "target_index": 300,
+      "source_binding_target_id": "7bd222c3b146447c05ea2631ebc8f10666d63a6eb9c372eeb9aa68517735c6c7",
+      "recovery_classification": "BLOCKED_MISSING_SOURCE_MANIFEST",
+      "canonical_source_manifest_entry_found": false
+    },
+    {
+      "frozen_order": 22,
+      "target_index": 218,
+      "source_binding_target_id": "7c79be47802efebbf7125f910b443d9df7681feba71a139c87374a61de738827",
+      "recovery_classification": "BLOCKED_MISSING_SOURCE_MANIFEST",
+      "canonical_source_manifest_entry_found": false
+    },
+    {
+      "frozen_order": 23,
+      "target_index": 115,
+      "source_binding_target_id": "7ed67d666e3f1f3b80b64d7e678ab88b8caaed05c12e943c8bd619f385e704da",
+      "recovery_classification": "BLOCKED_MISSING_SOURCE_MANIFEST",
+      "canonical_source_manifest_entry_found": false
+    },
+    {
+      "frozen_order": 24,
+      "target_index": 148,
+      "source_binding_target_id": "7f772ded1d8901ff5a9f881ec8fd927d94604f6d646585c93ff83b92b943810f",
+      "recovery_classification": "BLOCKED_MISSING_SOURCE_MANIFEST",
+      "canonical_source_manifest_entry_found": false
+    }
+  ],
+  "owner_governance_action_still_missing": "A separately authenticated source owner/governance authority must authorize the exact canonical source artifact/object class and scope before acquisition evidence can be created."
+}

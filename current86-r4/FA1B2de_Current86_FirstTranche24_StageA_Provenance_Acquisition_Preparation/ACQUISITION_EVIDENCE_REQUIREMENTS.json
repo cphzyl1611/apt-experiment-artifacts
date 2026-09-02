@@ -1,0 +1,332 @@
+{
+  "schema": "FA1B2DE_CURRENT86_STAGE_A_ACQUISITION_EVIDENCE_REQUIREMENTS_V1",
+  "status": "PREPARATION_ONLY_NON_AUTHORITATIVE",
+  "scope": "FIRST_TRANCHE_24",
+  "execution_prohibited_until": [
+    "explicit source-authority activation",
+    "source-owner authorization",
+    "independent preparation review approval"
+  ],
+  "ordered_steps": [
+    {
+      "step": 1,
+      "name": "authority_activation",
+      "required_evidence": [
+        "source_authority_id",
+        "authority_artifact_sha256",
+        "authority_scope_id",
+        "authorized_source_artifact_class",
+        "authorized_source_fact_type",
+        "source_owner_or_issuer_identity",
+        "governance_proof_sha256",
+        "authority_activation_record_sha256"
+      ],
+      "creates_now": false
+    },
+    {
+      "step": 2,
+      "name": "canonical_artifact_acquisition",
+      "required_evidence": [
+        "source_artifact_identity",
+        "source_artifact_sha256",
+        "source_version_identity",
+        "source_owner_or_issuer_identity",
+        "acquisition_authentication",
+        "verifier_identity",
+        "signed_release_or_pinned_commit_tree_proof"
+      ],
+      "creates_now": false
+    },
+    {
+      "step": 3,
+      "name": "object_extraction",
+      "required_evidence": [
+        "object_extraction_rule_id",
+        "object_extraction_rule_sha256",
+        "source_object_locator",
+        "source_object_locator_sha256",
+        "object_match_cardinality",
+        "source_object_sha256",
+        "exact_recomputation_receipt"
+      ],
+      "creates_now": false
+    },
+    {
+      "step": 4,
+      "name": "canonical_field_resolution",
+      "required_evidence": [
+        "canonical_source_schema_namespace",
+        "canonical_source_schema_identity_version_hash",
+        "canonical_intrinsic_field_semantics_id",
+        "exact_rfc6901_pointer",
+        "field_type",
+        "canonicalization_profile_id",
+        "authenticated_canonical_value_sha256",
+        "canonical_field_identity"
+      ],
+      "creates_now": false
+    },
+    {
+      "step": 5,
+      "name": "mapping_evidence_preparation",
+      "required_evidence": [
+        "mapping_record_id",
+        "mapping_record_identity",
+        "complete_provenance_chain",
+        "full_evidence_record_sha256",
+        "conflict_recomputation_sha256"
+      ],
+      "creates_now": false,
+      "downstream_gate": "must precede separate Stage A admission record"
+    },
+    {
+      "step": 6,
+      "name": "independent_stage_a_admission",
+      "required_evidence": [
+        "mapping_evidence_record_sha256",
+        "mapping_record_id_recomputed",
+        "provenance_chain_complete",
+        "active_lineage_verified",
+        "decision_status",
+        "independent_reviewer_identity"
+      ],
+      "creates_now": false,
+      "downstream_gate": "only ADMISSION_READY can enable Stage B"
+    }
+  ],
+  "shared_mechanical_controls": [
+    "exact 24-target order and identity verification",
+    "source-manifest presence and exact-reference checks",
+    "artifact/object/value SHA-256 recomputation",
+    "exact-one locator cardinality check",
+    "RFC6901 resolution and field-type check",
+    "canonicalization and mapping identity recomputation",
+    "acyclic provenance graph and dangling-reference rejection",
+    "zero mutation checks for source auth, mappings, pins, gates, publication, and experiment"
+  ],
+  "target_specific_controls": [
+    "canonical artifact/version selected by owner/governance",
+    "exact source object locator and extractor output",
+    "schema namespace and canonical field semantics",
+    "exact RFC6901 pointer and canonical value hash",
+    "conflict result for the target's active field identity"
+  ],
+  "per_target_requirements": [
+    {
+      "frozen_order": 1,
+      "target_index": 110,
+      "required_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "required_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+      "required_exact_locator": true,
+      "required_rfc6901_pointer": true,
+      "current_status": "ADMISSION_NOT_READY_MISSING_PROVENANCE"
+    },
+    {
+      "frozen_order": 2,
+      "target_index": 273,
+      "required_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "required_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+      "required_exact_locator": true,
+      "required_rfc6901_pointer": true,
+      "current_status": "ADMISSION_NOT_READY_MISSING_PROVENANCE"
+    },
+    {
+      "frozen_order": 3,
+      "target_index": 210,
+      "required_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "required_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+      "required_exact_locator": true,
+      "required_rfc6901_pointer": true,
+      "current_status": "ADMISSION_NOT_READY_MISSING_PROVENANCE"
+    },
+    {
+      "frozen_order": 4,
+      "target_index": 98,
+      "required_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "required_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+      "required_exact_locator": true,
+      "required_rfc6901_pointer": true,
+      "current_status": "ADMISSION_NOT_READY_MISSING_PROVENANCE"
+    },
+    {
+      "frozen_order": 5,
+      "target_index": 147,
+      "required_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "required_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+      "required_exact_locator": true,
+      "required_rfc6901_pointer": true,
+      "current_status": "ADMISSION_NOT_READY_MISSING_PROVENANCE"
+    },
+    {
+      "frozen_order": 6,
+      "target_index": 277,
+      "required_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "required_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+      "required_exact_locator": true,
+      "required_rfc6901_pointer": true,
+      "current_status": "ADMISSION_NOT_READY_MISSING_PROVENANCE"
+    },
+    {
+      "frozen_order": 7,
+      "target_index": 188,
+      "required_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "required_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+      "required_exact_locator": true,
+      "required_rfc6901_pointer": true,
+      "current_status": "ADMISSION_NOT_READY_MISSING_PROVENANCE"
+    },
+    {
+      "frozen_order": 8,
+      "target_index": 301,
+      "required_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "required_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+      "required_exact_locator": true,
+      "required_rfc6901_pointer": true,
+      "current_status": "ADMISSION_NOT_READY_MISSING_PROVENANCE"
+    },
+    {
+      "frozen_order": 9,
+      "target_index": 143,
+      "required_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "required_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+      "required_exact_locator": true,
+      "required_rfc6901_pointer": true,
+      "current_status": "ADMISSION_NOT_READY_MISSING_PROVENANCE"
+    },
+    {
+      "frozen_order": 10,
+      "target_index": 250,
+      "required_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "required_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+      "required_exact_locator": true,
+      "required_rfc6901_pointer": true,
+      "current_status": "ADMISSION_NOT_READY_MISSING_PROVENANCE"
+    },
+    {
+      "frozen_order": 11,
+      "target_index": 233,
+      "required_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "required_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+      "required_exact_locator": true,
+      "required_rfc6901_pointer": true,
+      "current_status": "ADMISSION_NOT_READY_MISSING_PROVENANCE"
+    },
+    {
+      "frozen_order": 12,
+      "target_index": 287,
+      "required_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "required_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+      "required_exact_locator": true,
+      "required_rfc6901_pointer": true,
+      "current_status": "ADMISSION_NOT_READY_MISSING_PROVENANCE"
+    },
+    {
+      "frozen_order": 13,
+      "target_index": 146,
+      "required_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "required_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+      "required_exact_locator": true,
+      "required_rfc6901_pointer": true,
+      "current_status": "ADMISSION_NOT_READY_MISSING_PROVENANCE"
+    },
+    {
+      "frozen_order": 14,
+      "target_index": 293,
+      "required_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "required_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+      "required_exact_locator": true,
+      "required_rfc6901_pointer": true,
+      "current_status": "ADMISSION_NOT_READY_MISSING_PROVENANCE"
+    },
+    {
+      "frozen_order": 15,
+      "target_index": 114,
+      "required_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "required_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+      "required_exact_locator": true,
+      "required_rfc6901_pointer": true,
+      "current_status": "ADMISSION_NOT_READY_MISSING_PROVENANCE"
+    },
+    {
+      "frozen_order": 16,
+      "target_index": 284,
+      "required_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "required_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+      "required_exact_locator": true,
+      "required_rfc6901_pointer": true,
+      "current_status": "ADMISSION_NOT_READY_MISSING_PROVENANCE"
+    },
+    {
+      "frozen_order": 17,
+      "target_index": 291,
+      "required_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "required_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+      "required_exact_locator": true,
+      "required_rfc6901_pointer": true,
+      "current_status": "ADMISSION_NOT_READY_MISSING_PROVENANCE"
+    },
+    {
+      "frozen_order": 18,
+      "target_index": 215,
+      "required_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "required_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+      "required_exact_locator": true,
+      "required_rfc6901_pointer": true,
+      "current_status": "ADMISSION_NOT_READY_MISSING_PROVENANCE"
+    },
+    {
+      "frozen_order": 19,
+      "target_index": 88,
+      "required_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "required_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+      "required_exact_locator": true,
+      "required_rfc6901_pointer": true,
+      "current_status": "ADMISSION_NOT_READY_MISSING_PROVENANCE"
+    },
+    {
+      "frozen_order": 20,
+      "target_index": 182,
+      "required_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "required_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+      "required_exact_locator": true,
+      "required_rfc6901_pointer": true,
+      "current_status": "ADMISSION_NOT_READY_MISSING_PROVENANCE"
+    },
+    {
+      "frozen_order": 21,
+      "target_index": 300,
+      "required_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "required_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+      "required_exact_locator": true,
+      "required_rfc6901_pointer": true,
+      "current_status": "ADMISSION_NOT_READY_MISSING_PROVENANCE"
+    },
+    {
+      "frozen_order": 22,
+      "target_index": 218,
+      "required_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "required_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+      "required_exact_locator": true,
+      "required_rfc6901_pointer": true,
+      "current_status": "ADMISSION_NOT_READY_MISSING_PROVENANCE"
+    },
+    {
+      "frozen_order": 23,
+      "target_index": 115,
+      "required_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "required_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+      "required_exact_locator": true,
+      "required_rfc6901_pointer": true,
+      "current_status": "ADMISSION_NOT_READY_MISSING_PROVENANCE"
+    },
+    {
+      "frozen_order": 24,
+      "target_index": 148,
+      "required_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "required_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+      "required_exact_locator": true,
+      "required_rfc6901_pointer": true,
+      "current_status": "ADMISSION_NOT_READY_MISSING_PROVENANCE"
+    }
+  ]
+}

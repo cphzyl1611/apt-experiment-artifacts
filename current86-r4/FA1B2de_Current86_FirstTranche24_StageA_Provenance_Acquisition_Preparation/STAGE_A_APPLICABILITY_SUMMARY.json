@@ -1,0 +1,58 @@
+{
+  "schema": "FA1B2DE_CURRENT86_STAGE_A_APPLICABILITY_SUMMARY_V1",
+  "status": "PASS_READY_FOR_INDEPENDENT_PREPARATION_REVIEW",
+  "scope": "FIRST_TRANCHE_24_ONLY",
+  "first_tranche_counts": {
+    "targets": 24,
+    "request_more_evidence": 24,
+    "primary_cohort_canonical_source_class_identified_source_object_missing": 24,
+    "secondary_cohort_source_owner_or_governance_authorization_missing": 24,
+    "exceptions": 0
+  },
+  "reusable_beyond_first_tranche": {
+    "bounded_statement": "The acquisition-preparation workflow appears mechanically reusable for similarly structured unresolved Binding records, but this package does not generalize the result to all Current86 or all unresolved records.",
+    "mechanically_reusable_steps": [
+      "freeze and recompute target identity/order",
+      "resolve exact source references",
+      "verify source-manifest presence",
+      "recompute artifact/object/field hashes",
+      "validate exact-one extraction",
+      "validate provenance graph and zero mutation boundary",
+      "classify cohort and gate state"
+    ],
+    "target_or_source_specific_steps": [
+      "identify the authoritative owner and governance authority",
+      "select the canonical source artifact/version",
+      "define the exact source-object locator/extractor",
+      "establish schema namespace/semantics and RFC6901 pointer",
+      "resolve target-specific conflicts"
+    ],
+    "evidence_needed_before_current86_wide_gate": [
+      "complete Current86 target inventory with exact per-target source references",
+      "authenticated source-manifest and owner/governance status for every target",
+      "independently recomputed classification with no missing/ambiguous references",
+      "cohort-specific exception analysis",
+      "independent review of the wider applicability package"
+    ]
+  },
+  "current_gate_state": {
+    "stage_a": "ADMISSION_NOT_READY_MISSING_PROVENANCE",
+    "stage_b": "FIELD_PIN_NOT_EXPOSED_GATED_ON_ADMISSION",
+    "source_auth_executed": "NO",
+    "mappings_created": 0,
+    "field_pins_created": 0
+  },
+  "next_bounded_action": "Obtain explicit source-owner/governance authorization and the canonical source manifest entries for the 24 targets, then independently acquire and authenticate the target-specific immutable source objects under the shared cohort controls; do not activate source authority or create downstream records in this preparation step.",
+  "source_references": [
+    "FA1B2de_Current86_Binding_R1R1_Post_Materialization_Authentication_Review/FIRST_TRANCHE_24_CONSERVATION_RECOMPUTATION.json",
+    "FA1B2de_Current86_Binding_R1R1_Post_Materialization_Authentication_Review/ZERO_MUTATION_AND_GATE_STATE_REVIEW.json",
+    "FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/AUTHORITATIVE_SOURCE_CLASS_POLICY.md",
+    "FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/CANONICAL_FIELD_MAPPING_PROVENANCE_CONTRACT.json",
+    "FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/STAGE_A_STAGE_B_GATE_CONTRACT.json",
+    "FA1B2de_Current86_Exact317_SourceAuth_Provenance_Recovery_R3/SOURCE_CORPUS_PROVENANCE_ROOTS.json",
+    "FA1B2de_Current86_Exact317_SourceAuth_Provenance_Recovery_R3/EXACT317_PROVENANCE_RECOVERY_RESULTS.jsonl",
+    "FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/FIRST_TRANCHE_24_MAPPING_EVIDENCE_REQUIREMENTS.jsonl",
+    "FA1B2de_Current86_Exact317_SourceAuth_Binding_R5_Wrapper_Materialization/05_dry_run/SCORING_231_CANDIDATE_WRAPPER_OBJECTS_ONLY.jsonl",
+    "FA1B2de_Current86_Exact317_SourceAuth_Binding_R8_Field_Pin_Governance_Materialization/R8_EXACT317_FIELD_PIN_CANDIDATE_PACKETS.jsonl"
+  ]
+}
