@@ -1,0 +1,151 @@
+{
+  "schema": "FA1B2DE_CURRENT86_CANONICAL_FIELD_MAPPING_PROVENANCE_CONTRACT_V1",
+  "document_status": "DESIGN_ONLY_NON_AUTHORITATIVE",
+  "chain": [
+    {
+      "ordinal": 1,
+      "link": "GOVERNED_SOURCE_AUTHORITY",
+      "required_claim": "A separately authenticated governance artifact activates an exact source-authority ID and permits AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE with PINNED_CANONICAL_INTRINSIC_FIELD for the declared scope.",
+      "required_material": [
+        "source_authority_id",
+        "authority_artifact_sha256",
+        "authority_activation_record_sha256",
+        "authorized_source_artifact_class",
+        "authorized_source_fact_type",
+        "scope_identity"
+      ],
+      "cryptographically_recomputable": [
+        "authority artifact SHA-256",
+        "activation record SHA-256",
+        "authorized class/fact-type tuple",
+        "scope membership"
+      ],
+      "not_inferable": [
+        "authority from a candidate hash",
+        "authority from reviewer prose",
+        "authority from a C2R1 comparative result"
+      ]
+    },
+    {
+      "ordinal": 2,
+      "link": "AUTHENTICATED_SOURCE_OBJECT",
+      "required_claim": "The governed source authority covers the exact immutable source artifact and exactly one source object resolved by a pinned extraction rule.",
+      "required_material": [
+        "source_artifact_identity",
+        "source_artifact_sha256",
+        "source_version_identity",
+        "acquisition authentication proof",
+        "source_object_locator",
+        "source_object_locator_sha256",
+        "source_object_sha256",
+        "extractor ID and SHA-256",
+        "exact-one match result"
+      ],
+      "cryptographically_recomputable": [
+        "source artifact SHA-256",
+        "signed release or pinned commit/tree proof",
+        "locator canonical hash",
+        "resolved object bytes and SHA-256",
+        "extractor SHA-256 and cardinality"
+      ],
+      "fail_closed_on": [
+        "mutable source reference",
+        "missing acquisition proof",
+        "zero or multiple object matches",
+        "object or artifact hash mismatch"
+      ]
+    },
+    {
+      "ordinal": 3,
+      "link": "CANONICAL_FIELD_IDENTITY",
+      "required_claim": "The exact canonical intrinsic field is directly addressable in the authenticated source object and has a unique identity under the field identity model.",
+      "required_material": [
+        "schema namespace and version",
+        "schema SHA-256",
+        "canonical intrinsic semantics ID and SHA-256",
+        "exact RFC6901 pointer",
+        "field representation and type",
+        "canonicalization profile ID and SHA-256",
+        "resolved canonical value SHA-256",
+        "canonical_field_identity"
+      ],
+      "cryptographically_recomputable": [
+        "pointer parse and exact resolution",
+        "resolved type",
+        "canonical value SHA-256",
+        "field identity SHA-256"
+      ],
+      "fail_closed_on": [
+        "missing pointer",
+        "pointer aliasing or normalization",
+        "schema or semantics ambiguity",
+        "type or value-hash mismatch"
+      ]
+    },
+    {
+      "ordinal": 4,
+      "link": "MAPPING_EVIDENCE_RECORD",
+      "required_claim": "One append-only evidence record binds one frozen target to the canonical field identity and records the complete provenance chain.",
+      "required_material": [
+        "mapping_record_id",
+        "target identity and target manifest SHA-256",
+        "links 1 through 3",
+        "record canonicalization profile",
+        "lineage and conflict recomputation references"
+      ],
+      "cryptographically_recomputable": [
+        "mapping record SHA-256",
+        "target identity conservation",
+        "all referenced link hashes",
+        "record-to-field and record-to-target equality constraints"
+      ],
+      "prohibited_substitutes": [
+        "human recommendation",
+        "candidate ranking",
+        "similarity score",
+        "best-candidate selection"
+      ]
+    },
+    {
+      "ordinal": 5,
+      "link": "STAGE_A_ADMISSION",
+      "required_claim": "An independent recomputation shows one valid, active, non-conflicting canonical mapping evidence record for the exact target.",
+      "required_material": [
+        "Stage A decision record",
+        "complete chain status",
+        "conflict recomputation",
+        "revocation and supersession recomputation"
+      ],
+      "cryptographically_recomputable": [
+        "all prior links",
+        "conflict set digest",
+        "admission decision identity",
+        "active lineage state"
+      ],
+      "output": "ADMISSION_READY or a fail-closed non-ready disposition"
+    },
+    {
+      "ordinal": 6,
+      "link": "STAGE_B_CANDIDATE_EXPOSURE_ONLY",
+      "required_claim": "Stage B may expose an unchanged candidate packet only after Stage A is ADMISSION_READY and its exact tuple equality checks pass.",
+      "required_material": [
+        "Stage A admission decision hash",
+        "candidate packet hash",
+        "exact tuple equality result",
+        "separate governed human-action requirement"
+      ],
+      "cryptographically_recomputable": [
+        "Stage A status",
+        "candidate packet hash",
+        "tuple equality"
+      ],
+      "explicit_non_effect": "Candidate exposure does not select a pointer, create a field pin, execute source-auth, or authorize P0/P1/publication."
+    }
+  ],
+  "chain_requirement": "All six links must hold in order. A later link cannot repair a missing earlier link.",
+  "current_state": {
+    "authoritative_mapping_records_created": 0,
+    "stage_a_status": "ADMISSION_NOT_READY_MISSING_PROVENANCE",
+    "stage_b_status": "FIELD_PIN_NOT_EXPOSED_GATED_ON_ADMISSION"
+  }
+}

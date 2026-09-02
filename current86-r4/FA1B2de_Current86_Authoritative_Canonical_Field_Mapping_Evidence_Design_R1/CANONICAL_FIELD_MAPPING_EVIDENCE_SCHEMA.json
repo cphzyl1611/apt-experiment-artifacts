@@ -1,0 +1,315 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/fa1b2de/current86/canonical-field-mapping-evidence-record-v1.schema.json",
+  "title": "Future Canonical Field Mapping Evidence Record",
+  "description": "Design-only schema. A conforming future record is evidence for Stage A only and cannot create a field pin.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "record_kind",
+    "mapping_record_id",
+    "record_identity_canonicalization",
+    "target",
+    "source_authority",
+    "source_object",
+    "canonical_field",
+    "evidence_acquisition",
+    "provenance_chain",
+    "admission",
+    "conflict",
+    "governance_references",
+    "lineage",
+    "metadata"
+  ],
+  "properties": {
+    "schema": {
+      "const": "FA1B2DE_CURRENT86_CANONICAL_FIELD_MAPPING_EVIDENCE_RECORD_V1"
+    },
+    "record_kind": {
+      "const": "CANONICAL_FIELD_MAPPING_EVIDENCE"
+    },
+    "mapping_record_id": {
+      "$ref": "#/$defs/sha256"
+    },
+    "record_identity_canonicalization": {
+      "const": "PROJECT_CANONICAL_JSON_V1"
+    },
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "target_index",
+        "source_binding_target_id",
+        "target_manifest_sha256"
+      ],
+      "properties": {
+        "target_index": { "type": "integer", "minimum": 1 },
+        "source_binding_target_id": { "$ref": "#/$defs/sha256" },
+        "target_manifest_sha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "source_authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_authority_id",
+        "authority_artifact_sha256",
+        "authority_scope_id",
+        "authority_activation_record_sha256",
+        "authorized_source_artifact_class",
+        "authorized_source_fact_type",
+        "authority_status"
+      ],
+      "properties": {
+        "source_authority_id": { "type": "string", "minLength": 1 },
+        "authority_artifact_sha256": { "$ref": "#/$defs/sha256" },
+        "authority_scope_id": { "type": "string", "minLength": 1 },
+        "authority_activation_record_sha256": { "$ref": "#/$defs/sha256" },
+        "authorized_source_artifact_class": {
+          "const": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE"
+        },
+        "authorized_source_fact_type": {
+          "const": "PINNED_CANONICAL_INTRINSIC_FIELD"
+        },
+        "authority_status": { "const": "ACTIVE" }
+      }
+    },
+    "source_object": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_artifact_identity",
+        "source_artifact_sha256",
+        "source_version_identity",
+        "source_owner_or_issuer_identity",
+        "acquisition_authentication",
+        "source_object_locator",
+        "source_object_locator_sha256",
+        "source_object_sha256",
+        "object_extraction_rule_id",
+        "object_extraction_rule_sha256",
+        "object_match_cardinality"
+      ],
+      "properties": {
+        "source_artifact_identity": { "type": "string", "minLength": 1 },
+        "source_artifact_sha256": { "$ref": "#/$defs/sha256" },
+        "source_version_identity": { "type": "string", "minLength": 1 },
+        "source_owner_or_issuer_identity": { "type": "string", "minLength": 1 },
+        "acquisition_authentication": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["method", "proof_reference", "proof_sha256", "verification_result"],
+          "properties": {
+            "method": {
+              "enum": [
+                "AUTHORIZED_SIGNED_RELEASE",
+                "PINNED_SIGNED_GIT_COMMIT_TREE",
+                "GOVERNANCE_APPROVED_CONTENT_ADDRESSED_RELEASE"
+              ]
+            },
+            "proof_reference": { "type": "string", "minLength": 1 },
+            "proof_sha256": { "$ref": "#/$defs/sha256" },
+            "verification_result": { "const": "PASS" }
+          }
+        },
+        "source_object_locator": { "type": "string", "minLength": 1 },
+        "source_object_locator_sha256": { "$ref": "#/$defs/sha256" },
+        "source_object_sha256": { "$ref": "#/$defs/sha256" },
+        "object_extraction_rule_id": { "type": "string", "minLength": 1 },
+        "object_extraction_rule_sha256": { "$ref": "#/$defs/sha256" },
+        "object_match_cardinality": { "const": 1 }
+      }
+    },
+    "canonical_field": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "canonical_field_identity",
+        "field_namespace",
+        "field_schema_id",
+        "field_schema_version",
+        "field_schema_sha256",
+        "canonical_intrinsic_field_semantics_id",
+        "canonical_intrinsic_field_semantics_sha256",
+        "exact_rfc6901_pointer",
+        "field_representation",
+        "field_value_type",
+        "canonicalization_profile_id",
+        "canonicalization_profile_sha256",
+        "authenticated_value_sha256"
+      ],
+      "properties": {
+        "canonical_field_identity": { "$ref": "#/$defs/sha256" },
+        "field_namespace": { "type": "string", "minLength": 1 },
+        "field_schema_id": { "type": "string", "minLength": 1 },
+        "field_schema_version": { "type": "string", "minLength": 1 },
+        "field_schema_sha256": { "$ref": "#/$defs/sha256" },
+        "canonical_intrinsic_field_semantics_id": { "type": "string", "minLength": 1 },
+        "canonical_intrinsic_field_semantics_sha256": { "$ref": "#/$defs/sha256" },
+        "exact_rfc6901_pointer": { "type": "string", "pattern": "^(|/.*)$" },
+        "field_representation": { "enum": ["SCALAR", "STRUCTURED"] },
+        "field_value_type": {
+          "enum": ["string", "integer", "boolean", "null", "object", "array"]
+        },
+        "canonicalization_profile_id": { "type": "string", "minLength": 1 },
+        "canonicalization_profile_sha256": { "$ref": "#/$defs/sha256" },
+        "authenticated_value_sha256": { "$ref": "#/$defs/sha256" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "field_representation": { "const": "SCALAR" } } },
+          "then": {
+            "properties": {
+              "field_value_type": { "enum": ["string", "integer", "boolean", "null"] }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "field_representation": { "const": "STRUCTURED" } } },
+          "then": {
+            "properties": {
+              "field_value_type": { "enum": ["object", "array"] }
+            }
+          }
+        }
+      ]
+    },
+    "evidence_acquisition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["method", "acquisition_record_sha256", "recomputation_method"],
+      "properties": {
+        "method": {
+          "enum": [
+            "GOVERNED_DIRECT_SOURCE_OBJECT",
+            "GOVERNED_DETERMINISTIC_CANONICAL_WRAPPER",
+            "GOVERNED_PROJECT_CANONICAL_REGISTRY"
+          ]
+        },
+        "acquisition_record_sha256": { "$ref": "#/$defs/sha256" },
+        "recomputation_method": { "type": "string", "minLength": 1 }
+      }
+    },
+    "provenance_chain": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "governance_link_sha256",
+        "source_artifact_link_sha256",
+        "source_object_link_sha256",
+        "canonical_field_link_sha256",
+        "chain_complete"
+      ],
+      "properties": {
+        "governance_link_sha256": { "$ref": "#/$defs/sha256" },
+        "source_artifact_link_sha256": { "$ref": "#/$defs/sha256" },
+        "source_object_link_sha256": { "$ref": "#/$defs/sha256" },
+        "canonical_field_link_sha256": { "$ref": "#/$defs/sha256" },
+        "chain_complete": { "const": true }
+      }
+    },
+    "admission": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "stage_a_decision_record_sha256"],
+      "properties": {
+        "status": {
+          "enum": [
+            "EVIDENCE_COLLECTED_NOT_ADMITTED",
+            "ADMISSION_READY",
+            "ADMISSION_REJECTED",
+            "ADMISSION_BLOCKED"
+          ]
+        },
+        "stage_a_decision_record_sha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "conflict": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "conflict_recomputation_sha256"],
+      "properties": {
+        "state": {
+          "enum": [
+            "AUTHORITATIVE_MAPPING_PRESENT",
+            "AUTHORITATIVE_MAPPING_ABSENT",
+            "MULTIPLE_AUTHORITATIVE_MAPPINGS_CONFLICT",
+            "SOURCE_AUTHORITY_UNRESOLVED",
+            "SOURCE_OBJECT_UNAUTHENTICATED",
+            "FIELD_IDENTITY_AMBIGUOUS",
+            "CANONICAL_POINTER_MISSING",
+            "EVIDENCE_STALE_OR_SUPERSEDED"
+          ]
+        },
+        "conflict_recomputation_sha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "governance_references": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["reference_kind", "artifact_sha256", "verification_status"],
+        "properties": {
+          "reference_kind": {
+            "enum": [
+              "SOURCE_AUTHORITY_ACTIVATION",
+              "SOURCE_ACQUISITION_AUTHORIZATION",
+              "STAGE_A_ADMISSION_DECISION",
+              "REVOCATION_OR_SUPERSESSION_DECISION"
+            ]
+          },
+          "artifact_sha256": { "$ref": "#/$defs/sha256" },
+          "verification_status": { "const": "PASS" }
+        }
+      }
+    },
+    "lineage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["supersedes_mapping_record_ids", "revoked_by_record_ids"],
+      "properties": {
+        "supersedes_mapping_record_ids": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/sha256" }
+        },
+        "revoked_by_record_ids": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/sha256" }
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["created_at_utc", "reviewed_at_utc"],
+      "properties": {
+        "created_at_utc": { "type": "string", "format": "date-time" },
+        "reviewed_at_utc": { "type": "string", "format": "date-time" }
+      },
+      "description": "Metadata only. Timestamps do not contribute to record or field identity."
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "admission": { "properties": { "status": { "const": "ADMISSION_READY" } } }
+        }
+      },
+      "then": {
+        "properties": {
+          "conflict": { "properties": { "state": { "const": "AUTHORITATIVE_MAPPING_PRESENT" } } }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    }
+  }
+}

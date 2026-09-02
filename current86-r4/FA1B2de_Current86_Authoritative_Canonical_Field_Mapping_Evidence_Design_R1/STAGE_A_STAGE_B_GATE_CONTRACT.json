@@ -1,0 +1,61 @@
+{
+  "schema": "FA1B2DE_CURRENT86_STAGE_A_STAGE_B_CANONICAL_MAPPING_GATE_CONTRACT_V1",
+  "document_status": "DESIGN_ONLY_NON_AUTHORITATIVE",
+  "stage_a": {
+    "name": "SOURCE_ADMISSION",
+    "ready_status": "ADMISSION_READY",
+    "required_prerequisites": [
+      "Exact frozen target identity and target-manifest SHA-256 validate.",
+      "A future mapping evidence record validates against CANONICAL_FIELD_MAPPING_EVIDENCE_SCHEMA.json.",
+      "The separately governed source authority is active, in scope, authenticated, and authorizes AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE with PINNED_CANONICAL_INTRINSIC_FIELD.",
+      "The immutable source artifact, acquisition proof, version identity, extractor, locator, object bytes, and object SHA-256 recompute exactly once.",
+      "The exact RFC6901 pointer resolves in the authenticated source object and its field type, canonical value hash, namespace, schema, semantics, and canonicalization profile match the evidence record.",
+      "The canonical field identity and mapping record identity recompute from canonical JSON.",
+      "Conflict recomputation returns AUTHORITATIVE_MAPPING_PRESENT with exactly one active canonical field identity for the target.",
+      "No source authority, source object, extraction rule, mapping record, or required governance reference is revoked, stale, superseded, or unresolved."
+    ],
+    "prohibited_inputs": [
+      "C2R1 derived comparative evidence as authority",
+      "candidate ranking or similarity",
+      "human prose or reviewer preference as a source object",
+      "alternate-pointer trial",
+      "a field pin or selected candidate pointer"
+    ],
+    "outputs": {
+      "on_success": "ADMISSION_READY",
+      "on_failure": "Fail-closed disposition from CANONICAL_FIELD_MAPPING_DISPOSITION_POLICY.md",
+      "creates_field_pin": false,
+      "selects_candidate_pointer": false,
+      "executes_source_auth": false
+    }
+  },
+  "stage_b": {
+    "name": "FIELD_PIN_CANDIDATE_EXPOSURE",
+    "current_status_before_stage_a": "FIELD_PIN_NOT_EXPOSED_GATED_ON_ADMISSION",
+    "preconditions_for_exposure": [
+      "Stage A has an independently verified ADMISSION_READY decision for the exact target.",
+      "The Stage A decision references the exact mapping record hash and canonical field identity that recompute from authenticated bytes.",
+      "The candidate packet is independently authenticated and remains byte-identical to the reviewed packet.",
+      "The future field-pin tuple equals the admitted tuple byte-for-byte: source_binding_target_id, candidate_object_id, canonical_intrinsic_field_semantics_id, exact_RFC6901_pointer.",
+      "No conflict, revocation, supersession, or Stage A stale-state condition has arisen after admission."
+    ],
+    "exposure_effect": "Expose the unchanged candidate material and the admitted tuple for a separate governed human field-pin review only.",
+    "explicit_prohibitions": [
+      "Do not auto-select among one or more candidate pointers.",
+      "Do not treat candidate cardinality, equality of values, or a matching C2R1 pointer as approval.",
+      "Do not create a field pin from Stage A or from candidate exposure.",
+      "Do not change R7, R8, R8R1, the candidate packet, or historical decisions.",
+      "Do not execute source-auth, P0, P1, publication, or a formal experiment."
+    ],
+    "human_action_boundary": {
+      "required": true,
+      "allowed_future_actions": [
+        "APPROVE_EXACT_FIELD_PIN",
+        "REJECT_FIELD_CANDIDATES_KEEP_BLOCKED",
+        "REQUEST_MORE_EVIDENCE"
+      ],
+      "automatic_action": null
+    }
+  },
+  "global_invariant": "No Stage B field-pin exposure is permitted unless Stage A passes. Stage A passage is necessary but not sufficient to create a field pin."
+}
