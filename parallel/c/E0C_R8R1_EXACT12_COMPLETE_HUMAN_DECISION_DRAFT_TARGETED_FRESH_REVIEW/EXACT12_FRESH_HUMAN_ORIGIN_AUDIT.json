@@ -1,0 +1,17 @@
+{
+  "all_records_automatic_human_decision_false": true,
+  "all_records_user_explicit": true,
+  "audit_conclusion": "All 12 decisions are explicit user-origin records; no automatic or inferred human decision was created.",
+  "automatic_human_decision_count": 0,
+  "decision_origin_counts": {
+    "USER_EXPLICIT": 12
+  },
+  "draft_authority_counts": {
+    "NON_AUTHORITATIVE": 12
+  },
+  "explicit_final_four_actions_authenticated": true,
+  "inferred_or_agent_selected_human_decision_count": 0,
+  "record_count_audited": 12,
+  "schema_version": "e0c-r8r1-exact12-fresh-human-origin-audit-v1",
+  "status": "PASS"
+}

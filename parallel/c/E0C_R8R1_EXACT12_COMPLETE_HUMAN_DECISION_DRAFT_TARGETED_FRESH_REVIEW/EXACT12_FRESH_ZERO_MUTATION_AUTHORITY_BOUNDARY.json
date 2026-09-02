@@ -1,0 +1,38 @@
+{
+  "applied_splits": 0,
+  "authority_boundary": {
+    "binding_or_scoring_authority_created": false,
+    "denominator_change": "NO",
+    "draft_remains_non_authoritative": true,
+    "formal_experiment_executed": false,
+    "p0_p1_implication_created": false,
+    "source_auth_created": false
+  },
+  "denominator_change": "NO",
+  "execution_authorizations": 0,
+  "formal_experiment_executed": "NO",
+  "mutation_counts": {
+    "applied_splits": 0,
+    "binding_or_scoring_authority_created": 0,
+    "denominator_changes": 0,
+    "execution_authorizations": 0,
+    "member_expansions": 0,
+    "status_mutations": 0
+  },
+  "next_action": "DESIGN_SPLIT_OR_MORE_EVIDENCE_RESOLUTION_PHASE",
+  "p0_p1_implication_hits": 0,
+  "r7_request_effect_records_checked": 12,
+  "schema_version": "e0c-r8r1-exact12-fresh-zero-mutation-authority-boundary-v2",
+  "semantics": {
+    "binding_or_scoring_changes_not_authorized": true,
+    "denominator_not_changed": true,
+    "member_sets_not_mutated": true,
+    "replay_execution_not_authorized": true,
+    "request_effects_from_r7_are_non_executing": true,
+    "split_not_defined_or_applied": true,
+    "statuses_not_mutated": true
+  },
+  "source_auth_field_hits": 0,
+  "status": "PASS",
+  "status_mutations": 0
+}

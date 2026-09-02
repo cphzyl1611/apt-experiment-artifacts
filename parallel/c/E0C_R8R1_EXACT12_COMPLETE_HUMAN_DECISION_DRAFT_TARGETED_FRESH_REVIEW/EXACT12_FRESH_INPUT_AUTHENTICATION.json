@@ -1,0 +1,74 @@
+{
+  "commit_authentication": "PASS",
+  "completion_package": {
+    "bytes_match_pinned_commit": true,
+    "files": [
+      {
+        "git_blob_sha1": "2cf8825d444d53418c6586ebeb0b3ad110f4d2d8",
+        "path": "E0C_R8R1_HUMAN_TEMPLATE_DECISION_DRAFT_COMPLETE/E0C_R8R1_HUMAN_TEMPLATE_DECISION_DRAFT_COMPLETE.md",
+        "pinned_git_blob_sha1": "2cf8825d444d53418c6586ebeb0b3ad110f4d2d8",
+        "pinned_sha256": "4d372eaa55de7e6de61bb6068709cdad19f261f5094c66b0b29cd1f63c443cb9",
+        "sha256": "4d372eaa55de7e6de61bb6068709cdad19f261f5094c66b0b29cd1f63c443cb9",
+        "size_bytes": 1842,
+        "worktree_bytes_match_pinned_commit": true
+      },
+      {
+        "git_blob_sha1": "84e529ef4911d3dab3d9ff34e8ce7f77d529cd9a",
+        "path": "E0C_R8R1_HUMAN_TEMPLATE_DECISION_DRAFT_COMPLETE/EXACT12_DECISION_CONSERVATION.json",
+        "pinned_git_blob_sha1": "84e529ef4911d3dab3d9ff34e8ce7f77d529cd9a",
+        "pinned_sha256": "b21b59dd9e08ca11d6a014fbd64fc9a29eca977e0f37642fa4fe43fa460e608f",
+        "sha256": "b21b59dd9e08ca11d6a014fbd64fc9a29eca977e0f37642fa4fe43fa460e608f",
+        "size_bytes": 2283,
+        "worktree_bytes_match_pinned_commit": true
+      },
+      {
+        "git_blob_sha1": "9afbb2164a50ad31c97b58e6548d1b3c585c0e2e",
+        "path": "E0C_R8R1_HUMAN_TEMPLATE_DECISION_DRAFT_COMPLETE/EXACT12_DECISION_INPUT_AUTHENTICATION.json",
+        "pinned_git_blob_sha1": "9afbb2164a50ad31c97b58e6548d1b3c585c0e2e",
+        "pinned_sha256": "6da465586fd676197e43fdb5075d44f2d3d39cb4c1509684bc2b92023264dae2",
+        "sha256": "6da465586fd676197e43fdb5075d44f2d3d39cb4c1509684bc2b92023264dae2",
+        "size_bytes": 7624,
+        "worktree_bytes_match_pinned_commit": true
+      },
+      {
+        "git_blob_sha1": "92e94fab150052bcc24eefd336a8ef18bb0471d1",
+        "path": "E0C_R8R1_HUMAN_TEMPLATE_DECISION_DRAFT_COMPLETE/EXACT12_HUMAN_ORIGIN_AUDIT.json",
+        "pinned_git_blob_sha1": "92e94fab150052bcc24eefd336a8ef18bb0471d1",
+        "pinned_sha256": "7976d6576829853d737c77d3003ab6fe62f14f1e8b39065183df4b0d6470bc6d",
+        "sha256": "7976d6576829853d737c77d3003ab6fe62f14f1e8b39065183df4b0d6470bc6d",
+        "size_bytes": 2680,
+        "worktree_bytes_match_pinned_commit": true
+      },
+      {
+        "git_blob_sha1": "432aecdaf7716283fd74cbd9cf9dd19710523454",
+        "path": "E0C_R8R1_HUMAN_TEMPLATE_DECISION_DRAFT_COMPLETE/EXACT12_ZERO_MUTATION_BOUNDARY.json",
+        "pinned_git_blob_sha1": "432aecdaf7716283fd74cbd9cf9dd19710523454",
+        "pinned_sha256": "4cd1c2d8e09b0ba3cf900b6f8bad655ea595e3677ad162a326f7c6e84308e6e9",
+        "sha256": "4cd1c2d8e09b0ba3cf900b6f8bad655ea595e3677ad162a326f7c6e84308e6e9",
+        "size_bytes": 1408,
+        "worktree_bytes_match_pinned_commit": true
+      }
+    ]
+  },
+  "decision_recomputation_status": "PASS",
+  "draft": {
+    "bytes_match_pinned_commit": true,
+    "git_blob_sha1": "dbb1d455ea64a910fd9b1e0b80c03a14702c930c",
+    "no_post_materialization_mutation": true,
+    "sha256": "dbab1909e0f1b1e687709846e2a16eb0cf13c4fb47dc2faa5951226a06dea0f0"
+  },
+  "frozen_set_recomputation_status": "PASS",
+  "pinned_complete_draft_commit": "f10c874513071345ddc2411004f81ee5c57f4065",
+  "repository": {
+    "branch": "artifact/e0-c",
+    "head": "f10c874513071345ddc2411004f81ee5c57f4065",
+    "origin": "https://github.com/cphzyl1611/apt-experiment-artifacts.git",
+    "parent": "99f9c0d7fe8b4ecec896837b3991e8d23ebbb608",
+    "pinned_commit_ancestry": true,
+    "remote_artifact_e0_c": "f10c874513071345ddc2411004f81ee5c57f4065",
+    "remote_main": "99f9c0d7fe8b4ecec896837b3991e8d23ebbb608",
+    "worktree_clean_before_materialization": true
+  },
+  "schema_version": "e0c-r8r1-exact12-fresh-input-authentication-v1",
+  "status": "PASS"
+}

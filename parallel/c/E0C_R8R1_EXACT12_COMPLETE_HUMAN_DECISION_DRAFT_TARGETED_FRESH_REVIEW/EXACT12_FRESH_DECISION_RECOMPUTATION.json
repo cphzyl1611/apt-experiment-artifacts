@@ -1,0 +1,120 @@
+{
+  "all_decision_member_references_match_frozen_sets": true,
+  "completed_draft_git_blob_sha1": "dbb1d455ea64a910fd9b1e0b80c03a14702c930c",
+  "completed_draft_sha256": "dbab1909e0f1b1e687709846e2a16eb0cf13c4fb47dc2faa5951226a06dea0f0",
+  "decision_counts": {
+    "APPROVE_TEMPLATE_FOR_MEMBER_SET": 0,
+    "REJECT_TEMPLATE_KEEP_MEMBERS_MANUAL": 0,
+    "REQUEST_SPLIT_OR_MORE_EVIDENCE": 12
+  },
+  "draft_path": "/home/cph/fa1b2de-artifact-worktrees/e0-c/parallel/c/E0C_R8R1_HUMAN_TEMPLATE_DECISION_DRAFT.jsonl",
+  "expected_first_8_sha256": "4d0e06fb14cc803dfe85a9169d487f1a81ea53d929b2f5e396190e4d9877fcfb",
+  "expected_orders": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "expected_record_count": 12,
+  "final_four_user_actions": [
+    {
+      "attestation": {
+        "authentication_source": "current user instruction in task request",
+        "frozen_order": 9,
+        "human_decision": "REQUEST_SPLIT_OR_MORE_EVIDENCE",
+        "template_id": "r4-template-006-credential_store_access",
+        "user_action_statement": "User explicitly selected REQUEST_SPLIT_OR_MORE_EVIDENCE for r4-template-006-credential_store_access.",
+        "user_action_statement_sha256": "aae60d8d8405f6a21367faa36ae907355783253f2c88945d7709a3ebeb5d06e1"
+      },
+      "frozen_order": 9,
+      "matches_explicit_user_action": true,
+      "template_id": "r4-template-006-credential_store_access"
+    },
+    {
+      "attestation": {
+        "authentication_source": "current user instruction in task request",
+        "frozen_order": 10,
+        "human_decision": "REQUEST_SPLIT_OR_MORE_EVIDENCE",
+        "template_id": "r4-template-048-network_c2_beacon",
+        "user_action_statement": "User explicitly selected REQUEST_SPLIT_OR_MORE_EVIDENCE for r4-template-048-network_c2_beacon.",
+        "user_action_statement_sha256": "4df2a8c05aa63cac74112239f508f19f70f7f7ff9a0fc5b93318c24d49381296"
+      },
+      "frozen_order": 10,
+      "matches_explicit_user_action": true,
+      "template_id": "r4-template-048-network_c2_beacon"
+    },
+    {
+      "attestation": {
+        "authentication_source": "current user instruction in task request",
+        "frozen_order": 11,
+        "human_decision": "REQUEST_SPLIT_OR_MORE_EVIDENCE",
+        "template_id": "r4-template-035-file_resource_operation",
+        "user_action_statement": "User explicitly selected REQUEST_SPLIT_OR_MORE_EVIDENCE for r4-template-035-file_resource_operation.",
+        "user_action_statement_sha256": "96f80361bc1c5dbf2a6e259aba497e808684fb8a08cbd813387ce8f94e303973"
+      },
+      "frozen_order": 11,
+      "matches_explicit_user_action": true,
+      "template_id": "r4-template-035-file_resource_operation"
+    },
+    {
+      "attestation": {
+        "authentication_source": "current user instruction in task request",
+        "frozen_order": 12,
+        "human_decision": "REQUEST_SPLIT_OR_MORE_EVIDENCE",
+        "template_id": "r4-template-071-persistence_configuration",
+        "user_action_statement": "User explicitly selected REQUEST_SPLIT_OR_MORE_EVIDENCE for r4-template-071-persistence_configuration.",
+        "user_action_statement_sha256": "2be106be970c796ba8f45929a98855d387c7f153ba8148eea0cfafc3c298e29b"
+      },
+      "frozen_order": 12,
+      "matches_explicit_user_action": true,
+      "template_id": "r4-template-071-persistence_configuration"
+    }
+  ],
+  "final_four_user_actions_authenticated": true,
+  "first_8_bytes_preserved": true,
+  "first_8_sha256": "4d0e06fb14cc803dfe85a9169d487f1a81ea53d929b2f5e396190e4d9877fcfb",
+  "frozen_raw_coverage": 203,
+  "frozen_template_count": 12,
+  "orders": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "record_count": 12,
+  "record_validation_pass": true,
+  "records_failed_validation": [],
+  "schema_version": "e0c-r8r1-exact12-fresh-decision-recomputation-v1",
+  "status": "PASS",
+  "template_ids": [
+    "r4-template-120-process_command_execution",
+    "r4-template-136-process_command_execution",
+    "r4-template-107-process_command_execution",
+    "r4-template-159-process_command_execution",
+    "r4-template-130-process_command_execution",
+    "r4-template-152-process_command_execution",
+    "r4-template-069-persistence_configuration",
+    "r4-template-009-credential_store_access",
+    "r4-template-006-credential_store_access",
+    "r4-template-048-network_c2_beacon",
+    "r4-template-035-file_resource_operation",
+    "r4-template-071-persistence_configuration"
+  ],
+  "unique_template_ids": true
+}

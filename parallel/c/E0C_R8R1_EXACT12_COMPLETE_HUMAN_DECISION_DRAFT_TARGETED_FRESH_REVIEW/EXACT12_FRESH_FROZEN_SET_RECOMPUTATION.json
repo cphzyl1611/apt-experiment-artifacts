@@ -1,0 +1,432 @@
+{
+  "all_recomputed_members_manual_design_required": true,
+  "blocked31_count": 31,
+  "blocked31_overlap": 0,
+  "blocked31_overlap_keys": [],
+  "drift": 0,
+  "duplicate_template_ids": [],
+  "expected_template_count": 12,
+  "expected_union_member_set_sha256": "ffeb2704a1c971b89129e1959ae721bbc9ef159153a5f0a20f8abda13edb441a",
+  "overlap": 0,
+  "r3_status_mismatches": [],
+  "raw_member_counts": {
+    "expected_raw_coverage": 203,
+    "sum_of_template_member_counts": 203,
+    "unique_raw_member_count": 203
+  },
+  "recomputed_from": [
+    "E0C_R8_HUMAN_DECISION_PACKET.json",
+    "E0C_R6_FIRST_HUMAN_REVIEW_TRANCHE.json",
+    "E0C_R6_EXACT89_ENRICHED_TEMPLATE_PACKETS.jsonl",
+    "E0C_R6_BLOCKED31_SOURCE_RECOVERY_RESULTS.json",
+    "E0C_R7_FIRST_TRANCHE_INPUT_AUTHENTICATION.json",
+    "E0C_R7_FIRST_TRANCHE_DECISION_PACKET.json",
+    "E0C_R3_GLOBAL_1796_PLANNING_STATUS.jsonl"
+  ],
+  "schema_version": "e0c-r8r1-exact12-fresh-frozen-set-recomputation-v1",
+  "source_packet_counts": {
+    "r3_global_status_rows": 1796,
+    "r6_enriched_template_packets": 89,
+    "r6_first_tranche_templates": 12,
+    "r7_auth_template_rows": 12,
+    "r7_decision_templates": 12,
+    "r8_auth_template_rows": 12
+  },
+  "source_set_drift": {
+    "r6_enriched": [],
+    "r6_tranche": [],
+    "r7_auth": [],
+    "r7_decision": [],
+    "r8_auth": []
+  },
+  "status": "PASS",
+  "template_count": 12,
+  "template_id_recomputation": "PASS",
+  "template_order_recomputation": "PASS",
+  "templates": [
+    {
+      "expected": {
+        "frozen_order": 1,
+        "member_count": 49,
+        "member_set_sha256": "3ceca8928cf0c95f4006ffbf91d677cf3cee9287d7beea4996adfa752703bc33"
+      },
+      "frozen_order": 1,
+      "member_count": 49,
+      "member_keys": [
+        "6000003::S03::A001",
+        "6000003::S03::A008",
+        "6000006::S04::A001",
+        "6000006::S04::A002",
+        "6000007::S03::A003",
+        "6000007::S03::A007",
+        "6000007::S11::A003",
+        "6000008::S03::A003",
+        "6000008::S03::A006",
+        "6000008::S05::A003",
+        "6000008::S09::A001",
+        "6000008::S09::A005",
+        "6000009::S03::A003",
+        "6000010::S03::A004",
+        "6000011::S10::A003",
+        "6000013::S03::A007",
+        "6000013::S04::A002",
+        "6000013::S04::A004",
+        "6000014::S03::A006",
+        "6000015::S04::A004",
+        "6000015::S04::A006",
+        "6000016::S04::A002",
+        "6000016::S04::A004",
+        "6000019::S04::A002",
+        "6000019::S08::A005",
+        "6000020::S04::A001",
+        "6000020::S07::A004",
+        "6000021::S09::A002",
+        "6000024::S04::A002",
+        "6000024::S09::A001",
+        "6000026::S05::A001",
+        "6000027::S04::A001",
+        "6000031::S05::A005",
+        "6000039::S04::A003",
+        "6000042::S02::A004",
+        "6000042::S04::A001",
+        "6000043::S03::A002",
+        "6000044::S03::A004",
+        "6000046::S03::A002",
+        "6000047::S05::A003",
+        "6000047::S08::A002",
+        "6000048::S05::A001",
+        "6000049::S03::A003",
+        "6000051::S04::A001",
+        "6000051::S04::A002",
+        "6000060::S07::A001",
+        "6000062::S03::A001",
+        "6000062::S07::A004",
+        "6000063::S04::A001"
+      ],
+      "member_set_reference": "E0C_R8_HUMAN_DECISION_PACKET.json#/templates/0/member_keys",
+      "member_set_sha256_embedded": "3ceca8928cf0c95f4006ffbf91d677cf3cee9287d7beea4996adfa752703bc33",
+      "member_set_sha256_recomputed": "3ceca8928cf0c95f4006ffbf91d677cf3cee9287d7beea4996adfa752703bc33",
+      "template_id": "r4-template-120-process_command_execution"
+    },
+    {
+      "expected": {
+        "frozen_order": 2,
+        "member_count": 28,
+        "member_set_sha256": "fc076c1fbcef34272b7bb80b611fa0b3a560a940833e960976d45388355d100a"
+      },
+      "frozen_order": 2,
+      "member_count": 28,
+      "member_keys": [
+        "6000006::S04::A007",
+        "6000008::S03::A001",
+        "6000009::S11::A001",
+        "6000010::S05::A002",
+        "6000010::S07::A004",
+        "6000011::S03::A005",
+        "6000011::S03::A008",
+        "6000011::S08::A004",
+        "6000011::S10::A002",
+        "6000014::S05::A001",
+        "6000016::S05::A002",
+        "6000017::S05::A002",
+        "6000017::S08::A001",
+        "6000019::S04::A001",
+        "6000020::S03::A003",
+        "6000023::S07::A002",
+        "6000025::S04::A002",
+        "6000026::S03::A003",
+        "6000027::S05::A003",
+        "6000029::S04::A005",
+        "6000036::S05::A003",
+        "6000039::S07::A003",
+        "6000046::S05::A001",
+        "6000047::S04::A002",
+        "6000047::S08::A004",
+        "6000054::S06::A002",
+        "6000056::S06::A001",
+        "6000062::S06::A001"
+      ],
+      "member_set_reference": "E0C_R8_HUMAN_DECISION_PACKET.json#/templates/1/member_keys",
+      "member_set_sha256_embedded": "fc076c1fbcef34272b7bb80b611fa0b3a560a940833e960976d45388355d100a",
+      "member_set_sha256_recomputed": "fc076c1fbcef34272b7bb80b611fa0b3a560a940833e960976d45388355d100a",
+      "template_id": "r4-template-136-process_command_execution"
+    },
+    {
+      "expected": {
+        "frozen_order": 3,
+        "member_count": 27,
+        "member_set_sha256": "aeead35be23d0b2f06d1b7085ce3c33e1cdc08c87f92fe9e972eea608809ee0e"
+      },
+      "frozen_order": 3,
+      "member_count": 27,
+      "member_keys": [
+        "6000002::S02::A003",
+        "6000002::S07::A001",
+        "6000004::S05::A004",
+        "6000004::S05::A005",
+        "6000008::S09::A002",
+        "6000009::S06::A002",
+        "6000011::S03::A001",
+        "6000011::S03::A004",
+        "6000014::S08::A004",
+        "6000017::S03::A003",
+        "6000017::S03::A005",
+        "6000023::S10::A001",
+        "6000025::S04::A001",
+        "6000026::S08::A001",
+        "6000031::S04::A001",
+        "6000032::S04::A003",
+        "6000036::S05::A004",
+        "6000041::S02::A001",
+        "6000042::S02::A001",
+        "6000042::S08::A003",
+        "6000047::S04::A001",
+        "6000048::S03::A001",
+        "6000049::S03::A005",
+        "6000049::S03::A006",
+        "6000053::S06::A002",
+        "6000053::S08::A002",
+        "6000054::S03::A002"
+      ],
+      "member_set_reference": "E0C_R8_HUMAN_DECISION_PACKET.json#/templates/2/member_keys",
+      "member_set_sha256_embedded": "aeead35be23d0b2f06d1b7085ce3c33e1cdc08c87f92fe9e972eea608809ee0e",
+      "member_set_sha256_recomputed": "aeead35be23d0b2f06d1b7085ce3c33e1cdc08c87f92fe9e972eea608809ee0e",
+      "template_id": "r4-template-107-process_command_execution"
+    },
+    {
+      "expected": {
+        "frozen_order": 4,
+        "member_count": 17,
+        "member_set_sha256": "e5f22f069e236fde74af499ec46117c82ea2ce067d39b759421f6865cd548439"
+      },
+      "frozen_order": 4,
+      "member_count": 17,
+      "member_keys": [
+        "6000007::S11::A002",
+        "6000010::S12::A002",
+        "6000011::S10::A004",
+        "6000015::S07::A001",
+        "6000015::S10::A001",
+        "6000017::S08::A004",
+        "6000021::S07::A002",
+        "6000023::S10::A004",
+        "6000025::S07::A001",
+        "6000026::S08::A002",
+        "6000027::S08::A002",
+        "6000033::S06::A003",
+        "6000041::S05::A004",
+        "6000048::S06::A004",
+        "6000049::S07::A003",
+        "6000061::S06::A003",
+        "6000062::S04::A002"
+      ],
+      "member_set_reference": "E0C_R8_HUMAN_DECISION_PACKET.json#/templates/3/member_keys",
+      "member_set_sha256_embedded": "e5f22f069e236fde74af499ec46117c82ea2ce067d39b759421f6865cd548439",
+      "member_set_sha256_recomputed": "e5f22f069e236fde74af499ec46117c82ea2ce067d39b759421f6865cd548439",
+      "template_id": "r4-template-159-process_command_execution"
+    },
+    {
+      "expected": {
+        "frozen_order": 5,
+        "member_count": 17,
+        "member_set_sha256": "b9e9db68106f21ada95ece8e6158f9954372e9e28b908b1e98d886a679280449"
+      },
+      "frozen_order": 5,
+      "member_count": 17,
+      "member_keys": [
+        "6000002::S09::A004",
+        "6000008::S05::A002",
+        "6000009::S07::A005",
+        "6000011::S04::A007",
+        "6000021::S09::A001",
+        "6000024::S09::A003",
+        "6000025::S03::A003",
+        "6000027::S08::A001",
+        "6000027::S08::A006",
+        "6000029::S06::A005",
+        "6000035::S04::A002",
+        "6000036::S03::A001",
+        "6000041::S04::A001",
+        "6000053::S08::A001",
+        "6000054::S03::A001",
+        "6000054::S03::A003",
+        "6000056::S03::A002"
+      ],
+      "member_set_reference": "E0C_R8_HUMAN_DECISION_PACKET.json#/templates/4/member_keys",
+      "member_set_sha256_embedded": "b9e9db68106f21ada95ece8e6158f9954372e9e28b908b1e98d886a679280449",
+      "member_set_sha256_recomputed": "b9e9db68106f21ada95ece8e6158f9954372e9e28b908b1e98d886a679280449",
+      "template_id": "r4-template-130-process_command_execution"
+    },
+    {
+      "expected": {
+        "frozen_order": 6,
+        "member_count": 12,
+        "member_set_sha256": "ed38669390f755e5d316080187f6eff0d819475d59c828fa527d0ec66755ce35"
+      },
+      "frozen_order": 6,
+      "member_count": 12,
+      "member_keys": [
+        "6000006::S08::A005",
+        "6000008::S05::A008",
+        "6000011::S06::A007",
+        "6000017::S05::A006",
+        "6000024::S04::A003",
+        "6000024::S07::A005",
+        "6000026::S05::A005",
+        "6000031::S05::A001",
+        "6000039::S07::A002",
+        "6000060::S06::A003",
+        "6000063::S06::A001",
+        "6000063::S06::A002"
+      ],
+      "member_set_reference": "E0C_R8_HUMAN_DECISION_PACKET.json#/templates/5/member_keys",
+      "member_set_sha256_embedded": "ed38669390f755e5d316080187f6eff0d819475d59c828fa527d0ec66755ce35",
+      "member_set_sha256_recomputed": "ed38669390f755e5d316080187f6eff0d819475d59c828fa527d0ec66755ce35",
+      "template_id": "r4-template-152-process_command_execution"
+    },
+    {
+      "expected": {
+        "frozen_order": 7,
+        "member_count": 10,
+        "member_set_sha256": "7347ef4f412bf89b0ee6fad51fe44eabb96c64606d8b7d293b0b656ed8e86b42"
+      },
+      "frozen_order": 7,
+      "member_count": 10,
+      "member_keys": [
+        "6000002::S03::A003",
+        "6000002::S06::A002",
+        "6000004::S05::A003",
+        "6000008::S08::A001",
+        "6000010::S05::A001",
+        "6000019::S08::A002",
+        "6000033::S05::A003",
+        "6000049::S06::A002",
+        "6000054::S07::A003",
+        "6000062::S05::A001"
+      ],
+      "member_set_reference": "E0C_R8_HUMAN_DECISION_PACKET.json#/templates/6/member_keys",
+      "member_set_sha256_embedded": "7347ef4f412bf89b0ee6fad51fe44eabb96c64606d8b7d293b0b656ed8e86b42",
+      "member_set_sha256_recomputed": "7347ef4f412bf89b0ee6fad51fe44eabb96c64606d8b7d293b0b656ed8e86b42",
+      "template_id": "r4-template-069-persistence_configuration"
+    },
+    {
+      "expected": {
+        "frozen_order": 8,
+        "member_count": 9,
+        "member_set_sha256": "9ae166dab66173192bbcbcd89bc86757c290e9d8db2d23a0350cd6df890636f4"
+      },
+      "frozen_order": 8,
+      "member_count": 9,
+      "member_keys": [
+        "6000003::S06::A004",
+        "6000004::S08::A004",
+        "6000006::S09::A006",
+        "6000010::S11::A007",
+        "6000011::S07::A006",
+        "6000017::S06::A002",
+        "6000019::S05::A003",
+        "6000026::S05::A006",
+        "6000031::S05::A003"
+      ],
+      "member_set_reference": "E0C_R8_HUMAN_DECISION_PACKET.json#/templates/7/member_keys",
+      "member_set_sha256_embedded": "9ae166dab66173192bbcbcd89bc86757c290e9d8db2d23a0350cd6df890636f4",
+      "member_set_sha256_recomputed": "9ae166dab66173192bbcbcd89bc86757c290e9d8db2d23a0350cd6df890636f4",
+      "template_id": "r4-template-009-credential_store_access"
+    },
+    {
+      "expected": {
+        "frozen_order": 9,
+        "member_count": 9,
+        "member_set_sha256": "776cc6ca57d025ad62efeed4d6f55f8a34a6dafe4517cc6a8a388519de3e6e8d"
+      },
+      "frozen_order": 9,
+      "member_count": 9,
+      "member_keys": [
+        "6000002::S05::A004",
+        "6000003::S06::A003",
+        "6000027::S08::A005",
+        "6000035::S07::A005",
+        "6000036::S06::A004",
+        "6000043::S05::A002",
+        "6000043::S05::A005",
+        "6000048::S06::A002",
+        "6000063::S07::A002"
+      ],
+      "member_set_reference": "E0C_R8_HUMAN_DECISION_PACKET.json#/templates/8/member_keys",
+      "member_set_sha256_embedded": "776cc6ca57d025ad62efeed4d6f55f8a34a6dafe4517cc6a8a388519de3e6e8d",
+      "member_set_sha256_recomputed": "776cc6ca57d025ad62efeed4d6f55f8a34a6dafe4517cc6a8a388519de3e6e8d",
+      "template_id": "r4-template-006-credential_store_access"
+    },
+    {
+      "expected": {
+        "frozen_order": 10,
+        "member_count": 9,
+        "member_set_sha256": "f7ea287ecdda9343ad41d24096b9a4ab8a4a567d0f40c0d3b708a384e65c9db4"
+      },
+      "frozen_order": 10,
+      "member_count": 9,
+      "member_keys": [
+        "6000011::S02::A004",
+        "6000011::S02::A005",
+        "6000016::S03::A001",
+        "6000016::S03::A002",
+        "6000027::S04::A002",
+        "6000035::S03::A004",
+        "6000041::S03::A002",
+        "6000050::S02::A004",
+        "6000060::S04::A001"
+      ],
+      "member_set_reference": "E0C_R8_HUMAN_DECISION_PACKET.json#/templates/9/member_keys",
+      "member_set_sha256_embedded": "f7ea287ecdda9343ad41d24096b9a4ab8a4a567d0f40c0d3b708a384e65c9db4",
+      "member_set_sha256_recomputed": "f7ea287ecdda9343ad41d24096b9a4ab8a4a567d0f40c0d3b708a384e65c9db4",
+      "template_id": "r4-template-048-network_c2_beacon"
+    },
+    {
+      "expected": {
+        "frozen_order": 11,
+        "member_count": 8,
+        "member_set_sha256": "ae5c70bcbce560f3194a63c6336b1021b4a3f947601958b75ae98245331b8a52"
+      },
+      "frozen_order": 11,
+      "member_count": 8,
+      "member_keys": [
+        "6000002::S05::A007",
+        "6000004::S04::A010",
+        "6000036::S07::A004",
+        "6000041::S08::A002",
+        "6000043::S06::A004",
+        "6000046::S05::A003",
+        "6000054::S08::A003",
+        "6000062::S07::A003"
+      ],
+      "member_set_reference": "E0C_R8_HUMAN_DECISION_PACKET.json#/templates/10/member_keys",
+      "member_set_sha256_embedded": "ae5c70bcbce560f3194a63c6336b1021b4a3f947601958b75ae98245331b8a52",
+      "member_set_sha256_recomputed": "ae5c70bcbce560f3194a63c6336b1021b4a3f947601958b75ae98245331b8a52",
+      "template_id": "r4-template-035-file_resource_operation"
+    },
+    {
+      "expected": {
+        "frozen_order": 12,
+        "member_count": 8,
+        "member_set_sha256": "939db086e6af0f4a8c6fb04d039ff8a379b0b0dc9cf5ebe9cbd76bb4e3b9cb28"
+      },
+      "frozen_order": 12,
+      "member_count": 8,
+      "member_keys": [
+        "6000015::S06::A002",
+        "6000028::S07::A006",
+        "6000029::S04::A001",
+        "6000041::S06::A002",
+        "6000047::S06::A002",
+        "6000050::S04::A004",
+        "6000054::S07::A001",
+        "6000062::S03::A004"
+      ],
+      "member_set_reference": "E0C_R8_HUMAN_DECISION_PACKET.json#/templates/11/member_keys",
+      "member_set_sha256_embedded": "939db086e6af0f4a8c6fb04d039ff8a379b0b0dc9cf5ebe9cbd76bb4e3b9cb28",
+      "member_set_sha256_recomputed": "939db086e6af0f4a8c6fb04d039ff8a379b0b0dc9cf5ebe9cbd76bb4e3b9cb28",
+      "template_id": "r4-template-071-persistence_configuration"
+    }
+  ],
+  "union_member_set_sha256": "ffeb2704a1c971b89129e1959ae721bbc9ef159153a5f0a20f8abda13edb441a"
+}
