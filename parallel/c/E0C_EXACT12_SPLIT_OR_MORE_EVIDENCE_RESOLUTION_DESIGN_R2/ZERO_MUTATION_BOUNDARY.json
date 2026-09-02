@@ -1,0 +1,67 @@
+{
+  "boundary_id": "E0C_EXACT12_SPLIT_OR_MORE_EVIDENCE_RESOLUTION_ZERO_MUTATION_BOUNDARY_R2",
+  "schema_version": "e0c-exact12-zero-mutation-boundary-r2",
+  "design_only": true,
+  "authority": "NON_AUTHORITATIVE",
+  "reviewed_state_anchor": {
+    "materialization_commit": "f10c874513071345ddc2411004f81ee5c57f4065",
+    "independent_review_commit": "38468ed7968d4030b2c070f381c35bae52452dbb"
+  },
+  "frozen_scope": {
+    "template_count": 12,
+    "raw_coverage": 203,
+    "current_request_more_evidence_count": 12,
+    "member_overlap": 0,
+    "member_set_drift": 0,
+    "blocked31_overlap": 0,
+    "union_member_key_sha256": "ffeb2704a1c971b89129e1959ae721bbc9ef159153a5f0a20f8abda13edb441a"
+  },
+  "current_state_invariants": {
+    "every_template_source_human_decision": "REQUEST_SPLIT_OR_MORE_EVIDENCE",
+    "every_template_resolution_state": "REQUEST_MORE_EVIDENCE",
+    "every_template_planning_status": "MANUAL_DESIGN_REQUIRED",
+    "every_template_current_split_status": "NO_CURRENT_SPLIT",
+    "applied_splits": 0,
+    "status_mutations": 0,
+    "execution_authorizations": 0,
+    "denominator_change": "NO",
+    "formal_experiment_executed": "NO"
+  },
+  "permitted_operations": [
+    "read authenticated frozen artifacts",
+    "write this design package",
+    "validate JSON and JSONL syntax",
+    "recompute package-local counts and references",
+    "perform independent design review"
+  ],
+  "forbidden_operations": [
+    "apply_or_materialize_any_split",
+    "mutate_any_template_or_member_status",
+    "create_execution_or_scoring_authority",
+    "authorize_a_formal_experiment",
+    "change_the_203_member_denominator",
+    "rewrite_or_replace_the_pinned_reviewed_state",
+    "push_to_any_remote_repository"
+  ],
+  "future_split_rule": "Any split proposal must remain unapplied until separately reviewed and explicitly approved, with exact member conservation, zero overlap, and parent-hash revalidation.",
+  "terminal": {
+    "E0C_EXACT12_SPLIT_OR_MORE_EVIDENCE_RESOLUTION_PHASE_DESIGN": "PASS_READY_FOR_INDEPENDENT_DESIGN_REVIEW",
+    "E0C_SPLIT_RESOLUTION_DESIGN_R2": "PASS_READY_FOR_INDEPENDENT_REVIEW",
+    "FROZEN_TEMPLATE_COUNT": 12,
+    "FROZEN_RAW_COVERAGE": 203,
+    "CURRENT_REQUEST_MORE_EVIDENCE_COUNT": 12,
+    "RESOLUTION_POLICY_DESIGNED": "PASS",
+    "SPLIT_JUSTIFICATION_CONTRACT_DESIGNED": "PASS",
+    "MORE_EVIDENCE_CONTRACT_DESIGNED": "PASS",
+    "EXACT12_CROSSWALK_DESIGNED": "PASS",
+    "MEMBER_CONSERVATION_REQUIRED": "PASS",
+    "APPLIED_SPLITS": 0,
+    "STATUS_MUTATIONS": 0,
+    "EXECUTION_AUTHORIZATIONS": 0,
+    "DENOMINATOR_CHANGE": "NO",
+    "FORMAL_EXPERIMENT_EXECUTED": "NO",
+    "PUSH_EXECUTED": "NO",
+    "NEXT_ACTION": "INDEPENDENT_REVIEW_OF_RESOLUTION_DESIGN_R2",
+    "STOP": true
+  }
+}

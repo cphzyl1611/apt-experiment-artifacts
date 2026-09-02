@@ -1,0 +1,509 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "e0c-exact12-template-level-resolution-schema-r2",
+  "title": "E0C Exact12 Template-Level Resolution Record R2",
+  "description": "Strict structural schema for a future governed disposition of one frozen Exact12 template. Cross-field identity, hash, partition, and conservation relationships are enforced by validate_e0c_r2.py.",
+  "type": "object",
+  "additionalProperties": false,
+  "$defs": {
+    "split_proposal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "proposal_id",
+        "parent_template_id",
+        "parent_frozen_order",
+        "parent_member_count",
+        "parent_member_set_sha256",
+        "parent_member_set_reference",
+        "partition_basis",
+        "partition_predicate",
+        "partition_evidence_references",
+        "child_partition_ids",
+        "child_partitions",
+        "conservation_result",
+        "independent_partition_review_reference",
+        "approval_reference",
+        "applied",
+        "execution_authorized",
+        "status_mutation",
+        "denominator_change"
+      ],
+      "properties": {
+        "proposal_id": {
+            "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+        },
+        "parent_template_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "parent_frozen_order": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 12
+        },
+        "parent_member_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "parent_member_set_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "parent_member_set_reference": {
+          "type": "string",
+          "minLength": 1
+        },
+        "partition_basis": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "basis_type",
+            "rationale"
+          ],
+          "properties": {
+            "basis_type": {
+              "const": "SOURCE_GROUNDED_SEMANTIC_BOUNDARY"
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "partition_predicate": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "predicate_id",
+            "expression",
+            "input_fields",
+            "source_grounded_reference",
+            "deterministic",
+            "source_grounded",
+            "unknown_treatment"
+          ],
+          "properties": {
+            "predicate_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "expression": {
+              "type": "string",
+              "minLength": 1
+            },
+            "input_fields": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "source_grounded_reference": {
+              "type": "string",
+              "minLength": 1
+            },
+            "deterministic": {
+              "const": true
+            },
+            "source_grounded": {
+              "const": true
+            },
+            "unknown_treatment": {
+              "const": "UNKNOWN_IS_NOT_A_BOUNDARY"
+            }
+          }
+        },
+        "partition_evidence_references": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "child_partitions": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "child_id",
+              "child_order",
+              "member_keys",
+              "member_count",
+              "member_set_sha256",
+              "member_set_reference",
+              "child_evidence_reference"
+            ],
+            "properties": {
+              "child_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+              },
+              "child_order": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "member_keys": {
+                "type": "array",
+                "minItems": 1,
+                "uniqueItems": true,
+                "items": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+                }
+              },
+              "member_count": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "member_set_sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "member_set_reference": {
+                "type": "string",
+                "minLength": 1
+              },
+              "child_evidence_reference": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "child_partition_ids": {
+          "type": "array",
+          "minItems": 2,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+          }
+        },
+        "conservation_result": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "parent_member_count",
+            "child_member_count_sum",
+            "child_union_equals_parent",
+            "pairwise_child_overlap_count",
+            "unassigned_member_count",
+            "duplicate_member_count",
+            "count_conserved",
+            "hashes_recomputed",
+            "parent_hash_revalidated",
+            "cross_template_overlap_count",
+            "blocked31_overlap_count",
+            "conservation_check_reference"
+          ],
+          "properties": {
+            "parent_member_count": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "child_member_count_sum": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "child_union_equals_parent": {
+              "const": true
+            },
+            "pairwise_child_overlap_count": {
+              "const": 0
+            },
+            "unassigned_member_count": {
+              "const": 0
+            },
+            "duplicate_member_count": {
+              "const": 0
+            },
+            "count_conserved": {
+              "const": true
+            },
+            "hashes_recomputed": {
+              "const": true
+            },
+            "parent_hash_revalidated": {
+              "const": true
+            },
+            "cross_template_overlap_count": {
+              "const": 0
+            },
+            "blocked31_overlap_count": {
+              "const": 0
+            },
+            "conservation_check_reference": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "independent_partition_review_reference": {
+          "type": "string",
+          "minLength": 1
+        },
+        "approval_reference": {
+          "type": ["string", "null"]
+        },
+        "applied": {
+          "const": false
+        },
+        "execution_authorized": {
+          "const": false
+        },
+        "status_mutation": {
+          "const": 0
+        },
+        "denominator_change": {
+          "const": "NO"
+        }
+      }
+    }
+  },
+  "required": [
+    "record_type",
+    "schema_version",
+    "reviewed_state_anchor",
+    "template_identity",
+    "current_state",
+    "future_resolution"
+  ],
+  "properties": {
+    "record_type": {
+      "const": "E0C_EXACT12_TEMPLATE_LEVEL_RESOLUTION_RECORD"
+    },
+    "schema_version": {
+      "const": "e0c-exact12-template-level-resolution-schema-r2"
+    },
+    "reviewed_state_anchor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "materialization_commit",
+        "independent_review_commit"
+      ],
+      "properties": {
+        "materialization_commit": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "independent_review_commit": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        }
+      }
+    },
+    "template_identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "template_id",
+        "frozen_order",
+        "member_count",
+        "member_set_sha256",
+        "member_set_reference"
+      ],
+      "properties": {
+        "template_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "frozen_order": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 12
+        },
+        "member_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "member_set_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "member_set_reference": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decision_packet_member_set_reference": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "current_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_human_decision",
+        "resolution_state",
+        "r3_global_planning_status",
+        "current_split_status",
+        "applied_split",
+        "status_mutations",
+        "formal_execution_authorized"
+      ],
+      "properties": {
+        "source_human_decision": {
+          "const": "REQUEST_SPLIT_OR_MORE_EVIDENCE"
+        },
+        "resolution_state": {
+          "const": "REQUEST_MORE_EVIDENCE"
+        },
+        "r3_global_planning_status": {
+          "const": "MANUAL_DESIGN_REQUIRED"
+        },
+        "current_split_status": {
+          "const": "NO_CURRENT_SPLIT"
+        },
+        "applied_split": {
+          "const": false
+        },
+        "status_mutations": {
+          "const": 0
+        },
+        "formal_execution_authorized": {
+          "const": false
+        }
+      }
+    },
+    "future_resolution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "resolution_outcome",
+        "outcome_authoritative",
+        "evidence_manifest_reference",
+        "review_record_reference",
+        "member_conservation_check",
+        "execution_authorized",
+        "status_mutation",
+        "denominator_change",
+        "split_proposal"
+      ],
+      "properties": {
+        "resolution_outcome": {
+          "type": ["string", "null"],
+          "enum": [
+            null,
+            "APPROVE",
+            "REJECT_KEEP_MANUAL",
+            "JUSTIFIED_SPLIT_PROPOSAL",
+            "KEEP_REQUEST_MORE_EVIDENCE"
+          ]
+        },
+        "outcome_authoritative": {
+          "type": "boolean"
+        },
+        "evidence_manifest_reference": {
+          "type": ["string", "null"]
+        },
+        "review_record_reference": {
+          "type": ["string", "null"]
+        },
+        "member_conservation_check": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "parent_member_count",
+            "child_member_count",
+            "union_equals_parent",
+            "pairwise_overlap_count",
+            "count_conserved",
+            "hashes_recomputed"
+          ],
+          "properties": {
+            "parent_member_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "child_member_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "union_equals_parent": {
+              "type": "boolean"
+            },
+            "pairwise_overlap_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "count_conserved": {
+              "type": "boolean"
+            },
+            "hashes_recomputed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "execution_authorized": {
+          "const": false
+        },
+        "status_mutation": {
+          "const": 0
+        },
+        "denominator_change": {
+          "const": "NO"
+        },
+        "split_proposal": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/split_proposal"
+            }
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "resolution_outcome": {
+                "const": "JUSTIFIED_SPLIT_PROPOSAL"
+              }
+            }
+          },
+          "then": {
+            "required": ["split_proposal"],
+            "properties": {
+              "split_proposal": {
+                "$ref": "#/$defs/split_proposal"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "resolution_outcome": {
+                "enum": [
+                  "APPROVE",
+                  "REJECT_KEEP_MANUAL",
+                  "KEEP_REQUEST_MORE_EVIDENCE",
+                  null
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "split_proposal": {
+                "const": null
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

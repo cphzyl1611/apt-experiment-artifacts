@@ -1,0 +1,198 @@
+{
+  "artifact_type": "E0C_EXACT12_SPLIT_OR_MORE_EVIDENCE_RESOLUTION_DESIGN_R2_VALIDATION_EVIDENCE",
+  "read_only": true,
+  "schema_meta_validation": "PASS",
+  "acquisition_evidence_classes": [
+    "SOURCE_SEMANTICS",
+    "CONTROLLED_ENVIRONMENT",
+    "DEFENSIVE_EQUIVALENCE",
+    "OBSERVABILITY",
+    "SAFETY_RESET",
+    "PARTITION",
+    "GOVERNANCE"
+  ],
+  "baseline": {
+    "template_count": 12,
+    "ordered": true,
+    "raw_count_sum": 203,
+    "unique_member_count": 203,
+    "duplicate_member_count": 0,
+    "cross_template_overlap_count": 0,
+    "union_member_key_sha256": "ffeb2704a1c971b89129e1959ae721bbc9ef159153a5f0a20f8abda13edb441a",
+    "all_current_states_frozen": true
+  },
+  "baseline_errors": [],
+  "fixture_results": {
+    "valid_fixture": {
+      "filename": "VALID_SPLIT_PROPOSAL_FIXTURE.json",
+      "status": "ACCEPTED",
+      "error_count": 0,
+      "errors": []
+    },
+    "negative_fixtures": [
+      {
+        "filename": "NEGATIVE_DUPLICATE_CHILD_ID.json",
+        "status": "REJECTED",
+        "error_count": 4,
+        "errors": [
+          "schema:future_resolution.split_proposal: {'proposal_id': 'fixture-valid-split-proposal', 'parent_template_id': 'r4-template-120-process_command_execution', 'parent_frozen_order': 1, 'parent_member_count': 49, 'parent_member_set_sha256': '3ceca8928cf0c95f4006ffbf91d677cf3cee9287d7beea4996adfa752703bc33', 'parent_member_set_reference': 'E0C_R8_HUMAN_DECISION_PACKET.json#/templates/0/member_keys', 'partition_basis': {'basis_type': 'SOURCE_GROUNDED_SEMANTIC_BOUNDARY', 'rationale': 'Synthetic validator fixture only; not a future disposition.'}, 'partition_predicate': {'predicate_id': 'fixture-predicate', 'expression': 'fixture_member_position < midpoint', 'input_fields': ['fixture_member_position'], 'source_grounded_reference': 'fixture://source-grounded-test-input', 'deterministic': True, 'source_grounded': True, 'unknown_treatment': 'UNKNOWN_IS_NOT_A_BOUNDARY'}, 'partition_evidence_references': ['fixture://partition-evidence'], 'child_partition_ids': ['r4-template-120-process_command_execution::fixture-child-1', 'r4-template-120-process_command_execution::fixture-child-1'], 'child_partitions': [{'child_id': 'r4-template-120-process_command_execution::fixture-child-1', 'child_order': 1, 'member_keys': ['6000003::S03::A001', '6000003::S03::A008', '6000006::S04::A001', '6000006::S04::A002', '6000007::S03::A003', '6000007::S03::A007', '6000007::S11::A003', '6000008::S03::A003', '6000008::S03::A006', '6000008::S05::A003', '6000008::S09::A001', '6000008::S09::A005', '6000009::S03::A003', '6000010::S03::A004', '6000011::S10::A003', '6000013::S03::A007', '6000013::S04::A002', '6000013::S04::A004', '6000014::S03::A006', '6000015::S04::A004', '6000015::S04::A006', '6000016::S04::A002', '6000016::S04::A004', '6000019::S04::A002'], 'member_count': 24, 'member_set_sha256': '22ba2627357435dbec82c49ad0b42d6666fe3df420b791d241d8b5f5d84e3109', 'member_set_reference': 'fixture://child/1', 'child_evidence_reference': 'fixture://evidence/child/1'}, {'child_id': 'r4-template-120-process_command_execution::fixture-child-1', 'child_order': 2, 'member_keys': ['6000019::S08::A005', '6000020::S04::A001', '6000020::S07::A004', '6000021::S09::A002', '6000024::S04::A002', '6000024::S09::A001', '6000026::S05::A001', '6000027::S04::A001', '6000031::S05::A005', '6000039::S04::A003', '6000042::S02::A004', '6000042::S04::A001', '6000043::S03::A002', '6000044::S03::A004', '6000046::S03::A002', '6000047::S05::A003', '6000047::S08::A002', '6000048::S05::A001', '6000049::S03::A003', '6000051::S04::A001', '6000051::S04::A002', '6000060::S07::A001', '6000062::S03::A001', '6000062::S07::A004', '6000063::S04::A001'], 'member_count': 25, 'member_set_sha256': '95256be8e88605923135c76c8d1e132a13e554c73738ec6e1851b15df5e016e2', 'member_set_reference': 'fixture://child/2', 'child_evidence_reference': 'fixture://evidence/child/2'}], 'conservation_result': {'parent_member_count': 49, 'child_member_count_sum': 49, 'child_union_equals_parent': True, 'pairwise_child_overlap_count': 0, 'unassigned_member_count': 0, 'duplicate_member_count': 0, 'count_conserved': True, 'hashes_recomputed': True, 'parent_hash_revalidated': True, 'cross_template_overlap_count': 0, 'blocked31_overlap_count': 0, 'conservation_check_reference': 'fixture://conservation-check'}, 'independent_partition_review_reference': 'fixture://independent-review', 'approval_reference': None, 'applied': False, 'execution_authorized': False, 'status_mutation': 0, 'denominator_change': 'NO'} is not valid under any of the given schemas",
+          "schema:future_resolution.split_proposal.child_partition_ids: ['r4-template-120-process_command_execution::fixture-child-1', 'r4-template-120-process_command_execution::fixture-child-1'] has non-unique elements",
+          "future_resolution.split_proposal.child_partitions child_id values must be unique: ['r4-template-120-process_command_execution::fixture-child-1']",
+          "future_resolution.split_proposal.child_partition_ids must contain unique IDs"
+        ]
+      },
+      {
+        "filename": "NEGATIVE_FALSE_CONSERVATION_CLAIM.json",
+        "status": "REJECTED",
+        "error_count": 11,
+        "errors": [
+          "future_resolution.split_proposal.child_partitions[1].member_count must equal member_keys length",
+          "future_resolution.split_proposal.child_partitions[1].member_set_sha256 must equal canonical member-key hash",
+          "future_resolution.split_proposal.conservation_result.child_member_count_sum: expected 48, got 49",
+          "future_resolution.split_proposal.conservation_result.child_union_equals_parent: expected False, got True",
+          "future_resolution.split_proposal.conservation_result.unassigned_member_count: expected 1, got 0",
+          "future_resolution.split_proposal.conservation_result.count_conserved: expected False, got True",
+          "future_resolution.split_proposal.conservation_result.hashes_recomputed: expected False, got True",
+          "future_resolution.member_conservation_check.child_member_count: expected 48, got 49",
+          "future_resolution.member_conservation_check.union_equals_parent: expected False, got True",
+          "future_resolution.member_conservation_check.count_conserved: expected False, got True",
+          "future_resolution.member_conservation_check.hashes_recomputed: expected False, got True"
+        ]
+      },
+      {
+        "filename": "NEGATIVE_INCOMPLETE_CHILD_PARTITION.json",
+        "status": "REJECTED",
+        "error_count": 11,
+        "errors": [
+          "future_resolution.split_proposal.child_partitions[1].member_count must equal member_keys length",
+          "future_resolution.split_proposal.child_partitions[1].member_set_sha256 must equal canonical member-key hash",
+          "future_resolution.split_proposal.conservation_result.child_member_count_sum: expected 48, got 49",
+          "future_resolution.split_proposal.conservation_result.child_union_equals_parent: expected False, got True",
+          "future_resolution.split_proposal.conservation_result.unassigned_member_count: expected 1, got 0",
+          "future_resolution.split_proposal.conservation_result.count_conserved: expected False, got True",
+          "future_resolution.split_proposal.conservation_result.hashes_recomputed: expected False, got True",
+          "future_resolution.member_conservation_check.child_member_count: expected 48, got 49",
+          "future_resolution.member_conservation_check.union_equals_parent: expected False, got True",
+          "future_resolution.member_conservation_check.count_conserved: expected False, got True",
+          "future_resolution.member_conservation_check.hashes_recomputed: expected False, got True"
+        ]
+      },
+      {
+        "filename": "NEGATIVE_INVALID_PARENT_HASH.json",
+        "status": "REJECTED",
+        "error_count": 2,
+        "errors": [
+          "future_resolution.split_proposal.parent_member_set_sha256: expected '3ceca8928cf0c95f4006ffbf91d677cf3cee9287d7beea4996adfa752703bc33', got 'ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff'",
+          "future_resolution.split_proposal.conservation_result.parent_hash_revalidated: expected False, got True"
+        ]
+      },
+      {
+        "filename": "NEGATIVE_INVALID_PARENT_IDENTITY.json",
+        "status": "REJECTED",
+        "error_count": 1,
+        "errors": [
+          "future_resolution.split_proposal.parent_template_id: expected 'r4-template-120-process_command_execution', got 'wrong-parent-template'"
+        ]
+      },
+      {
+        "filename": "NEGATIVE_MALFORMED_CHILD_COUNT.json",
+        "status": "REJECTED",
+        "error_count": 3,
+        "errors": [
+          "future_resolution.split_proposal.child_partitions[0].member_count must equal member_keys length",
+          "future_resolution.split_proposal.conservation_result.hashes_recomputed: expected False, got True",
+          "future_resolution.member_conservation_check.hashes_recomputed: expected False, got True"
+        ]
+      },
+      {
+        "filename": "NEGATIVE_MALFORMED_CHILD_HASH.json",
+        "status": "REJECTED",
+        "error_count": 3,
+        "errors": [
+          "future_resolution.split_proposal.child_partitions[0].member_set_sha256 must equal canonical member-key hash",
+          "future_resolution.split_proposal.conservation_result.hashes_recomputed: expected False, got True",
+          "future_resolution.member_conservation_check.hashes_recomputed: expected False, got True"
+        ]
+      },
+      {
+        "filename": "NEGATIVE_MEMBER_OUTSIDE_PARENT.json",
+        "status": "REJECTED",
+        "error_count": 11,
+        "errors": [
+          "future_resolution.split_proposal.child_partitions[0].member_count must equal member_keys length",
+          "future_resolution.split_proposal.child_partitions[0].member_set_sha256 must equal canonical member-key hash",
+          "future_resolution.split_proposal.child_partitions[0] contains members outside the frozen parent: ['9999999::S99::A999']",
+          "future_resolution.split_proposal.conservation_result.child_member_count_sum: expected 50, got 49",
+          "future_resolution.split_proposal.conservation_result.child_union_equals_parent: expected False, got True",
+          "future_resolution.split_proposal.conservation_result.count_conserved: expected False, got True",
+          "future_resolution.split_proposal.conservation_result.hashes_recomputed: expected False, got True",
+          "future_resolution.member_conservation_check.child_member_count: expected 50, got 49",
+          "future_resolution.member_conservation_check.union_equals_parent: expected False, got True",
+          "future_resolution.member_conservation_check.count_conserved: expected False, got True",
+          "future_resolution.member_conservation_check.hashes_recomputed: expected False, got True"
+        ]
+      },
+      {
+        "filename": "NEGATIVE_OVERLAPPING_CHILD_PARTITION.json",
+        "status": "REJECTED",
+        "error_count": 11,
+        "errors": [
+          "future_resolution.split_proposal.child_partitions[1].member_count must equal member_keys length",
+          "future_resolution.split_proposal.child_partitions[1].member_set_sha256 must equal canonical member-key hash",
+          "future_resolution.split_proposal.conservation_result.child_member_count_sum: expected 50, got 49",
+          "future_resolution.split_proposal.conservation_result.pairwise_child_overlap_count: expected 1, got 0",
+          "future_resolution.split_proposal.conservation_result.duplicate_member_count: expected 1, got 0",
+          "future_resolution.split_proposal.conservation_result.count_conserved: expected False, got True",
+          "future_resolution.split_proposal.conservation_result.hashes_recomputed: expected False, got True",
+          "future_resolution.member_conservation_check.child_member_count: expected 50, got 49",
+          "future_resolution.member_conservation_check.pairwise_overlap_count: expected 1, got 0",
+          "future_resolution.member_conservation_check.count_conserved: expected False, got True",
+          "future_resolution.member_conservation_check.hashes_recomputed: expected False, got True"
+        ]
+      }
+    ],
+    "all_negative_rejected": true
+  },
+  "human_decisions_created": 0,
+  "authority_mutation": "NO",
+  "boundary_terminal": {
+    "E0C_EXACT12_SPLIT_OR_MORE_EVIDENCE_RESOLUTION_PHASE_DESIGN": "PASS_READY_FOR_INDEPENDENT_DESIGN_REVIEW",
+    "E0C_SPLIT_RESOLUTION_DESIGN_R2": "PASS_READY_FOR_INDEPENDENT_REVIEW",
+    "FROZEN_TEMPLATE_COUNT": 12,
+    "FROZEN_RAW_COVERAGE": 203,
+    "CURRENT_REQUEST_MORE_EVIDENCE_COUNT": 12,
+    "RESOLUTION_POLICY_DESIGNED": "PASS",
+    "SPLIT_JUSTIFICATION_CONTRACT_DESIGNED": "PASS",
+    "MORE_EVIDENCE_CONTRACT_DESIGNED": "PASS",
+    "EXACT12_CROSSWALK_DESIGNED": "PASS",
+    "MEMBER_CONSERVATION_REQUIRED": "PASS",
+    "APPLIED_SPLITS": 0,
+    "STATUS_MUTATIONS": 0,
+    "EXECUTION_AUTHORIZATIONS": 0,
+    "DENOMINATOR_CHANGE": "NO",
+    "FORMAL_EXPERIMENT_EXECUTED": "NO",
+    "PUSH_EXECUTED": "NO",
+    "NEXT_ACTION": "INDEPENDENT_REVIEW_OF_RESOLUTION_DESIGN_R2",
+    "STOP": true
+  },
+  "terminal": {
+    "E0C_SPLIT_RESOLUTION_DESIGN_R2": "PASS_READY_FOR_INDEPENDENT_REVIEW",
+    "FROZEN_TEMPLATE_COUNT": 12,
+    "FROZEN_RAW_COVERAGE": 203,
+    "CURRENT_REQUEST_MORE_EVIDENCE_COUNT": 12,
+    "SCHEMA_META_VALIDATION": "PASS",
+    "STRICT_SEMANTIC_VALIDATION": "PASS",
+    "PARTITION_EVIDENCE_CLASS_PRESENT": "PASS",
+    "GOVERNANCE_EVIDENCE_CLASS_PRESENT": "PASS",
+    "EXACT12_MEMBER_CONSERVATION": "PASS",
+    "APPLIED_SPLITS": 0,
+    "STATUS_MUTATIONS": 0,
+    "EXECUTION_AUTHORIZATIONS": 0,
+    "DENOMINATOR_CHANGE": "NO",
+    "FORMAL_EXPERIMENT_EXECUTED": "NO",
+    "HUMAN_DECISIONS_CREATED": 0,
+    "PUSH_EXECUTED": "NO",
+    "NEXT_ACTION": "INDEPENDENT_REVIEW_OF_RESOLUTION_DESIGN_R2",
+    "STOP": true
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "fixture_type": "NON_AUTHORITATIVE_SPLIT_VALIDATION_ONLY",
+  "fixtures": [
+    {
+      "fixture_id": "NEGATIVE_MALFORMED_CHILD_COUNT",
+      "filename": "NEGATIVE_MALFORMED_CHILD_COUNT.json",
+      "expected": "REJECT"
+    },
+    {
+      "fixture_id": "NEGATIVE_MALFORMED_CHILD_HASH",
+      "filename": "NEGATIVE_MALFORMED_CHILD_HASH.json",
+      "expected": "REJECT"
+    },
+    {
+      "fixture_id": "NEGATIVE_INVALID_PARENT_IDENTITY",
+      "filename": "NEGATIVE_INVALID_PARENT_IDENTITY.json",
+      "expected": "REJECT"
+    },
+    {
+      "fixture_id": "NEGATIVE_DUPLICATE_CHILD_ID",
+      "filename": "NEGATIVE_DUPLICATE_CHILD_ID.json",
+      "expected": "REJECT"
+    },
+    {
+      "fixture_id": "NEGATIVE_INCOMPLETE_CHILD_PARTITION",
+      "filename": "NEGATIVE_INCOMPLETE_CHILD_PARTITION.json",
+      "expected": "REJECT"
+    },
+    {
+      "fixture_id": "NEGATIVE_OVERLAPPING_CHILD_PARTITION",
+      "filename": "NEGATIVE_OVERLAPPING_CHILD_PARTITION.json",
+      "expected": "REJECT"
+    },
+    {
+      "fixture_id": "NEGATIVE_FALSE_CONSERVATION_CLAIM",
+      "filename": "NEGATIVE_FALSE_CONSERVATION_CLAIM.json",
+      "expected": "REJECT"
+    },
+    {
+      "fixture_id": "NEGATIVE_INVALID_PARENT_HASH",
+      "filename": "NEGATIVE_INVALID_PARENT_HASH.json",
+      "expected": "REJECT"
+    },
+    {
+      "fixture_id": "NEGATIVE_MEMBER_OUTSIDE_PARENT",
+      "filename": "NEGATIVE_MEMBER_OUTSIDE_PARENT.json",
+      "expected": "REJECT"
+    }
+  ]
+}
