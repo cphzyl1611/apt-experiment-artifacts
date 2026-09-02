@@ -17,6 +17,7 @@ import collections
 import datetime as dt
 import hashlib
 import json
+import math
 import os
 import re
 import select
@@ -213,6 +214,97 @@ def _contains_exact_audit_text(text: str, value: str) -> bool:
     ) is not None
 
 
+RAW_AUDIT_RECORD_RE = re.compile(
+    r"^type=(?P<record_type>[A-Za-z0-9_]+)\s+"
+    r"msg=audit\((?P<timestamp>\d+(?:\.\d+)?):(?P<serial>\d+)\):"
+)
+FILE_ACCESS_SYSCALLS = frozenset({
+    "openat", "openat2", "read", "write", "pread64", "pwrite64",
+    "readv", "writev", "pwritev2",
+})
+
+
+def parse_raw_audit_event_bundles(raw: str | bytes) -> list[dict[str, Any]]:
+    """Parse raw ausearch records into bundles keyed by one audit serial."""
+    if isinstance(raw, bytes):
+        text = raw.decode(errors="replace")
+        raw_lines = raw.splitlines(keepends=True)
+    else:
+        text = str(raw or "")
+        raw_lines = [line.encode() for line in text.splitlines(keepends=True)]
+    grouped: dict[int, dict[str, Any]] = {}
+    for line_number, (raw_line, line) in enumerate(
+        zip(raw_lines, text.splitlines(keepends=True)), 1
+    ):
+        match = RAW_AUDIT_RECORD_RE.match(line)
+        if not match:
+            continue
+        serial = int(match.group("serial"))
+        bundle = grouped.setdefault(serial, {
+            "serial": serial,
+            "timestamp_source": match.group("timestamp"),
+            "records": [],
+        })
+        bundle["records"].append({
+            "line_number": line_number,
+            "type": match.group("record_type"),
+            "fields": parse_fields(line),
+            "raw_text": line,
+            "raw_bytes": raw_line,
+        })
+    bundles = []
+    for serial in sorted(grouped):
+        bundle = grouped[serial]
+        bundle_lines = [record["raw_bytes"] for record in bundle["records"]]
+        blob = b"".join(bundle_lines)
+        bundles.append({
+            **bundle,
+            "raw_bytes": blob,
+            "raw_text": blob.decode(errors="replace"),
+            "raw_bytes_b64": base64.b64encode(blob).decode("ascii"),
+            "raw_sha256": sha256_bytes(blob),
+        })
+    return bundles
+
+
+def _valid_raw_file_access_event(
+    bundle: Mapping[str, Any], audit_key: str, watched_path: str,
+) -> dict[str, Any] | None:
+    """Return evidence only when one serial has a complete raw file bundle."""
+    records = bundle.get("records", [])
+    syscall_records = [record for record in records if record.get("type") == "SYSCALL"]
+    path_records = [record for record in records if record.get("type") == "PATH"]
+    if not syscall_records or not path_records:
+        return None
+    exact_path = any(
+        (record.get("fields") or {}).get("name") == watched_path
+        for record in path_records
+    )
+    if not exact_path:
+        return None
+    for record in syscall_records:
+        fields = record.get("fields") or {}
+        syscall_token = fields.get("syscall")
+        if not isinstance(syscall_token, str) or not re.fullmatch(r"\d+", syscall_token):
+            continue
+        syscall = SYSCALL_NAMES.get(int(syscall_token))
+        if syscall not in FILE_ACCESS_SYSCALLS:
+            continue
+        if fields.get("success") != "yes":
+            continue
+        if fields.get("key") != audit_key:
+            continue
+        return {
+            "event_type": EVENT_TYPE,
+            "evidence_basis": EVIDENCE_BASIS,
+            "watched_path": watched_path,
+            "raw_serial": bundle.get("serial"),
+            "underlying_syscall": syscall,
+            "raw_event_sha256": bundle.get("raw_sha256"),
+        }
+    return None
+
+
 def poll_audit_evidence(
     audit_key: str,
     watched_path: str,
@@ -229,8 +321,16 @@ def poll_audit_evidence(
     _exact_file(watched_path)
     if not isinstance(audit_key, str) or not re.fullmatch(r"[A-Za-z0-9_.:-]+", audit_key):
         raise ValueError("audit key contains unsupported characters")
-    bounded_wait = min(max(float(max_wait), 0.0), AUDIT_EVIDENCE_MAX_WAIT_SECONDS)
-    bounded_interval = min(max(float(poll_interval), 0.0), 0.1)
+    requested_wait = float(max_wait)
+    bounded_wait = (
+        min(max(requested_wait, 0.0), AUDIT_EVIDENCE_MAX_WAIT_SECONDS)
+        if math.isfinite(requested_wait) else 0.0
+    )
+    requested_interval = float(poll_interval)
+    bounded_interval = (
+        min(max(requested_interval, 0.0), 0.1)
+        if math.isfinite(requested_interval) else 0.0
+    )
     started = monotonic()
     deadline = started + bounded_wait
     attempts = 0
@@ -239,40 +339,52 @@ def poll_audit_evidence(
     final_serial: int | None = None
     key_seen = False
     path_seen = False
+    timeout_expired = False
     while True:
+        now = monotonic()
+        remaining = deadline - now
+        if not math.isfinite(remaining) or remaining <= 0.0:
+            break
         attempts += 1
-        evidence = runner(
-            ["/usr/sbin/ausearch", "-k", audit_key, "--raw"],
-            check=False, capture_output=True, text=True,
-        )
+        try:
+            evidence = runner(
+                ["/usr/sbin/ausearch", "-k", audit_key, "--raw"],
+                check=False, capture_output=True, text=True, timeout=remaining,
+            )
+        except subprocess.TimeoutExpired as exc:
+            timeout_expired = True
+            partial_stdout = getattr(exc, "output", "") or ""
+            if isinstance(partial_stdout, bytes):
+                partial_stdout = partial_stdout.decode(errors="replace")
+            final_stdout = partial_stdout
+            final_serial = parse_audit_serial(final_stdout)
+            key_seen = _contains_exact_audit_text(final_stdout, audit_key)
+            path_seen = _contains_exact_audit_text(final_stdout, watched_path)
+            break
         final_returncode = getattr(evidence, "returncode", None)
         final_stdout = getattr(evidence, "stdout", "") or ""
         if isinstance(final_stdout, bytes):
             final_stdout = final_stdout.decode(errors="replace")
-        final_serial = parse_audit_serial(final_stdout)
+        bundles = parse_raw_audit_event_bundles(final_stdout)
+        if bundles:
+            final_serial = bundles[-1]["serial"]
         key_seen = key_seen or _contains_exact_audit_text(final_stdout, audit_key)
         path_seen = path_seen or _contains_exact_audit_text(final_stdout, watched_path)
-        events = []
-        if final_serial is not None and key_seen and path_seen:
-            events = [{
-                "event_type": EVENT_TYPE,
-                "evidence_basis": EVIDENCE_BASIS,
-                "watched_path": watched_path,
-                "raw_serial": final_serial,
-            }]
-        if (
-            final_serial is not None
-            and _contains_exact_audit_text(final_stdout, audit_key)
-            and _contains_exact_audit_text(final_stdout, watched_path)
-            and micro_probe_verdict(events) == "PASS"
-        ):
+        events = [
+            event
+            for bundle in bundles
+            if (event := _valid_raw_file_access_event(bundle, audit_key, watched_path)) is not None
+        ]
+        if final_returncode == 0 and events and micro_probe_verdict(events) == "PASS":
+            event = events[0]
             return {
-                "verdict": "PASS", "audit_serial": final_serial,
+                "verdict": "PASS", "audit_serial": event["raw_serial"],
                 "evidence_stdout": final_stdout, "poll_attempts": attempts,
                 "elapsed_visibility_latency": max(0.0, monotonic() - started),
                 "final_ausearch_returncode": final_returncode,
                 "key_seen": key_seen, "path_seen": path_seen,
                 "evidence_mode": "RAW",
+                **event,
             }
         now = monotonic()
         if now >= deadline:
@@ -285,6 +397,8 @@ def poll_audit_evidence(
         "final_ausearch_returncode": final_returncode,
         "key_seen": key_seen, "path_seen": path_seen,
         "evidence_mode": "RAW",
+        "failure_reason": "AUSEARCH_TIMEOUT" if timeout_expired else "AUDIT_EVIDENCE_MISSING",
+        "ausearch_timeout": timeout_expired,
     }
 
 

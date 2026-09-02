@@ -8,6 +8,7 @@ import contextlib
 import hashlib
 import io
 import json
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -18,6 +19,58 @@ RUN_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(RUN_DIR))
 
 import mininet_e1c_r6_file_access_closure_smoke as harness
+
+
+def raw_file_access_bundle(
+    serial=1,
+    key="e1c6probe",
+    path="/tmp/e1c-r6-probe.txt",
+    syscall="257",
+    success="yes",
+    syscall_serial=None,
+    path_serial=None,
+    syscall_type="SYSCALL",
+    path_type="PATH",
+    key_in_syscall=True,
+    include_path=True,
+    a2="0",
+):
+    syscall_serial = serial if syscall_serial is None else syscall_serial
+    path_serial = serial if path_serial is None else path_serial
+    key_field = f' key="{key}"' if key_in_syscall else ""
+    rows = [
+        f'type={syscall_type} msg=audit(1788264578.381:{syscall_serial}): '
+        f'arch=c000003e syscall={syscall} success={success} exit=3 '
+        f'a0=ffffff9c a1=7f00 a2={a2} pid=4321{key_field}',
+    ]
+    if include_path:
+        rows.append(
+            f'type={path_type} msg=audit(1788264578.381:{path_serial}): '
+            f'item=0 name="{path}" inode=1 dev=00:00 mode=0100644 ouid=0 ogid=0'
+        )
+    return "\n".join(rows) + "\n"
+
+
+def poll_fixture(fixture, key="e1c6probe", path="/tmp/e1c-r6-probe.txt"):
+    now = [0.0]
+
+    def monotonic():
+        return now[0]
+
+    def sleep(duration):
+        now[0] += duration
+
+    return harness.poll_audit_evidence(
+        key,
+        path,
+        runner=lambda argv, **kwargs: mock.Mock(
+            returncode=0, stdout=fixture, stderr=""
+        ),
+        monotonic=monotonic,
+        sleep=sleep,
+        max_wait=0.1,
+        poll_interval=0.01,
+    )
 
 
 class FilePermissionRuleTests(unittest.TestCase):
@@ -66,7 +119,7 @@ class MicroProbeTests(unittest.TestCase):
     def test_poll_uses_raw_ausearch_mode_and_parses_raw_serial(self):
         path = "/tmp/e1c-r6-probe-raw.txt"
         key = "e1c6proberaw"
-        raw = f'msg=audit(1788264578.381:1056): key={key} name={path}\n'
+        raw = raw_file_access_bundle(serial=1056, key=key, path=path)
 
         def runner(argv, **kwargs):
             self.assertEqual(argv, ["/usr/sbin/ausearch", "-k", key, "--raw"])
@@ -79,17 +132,23 @@ class MicroProbeTests(unittest.TestCase):
         self.assertEqual(result["verdict"], "PASS")
         self.assertEqual(result["audit_serial"], 1056)
         self.assertEqual(result["evidence_mode"], "RAW")
+        self.assertEqual(result["event_type"], "FILE_READ_OR_WRITE")
+        self.assertEqual(result["evidence_basis"], "AUDIT_FILESYSTEM_PERMISSION_FILTER")
+        self.assertEqual(result["watched_path"], path)
+        self.assertEqual(result["raw_serial"], 1056)
 
     def test_original_immediate_lookup_reproduces_visibility_race(self):
         path = "/tmp/e1c-r6-probe-race.txt"
         key = "e1c6proberace"
-        output = f'type=SYSCALL msg=audit(1.2:76): key="{key}"\nname="{path}"\n'
+        output = raw_file_access_bundle(serial=76, key=key, path=path)
         responses = ["", output]
 
         def runner(argv, **kwargs):
             return mock.Mock(returncode=0, stdout=responses.pop(0), stderr="")
 
-        immediate = runner(["/usr/sbin/ausearch", "-k", key, "-i"])
+        immediate_argv = ["/usr/sbin/ausearch", "-k", key, "-i"]
+        self.assertIn("-i", immediate_argv)
+        immediate = runner(immediate_argv)
         self.assertIsNone(harness.parse_audit_serial(immediate.stdout))
         result = harness.poll_audit_evidence(
             key, path, runner=runner, monotonic=lambda: 0.0,
@@ -101,7 +160,7 @@ class MicroProbeTests(unittest.TestCase):
     def test_audit_evidence_visible_immediately_passes(self):
         path = "/tmp/e1c-r6-probe-immediate.txt"
         key = "e1c6probeimmediate"
-        output = f'type=SYSCALL msg=audit(1.2:77): key="{key}"\nname="{path}"\n'
+        output = raw_file_access_bundle(serial=77, key=key, path=path)
         calls = []
 
         def runner(argv, **kwargs):
@@ -121,7 +180,7 @@ class MicroProbeTests(unittest.TestCase):
     def test_audit_evidence_delayed_visibility_passes(self):
         path = "/tmp/e1c-r6-probe-delayed.txt"
         key = "e1c6probedelayed"
-        output = f'type=SYSCALL msg=audit(1.2:78): key="{key}"\nname="{path}"\n'
+        output = raw_file_access_bundle(serial=78, key=key, path=path)
         responses = ["", "", output]
         clock = iter([0.0, 0.01, 0.02, 0.03])
         now = [0.0]
@@ -145,13 +204,15 @@ class MicroProbeTests(unittest.TestCase):
     def test_key_without_exact_path_keeps_polling_then_blocks(self):
         path = "/tmp/e1c-r6-probe-missing-path.txt"
         key = "e1c6probemissingpath"
-        output = f'type=SYSCALL msg=audit(1.2:79): key="{key}"\nname="/tmp/other.txt"\n'
+        output = raw_file_access_bundle(
+            serial=79, key=key, path="/tmp/other.txt"
+        )
         calls = []
         now = [0.0]
 
         def monotonic():
             value = now[0]
-            now[0] += 0.11
+            now[0] += 0.02
             return value
 
         def runner(argv, **kwargs):
@@ -171,12 +232,12 @@ class MicroProbeTests(unittest.TestCase):
     def test_raw_path_without_exact_key_blocks(self):
         path = "/tmp/e1c-r6-probe-missing-key.txt"
         key = "e1c6probemissingkey"
-        output = 'msg=audit(1788264578.381:80): key=otherkey name="%s"\n' % path
-        now = [0.0]
+        output = raw_file_access_bundle(serial=80, key="otherkey", path=path)
+        now = [-0.05]
 
         def monotonic():
             value = now[0]
-            now[0] += 0.11
+            now[0] += 0.05
             return value
 
         result = harness.poll_audit_evidence(
@@ -193,10 +254,17 @@ class MicroProbeTests(unittest.TestCase):
         path = "/tmp/e1c-r6-probe-malformed.txt"
         key = "e1c6probemalformed"
         output = f'msg=audit(not-a-serial): key={key} name={path}\n'
+        now = [-0.05]
+
+        def monotonic():
+            value = now[0]
+            now[0] += 0.05
+            return value
+
         result = harness.poll_audit_evidence(
             key, path,
             runner=lambda argv, **kwargs: mock.Mock(returncode=1, stdout=output, stderr="bad"),
-            monotonic=lambda: 0.0, sleep=lambda _: None, max_wait=0.0,
+            monotonic=monotonic, sleep=lambda _: None, max_wait=0.1,
         )
         self.assertEqual(result["verdict"], "BLOCKED")
         self.assertIsNone(result["audit_serial"])
@@ -222,6 +290,192 @@ class MicroProbeTests(unittest.TestCase):
         self.assertEqual(result["final_ausearch_returncode"], 1)
         self.assertFalse(result["key_seen"])
         self.assertFalse(result["path_seen"])
+
+    def test_ausearch_receives_finite_timeout_within_remaining_budget(self):
+        key = "e1c6probe-deadline"
+        path = "/tmp/e1c-r6-probe-deadline.txt"
+        now = [0.0]
+        timeouts = []
+
+        def runner(argv, **kwargs):
+            timeouts.append(kwargs.get("timeout"))
+            return mock.Mock(returncode=1, stdout="", stderr="not found")
+
+        def sleep(duration):
+            now[0] += duration
+
+        result = harness.poll_audit_evidence(
+            key,
+            path,
+            runner=runner,
+            monotonic=lambda: now[0],
+            sleep=sleep,
+            max_wait=0.2,
+            poll_interval=0.05,
+        )
+        self.assertEqual(result["verdict"], "BLOCKED")
+        self.assertGreaterEqual(len(timeouts), 2)
+        self.assertTrue(all(timeout is not None for timeout in timeouts))
+        self.assertTrue(all(0 < timeout <= 0.2 for timeout in timeouts))
+        self.assertEqual(timeouts, sorted(timeouts, reverse=True))
+
+    def test_exhausted_evidence_budget_skips_ausearch(self):
+        key = "e1c6probe-exhausted"
+        path = "/tmp/e1c-r6-probe-exhausted.txt"
+        calls = []
+        clock = iter([0.0, 0.2, 0.2])
+
+        def runner(argv, **kwargs):
+            calls.append((argv, kwargs))
+            return mock.Mock(returncode=0, stdout="", stderr="")
+
+        result = harness.poll_audit_evidence(
+            key,
+            path,
+            runner=runner,
+            monotonic=lambda: next(clock),
+            sleep=lambda _: None,
+            max_wait=0.2,
+            poll_interval=0.05,
+        )
+        self.assertEqual(result["verdict"], "BLOCKED")
+        self.assertEqual(calls, [])
+        self.assertEqual(result["poll_attempts"], 0)
+
+    def test_ausearch_timeout_expired_fails_closed_with_distinct_diagnostic(self):
+        key = "e1c6probe-timeout-expired"
+        path = "/tmp/e1c-r6-probe-timeout-expired.txt"
+        calls = []
+
+        def runner(argv, **kwargs):
+            calls.append(kwargs)
+            raise subprocess.TimeoutExpired(argv, kwargs["timeout"])
+
+        result = harness.poll_audit_evidence(
+            key,
+            path,
+            runner=runner,
+            monotonic=lambda: 0.0,
+            sleep=lambda _: self.fail("sleep must not retry after timeout"),
+            max_wait=0.2,
+            poll_interval=0.05,
+        )
+        self.assertEqual(result["verdict"], "BLOCKED")
+        self.assertEqual(result["poll_attempts"], 1)
+        self.assertEqual(result["failure_reason"], "AUSEARCH_TIMEOUT")
+        self.assertTrue(result["ausearch_timeout"])
+        self.assertEqual(len(calls), 1)
+        self.assertGreater(calls[0]["timeout"], 0)
+
+    def test_timeout_does_not_extend_overall_evidence_window(self):
+        key = "e1c6probe-timeout-window"
+        path = "/tmp/e1c-r6-probe-timeout-window.txt"
+        now = [0.0]
+
+        def monotonic():
+            return now[0]
+
+        def runner(argv, **kwargs):
+            now[0] = 0.2
+            raise subprocess.TimeoutExpired(argv, kwargs["timeout"])
+
+        result = harness.poll_audit_evidence(
+            key,
+            path,
+            runner=runner,
+            monotonic=monotonic,
+            sleep=lambda _: self.fail("sleep must not extend the deadline"),
+            max_wait=0.2,
+            poll_interval=0.05,
+        )
+        self.assertEqual(result["verdict"], "BLOCKED")
+        self.assertLessEqual(result["elapsed_visibility_latency"], 0.2)
+
+    def test_unrelated_raw_record_with_matching_text_blocks(self):
+        key = "e1c6probe-unrelated"
+        path = "/tmp/e1c-r6-probe-unrelated.txt"
+        fixture = raw_file_access_bundle(
+            serial=101, key=key, path=path,
+            syscall_type="UNRELATED", path_type="UNRELATED",
+        )
+        result = poll_fixture(fixture, key, path)
+        self.assertEqual(result["verdict"], "BLOCKED")
+
+    def test_syscall_and_path_on_different_serials_block(self):
+        key = "e1c6probe-split-serial"
+        path = "/tmp/e1c-r6-probe-split-serial.txt"
+        fixture = raw_file_access_bundle(
+            serial=102, key=key, path=path, path_serial=103,
+        )
+        result = poll_fixture(fixture, key, path)
+        self.assertEqual(result["verdict"], "BLOCKED")
+
+    def test_key_and_path_on_different_serials_block(self):
+        key = "e1c6probe-split-key-path"
+        path = "/tmp/e1c-r6-probe-split-key-path.txt"
+        fixture = raw_file_access_bundle(
+            serial=104, key=key, path=path, include_path=False,
+        )
+        fixture += raw_file_access_bundle(
+            serial=105, key="other-key", path=path,
+            syscall_type="PATH", path_type="PATH", key_in_syscall=False,
+            include_path=True,
+        )
+        result = poll_fixture(fixture, key, path)
+        self.assertEqual(result["verdict"], "BLOCKED")
+
+    def test_missing_syscall_record_blocks(self):
+        key = "e1c6probe-missing-syscall"
+        path = "/tmp/e1c-r6-probe-missing-syscall.txt"
+        fixture = raw_file_access_bundle(
+            serial=106, key=key, path=path,
+            syscall_type="PATH", path_type="PATH",
+        )
+        result = poll_fixture(fixture, key, path)
+        self.assertEqual(result["verdict"], "BLOCKED")
+
+    def test_missing_same_serial_path_record_blocks(self):
+        key = "e1c6probe-missing-path-record"
+        path = "/tmp/e1c-r6-probe-missing-path-record.txt"
+        fixture = raw_file_access_bundle(
+            serial=107, key=key, path=path, include_path=False,
+        )
+        result = poll_fixture(fixture, key, path)
+        self.assertEqual(result["verdict"], "BLOCKED")
+
+    def test_unsuccessful_syscall_blocks(self):
+        key = "e1c6probe-unsuccessful"
+        path = "/tmp/e1c-r6-probe-unsuccessful.txt"
+        fixture = raw_file_access_bundle(
+            serial=108, key=key, path=path, success="no",
+        )
+        result = poll_fixture(fixture, key, path)
+        self.assertEqual(result["verdict"], "BLOCKED")
+
+    def test_malformed_or_missing_syscall_identity_blocks(self):
+        key = "e1c6probe-bad-syscall"
+        path = "/tmp/e1c-r6-probe-bad-syscall.txt"
+        for syscall in ("not-a-number", ""):
+            with self.subTest(syscall=syscall):
+                fixture = raw_file_access_bundle(
+                    serial=109, key=key, path=path, syscall=syscall,
+                )
+                result = poll_fixture(fixture, key, path)
+                self.assertEqual(result["verdict"], "BLOCKED")
+
+    def test_wrong_exact_key_blocks(self):
+        key = "e1c6probe-exact-key"
+        path = "/tmp/e1c-r6-probe-exact-key.txt"
+        fixture = raw_file_access_bundle(serial=110, key="different-key", path=path)
+        result = poll_fixture(fixture, key, path)
+        self.assertEqual(result["verdict"], "BLOCKED")
+
+    def test_wrong_exact_path_blocks(self):
+        key = "e1c6probe-exact-path"
+        path = "/tmp/e1c-r6-probe-exact-path.txt"
+        fixture = raw_file_access_bundle(serial=111, key=key, path="/tmp/other.txt")
+        result = poll_fixture(fixture, key, path)
+        self.assertEqual(result["verdict"], "BLOCKED")
 
     def test_timeout_probe_cleanup_and_restoration_still_occurs(self):
         calls = []

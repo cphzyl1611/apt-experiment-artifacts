@@ -1,0 +1,23 @@
+{
+  "schema": "MININET_E1C_R6R3_SUBPROCESS_DEADLINE_CONTRACT_V1",
+  "poll_helper": "poll_audit_evidence",
+  "ausearch_argv": ["/usr/sbin/ausearch", "-k", "<exact_random_key>", "--raw"],
+  "overall_evidence_window_seconds": 2.0,
+  "configured_poll_interval_seconds": 0.05,
+  "poll_interval_upper_clamp_seconds": 0.1,
+  "deadline_clock": "monotonic",
+  "per_invocation_contract": [
+    "recompute remaining monotonic budget immediately before every ausearch invocation",
+    "skip invocation when remaining budget is exhausted",
+    "pass finite strictly-positive timeout equal to or below remaining budget",
+    "subprocess.TimeoutExpired returns BLOCKED with failure_reason=AUSEARCH_TIMEOUT",
+    "timeout does not retry or extend the overall deadline"
+  ],
+  "tests": {
+    "finite_timeout_within_remaining_budget": "PASS",
+    "exhausted_budget_skips_ausearch": "PASS",
+    "timeout_expired_fails_closed": "PASS",
+    "timeout_does_not_extend_window": "PASS"
+  },
+  "max_evidence_window_unchanged": "PASS"
+}

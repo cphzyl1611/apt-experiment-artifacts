@@ -1,0 +1,33 @@
+{
+  "schema": "MININET_E1C_R6R3_STATIC_BOUNDARY_AUDIT_V1",
+  "checked_at": "2026-09-02",
+  "source_workspace": "/home/cph/experiment-parallel/e0-a",
+  "allowed_source_changes": [
+    "e1c-r6-run-20260901T060350Z/mininet_e1c_r6_file_access_closure_smoke.py",
+    "e1c-r6-run-20260901T060350Z/test_e1c_r6_harness.py"
+  ],
+  "static_self_check": "PASS",
+  "python_ast_parse": "PASS",
+  "raw_ausearch_mode_preserved": "PASS",
+  "audit_rule_scope_unchanged": "PASS",
+  "exact_path_perm_rw_live_pid_random_key": "PASS",
+  "exact_inverse_cleanup": "PASS",
+  "temporary_file_deletion": "PASS",
+  "baseline_reverification": "PASS",
+  "real_r5_derived_mininet_smoke_preserved": "PASS",
+  "all_eight_event_classes_contract_preserved": "PASS",
+  "forbidden_operations_absent": {
+    "auditctl_D": true,
+    "persistent_rules_d_edits": true,
+    "auditd_configuration_changes": true,
+    "global_watches": true,
+    "strace_or_tcpdump_as_audit_substitute": true,
+    "mn_c": true,
+    "nat_or_external_network_changes": true,
+    "sudo": true,
+    "privileged_micro_probe_execution": true,
+    "mininet_execution": true
+  },
+  "artifact_repository_mutated": "NO",
+  "push_executed": "NO"
+}

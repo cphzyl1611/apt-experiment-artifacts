@@ -1,0 +1,37 @@
+{
+  "schema": "MININET_E1C_R6R3_DEFECT_REPRODUCTION_V1",
+  "review_date": "2026-09-02",
+  "pinned_r6r2_materialization": "a471ee6ca09253a381d96a228ab58a1f652bd0b9",
+  "pinned_fresh_review_commit": "73bbe957846ca7f4ad84abb417f488af22f74f8a",
+  "source_under_test": "/home/cph/fa1b2de-artifact-worktrees/e0-a/parallel/a/e1c-r6-run-20260901T060350Z/mininet_e1c_r6_file_access_closure_smoke.py",
+  "reproductions": {
+    "R6R2-BOUND-001": {
+      "status": "REPRODUCED",
+      "pre_remediation_result": "BLOCKED",
+      "runner_kwargs": {
+        "check": false,
+        "capture_output": true,
+        "text": true
+      },
+      "timeout_kwarg_present": false,
+      "simulated_hung_child_elapsed_seconds": 3.0,
+      "claimed_maximum_seconds": 2.0,
+      "overall_window_exceeded": true,
+      "observation": "The pre-remediation poller invoked ausearch without subprocess timeout and accepted a runner that returned after the 2.0-second evidence deadline."
+    },
+    "R6R2-EVIDENCE-002": {
+      "status": "REPRODUCED",
+      "fixture": "type=UNRELATED msg=audit(1788264578.381:999): key=e1c6probe-old-integrity name=/tmp/e1c-r6-old-integrity.txt",
+      "pre_remediation_result": "PASS",
+      "parseable_serial": 999,
+      "exact_key_seen": true,
+      "exact_path_seen": true,
+      "raw_record_type": "UNRELATED",
+      "strict_expected_result": "BLOCKED",
+      "observation": "The pre-remediation poller synthesized PASS from serial plus key/path text without validating raw type, syscall outcome, or same-serial SYSCALL/PATH semantics."
+    }
+  },
+  "privileged_command_executed": "NO",
+  "mininet_executed": "NO",
+  "artifact_repository_mutated": "NO"
+}

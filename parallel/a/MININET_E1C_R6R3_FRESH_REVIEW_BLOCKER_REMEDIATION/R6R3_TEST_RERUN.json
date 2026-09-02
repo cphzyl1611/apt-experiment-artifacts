@@ -1,0 +1,26 @@
+{
+  "schema": "MININET_E1C_R6R3_TEST_RERUN_V1",
+  "rerun_date": "2026-09-02",
+  "r6r3_targeted": {"passed": 46, "total": 46, "status": "PASS"},
+  "r6r2_non_regression": {"passed": 33, "total": 33, "status": "PASS"},
+  "r3_regression": {"passed": 8, "total": 8, "status": "PASS"},
+  "r4_regression": {"passed": 7, "total": 7, "status": "PASS"},
+  "r5_regression": {"passed": 12, "total": 12, "status": "PASS"},
+  "py_compile": "PASS",
+  "static_boundary": "PASS",
+  "tdd": {
+    "red_deadline_fixtures_added_first": true,
+    "red_audit_integrity_fixtures_added_first": true,
+    "historical_interpreted_i_argv_assertion_added": true,
+    "post_implementation_targeted_suite": "46/46 PASS"
+  },
+  "execution_constraints": {
+    "privileged_command_executed": "NO",
+    "sudo_executed": "NO",
+    "mininet_executed": "NO",
+    "privileged_micro_probe_executed": "NO",
+    "push_executed": "NO",
+    "artifact_repository_mutated": "NO"
+  },
+  "r5_sandbox_note": "The unchanged R5 suite passed 12/12; no sandbox-blocked test occurred."
+}

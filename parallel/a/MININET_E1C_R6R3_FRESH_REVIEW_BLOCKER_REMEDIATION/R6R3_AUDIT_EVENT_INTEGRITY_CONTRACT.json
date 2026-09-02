@@ -1,0 +1,40 @@
+{
+  "schema": "MININET_E1C_R6R3_AUDIT_EVENT_INTEGRITY_CONTRACT_V1",
+  "production_mode": "RAW",
+  "parser": "parse_raw_audit_event_bundles",
+  "grouping_key": "exact integer audit serial",
+  "valid_file_access_bundle_requires_same_serial": [
+    "raw type=SYSCALL",
+    "parseable numeric syscall identity mapped to a supported file-access syscall",
+    "success=yes",
+    "exact audit key in the SYSCALL record",
+    "raw type=PATH",
+    "PATH name exactly equals watched path",
+    "permission-filter provenance remains AUDIT_FILESYSTEM_PERMISSION_FILTER"
+  ],
+  "pass_output_requirements": [
+    "event_type=FILE_READ_OR_WRITE",
+    "evidence_basis=AUDIT_FILESYSTEM_PERMISSION_FILTER",
+    "watched_path is the exact requested path",
+    "raw_serial is the exact validated audit serial"
+  ],
+  "negative_fixtures_blocked": [
+    "unrelated record type with matching key/path text",
+    "SYSCALL and PATH on different serials",
+    "key on one serial and path on another",
+    "missing type=SYSCALL",
+    "missing same-serial type=PATH",
+    "failed syscall",
+    "malformed or missing syscall identity",
+    "wrong exact key",
+    "wrong exact path"
+  ],
+  "tests": {
+    "raw_event_bundle_parser": "PASS",
+    "same_serial_syscall_path_association": "PASS",
+    "exact_key_same_event_required": "PASS",
+    "exact_path_same_event_required": "PASS",
+    "successful_syscall_required": "PASS",
+    "unrelated_type_false_pass_closed": "PASS"
+  }
+}
