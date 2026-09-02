@@ -1,0 +1,39 @@
+{
+  "schema": "BINDING_PROJECT_GOVERNANCE_PRINCIPAL_IDENTITY_BASIS_RECOMPUTATION_V1",
+  "status": "PASS_READY_FOR_INDEPENDENT_PRINCIPAL_IDENTITY_AUTHENTICATION",
+  "profile": {
+    "name": "PROJECT_CANONICAL_JSON_V1",
+    "path": "FA1B2de_Current86_BSO_A2_P0_P1_Execution_Contract_R5/01_canonicalization/PROJECT_CANONICAL_JSON_V1.json",
+    "sha256": "8b7f3e0c11bcef7368e002038b9c7f7cbcf2580aee37506c78d319e18c607c24"
+  },
+  "identity_basis_members": [
+    "principal_id",
+    "principal_role",
+    "identity_semantics",
+    "designation_basis",
+    "designation_scope",
+    "project_scope"
+  ],
+  "identity_basis": {
+    "principal_id": "FA1B2DE_PROJECT_OWNER_GOVERNANCE_PRINCIPAL",
+    "principal_role": "PROJECT_OWNER_AND_HUMAN_GOVERNANCE_PRINCIPAL",
+    "identity_semantics": "PROJECT_INTERNAL_ROLE_BASED_PSEUDONYMOUS_IDENTITY",
+    "designation_basis": "EXPLICIT_CURRENT_HUMAN_SELF_DESIGNATION",
+    "designation_scope": "FA1B2DE_PROJECT_GOVERNANCE",
+    "project_scope": "FA1B2de"
+  },
+  "canonicalization_rules_applied": {
+    "encoding": "UTF-8_WITHOUT_BOM",
+    "object_key_order": "RFC8785_UTF16_CODE_UNIT_ORDER",
+    "arrays": "ORDER_SENSITIVE_UNLESS_SCHEMA_DECLARED_SET",
+    "unicode": "NFC_REQUIRED_AND_VALIDATED_NO_SILENT_REWRITE",
+    "floating_point": "PROHIBITED",
+    "timestamp_included": false,
+    "path_included": false,
+    "username_included": false,
+    "random_nonce_included": false
+  },
+  "canonical_json_utf8": "{\"designation_basis\":\"EXPLICIT_CURRENT_HUMAN_SELF_DESIGNATION\",\"designation_scope\":\"FA1B2DE_PROJECT_GOVERNANCE\",\"identity_semantics\":\"PROJECT_INTERNAL_ROLE_BASED_PSEUDONYMOUS_IDENTITY\",\"principal_id\":\"FA1B2DE_PROJECT_OWNER_GOVERNANCE_PRINCIPAL\",\"principal_role\":\"PROJECT_OWNER_AND_HUMAN_GOVERNANCE_PRINCIPAL\",\"project_scope\":\"FA1B2de\"}",
+  "canonical_json_sha256": "3e831ab556e624dd876fd489ffa709cc5edc014ffa04a76747bffcb51071d795",
+  "record_identity_generation": "PASS_DETERMINISTIC_SHA256_OF_CANONICAL_IDENTITY_BASIS"
+}

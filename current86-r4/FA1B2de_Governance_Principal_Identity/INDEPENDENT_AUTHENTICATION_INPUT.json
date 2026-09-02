@@ -1,0 +1,39 @@
+{
+  "schema": "BINDING_PROJECT_GOVERNANCE_PRINCIPAL_INDEPENDENT_AUTHENTICATION_INPUT_V1",
+  "review_status": "PASS_READY_FOR_INDEPENDENT_PRINCIPAL_IDENTITY_AUTHENTICATION",
+  "principal_id": "FA1B2DE_PROJECT_OWNER_GOVERNANCE_PRINCIPAL",
+  "principal_role": "PROJECT_OWNER_AND_HUMAN_GOVERNANCE_PRINCIPAL",
+  "identity_semantics": "PROJECT_INTERNAL_ROLE_BASED_PSEUDONYMOUS_IDENTITY",
+  "designation_basis": "EXPLICIT_CURRENT_HUMAN_SELF_DESIGNATION",
+  "designation_scope": "FA1B2DE_PROJECT_GOVERNANCE",
+  "project_scope": "FA1B2de",
+  "designation_status": "DESIGNATED_PENDING_INDEPENDENT_AUTHENTICATION",
+  "authentication_basis": "Exact current human designation supplied in the task input; no prior principal record is required.",
+  "identity_continuity_checks": {
+    "stable_project_level_reference": true,
+    "personal_identity_bound": false,
+    "real_name_present": false,
+    "email_present": false,
+    "github_identity_present": false,
+    "legal_identity_present": false,
+    "institutional_identity_present": false,
+    "cryptographic_identity_present": false
+  },
+  "record_identity": {
+    "profile": "PROJECT_CANONICAL_JSON_V1",
+    "identity_basis_sha256": "3e831ab556e624dd876fd489ffa709cc5edc014ffa04a76747bffcb51071d795",
+    "timestamp_excluded": true,
+    "path_excluded": true,
+    "random_nonce_excluded": true
+  },
+  "reviewer_must_confirm": [
+    "exact principal bytes",
+    "exact six-field identity basis",
+    "canonicalization profile and hash",
+    "project-only scope",
+    "absence of personal identity fields",
+    "zero substantive operational effect"
+  ],
+  "g1_g2_decision_materialization": "NOT_PERFORMED_AND_NOT_INCLUDED",
+  "next_gate": "INDEPENDENT_GOVERNANCE_PRINCIPAL_IDENTITY_AUTHENTICATION"
+}

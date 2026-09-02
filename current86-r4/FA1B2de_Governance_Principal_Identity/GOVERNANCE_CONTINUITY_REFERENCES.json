@@ -1,0 +1,28 @@
+{
+  "schema": "BINDING_PROJECT_GOVERNANCE_PRINCIPAL_CONTINUITY_REFERENCES_V1",
+  "status": "OPTIONAL_CONTINUITY_ONLY",
+  "initial_principal_designation_requires_prior_record": false,
+  "prior_governance_continuity_reference": "NONE_REQUIRED_FOR_INITIAL_PRINCIPAL_DESIGNATION",
+  "references_do_not_authenticate_personal_identity": true,
+  "references_do_not_grant_substantive_authority": true,
+  "references": [
+    {
+      "role": "prior H1 human design-acceptance provenance",
+      "path": "FA1B2de_Current86_BSO_A2_H1_Provenance_Capture/h1_native_user_event_provenance_evidence.json",
+      "sha256": "4c23c77035d2d1f3f54d5ec94ae6ef95ad7c425e168cc666a0e950e2f6cd96d5",
+      "evidence_id": "0a762cc264a716a6f3409998c9450754f8ab1077c270e2dbbd72b577866edebe"
+    },
+    {
+      "role": "prior H2 human activation provenance",
+      "path": "FA1B2de_Current86_BSO_A2_Authority_Activation/h2_native_user_event_provenance_evidence.json",
+      "sha256": "db6ffee692e1bb98bade8627c31263fb0d904b6e51052e12a1f4285fdf4b671d",
+      "evidence_id": "939cc0c72e77bc437f0ab436cdf61c276d0ba1959273bbe0f46344e77ddff99e"
+    },
+    {
+      "role": "prior R7 human activation approval authentication",
+      "path": "FA1B2de_Current86_Exact317_SourceAuth_Binding_R7_Production_Source_Authority_Activation/R7_HUMAN_ACTIVATION_APPROVAL_AUTHENTICATION.json",
+      "sha256": "648d8fdfed69f07aa4ab632b4ee94135cf492677491734deb005de6d22a922e0",
+      "transaction_id": "e8a0a97a33d47ac68c8ded4af1af109fa010d979acf9736fd5dffdebf96c5208"
+    }
+  ]
+}
