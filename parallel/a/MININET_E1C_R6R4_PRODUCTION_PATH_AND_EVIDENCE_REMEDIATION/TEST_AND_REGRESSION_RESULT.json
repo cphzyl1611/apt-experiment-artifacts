@@ -1,0 +1,86 @@
+{
+  "schema": "MININET_E1C_R6R4_TEST_AND_REGRESSION_RESULT_V1",
+  "review_date": "2026-09-02",
+  "execution_mode": "NON_PRIVILEGED_ONLY",
+  "source_under_test": {
+    "harness": "candidate/mininet_e1c_r6_file_access_closure_smoke.py",
+    "tests": "candidate/test_e1c_r6_harness.py",
+    "harness_sha256": "8b0db6eab7c2a9d720a9a9d0624ebbe4ba93859f2151fc338f0e0303321e78cc",
+    "tests_sha256": "4392694ab6505548fa07d3e6a3f802b105ce065c80619aa955026ce7b6e9e058"
+  },
+  "runs": [
+    {
+      "suite": "R6R4 targeted/current",
+      "command": "PYTHONDONTWRITEBYTECODE=1 TMPDIR=/tmp/e0-a-temp PYTHONPYCACHEPREFIX=/tmp/e0-a-cache-r6-full python -m unittest -v",
+      "passed": 61,
+      "total": 61,
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "suite": "pinned R6R2 subset",
+      "command": "PYTHONDONTWRITEBYTECODE=1 TMPDIR=/tmp/e0-a-temp PYTHONPYCACHEPREFIX=/tmp/e0-a-cache-r6r2 python -m unittest -v <33 pinned R6 tests>",
+      "passed": 33,
+      "total": 33,
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "suite": "R3 regression",
+      "command": "PYTHONDONTWRITEBYTECODE=1 TMPDIR=/tmp/e0-a-temp PYTHONPYCACHEPREFIX=/tmp/e0-a-cache-r3b python -m unittest -v test_e1c_r3_harness.py",
+      "passed": 8,
+      "total": 8,
+      "exit_code": 0,
+      "status": "PASS",
+      "note": "The initial sandbox attempt preceded creation of the isolated TMPDIR; the recorded result is the successful rerun."
+    },
+    {
+      "suite": "R4 regression",
+      "command": "PYTHONDONTWRITEBYTECODE=1 TMPDIR=/tmp/e0-a-temp PYTHONPYCACHEPREFIX=/tmp/e0-a-cache-r4 python -m unittest -v test_e1c_r4_harness.py",
+      "passed": 7,
+      "total": 7,
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "suite": "R5 regression",
+      "command": "PYTHONDONTWRITEBYTECODE=1 TMPDIR=/tmp/e0-a-temp PYTHONPYCACHEPREFIX=/tmp/e0-a-cache-r5 python -m unittest -v test_e1c_r5_harness.py",
+      "passed": 12,
+      "total": 12,
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "suite": "py_compile",
+      "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPYCACHEPREFIX=/tmp/e0-a-cache-compile python -m py_compile <R6/R3/R4/R5 source and test files>",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "suite": "R6 static self-check",
+      "command": "PYTHONDONTWRITEBYTECODE=1 python mininet_e1c_r6_file_access_closure_smoke.py --static-self-check",
+      "exit_code": 0,
+      "status": "PASS",
+      "unbounded_ausearch_calls": []
+    }
+  ],
+  "required_negative_coverage": {
+    "late_success_after_deadline": "PASS",
+    "unrelated_record_type": "PASS",
+    "success_no": "PASS",
+    "wrong_or_missing_key": "PASS",
+    "wrong_path": "PASS",
+    "mixed_same_serial_bundle": "PASS",
+    "actual_full_smoke_collector_strict_wiring": "PASS"
+  },
+  "execution_constraints": {
+    "sudo": "NO",
+    "mininet": "NO",
+    "auditd_configuration": "NO",
+    "privileged_smoke": "NO",
+    "artifact_commit": "NO",
+    "artifact_push": "NO",
+    "formal_1796_evaluation": "NO",
+    "file_read_or_write_runtime_closure_claimed": "NO"
+  }
+}

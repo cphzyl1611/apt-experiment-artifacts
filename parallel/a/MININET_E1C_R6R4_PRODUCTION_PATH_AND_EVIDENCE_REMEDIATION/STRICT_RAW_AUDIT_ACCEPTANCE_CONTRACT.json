@@ -1,0 +1,48 @@
+{
+  "schema": "MININET_E1C_R6R4_STRICT_RAW_AUDIT_ACCEPTANCE_CONTRACT_V1",
+  "production_mode": "RAW",
+  "production_collector": "collect_production_audit_records",
+  "raw_parser": "parse_raw_audit_event_bundles",
+  "grouping_key": "exact integer audit serial",
+  "acceptance_gate": {
+    "same_serial": true,
+    "required_raw_record_types": [
+      "SYSCALL",
+      "PATH"
+    ],
+    "supported_file_access_syscall_required": true,
+    "successful_syscall_required": "success=yes",
+    "exact_audit_key_required_on": "SYSCALL record",
+    "exact_watched_path_required_on": "PATH name field",
+    "event_type": "FILE_READ_OR_WRITE",
+    "evidence_basis": "AUDIT_FILESYSTEM_PERMISSION_FILTER"
+  },
+  "rejected_cases": [
+    "unrelated raw record type with matching text",
+    "SYSCALL and PATH on different serials",
+    "key and path on different serials",
+    "missing SYSCALL record",
+    "missing same-serial PATH record",
+    "unsupported or malformed syscall identity",
+    "success=no",
+    "wrong audit key",
+    "missing audit key",
+    "wrong watched path",
+    "nonzero ausearch return code",
+    "late evidence collection"
+  ],
+  "production_wiring": {
+    "full_smoke_calls": "collect_production_audit_records",
+    "strict_validator": "_strict_raw_file_access_event",
+    "permissive_normalizer_cannot_bypass_gate": true
+  },
+  "preserved_semantics": {
+    "raw_same_serial_bundle_validation": true,
+    "exact_key_path_matching": true,
+    "historical_interpreted_fixture_uses_i_only_in_fixture": true,
+    "production_argv_uses_raw": true,
+    "audit_rule_path_perm_rw_live_pid_scope": true,
+    "cleanup_and_baseline_restoration_gate": true,
+    "eight_event_class_contract": true
+  }
+}

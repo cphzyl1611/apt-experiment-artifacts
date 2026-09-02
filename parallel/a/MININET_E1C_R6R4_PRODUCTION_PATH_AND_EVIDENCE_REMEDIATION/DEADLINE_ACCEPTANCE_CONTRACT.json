@@ -1,0 +1,43 @@
+{
+  "schema": "MININET_E1C_R6R4_DEADLINE_ACCEPTANCE_CONTRACT_V1",
+  "clock": "monotonic",
+  "maximum_evidence_window_seconds": 2.0,
+  "poll_interval_seconds": 0.05,
+  "poll_interval_upper_clamp_seconds": 0.1,
+  "bounded_production_path": {
+    "collector": "collect_production_audit_evidence",
+    "runner": "run_bounded_ausearch_bytes",
+    "argv": [
+      "/usr/sbin/ausearch",
+      "-k",
+      "<exact-random-key>",
+      "--raw"
+    ],
+    "timeout_argument": "remaining = bounded_deadline - invocation_monotonic_time",
+    "timeout_is_finite_and_positive": true,
+    "timeout_never_exceeds_remaining_deadline": true,
+    "effective_deadline_is_clamped_to_maximum": true
+  },
+  "acceptance_rules": {
+    "check_before_invocation": "skip when remaining <= 0 or non-finite",
+    "check_before_success_acceptance": "completion/acceptance monotonic time must be < deadline",
+    "completion_at_deadline_rejected": true,
+    "subprocess_timeout_fails_closed": "AUSEARCH_TIMEOUT",
+    "deadline_expiry_fails_closed": "AUSEARCH_DEADLINE_EXPIRED",
+    "execution_error_fails_closed": "AUSEARCH_EXECUTION_ERROR",
+    "nonzero_ausearch_returncode_fails_closed": true,
+    "late_evidence_cannot_be_success": true,
+    "timeout_does_not_extend_window": true
+  },
+  "test_evidence": [
+    "test_poll_rejects_successful_evidence_after_deadline",
+    "test_production_collector_passes_remaining_deadline_to_ausearch",
+    "test_production_collector_timeout_expiration_fails_closed",
+    "test_production_collector_nonzero_returncode_fails_closed",
+    "test_production_ausearch_receives_remaining_bounded_timeout",
+    "test_production_ausearch_skips_expired_deadline",
+    "test_production_ausearch_timeout_expired_fails_closed",
+    "test_production_ausearch_late_success_fails_closed",
+    "test_timeout_does_not_extend_overall_evidence_window"
+  ]
+}

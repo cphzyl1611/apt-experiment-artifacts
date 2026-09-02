@@ -1,0 +1,46 @@
+{
+  "schema": "MININET_E1C_R6R4_STATIC_BOUNDARY_AUDIT_V1",
+  "checked_at_utc": "2026-09-02T13:07:26Z",
+  "source_workspace": "/home/cph/experiment-parallel/e0-a",
+  "reviewed_artifact_predecessor": "e88e664fd0c9927323845427f88e85cea7ccb5d4",
+  "remediation_commit": null,
+  "allowed_source_changes": [
+    "e1c-r6-run-20260901T060350Z/mininet_e1c_r6_file_access_closure_smoke.py",
+    "e1c-r6-run-20260901T060350Z/test_e1c_r6_harness.py"
+  ],
+  "source_hashes": {
+    "mininet_e1c_r6_file_access_closure_smoke.py": "8b0db6eab7c2a9d720a9a9d0624ebbe4ba93859f2151fc338f0e0303321e78cc",
+    "test_e1c_r6_harness.py": "4392694ab6505548fa07d3e6a3f802b105ce065c80619aa955026ce7b6e9e058"
+  },
+  "static_self_check": "PASS",
+  "python_ast_parse": "PASS",
+  "production_ausearch_bounded": "PASS",
+  "production_ausearch_fail_closed": "PASS",
+  "unbounded_ausearch_calls": [],
+  "raw_ausearch_mode_preserved": "PASS",
+  "audit_rule_scope_unchanged": "PASS",
+  "exact_path_perm_rw_live_pid_random_key": "PASS",
+  "exact_inverse_cleanup": "PASS",
+  "baseline_reverification": "PASS",
+  "real_r5_derived_mininet_smoke_preserved": "PASS",
+  "all_eight_event_classes_contract_preserved": "PASS",
+  "historical_interpreted_fixture_boundary_preserved": "PASS",
+  "forbidden_operations_absent": {
+    "auditctl_D": true,
+    "persistent_rules_d_edits": true,
+    "auditd_configuration_changes": true,
+    "global_watches": true,
+    "strace_or_tcpdump_as_audit_substitute": true,
+    "mn_c": true,
+    "nat_or_external_network_changes": true,
+    "sudo": true,
+    "privileged_micro_probe_execution": true,
+    "mininet_execution": true
+  },
+  "old_artifact_generic_git_diff_check": {
+    "status": "NOT_CLAIMED_AS_PASS",
+    "diagnostic": "The exact old command reported new blank-line-at-EOF warnings in six immutable R6R3 evidence files."
+  },
+  "artifact_repository_mutated": "NO",
+  "push_executed": "NO"
+}
