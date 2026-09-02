@@ -1,0 +1,81 @@
+{
+  "schema": "PROVX_R7R1_R6R3_RUNTIME_HANDOFF_MINIMUM_PACKAGE_V1",
+  "template_status": "NOT_RUNTIME_EVIDENCE",
+  "runtime_evidence_present": false,
+  "must_not_be_consumed": true,
+  "purpose": "Non-runtime shape template for E0-A materialization and E0-B validator tests.",
+  "run_identity": {
+    "run_id": null,
+    "runtime_root": null,
+    "logical_hosts": [],
+    "collection_start_utc": null,
+    "collection_end_utc": null,
+    "topology": null
+  },
+  "source_lineage": {
+    "source_commit": null,
+    "producer_harness_sha256": null,
+    "producer_tests_sha256": null,
+    "pre_run_contract_sha256": null,
+    "file_access_semantics_contract_sha256": null,
+    "evidence_artifact_hashes": {},
+    "package_manifest_sha256": null
+  },
+  "privileged_execution": {
+    "explicit_privileged_execution_fact": null,
+    "execution_receipt_artifact_id": "r6_privileged_execution_receipt",
+    "human_initiated": null,
+    "effective_uid": null,
+    "exact_command": null,
+    "exit_code": null,
+    "classification": null,
+    "micro_probe_verdict": null,
+    "micro_probe_cleanup_state": null,
+    "mininet_executed": null
+  },
+  "required_artifact_roles": [
+    "raw_audit",
+    "normalized_events",
+    "pid_netns_join",
+    "coverage_and_loss",
+    "post_cleanup",
+    "privileged_result",
+    "privileged_execution_receipt",
+    "audit_smoke_report",
+    "pcap"
+  ],
+  "required_file_read_or_write_fields": [
+    "path",
+    "watched_path",
+    "raw_serial",
+    "raw_event_sha256",
+    "evidence_basis",
+    "requested_access",
+    "underlying_syscall",
+    "syscall_record_serial",
+    "path_record_serial",
+    "same_serial_linkage"
+  ],
+  "required_event_class_order": [
+    "PROCESS_START_OR_EXEC",
+    "PROCESS_EXIT",
+    "FILE_CREATE_OR_OPEN",
+    "FILE_READ_OR_WRITE",
+    "FILE_DELETE",
+    "SOCKET_BIND",
+    "SOCKET_CONNECT",
+    "SOCKET_ACCEPT"
+  ],
+  "canonicalization": {
+    "encoding": "UTF-8",
+    "json_object_key_order": "lexicographic_sorted_keys",
+    "json_separators": "(',', ':')",
+    "ensure_ascii": false,
+    "line_ending": "LF",
+    "bom": false,
+    "non_finite_numbers": "REJECT",
+    "array_order": "PRESERVE_DECLARED_ORDER",
+    "manifest_hash_excludes": ["package_manifest.manifest_sha256"]
+  },
+  "terminal_if_submitted_without_materialization": "BLOCKED_HANDOFF_NOT_CONSUMABLE"
+}

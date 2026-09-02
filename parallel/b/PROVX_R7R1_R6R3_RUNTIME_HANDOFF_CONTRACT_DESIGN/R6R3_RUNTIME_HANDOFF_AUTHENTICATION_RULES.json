@@ -1,0 +1,405 @@
+{
+  "schema": "PROVX_R7R1_R6R3_RUNTIME_HANDOFF_AUTHENTICATION_RULES_V1",
+  "purpose": "Executable rule inventory for E0-B independent validation of one E0-A R6R3 runtime handoff.",
+  "consumer": "E0-B",
+  "producer": "E0-A",
+  "stage_a_gate": "No Stage A file, event, graph, or tensor may be consumed unless every blocking rule passes.",
+  "input_binding": {
+    "selection_mode": "MANIFEST_FIRST_EXACT_PATH_BINDING",
+    "run_id_source": "handoff.run_identity.run_id",
+    "path_source": "handoff.package_manifest.entries[].path",
+    "hash_source": "handoff.package_manifest.entries[].sha256",
+    "no_directory_discovery": true,
+    "no_basename_fallback": true,
+    "no_latest_run_selection": true,
+    "no_r5_fallback": true,
+    "no_symlink_or_alias_substitution": true,
+    "required_artifact_ids": [
+      "r6_privileged_result",
+      "r6_audit_pre_state",
+      "r6_lineage",
+      "r6_static_audit",
+      "r6_pre_run_contract",
+      "r6_transient_rule_contract",
+      "r6_rule_remediation_journal",
+      "r6_residual_remediation",
+      "r6_raw_audit",
+      "r6_normalized_events",
+      "r6_pid_netns_join",
+      "r6_strace_oracle_comparison",
+      "r6_coverage_and_loss",
+      "r6_post_cleanup",
+      "r6_child_state_transitions",
+      "r6_child_process_evidence",
+      "r6_early_child_failures",
+      "r6_audit_smoke_report",
+      "r6_pcap",
+      "r6_privileged_execution_receipt"
+    ],
+    "selected_input_artifact_ids": {
+      "raw_audit": "r6_raw_audit",
+      "normalized_events": "r6_normalized_events",
+      "pid_netns_join": "r6_pid_netns_join",
+      "coverage_and_loss": "r6_coverage_and_loss",
+      "post_cleanup": "r6_post_cleanup",
+      "privileged_result": "r6_privileged_result",
+      "privileged_execution_receipt": "r6_privileged_execution_receipt",
+      "audit_smoke_report": "r6_audit_smoke_report",
+      "pcap": "r6_pcap"
+    },
+    "parsed_artifact_aliases": {
+      "raw_rows": "strict JSONL rows from selected_inputs.raw_audit.path",
+      "normalized_rows": "strict JSONL rows from selected_inputs.normalized_events.path",
+      "join_rows": "strict JSONL rows from selected_inputs.pid_netns_join.path excluding evidence_type=post_exec_identity",
+      "coverage": "strict JSON object from selected_inputs.coverage_and_loss.path",
+      "post_cleanup": "strict JSON object from selected_inputs.post_cleanup.path",
+      "privileged_result": "strict JSON object from selected_inputs.privileged_result.path",
+      "privileged_execution_receipt": "strict JSON object from selected_inputs.privileged_execution_receipt.path"
+    }
+  },
+  "canonicalization": {
+    "json_encoding": "UTF-8",
+    "json_object_keys": "sorted_lexicographically",
+    "json_separators": [",", ":"],
+    "ensure_ascii": false,
+    "line_ending": "LF",
+    "bom": false,
+    "reject_nan_and_infinity": true,
+    "preserve_array_order": true,
+    "manifest_hash": "SHA256(canonical_utf8_json(package_manifest with manifest_sha256 omitted))",
+    "jsonl_hash": "SHA256(exact file bytes; do not reserialize before file authentication)",
+    "raw_event_hash": "SHA256(base64_decode(raw_bytes_b64))",
+    "normalized_raw_event_hash": "SHA256(base64_decode(raw_event_bytes_b64))"
+  },
+  "validation_order": [
+    "H001_PACKAGE_SHAPE_AND_SCHEMA",
+    "H002_MANIFEST_CANONICAL_HASH",
+    "H003_MANIFEST_ENTRY_UNIQUENESS_AND_COMPLETENESS",
+    "H004_EXACT_PATH_AND_FILE_HASH_BINDING",
+    "H005_SOURCE_COMMIT_AND_CONTRACT_LINEAGE",
+    "H006_EXPLICIT_PRIVILEGED_EXECUTION",
+    "H007_RUN_ID_CLOSURE",
+    "H008_RAW_RECORD_INTEGRITY",
+    "H009_NORMALIZED_RECORD_INTEGRITY",
+    "H010_RAW_NORMALIZED_SAME_SERIAL_AND_BYTE_LINK",
+    "H011_FILE_READ_OR_WRITE_STRICT_EVIDENCE",
+    "H012_PID_START_TICKS_NETNS_LOGICAL_HOST_JOIN",
+    "H013_EVENT_CLASS_COVERAGE_AND_LOSS_CLOSURE",
+    "H014_PCAP_AUTHENTICATION",
+    "H015_CLEANUP_INVERSE_RULE_AND_BASELINE_RESTORATION",
+    "H016_HARD_BOUNDARIES",
+    "H017_FINAL_CANONICAL_RECHECK"
+  ],
+  "rules": [
+    {
+      "rule_id": "H001_PACKAGE_SHAPE_AND_SCHEMA",
+      "severity": "BLOCK",
+      "assertions": [
+        {"subject": "handoff", "operator": "valid_json_object", "value": true},
+        {"subject": "handoff", "operator": "valid_against", "value": "R6R3_RUNTIME_HANDOFF_SCHEMA.json"},
+        {"subject": "handoff.schema", "operator": "equals", "value": "PROVX_R7R1_R6R3_AUTHENTICATED_RUNTIME_HANDOFF_V1"},
+        {"subject": "handoff.runtime_evidence_present", "operator": "equals", "value": true}
+      ],
+      "failure_code": "HANDOFF_SCHEMA_OR_SHAPE_INVALID"
+    },
+    {
+      "rule_id": "H002_MANIFEST_CANONICAL_HASH",
+      "severity": "BLOCK",
+      "assertions": [
+        {"subject": "handoff.package_manifest.manifest_sha256", "operator": "matches", "value": "^[0-9a-f]{64}$"},
+        {"subject": "handoff.package_manifest.manifest_sha256", "operator": "equals_recomputed", "value": "sha256(canonical(package_manifest_without_manifest_sha256))"},
+        {"subject": "handoff.canonicalization", "operator": "matches_contract", "value": true}
+      ],
+      "failure_code": "PACKAGE_MANIFEST_HASH_INVALID"
+    },
+    {
+      "rule_id": "H003_MANIFEST_ENTRY_UNIQUENESS_AND_COMPLETENESS",
+      "severity": "BLOCK",
+      "assertions": [
+        {"subject": "manifest.entries[].artifact_id", "operator": "unique", "value": true},
+        {"subject": "manifest.entries[].path", "operator": "unique", "value": true},
+        {"subject": "manifest.entries[].role", "operator": "unique_for_required_role", "value": true},
+        {"subject": "manifest.entries[].required", "operator": "all_equal", "value": true},
+        {"subject": "manifest.entries[].status", "operator": "all_equal", "value": "BOUND_AND_HASHED"},
+        {"subject": "manifest.entries[].artifact_id", "operator": "contains_exactly", "value": "input_binding.required_artifact_ids"},
+        {"subject": "selected_inputs", "operator": "artifact_ids_match_mapping", "value": "input_binding.selected_input_artifact_ids"},
+        {"subject": "selected_inputs", "operator": "every_artifact_ref_matches_exactly_one_manifest_entry", "value": true},
+        {"subject": "selected_inputs.pcap_hash_sources[].artifact_id", "operator": "contains_exactly", "value": ["r6_coverage_and_loss", "r6_post_cleanup"]},
+        {"subject": "source_lineage.contract_design_documents", "operator": "unique_paths_and_contains_exactly_basenames", "value": ["R6R3_RUNTIME_HANDOFF_SCHEMA.json", "R6R3_RUNTIME_HANDOFF_AUTHENTICATION_RULES.json", "R6R3_RUNTIME_HANDOFF_FAIL_CLOSED_POLICY.md", "R6R3_RUNTIME_HANDOFF_HASH_LINEAGE.md", "R6R3_RUNTIME_HANDOFF_MINIMUM_PACKAGE.json", "PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN.md"]}
+      ],
+      "failure_code": "MANIFEST_DUPLICATE_MISSING_OR_UNEXPECTED_ENTRY"
+    },
+    {
+      "rule_id": "H004_EXACT_PATH_AND_FILE_HASH_BINDING",
+      "severity": "BLOCK",
+      "assertions": [
+        {"subject": "manifest.entries[].path", "operator": "absolute_no_glob", "value": true},
+        {"subject": "manifest.entries[].path", "operator": "lstat_path_equals_opened_path", "value": true},
+        {"subject": "manifest.entries[].path", "operator": "exists_as_regular_file", "value": true},
+        {"subject": "manifest.entries[].sha256", "operator": "equals_sha256_exact_bytes", "value": true},
+        {"subject": "manifest.entries[].byte_length", "operator": "equals_exact_byte_length", "value": true}
+      ],
+      "failure_code": "SELECTED_ARTIFACT_PATH_OR_HASH_INVALID"
+    },
+    {
+      "rule_id": "H005_SOURCE_COMMIT_AND_CONTRACT_LINEAGE",
+      "severity": "BLOCK",
+      "assertions": [
+        {"subject": "source_lineage.source_commit", "operator": "equals", "value": "6aec9e0ed113c17fd729f8ae359fd6d2c30fff0a"},
+        {"subject": "source_lineage.upstream_remediation_commit", "operator": "equals", "value": "cde75a82e7938db6d5903d16885bf35ceb17aa68"},
+        {"subject": "source_lineage.interface_review_commit", "operator": "equals", "value": "13573a5a4c03261237a9b3553efb482b3eebd273"},
+        {"subject": "source_lineage.producer_harness.sha256", "operator": "equals", "value": "4202d3144974355881a398ffb58b28cb016d3add73e8fe7752012d1c76d06428"},
+        {"subject": "source_lineage.producer_tests.sha256", "operator": "equals", "value": "510a4339830a1641737fbefa152d231a45c98f2bca0f185e1e13d1cf473be14d"},
+        {"subject": "source_lineage.pre_run_contract.sha256", "operator": "equals_recomputed", "value": true},
+        {"subject": "source_lineage.file_access_semantics_contract.sha256", "operator": "equals_recomputed", "value": true},
+        {"subject": "source_lineage.contract_design_documents[].sha256", "operator": "equals_recomputed", "value": true},
+        {"subject": "r6_static_audit.harness_sha256", "operator": "equals", "value": "source_lineage.producer_harness.sha256"},
+        {"subject": "r6_static_audit.test_sha256", "operator": "equals", "value": "source_lineage.producer_tests.sha256"},
+        {"subject": "r6_pre_run_contract.exact_human_command", "operator": "equals", "value": "privileged_execution.exact_command"},
+        {"subject": "r6_pre_run_contract.run_id", "operator": "equals", "value": "run_identity.run_id"}
+      ],
+      "failure_code": "SOURCE_OR_CONTRACT_LINEAGE_INVALID"
+    },
+    {
+      "rule_id": "H006_EXPLICIT_PRIVILEGED_EXECUTION",
+      "severity": "BLOCK",
+      "assertions": [
+        {"subject": "privileged_execution.explicit_privileged_execution_fact", "operator": "equals", "value": true},
+        {"subject": "privileged_execution.execution_receipt_artifact_id", "operator": "equals", "value": "r6_privileged_execution_receipt"},
+        {"subject": "selected_inputs.privileged_execution_receipt.artifact_id", "operator": "equals", "value": "r6_privileged_execution_receipt"},
+        {"subject": "selected_inputs.privileged_execution_receipt", "operator": "matches_manifest_entry", "value": true},
+        {"subject": "r6_privileged_execution_receipt", "operator": "strict_json_object_with_one_invocation", "value": true},
+        {"subject": "r6_privileged_execution_receipt.human_initiated", "operator": "equals", "value": true},
+        {"subject": "r6_privileged_execution_receipt.effective_uid", "operator": "equals", "value": 0},
+        {"subject": "r6_privileged_execution_receipt.exact_command", "operator": "equals", "value": "privileged_execution.exact_command"},
+        {"subject": "r6_privileged_execution_receipt.exit_code", "operator": "equals", "value": 0},
+        {"subject": "privileged_execution.human_initiated", "operator": "equals", "value": true},
+        {"subject": "privileged_execution.effective_uid", "operator": "equals", "value": 0},
+        {"subject": "privileged_execution.exact_command", "operator": "equals", "value": "sudo /usr/bin/python3 /home/cph/experiment-parallel/e0-a/e1c-r6-run-20260901T060350Z/mininet_e1c_r6_file_access_closure_smoke.py --run-privileged"},
+        {"subject": "privileged_execution.exit_code", "operator": "equals", "value": 0},
+        {"subject": "privileged_execution.result_status", "operator": "equals", "value": "COMPLETED"},
+        {"subject": "privileged_execution.classification", "operator": "equals", "value": "PASS_READY_FOR_GRAPH_NORMALIZATION"},
+        {"subject": "privileged_execution.micro_probe_verdict", "operator": "equals", "value": "PASS"},
+        {"subject": "privileged_execution.micro_probe_cleanup_state", "operator": "equals", "value": "RULE_REMOVED_BASELINE_RESTORED"},
+        {"subject": "privileged_execution.mininet_executed", "operator": "equals", "value": true}
+        ,{"subject": "r6_privileged_execution_receipt.run_id", "operator": "equals", "value": "run_identity.run_id"}
+        ,{"subject": "r6_privileged_execution_receipt.result_status", "operator": "equals", "value": "privileged_execution.result_status"}
+        ,{"subject": "r6_privileged_execution_receipt.classification", "operator": "equals", "value": "privileged_execution.classification"}
+        ,{"subject": "r6_privileged_execution_receipt.micro_probe_verdict", "operator": "equals", "value": "privileged_execution.micro_probe_verdict"}
+        ,{"subject": "r6_privileged_execution_receipt.micro_probe_cleanup_state", "operator": "equals", "value": "privileged_execution.micro_probe_cleanup_state"}
+        ,{"subject": "privileged_result.status", "operator": "equals", "value": "privileged_execution.result_status"}
+        ,{"subject": "privileged_result.classification", "operator": "equals", "value": "privileged_execution.classification"}
+      ],
+      "failure_code": "PRIVILEGED_EXECUTION_NOT_EXPLICITLY_AUTHENTICATED"
+    },
+    {
+      "rule_id": "H007_RUN_ID_CLOSURE",
+      "severity": "BLOCK",
+      "assertions": [
+        {"subject": "run_identity.run_id", "operator": "equals", "value": "e1c-r6-run-20260901T060350Z"},
+        {"subject": "run_identity.runtime_root", "operator": "equals", "value": "/home/cph/experiment-parallel/e0-a/e1c-r6-run-20260901T060350Z"},
+        {"subject": "run_identity.logical_hosts[].logical_host_id", "operator": "contains_exactly", "value": ["h1", "h2"]},
+        {"subject": "run_identity.topology.hosts", "operator": "contains_exactly", "value": ["h1", "h2"]},
+        {"subject": "run_identity.collection_end_utc", "operator": "strictly_after", "value": "run_identity.collection_start_utc"},
+        {"subject": "runtime_json_documents_that_declare_run_id.run_id", "operator": "equals", "value": "run_identity.run_id"},
+        {"subject": "raw_rows[].run_id", "operator": "equals", "value": "run_identity.run_id"},
+        {"subject": "normalized_rows[].run_id", "operator": "equals", "value": "run_identity.run_id"},
+        {"subject": "join_rows[].run_id", "operator": "equals", "value": "run_identity.run_id"},
+        {"subject": "selected_inputs.runtime_artifact_paths", "operator": "same_run_root", "value": true},
+        {"subject": "source_lineage_and_contract_design_paths", "operator": "excluded_from_runtime_root_check", "value": true},
+        {"subject": "runtime_run_selection", "operator": "explicit_only", "value": true}
+      ],
+      "failure_code": "RUN_ID_MISSING_OR_INCONSISTENT"
+    },
+    {
+      "rule_id": "H008_RAW_RECORD_INTEGRITY",
+      "severity": "BLOCK",
+      "assertions": [
+        {"subject": "raw_audit_file", "operator": "strict_jsonl_objects_only", "value": true},
+        {"subject": "raw_rows[].serial", "operator": "integer_positive", "value": true},
+        {"subject": "raw_rows[].serial", "operator": "unique", "value": true},
+        {"subject": "raw_rows[].raw_bytes_b64", "operator": "strict_base64", "value": true},
+        {"subject": "raw_rows[].raw_sha256", "operator": "equals_sha256(decoded_raw_bytes)", "value": true},
+        {"subject": "raw_rows[].raw_text", "operator": "equals_utf8_decoding_or_declared_replacement", "value": true},
+        {"subject": "raw_rows[].record_types", "operator": "nonempty_array", "value": true},
+        {"subject": "raw_rows[].record_types", "operator": "equals_recomputed_from_decoded_raw_bytes", "value": true}
+      ],
+      "failure_code": "RAW_AUDIT_RECORD_INVALID_OR_DUPLICATE"
+    },
+    {
+      "rule_id": "H009_NORMALIZED_RECORD_INTEGRITY",
+      "severity": "BLOCK",
+      "assertions": [
+        {"subject": "normalized_events_file", "operator": "strict_jsonl_objects_only", "value": true},
+        {"subject": "normalized_rows[].event_id", "operator": "unique", "value": true},
+        {"subject": "normalized_rows[].raw_serial", "operator": "integer_positive", "value": true},
+        {"subject": "normalized_rows[].raw_serial", "operator": "unique", "value": true},
+        {"subject": "normalized_rows[].raw_event_bytes_b64", "operator": "strict_base64", "value": true},
+        {"subject": "normalized_rows[].raw_event_sha256", "operator": "equals_sha256(decoded_raw_event_bytes)", "value": true},
+        {"subject": "normalized_rows[].event_type", "operator": "in", "value": "required_eight_classes"},
+        {"subject": "normalized_rows[].run_id", "operator": "equals", "value": "run_identity.run_id"}
+      ],
+      "failure_code": "NORMALIZED_EVENT_INVALID_OR_DUPLICATE"
+    },
+    {
+      "rule_id": "H010_RAW_NORMALIZED_SAME_SERIAL_AND_BYTE_LINK",
+      "severity": "BLOCK",
+      "assertions": [
+        {"subject": "normalized_rows[].raw_serial", "operator": "exists_in", "value": "raw_rows[].serial"},
+        {"subject": "normalized_rows[].raw_event_sha256", "operator": "equals", "value": "raw_rows[matching_serial].raw_sha256"},
+        {"subject": "normalized_rows[].raw_event_bytes_b64", "operator": "byte_equals", "value": "raw_rows[matching_serial].raw_bytes_b64"},
+        {"subject": "coverage.raw_link_failures", "operator": "equals", "value": 0},
+        {"subject": "coverage.normalized_raw_links_valid", "operator": "equals", "value": true}
+      ],
+      "failure_code": "RAW_NORMALIZED_SERIAL_OR_BYTE_HASH_LINK_INVALID"
+    },
+    {
+      "rule_id": "H011_FILE_READ_OR_WRITE_STRICT_EVIDENCE",
+      "severity": "BLOCK",
+      "assertions": [
+        {"subject": "file_read_or_write_evidence[].event_type", "operator": "equals", "value": "FILE_READ_OR_WRITE"},
+        {"subject": "file_read_or_write_evidence[].evidence_basis", "operator": "equals", "value": "AUDIT_FILESYSTEM_PERMISSION_FILTER"},
+        {"subject": "file_read_or_write_evidence[].watched_path", "operator": "equals", "value": "file_read_or_write_evidence[].path"},
+        {"subject": "file_read_or_write_evidence[].watched_path", "operator": "equals_one_of_exact", "value": "precreated_permission_paths"},
+        {"subject": "file_read_or_write_evidence[].file_identity_paths", "operator": "contains_exact_watched_path", "value": true},
+        {"subject": "file_read_or_write_evidence[].raw_serial", "operator": "equals", "value": "normalized_rows[matching_event_id].raw_serial"},
+        {"subject": "file_read_or_write_evidence[].raw_event_sha256", "operator": "equals", "value": "normalized_rows[matching_event_id].raw_event_sha256"},
+        {"subject": "file_read_or_write_evidence[].requested_access", "operator": "in", "value": ["r", "w", "rw"]},
+        {"subject": "file_read_or_write_evidence[].underlying_syscall", "operator": "in", "value": ["openat", "openat2", "read", "write", "pread64", "pwrite64", "readv", "writev", "pwritev2"]},
+        {"subject": "file_read_or_write_evidence[].same_serial_linkage", "operator": "equals", "value": "PASS"},
+        {"subject": "file_read_or_write_evidence[].syscall_record_serial", "operator": "equals", "value": "file_read_or_write_evidence[].raw_serial"},
+        {"subject": "file_read_or_write_evidence[].path_record_serial", "operator": "equals", "value": "file_read_or_write_evidence[].raw_serial"},
+        {"subject": "file_read_or_write_evidence[].raw_serial", "operator": "raw_bundle_contains", "value": ["SYSCALL", "PATH"]},
+        {"subject": "file_read_or_write_evidence[].raw_serial", "operator": "raw_syscall_success", "value": "yes"},
+        {"subject": "file_read_or_write_evidence[].raw_serial", "operator": "raw_syscall_key_exact", "value": true},
+        {"subject": "file_read_or_write_evidence[].raw_serial", "operator": "raw_path_exact", "value": true}
+      ],
+      "failure_code": "FILE_READ_OR_WRITE_EVIDENCE_NOT_EXACT_OR_NOT_SAME_SERIAL"
+    },
+    {
+      "rule_id": "H012_PID_START_TICKS_NETNS_LOGICAL_HOST_JOIN",
+      "severity": "BLOCK",
+      "assertions": [
+        {"subject": "join_rows[].join_status", "operator": "all_equal", "value": "JOINED"},
+        {"subject": "join_rows[].pid", "operator": "integer_positive", "value": true},
+        {"subject": "join_rows[].start_ticks", "operator": "integer_positive", "value": true},
+        {"subject": "join_rows[].netns_inode", "operator": "integer_positive", "value": true},
+        {"subject": "join_rows[].captured_while_alive", "operator": "equals", "value": true},
+        {"subject": "join_rows[].logical_host_id", "operator": "exists_in", "value": "run_identity.logical_hosts[].logical_host_id"},
+        {"subject": "run_identity.logical_hosts[].logical_host_id", "operator": "unique", "value": true},
+        {"subject": "join_rows[].(run_id,logical_host_id,pid,start_ticks,netns_inode,role)", "operator": "unique", "value": true},
+        {"subject": "normalized_rows[].(logical_host_id,pid,pid_start_time_ticks,netns_inode)", "operator": "matches_exactly_one_join", "value": true},
+        {"subject": "identity_join_summary.join_path", "operator": "equals", "value": "selected_inputs.pid_netns_join.path"},
+        {"subject": "identity_join_summary.join_path_sha256", "operator": "equals", "value": "selected_inputs.pid_netns_join.sha256"},
+        {"subject": "identity_join_summary.join_failure_count", "operator": "equals", "value": "coverage.pid_netns_join_failure_count"},
+        {"subject": "coverage.pid_netns_join_failure_count", "operator": "equals", "value": 0},
+        {"subject": "coverage.namespace_assertions.pass", "operator": "equals", "value": true},
+        {"subject": "coverage.post_exec_identity_all_pass", "operator": "equals", "value": true}
+      ],
+      "failure_code": "PID_START_TICKS_NETNS_OR_LOGICAL_HOST_JOIN_INVALID"
+    },
+    {
+      "rule_id": "H013_EVENT_CLASS_COVERAGE_AND_LOSS_CLOSURE",
+      "severity": "BLOCK",
+      "assertions": [
+        {"subject": "coverage.required_classes", "operator": "equals_ordered", "value": "required_eight_classes"},
+        {"subject": "coverage.normalized_class_counts", "operator": "recomputed_equals_declared", "value": true},
+        {"subject": "coverage.missing_required_classes", "operator": "empty", "value": true},
+        {"subject": "coverage.unexpected_event_classes", "operator": "empty", "value": true},
+        {"subject": "coverage.audit_lost_events", "operator": "equals", "value": 0},
+        {"subject": "coverage.audit_backlog", "operator": "equals", "value": 0},
+        {"subject": "coverage.raw_record_count", "operator": "equals_recomputed", "value": true},
+        {"subject": "coverage.normalized_event_count", "operator": "equals_recomputed", "value": true},
+        {"subject": "coverage.normalized_event_count", "operator": "equals", "value": "sum(coverage.normalized_class_counts)"},
+        {"subject": "coverage.file_read_or_write_count", "operator": "greater_than", "value": 0},
+        {"subject": "coverage.duplicate_raw_serials", "operator": "empty", "value": true},
+        {"subject": "coverage.duplicate_event_ids", "operator": "empty", "value": true}
+      ],
+      "failure_code": "EVENT_CLASS_COVERAGE_LOSS_OR_CLOSURE_INVALID"
+    },
+    {
+      "rule_id": "H014_PCAP_AUTHENTICATION",
+      "severity": "BLOCK",
+      "assertions": [
+        {"subject": "pcap_authentication.required", "operator": "equals", "value": true},
+        {"subject": "pcap_authentication.path", "operator": "equals", "value": "selected_inputs.pcap.path"},
+        {"subject": "pcap_authentication.sha256", "operator": "equals_sha256_exact_bytes", "value": true},
+        {"subject": "pcap_authentication.sha256", "operator": "equals", "value": "coverage.pcap_sha256"},
+        {"subject": "pcap_authentication.sha256", "operator": "equals", "value": "post_cleanup.pcap_sha256"},
+        {"subject": "pcap_authentication.hash_matches_all_sources", "operator": "equals", "value": true},
+        {"subject": "pcap_authentication.hash_source_artifact_ids", "operator": "contains_exactly", "value": ["r6_pcap", "r6_coverage_and_loss", "r6_post_cleanup"]},
+        {"subject": "pcap_authentication.authentication_status", "operator": "equals", "value": "PASS"},
+        {"subject": "pcap_authentication.provenance_only", "operator": "equals", "value": true},
+        {"subject": "pcap_authentication.used_as_graph_edge_source", "operator": "equals", "value": false}
+      ],
+      "failure_code": "PCAP_MISSING_OR_UNAUTHENTICATED"
+    },
+    {
+      "rule_id": "H015_CLEANUP_INVERSE_RULE_AND_BASELINE_RESTORATION",
+      "severity": "BLOCK",
+      "assertions": [
+        {"subject": "cleanup.status", "operator": "equals", "value": "PASS"},
+        {"subject": "cleanup.inverse_rule_removal_complete", "operator": "equals", "value": true},
+        {"subject": "cleanup.only_successfully_added_rules_removed", "operator": "equals", "value": true},
+        {"subject": "cleanup.global_rule_delete_observed", "operator": "equals", "value": false},
+        {"subject": "cleanup.persistent_rule_files_unchanged", "operator": "equals", "value": true},
+        {"subject": "cleanup.baseline_rule_dump_sha256_after", "operator": "equals", "value": "cleanup.baseline_rule_dump_sha256_before"},
+        {"subject": "cleanup.baseline_restored_after_r6r3", "operator": "equals", "value": true},
+        {"subject": "cleanup.audit_lost_events_after_cleanup", "operator": "equals", "value": 0},
+        {"subject": "cleanup.audit_backlog_after_cleanup", "operator": "equals", "value": 0},
+        {"subject": "cleanup.run_owned_children_remaining", "operator": "equals", "value": 0},
+        {"subject": "cleanup.reserved_test_interfaces_remaining", "operator": "equals", "value": 0},
+        {"subject": "cleanup.reserved_test_ovs_objects_remaining", "operator": "equals", "value": 0},
+        {"subject": "cleanup.tcpdump_process_remaining", "operator": "equals", "value": 0},
+        {"subject": "cleanup.topology_residue_zero", "operator": "equals", "value": true},
+        {"subject": "cleanup.child_residue_zero", "operator": "equals", "value": true},
+        {"subject": "cleanup.tcpdump_residue_zero", "operator": "equals", "value": true}
+      ],
+      "failure_code": "CLEANUP_INVERSE_RULE_OR_BASELINE_RESTORATION_INVALID"
+    },
+    {
+      "rule_id": "H016_HARD_BOUNDARIES",
+      "severity": "BLOCK",
+      "assertions": [
+        {"subject": "hard_boundaries.r7r1_adapter_changed", "operator": "equals", "value": false},
+        {"subject": "hard_boundaries.frozen_32d_encoder_changed", "operator": "equals", "value": false},
+        {"subject": "hard_boundaries.detector_trained", "operator": "equals", "value": false},
+        {"subject": "hard_boundaries.provx_inference_executed", "operator": "equals", "value": false},
+        {"subject": "hard_boundaries.formal_experiment_executed", "operator": "equals", "value": false},
+        {"subject": "hard_boundaries.push_executed", "operator": "equals", "value": false},
+        {"subject": "hard_boundaries.pcap_is_not_graph_evidence", "operator": "equals", "value": true},
+        {"subject": "hard_boundaries.runtime_data_is_not_fabricated", "operator": "equals", "value": true}
+      ],
+      "failure_code": "HANDOFF_SCOPE_BOUNDARY_VIOLATED"
+    },
+    {
+      "rule_id": "H017_FINAL_CANONICAL_RECHECK",
+      "severity": "BLOCK",
+      "assertions": [
+        {"subject": "handoff", "operator": "serializes_to_same_canonical_bytes", "value": true},
+        {"subject": "manifest.entries[]", "operator": "revalidated_after_all_reads", "value": true},
+        {"subject": "all_rule_failures", "operator": "empty", "value": true}
+      ],
+      "failure_code": "FINAL_CANONICAL_OR_CONSISTENCY_RECHECK_FAILED"
+    }
+  ],
+  "failure_policy": {
+    "duplicate": "BLOCK",
+    "missing": "BLOCK",
+    "inconsistent": "BLOCK",
+    "malformed": "BLOCK",
+    "unverifiable": "BLOCK",
+    "noncanonical": "BLOCK",
+    "partial_class_coverage": "BLOCK",
+    "runtime_data_fabrication": "BLOCK",
+    "no_best_effort": true,
+    "no_inference_from_pcap": true,
+    "no_inference_from_strace": true,
+    "no_fallback_to_r5": true
+  },
+  "outcomes": {
+    "pass": "PASS_READY_FOR_STAGE_A_AUTHENTICATED_CONSUMPTION",
+    "blocked": "BLOCKED_HANDOFF_NOT_CONSUMABLE",
+    "validator_must_emit": ["status", "passed_rule_ids", "failed_rule_ids", "failure_codes", "authenticated_manifest_sha256", "run_id"]
+  }
+}
