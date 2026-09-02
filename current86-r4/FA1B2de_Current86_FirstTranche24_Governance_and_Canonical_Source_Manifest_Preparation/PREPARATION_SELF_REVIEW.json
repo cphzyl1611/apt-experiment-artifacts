@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://binding.invalid/schemas/first-tranche24-preparation-self-review-v1.json",
+  "schema": "BINDING_FIRST_TRANCHE24_GOVERNANCE_SOURCE_MANIFEST_PREPARATION_SELF_REVIEW_V1",
+  "review_date": "2026-09-02",
+  "verdict": "PASS_READY_FOR_HUMAN_GOVERNANCE_DECISION",
+  "checks": {
+    "frozen_scope_exactly_first_tranche24": true,
+    "frozen_target_order_preserved": true,
+    "target_identities_unique": true,
+    "common_acquisition_cohort_confirmed": true,
+    "r1r1_crosswalk_sha256_matches": true,
+    "all_templates_non_operative": true,
+    "template_count_exactly_24": true,
+    "all_unknown_source_fields_unresolved": true,
+    "no_owner_invented": true,
+    "no_source_artifact_acquired": true,
+    "no_source_object_identified_or_authenticated": true,
+    "no_exact_rfc6901_pointer_selected": true,
+    "null_missing_human_decision_fails_closed": true,
+    "null_missing_owner_authorization_fails_closed": true,
+    "mutable_only_source_identity_fails_closed": true,
+    "ambiguous_object_locator_fails_closed": true,
+    "unresolved_rfc6901_pointer_fails_closed": true,
+    "zero_mutation_boundary_passes": true,
+    "operative_entries_created": 0,
+    "exceptions": 0,
+    "scope_generalization_performed": false,
+    "frozen_r1r1_artifacts_modified": false
+  },
+  "review_basis": [
+    "FA1B2de_Current86_FirstTranche24_StageA_Provenance_Acquisition_Preparation_Independent_Review/INDEPENDENT_PREPARATION_REVIEW.md",
+    "FA1B2de_Current86_FirstTranche24_StageA_Provenance_Acquisition_Preparation_Independent_Review/FIRST_TRANCHE_24_COHORT_RECOMPUTATION.json",
+    "FA1B2de_Current86_Binding_R1R1_Post_Materialization_Authentication_Review/ZERO_MUTATION_AND_GATE_STATE_REVIEW.json",
+    "FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/AUTHORITATIVE_SOURCE_CLASS_POLICY.md",
+    "FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/CANONICAL_FIELD_MAPPING_PROVENANCE_CONTRACT.json"
+  ],
+  "known_exceptions": [],
+  "next_human_action": "Complete and authenticate GOVERNANCE_DECISION_RECORD_TEMPLATE.json using the bounded decision vocabulary; no automatic approval is assumed."
+}

@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://binding.invalid/schemas/first-tranche24-zero-mutation-boundary-v1.json",
+  "schema": "BINDING_FIRST_TRANCHE24_ZERO_MUTATION_AND_AUTHORITY_BOUNDARY_V1",
+  "status": "PREPARATION_ONLY",
+  "verification_date": "2026-09-02",
+  "scope": "FIRST_TRANCHE24_ONLY",
+  "pinned_lineage": {
+    "stage_a_preparation_commit": "409d22b4a697ac5a758ac51f5d27db7837c78d0c",
+    "independent_preparation_review_commit": "50ae6ab18ab184a5bf1d7e6caeeded970189f1dc",
+    "r1r1_crosswalk_sha256": "2c88f67ff154c5d6bfa2deb13dc51588b854e1c35ea74dc44749af8b537cb316"
+  },
+  "zero_state": {
+    "canonical_source_objects_authenticated": 0,
+    "operative_source_manifest_entries_admitted": 0,
+    "source_auth_executions": 0,
+    "mapping_evidence_records": 0,
+    "stage_a_admissions": 0,
+    "stage_b_exposures": 0,
+    "field_pins": 0,
+    "p0": "NO",
+    "p1": "NO",
+    "binding_publication": "NO",
+    "r7_r8_r8r1_authority_mutation": "NO",
+    "formal_1796_experiment": "NO"
+  },
+  "prohibited_operations_confirmed": [
+    "source_authority_activation",
+    "operative_governance_activation_transaction",
+    "canonical_source_artifact_acquisition",
+    "source_authentication_execution",
+    "mapping_evidence_creation",
+    "stage_a_execution",
+    "stage_b_exposure",
+    "field_pin_creation",
+    "r5_mutation",
+    "r8_mutation",
+    "r8r1_mutation",
+    "p0_execution",
+    "p1_execution",
+    "binding_publication",
+    "formal_1796_evaluation",
+    "commit",
+    "push"
+  ],
+  "authority_boundary": {
+    "candidate_and_comparative_evidence_is_authoritative": false,
+    "human_prose_is_source_authority": false,
+    "hash_alone_is_source_authority": false,
+    "timestamp_or_reviewer_metadata_is_canonical_identity": false,
+    "governance_authorization_is_source_object_authentication": false,
+    "template_is_operative_manifest_entry": false,
+    "future_owner_and_immutable_source_evidence_required": true
+  },
+  "result": "PASS_ZERO_MUTATION_PREPARATION_ONLY"
+}

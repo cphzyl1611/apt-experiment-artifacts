@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://binding.invalid/schemas/first-tranche24-governance-decision-record-v1.json",
+  "title": "First-Tranche 24 Governance Decision Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["record_type", "decision_identity", "scope", "authority", "prerequisites", "decision", "human_governance_identity_reference", "decision_timestamp_metadata", "referenced_frozen_artifact_hashes", "supersession_revocation", "operational_effect"],
+  "properties": {
+    "record_type": {"const": "FIRST_TRANCHE24_GOVERNANCE_DECISION"},
+    "decision_identity": {
+      "type": "object", "additionalProperties": false,
+      "required": ["decision_record_id", "decision_transaction_hash"],
+      "properties": {
+        "decision_record_id": {"type": "string", "pattern": "^(?!UNRESOLVED::).+$"},
+        "decision_transaction_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "scope": {
+      "type": "object", "additionalProperties": false,
+      "required": ["governance_scope_id", "scope_cardinality", "frozen_target_order", "r1r1_crosswalk_sha256", "scope_extension_requested"],
+      "properties": {
+        "governance_scope_id": {"const": "FIRST_TRANCHE24_ONLY"},
+        "scope_cardinality": {"const": 24},
+        "frozen_target_order": {"const": [110, 273, 210, 98, 147, 277, 188, 301, 143, 250, 233, 287, 146, 293, 114, 284, 291, 215, 88, 182, 300, 218, 115, 148]},
+        "r1r1_crosswalk_sha256": {"const": "2c88f67ff154c5d6bfa2deb13dc51588b854e1c35ea74dc44749af8b537cb316"},
+        "scope_extension_requested": {"const": false}
+      }
+    },
+    "authority": {
+      "type": "object", "additionalProperties": false,
+      "required": ["authorized_source_artifact_class", "authorized_source_fact_type", "source_authority_id", "source_version_policy"],
+      "properties": {
+        "authorized_source_artifact_class": {"const": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE"},
+        "authorized_source_fact_type": {"const": "PINNED_CANONICAL_INTRINSIC_FIELD"},
+        "source_authority_id": {"type": "string", "pattern": "^(?!UNRESOLVED::).+$"},
+        "source_version_policy": {"type": "string", "pattern": "^(?!UNRESOLVED::).+$"}
+      }
+    },
+    "prerequisites": {
+      "type": "object", "additionalProperties": false,
+      "required": ["independent_preparation_review_commit", "preparation_review_status", "source_owner_authorization_required", "operative_manifest_gate_required", "candidate_evidence_non_authoritative"],
+      "properties": {
+        "independent_preparation_review_commit": {"const": "50ae6ab18ab184a5bf1d7e6caeeded970189f1dc"},
+        "preparation_review_status": {"const": "PASS_READY_FOR_GOVERNANCE_AND_SOURCE_MANIFEST_PREPARATION"},
+        "source_owner_authorization_required": {"const": true},
+        "operative_manifest_gate_required": {"const": true},
+        "candidate_evidence_non_authoritative": {"const": true}
+      }
+    },
+    "decision": {"enum": ["APPROVE_FIRST_TRANCHE24_SOURCE_AUTHORITY_PREPARATION", "APPROVE_CONDITIONAL_CANONICAL_SOURCE_MANIFEST_ADMISSION", "APPROVE_BOTH_G1_AND_G2", "REJECT_KEEP_BLOCKED", "REQUEST_MORE_EVIDENCE"]},
+    "human_governance_identity_reference": {"type": "string", "pattern": "^(?!UNRESOLVED::).+$"},
+    "decision_timestamp_metadata": {
+      "type": "object", "additionalProperties": false,
+      "required": ["decided_at_utc", "recorded_by", "reviewer_metadata_is_identity_bearing"],
+      "properties": {
+        "decided_at_utc": {"type": "string", "format": "date-time"},
+        "recorded_by": {"type": "string"},
+        "reviewer_metadata_is_identity_bearing": {"const": false}
+      }
+    },
+    "referenced_frozen_artifact_hashes": {
+      "type": "object", "additionalProperties": false,
+      "required": ["stage_a_preparation_commit", "independent_preparation_review_commit", "r1r1_crosswalk_sha256"],
+      "properties": {
+        "stage_a_preparation_commit": {"const": "409d22b4a697ac5a758ac51f5d27db7837c78d0c"},
+        "independent_preparation_review_commit": {"const": "50ae6ab18ab184a5bf1d7e6caeeded970189f1dc"},
+        "r1r1_crosswalk_sha256": {"const": "2c88f67ff154c5d6bfa2deb13dc51588b854e1c35ea74dc44749af8b537cb316"}
+      }
+    },
+    "supersession_revocation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["supersedes_decision_record_id", "revoked_decision_record_id", "revocation_status", "conflict_check_required"],
+      "properties": {
+        "supersedes_decision_record_id": {"type": ["string", "null"]},
+        "revoked_decision_record_id": {"type": ["string", "null"]},
+        "revocation_status": {"enum": ["NOT_REVOKED", "REVOKED", "SUPERSEDED"]},
+        "conflict_check_required": {"const": true}
+      }
+    },
+    "operational_effect": {"const": "GOVERNANCE_RECORD_ONLY_NO_SOURCE_MANIFEST_ADMISSION"}
+  }
+}

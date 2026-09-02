@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://binding.invalid/schemas/source-owner-authorization-requirements-v1.json",
+  "schema": "BINDING_SOURCE_OWNER_AUTHORIZATION_REQUIREMENTS_V1",
+  "status": "PREPARATION_ONLY_NON_AUTHORITATIVE",
+  "scope": "FIRST_TRANCHE24_ONLY",
+  "owner_selection": "UNRESOLVED_NO_OWNER_INVENTED",
+  "minimum_evidence": [
+    {"requirement_id":"OWNER-01","name":"owner_or_issuer_identity","required":true,"must_be":"independently attributable legal, organizational, project, or maintainer identity with a verifiable authentication reference"},
+    {"requirement_id":"OWNER-02","name":"authoritative_relationship","required":true,"must_be":"evidence that the identity owns, issues, maintains, or is delegated authority over the exact source artifact and object"},
+    {"requirement_id":"OWNER-03","name":"authorized_version_scope","required":true,"must_be":"explicit immutable release/version/commit/tree scope; mutable-only branches, URLs, or timestamps are insufficient"},
+    {"requirement_id":"OWNER-04","name":"canonical_semantics_authority","required":true,"must_be":"explicit authority to designate the canonical intrinsic field semantics, schema identity, and exact pointer for the target"},
+    {"requirement_id":"OWNER-05","name":"immutable_authorization_record","required":true,"must_be":"content-addressed or cryptographically signed authorization record with a recomputable hash/reference"},
+    {"requirement_id":"OWNER-06","name":"revocation_and_supersession","required":true,"must_be":"effective status, revocation method, supersession lineage, and conflict check covering the authorization and source version"},
+    {"requirement_id":"OWNER-07","name":"independent_verifier","required":true,"must_be":"a verifier identity independent of the owner/issuer that can recompute the authorization chain and artifact binding"},
+    {"requirement_id":"OWNER-08","name":"target_scope_binding","required":true,"must_be":"exact first-tranche target identity and governance scope binding; multiple owner-specific records are allowed"}
+  ],
+  "acceptable_source_owner_forms": ["DIRECT_UPSTREAM_OWNER_OR_ISSUER", "AUTHORIZED_DELEGATED_MAINTAINER", "GOVERNED_PROJECT_CANONICAL_REGISTRY_OWNER"],
+  "prohibited_substitutes": ["candidate_rank", "semantic_similarity", "human_prose", "reviewer_preference", "hash_alone", "mutable_url", "branch_name_without_pinned_commit_or_tree", "unattributed_wrapper"],
+  "fail_closed_conditions": ["unknown_identity", "ambiguous_relationship", "scope_mismatch", "mutable_only_reference", "missing_immutable_record", "unverifiable_signature_or_hash", "revoked", "superseded_without_valid_successor", "owner_and_verifier_not_independent"],
+  "activation_effect": "NO_SOURCE_AUTHORITY_ACTIVATION_BY_THIS_REQUIREMENTS_FILE"
+}

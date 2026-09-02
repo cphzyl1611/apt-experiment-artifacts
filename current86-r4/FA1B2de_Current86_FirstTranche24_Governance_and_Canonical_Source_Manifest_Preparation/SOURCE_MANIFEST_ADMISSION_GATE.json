@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://binding.invalid/schemas/source-manifest-admission-gate-v1.json",
+  "schema": "BINDING_SOURCE_MANIFEST_ADMISSION_GATE_V1",
+  "status": "PREPARATION_ONLY_NON_AUTHORITATIVE",
+  "scope": "FIRST_TRANCHE24_ONLY",
+  "fail_closed": true,
+  "ordered_prerequisites": [
+    {"order":1,"gate_id":"GATE-01","name":"approved_human_governance_decision","required_record":"authenticated decision with APPROVE_FIRST_TRANCHE24_SOURCE_AUTHORITY_PREPARATION, APPROVE_CONDITIONAL_CANONICAL_SOURCE_MANIFEST_ADMISSION, or APPROVE_BOTH_G1_AND_G2 as applicable","reject_on":["null","missing","malformed","ambiguous","contradictory","unauthenticated","scope_extension"]},
+    {"order":2,"gate_id":"GATE-02","name":"source_owner_authorization","required_record":"owner/issuer authorization satisfying SOURCE_OWNER_AUTHORIZATION_REQUIREMENTS.json","reject_on":["unknown owner","unverifiable relationship","mutable-only scope","revoked","superseded","missing immutable authorization record"]},
+    {"order":3,"gate_id":"GATE-03","name":"immutable_source_artifact_identity","required_record":"artifact identity plus immutable release/version/commit/tree identity and recomputable SHA-256","reject_on":["mutable-only source","missing hash","hash mismatch","unresolved identity"]},
+    {"order":4,"gate_id":"GATE-04","name":"authenticated_acquisition_evidence","required_record":"signed release, pinned signed commit/tree, or approved equivalent immutable content-addressed acquisition proof and independent verifier","reject_on":["missing proof","unverifiable proof","unauthenticated acquisition"]},
+    {"order":5,"gate_id":"GATE-05","name":"deterministic_exact_one_object_extraction","required_record":"pinned extractor identity/version/hash, exact locator, locator hash, and cardinality exactly one","reject_on":["zero matches","multiple matches","ambiguous locator","non-deterministic extractor","unresolved locator"]},
+    {"order":6,"gate_id":"GATE-06","name":"authenticated_source_object_hash","required_record":"source-object bytes and SHA-256 recomputed from the immutable artifact and extractor","reject_on":["missing hash","hash mismatch","unresolved object"]},
+    {"order":7,"gate_id":"GATE-07","name":"authenticated_schema_identity","required_record":"schema namespace and identity/version/hash authenticated against the source object","reject_on":["missing schema","schema mismatch","unresolved schema"]},
+    {"order":8,"gate_id":"GATE-08","name":"exact_rfc6901_pointer_resolution","required_record":"one exact RFC6901 pointer that resolves on the authenticated object","reject_on":["null","missing","ambiguous","unresolved","zero matches","multiple matches","pointer syntax error"]},
+    {"order":9,"gate_id":"GATE-09","name":"field_type_and_semantics_match","required_record":"field type and canonical intrinsic field semantics ID match the authorized schema contract","reject_on":["type mismatch","semantics mismatch","inferred semantics"]},
+    {"order":10,"gate_id":"GATE-10","name":"canonical_value_hash_recomputation","required_record":"canonicalization profile and recomputed authenticated canonical value SHA-256","reject_on":["missing profile","hash mismatch","non-canonical serialization"]},
+    {"order":11,"gate_id":"GATE-11","name":"no_revocation_or_supersession_conflict","required_record":"independent conflict check over authority, owner, artifact, object, schema, and field lineage","reject_on":["revoked","superseded","conflicting active record","dangling lineage"]},
+    {"order":12,"gate_id":"GATE-12","name":"independent_manifest_admission_review","required_record":"independent reviewer recomputation and signed review disposition","reject_on":["missing review","reviewer not independent","recomputation failure","unresolved review"]}
+  ],
+  "state_contract": {
+    "SOURCE_MANIFEST_ENTRY_READY_FOR_REVIEW": {"operative":false,"meaning":"all preparatory evidence is assembled for independent admission review; no authority or operative entry is created"},
+    "SOURCE_MANIFEST_ENTRY_ADMITTED_OPERATIVE": {"operative":true,"meaning":"all gates pass and a separately governed admission transaction is recorded"}
+  },
+  "current_package_maximum_state":"SOURCE_MANIFEST_ENTRY_READY_FOR_REVIEW",
+  "current_package_operating_state":"NO_OPERATIVE_ENTRIES",
+  "unknown_ambiguous_missing_policy":"FAIL_CLOSED",
+  "candidate_comparative_evidence_policy":"NON_AUTHORITATIVE"
+}

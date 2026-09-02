@@ -1,0 +1,54 @@
+{
+  "$schema": "./GOVERNANCE_DECISION_RECORD_SCHEMA.json",
+  "record_type": "FIRST_TRANCHE24_GOVERNANCE_DECISION",
+  "decision_identity": {
+    "decision_record_id": "UNRESOLVED::human_governance_decision_record_id",
+    "decision_transaction_hash": "UNRESOLVED::human_governance_decision_transaction_hash"
+  },
+  "scope": {
+    "governance_scope_id": "FIRST_TRANCHE24_ONLY",
+    "scope_cardinality": 24,
+    "frozen_target_order": [110, 273, 210, 98, 147, 277, 188, 301, 143, 250, 233, 287, 146, 293, 114, 284, 291, 215, 88, 182, 300, 218, 115, 148],
+    "r1r1_crosswalk_sha256": "2c88f67ff154c5d6bfa2deb13dc51588b854e1c35ea74dc44749af8b537cb316",
+    "scope_extension_requested": false
+  },
+  "authority": {
+    "authorized_source_artifact_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+    "authorized_source_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+    "source_authority_id": "UNRESOLVED::future_source_authority_id",
+    "source_version_policy": "UNRESOLVED::future_source_version_policy"
+  },
+  "prerequisites": {
+    "independent_preparation_review_commit": "50ae6ab18ab184a5bf1d7e6caeeded970189f1dc",
+    "preparation_review_status": "PASS_READY_FOR_GOVERNANCE_AND_SOURCE_MANIFEST_PREPARATION",
+    "source_owner_authorization_required": true,
+    "operative_manifest_gate_required": true,
+    "candidate_evidence_non_authoritative": true
+  },
+  "decision": null,
+  "decision_vocabulary": [
+    "APPROVE_FIRST_TRANCHE24_SOURCE_AUTHORITY_PREPARATION",
+    "APPROVE_CONDITIONAL_CANONICAL_SOURCE_MANIFEST_ADMISSION",
+    "APPROVE_BOTH_G1_AND_G2",
+    "REJECT_KEEP_BLOCKED",
+    "REQUEST_MORE_EVIDENCE"
+  ],
+  "human_governance_identity_reference": "UNRESOLVED::authenticated_human_or_governance_principal_reference",
+  "decision_timestamp_metadata": {
+    "decided_at_utc": null,
+    "recorded_by": null,
+    "reviewer_metadata_is_identity_bearing": false
+  },
+  "referenced_frozen_artifact_hashes": {
+    "stage_a_preparation_commit": "409d22b4a697ac5a758ac51f5d27db7837c78d0c",
+    "independent_preparation_review_commit": "50ae6ab18ab184a5bf1d7e6caeeded970189f1dc",
+    "r1r1_crosswalk_sha256": "2c88f67ff154c5d6bfa2deb13dc51588b854e1c35ea74dc44749af8b537cb316"
+  },
+  "supersession_revocation": {
+    "supersedes_decision_record_id": null,
+    "revoked_decision_record_id": null,
+    "revocation_status": "NOT_REVOKED",
+    "conflict_check_required": true
+  },
+  "operational_effect": "UNRESOLVED_FAIL_CLOSED_NO_AUTHORITY_ACTIVATION"
+}

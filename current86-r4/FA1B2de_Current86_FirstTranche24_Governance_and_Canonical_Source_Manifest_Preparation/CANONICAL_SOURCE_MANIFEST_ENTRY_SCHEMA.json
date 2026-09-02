@@ -1,0 +1,170 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://binding.invalid/schemas/canonical-source-manifest-entry-v1.json",
+  "title": "Canonical Source-Manifest Entry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "entry_state", "scope_identity", "authority_identity", "immutable_source_artifact", "exact_source_object", "canonical_schema_field", "provenance_references", "operational_boundary"],
+  "properties": {
+    "schema": {"const": "BINDING_CANONICAL_SOURCE_MANIFEST_ENTRY_V1"},
+    "entry_state": {"$ref": "#/$defs/state"},
+    "scope_identity": {
+      "type": "object", "additionalProperties": false,
+      "required": ["first_tranche_target_identity", "target_index", "source_binding_target_id", "target_manifest_sha256", "governance_scope_id"],
+      "properties": {
+        "first_tranche_target_identity": {"type": "string", "pattern": "^FIRST_TRANCHE24_TARGET_[0-9]{1,3}$"},
+        "target_index": {"type": "integer", "minimum": 1},
+        "source_binding_target_id": {"$ref": "#/$defs/sha256"},
+        "target_manifest_sha256": {"$ref": "#/$defs/sha256"},
+        "governance_scope_id": {"const": "FIRST_TRANCHE24_ONLY"}
+      }
+    },
+    "authority_identity": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_authority_id", "authority_activation_record_hash", "authorized_source_artifact_class", "authorized_source_fact_type", "source_owner_issuer_identity", "owner_governance_authorization_reference"],
+      "properties": {
+        "source_authority_id": {"$ref": "#/$defs/resolvable_string"},
+        "authority_activation_record_hash": {"$ref": "#/$defs/resolvable_hash"},
+        "authorized_source_artifact_class": {"const": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE"},
+        "authorized_source_fact_type": {"const": "PINNED_CANONICAL_INTRINSIC_FIELD"},
+        "source_owner_issuer_identity": {"$ref": "#/$defs/resolvable_string"},
+        "owner_governance_authorization_reference": {"$ref": "#/$defs/resolvable_string"}
+      }
+    },
+    "immutable_source_artifact": {
+      "type": "object", "additionalProperties": false,
+      "required": ["artifact_identity", "immutable_release_version_commit_tree_identity", "artifact_sha256", "acquisition_proof_type", "acquisition_proof_hash_reference", "verifier_identity"],
+      "properties": {
+        "artifact_identity": {"$ref": "#/$defs/resolvable_string"},
+        "immutable_release_version_commit_tree_identity": {"$ref": "#/$defs/resolvable_string"},
+        "artifact_sha256": {"$ref": "#/$defs/resolvable_hash"},
+        "acquisition_proof_type": {"$ref": "#/$defs/resolvable_string"},
+        "acquisition_proof_hash_reference": {"$ref": "#/$defs/resolvable_string"},
+        "verifier_identity": {"$ref": "#/$defs/resolvable_string"}
+      }
+    },
+    "exact_source_object": {
+      "type": "object", "additionalProperties": false,
+      "required": ["deterministic_extractor_identity", "extractor_version_hash", "source_object_locator", "locator_canonical_hash", "exact_one_match_required", "object_match_cardinality", "source_object_sha256"],
+      "properties": {
+        "deterministic_extractor_identity": {"$ref": "#/$defs/resolvable_string"},
+        "extractor_version_hash": {"$ref": "#/$defs/resolvable_hash"},
+        "source_object_locator": {"$ref": "#/$defs/resolvable_string"},
+        "locator_canonical_hash": {"$ref": "#/$defs/resolvable_hash"},
+        "exact_one_match_required": {"const": true},
+        "object_match_cardinality": {"oneOf": [{"const": 1}, {"$ref": "#/$defs/unresolved"}]},
+        "source_object_sha256": {"$ref": "#/$defs/resolvable_hash"}
+      }
+    },
+    "canonical_schema_field": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schema_namespace", "schema_identity_version_hash", "canonical_intrinsic_field_semantics_id", "exact_rfc6901_pointer", "field_type", "canonicalization_profile_id", "authenticated_canonical_value_sha256", "canonical_field_identity"],
+      "properties": {
+        "schema_namespace": {"$ref": "#/$defs/resolvable_string"},
+        "schema_identity_version_hash": {"$ref": "#/$defs/resolvable_hash"},
+        "canonical_intrinsic_field_semantics_id": {"$ref": "#/$defs/resolvable_string"},
+        "exact_rfc6901_pointer": {"oneOf": [{"type": "string", "pattern": "^(|/(?:[^~/]|~[01])*)+$"}, {"$ref": "#/$defs/unresolved"}]},
+        "field_type": {"$ref": "#/$defs/resolvable_string"},
+        "canonicalization_profile_id": {"$ref": "#/$defs/resolvable_string"},
+        "authenticated_canonical_value_sha256": {"$ref": "#/$defs/resolvable_hash"},
+        "canonical_field_identity": {"$ref": "#/$defs/resolvable_string"}
+      }
+    },
+    "provenance_references": {
+      "type": "object", "additionalProperties": false,
+      "required": ["preparation_commit", "independent_preparation_review_commit", "r1r1_crosswalk_sha256"],
+      "properties": {
+        "preparation_commit": {"const": "409d22b4a697ac5a758ac51f5d27db7837c78d0c"},
+        "independent_preparation_review_commit": {"const": "50ae6ab18ab184a5bf1d7e6caeeded970189f1dc"},
+        "r1r1_crosswalk_sha256": {"const": "2c88f67ff154c5d6bfa2deb13dc51588b854e1c35ea74dc44749af8b537cb316"}
+      }
+    },
+    "operational_boundary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["candidate_and_comparative_evidence_non_authoritative", "operative_admission", "source_auth_executed", "mapping_evidence_created", "stage_a_admitted", "stage_b_exposed", "field_pin_created"],
+      "properties": {
+        "candidate_and_comparative_evidence_non_authoritative": {"const": true},
+        "operative_admission": {"type": "boolean"},
+        "source_auth_executed": {"const": false},
+        "mapping_evidence_created": {"const": false},
+        "stage_a_admitted": {"const": false},
+        "stage_b_exposed": {"const": false},
+        "field_pin_created": {"const": false}
+      }
+    }
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "concrete_string": {"type": "string", "minLength": 1, "pattern": "^(?!UNRESOLVED::).+$"},
+    "concrete_pointer": {"type": "string", "pattern": "^(|/(?:[^~/]|~[01])*)+$"},
+    "resolvable_string": {"oneOf": [{"$ref": "#/$defs/concrete_string"}, {"$ref": "#/$defs/unresolved"}]},
+    "resolvable_hash": {"oneOf": [{"$ref": "#/$defs/sha256"}, {"$ref": "#/$defs/unresolved"}]},
+    "unresolved": {
+      "type": "object", "additionalProperties": false,
+      "required": ["resolution_status", "reason"],
+      "properties": {
+        "resolution_status": {"const": "UNRESOLVED"},
+        "reason": {"enum": ["NOT_IDENTIFIED", "NOT_AUTHENTICATED", "NOT_ACQUIRED", "NOT_EXTRACTED", "NOT_SCHEMA_RESOLVED", "NOT_POINTER_RESOLVED", "NOT_VERIFIED"]}
+      }
+    },
+    "state": {"enum": ["TEMPLATE_NON_OPERATIVE", "PENDING_OWNER_AUTHORIZATION", "PENDING_SOURCE_ACQUISITION", "PENDING_OBJECT_AUTHENTICATION", "READY_FOR_MANIFEST_ADMISSION_REVIEW", "ADMITTED_OPERATIVE", "REJECTED", "REVOKED", "SUPERSEDED"]}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"entry_state": {"const": "ADMITTED_OPERATIVE"}}},
+      "then": {
+        "properties": {
+          "scope_identity": {
+            "properties": {"target_manifest_sha256": {"$ref": "#/$defs/sha256"}}
+          },
+          "authority_identity": {
+            "properties": {
+              "source_authority_id": {"$ref": "#/$defs/concrete_string"},
+              "authority_activation_record_hash": {"$ref": "#/$defs/sha256"},
+              "source_owner_issuer_identity": {"$ref": "#/$defs/concrete_string"},
+              "owner_governance_authorization_reference": {"$ref": "#/$defs/concrete_string"}
+            }
+          },
+          "immutable_source_artifact": {
+            "properties": {
+              "artifact_identity": {"$ref": "#/$defs/concrete_string"},
+              "immutable_release_version_commit_tree_identity": {"$ref": "#/$defs/concrete_string"},
+              "artifact_sha256": {"$ref": "#/$defs/sha256"},
+              "acquisition_proof_type": {"$ref": "#/$defs/concrete_string"},
+              "acquisition_proof_hash_reference": {"$ref": "#/$defs/concrete_string"},
+              "verifier_identity": {"$ref": "#/$defs/concrete_string"}
+            }
+          },
+          "exact_source_object": {
+            "properties": {
+              "deterministic_extractor_identity": {"$ref": "#/$defs/concrete_string"},
+              "extractor_version_hash": {"$ref": "#/$defs/sha256"},
+              "source_object_locator": {"$ref": "#/$defs/concrete_string"},
+              "locator_canonical_hash": {"$ref": "#/$defs/sha256"},
+              "object_match_cardinality": {"const": 1},
+              "source_object_sha256": {"$ref": "#/$defs/sha256"}
+            }
+          },
+          "canonical_schema_field": {
+            "properties": {
+              "schema_namespace": {"$ref": "#/$defs/concrete_string"},
+              "schema_identity_version_hash": {"$ref": "#/$defs/sha256"},
+              "canonical_intrinsic_field_semantics_id": {"$ref": "#/$defs/concrete_string"},
+              "exact_rfc6901_pointer": {"$ref": "#/$defs/concrete_pointer"},
+              "field_type": {"$ref": "#/$defs/concrete_string"},
+              "canonicalization_profile_id": {"$ref": "#/$defs/concrete_string"},
+              "authenticated_canonical_value_sha256": {"$ref": "#/$defs/sha256"},
+              "canonical_field_identity": {"$ref": "#/$defs/concrete_string"}
+            }
+          },
+          "operational_boundary": {"properties": {"operative_admission": {"const": true}}}
+        }
+      },
+      "else": {
+        "properties": {
+          "operational_boundary": {"properties": {"operative_admission": {"const": false}}}
+        }
+      }
+    }
+  ]
+}
