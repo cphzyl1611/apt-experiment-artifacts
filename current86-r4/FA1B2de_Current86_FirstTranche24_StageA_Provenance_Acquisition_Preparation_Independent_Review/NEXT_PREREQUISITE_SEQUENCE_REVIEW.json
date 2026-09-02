@@ -1,0 +1,107 @@
+{
+  "schema": "FA1B2DE_CURRENT86_FIRST_TRANCHE24_NEXT_PREREQUISITE_SEQUENCE_REVIEW_V1",
+  "review_date": "2026-09-02",
+  "scope": "FIRST_TRANCHE_24_ONLY",
+  "minimum_sequence_before_any_stage_a_admission_attempt": [
+    {
+      "step": 1,
+      "name": "governance_and_source_owner_authorization",
+      "required_before": "canonical source-manifest admission",
+      "must_provide": [
+        "separately authenticated source-authority activation",
+        "authority scope covering exact target tranche/class/fact type",
+        "source-owner-or-issuer identity and authorization",
+        "governance proof and activation-record hash"
+      ],
+      "performed_in_preparation": false,
+      "human_governance_decision_required": true
+    },
+    {
+      "step": 2,
+      "name": "canonical_source_manifest_entry_creation_and_admission",
+      "required_before": "source artifact acquisition",
+      "must_provide": [
+        "operative canonical source-manifest entry",
+        "exact source artifact identity and version policy",
+        "authorized source object class/fact type",
+        "manifest entry identity/hash"
+      ],
+      "performed_in_preparation": false,
+      "human_governance_decision_required": true
+    },
+    {
+      "step": 3,
+      "name": "immutable_source_artifact_acquisition",
+      "required_before": "exact object extraction",
+      "must_provide": [
+        "immutable artifact bytes",
+        "artifact SHA-256",
+        "pinned commit/tree/release or equivalent",
+        "signed release or approved acquisition proof",
+        "verifier identity"
+      ],
+      "performed_in_preparation": false,
+      "human_governance_decision_required": false
+    },
+    {
+      "step": 4,
+      "name": "exact_source_object_extraction",
+      "required_before": "source-object authentication",
+      "must_provide": [
+        "pinned deterministic extractor ID and hash",
+        "exact object locator and canonical locator hash",
+        "exactly-one match receipt",
+        "source object bytes and SHA-256"
+      ],
+      "performed_in_preparation": false,
+      "human_governance_decision_required": false
+    },
+    {
+      "step": 5,
+      "name": "source_object_and_field_authentication",
+      "required_before": "mapping evidence construction",
+      "must_provide": [
+        "authenticated source-object identity",
+        "canonical schema namespace/version/hash",
+        "canonical field semantics",
+        "exact RFC6901 pointer",
+        "field type and canonicalization profile",
+        "authenticated value SHA-256 and field identity"
+      ],
+      "performed_in_preparation": false,
+      "human_governance_decision_required": false
+    },
+    {
+      "step": 6,
+      "name": "canonical_field_mapping_evidence_construction",
+      "required_before": "independent Stage A admission",
+      "must_provide": [
+        "mapping evidence record",
+        "complete provenance chain",
+        "mapping-record identity and full-record hash",
+        "conflict recomputation",
+        "no revocation or supersession"
+      ],
+      "performed_in_preparation": false,
+      "human_governance_decision_required": false
+    },
+    {
+      "step": 7,
+      "name": "independent_stage_a_admission",
+      "required_before": "Stage B exposure",
+      "must_provide": [
+        "independent recomputation of mapping bytes",
+        "active lineage verification",
+        "decision status",
+        "independent reviewer identity"
+      ],
+      "performed_in_preparation": false,
+      "human_governance_decision_required": false
+    }
+  ],
+  "separation_rule": "Do not collapse governance authorization, manifest admission, artifact acquisition, extraction, authentication, mapping evidence, and Stage A admission into one opaque source-auth step.",
+  "human_decision_required_before_source_manifest_admission": true,
+  "source_manifest_admission_is_operative_and_was_not_performed": true,
+  "stage_b_remains_gated_until_stage_a_admission_ready": true,
+  "result": "SUFFICIENT_NEXT_ACTION_WITH_EXPLICIT_PREREQUISITE_SEPARATION"
+}
