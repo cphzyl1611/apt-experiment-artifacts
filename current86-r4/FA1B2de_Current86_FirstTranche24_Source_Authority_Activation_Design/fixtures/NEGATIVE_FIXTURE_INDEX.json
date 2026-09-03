@@ -1,0 +1,16 @@
+{
+  "fixture_type": "DESIGN_MUTATION_VECTOR_SET",
+  "base_fixture": "fixtures/valid_record.json",
+  "vectors": [
+    {"file":"fixtures/negative/missing_authority_id.json","expected_rejection":"MISSING_SOURCE_AUTHORITY_IDENTITY"},
+    {"file":"fixtures/negative/wrong_governance_decision_reference.json","expected_rejection":"WRONG_GOVERNANCE_DECISION_ID"},
+    {"file":"fixtures/negative/scope_widening.json","expected_rejection":"SCOPE_WIDENING"},
+    {"file":"fixtures/negative/missing_version_policy.json","expected_rejection":"MISSING_VERSION_POLICY"},
+    {"file":"fixtures/negative/floating_version.json","expected_rejection":"FLOATING_OR_UNPINNED_VERSION"},
+    {"file":"fixtures/negative/provenance_mismatch.json","expected_rejection":"PROVENANCE_MISMATCH"},
+    {"file":"fixtures/negative/unauthorized_field.json","expected_rejection":"UNAUTHORIZED_FIELD"},
+    {"file":"fixtures/negative/duplicate_reuse_mismatch.json","expected_rejection":"DUPLICATE_REUSE_MISMATCH"},
+    {"file":"fixtures/negative/stale_candidate.json","expected_rejection":"STALE_OR_SUPERSEDED_CANDIDATE"},
+    {"file":"fixtures/negative/mixed_candidate_evidence.json","expected_rejection":"MIXED_CANDIDATE_EVIDENCE"}
+  ]
+}

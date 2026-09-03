@@ -1,0 +1,6 @@
+{
+  "fixture_type": "DESIGN_MUTATION_VECTOR",
+  "base_fixture": "../valid_record.json",
+  "mutation": {"operation":"replace","path":["source_provenance_evidence","evidence_refs",0,"candidate_authority_id"],"value":"sha256:ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"},
+  "expected_rejection": "PROVENANCE_MISMATCH"
+}

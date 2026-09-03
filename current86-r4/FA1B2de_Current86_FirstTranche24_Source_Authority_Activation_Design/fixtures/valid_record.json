@@ -1,0 +1,145 @@
+{
+  "record_type": "FIRST_TRANCHE24_SOURCE_AUTHORITY_ACTIVATION",
+  "schema_version": "V1",
+  "record_mode": "SYNTHETIC_TEST_ONLY",
+  "activation_transaction": {
+    "transaction_type": "FIRST_TRANCHE24_SOURCE_AUTHORITY_ACTIVATION",
+    "transaction_id": "SATX-FIRST_TRANCHE24_SOURCE_AUTHORITY_ACTIVATION_V1-318334d4ad7e57d68336d9b811d1eca6c76019412cb73224c5694af58b850727",
+    "record_id": "SATREC-FIRST_TRANCHE24_SOURCE_AUTHORITY_ACTIVATION_V1-318334d4ad7e57d68336d9b811d1eca6c76019412cb73224c5694af58b850727",
+    "transaction_hash": "318334d4ad7e57d68336d9b811d1eca6c76019412cb73224c5694af58b850727",
+    "identity_procedure_id": "FIRST_TRANCHE24_SOURCE_AUTHORITY_ACTIVATION_IDENTITY_V1",
+    "canonical_preimage_sha256": "318334d4ad7e57d68336d9b811d1eca6c76019412cb73224c5694af58b850727",
+    "atomicity": "SINGLE_RECORD_ATOMIC_COMMIT",
+    "design_only": true,
+    "replay_and_reuse": {
+      "replay_key": "e543a0c79c945e594c1d69b7a5b1f722a0cc6e8bf7d358f096e10e4c8aae0ee6",
+      "prior_record_state": "NONE",
+      "replay_disposition": "NEW_TRANSACTION",
+      "existing_record_id": null,
+      "existing_record_hash": null,
+      "authority_reuse_check": "PASS"
+    }
+  },
+  "governance_authorization_reference": {
+    "decision_record_id": "GOVDEC2-68ea814d1940bed4ec8b3e48b6a28f67f3e05c5e50e1c342a1fa2dc7db31f90f",
+    "governance_transaction_hash": "b5601414918d6b7cc5c00ebaf24b98d93d2d477bcd4481de4de47b8ed0f7cd38",
+    "governance_scope": "FIRST_TRANCHE24_ONLY",
+    "human_governance_decision": "APPROVE_BOTH_G1_AND_G2",
+    "decision_materialization_commit": "3c5c014238b569377963c1cb20f3d7df2600f135",
+    "decision_materialization_parent": "c3e911e865f5287d46703e5d0d7398ee653151f7",
+    "independent_review_commit": "10478b0961a601d0f684740b9564633a9930ebc9",
+    "independent_review_verdict": "PASS_READY_FOR_SOURCE_AUTHORITY_ACTIVATION_DESIGN",
+    "decision_record_sha256": "1e688e1076a0ab64da2839fb38562eedca6b62c1a2d6120b3d8a8b0416c3b31f",
+    "binding_scope_extension_permitted": false
+  },
+  "scope_reference": {
+    "scope_id": "FIRST_TRANCHE24_ONLY",
+    "raw_ids": [110,273,210,98,147,277,188,301,143,250,233,287,146,293,114,284,291,215,88,182,300,218,115,148],
+    "raw_count": 24,
+    "unique_raw_count": 24,
+    "scope_extension_requested": false
+  },
+  "source_authority_identity": {
+    "authority_id": "sha256:29c06f46e8b241cf5544b24f0573fdf22f6d74cadb1f53427a449c5e8ecc9025",
+    "identity_procedure_id": "FIRST_TRANCHE24_SOURCE_AUTHORITY_IDENTITY_V1",
+    "identity_namespace": "fa1b2de.source-authority/current86/first-tranche24",
+    "identity_version": "V1",
+    "identity_digest": "29c06f46e8b241cf5544b24f0573fdf22f6d74cadb1f53427a449c5e8ecc9025",
+    "identity_basis": {
+      "source_locator": "synthetic://first-tranche24/authority-alpha-v1",
+      "source_locator_type": "SYNTHETIC_URI",
+      "source_version_policy_id": "SVP-SYNTHETIC_ALPHA_V1",
+      "content_digest": "c6162f3643e43b5a2a05e65b0c8a46c65b5adc414fb90052fbf57d143ef0adc1",
+      "authority_type": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "source_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE"
+    },
+    "candidate_status": "SYNTHETIC_ONLY",
+    "scope_binding": {
+      "scope_id": "FIRST_TRANCHE24_ONLY",
+      "raw_ids": [110,273,210,98,147,277,188,301,143,250,233,287,146,293,114,284,291,215,88,182,300,218,115,148],
+      "binding_mode": "IDENTITY_INCLUDES_EXACT_SCOPE"
+    },
+    "provenance_binding": {
+      "provenance_set_id": "PROV-SYNTHETIC_ALPHA_V1",
+      "candidate_authority_id": "sha256:29c06f46e8b241cf5544b24f0573fdf22f6d74cadb1f53427a449c5e8ecc9025",
+      "source_version_policy_id": "SVP-SYNTHETIC_ALPHA_V1",
+      "content_digest": "c6162f3643e43b5a2a05e65b0c8a46c65b5adc414fb90052fbf57d143ef0adc1",
+      "evidence_digest": "cee438a9a2b488dca12c5dc8fb61a36b96899ccba19a2842fc6636ff0106a906"
+    }
+  },
+  "source_authority_type_class": {
+    "authority_type": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+    "source_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+    "selection_procedure_id": "FIRST_TRANCHE24_SOURCE_AUTHORITY_CANDIDATE_ADJUDICATION_V1",
+    "selection_decision": "SYNTHETIC_ONLY",
+    "selection_evidence_refs": ["fixtures/valid_record.json"]
+  },
+  "source_version_policy": {
+    "policy_id": "SVP-SYNTHETIC_ALPHA_V1",
+    "policy_version": "V1",
+    "policy_form": "CONTENT_DIGEST",
+    "immutable_identifier": "sha256:c6162f3643e43b5a2a05e65b0c8a46c65b5adc414fb90052fbf57d143ef0adc1",
+    "content_sha256": "c6162f3643e43b5a2a05e65b0c8a46c65b5adc414fb90052fbf57d143ef0adc1",
+    "digest_algorithm": "SHA-256",
+    "reference": {
+      "kind": "SYNTHETIC_URI",
+      "uri": "synthetic://first-tranche24/authority-alpha-v1"
+    },
+    "floating_reference_allowed": false,
+    "update_policy": "NEW_ACTIVATION_REQUIRED",
+    "lineage_evidence_refs": ["fixtures/valid_record.json"]
+  },
+  "source_provenance_evidence": {
+    "evidence_set_id": "PROV-SYNTHETIC_ALPHA_V1",
+    "evidence_refs": [
+      {
+        "evidence_id": "EVID-SYNTHETIC_ALPHA_DESCRIPTOR",
+        "evidence_kind": "SYNTHETIC_DESCRIPTOR",
+        "artifact_locator": "synthetic://evidence/authority-alpha-v1",
+        "artifact_sha256": "38957093321885fa80b0fda6b212a9196a27a2a538bf06c0f33599f8e327ebb3",
+        "candidate_authority_id": "sha256:29c06f46e8b241cf5544b24f0573fdf22f6d74cadb1f53427a449c5e8ecc9025",
+        "source_version_policy_id": "SVP-SYNTHETIC_ALPHA_V1",
+        "content_sha256": "c6162f3643e43b5a2a05e65b0c8a46c65b5adc414fb90052fbf57d143ef0adc1",
+        "attestation_status": "SYNTHETIC_PASS"
+      }
+    ],
+    "all_same_candidate": true,
+    "provenance_status": "SYNTHETIC_PASS",
+    "source_object_acquisition_status": "NOT_ACQUIRED_DESIGN_ONLY",
+    "authentication_method": "SYNTHETIC_DETERMINISTIC",
+    "evidence_set_sha256": "cee438a9a2b488dca12c5dc8fb61a36b96899ccba19a2842fc6636ff0106a906"
+  },
+  "activation_status": "DESIGN_ONLY_NOT_EXECUTED",
+  "canonicalization_profile": {
+    "profile_id": "RFC8785_LIKE_UTF8_SORTED_JSON",
+    "profile_version": "V1",
+    "encoding": "UTF-8",
+    "unicode_normalization": "NFC",
+    "object_key_order": "LEXICOGRAPHIC_RECURSIVE",
+    "insignificant_whitespace": "OMIT",
+    "array_order": "SIGNIFICANT_LITERAL_ORDER",
+    "number_form": "JSON_INTEGER",
+    "digest_algorithm": "SHA-256"
+  },
+  "zero_downstream_effect_assertions": {
+    "assertion_profile": "FIRST_TRANCHE24_ZERO_DOWNSTREAM_EFFECT_V1",
+    "assertion_scope": "FIRST_TRANCHE24_ONLY",
+    "governance_decision_unchanged": true,
+    "source_authority_activated": "NO",
+    "source_acquisition": "NO",
+    "source_auth_executed": "NO",
+    "stage_a_admissions": 0,
+    "stage_b_exposures": 0,
+    "field_pins": 0,
+    "operative_records": 0,
+    "p0_executed": "NO",
+    "p1_executed": "NO",
+    "formal_1796_experiment_executed": "NO",
+    "activation_effect_boundary": "AUTHORITY_POINTER_ONLY_NO_DOWNSTREAM_OPERATION"
+  },
+  "outputs": {
+    "activation_receipt": {"status":"NOT_EMITTED","reference":null,"sha256":null},
+    "source_acquisition_handoff": {"status":"NOT_EMITTED","reference":null,"sha256":null},
+    "next_phase": "FIRST_TRANCHE24_SOURCE_AUTHORITY_ACTIVATION_INDEPENDENT_REVIEW"
+  }
+}

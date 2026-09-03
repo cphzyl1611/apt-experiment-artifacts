@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "design_phase_only": true,
+  "human_governance_decision_materialized": "YES",
+  "human_governance_decision": "APPROVE_BOTH_G1_AND_G2",
+  "governance_scope": "FIRST_TRANCHE24_ONLY",
+  "governance_decision_changed": false,
+  "NEW_SOURCE_AUTHORITY_ID_CREATED": 0,
+  "SOURCE_AUTHORITY_ACTIVATED": "NO",
+  "SOURCE_ACQUISITION": "NO",
+  "SOURCE_AUTH_EXECUTED": "NO",
+  "STAGE_A_ADMISSIONS": 0,
+  "STAGE_B_EXPOSURES": 0,
+  "FIELD_PINS": 0,
+  "OPERATIVE_RECORDS": 0,
+  "P0_EXECUTED": "NO",
+  "P1_EXECUTED": "NO",
+  "FORMAL_1796_EXPERIMENT_EXECUTED": "NO",
+  "zero_operational_effect_except_prior_governance_decision": "PASS"
+}

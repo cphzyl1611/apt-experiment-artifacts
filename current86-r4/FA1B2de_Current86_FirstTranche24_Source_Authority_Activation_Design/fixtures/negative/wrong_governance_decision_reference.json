@@ -1,0 +1,6 @@
+{
+  "fixture_type": "DESIGN_MUTATION_VECTOR",
+  "base_fixture": "../valid_record.json",
+  "mutation": {"operation":"replace","path":["governance_authorization_reference","decision_record_id"],"value":"GOVDEC2-ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"},
+  "expected_rejection": "WRONG_GOVERNANCE_DECISION_ID"
+}

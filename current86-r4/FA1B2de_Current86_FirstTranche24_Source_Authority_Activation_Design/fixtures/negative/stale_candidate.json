@@ -1,0 +1,6 @@
+{
+  "fixture_type": "DESIGN_MUTATION_VECTOR",
+  "base_fixture": "../valid_record.json",
+  "mutation": {"operation":"replace","path":["source_authority_identity","candidate_status"],"value":"STALE"},
+  "expected_rejection": "STALE_OR_SUPERSEDED_CANDIDATE"
+}

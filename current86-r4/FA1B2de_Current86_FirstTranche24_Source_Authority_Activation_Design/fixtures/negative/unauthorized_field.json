@@ -1,0 +1,6 @@
+{
+  "fixture_type": "DESIGN_MUTATION_VECTOR",
+  "base_fixture": "../valid_record.json",
+  "mutation": {"operation":"add","path":["unauthorized_field"],"value":"not-permitted"},
+  "expected_rejection": "UNAUTHORIZED_FIELD"
+}

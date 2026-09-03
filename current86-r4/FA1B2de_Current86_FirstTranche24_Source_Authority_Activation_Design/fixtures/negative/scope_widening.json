@@ -1,0 +1,6 @@
+{
+  "fixture_type": "DESIGN_MUTATION_VECTOR",
+  "base_fixture": "../valid_record.json",
+  "mutation": {"operation":"replace","path":["scope_reference","raw_ids"],"value":[110,273,210,98,147,277,188,301,143,250,233,287,146,293,114,284,291,215,88,182,300,218,115,148,999]},
+  "expected_rejection": "SCOPE_WIDENING"
+}

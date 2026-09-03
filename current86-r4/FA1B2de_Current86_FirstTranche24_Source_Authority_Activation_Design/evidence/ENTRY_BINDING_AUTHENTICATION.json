@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "binding_repository": "/home/cph/fa1b2de-review-artifacts",
+  "binding_branch": "artifact/binding",
+  "local_binding_head": "10478b0961a601d0f684740b9564633a9930ebc9",
+  "remote_binding_head": "10478b0961a601d0f684740b9564633a9930ebc9",
+  "head_equality": true,
+  "decision_materialization_commit": "3c5c014238b569377963c1cb20f3d7df2600f135",
+  "decision_materialization_parent": "c3e911e865f5287d46703e5d0d7398ee653151f7",
+  "independent_review_commit": "10478b0961a601d0f684740b9564633a9930ebc9",
+  "independent_review_verdict": "PASS_READY_FOR_SOURCE_AUTHORITY_ACTIVATION_DESIGN",
+  "review_package_traceable_to_live_binding_history": true,
+  "parent_exact": true,
+  "intervening_commits_between_materialization_and_review": 1,
+  "changed_scope": "INDEPENDENT_REVIEW_PACKAGE_ONLY"
+}

@@ -1,0 +1,23 @@
+{
+  "policy_id": "FIRST_TRANCHE24_SOURCE_AUTHORITY_ACTIVATION_FAIL_CLOSED_V1",
+  "default_decision": "FAIL_CLOSED_NO_ACTIVATION",
+  "rules": [
+    {"rule_id":"MISSING_GOVERNANCE_DECISION_REFERENCE","condition":"governance_authorization_reference is absent or incomplete","rejection":"MISSING_GOVERNANCE_DECISION_REFERENCE"},
+    {"rule_id":"WRONG_GOVERNANCE_DECISION_ID","condition":"decision_record_id differs from the frozen GOVDEC2 ID","rejection":"WRONG_GOVERNANCE_DECISION_ID"},
+    {"rule_id":"WRONG_GOVERNANCE_TRANSACTION_HASH","condition":"governance_transaction_hash differs from the frozen hash","rejection":"WRONG_GOVERNANCE_TRANSACTION_HASH"},
+    {"rule_id":"WRONG_GOVERNANCE_SCOPE","condition":"governance_scope is not FIRST_TRANCHE24_ONLY","rejection":"WRONG_GOVERNANCE_SCOPE"},
+    {"rule_id":"SCOPE_WIDENING","condition":"scope ID, ordered raw IDs, cardinality, or uniqueness differs from the 24 frozen IDs","rejection":"SCOPE_WIDENING"},
+    {"rule_id":"MISSING_SOURCE_AUTHORITY_IDENTITY","condition":"authority_id or any identity basis field is absent","rejection":"MISSING_SOURCE_AUTHORITY_IDENTITY"},
+    {"rule_id":"AMBIGUOUS_SOURCE_AUTHORITY_IDENTITY","condition":"identity preimage cannot be recomputed to one sha256 authority ID","rejection":"AMBIGUOUS_SOURCE_AUTHORITY_IDENTITY"},
+    {"rule_id":"MISSING_VERSION_POLICY","condition":"source_version_policy is absent or incomplete","rejection":"MISSING_VERSION_POLICY"},
+    {"rule_id":"FLOATING_OR_UNPINNED_VERSION","condition":"floating_reference_allowed is true or immutable identifier/digest is absent","rejection":"FLOATING_OR_UNPINNED_VERSION"},
+    {"rule_id":"PROVENANCE_MISMATCH","condition":"evidence candidate, policy ID, authority ID, or digest does not match","rejection":"PROVENANCE_MISMATCH"},
+    {"rule_id":"UNSUPPORTED_IDENTITY_PROCEDURE","condition":"identity procedure or canonicalization profile is not the specified V1 procedure","rejection":"UNSUPPORTED_IDENTITY_PROCEDURE"},
+    {"rule_id":"UNAUTHORIZED_FIELD","condition":"closed-object schema rejects an unknown key","rejection":"UNAUTHORIZED_FIELD"},
+    {"rule_id":"DUPLICATE_REUSE_MISMATCH","condition":"same replay key or authority ID is reused with a changed hash/preimage/policy","rejection":"DUPLICATE_REUSE_MISMATCH"},
+    {"rule_id":"STALE_OR_SUPERSEDED_CANDIDATE","condition":"candidate status is stale, revoked, superseded, or conflicts with a newer root","rejection":"STALE_OR_SUPERSEDED_CANDIDATE"},
+    {"rule_id":"MIXED_CANDIDATE_EVIDENCE","condition":"evidence set names more than one candidate authority","rejection":"MIXED_CANDIDATE_EVIDENCE"},
+    {"rule_id":"CIRCULAR_GOVERNANCE_DEPENDENCY","condition":"governance decision materialization asserts a source authority prerequisite","rejection":"CIRCULAR_GOVERNANCE_DEPENDENCY"},
+    {"rule_id":"DOWNSTREAM_EFFECT_REQUESTED","condition":"record requests acquisition, source-auth execution, Stage A/B, pins, operative records, P0, P1, or benchmark","rejection":"DOWNSTREAM_EFFECT_REQUESTED"}
+  ]
+}

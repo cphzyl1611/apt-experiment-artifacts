@@ -1,0 +1,6 @@
+{
+  "fixture_type": "DESIGN_MUTATION_VECTOR",
+  "base_fixture": "../valid_record.json",
+  "mutation": {"operation":"replace","path":["source_version_policy","floating_reference_allowed"],"value":true},
+  "expected_rejection": "FLOATING_OR_UNPINNED_VERSION"
+}

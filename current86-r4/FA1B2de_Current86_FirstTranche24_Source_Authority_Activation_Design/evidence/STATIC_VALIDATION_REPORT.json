@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "schema_meta_validation": "PASS",
+  "valid_synthetic_fixture": "PASS",
+  "negative_fixtures_expected": 10,
+  "negative_fixtures_rejected": 10,
+  "negative_fixtures": [
+    "missing_authority_id.json",
+    "wrong_governance_decision_reference.json",
+    "scope_widening.json",
+    "missing_version_policy.json",
+    "floating_version.json",
+    "provenance_mismatch.json",
+    "unauthorized_field.json",
+    "duplicate_reuse_mismatch.json",
+    "stale_candidate.json",
+    "mixed_candidate_evidence.json"
+  ],
+  "governance_decision_binding": "PASS",
+  "first_tranche24_scope_exactness": "PASS",
+  "v1_circular_dependency_reintroduced": "NO",
+  "static_validator": "PASS",
+  "static_validator_fail_closed": "PASS",
+  "zero_operational_effect": "PASS",
+  "authority_identity_digest_synthetic_fixture": "29c06f46e8b241cf5544b24f0573fdf22f6d74cadb1f53427a449c5e8ecc9025",
+  "evidence_set_digest_synthetic_fixture": "cee438a9a2b488dca12c5dc8fb61a36b96899ccba19a2842fc6636ff0106a906",
+  "transaction_hash_synthetic_fixture": "318334d4ad7e57d68336d9b811d1eca6c76019412cb73224c5694af58b850727",
+  "authority_values": "UNRESOLVED_NO_LIVE_AUTHORITY_SELECTED",
+  "activation_executed": false,
+  "source_acquisition_executed": false
+}

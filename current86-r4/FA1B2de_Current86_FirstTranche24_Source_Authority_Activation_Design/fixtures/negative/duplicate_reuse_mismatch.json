@@ -1,0 +1,7 @@
+{
+  "fixture_type": "DESIGN_MUTATION_VECTOR",
+  "base_fixture": "../valid_record.json",
+  "mutation": {"operation":"replace","path":["activation_transaction","replay_and_reuse","prior_record_state"],"value":"EXACT_REPLAY_SAME_HASH"},
+  "secondary_mutation": {"operation":"replace","path":["activation_transaction","replay_and_reuse","existing_record_hash"],"value":"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"},
+  "expected_rejection": "DUPLICATE_REUSE_MISMATCH"
+}

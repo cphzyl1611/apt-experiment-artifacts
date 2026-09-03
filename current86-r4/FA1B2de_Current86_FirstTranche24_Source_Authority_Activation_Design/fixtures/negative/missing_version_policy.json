@@ -1,0 +1,6 @@
+{
+  "fixture_type": "DESIGN_MUTATION_VECTOR",
+  "base_fixture": "../valid_record.json",
+  "mutation": {"operation":"remove","path":["source_version_policy"]},
+  "expected_rejection": "MISSING_VERSION_POLICY"
+}

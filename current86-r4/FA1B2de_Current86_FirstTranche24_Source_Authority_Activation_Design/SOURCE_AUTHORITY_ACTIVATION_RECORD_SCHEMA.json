@@ -1,0 +1,265 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/fa1b2de/current86/first-tranche24/source-authority-activation-record-v1",
+  "title": "FIRST_TRANCHE24 source-authority activation record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "record_type",
+    "schema_version",
+    "record_mode",
+    "activation_transaction",
+    "governance_authorization_reference",
+    "scope_reference",
+    "source_authority_identity",
+    "source_authority_type_class",
+    "source_version_policy",
+    "source_provenance_evidence",
+    "activation_status",
+    "canonicalization_profile",
+    "zero_downstream_effect_assertions",
+    "outputs"
+  ],
+  "properties": {
+    "record_type": {"const":"FIRST_TRANCHE24_SOURCE_AUTHORITY_ACTIVATION"},
+    "schema_version": {"const":"V1"},
+    "record_mode": {"enum":["SYNTHETIC_TEST_ONLY","FUTURE_ACTIVATION"]},
+    "activation_transaction": {"$ref":"#/$defs/activationTransaction"},
+    "governance_authorization_reference": {"$ref":"#/$defs/governanceReference"},
+    "scope_reference": {"$ref":"#/$defs/scopeReference"},
+    "source_authority_identity": {"$ref":"#/$defs/authorityIdentity"},
+    "source_authority_type_class": {"$ref":"#/$defs/authorityTypeClass"},
+    "source_version_policy": {"$ref":"#/$defs/versionPolicy"},
+    "source_provenance_evidence": {"$ref":"#/$defs/provenanceEvidence"},
+    "activation_status": {"enum":["DESIGN_ONLY_NOT_EXECUTED","READY_FOR_ACTIVATION","ACTIVATED"]},
+    "canonicalization_profile": {"$ref":"#/$defs/canonicalizationProfile"},
+    "zero_downstream_effect_assertions": {"$ref":"#/$defs/zeroEffect"},
+    "outputs": {"$ref":"#/$defs/outputs"}
+  },
+  "allOf": [
+    {
+      "if": {"properties":{"record_mode":{"const":"SYNTHETIC_TEST_ONLY"}}},
+      "then": {"properties":{"activation_status":{"const":"DESIGN_ONLY_NOT_EXECUTED"}}}
+    },
+    {
+      "if": {"properties":{"record_mode":{"const":"FUTURE_ACTIVATION"}}},
+      "then": {"properties":{"activation_status":{"enum":["READY_FOR_ACTIVATION","ACTIVATED"]}}}
+    },
+    {
+      "if": {"properties":{"activation_status":{"const":"ACTIVATED"}}},
+      "then": {
+        "properties": {
+          "zero_downstream_effect_assertions": {"properties":{"source_authority_activated":{"const":"YES"}}},
+          "outputs": {
+            "properties": {
+              "activation_receipt": {"properties":{"status":{"const":"EMITTED"}}},
+              "source_acquisition_handoff": {"properties":{"status":{"const":"EMITTED"}}}
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {"properties":{"activation_status":{"enum":["DESIGN_ONLY_NOT_EXECUTED","READY_FOR_ACTIVATION"]}}},
+      "then": {
+        "properties": {
+          "zero_downstream_effect_assertions": {"properties":{"source_authority_activated":{"const":"NO"}}},
+          "outputs": {
+            "properties": {
+              "activation_receipt": {"properties":{"status":{"const":"NOT_EMITTED"}}},
+              "source_acquisition_handoff": {"properties":{"status":{"const":"NOT_EMITTED"}}}
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "sha256": {"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "authorityId": {"type":"string","pattern":"^sha256:[0-9a-f]{64}$"},
+    "commit": {"type":"string","pattern":"^[0-9a-f]{40}$"},
+    "transactionId": {"type":"string","pattern":"^SATX-FIRST_TRANCHE24_SOURCE_AUTHORITY_ACTIVATION_V1-[0-9a-f]{64}$"},
+    "recordId": {"type":"string","pattern":"^SATREC-FIRST_TRANCHE24_SOURCE_AUTHORITY_ACTIVATION_V1-[0-9a-f]{64}$"},
+    "ref": {"type":"string","minLength":1,"pattern":"^[^\\u0000-\\u001f]+$"},
+    "nullableRef": {"anyOf":[{"type":"null"},{"$ref":"#/$defs/ref"}]},
+    "nullableSha256": {"anyOf":[{"type":"null"},{"$ref":"#/$defs/sha256"}]},
+    "governanceReference": {
+      "type":"object","additionalProperties":false,
+      "required":["decision_record_id","governance_transaction_hash","governance_scope","human_governance_decision","decision_materialization_commit","decision_materialization_parent","independent_review_commit","independent_review_verdict","decision_record_sha256","binding_scope_extension_permitted"],
+      "properties": {
+        "decision_record_id":{"const":"GOVDEC2-68ea814d1940bed4ec8b3e48b6a28f67f3e05c5e50e1c342a1fa2dc7db31f90f"},
+        "governance_transaction_hash":{"const":"b5601414918d6b7cc5c00ebaf24b98d93d2d477bcd4481de4de47b8ed0f7cd38"},
+        "governance_scope":{"const":"FIRST_TRANCHE24_ONLY"},
+        "human_governance_decision":{"const":"APPROVE_BOTH_G1_AND_G2"},
+        "decision_materialization_commit":{"const":"3c5c014238b569377963c1cb20f3d7df2600f135"},
+        "decision_materialization_parent":{"const":"c3e911e865f5287d46703e5d0d7398ee653151f7"},
+        "independent_review_commit":{"const":"10478b0961a601d0f684740b9564633a9930ebc9"},
+        "independent_review_verdict":{"const":"PASS_READY_FOR_SOURCE_AUTHORITY_ACTIVATION_DESIGN"},
+        "decision_record_sha256":{"$ref":"#/$defs/sha256"},
+        "binding_scope_extension_permitted":{"const":false}
+      }
+    },
+    "scopeReference": {
+      "type":"object","additionalProperties":false,
+      "required":["scope_id","raw_ids","raw_count","unique_raw_count","scope_extension_requested"],
+      "properties": {
+        "scope_id":{"const":"FIRST_TRANCHE24_ONLY"},
+        "raw_ids":{"const":[110,273,210,98,147,277,188,301,143,250,233,287,146,293,114,284,291,215,88,182,300,218,115,148]},
+        "raw_count":{"const":24},
+        "unique_raw_count":{"const":24},
+        "scope_extension_requested":{"const":false}
+      }
+    },
+    "activationTransaction": {
+      "type":"object","additionalProperties":false,
+      "required":["transaction_type","transaction_id","record_id","transaction_hash","identity_procedure_id","canonical_preimage_sha256","atomicity","design_only","replay_and_reuse"],
+      "properties": {
+        "transaction_type":{"const":"FIRST_TRANCHE24_SOURCE_AUTHORITY_ACTIVATION"},
+        "transaction_id":{"$ref":"#/$defs/transactionId"},
+        "record_id":{"$ref":"#/$defs/recordId"},
+        "transaction_hash":{"$ref":"#/$defs/sha256"},
+        "identity_procedure_id":{"const":"FIRST_TRANCHE24_SOURCE_AUTHORITY_ACTIVATION_IDENTITY_V1"},
+        "canonical_preimage_sha256":{"$ref":"#/$defs/sha256"},
+        "atomicity":{"const":"SINGLE_RECORD_ATOMIC_COMMIT"},
+        "design_only":{"type":"boolean"},
+        "replay_and_reuse":{"type":"object","additionalProperties":false,"required":["replay_key","prior_record_state","replay_disposition","existing_record_id","existing_record_hash","authority_reuse_check"],"properties":{
+          "replay_key":{"$ref":"#/$defs/sha256"},
+          "prior_record_state":{"enum":["NONE","EXACT_REPLAY_SAME_HASH","CONFLICTING_HASH"]},
+          "replay_disposition":{"enum":["NEW_TRANSACTION","IDEMPOTENT_REPLAY","REJECT_CONFLICT"]},
+          "existing_record_id":{"$ref":"#/$defs/nullableRef"},
+          "existing_record_hash":{"$ref":"#/$defs/nullableSha256"},
+          "authority_reuse_check":{"enum":["PASS","REJECT_MISMATCH","REJECT_SUPERSEDED"]}
+        }}
+      }
+    },
+    "authorityIdentity": {
+      "type":"object","additionalProperties":false,
+      "required":["authority_id","identity_procedure_id","identity_namespace","identity_version","identity_digest","identity_basis","candidate_status","scope_binding","provenance_binding"],
+      "properties": {
+        "authority_id":{"$ref":"#/$defs/authorityId"},
+        "identity_procedure_id":{"const":"FIRST_TRANCHE24_SOURCE_AUTHORITY_IDENTITY_V1"},
+        "identity_namespace":{"const":"fa1b2de.source-authority/current86/first-tranche24"},
+        "identity_version":{"const":"V1"},
+        "identity_digest":{"$ref":"#/$defs/sha256"},
+        "identity_basis":{"type":"object","additionalProperties":false,"required":["source_locator","source_locator_type","source_version_policy_id","content_digest","authority_type","source_class"],"properties":{
+          "source_locator":{"type":"string","minLength":1},
+          "source_locator_type":{"enum":["SYNTHETIC_URI","HTTPS_URI","GIT_REPOSITORY","RELEASE_ARTIFACT"]},
+          "source_version_policy_id":{"type":"string","pattern":"^SVP-[A-Z0-9_]+$"},
+          "content_digest":{"$ref":"#/$defs/sha256"},
+          "authority_type":{"const":"AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE"},
+          "source_class":{"const":"AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE"}
+        }},
+        "candidate_status":{"enum":["SYNTHETIC_ONLY","AUTHENTICATED_CANDIDATE","STALE","SUPERSEDED"]},
+        "scope_binding":{"type":"object","additionalProperties":false,"required":["scope_id","raw_ids","binding_mode"],"properties":{
+          "scope_id":{"const":"FIRST_TRANCHE24_ONLY"},
+          "raw_ids":{"const":[110,273,210,98,147,277,188,301,143,250,233,287,146,293,114,284,291,215,88,182,300,218,115,148]},
+          "binding_mode":{"const":"IDENTITY_INCLUDES_EXACT_SCOPE"}
+        }},
+        "provenance_binding":{"type":"object","additionalProperties":false,"required":["provenance_set_id","candidate_authority_id","source_version_policy_id","content_digest","evidence_digest"],"properties":{
+          "provenance_set_id":{"type":"string","pattern":"^PROV-[A-Z0-9_]+$"},
+          "candidate_authority_id":{"$ref":"#/$defs/authorityId"},
+          "source_version_policy_id":{"type":"string","pattern":"^SVP-[A-Z0-9_]+$"},
+          "content_digest":{"$ref":"#/$defs/sha256"},
+          "evidence_digest":{"$ref":"#/$defs/sha256"}
+        }}
+      }
+    },
+    "authorityTypeClass": {
+      "type":"object","additionalProperties":false,"required":["authority_type","source_class","selection_procedure_id","selection_decision","selection_evidence_refs"],"properties":{
+        "authority_type":{"const":"AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE"},
+        "source_class":{"const":"AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE"},
+        "selection_procedure_id":{"const":"FIRST_TRANCHE24_SOURCE_AUTHORITY_CANDIDATE_ADJUDICATION_V1"},
+        "selection_decision":{"enum":["SYNTHETIC_ONLY","ADJUDICATED_SINGLE_CANDIDATE"]},
+        "selection_evidence_refs":{"type":"array","minItems":1,"items":{"$ref":"#/$defs/ref"}}
+      }
+    },
+    "versionPolicy": {
+      "type":"object","additionalProperties":false,"required":["policy_id","policy_version","policy_form","immutable_identifier","content_sha256","digest_algorithm","reference","floating_reference_allowed","update_policy","lineage_evidence_refs"],"properties":{
+        "policy_id":{"type":"string","pattern":"^SVP-[A-Z0-9_]+$"},
+        "policy_version":{"const":"V1"},
+        "policy_form":{"enum":["CONTENT_DIGEST","GIT_COMMIT","RELEASE_TAG_WITH_DIGEST"]},
+        "immutable_identifier":{"type":"string","minLength":1},
+        "content_sha256":{"$ref":"#/$defs/sha256"},
+        "digest_algorithm":{"const":"SHA-256"},
+        "reference":{"type":"object","additionalProperties":false,"required":["kind"],"properties":{
+          "kind":{"enum":["SYNTHETIC_URI","CONTENT_URI","GIT_COMMIT_TREE","RELEASE_TAG_DIGEST"]},
+          "uri":{"type":"string","minLength":1},
+          "repository":{"type":"string","minLength":1},
+          "commit":{"type":"string","pattern":"^[0-9a-f]{40}$"},
+          "tree":{"type":"string","pattern":"^[0-9a-f]{40}$"},
+          "release":{"type":"string","minLength":1},
+          "tag":{"type":"string","minLength":1}
+        }},
+        "floating_reference_allowed":{"const":false},
+        "update_policy":{"const":"NEW_ACTIVATION_REQUIRED"},
+        "lineage_evidence_refs":{"type":"array","minItems":1,"items":{"$ref":"#/$defs/ref"}},
+        "supersedes_policy_id":{"$ref":"#/$defs/nullableRef"}
+      }
+    },
+    "provenanceEvidence": {
+      "type":"object","additionalProperties":false,"required":["evidence_set_id","evidence_refs","all_same_candidate","provenance_status","source_object_acquisition_status","authentication_method","evidence_set_sha256"],"properties":{
+        "evidence_set_id":{"type":"string","pattern":"^PROV-[A-Z0-9_]+$"},
+        "evidence_refs":{"type":"array","minItems":1,"items":{"type":"object","additionalProperties":false,"required":["evidence_id","evidence_kind","artifact_locator","artifact_sha256","candidate_authority_id","source_version_policy_id","content_sha256","attestation_status"],"properties":{
+          "evidence_id":{"type":"string","pattern":"^EVID-[A-Z0-9_]+$"},
+          "evidence_kind":{"enum":["SYNTHETIC_DESCRIPTOR","SIGNED_AUTHORITY_DESCRIPTOR","GIT_OBJECT_PROOF","RELEASE_METADATA_DIGEST"]},
+          "artifact_locator":{"type":"string","minLength":1},
+          "artifact_sha256":{"$ref":"#/$defs/sha256"},
+          "candidate_authority_id":{"$ref":"#/$defs/authorityId"},
+          "source_version_policy_id":{"type":"string","pattern":"^SVP-[A-Z0-9_]+$"},
+          "content_sha256":{"$ref":"#/$defs/sha256"},
+          "attestation_status":{"enum":["SYNTHETIC_PASS","PASS"]}
+        }}},
+        "all_same_candidate":{"const":true},
+        "provenance_status":{"enum":["SYNTHETIC_PASS","PASS"]},
+        "source_object_acquisition_status":{"enum":["NOT_ACQUIRED_DESIGN_ONLY","ACQUIRED_AND_HASHED"]},
+        "authentication_method":{"enum":["SYNTHETIC_DETERMINISTIC","SIGNED_MANIFEST","GIT_OBJECT_AND_TREE","RELEASE_ARTIFACT_DIGEST"]},
+        "evidence_set_sha256":{"$ref":"#/$defs/sha256"}
+      }
+    },
+    "canonicalizationProfile": {
+      "type":"object","additionalProperties":false,"required":["profile_id","profile_version","encoding","unicode_normalization","object_key_order","insignificant_whitespace","array_order","number_form","digest_algorithm"],"properties":{
+        "profile_id":{"const":"RFC8785_LIKE_UTF8_SORTED_JSON"},
+        "profile_version":{"const":"V1"},
+        "encoding":{"const":"UTF-8"},
+        "unicode_normalization":{"const":"NFC"},
+        "object_key_order":{"const":"LEXICOGRAPHIC_RECURSIVE"},
+        "insignificant_whitespace":{"const":"OMIT"},
+        "array_order":{"const":"SIGNIFICANT_LITERAL_ORDER"},
+        "number_form":{"const":"JSON_INTEGER"},
+        "digest_algorithm":{"const":"SHA-256"}
+      }
+    },
+    "zeroEffect": {
+      "type":"object","additionalProperties":false,"required":["assertion_profile","assertion_scope","governance_decision_unchanged","source_authority_activated","source_acquisition","source_auth_executed","stage_a_admissions","stage_b_exposures","field_pins","operative_records","p0_executed","p1_executed","formal_1796_experiment_executed","activation_effect_boundary"],"properties":{
+        "assertion_profile":{"const":"FIRST_TRANCHE24_ZERO_DOWNSTREAM_EFFECT_V1"},
+        "assertion_scope":{"const":"FIRST_TRANCHE24_ONLY"},
+        "governance_decision_unchanged":{"const":true},
+        "source_authority_activated":{"enum":["NO","YES"]},
+        "source_acquisition":{"enum":["NO","YES"]},
+        "source_auth_executed":{"enum":["NO","YES"]},
+        "stage_a_admissions":{"const":0},
+        "stage_b_exposures":{"const":0},
+        "field_pins":{"const":0},
+        "operative_records":{"const":0},
+        "p0_executed":{"enum":["NO","YES"]},
+        "p1_executed":{"enum":["NO","YES"]},
+        "formal_1796_experiment_executed":{"enum":["NO","YES"]},
+        "activation_effect_boundary":{"const":"AUTHORITY_POINTER_ONLY_NO_DOWNSTREAM_OPERATION"}
+      }
+    },
+    "outputs": {
+      "type":"object","additionalProperties":false,"required":["activation_receipt","source_acquisition_handoff","next_phase"],"properties":{
+        "activation_receipt":{"$ref":"#/$defs/outputRef"},
+        "source_acquisition_handoff":{"$ref":"#/$defs/outputRef"},
+        "next_phase":{"const":"FIRST_TRANCHE24_SOURCE_AUTHORITY_ACTIVATION_INDEPENDENT_REVIEW"}
+      }
+    },
+    "outputRef": {
+      "type":"object","additionalProperties":false,"required":["status","reference","sha256"],"properties":{
+        "status":{"enum":["NOT_EMITTED","EMITTED"]},
+        "reference":{"$ref":"#/$defs/nullableRef"},
+        "sha256":{"$ref":"#/$defs/nullableSha256"}
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "binding_type": "FIRST_TRANCHE24_GOVERNANCE_TO_SOURCE_AUTHORITY_BINDING",
+  "binding_version": "V1",
+  "governance_decision": {
+    "decision_record_id": "GOVDEC2-68ea814d1940bed4ec8b3e48b6a28f67f3e05c5e50e1c342a1fa2dc7db31f90f",
+    "governance_transaction_hash": "b5601414918d6b7cc5c00ebaf24b98d93d2d477bcd4481de4de47b8ed0f7cd38",
+    "governance_scope": "FIRST_TRANCHE24_ONLY",
+    "human_governance_decision": "APPROVE_BOTH_G1_AND_G2",
+    "decision_materialization_commit": "3c5c014238b569377963c1cb20f3d7df2600f135",
+    "decision_materialization_parent": "c3e911e865f5287d46703e5d0d7398ee653151f7",
+    "independent_review_commit": "10478b0961a601d0f684740b9564633a9930ebc9",
+    "independent_review_verdict": "PASS_READY_FOR_SOURCE_AUTHORITY_ACTIVATION_DESIGN"
+  },
+  "scope_constraint": {
+    "scope_id": "FIRST_TRANCHE24_ONLY",
+    "raw_ids": [110,273,210,98,147,277,188,301,143,250,233,287,146,293,114,284,291,215,88,182,300,218,115,148],
+    "raw_count": 24,
+    "unique_raw_count": 24,
+    "scope_extension_permitted": false,
+    "scope_binding_mode": "LITERAL_ORDERED_SET"
+  },
+  "activation_constraint": {
+    "activation_transaction_type": "FIRST_TRANCHE24_SOURCE_AUTHORITY_ACTIVATION",
+    "source_authority_id_at_design_time": null,
+    "source_version_policy_at_design_time": null,
+    "authority_must_be_selected_by": "FIRST_TRANCHE24_SOURCE_AUTHORITY_CANDIDATE_ADJUDICATION_V1",
+    "activation_is_distinct_from_governance": true,
+    "activation_is_distinct_from_source_acquisition": true,
+    "activation_is_distinct_from_source_authentication_execution": true
+  },
+  "binding_rules": [
+    "The complete decision identity tuple must match exactly.",
+    "The complete ordered raw-ID array must match exactly.",
+    "No transaction may add, remove, reorder, or substitute a target.",
+    "The materialized decision must not contain a source authority ID or version policy.",
+    "A source authority candidate and immutable version policy are resolved only by the later activation transaction.",
+    "An activation receipt is the only state transition authorized by this binding; all downstream operations remain blocked."
+  ],
+  "circularity_guard": {
+    "governance_materialization_requires_source_authority": false,
+    "source_authority_activation_requires_materialized_governance": true,
+    "v1_circular_dependency_reintroduced": false
+  }
+}
