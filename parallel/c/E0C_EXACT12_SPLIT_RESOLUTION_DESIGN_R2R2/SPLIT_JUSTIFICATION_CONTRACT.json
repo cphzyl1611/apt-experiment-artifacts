@@ -1,0 +1,126 @@
+{
+  "contract_id": "E0C_EXACT12_SPLIT_JUSTIFICATION_CONTRACT_R2R2",
+  "schema_version": "e0c-exact12-split-justification-contract-r2r2",
+  "purpose": "Define the evidence, structural schema gate, and deterministic recomputation requirements for a future split proposal without applying the split.",
+  "authority": "DESIGN_ONLY_NON_AUTHORITATIVE",
+  "eligible_parent_state": "REQUEST_MORE_EVIDENCE",
+  "required_outcome": "JUSTIFIED_SPLIT_PROPOSAL",
+  "parent_identity_required": {
+    "template_id": true,
+    "frozen_order": true,
+    "member_count": true,
+    "member_set_sha256": true,
+    "member_set_reference": true,
+    "source_human_decision": "REQUEST_SPLIT_OR_MORE_EVIDENCE",
+    "current_split_status": "NO_CURRENT_SPLIT"
+  },
+  "partition_requirements": {
+    "minimum_child_partition_count": 2,
+    "each_child_partition_non_empty": true,
+    "partition_predicate_deterministic": true,
+    "partition_predicate_source_grounded": true,
+    "member_keys_listed_for_every_child": true,
+    "child_order_deterministic": true,
+    "parent_members_may_not_be_reordered_in_source": true,
+    "parent_member_set_is_immutable_during_proposal": true
+  },
+  "strict_validation": {
+    "structural_schema": "TEMPLATE_LEVEL_RESOLUTION_SCHEMA.json",
+    "semantic_validator": "validate_e0c_r2.py",
+    "validation_order": [
+      "validate_json_schema_shape_and_constants",
+      "validate_against_frozen_parent_template_identity",
+      "recompute_each_child_member_count",
+      "recompute_each_child_member_set_sha256",
+      "reject_duplicate_child_ids_and_orders",
+      "reject_members_outside_parent",
+      "recompute_child_union_and_pairwise_overlap",
+      "recompute_unassigned_and_duplicate_member_counts",
+      "recompute_cross_template_and_blocked31_overlap",
+      "compare_submitted_conservation_result_to_recomputed_result",
+      "retain_unapplied_and_unauthorized_boundary"
+    ],
+    "acceptance": "A split proposal passes only when both the structural JSON Schema and validate_e0c_r2.py return valid with zero errors.",
+    "recomputation_is_authoritative_over_submitted_claims": true,
+    "schema_cannot_be_treated_as_sufficient_without_semantic_validator": true,
+    "governance_reference_syntax_must_match_between_layers": true,
+    "operative_governance_references": {
+      "future_resolution.evidence_manifest_reference": "required_non_null_non_empty_and_structurally_valid",
+      "future_resolution.independent_review_reference": "required_non_null_non_empty_and_structurally_valid"
+    }
+  },
+  "conservation_invariants": {
+    "child_union_equals_parent_exactly": true,
+    "pairwise_child_intersection_is_empty": true,
+    "unassigned_parent_member_count": 0,
+    "duplicate_parent_member_count": 0,
+    "sum_child_counts_equals_parent_count": true,
+    "child_member_set_hashes_recomputed": true,
+    "parent_hash_revalidated": true,
+    "cross_template_overlap_revalidated": true,
+    "blocked31_overlap_revalidated": true
+  },
+  "evidence_requirements": [
+    {
+      "evidence_class": "IDENTITY_PROVENANCE",
+      "required": true,
+      "acceptance": "Every child member key resolves to one and only one frozen parent member with an exact source reference."
+    },
+    {
+      "evidence_class": "SOURCE_SEMANTICS",
+      "required": true,
+      "acceptance": "The partition predicate is visible in authenticated source evidence or an explicitly approved source-detail recovery record."
+    },
+    {
+      "evidence_class": "PARTITION",
+      "required": true,
+      "acceptance": "The predicate yields complete, disjoint, reproducible child sets and does not use UNKNOWN as a boundary."
+    },
+    {
+      "evidence_class": "SAFETY_RESET",
+      "required": true,
+      "acceptance": "Each child remains safe to govern independently with inert fixtures, bounded effects, and a reset plan."
+    },
+    {
+      "evidence_class": "GOVERNANCE",
+      "required": true,
+      "acceptance": "An independent reviewer recomputes conservation and a separate authority records approval before application."
+    }
+  ],
+  "proposal_record_requirements": {
+    "proposal_id": "required",
+    "parent_template_id": "required",
+    "partition_basis": "required",
+    "partition_predicate": "required",
+    "child_partition_ids": "required_and_unique_and_equal_to_child_ids_in_validator",
+    "child_partitions": "required",
+    "parent_member_set_sha256": "required",
+    "recomputed_child_hashes": "required",
+    "conservation_result": "required",
+    "evidence_manifest_reference": "future_resolution_required_non_null_before_application",
+    "independent_review_reference": "future_resolution_required_non_null_before_application",
+    "split_proposal.independent_review_reference": "required",
+    "approval_reference": "required_before_application",
+    "applied": false,
+    "execution_authorized": false,
+    "status_mutation": 0,
+    "denominator_change": "NO"
+  },
+  "approval_gates": [
+    "independent_recompute_of_all_child_memberships",
+    "independent_recompute_of_pairwise_overlap_and_union",
+    "review_of_source-grounded_partition_predicate",
+    "review_of_safety_and_reset_boundaries",
+    "explicit_approval_record_separate_from_this_design_package"
+  ],
+  "forbidden_actions": [
+    "apply_split",
+    "create_child_execution_authority",
+    "mutate_parent_or_child_status",
+    "expand_or_reduce_the_203_member_denominator",
+    "execute_formal_experiment",
+    "use_unknown_as_a_partition_boundary",
+    "infer_missing_source_semantics"
+  ],
+  "failure_disposition": "If any conservation or evidence gate fails, retain REQUEST_MORE_EVIDENCE or use REJECT_KEEP_MANUAL only through the template-level governed decision record."
+}

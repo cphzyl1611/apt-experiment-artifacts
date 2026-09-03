@@ -1,0 +1,14 @@
+{
+  "fixture_type": "NON_AUTHORITATIVE_GOVERNANCE_REFERENCE_SYNTAX_ONLY",
+  "accepted": [
+    "fixture://evidence-manifest",
+    "foo/bar:baz",
+    "E0C_R8_HUMAN_DECISION_PACKET.json#/templates/0/member_keys"
+  ],
+  "rejected": [
+    "",
+    "not a valid reference",
+    "foo/ bar",
+    "foo bar"
+  ]
+}

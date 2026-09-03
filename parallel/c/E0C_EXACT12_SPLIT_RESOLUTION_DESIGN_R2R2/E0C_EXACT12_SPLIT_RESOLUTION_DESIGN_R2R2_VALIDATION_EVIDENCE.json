@@ -1,0 +1,328 @@
+{
+  "artifact_type": "E0C_EXACT12_SPLIT_RESOLUTION_DESIGN_R2R2_VALIDATION_EVIDENCE",
+  "read_only": true,
+  "schema_meta_validation": "PASS",
+  "acquisition_evidence_classes": [
+    "SOURCE_SEMANTICS",
+    "CONTROLLED_ENVIRONMENT",
+    "DEFENSIVE_EQUIVALENCE",
+    "OBSERVABILITY",
+    "SAFETY_RESET",
+    "PARTITION",
+    "GOVERNANCE"
+  ],
+  "baseline": {
+    "template_count": 12,
+    "ordered": true,
+    "raw_count_sum": 203,
+    "unique_member_count": 203,
+    "duplicate_member_count": 0,
+    "cross_template_overlap_count": 0,
+    "union_member_key_sha256": "ffeb2704a1c971b89129e1959ae721bbc9ef159153a5f0a20f8abda13edb441a",
+    "all_current_states_frozen": true
+  },
+  "baseline_errors": [],
+  "fixture_results": {
+    "valid_fixture": {
+      "filename": "VALID_SPLIT_PROPOSAL_FIXTURE.json",
+      "status": "ACCEPTED",
+      "error_count": 0,
+      "errors": []
+    },
+    "negative_fixtures": [
+      {
+        "filename": "NEGATIVE_DUPLICATE_CHILD_ID.json",
+        "status": "REJECTED",
+        "error_count": 4,
+        "errors": [
+          "schema:future_resolution.split_proposal: {'proposal_id': 'fixture-valid-split-proposal', 'parent_template_id': 'r4-template-120-process_command_execution', 'parent_frozen_order': 1, 'parent_member_count': 49, 'parent_member_set_sha256': '3ceca8928cf0c95f4006ffbf91d677cf3cee9287d7beea4996adfa752703bc33', 'parent_member_set_reference': 'E0C_R8_HUMAN_DECISION_PACKET.json#/templates/0/member_keys', 'partition_basis': {'basis_type': 'SOURCE_GROUNDED_SEMANTIC_BOUNDARY', 'rationale': 'Synthetic validator fixture only; not a future disposition.'}, 'partition_predicate': {'predicate_id': 'fixture-predicate', 'expression': 'fixture_member_position < midpoint', 'input_fields': ['fixture_member_position'], 'source_grounded_reference': 'fixture://source-grounded-test-input', 'deterministic': True, 'source_grounded': True, 'unknown_treatment': 'UNKNOWN_IS_NOT_A_BOUNDARY'}, 'partition_evidence_references': ['fixture://partition-evidence'], 'child_partition_ids': ['r4-template-120-process_command_execution::fixture-child-1', 'r4-template-120-process_command_execution::fixture-child-1'], 'child_partitions': [{'child_id': 'r4-template-120-process_command_execution::fixture-child-1', 'child_order': 1, 'member_keys': ['6000003::S03::A001', '6000003::S03::A008', '6000006::S04::A001', '6000006::S04::A002', '6000007::S03::A003', '6000007::S03::A007', '6000007::S11::A003', '6000008::S03::A003', '6000008::S03::A006', '6000008::S05::A003', '6000008::S09::A001', '6000008::S09::A005', '6000009::S03::A003', '6000010::S03::A004', '6000011::S10::A003', '6000013::S03::A007', '6000013::S04::A002', '6000013::S04::A004', '6000014::S03::A006', '6000015::S04::A004', '6000015::S04::A006', '6000016::S04::A002', '6000016::S04::A004', '6000019::S04::A002'], 'member_count': 24, 'member_set_sha256': '22ba2627357435dbec82c49ad0b42d6666fe3df420b791d241d8b5f5d84e3109', 'member_set_reference': 'fixture://child/1', 'child_evidence_reference': 'fixture://evidence/child/1'}, {'child_id': 'r4-template-120-process_command_execution::fixture-child-1', 'child_order': 2, 'member_keys': ['6000019::S08::A005', '6000020::S04::A001', '6000020::S07::A004', '6000021::S09::A002', '6000024::S04::A002', '6000024::S09::A001', '6000026::S05::A001', '6000027::S04::A001', '6000031::S05::A005', '6000039::S04::A003', '6000042::S02::A004', '6000042::S04::A001', '6000043::S03::A002', '6000044::S03::A004', '6000046::S03::A002', '6000047::S05::A003', '6000047::S08::A002', '6000048::S05::A001', '6000049::S03::A003', '6000051::S04::A001', '6000051::S04::A002', '6000060::S07::A001', '6000062::S03::A001', '6000062::S07::A004', '6000063::S04::A001'], 'member_count': 25, 'member_set_sha256': '95256be8e88605923135c76c8d1e132a13e554c73738ec6e1851b15df5e016e2', 'member_set_reference': 'fixture://child/2', 'child_evidence_reference': 'fixture://evidence/child/2'}], 'conservation_result': {'parent_member_count': 49, 'child_member_count_sum': 49, 'child_union_equals_parent': True, 'pairwise_child_overlap_count': 0, 'unassigned_member_count': 0, 'duplicate_member_count': 0, 'count_conserved': True, 'hashes_recomputed': True, 'parent_hash_revalidated': True, 'cross_template_overlap_count': 0, 'blocked31_overlap_count': 0, 'conservation_check_reference': 'fixture://conservation-check'}, 'independent_review_reference': 'fixture://independent-partition-review', 'approval_reference': None, 'applied': False, 'execution_authorized': False, 'status_mutation': 0, 'denominator_change': 'NO'} is not valid under any of the given schemas",
+          "schema:future_resolution.split_proposal.child_partition_ids: ['r4-template-120-process_command_execution::fixture-child-1', 'r4-template-120-process_command_execution::fixture-child-1'] has non-unique elements",
+          "R2_DUPLICATE_CHILD_ID: future_resolution.split_proposal.child_partitions child_id values must be unique: ['r4-template-120-process_command_execution::fixture-child-1']",
+          "future_resolution.split_proposal.child_partition_ids must contain unique IDs"
+        ],
+        "expected_error_codes": [
+          "R2_DUPLICATE_CHILD_ID"
+        ],
+        "expected_failure_reasons_satisfied": true
+      },
+      {
+        "filename": "NEGATIVE_FALSE_CONSERVATION_CLAIM.json",
+        "status": "REJECTED",
+        "error_count": 2,
+        "errors": [
+          "C2_FALSE_CONSERVATION_CLAIM: future_resolution.split_proposal.conservation_result.child_member_count_sum: expected 49, got 48",
+          "C2_FALSE_CONSERVATION_CLAIM: future_resolution.member_conservation_check.child_member_count: expected 49, got 48"
+        ],
+        "expected_error_codes": [
+          "C2_FALSE_CONSERVATION_CLAIM"
+        ],
+        "expected_failure_reasons_satisfied": true
+      },
+      {
+        "filename": "NEGATIVE_INCOMPLETE_CHILD_PARTITION.json",
+        "status": "REJECTED",
+        "error_count": 12,
+        "errors": [
+          "R2_CHILD_COUNT_MISMATCH: future_resolution.split_proposal.child_partitions[1].member_count must equal member_keys length",
+          "R2_CHILD_HASH_MISMATCH: future_resolution.split_proposal.child_partitions[1].member_set_sha256 must equal canonical member-key hash",
+          "R2_INCOMPLETE_CHILD_PARTITION: 1 parent members are unassigned",
+          "C2_FALSE_CONSERVATION_CLAIM: future_resolution.split_proposal.conservation_result.child_member_count_sum: expected 48, got 49",
+          "C2_FALSE_CONSERVATION_CLAIM: future_resolution.split_proposal.conservation_result.child_union_equals_parent: expected False, got True",
+          "C2_FALSE_CONSERVATION_CLAIM: future_resolution.split_proposal.conservation_result.unassigned_member_count: expected 1, got 0",
+          "C2_FALSE_CONSERVATION_CLAIM: future_resolution.split_proposal.conservation_result.count_conserved: expected False, got True",
+          "C2_FALSE_CONSERVATION_CLAIM: future_resolution.split_proposal.conservation_result.hashes_recomputed: expected False, got True",
+          "C2_FALSE_CONSERVATION_CLAIM: future_resolution.member_conservation_check.child_member_count: expected 48, got 49",
+          "C2_FALSE_CONSERVATION_CLAIM: future_resolution.member_conservation_check.union_equals_parent: expected False, got True",
+          "C2_FALSE_CONSERVATION_CLAIM: future_resolution.member_conservation_check.count_conserved: expected False, got True",
+          "C2_FALSE_CONSERVATION_CLAIM: future_resolution.member_conservation_check.hashes_recomputed: expected False, got True"
+        ],
+        "expected_error_codes": [
+          "R2_INCOMPLETE_CHILD_PARTITION"
+        ],
+        "expected_failure_reasons_satisfied": true
+      },
+      {
+        "filename": "NEGATIVE_INVALID_PARENT_HASH.json",
+        "status": "REJECTED",
+        "error_count": 2,
+        "errors": [
+          "R2_PARENT_HASH_MISMATCH: future_resolution.split_proposal.parent_member_set_sha256: expected '3ceca8928cf0c95f4006ffbf91d677cf3cee9287d7beea4996adfa752703bc33', got 'ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff'",
+          "C2_FALSE_CONSERVATION_CLAIM: future_resolution.split_proposal.conservation_result.parent_hash_revalidated: expected False, got True"
+        ],
+        "expected_error_codes": [
+          "R2_PARENT_HASH_MISMATCH"
+        ],
+        "expected_failure_reasons_satisfied": true
+      },
+      {
+        "filename": "NEGATIVE_INVALID_PARENT_IDENTITY.json",
+        "status": "REJECTED",
+        "error_count": 1,
+        "errors": [
+          "R2_PARENT_IDENTITY_MISMATCH: future_resolution.split_proposal.parent_template_id: expected 'r4-template-120-process_command_execution', got 'wrong-parent-template'"
+        ],
+        "expected_error_codes": [
+          "R2_PARENT_IDENTITY_MISMATCH"
+        ],
+        "expected_failure_reasons_satisfied": true
+      },
+      {
+        "filename": "NEGATIVE_MALFORMED_CHILD_COUNT.json",
+        "status": "REJECTED",
+        "error_count": 3,
+        "errors": [
+          "R2_CHILD_COUNT_MISMATCH: future_resolution.split_proposal.child_partitions[0].member_count must equal member_keys length",
+          "C2_FALSE_CONSERVATION_CLAIM: future_resolution.split_proposal.conservation_result.hashes_recomputed: expected False, got True",
+          "C2_FALSE_CONSERVATION_CLAIM: future_resolution.member_conservation_check.hashes_recomputed: expected False, got True"
+        ],
+        "expected_error_codes": [
+          "R2_CHILD_COUNT_MISMATCH"
+        ],
+        "expected_failure_reasons_satisfied": true
+      },
+      {
+        "filename": "NEGATIVE_MALFORMED_CHILD_HASH.json",
+        "status": "REJECTED",
+        "error_count": 3,
+        "errors": [
+          "R2_CHILD_HASH_MISMATCH: future_resolution.split_proposal.child_partitions[0].member_set_sha256 must equal canonical member-key hash",
+          "C2_FALSE_CONSERVATION_CLAIM: future_resolution.split_proposal.conservation_result.hashes_recomputed: expected False, got True",
+          "C2_FALSE_CONSERVATION_CLAIM: future_resolution.member_conservation_check.hashes_recomputed: expected False, got True"
+        ],
+        "expected_error_codes": [
+          "R2_CHILD_HASH_MISMATCH"
+        ],
+        "expected_failure_reasons_satisfied": true
+      },
+      {
+        "filename": "NEGATIVE_MALFORMED_GOVERNANCE_REFERENCE.json",
+        "status": "REJECTED",
+        "error_count": 3,
+        "errors": [
+          "schema:future_resolution.evidence_manifest_reference: 'not a valid reference' is not valid under any of the given schemas",
+          "schema:future_resolution.evidence_manifest_reference: 'not a valid reference' does not match '^(?:[A-Za-z][A-Za-z0-9+.-]*://[^\\\\s]+|[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.:/#-]+)*(?:#[A-Za-z0-9_.:/-]+)?)$'",
+          "C1_GOVERNANCE_EVIDENCE_MANIFEST_REFERENCE_MALFORMED: future_resolution.evidence_manifest_reference must be a valid reference"
+        ],
+        "expected_error_codes": [
+          "C1_GOVERNANCE_EVIDENCE_MANIFEST_REFERENCE_MALFORMED"
+        ],
+        "expected_failure_reasons_satisfied": true
+      },
+      {
+        "filename": "NEGATIVE_MEMBER_OUTSIDE_PARENT.json",
+        "status": "REJECTED",
+        "error_count": 11,
+        "errors": [
+          "R2_CHILD_COUNT_MISMATCH: future_resolution.split_proposal.child_partitions[0].member_count must equal member_keys length",
+          "R2_CHILD_HASH_MISMATCH: future_resolution.split_proposal.child_partitions[0].member_set_sha256 must equal canonical member-key hash",
+          "R2_MEMBER_OUTSIDE_PARENT: future_resolution.split_proposal.child_partitions[0] contains members outside the frozen parent: ['9999999::S99::A999']",
+          "C2_FALSE_CONSERVATION_CLAIM: future_resolution.split_proposal.conservation_result.child_member_count_sum: expected 50, got 49",
+          "C2_FALSE_CONSERVATION_CLAIM: future_resolution.split_proposal.conservation_result.child_union_equals_parent: expected False, got True",
+          "C2_FALSE_CONSERVATION_CLAIM: future_resolution.split_proposal.conservation_result.count_conserved: expected False, got True",
+          "C2_FALSE_CONSERVATION_CLAIM: future_resolution.split_proposal.conservation_result.hashes_recomputed: expected False, got True",
+          "C2_FALSE_CONSERVATION_CLAIM: future_resolution.member_conservation_check.child_member_count: expected 50, got 49",
+          "C2_FALSE_CONSERVATION_CLAIM: future_resolution.member_conservation_check.union_equals_parent: expected False, got True",
+          "C2_FALSE_CONSERVATION_CLAIM: future_resolution.member_conservation_check.count_conserved: expected False, got True",
+          "C2_FALSE_CONSERVATION_CLAIM: future_resolution.member_conservation_check.hashes_recomputed: expected False, got True"
+        ],
+        "expected_error_codes": [
+          "R2_MEMBER_OUTSIDE_PARENT"
+        ],
+        "expected_failure_reasons_satisfied": true
+      },
+      {
+        "filename": "NEGATIVE_MISSING_GOVERNANCE_REFERENCE.json",
+        "status": "REJECTED",
+        "error_count": 3,
+        "errors": [
+          "schema:future_resolution: 'evidence_manifest_reference' is a required property",
+          "schema:future_resolution: 'evidence_manifest_reference' is a required property",
+          "C1_GOVERNANCE_EVIDENCE_MANIFEST_REFERENCE_REQUIRED: future_resolution.evidence_manifest_reference is required"
+        ],
+        "expected_error_codes": [
+          "C1_GOVERNANCE_EVIDENCE_MANIFEST_REFERENCE_REQUIRED"
+        ],
+        "expected_failure_reasons_satisfied": true
+      },
+      {
+        "filename": "NEGATIVE_NULL_EVIDENCE_MANIFEST_REFERENCE.json",
+        "status": "REJECTED",
+        "error_count": 2,
+        "errors": [
+          "schema:future_resolution.evidence_manifest_reference: None is not of type 'string'",
+          "C1_GOVERNANCE_EVIDENCE_MANIFEST_REFERENCE_REQUIRED: future_resolution.evidence_manifest_reference is required"
+        ],
+        "expected_error_codes": [
+          "C1_GOVERNANCE_EVIDENCE_MANIFEST_REFERENCE_REQUIRED"
+        ],
+        "expected_failure_reasons_satisfied": true
+      },
+      {
+        "filename": "NEGATIVE_NULL_INDEPENDENT_REVIEW_REFERENCE.json",
+        "status": "REJECTED",
+        "error_count": 2,
+        "errors": [
+          "schema:future_resolution.independent_review_reference: None is not of type 'string'",
+          "C1_GOVERNANCE_INDEPENDENT_REVIEW_REFERENCE_REQUIRED: future_resolution.independent_review_reference is required"
+        ],
+        "expected_error_codes": [
+          "C1_GOVERNANCE_INDEPENDENT_REVIEW_REFERENCE_REQUIRED"
+        ],
+        "expected_failure_reasons_satisfied": true
+      },
+      {
+        "filename": "NEGATIVE_OVERLAPPING_CHILD_PARTITION.json",
+        "status": "REJECTED",
+        "error_count": 12,
+        "errors": [
+          "R2_CHILD_COUNT_MISMATCH: future_resolution.split_proposal.child_partitions[1].member_count must equal member_keys length",
+          "R2_CHILD_HASH_MISMATCH: future_resolution.split_proposal.child_partitions[1].member_set_sha256 must equal canonical member-key hash",
+          "R2_OVERLAPPING_CHILD_PARTITION: pairwise overlap count is 1",
+          "C2_FALSE_CONSERVATION_CLAIM: future_resolution.split_proposal.conservation_result.child_member_count_sum: expected 50, got 49",
+          "C2_FALSE_CONSERVATION_CLAIM: future_resolution.split_proposal.conservation_result.pairwise_child_overlap_count: expected 1, got 0",
+          "C2_FALSE_CONSERVATION_CLAIM: future_resolution.split_proposal.conservation_result.duplicate_member_count: expected 1, got 0",
+          "C2_FALSE_CONSERVATION_CLAIM: future_resolution.split_proposal.conservation_result.count_conserved: expected False, got True",
+          "C2_FALSE_CONSERVATION_CLAIM: future_resolution.split_proposal.conservation_result.hashes_recomputed: expected False, got True",
+          "C2_FALSE_CONSERVATION_CLAIM: future_resolution.member_conservation_check.child_member_count: expected 50, got 49",
+          "C2_FALSE_CONSERVATION_CLAIM: future_resolution.member_conservation_check.pairwise_overlap_count: expected 1, got 0",
+          "C2_FALSE_CONSERVATION_CLAIM: future_resolution.member_conservation_check.count_conserved: expected False, got True",
+          "C2_FALSE_CONSERVATION_CLAIM: future_resolution.member_conservation_check.hashes_recomputed: expected False, got True"
+        ],
+        "expected_error_codes": [
+          "R2_OVERLAPPING_CHILD_PARTITION"
+        ],
+        "expected_failure_reasons_satisfied": true
+      }
+    ],
+    "all_negative_rejected": true,
+    "all_expected_failure_reasons_satisfied": true
+  },
+  "governance_reference_syntax": {
+    "schema_pattern": "^(?:[A-Za-z][A-Za-z0-9+.-]*://[^\\s]+|[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.:/#-]+)*(?:#[A-Za-z0-9_.:/-]+)?)$",
+    "semantic_pattern": "^(?:[A-Za-z][A-Za-z0-9+.-]*://[^\\s]+|[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.:/#-]+)*(?:#[A-Za-z0-9_.:/-]+)?)$",
+    "patterns_identical": true,
+    "accepted": [
+      {
+        "reference": "fixture://evidence-manifest",
+        "schema_accepts": true,
+        "semantic_accepts": true
+      },
+      {
+        "reference": "foo/bar:baz",
+        "schema_accepts": true,
+        "semantic_accepts": true
+      },
+      {
+        "reference": "E0C_R8_HUMAN_DECISION_PACKET.json#/templates/0/member_keys",
+        "schema_accepts": true,
+        "semantic_accepts": true
+      }
+    ],
+    "rejected": [
+      {
+        "reference": "",
+        "schema_rejects": true,
+        "semantic_rejects": true
+      },
+      {
+        "reference": "not a valid reference",
+        "schema_rejects": true,
+        "semantic_rejects": true
+      },
+      {
+        "reference": "foo/ bar",
+        "schema_rejects": true,
+        "semantic_rejects": true
+      },
+      {
+        "reference": "foo bar",
+        "schema_rejects": true,
+        "semantic_rejects": true
+      }
+    ]
+  },
+  "human_decisions_created": 0,
+  "authority_mutation": "NO",
+  "boundary_terminal": {
+    "E0C_EXACT12_SPLIT_OR_MORE_EVIDENCE_RESOLUTION_PHASE_DESIGN": "PASS_READY_FOR_INDEPENDENT_DESIGN_REVIEW",
+    "E0C_SPLIT_RESOLUTION_DESIGN_R2R2": "PASS_READY_FOR_INDEPENDENT_REVIEW",
+    "FROZEN_TEMPLATE_COUNT": 12,
+    "FROZEN_RAW_COVERAGE": 203,
+    "CURRENT_REQUEST_MORE_EVIDENCE_COUNT": 12,
+    "RESOLUTION_POLICY_DESIGNED": "PASS",
+    "SPLIT_JUSTIFICATION_CONTRACT_DESIGNED": "PASS",
+    "MORE_EVIDENCE_CONTRACT_DESIGNED": "PASS",
+    "EXACT12_CROSSWALK_DESIGNED": "PASS",
+    "MEMBER_CONSERVATION_REQUIRED": "PASS",
+    "APPLIED_SPLITS": 0,
+    "STATUS_MUTATIONS": 0,
+    "EXECUTION_AUTHORIZATIONS": 0,
+    "DENOMINATOR_CHANGE": "NO",
+    "FORMAL_EXPERIMENT_EXECUTED": "NO",
+    "PUSH_EXECUTED": "NO",
+    "NEXT_ACTION": "INDEPENDENT_REVIEW_OF_RESOLUTION_DESIGN_R2R2",
+    "STOP": true
+  },
+  "terminal": {
+    "E0C_EXACT12_SPLIT_RESOLUTION_DESIGN_R2R2": "PASS_READY_FOR_INDEPENDENT_REVIEW",
+    "FROZEN_TEMPLATE_COUNT": 12,
+    "FROZEN_RAW_COVERAGE": 203,
+    "CURRENT_REQUEST_MORE_EVIDENCE_COUNT": 12,
+    "SCHEMA_META_VALIDATION": "PASS",
+    "STRICT_SEMANTIC_VALIDATION": "PASS",
+    "GOVERNANCE_REFERENCE_SYNTAX_ALIGNMENT": "PASS",
+    "NEGATIVE_FIXTURE_REASONS": "PASS",
+    "PARTITION_EVIDENCE_CLASS_PRESENT": "PASS",
+    "GOVERNANCE_EVIDENCE_CLASS_PRESENT": "PASS",
+    "EXACT12_MEMBER_CONSERVATION": "PASS",
+    "APPLIED_SPLITS": 0,
+    "STATUS_MUTATIONS": 0,
+    "EXECUTION_AUTHORIZATIONS": 0,
+    "DENOMINATOR_CHANGE": "NO",
+    "FORMAL_EXPERIMENT_EXECUTED": "NO",
+    "HUMAN_DECISIONS_CREATED": 0,
+    "PUSH_EXECUTED": "NO",
+    "NEXT_ACTION": "INDEPENDENT_REVIEW_OF_RESOLUTION_DESIGN_R2R2",
+    "STOP": true
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "record_type": "E0C_EXACT12_TEMPLATE_LEVEL_RESOLUTION_RECORD",
+  "schema_version": "e0c-exact12-template-level-resolution-schema-r2",
+  "reviewed_state_anchor": {
+    "materialization_commit": "f10c874513071345ddc2411004f81ee5c57f4065",
+    "independent_review_commit": "38468ed7968d4030b2c070f381c35bae52452dbb"
+  },
+  "template_identity": {
+    "template_id": "r4-template-120-process_command_execution",
+    "frozen_order": 1,
+    "member_count": 49,
+    "member_set_sha256": "3ceca8928cf0c95f4006ffbf91d677cf3cee9287d7beea4996adfa752703bc33",
+    "member_set_reference": "E0C_R8_HUMAN_DECISION_PACKET.json#/templates/0/member_keys",
+    "decision_packet_member_set_reference": "E0C_R8_HUMAN_DECISION_PACKET.json#/templates/0/member_keys"
+  },
+  "current_state": {
+    "source_human_decision": "REQUEST_SPLIT_OR_MORE_EVIDENCE",
+    "resolution_state": "REQUEST_MORE_EVIDENCE",
+    "r3_global_planning_status": "MANUAL_DESIGN_REQUIRED",
+    "current_split_status": "NO_CURRENT_SPLIT",
+    "applied_split": false,
+    "status_mutations": 0,
+    "formal_execution_authorized": false
+  },
+  "future_resolution": {
+    "resolution_outcome": "JUSTIFIED_SPLIT_PROPOSAL",
+    "outcome_authoritative": false,
+    "evidence_manifest_reference": "fixture://evidence-manifest",
+    "independent_review_reference": "fixture://governance-review",
+    "member_conservation_check": {
+      "parent_member_count": 49,
+      "child_member_count": 49,
+      "union_equals_parent": true,
+      "pairwise_overlap_count": 0,
+      "count_conserved": true,
+      "hashes_recomputed": true
+    },
+    "execution_authorized": false,
+    "status_mutation": 0,
+    "denominator_change": "NO",
+    "split_proposal": {
+      "proposal_id": "fixture-valid-split-proposal",
+      "parent_template_id": "r4-template-120-process_command_execution",
+      "parent_frozen_order": 1,
+      "parent_member_count": 49,
+      "parent_member_set_sha256": "3ceca8928cf0c95f4006ffbf91d677cf3cee9287d7beea4996adfa752703bc33",
+      "parent_member_set_reference": "E0C_R8_HUMAN_DECISION_PACKET.json#/templates/0/member_keys",
+      "partition_basis": {
+        "basis_type": "SOURCE_GROUNDED_SEMANTIC_BOUNDARY",
+        "rationale": "Synthetic validator fixture only; not a future disposition."
+      },
+      "partition_predicate": {
+        "predicate_id": "fixture-predicate",
+        "expression": "fixture_member_position < midpoint",
+        "input_fields": [
+          "fixture_member_position"
+        ],
+        "source_grounded_reference": "fixture://source-grounded-test-input",
+        "deterministic": true,
+        "source_grounded": true,
+        "unknown_treatment": "UNKNOWN_IS_NOT_A_BOUNDARY"
+      },
+      "partition_evidence_references": [
+        "fixture://partition-evidence"
+      ],
+      "child_partition_ids": [
+        "r4-template-120-process_command_execution::fixture-child-1",
+        "r4-template-120-process_command_execution::fixture-child-2"
+      ],
+      "child_partitions": [
+        {
+          "child_id": "r4-template-120-process_command_execution::fixture-child-1",
+          "child_order": 1,
+          "member_keys": [
+            "6000003::S03::A001",
+            "6000003::S03::A008",
+            "6000006::S04::A001",
+            "6000006::S04::A002",
+            "6000007::S03::A003",
+            "6000007::S03::A007",
+            "6000007::S11::A003",
+            "6000008::S03::A003",
+            "6000008::S03::A006",
+            "6000008::S05::A003",
+            "6000008::S09::A001",
+            "6000008::S09::A005",
+            "6000009::S03::A003",
+            "6000010::S03::A004",
+            "6000011::S10::A003",
+            "6000013::S03::A007",
+            "6000013::S04::A002",
+            "6000013::S04::A004",
+            "6000014::S03::A006",
+            "6000015::S04::A004",
+            "6000015::S04::A006",
+            "6000016::S04::A002",
+            "6000016::S04::A004",
+            "6000019::S04::A002"
+          ],
+          "member_count": 24,
+          "member_set_sha256": "22ba2627357435dbec82c49ad0b42d6666fe3df420b791d241d8b5f5d84e3109",
+          "member_set_reference": "fixture://child/1",
+          "child_evidence_reference": "fixture://evidence/child/1"
+        },
+        {
+          "child_id": "r4-template-120-process_command_execution::fixture-child-2",
+          "child_order": 2,
+          "member_keys": [
+            "6000019::S08::A005",
+            "6000020::S04::A001",
+            "6000020::S07::A004",
+            "6000021::S09::A002",
+            "6000024::S04::A002",
+            "6000024::S09::A001",
+            "6000026::S05::A001",
+            "6000027::S04::A001",
+            "6000031::S05::A005",
+            "6000039::S04::A003",
+            "6000042::S02::A004",
+            "6000042::S04::A001",
+            "6000043::S03::A002",
+            "6000044::S03::A004",
+            "6000046::S03::A002",
+            "6000047::S05::A003",
+            "6000047::S08::A002",
+            "6000048::S05::A001",
+            "6000049::S03::A003",
+            "6000051::S04::A001",
+            "6000051::S04::A002",
+            "6000060::S07::A001",
+            "6000062::S03::A001",
+            "6000062::S07::A004"
+          ],
+          "member_count": 25,
+          "member_set_sha256": "95256be8e88605923135c76c8d1e132a13e554c73738ec6e1851b15df5e016e2",
+          "member_set_reference": "fixture://child/2",
+          "child_evidence_reference": "fixture://evidence/child/2"
+        }
+      ],
+      "conservation_result": {
+        "parent_member_count": 49,
+        "child_member_count_sum": 49,
+        "child_union_equals_parent": true,
+        "pairwise_child_overlap_count": 0,
+        "unassigned_member_count": 0,
+        "duplicate_member_count": 0,
+        "count_conserved": true,
+        "hashes_recomputed": true,
+        "parent_hash_revalidated": true,
+        "cross_template_overlap_count": 0,
+        "blocked31_overlap_count": 0,
+        "conservation_check_reference": "fixture://conservation-check"
+      },
+      "independent_review_reference": "fixture://independent-partition-review",
+      "approval_reference": null,
+      "applied": false,
+      "execution_authorized": false,
+      "status_mutation": 0,
+      "denominator_change": "NO"
+    }
+  }
+}

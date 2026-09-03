@@ -1,0 +1,134 @@
+{
+  "contract_id": "E0C_EXACT12_MORE_EVIDENCE_ACQUISITION_CONTRACT_R2",
+  "schema_version": "e0c-exact12-more-evidence-acquisition-contract-r2",
+  "purpose": "Define how a future reviewer may request and assess missing evidence, including partition and governance evidence, without preselecting a disposition or authorizing execution.",
+  "authority": "DESIGN_ONLY_NON_AUTHORITATIVE",
+  "eligible_state": "REQUEST_MORE_EVIDENCE",
+  "acquisition_is_authorized_by_this_contract": false,
+  "request_identity": {
+    "request_id": "required",
+    "template_id": "required",
+    "frozen_order": "required",
+    "member_count": "required",
+    "member_set_sha256": "required",
+    "member_set_reference": "required",
+    "current_state": "REQUEST_MORE_EVIDENCE"
+  },
+  "required_request_sections": [
+    "unresolved_question_register",
+    "evidence_classes_requested",
+    "raw_members_in_scope",
+    "source_references_for_each_question",
+    "acceptance_test_for_each_question",
+    "partition_boundary_request",
+    "governance_preparation_request",
+    "safe_fixture_and_environment_boundaries",
+    "collection_stop_conditions",
+    "review_and_provenance_plan"
+  ],
+  "evidence_request_classes": [
+    {
+      "evidence_class": "SOURCE_SEMANTICS",
+      "questions": [
+        "What exact source-visible semantics must remain equivalent for each raw member?",
+        "Which parameters are explicit, and which remain UNKNOWN?"
+      ],
+      "acceptance": "A source-linked record answers the question for every in-scope raw member without inference."
+    },
+    {
+      "evidence_class": "CONTROLLED_ENVIRONMENT",
+      "questions": [
+        "Which platform and service prerequisites are source-evidenced?",
+        "Can an inert, isolated fixture satisfy them with bounded reset?"
+      ],
+      "acceptance": "The fixture, isolation, prerequisite, and reset claims are documented and independently checkable."
+    },
+    {
+      "evidence_class": "DEFENSIVE_EQUIVALENCE",
+      "questions": [
+        "Which observable decision point must be preserved?",
+        "Which side effects are necessary, and which must be excluded?"
+      ],
+      "acceptance": "A raw-specific invariant map distinguishes required equivalence from safe differences."
+    },
+    {
+      "evidence_class": "OBSERVABILITY",
+      "questions": [
+        "Which telemetry surfaces should be observable?",
+        "Can the core edge be localized without relying on an unobserved assertion?"
+      ],
+      "acceptance": "Expected event surfaces, ordering, correlation, and limitations are recorded."
+    },
+    {
+      "evidence_class": "SAFETY_RESET",
+      "questions": [
+        "What prevents secrets, destructive effects, public endpoints, or uncontrolled services?",
+        "How is the fixture reset and verified?"
+      ],
+      "acceptance": "A bounded safety and reset record is complete before any future execution authorization is considered."
+    },
+    {
+      "evidence_class": "PARTITION",
+      "questions": [
+        "What exact source-grounded predicate separates the proposed child partitions?",
+        "Which raw members evaluate to each child, and how is UNKNOWN handled without becoming a boundary?",
+        "What evidence independently supports completeness, disjointness, child counts, and child hashes?"
+      ],
+      "acceptance": "A deterministic source-grounded partition record lists every frozen parent member exactly once, supplies reproducible child hashes and counts, and records zero overlap and zero unassigned members."
+    },
+    {
+      "evidence_class": "GOVERNANCE",
+      "questions": [
+        "Which reviewer independently recomputes identity, evidence coverage, and partition conservation?",
+        "What separate approval record would be required before any proposal could be applied?",
+        "How does the record keep evidence acquisition and proposal review non-authoritative?"
+      ],
+      "acceptance": "The request identifies the independent review role, evidence manifest, approval boundary, and explicit prohibition on applying a split or authorizing execution during acquisition."
+    }
+  ],
+  "collection_boundaries": {
+    "real_malware_allowed": false,
+    "real_credentials_allowed": false,
+    "destructive_effects_allowed": false,
+    "public_endpoints_allowed": false,
+    "uncontrolled_service_changes_allowed": false,
+    "formal_experiment_authorized": false,
+    "execution_authority_created": false,
+    "status_mutations_allowed": false,
+    "denominator_change_allowed": false
+  },
+  "class_completeness": {
+    "policy_required_requestable_classes": [
+      "SOURCE_SEMANTICS",
+      "CONTROLLED_ENVIRONMENT",
+      "DEFENSIVE_EQUIVALENCE",
+      "OBSERVABILITY",
+      "SAFETY_RESET",
+      "PARTITION",
+      "GOVERNANCE"
+    ],
+    "identity_provenance_is_carried_by_request_identity_and_raw_member_scope": true
+  },
+  "completion_rules": {
+    "evidence_must_be_member_complete_or_explicitly_scoped": true,
+    "unknown_values_must_remain_unknown": true,
+    "missing_or_contradictory_evidence_requires_hold": true,
+    "acquisition_result_does_not_select_outcome": true,
+    "separate_template_level_review_required_after_acquisition": true
+  },
+  "allowed_follow_on_states": [
+    "KEEP_REQUEST_MORE_EVIDENCE",
+    "APPROVE",
+    "REJECT_KEEP_MANUAL",
+    "JUSTIFIED_SPLIT_PROPOSAL"
+  ],
+  "forbidden_actions": [
+    "treat_requested_evidence_as_sufficient_by_default",
+    "convert_evidence_collection_into_approval",
+    "apply_a_split_during_acquisition",
+    "mutate_the_current_status",
+    "change_the_denominator",
+    "execute_a_formal_experiment"
+  ],
+  "failure_disposition": "If collection cannot satisfy an acceptance test, record the failed question and retain REQUEST_MORE_EVIDENCE."
+}
