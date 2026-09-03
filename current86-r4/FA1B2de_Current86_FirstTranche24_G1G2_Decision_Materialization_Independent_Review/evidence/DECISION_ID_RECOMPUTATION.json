@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "identity_procedure_id": "FIRST_TRANCHE24_GOVERNANCE_DECISION_IDENTITY_V2",
+  "canonicalization_profile": "PROJECT_CANONICAL_JSON_V1",
+  "basis_sha256": "402d83d90b3ca76637ca57abca8a425b887322483f29feea40d9002fed06a739",
+  "raw_decision_digest": "505bd4c0b2bbb13739573c39e2063e83db2709244fad68f4f09152db21aaf6c6",
+  "decision_record_id_recomputed": "GOVDEC2-68ea814d1940bed4ec8b3e48b6a28f67f3e05c5e50e1c342a1fa2dc7db31f90f",
+  "decision_record_id_declared": "GOVDEC2-68ea814d1940bed4ec8b3e48b6a28f67f3e05c5e50e1c342a1fa2dc7db31f90f",
+  "exact_equality": true,
+  "unauthorized_fields_rejected": true,
+  "missing_identity_procedure_rejected": true,
+  "mismatched_identity_procedure_rejected": true
+}

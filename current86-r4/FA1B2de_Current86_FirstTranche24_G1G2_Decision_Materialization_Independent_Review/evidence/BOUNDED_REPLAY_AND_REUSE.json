@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "decision_transaction_bounded": true,
+  "repeat_canonical_recomputation_equal": true,
+  "altered_decision_produces_different_identity": true,
+  "duplicate_reuse_mismatch_rejected": true,
+  "cannot_be_interpreted_as_source_authority_activation": true,
+  "cannot_be_interpreted_as_source_admission": true,
+  "cannot_be_interpreted_as_field_pinning": true,
+  "cannot_be_interpreted_as_scoring_publication": true,
+  "cannot_be_interpreted_as_experiment_execution": true,
+  "duplicate_reuse_semantics": "PASS"
+}

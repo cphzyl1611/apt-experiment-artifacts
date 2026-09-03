@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "binding_repository": "/home/cph/fa1b2de-artifact-worktrees/binding",
+  "branch": "artifact/binding",
+  "local_binding_head": "3c5c014238b569377963c1cb20f3d7df2600f135",
+  "remote_query": "git ls-remote origin refs/heads/artifact/binding",
+  "remote_binding_head": "3c5c014238b569377963c1cb20f3d7df2600f135",
+  "decision_materialization_commit": "3c5c014238b569377963c1cb20f3d7df2600f135",
+  "decision_materialization_parent": "c3e911e865f5287d46703e5d0d7398ee653151f7",
+  "commit_message": "materialize binding: FIRST_TRANCHE24_G1G2_DECISION_MATERIALIZATION",
+  "parent_exact": true,
+  "head_equality": true,
+  "intervening_commits": 0,
+  "diff_only_allowed_package": true,
+  "changed_paths": [
+    "current86-r4/FA1B2de_Current86_FirstTranche24_G1G2_Decision_Materialization/BOUNDED_MATERIALIZATION_REVIEW.json",
+    "current86-r4/FA1B2de_Current86_FirstTranche24_G1G2_Decision_Materialization/BOUNDED_MATERIALIZATION_REVIEW.md",
+    "current86-r4/FA1B2de_Current86_FirstTranche24_G1G2_Decision_Materialization/FIRST_TRANCHE24_GOVERNANCE_DECISION_RECORD_V2.json",
+    "current86-r4/FA1B2de_Current86_FirstTranche24_G1G2_Decision_Materialization/GOVERNANCE_DECISION_RECORD_SCHEMA_V2.json",
+    "current86-r4/FA1B2de_Current86_FirstTranche24_G1G2_Decision_Materialization/evidence/DECISION_RECORD_ID_RECOMPUTATION.json",
+    "current86-r4/FA1B2de_Current86_FirstTranche24_G1G2_Decision_Materialization/evidence/FIRST_TRANCHE24_SCOPE_AUTHENTICATION.json",
+    "current86-r4/FA1B2de_Current86_FirstTranche24_G1G2_Decision_Materialization/evidence/GOVERNANCE_PRINCIPAL_AUTHENTICATION_REFERENCE.json",
+    "current86-r4/FA1B2de_Current86_FirstTranche24_G1G2_Decision_Materialization/evidence/PREREQUISITE_AUTHENTICATION.json",
+    "current86-r4/FA1B2de_Current86_FirstTranche24_G1G2_Decision_Materialization/evidence/TRANSACTION_HASH_RECOMPUTATION.json",
+    "current86-r4/FA1B2de_Current86_FirstTranche24_G1G2_Decision_Materialization/evidence/ZERO_OPERATIONAL_EFFECT_VERIFICATION.json",
+    "current86-r4/FA1B2de_Current86_FirstTranche24_G1G2_Decision_Materialization/tests/test_materialization.py",
+    "current86-r4/FA1B2de_Current86_FirstTranche24_G1G2_Decision_Materialization/tools/validate_materialization.py"
+  ]
+}

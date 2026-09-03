@@ -1,0 +1,32 @@
+{
+  "review_type": "FIRST_TRANCHE24_G1G2_DECISION_MATERIALIZATION_INDEPENDENT_REVIEW",
+  "verdict": "PASS_READY_FOR_SOURCE_AUTHORITY_ACTIVATION_DESIGN",
+  "review_basis": {
+    "local_binding_head": "3c5c014238b569377963c1cb20f3d7df2600f135",
+    "remote_binding_head": "3c5c014238b569377963c1cb20f3d7df2600f135",
+    "decision_materialization_commit": "3c5c014238b569377963c1cb20f3d7df2600f135",
+    "decision_materialization_parent": "c3e911e865f5287d46703e5d0d7398ee653151f7",
+    "decision_materialization_commit_message": "materialize binding: FIRST_TRANCHE24_G1G2_DECISION_MATERIALIZATION"
+  },
+  "canonical_manifest_validation": "PASS",
+  "manifest_file_count": 12,
+  "source_manifest_hash_mismatch": 0,
+  "artifact_manifest_hash_mismatch": 0,
+  "source_artifact_byte_mismatch": 0,
+  "human_governance_decision_materialized": "YES",
+  "human_governance_decision": "APPROVE_BOTH_G1_AND_G2",
+  "governance_scope": "FIRST_TRANCHE24_ONLY",
+  "first_tranche24_raw_count": 24,
+  "decision_record_id": "GOVDEC2-68ea814d1940bed4ec8b3e48b6a28f67f3e05c5e50e1c342a1fa2dc7db31f90f",
+  "decision_record_id_recomputed": "GOVDEC2-68ea814d1940bed4ec8b3e48b6a28f67f3e05c5e50e1c342a1fa2dc7db31f90f",
+  "decision_record_id_recomputation": "PASS",
+  "transaction_hash": "b5601414918d6b7cc5c00ebaf24b98d93d2d477bcd4481de4de47b8ed0f7cd38",
+  "transaction_hash_recomputed": "b5601414918d6b7cc5c00ebaf24b98d93d2d477bcd4481de4de47b8ed0f7cd38",
+  "transaction_hash_recomputation": "PASS",
+  "v2_governance_schema_validation": "PASS",
+  "v1_circular_dependency_reintroduced": "NO",
+  "decision_transaction_bounded": "PASS",
+  "duplicate_reuse_semantics": "PASS",
+  "zero_operational_effect_except_governance_decision": "PASS",
+  "next_phase": "FIRST_TRANCHE24_SOURCE_AUTHORITY_ACTIVATION_DESIGN"
+}

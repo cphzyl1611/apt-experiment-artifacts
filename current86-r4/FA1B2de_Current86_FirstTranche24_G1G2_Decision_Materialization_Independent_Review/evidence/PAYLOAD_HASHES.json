@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "source_manifest_hash_mismatch": 0,
+  "artifact_manifest_hash_mismatch": 0,
+  "source_artifact_byte_mismatch": 0,
+  "files": [
+    {"destination":"current86-r4/FA1B2de_Current86_FirstTranche24_G1G2_Decision_Materialization/BOUNDED_MATERIALIZATION_REVIEW.json","sha256":"c372847129e471ea1664e90d72e800fc50dc818d4bed7104a24ca0a93c312c23"},
+    {"destination":"current86-r4/FA1B2de_Current86_FirstTranche24_G1G2_Decision_Materialization/BOUNDED_MATERIALIZATION_REVIEW.md","sha256":"dcefc82ad755b88df070928e53d226224197bd5f002c45bfa49b56430784e1b4"},
+    {"destination":"current86-r4/FA1B2de_Current86_FirstTranche24_G1G2_Decision_Materialization/FIRST_TRANCHE24_GOVERNANCE_DECISION_RECORD_V2.json","sha256":"1e688e1076a0ab64da2839fb38562eedca6b62c1a2d6120b3d8a8b0416c3b31f"},
+    {"destination":"current86-r4/FA1B2de_Current86_FirstTranche24_G1G2_Decision_Materialization/GOVERNANCE_DECISION_RECORD_SCHEMA_V2.json","sha256":"7eb5d7d9954bbc01f05b422d1cf9dd40481f228e61f272c66b3287aeb33cc01c"},
+    {"destination":"current86-r4/FA1B2de_Current86_FirstTranche24_G1G2_Decision_Materialization/evidence/DECISION_RECORD_ID_RECOMPUTATION.json","sha256":"0f941bb585b96eee51eac2e51df0a3a6cd6ee0b447e0c377bd0d40dba2ce699f"},
+    {"destination":"current86-r4/FA1B2de_Current86_FirstTranche24_G1G2_Decision_Materialization/evidence/FIRST_TRANCHE24_SCOPE_AUTHENTICATION.json","sha256":"8bc8e2667476ab94f6a81d45d99cd9cdda111c7a2cbf6c8022c3204597fab1bd"},
+    {"destination":"current86-r4/FA1B2de_Current86_FirstTranche24_G1G2_Decision_Materialization/evidence/GOVERNANCE_PRINCIPAL_AUTHENTICATION_REFERENCE.json","sha256":"41c51c9bcf8f4b0c30ecb05099bbe07994e5c575e83ceee82d9ae063b6de8788"},
+    {"destination":"current86-r4/FA1B2de_Current86_FirstTranche24_G1G2_Decision_Materialization/evidence/PREREQUISITE_AUTHENTICATION.json","sha256":"69b1a4382edf7e607940031b3a1c06474600154eb069bac03b558f5284cb4e72"},
+    {"destination":"current86-r4/FA1B2de_Current86_FirstTranche24_G1G2_Decision_Materialization/evidence/TRANSACTION_HASH_RECOMPUTATION.json","sha256":"db4d202a615a3f5abb76dfdd1ee5d39649a180f0b9687b0e3d823279402d0143"},
+    {"destination":"current86-r4/FA1B2de_Current86_FirstTranche24_G1G2_Decision_Materialization/evidence/ZERO_OPERATIONAL_EFFECT_VERIFICATION.json","sha256":"296ac2382bd09ba80a1335288ad57440b1cb22ba2ed09dd26222022b66187c3d"},
+    {"destination":"current86-r4/FA1B2de_Current86_FirstTranche24_G1G2_Decision_Materialization/tests/test_materialization.py","sha256":"04c8345dfda36869981498adcbe9560f9d66b78e51d6ce42c79b71ca72d65560"},
+    {"destination":"current86-r4/FA1B2de_Current86_FirstTranche24_G1G2_Decision_Materialization/tools/validate_materialization.py","sha256":"303ff6028cd99a0f335887b7153fc3e802e2657fd930c5872841c239c3696594"}
+  ]
+}

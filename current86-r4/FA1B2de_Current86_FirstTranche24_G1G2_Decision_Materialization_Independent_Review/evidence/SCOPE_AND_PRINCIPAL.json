@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "governance_scope": "FIRST_TRANCHE24_ONLY",
+  "raw_count": 24,
+  "unique_raw_count": 24,
+  "raw_ids": [110,273,210,98,147,277,188,301,143,250,233,287,146,293,114,284,291,215,88,182,300,218,115,148],
+  "exact_frozen_order": true,
+  "scope_matrix_order_matches": true,
+  "scope_extension_requested": false,
+  "principal_id": "FA1B2DE_PROJECT_OWNER_GOVERNANCE_PRINCIPAL",
+  "principal_identity_sha256": "3e831ab556e624dd876fd489ffa709cc5edc014ffa04a76747bffcb51071d795",
+  "principal_authentication_status": "PASS",
+  "principal_identity_exact_match": true,
+  "personal_identity_bound": false
+}

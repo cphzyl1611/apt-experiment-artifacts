@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "schema": "GOVERNANCE_DECISION_RECORD_SCHEMA_V2",
+  "schema_sha256": "7eb5d7d9954bbc01f05b422d1cf9dd40481f228e61f272c66b3287aeb33cc01c",
+  "validator": "jsonschema Draft202012Validator with FormatChecker",
+  "record_validation_errors": 0,
+  "governance_authorization_separate_from_activation": true,
+  "source_authority_id_fabricated": false,
+  "source_version_policy_fabricated": false,
+  "source_authority_activation_current": false,
+  "stage_a_admission": false,
+  "v1_circular_dependency_reintroduced": false
+}
