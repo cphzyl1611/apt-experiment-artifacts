@@ -1,0 +1,7 @@
+{
+  "fixture": "wrong_transaction_hash.json",
+  "base_fixture": "CANDIDATE_RESOLUTION_DECISION.json",
+  "mutations": [
+    {"path":["governance_binding","governance_transaction_hash"],"operation":"replace","value":"wrong-transaction-hash"}
+  ]
+}

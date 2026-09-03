@@ -1,0 +1,7 @@
+{
+  "fixture": "zero_candidates_resolved.json",
+  "base_fixture": "CANDIDATE_SET.json",
+  "mutations": [
+    {"path":["candidates",0],"operation":"remove"}
+  ]
+}

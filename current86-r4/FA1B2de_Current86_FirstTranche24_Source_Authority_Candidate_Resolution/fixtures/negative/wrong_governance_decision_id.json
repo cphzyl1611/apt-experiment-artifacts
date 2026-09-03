@@ -1,0 +1,7 @@
+{
+  "fixture": "wrong_governance_decision_id.json",
+  "base_fixture": "CANDIDATE_RESOLUTION_DECISION.json",
+  "mutations": [
+    {"path":["governance_binding","decision_record_id"],"operation":"replace","value":"GOVDEC2-wrong"}
+  ]
+}
