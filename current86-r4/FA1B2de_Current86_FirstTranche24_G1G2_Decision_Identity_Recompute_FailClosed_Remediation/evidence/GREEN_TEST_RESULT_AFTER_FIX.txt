@@ -1,0 +1,22 @@
+Targeted command:
+PYTHONDONTWRITEBYTECODE=1 python -m unittest FA1B2de_Current86_FirstTranche24_G1G2_Decision_Identity_Recompute_FailClosed_Remediation.tests.test_fail_closed_recompute -v
+
+Result:
+Ran 6 tests in 0.004s
+OK
+
+Non-regression command:
+PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s FA1B2de_Current86_FirstTranche24_G1G2_Decision_Identity_Recompute_FailClosed_Remediation/tests -p 'test_*.py' -q
+
+Result:
+Ran 16 tests in 0.055s
+OK
+
+The preserved previous independent recomputation/primary contract suite is
+10/10 PASS, including the six primary negative fixtures rejected by the
+primary implementation. The six additional targeted fail-closed tests are
+PASS.
+
+TARGETED_GREEN_TESTS = PASS
+PREVIOUS_INDEPENDENT_RECOMPUTATION_TESTS = 10/10 PASS
+PREVIOUS_PRIMARY_NEGATIVE_FIXTURES = 6/6 REJECTED

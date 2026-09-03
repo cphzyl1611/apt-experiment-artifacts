@@ -1,0 +1,19 @@
+{
+  "schema": "FIRST_TRANCHE24_G1G2_DECISION_IDENTITY_VALID_INPUT_DRIFT_V1",
+  "valid_input": "fixtures/valid_record.json",
+  "before_source": "reviewed baseline independent_recompute.py at authenticated commit 7059e15ee3f6f7629dac573ff157968ef59dde75",
+  "after_source": "tools/independent_recompute.py in this remediation package",
+  "before": {
+    "basis_sha256": "402d83d90b3ca76637ca57abca8a425b887322483f29feea40d9002fed06a739",
+    "decision_record_id": "GOVDEC2-68ea814d1940bed4ec8b3e48b6a28f67f3e05c5e50e1c342a1fa2dc7db31f90f",
+    "transaction_hash": "b5601414918d6b7cc5c00ebaf24b98d93d2d477bcd4481de4de47b8ed0f7cd38"
+  },
+  "after": {
+    "basis_sha256": "402d83d90b3ca76637ca57abca8a425b887322483f29feea40d9002fed06a739",
+    "decision_record_id": "GOVDEC2-68ea814d1940bed4ec8b3e48b6a28f67f3e05c5e50e1c342a1fa2dc7db31f90f",
+    "transaction_hash": "b5601414918d6b7cc5c00ebaf24b98d93d2d477bcd4481de4de47b8ed0f7cd38"
+  },
+  "valid_input_decision_record_id_drift": 0,
+  "valid_input_transaction_hash_drift": 0,
+  "status": "PASS"
+}

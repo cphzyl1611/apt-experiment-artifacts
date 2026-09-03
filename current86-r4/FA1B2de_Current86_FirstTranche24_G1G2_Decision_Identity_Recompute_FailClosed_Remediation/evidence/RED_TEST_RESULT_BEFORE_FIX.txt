@@ -1,0 +1,18 @@
+Command:
+PYTHONDONTWRITEBYTECODE=1 python -m unittest FA1B2de_Current86_FirstTranche24_G1G2_Decision_Identity_Recompute_FailClosed_Remediation.tests.test_fail_closed_recompute -v
+
+Result before implementation change:
+Ran 6 tests in 0.008s
+FAILED (failures=4)
+
+Passing red-suite controls:
+- exact identity-procedure value remains accepted
+- unchanged valid record remains accepted
+
+Expected failures proving the missing enforcement:
+- test_rejects_mismatched_identity_procedure_value: IndependentIdentityError not raised
+- test_rejects_missing_identity_procedure_value: IndependentIdentityError not raised
+- test_rejects_unauthorized_nested_identity_field: IndependentIdentityError not raised
+- test_rejects_unauthorized_top_level_field: IndependentIdentityError not raised
+
+RED_TESTS_OBSERVED_BEFORE_FIX = YES

@@ -1,0 +1,37 @@
+{
+  "schema": "FIRST_TRANCHE24_G1G2_DECISION_IDENTITY_RECOMPUTE_FAIL_CLOSED_TARGETED_NEGATIVE_FIXTURE_RESULTS_V1",
+  "status": "PASS",
+  "fixture_count": 4,
+  "results": [
+    {
+      "fixture": "fixtures/negative/unauthorized_top_level_field.json",
+      "location": "top-level record object",
+      "rejection_reason": "unauthorized top-level field",
+      "error_code": null,
+      "status": "PASS_REJECTED"
+    },
+    {
+      "fixture": "fixtures/negative/unauthorized_nested_identity_field.json",
+      "location": "decision_identity.unauthorized_nested_field",
+      "rejection_reason": "unauthorized or missing identity field",
+      "error_code": null,
+      "status": "PASS_REJECTED"
+    },
+    {
+      "fixture": "fixtures/negative/identity_procedure_missing.json",
+      "location": "decision_identity.identity_procedure_id",
+      "rejection_reason": "missing required identity procedure",
+      "error_code": null,
+      "status": "PASS_REJECTED"
+    },
+    {
+      "fixture": "fixtures/negative/identity_procedure_mismatch.json",
+      "location": "decision_identity.identity_procedure_id",
+      "expected_value": "FIRST_TRANCHE24_GOVERNANCE_DECISION_IDENTITY_V2",
+      "observed_value": "OTHER_PROCEDURE",
+      "rejection_reason": "identity procedure mismatch",
+      "error_code": null,
+      "status": "PASS_REJECTED"
+    }
+  ]
+}

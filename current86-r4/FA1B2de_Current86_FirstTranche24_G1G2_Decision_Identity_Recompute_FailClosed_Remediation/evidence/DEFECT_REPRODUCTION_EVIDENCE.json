@@ -1,0 +1,42 @@
+{
+  "schema": "FIRST_TRANCHE24_G1G2_DECISION_IDENTITY_RECOMPUTE_FAIL_CLOSED_DEFECT_REPRODUCTION_V1",
+  "reviewed_baseline_commit": "7059e15ee3f6f7629dac573ff157968ef59dde75",
+  "reviewed_source": "FA1B2de_Current86_FirstTranche24_G1G2_Decision_Identity_Remediation/tools/independent_recompute.py",
+  "independent_reproduction_source": "FA1B2de_Current86_FirstTranche24_G1G2_Decision_Identity_Recompute_FailClosed_Remediation/tools/independent_recompute.py",
+  "valid_input": "fixtures/valid_record.json",
+  "defect_reproduction": "PASS",
+  "witnesses": [
+    {
+      "defect_id": "A",
+      "condition": "unauthorized field accepted",
+      "field": "unauthorized_top_level_field",
+      "location": "top-level record object",
+      "parser_or_validation_path": "recompute -> _basis; _basis projects selected fields and performs no top-level shape validation",
+      "input_mutation": "record['unauthorized_top_level_field'] = 'reject'",
+      "current_behavior": "ACCEPT",
+      "expected_behavior": "REJECT_FAIL_CLOSED",
+      "observed_result": {
+        "basis_sha256": "402d83d90b3ca76637ca57abca8a425b887322483f29feea40d9002fed06a739",
+        "decision_record_id": "GOVDEC2-68ea814d1940bed4ec8b3e48b6a28f67f3e05c5e50e1c342a1fa2dc7db31f90f",
+        "transaction_hash": "b5601414918d6b7cc5c00ebaf24b98d93d2d477bcd4481de4de47b8ed0f7cd38"
+      }
+    },
+    {
+      "defect_id": "B",
+      "condition": "mismatched identity-procedure value accepted",
+      "field": "identity_procedure_id",
+      "location": "decision_identity.identity_procedure_id",
+      "parser_or_validation_path": "recompute -> _basis; decision_identity is never read or validated",
+      "input_mutation": "record['decision_identity']['identity_procedure_id'] = 'OTHER_PROCEDURE'",
+      "frozen_expected_value": "FIRST_TRANCHE24_GOVERNANCE_DECISION_IDENTITY_V2",
+      "mismatched_value": "OTHER_PROCEDURE",
+      "current_behavior": "ACCEPT",
+      "expected_behavior": "REJECT_FAIL_CLOSED",
+      "observed_result": {
+        "basis_sha256": "402d83d90b3ca76637ca57abca8a425b887322483f29feea40d9002fed06a739",
+        "decision_record_id": "GOVDEC2-68ea814d1940bed4ec8b3e48b6a28f67f3e05c5e50e1c342a1fa2dc7db31f90f",
+        "transaction_hash": "b5601414918d6b7cc5c00ebaf24b98d93d2d477bcd4481de4de47b8ed0f7cd38"
+      }
+    }
+  ]
+}
