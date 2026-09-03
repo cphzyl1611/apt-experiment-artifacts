@@ -1,0 +1,15 @@
+{
+  "basis_sha256": "402d83d90b3ca76637ca57abca8a425b887322483f29feea40d9002fed06a739",
+  "canonical_profile": "PROJECT_CANONICAL_JSON_V1",
+  "decision_record_id": "GOVDEC2-68ea814d1940bed4ec8b3e48b6a28f67f3e05c5e50e1c342a1fa2dc7db31f90f",
+  "declared_values_match": true,
+  "identity_procedure_id": "FIRST_TRANCHE24_GOVERNANCE_DECISION_IDENTITY_V2",
+  "independent_implementation": "tools/independent_recompute.py",
+  "metadata_exclusion": "PASS",
+  "raw_decision_digest": "505bd4c0b2bbb13739573c39e2063e83db2709244fad68f4f09152db21aaf6c6",
+  "raw_transaction_digest": "ba735af350f636c0556e9f1d0a729a30f3d7cef3f4f3e9f68e3ba7c620fcb4e0",
+  "record_path": "FA1B2de_Current86_FirstTranche24_G1G2_Decision_Preparation_V2/FIRST_TRANCHE24_GOVERNANCE_DECISION_RECORD_V2.json",
+  "schema": "FIRST_TRANCHE24_G1G2_DECISION_IDENTITY_INDEPENDENT_RECOMPUTATION_V1",
+  "status": "PASS",
+  "transaction_hash": "b5601414918d6b7cc5c00ebaf24b98d93d2d477bcd4481de4de47b8ed0f7cd38"
+}

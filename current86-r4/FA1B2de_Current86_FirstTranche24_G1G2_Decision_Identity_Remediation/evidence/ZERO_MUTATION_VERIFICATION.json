@@ -1,0 +1,25 @@
+{
+  "authority_activation": "NO",
+  "field_pins": 0,
+  "formal_experiment": "NO",
+  "independent_verifier": {
+    "authority_activation": "NO",
+    "field_pins": 0,
+    "operative_records": 0,
+    "source_acquisition": true,
+    "stage_a_admission": true
+  },
+  "operative_records": 0,
+  "primary_verifier": {
+    "authority_activation": "NO",
+    "field_pins": 0,
+    "operative_records": 0,
+    "source_acquisition": "NO",
+    "stage_a_admission": "NO"
+  },
+  "schema": "FIRST_TRANCHE24_G1G2_DECISION_IDENTITY_ZERO_MUTATION_VERIFICATION_V1",
+  "source_acquisition": "NO",
+  "source_authentication": "NO",
+  "stage_a_admission": "NO",
+  "status": "PASS_ZERO_OPERATIONAL_EFFECT"
+}
