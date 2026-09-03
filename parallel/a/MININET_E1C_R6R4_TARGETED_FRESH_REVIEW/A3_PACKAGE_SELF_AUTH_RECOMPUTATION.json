@@ -1,0 +1,37 @@
+{
+  "schema": "MININET_E1C_R6R4_A3_PACKAGE_SELF_AUTH_RECOMPUTATION_V1",
+  "review_date": "2026-09-03",
+  "package_root": "parallel/a/MININET_E1C_R6R4_PRODUCTION_PATH_AND_EVIDENCE_REMEDIATION",
+  "commands": [
+    "cd parallel/a/MININET_E1C_R6R4_PRODUCTION_PATH_AND_EVIDENCE_REMEDIATION && sha256sum -c SHA256SUMS.txt",
+    "sha256sum parallel/a/e1c-r6-run-20260901T060350Z/mininet_e1c_r6_file_access_closure_smoke.py parallel/a/e1c-r6-run-20260901T060350Z/test_e1c_r6_harness.py parallel/a/MININET_E1C_R6R4_PRODUCTION_PATH_AND_EVIDENCE_REMEDIATION/candidate/mininet_e1c_r6_file_access_closure_smoke.py parallel/a/MININET_E1C_R6R4_PRODUCTION_PATH_AND_EVIDENCE_REMEDIATION/candidate/test_e1c_r6_harness.py"
+  ],
+  "file_list": {
+    "listed_file_count": 10,
+    "actual_package_file_count": 10,
+    "duplicates": false,
+    "path_escapes": [],
+    "listed_missing_files": [],
+    "unlisted_package_files": [],
+    "required_file_omissions": [],
+    "status": "PASS"
+  },
+  "sha256sums": {
+    "covered_entries": 9,
+    "sha256sum_check": "PASS",
+    "failure_entries": []
+  },
+  "candidate_input_authentication": {
+    "harness_sha256": "8b0db6eab7c2a9d720a9a9d0624ebbe4ba93859f2151fc338f0e0303321e78cc",
+    "tests_sha256": "4392694ab6505548fa07d3e6a3f802b105ce065c80619aa955026ce7b6e9e058",
+    "candidate_equals_materialized_committed_source": "PASS",
+    "candidate_equals_primary_source_workspace": "PASS"
+  },
+  "payload_hygiene": {
+    "pyc_files": [],
+    "cache_directories": [],
+    "transient_temp_files": [],
+    "unrelated_manifests": []
+  },
+  "A3": "CLOSED"
+}

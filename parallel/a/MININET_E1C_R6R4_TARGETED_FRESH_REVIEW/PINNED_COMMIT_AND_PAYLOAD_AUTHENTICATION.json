@@ -1,0 +1,56 @@
+{
+  "schema": "MININET_E1C_R6R4_PINNED_COMMIT_AND_PAYLOAD_AUTHENTICATION_V1",
+  "review_date": "2026-09-03",
+  "review_mode": "INDEPENDENT_TARGETED_FRESH_REVIEW",
+  "artifact_repository": "cphzyl1611/apt-experiment-artifacts",
+  "track_branch": "artifact/e0-a",
+  "pinned_commit": "df21b485b10aefd90ac522f5192c72b5aff74d50",
+  "expected_parent": "e88e664fd0c9927323845427f88e85cea7ccb5d4",
+  "observed_parent": "e88e664fd0c9927323845427f88e85cea7ccb5d4",
+  "expected_commit_message": "materialize e0-a: MININET_E1C_R6R4_PRODUCTION_PATH_AND_EVIDENCE_REMEDIATION",
+  "observed_commit_message": "materialize e0-a: MININET_E1C_R6R4_PRODUCTION_PATH_AND_EVIDENCE_REMEDIATION",
+  "authentication": {
+    "commit_sha": "PASS",
+    "parent_sha": "PASS",
+    "commit_message": "PASS",
+    "changed_file_scope": "PASS",
+    "no_unrelated_e0_a_artifact_changes": "PASS"
+  },
+  "changed_files": [
+    "parallel/a/MININET_E1C_R6R4_PRODUCTION_PATH_AND_EVIDENCE_REMEDIATION/DEADLINE_ACCEPTANCE_CONTRACT.json",
+    "parallel/a/MININET_E1C_R6R4_PRODUCTION_PATH_AND_EVIDENCE_REMEDIATION/FILE_LIST.txt",
+    "parallel/a/MININET_E1C_R6R4_PRODUCTION_PATH_AND_EVIDENCE_REMEDIATION/PRODUCTION_CALL_CHAIN_TRACE.md",
+    "parallel/a/MININET_E1C_R6R4_PRODUCTION_PATH_AND_EVIDENCE_REMEDIATION/R6R4_REMEDIATION_REPORT.md",
+    "parallel/a/MININET_E1C_R6R4_PRODUCTION_PATH_AND_EVIDENCE_REMEDIATION/SHA256SUMS.txt",
+    "parallel/a/MININET_E1C_R6R4_PRODUCTION_PATH_AND_EVIDENCE_REMEDIATION/STATIC_BOUNDARY_AUDIT.json",
+    "parallel/a/MININET_E1C_R6R4_PRODUCTION_PATH_AND_EVIDENCE_REMEDIATION/STRICT_RAW_AUDIT_ACCEPTANCE_CONTRACT.json",
+    "parallel/a/MININET_E1C_R6R4_PRODUCTION_PATH_AND_EVIDENCE_REMEDIATION/TEST_AND_REGRESSION_RESULT.json",
+    "parallel/a/MININET_E1C_R6R4_PRODUCTION_PATH_AND_EVIDENCE_REMEDIATION/candidate/mininet_e1c_r6_file_access_closure_smoke.py",
+    "parallel/a/MININET_E1C_R6R4_PRODUCTION_PATH_AND_EVIDENCE_REMEDIATION/candidate/test_e1c_r6_harness.py",
+    "parallel/a/e1c-r6-run-20260901T060350Z/mininet_e1c_r6_file_access_closure_smoke.py",
+    "parallel/a/e1c-r6-run-20260901T060350Z/test_e1c_r6_harness.py"
+  ],
+  "package_payload": {
+    "root": "parallel/a/MININET_E1C_R6R4_PRODUCTION_PATH_AND_EVIDENCE_REMEDIATION",
+    "package_file_count": 10,
+    "file_list_matches_exact_package_payload": "PASS",
+    "unexpected_payload_files": [],
+    "forbidden_transient_payload_files": [],
+    "forbidden_payload_types_checked": [".pyc", "__pycache__", "temporary file", "swap file", "unrelated manifest"]
+  },
+  "committed_production_inputs": {
+    "harness": {
+      "materialized_path": "parallel/a/e1c-r6-run-20260901T060350Z/mininet_e1c_r6_file_access_closure_smoke.py",
+      "candidate_path": "parallel/a/MININET_E1C_R6R4_PRODUCTION_PATH_AND_EVIDENCE_REMEDIATION/candidate/mininet_e1c_r6_file_access_closure_smoke.py",
+      "sha256": "8b0db6eab7c2a9d720a9a9d0624ebbe4ba93859f2151fc338f0e0303321e78cc",
+      "byte_identical": "PASS"
+    },
+    "tests": {
+      "materialized_path": "parallel/a/e1c-r6-run-20260901T060350Z/test_e1c_r6_harness.py",
+      "candidate_path": "parallel/a/MININET_E1C_R6R4_PRODUCTION_PATH_AND_EVIDENCE_REMEDIATION/candidate/test_e1c_r6_harness.py",
+      "sha256": "4392694ab6505548fa07d3e6a3f802b105ce065c80619aa955026ce7b6e9e058",
+      "byte_identical": "PASS"
+    }
+  },
+  "status": "PASS"
+}

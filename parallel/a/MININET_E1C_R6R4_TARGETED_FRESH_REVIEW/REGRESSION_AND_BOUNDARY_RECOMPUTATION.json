@@ -1,0 +1,40 @@
+{
+  "schema": "MININET_E1C_R6R4_REGRESSION_AND_BOUNDARY_RECOMPUTATION_V1",
+  "review_date": "2026-09-03",
+  "execution_mode": "NON_PRIVILEGED_ONLY",
+  "runs": [
+    {"suite": "R6 targeted suite", "passed": 61, "total": 61, "status": "PASS"},
+    {"suite": "pinned R6R2 subset from a471ee6ca09253a381d96a228ab58a1f652bd0b9", "passed": 33, "total": 33, "status": "PASS"},
+    {"suite": "R3 regression", "passed": 8, "total": 8, "status": "PASS"},
+    {"suite": "R4 regression", "passed": 7, "total": 7, "status": "PASS"},
+    {"suite": "R5 regression", "passed": 12, "total": 12, "status": "PASS"},
+    {"suite": "Python parse and compile across reviewed R6/R3/R4/R5 sources and tests", "status": "PASS"},
+    {"suite": "R6 static self-check", "status": "PASS"}
+  ],
+  "static_boundary": {
+    "production_ausearch_is_bounded": "PASS",
+    "unbounded_production_ausearch_calls": [],
+    "automatic_sudo": "ABSENT",
+    "mn_c": "ABSENT",
+    "auditctl_global_delete": "ABSENT",
+    "persistent_audit_rule_modification": "ABSENT",
+    "nat_or_external_network_mutation": "ABSENT"
+  },
+  "review_execution_prohibitions_observed": {
+    "sudo": "NO",
+    "mininet_execution": "NO",
+    "auditctl_mutation": "NO",
+    "persistent_audit_rule_modification": "NO",
+    "mn_c": "NO",
+    "external_or_nat_network_mutation": "NO",
+    "formal_benchmark_execution": "NO",
+    "commit": "NO",
+    "push": "NO"
+  },
+  "runtime_boundary": {
+    "PRIVILEGED_RUNTIME_SMOKE_EXECUTED": "NO",
+    "FILE_READ_OR_WRITE_RUNTIME_CLOSURE": "NOT_PROVEN",
+    "FORMAL_1796_EXPERIMENT_EXECUTED": "NO"
+  },
+  "status": "PASS"
+}

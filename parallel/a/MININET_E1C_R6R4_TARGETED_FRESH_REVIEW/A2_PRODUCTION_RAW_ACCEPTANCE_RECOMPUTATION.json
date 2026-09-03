@@ -1,0 +1,44 @@
+{
+  "schema": "MININET_E1C_R6R4_A2_PRODUCTION_RAW_ACCEPTANCE_RECOMPUTATION_V1",
+  "review_date": "2026-09-03",
+  "source": "parallel/a/e1c-r6-run-20260901T060350Z/mininet_e1c_r6_file_access_closure_smoke.py",
+  "source_locations": {
+    "exact_serial_grouping": "227-267",
+    "strict_raw_acceptance_gate": "270-307",
+    "production_normalization": "1132-1170",
+    "full_smoke_collector_call": "1939-1941",
+    "privileged_entry_and_reviewed_path": "2069-2132"
+  },
+  "required_raw_bundle_contract": {
+    "same_exact_audit_serial": "PASS",
+    "required_raw_record_types": ["SYSCALL", "PATH"],
+    "supported_file_access_syscall": "PASS",
+    "success_equals_yes": "PASS",
+    "exact_audit_key_on_syscall": "PASS",
+    "exact_watched_path_in_path_name": "PASS",
+    "unambiguous_serial_grouping": "PASS"
+  },
+  "controlled_non_privileged_parser_fixtures": [
+    {"fixture": "unrelated record type with matching key/path substrings", "file_read_or_write": false, "status": "PASS"},
+    {"fixture": "SYSCALL success=no with otherwise matching records", "file_read_or_write": false, "status": "PASS"},
+    {"fixture": "wrong audit key", "file_read_or_write": false, "status": "PASS"},
+    {"fixture": "wrong watched path", "file_read_or_write": false, "status": "PASS"},
+    {"fixture": "SYSCALL and PATH on mixed serials", "file_read_or_write": false, "status": "PASS"},
+    {"fixture": "valid raw same-serial SYSCALL/PATH bundle", "file_read_or_write": true, "status": "PASS"}
+  ],
+  "production_wiring": {
+    "full_smoke_calls_collect_production_audit_records": "PASS",
+    "collector_calls_collect_production_audit_evidence": "PASS",
+    "normalization_derives_strict_permission_events_before_normalization": "PASS",
+    "permissive_parse_audit_groups_is_not_file_access_acceptance_authority": "PASS"
+  },
+  "targeted_test_coverage": [
+    "test_full_smoke_production_normalization_rejects_unrelated_record_type",
+    "test_full_smoke_production_normalization_rejects_unsuccessful_syscall",
+    "test_full_smoke_production_normalization_rejects_wrong_or_missing_key",
+    "test_full_smoke_production_normalization_rejects_wrong_path",
+    "test_full_smoke_production_normalization_accepts_only_fully_valid_serial",
+    "test_full_smoke_production_path_depends_on_strict_raw_acceptance"
+  ],
+  "A2": "CLOSED"
+}

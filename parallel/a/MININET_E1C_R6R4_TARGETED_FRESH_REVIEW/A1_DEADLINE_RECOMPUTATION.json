@@ -1,0 +1,46 @@
+{
+  "schema": "MININET_E1C_R6R4_A1_DEADLINE_RECOMPUTATION_V1",
+  "review_date": "2026-09-03",
+  "source": "parallel/a/e1c-r6-run-20260901T060350Z/mininet_e1c_r6_file_access_closure_smoke.py",
+  "source_locations": {
+    "micro_probe_poller": "323-427",
+    "bounded_production_runner": "682-736",
+    "production_collector_fail_closed_boundary": "739-757"
+  },
+  "independent_recomputation": {
+    "clock": "injected monotonic clock",
+    "single_bounded_deadline": "PASS",
+    "production_ausearch_argv": ["/usr/sbin/ausearch", "-k", "<exact-key>", "--raw"],
+    "finite_remaining_timeout_passed_to_every_invocation": {
+      "observed_timeout_seconds": 1.75,
+      "status": "PASS"
+    },
+    "expired_deadline_skips_invocation": "PASS",
+    "completion_exactly_at_deadline_rejected": "PASS",
+    "late_success_fixture_returns_pass": false,
+    "late_success_fixture_result": "BLOCKED",
+    "subprocess_timeout_fails_closed": "AUSEARCH_TIMEOUT",
+    "nonzero_return_code_fails_closed": "PASS",
+    "execution_error_fails_closed": "AUSEARCH_EXECUTION_ERROR",
+    "subprocess_timeout_does_not_extend_window": "PASS"
+  },
+  "acceptance_proof": {
+    "poller_checks_remaining_before_invocation": "PASS",
+    "poller_checks_accepted_at_less_than_deadline_before_pass": "PASS",
+    "bounded_runner_checks_completed_less_than_deadline": "PASS",
+    "collector_raises_on_failure_reason": "PASS",
+    "collector_raises_on_nonzero_return_code": "PASS"
+  },
+  "targeted_test_coverage": [
+    "test_poll_rejects_successful_evidence_after_deadline",
+    "test_production_collector_passes_remaining_deadline_to_ausearch",
+    "test_production_collector_timeout_expiration_fails_closed",
+    "test_production_collector_nonzero_returncode_fails_closed",
+    "test_production_ausearch_receives_remaining_bounded_timeout",
+    "test_production_ausearch_skips_expired_deadline",
+    "test_production_ausearch_timeout_expired_fails_closed",
+    "test_production_ausearch_late_success_fails_closed",
+    "test_timeout_does_not_extend_overall_evidence_window"
+  ],
+  "A1": "CLOSED"
+}
