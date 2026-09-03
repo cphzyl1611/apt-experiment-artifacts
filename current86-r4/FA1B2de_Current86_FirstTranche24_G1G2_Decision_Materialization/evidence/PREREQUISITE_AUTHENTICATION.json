@@ -1,0 +1,52 @@
+{
+  "schema": "FIRST_TRANCHE24_G1G2_MATERIALIZATION_PREREQUISITE_AUTHENTICATION_V1",
+  "status": "PASS",
+  "local_binding_head": "c3e911e865f5287d46703e5d0d7398ee653151f7",
+  "remote_binding_head": "c3e911e865f5287d46703e5d0d7398ee653151f7",
+  "head_equality": true,
+  "latest_authenticated_binding_commit": "c3e911e865f5287d46703e5d0d7398ee653151f7",
+  "latest_authenticated_binding_parent": "7059e15ee3f6f7629dac573ff157968ef59dde75",
+  "prerequisites": [
+    {
+      "artifact": "governance principal identity",
+      "binding_path": "current86-r4/FA1B2de_Governance_Principal_Identity/GOVERNANCE_PRINCIPAL_IDENTITY_RECORD.json",
+      "binding_commit": "4590af11fb80c0005b2c7714bfcab17d1f9ed19a",
+      "status": "PASS"
+    },
+    {
+      "artifact": "principal independent authentication",
+      "binding_path": "current86-r4/FA1B2de_Governance_Principal_Identity_Independent_Authentication/INDEPENDENT_IDENTITY_BASIS_RECOMPUTATION.json",
+      "binding_commit": "98cd4931b3b1e22b256c9285c3c8291e3189b0e4",
+      "status": "PASS"
+    },
+    {
+      "artifact": "FirstTranche24 governance decision and scope preparation",
+      "binding_path": "current86-r4/FA1B2de_Current86_FirstTranche24_G1G2_Decision_Identity_Remediation/BOUNDED_DECISION_PREPARATION_PACKAGE.json",
+      "binding_commit": "7059e15ee3f6f7629dac573ff157968ef59dde75",
+      "status": "PASS_FIXED_DECISION_AND_SCOPE"
+    },
+    {
+      "artifact": "adopted V2 decision identity contract and exact V2 record fixture",
+      "binding_path": "current86-r4/FA1B2de_Current86_FirstTranche24_G1G2_Decision_Identity_Recompute_FailClosed_Remediation/DECISION_IDENTITY_CONTRACT.md",
+      "binding_commit": "c3e911e865f5287d46703e5d0d7398ee653151f7",
+      "supporting_record_path": "current86-r4/FA1B2de_Current86_FirstTranche24_G1G2_Decision_Identity_Recompute_FailClosed_Remediation/fixtures/valid_record.json",
+      "status": "PASS"
+    },
+    {
+      "artifact": "deterministic fail-closed recomputation implementation and tests",
+      "binding_path": "current86-r4/FA1B2de_Current86_FirstTranche24_G1G2_Decision_Identity_Recompute_FailClosed_Remediation/tools/independent_recompute.py",
+      "binding_commit": "c3e911e865f5287d46703e5d0d7398ee653151f7",
+      "status": "PASS"
+    },
+    {
+      "artifact": "FirstTranche24 governance and source-manifest preparation scope",
+      "binding_path": "current86-r4/FA1B2de_Current86_FirstTranche24_Governance_and_Canonical_Source_Manifest_Preparation/FIRST_TRANCHE_24_GOVERNANCE_SCOPE_MATRIX.jsonl",
+      "binding_commit": "b5bb121fb57e6f4f2170976e3d811a84e6e9adf6",
+      "status": "PASS"
+    }
+  ],
+  "v2_schema_design_validation": "PASS",
+  "decision_identity_recomputation": "PASS",
+  "transaction_hash_recomputation": "PASS",
+  "fail_closed_recomputation_enforcement": "PASS"
+}

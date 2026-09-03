@@ -1,0 +1,24 @@
+{
+  "schema": "FIRST_TRANCHE24_G1G2_DECISION_RECORD_ID_RECOMPUTATION_V1",
+  "status": "PASS",
+  "binding_baseline_commit": "c3e911e865f5287d46703e5d0d7398ee653151f7",
+  "identity_procedure_id": "FIRST_TRANCHE24_GOVERNANCE_DECISION_IDENTITY_V2",
+  "canonicalization_profile": "PROJECT_CANONICAL_JSON_V1",
+  "basis_sha256": "402d83d90b3ca76637ca57abca8a425b887322483f29feea40d9002fed06a739",
+  "raw_decision_digest": "505bd4c0b2bbb13739573c39e2063e83db2709244fad68f4f09152db21aaf6c6",
+  "decision_record_id": "GOVDEC2-68ea814d1940bed4ec8b3e48b6a28f67f3e05c5e50e1c342a1fa2dc7db31f90f",
+  "decision_record_id_recomputation": "PASS",
+  "primary_recomputation": {
+    "source": "current86-r4/FA1B2de_Current86_FirstTranche24_G1G2_Decision_Identity_Recompute_FailClosed_Remediation/tools/decision_identity.py",
+    "decision_record_id": "GOVDEC2-68ea814d1940bed4ec8b3e48b6a28f67f3e05c5e50e1c342a1fa2dc7db31f90f"
+  },
+  "independent_recomputation": {
+    "source": "current86-r4/FA1B2de_Current86_FirstTranche24_G1G2_Decision_Identity_Recompute_FailClosed_Remediation/tools/independent_recompute.py",
+    "decision_record_id": "GOVDEC2-68ea814d1940bed4ec8b3e48b6a28f67f3e05c5e50e1c342a1fa2dc7db31f90f"
+  },
+  "primary_independent_exact_equality": true,
+  "valid_input_decision_record_id_drift": 0,
+  "unauthorized_fields_rejected": "PASS",
+  "missing_identity_procedure_rejected": "PASS",
+  "mismatched_identity_procedure_rejected": "PASS"
+}

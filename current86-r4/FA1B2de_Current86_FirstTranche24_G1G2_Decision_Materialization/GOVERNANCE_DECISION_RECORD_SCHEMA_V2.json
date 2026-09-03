@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://binding.invalid/schemas/first-tranche24-governance-decision-record-v2.json",
+  "title": "First-Tranche24 Pre-Activation Governance Decision Record V2",
+  "description": "A governance-only record. It authorizes a bounded future process and may not activate source authority or admit an operative source-manifest entry.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["record_type", "schema_version", "decision_identity", "scope", "governance_authorization", "future_activation_requirements", "prerequisites", "decision", "human_governance_identity_reference", "decision_timestamp_metadata", "referenced_frozen_artifact_hashes", "supersession_revocation", "state_boundary", "operational_effect"],
+  "properties": {
+    "record_type": {"const": "FIRST_TRANCHE24_GOVERNANCE_DECISION_RECORD_V2"},
+    "schema_version": {"const": "V2"},
+    "decision_identity": {
+      "type": "object", "additionalProperties": false,
+      "required": ["decision_record_id", "decision_transaction_hash", "identity_procedure_id"],
+      "properties": {
+        "decision_record_id": {"type": "string", "pattern": "^GOVDEC2-[0-9a-f]{64}$"},
+        "decision_transaction_hash": {"$ref": "#/$defs/sha256"},
+        "identity_procedure_id": {"const": "FIRST_TRANCHE24_GOVERNANCE_DECISION_IDENTITY_V2"}
+      }
+    },
+    "scope": {
+      "type": "object", "additionalProperties": false,
+      "required": ["governance_scope_id", "scope_cardinality", "frozen_target_order", "r1r1_crosswalk_sha256", "scope_extension_requested"],
+      "properties": {
+        "governance_scope_id": {"const": "FIRST_TRANCHE24_ONLY"},
+        "scope_cardinality": {"const": 24},
+        "frozen_target_order": {"const": [110, 273, 210, 98, 147, 277, 188, 301, 143, 250, 233, 287, 146, 293, 114, 284, 291, 215, 88, 182, 300, 218, 115, 148]},
+        "r1r1_crosswalk_sha256": {"const": "2c88f67ff154c5d6bfa2deb13dc51588b854e1c35ea74dc44749af8b537cb316"},
+        "scope_extension_requested": {"const": false}
+      }
+    },
+    "governance_authorization": {
+      "type": "object", "additionalProperties": false,
+      "required": ["authorized_source_artifact_class", "authorized_source_fact_type", "authorized_scope", "g1_preparation_process_authorized", "g2_future_admission_process_authorized", "does_not_assert_source_object_exists", "does_not_activate_source_authority", "does_not_admit_operative_manifest"],
+      "properties": {
+        "authorized_source_artifact_class": {"const": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE"},
+        "authorized_source_fact_type": {"const": "PINNED_CANONICAL_INTRINSIC_FIELD"},
+        "authorized_scope": {"const": "FIRST_TRANCHE24_ONLY"},
+        "g1_preparation_process_authorized": {"const": true},
+        "g2_future_admission_process_authorized": {"const": true},
+        "does_not_assert_source_object_exists": {"const": true},
+        "does_not_activate_source_authority": {"const": true},
+        "does_not_admit_operative_manifest": {"const": true}
+      }
+    },
+    "future_activation_requirements": {
+      "type": "object", "additionalProperties": false,
+      "required": ["required", "activation_transaction_state", "concrete_source_authority_id_required_at_activation", "concrete_source_version_policy_required_at_activation", "activation_must_precede_operative_manifest_admission", "required_activation_record_fields", "activation_record_reference", "activation_record_hash"],
+      "properties": {
+        "required": {"const": true},
+        "activation_transaction_state": {"const": "PENDING_DISTINCT_AUTHORITY_ACTIVATION_TRANSACTION"},
+        "concrete_source_authority_id_required_at_activation": {"const": true},
+        "concrete_source_version_policy_required_at_activation": {"const": true},
+        "activation_must_precede_operative_manifest_admission": {"const": true},
+        "required_activation_record_fields": {"const": ["source_authority_id", "source_version_policy", "authority_activation_record_identity", "authority_activation_record_hash", "authority_scope", "owner_issuer_authorization_chain", "immutable_authorization_record", "revocation_supersession_status", "first_tranche24_binding", "independent_authentication_result"]},
+        "activation_record_reference": {"const": null},
+        "activation_record_hash": {"const": null}
+      }
+    },
+    "prerequisites": {
+      "type": "object", "additionalProperties": false,
+      "required": ["independent_preparation_review_commit", "preparation_review_status", "source_owner_authorization_required", "operative_manifest_gate_required", "candidate_evidence_non_authoritative"],
+      "properties": {
+        "independent_preparation_review_commit": {"const": "50ae6ab18ab184a5bf1d7e6caeeded970189f1dc"},
+        "preparation_review_status": {"const": "PASS_READY_FOR_GOVERNANCE_AND_SOURCE_MANIFEST_PREPARATION"},
+        "source_owner_authorization_required": {"const": true},
+        "operative_manifest_gate_required": {"const": true},
+        "candidate_evidence_non_authoritative": {"const": true}
+      }
+    },
+    "decision": {"enum": ["APPROVE_FIRST_TRANCHE24_SOURCE_AUTHORITY_PREPARATION", "APPROVE_CONDITIONAL_CANONICAL_SOURCE_MANIFEST_ADMISSION", "APPROVE_BOTH_G1_AND_G2", "REJECT_KEEP_BLOCKED", "REQUEST_MORE_EVIDENCE"]},
+    "human_governance_identity_reference": {
+      "type": "object", "additionalProperties": false,
+      "required": ["principal_id", "principal_identity_sha256", "authentication_record_reference", "authentication_status", "personal_identity_bound"],
+      "properties": {
+        "principal_id": {"const": "FA1B2DE_PROJECT_OWNER_GOVERNANCE_PRINCIPAL"},
+        "principal_identity_sha256": {"const": "3e831ab556e624dd876fd489ffa709cc5edc014ffa04a76747bffcb51071d795"},
+        "authentication_record_reference": {"const": "FA1B2de_Governance_Principal_Identity_Independent_Authentication/INDEPENDENT_IDENTITY_BASIS_RECOMPUTATION.json"},
+        "authentication_status": {"const": "PASS"},
+        "personal_identity_bound": {"const": false}
+      }
+    },
+    "decision_timestamp_metadata": {
+      "type": "object", "additionalProperties": false,
+      "required": ["decided_at_utc", "recorded_by", "reviewer_metadata_is_identity_bearing"],
+      "properties": {
+        "decided_at_utc": {"type": "string", "format": "date-time"},
+        "recorded_by": {"type": "string", "minLength": 1},
+        "reviewer_metadata_is_identity_bearing": {"const": false}
+      }
+    },
+    "referenced_frozen_artifact_hashes": {
+      "type": "object", "additionalProperties": false,
+      "required": ["pinned_governance_preparation_commit", "stage_a_preparation_commit", "independent_preparation_review_commit", "r1r1_crosswalk_sha256", "historical_v1_schema_sha256", "historical_v1_template_sha256", "historical_v1_packet_sha256"],
+      "properties": {
+        "pinned_governance_preparation_commit": {"const": "b5bb121fb57e6f4f2170976e3d811a84e6e9adf6"},
+        "stage_a_preparation_commit": {"const": "409d22b4a697ac5a758ac51f5d27db7837c78d0c"},
+        "independent_preparation_review_commit": {"const": "50ae6ab18ab184a5bf1d7e6caeeded970189f1dc"},
+        "r1r1_crosswalk_sha256": {"const": "2c88f67ff154c5d6bfa2deb13dc51588b854e1c35ea74dc44749af8b537cb316"},
+        "historical_v1_schema_sha256": {"const": "5e1c33e9358d8d3e6749e88aafe98aa847a7d3f77e94e0abb7f812915acd09fe"},
+        "historical_v1_template_sha256": {"const": "083b32c875b096f2b825809da2e05fbe5253ac3f467787c3573e66b32b519afe"},
+        "historical_v1_packet_sha256": {"const": "7d1182eaf5bc01f519d524ea1072dc30a168d38d9603a177d1b250a6682fcc7f"}
+      }
+    },
+    "supersession_revocation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["supersedes_decision_record_id", "revoked_decision_record_id", "revocation_status", "conflict_check_required", "supersession_scope", "scope_extension_requested"],
+      "properties": {
+        "supersedes_decision_record_id": {"type": ["string", "null"], "pattern": "^(GOVDEC2-[0-9a-f]{64})$"},
+        "revoked_decision_record_id": {"type": ["string", "null"], "pattern": "^(GOVDEC2-[0-9a-f]{64})$"},
+        "revocation_status": {"enum": ["NOT_REVOKED", "REVOKED", "SUPERSEDED"]},
+        "conflict_check_required": {"const": true},
+        "supersession_scope": {"const": "FIRST_TRANCHE24_ONLY"},
+        "scope_extension_requested": {"const": false}
+      }
+    },
+    "state_boundary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["current_state", "record_establishes_states", "authority_activation_reference", "operative_manifest_admission_reference", "later_states_not_established"],
+      "properties": {
+        "current_state": {"enum": ["GOVERNANCE_DECISION_RECORDED", "AUTHORITY_ACTIVATION_PENDING"]},
+        "record_establishes_states": {"const": ["GOVERNANCE_DECISION_RECORDED", "AUTHORITY_ACTIVATION_PENDING"]},
+        "authority_activation_reference": {"const": null},
+        "operative_manifest_admission_reference": {"const": null},
+        "later_states_not_established": {"const": ["AUTHORITY_ACTIVATED", "MANIFEST_ADMISSION_PENDING", "MANIFEST_ADMITTED_OPERATIVE"]}
+      }
+    },
+    "operational_effect": {"const": "GOVERNANCE_RECORD_ONLY_NO_AUTHORITY_ACTIVATION_NO_OPERATIVE_MANIFEST_ADMISSION"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

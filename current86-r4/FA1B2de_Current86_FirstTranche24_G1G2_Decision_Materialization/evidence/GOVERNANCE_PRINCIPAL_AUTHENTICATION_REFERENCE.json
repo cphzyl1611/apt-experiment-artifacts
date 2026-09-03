@@ -1,0 +1,14 @@
+{
+  "schema": "GOVERNANCE_PRINCIPAL_AUTHENTICATION_REFERENCE_V1",
+  "status": "PASS",
+  "principal_id": "FA1B2DE_PROJECT_OWNER_GOVERNANCE_PRINCIPAL",
+  "principal_role": "PROJECT_OWNER_AND_HUMAN_GOVERNANCE_PRINCIPAL",
+  "identity_semantics": "PROJECT_INTERNAL_ROLE_BASED_PSEUDONYMOUS_IDENTITY",
+  "principal_identity_sha256": "3e831ab556e624dd876fd489ffa709cc5edc014ffa04a76747bffcb51071d795",
+  "authentication_record_reference": "current86-r4/FA1B2de_Governance_Principal_Identity_Independent_Authentication/INDEPENDENT_IDENTITY_BASIS_RECOMPUTATION.json",
+  "governance_principal_identity_record_reference": "current86-r4/FA1B2de_Governance_Principal_Identity/GOVERNANCE_PRINCIPAL_IDENTITY_RECORD.json",
+  "principal_identity_materialization_commit": "4590af11fb80c0005b2c7714bfcab17d1f9ed19a",
+  "principal_independent_authentication_commit": "98cd4931b3b1e22b256c9285c3c8291e3189b0e4",
+  "authentication_status": "PASS",
+  "personal_identity_bound": false
+}
