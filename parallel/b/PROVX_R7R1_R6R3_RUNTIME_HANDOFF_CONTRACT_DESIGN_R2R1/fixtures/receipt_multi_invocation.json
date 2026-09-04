@@ -1,0 +1,8 @@
+{
+  "schema": "R6R3_PRIVILEGED_EXECUTION_RECEIPT_R2R1",
+  "manifest_binding": {"artifact_id": "r6_privileged_execution_receipt", "manifest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"},
+  "invocations": [
+    {"invocation_id": "i1"},
+    {"invocation_id": "i2"}
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "package": "PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2R1",
+  "verification_date": "2026-09-03",
+  "safe_test_command": "PYTHONDONTWRITEBYTECODE=1 python -m unittest test_r2r1_contract.py",
+  "safe_test_result": "PASS",
+  "safe_tests_run": 47,
+  "safe_tests_failed": 0,
+  "draft_2020_12_schema_meta_validation": {
+    "result": "PASS",
+    "documents_validated": 9,
+    "documents_failed": 0,
+    "scope": "R2R1 JSON documents declaring $schema"
+  },
+  "pinned_artifact": {
+    "commit": "11a5692effd70ab5fbcf75b4574c7c27338e49af",
+    "parent": "e3458d64ec94cf4b7b3e246103ce1c1c65b02261",
+    "commit_message": "materialize e0-b: PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2",
+    "materialized_r2_payload_count": 31
+  },
+  "boundary_hashes": {
+    "adapter": {
+      "path": "/home/cph/fa1b2de-artifact-worktrees/e0-b/parallel/b/PROVX_R7_NORMALIZED_TO_GRAPH_ADAPTER.py",
+      "sha256": "7e33886b9ac628e8c4f312317127d95c181e40bebc2c5059cc9022ed4555ad6e",
+      "matches_frozen_baseline": true,
+      "modified": false
+    },
+    "frozen_32d_encoder": {
+      "path": "/home/cph/fa1b2de-artifact-worktrees/e0-b/parallel/b/PROVX_R4_ENCODER_IMPLEMENTATION.py",
+      "sha256": "013d9b77297308843144ccfce4c3eec4b03dc3cc5172dabd6eb3320e7bc46547",
+      "matches_frozen_baseline": true,
+      "modified": false
+    },
+    "unselected_primary_workspace_adapter_observation": {
+      "path": "/home/cph/experiment-parallel/e0-b/PROVX_R7_NORMALIZED_TO_GRAPH_ADAPTER.py",
+      "sha256": "d467359b5a54a1f6222e53f406153431e0223bc6a14d433fb492fc109ec6d1f5",
+      "used_as_frozen_baseline": false
+    }
+  },
+  "runtime_evidence_scan": {
+    "runtime_receipt_created": false,
+    "pcap_created": false,
+    "runtime_json_or_jsonl_created": false,
+    "privileged_execution_performed": false,
+    "mininet_executed": false,
+    "training_performed": false,
+    "inference_performed": false,
+    "formal_experiment_performed": false
+  },
+  "producer_state": {
+    "authenticated_r6_runtime_input": "ABSENT",
+    "r2_privileged_execution_receipt": "ABSENT",
+    "source_lineage_authenticated": "NO",
+    "producer_receipt_emission": "NOT_IMPLEMENTED",
+    "source_lineage": "NOT_AUTHENTICATED"
+  }
+}

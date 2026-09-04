@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "provx://r7r1/r6r3/authenticated-runtime-handoff/r2r1/authentication-rules",
+  "title": "R6R3 Runtime Handoff Authentication Rules R2R1",
+  "operator_registry": "R6R3_RUNTIME_HANDOFF_OPERATOR_SEMANTICS_R2R1.json",
+  "unknown_operator_policy": "REJECT",
+  "validation_order": [
+    "H001_PACKAGE_SHAPE_AND_SCHEMA",
+    "H002_MANIFEST_CANONICAL_HASH",
+    "H003_MANIFEST_ENTRY_UNIQUENESS_AND_COMPLETENESS",
+    "H004_EXACT_PATH_AND_FILE_HASH_BINDING",
+    "H005_SOURCE_COMMIT_AND_CONTRACT_LINEAGE",
+    "H006_EXPLICIT_PRIVILEGED_EXECUTION",
+    "H007_RUN_ID_CLOSURE",
+    "H008_RAW_RECORD_INTEGRITY",
+    "H009_NORMALIZED_RECORD_INTEGRITY",
+    "H010_RAW_NORMALIZED_SAME_SERIAL_AND_BYTE_LINK",
+    "H011_FILE_READ_OR_WRITE_STRICT_EVIDENCE",
+    "H012_PID_START_TICKS_NETNS_LOGICAL_HOST_JOIN",
+    "H013_EVENT_CLASS_COVERAGE_AND_LOSS_CLOSURE",
+    "H014_PCAP_AUTHENTICATION",
+    "H015_CLEANUP_INVERSE_RULE_AND_BASELINE_RESTORATION",
+    "H016_HARD_BOUNDARIES",
+    "H017_FINAL_CANONICAL_RECHECK"
+  ],
+  "required_event_class_order": ["PROCESS_START_OR_EXEC", "PROCESS_EXIT", "FILE_CREATE_OR_OPEN", "FILE_READ_OR_WRITE", "FILE_DELETE", "SOCKET_BIND", "SOCKET_CONNECT", "SOCKET_ACCEPT"],
+  "required_artifact_ids_source": "R6R3_REQUIRED_ARTIFACT_PATH_BINDINGS_R2R1.json",
+  "rules": [
+    {"rule_id": "H001_PACKAGE_SHAPE_AND_SCHEMA", "severity": "BLOCK", "operator_applications": [{"operator_id": "strict_json_object", "subject": "handoff_bytes", "expected": "one finite JSON object"}, {"operator_id": "minimum_package_template_rejection", "subject": "handoff", "expected": "authenticated runtime evidence"}], "failure_code": "HANDOFF_SCHEMA_OR_TEMPLATE_INVALID", "requirement": "Validate the candidate against R6R3_RUNTIME_HANDOFF_SCHEMA_R2R1 and require authenticated runtime status."},
+    {"rule_id": "H002_MANIFEST_CANONICAL_HASH", "severity": "BLOCK", "operator_applications": [{"operator_id": "manifest_canonical_hash", "subject": "handoff.package_manifest", "expected": "declared hash equals recomputed hash"}], "failure_code": "PACKAGE_MANIFEST_HASH_INVALID", "requirement": "Recompute package_manifest hash after removing only its own manifest_sha256 member."},
+    {"rule_id": "H003_MANIFEST_ENTRY_UNIQUENESS_AND_COMPLETENESS", "severity": "BLOCK", "operator_applications": [{"operator_id": "exact_required_id_set", "subject": "package_manifest.runtime_entries[].artifact_id", "expected": "exact 20-ID set"}, {"operator_id": "exact_required_id_set", "subject": "selected_inputs.path_bindings keys", "expected": "exact 20-ID set"}, {"operator_id": "exact_required_id_set", "subject": "selected_inputs.parsed_bindings[].artifact_id", "expected": "exact 20-ID set"}, {"operator_id": "same_exact_runtime_root", "subject": "run_identity.runtime_root, selected_inputs.runtime_root, package_manifest.runtime_root, all binding paths", "expected": "one exact root"}], "failure_code": "MANIFEST_DUPLICATE_MISSING_OR_CROSS_ROOT_ENTRY", "requirement": "Require exactly the complete 20-ID set, one path per ID, one root, and no unselected required artifact."},
+    {"rule_id": "H004_EXACT_PATH_AND_FILE_HASH_BINDING", "severity": "BLOCK", "operator_applications": [{"operator_id": "exact_artifact_path_binding", "subject": "selected_inputs.path_bindings", "expected": "stable exact paths under root"}, {"operator_id": "exact_file_sha256_and_length", "subject": "each selected artifact opened object", "expected": "declared digest and length"}], "failure_code": "SELECTED_ARTIFACT_PATH_OR_HASH_INVALID", "requirement": "Read only selected exact paths and authenticate stable regular-file objects."},
+    {"rule_id": "H005_SOURCE_COMMIT_AND_CONTRACT_LINEAGE", "severity": "BLOCK", "operator_applications": [{"operator_id": "source_artifact_record_lineage", "subject": "handoff.source_lineage", "expected": "AUTHENTICATED_COMMITTED_SOURCE with matching hashes"}], "failure_code": "SOURCE_LINEAGE_NOT_AUTHENTICATED", "requirement": "Require an independently resolvable committed producer/source state with matching hashes; otherwise block."},
+    {"rule_id": "H006_EXPLICIT_PRIVILEGED_EXECUTION", "severity": "BLOCK", "operator_applications": [{"operator_id": "receipt_exactly_one_invocation", "subject": "selected_inputs.path_bindings.r6_privileged_execution_receipt", "expected": "one complete receipt"}, {"operator_id": "receipt_matches_privileged_summary", "subject": "receipt.invocation and privileged_execution", "expected": "all required fields equal"}], "failure_code": "PRIVILEGED_EXECUTION_RECEIPT_INVALID_OR_UNAVAILABLE", "requirement": "Require one dedicated manifest-bound receipt. Producer compatibility is false until E0-A emits it."},
+    {"rule_id": "H007_RUN_ID_CLOSURE", "severity": "BLOCK", "operator_applications": [{"operator_id": "same_run_id_all_runtime_records", "subject": "all runtime artifact JSON/JSONL records", "expected": "run_identity.run_id"}, {"operator_id": "same_exact_runtime_root", "subject": "all runtime artifact paths", "expected": "run_identity.runtime_root"}], "failure_code": "RUN_ID_OR_RUNTIME_ROOT_CLOSURE_INVALID", "requirement": "All runtime artifacts and records must bind to the declared run and exact root."},
+    {"rule_id": "H008_RAW_RECORD_INTEGRITY", "severity": "BLOCK", "operator_applications": [{"operator_id": "strict_jsonl_objects", "subject": "r6_raw_audit exact bytes", "expected": "strict JSONL objects"}, {"operator_id": "raw_record_hash_and_serial_unique", "subject": "raw audit rows", "expected": "unique positive serials and recomputed hashes"}], "failure_code": "RAW_AUDIT_RECORD_INVALID_OR_DUPLICATE", "requirement": "Authenticate raw JSONL bytes, serial uniqueness, decoded bytes, hashes, and record types."},
+    {"rule_id": "H009_NORMALIZED_RECORD_INTEGRITY", "severity": "BLOCK", "operator_applications": [{"operator_id": "strict_jsonl_objects", "subject": "r6_normalized_events exact bytes", "expected": "strict JSONL objects"}, {"operator_id": "normalized_record_hash_event_unique", "subject": "normalized event rows", "expected": "unique IDs/serials, eight classes, role, and recomputed hashes"}], "failure_code": "NORMALIZED_EVENT_INVALID_OR_ROLE_LOST", "requirement": "Authenticate normalized rows, event classes, raw serials, role, and decoded event bytes."},
+    {"rule_id": "H010_RAW_NORMALIZED_SAME_SERIAL_AND_BYTE_LINK", "severity": "BLOCK", "operator_applications": [{"operator_id": "same_serial_raw_normalized_bytes", "subject": "r6_raw_audit and r6_normalized_events", "expected": "exact serial, bytes, and hash equality"}], "failure_code": "RAW_NORMALIZED_SERIAL_OR_BYTE_LINK_INVALID", "requirement": "Recompute same-serial byte and hash equality; coverage flags cannot substitute."},
+    {"rule_id": "H011_FILE_READ_OR_WRITE_STRICT_EVIDENCE", "severity": "BLOCK", "operator_applications": [{"operator_id": "file_event_same_serial_syscall_path", "subject": "each FILE_READ_OR_WRITE event and its raw serial bundle", "expected": "same-serial successful exact syscall/PATH proof"}], "failure_code": "FILE_READ_OR_WRITE_EVIDENCE_NOT_EXACT", "requirement": "Require same-serial successful supported syscall, exact audit key, and exact watched path."},
+    {"rule_id": "H012_PID_START_TICKS_NETNS_LOGICAL_HOST_JOIN", "severity": "BLOCK", "operator_applications": [{"operator_id": "join_key_roundtrip_exact_one", "subject": "normalized process-bearing rows and r6_pid_netns_join", "expected": "one JOINED row per six-field role-bearing key"}], "failure_code": "PID_START_TICKS_NETNS_OR_ROLE_JOIN_INVALID", "requirement": "Join by exact six-field role-bearing key with exactly one candidate and namespace assertions."},
+    {"rule_id": "H013_EVENT_CLASS_COVERAGE_AND_LOSS_CLOSURE", "severity": "BLOCK", "operator_applications": [{"operator_id": "event_class_counts_recomputed", "subject": "normalized event rows and r6_coverage_and_loss", "expected": "exact ordered eight-class counts and zero loss"}], "failure_code": "EVENT_CLASS_COVERAGE_OR_LOSS_INVALID", "requirement": "Recompute the exact eight-class closure and require zero loss/backlog/duplicates."},
+    {"rule_id": "H014_PCAP_AUTHENTICATION", "severity": "BLOCK", "operator_applications": [{"operator_id": "pcap_exact_binding", "subject": "r6_pcap, pcap_authentication, coverage, post_cleanup", "expected": "one exact binary hash across all sources"}], "failure_code": "PCAP_MISSING_OR_UNAUTHENTICATED", "requirement": "Authenticate exact PCAP bytes against all required hash sources; provenance only."},
+    {"rule_id": "H015_CLEANUP_INVERSE_RULE_AND_BASELINE_RESTORATION", "severity": "BLOCK", "operator_applications": [{"operator_id": "cleanup_recomputed_from_evidence", "subject": "cleanup pre-state, journal, transient contract, residual, post-cleanup", "expected": "all C001-C010 equations pass"}], "failure_code": "CLEANUP_RECOMPUTATION_OR_BASELINE_RESTORATION_INVALID", "requirement": "Recompute cleanup from pre-state, journal, transient contract, residual evidence, and post-cleanup revalidation."},
+    {"rule_id": "H016_HARD_BOUNDARIES", "severity": "BLOCK", "operator_applications": [{"operator_id": "hard_boundary_assertions", "subject": "handoff.hard_boundaries", "expected": "all forbidden-operation flags false and PCAP graph-source false"}], "failure_code": "HANDOFF_SCOPE_BOUNDARY_VIOLATED", "requirement": "Adapter and frozen encoder remain unchanged; no detector, inference, Mininet, privileged commands, formal evaluation, or fabricated runtime data."},
+    {"rule_id": "H017_FINAL_CANONICAL_RECHECK", "severity": "BLOCK", "operator_applications": [{"operator_id": "final_canonical_recheck", "subject": "handoff and all selected artifact objects", "expected": "unchanged canonical bytes, identities, hashes, and zero rule failures"}], "failure_code": "FINAL_CANONICAL_OR_CONSISTENCY_RECHECK_FAILED", "requirement": "Revalidate all selected inputs and canonical hashes after all reads."}
+  ],
+  "outcomes": {
+    "pass": "PASS_READY_FOR_AUTHENTICATED_RUNTIME_HANDOFF",
+    "blocked": "BLOCKED_HANDOFF_NOT_CONSUMABLE",
+    "result_fields": ["status", "passed_rule_ids", "failed_rule_ids", "failure_codes", "authenticated_manifest_sha256", "run_id"]
+  },
+  "failure_policy": {"duplicate": "BLOCK", "missing": "BLOCK", "inconsistent": "BLOCK", "malformed": "BLOCK", "unverifiable": "BLOCK", "unknown_operator": "BLOCK", "no_best_effort": true, "no_inference_from_pcap": true, "no_inference_from_strace": true, "no_fallback_to_r5": true}
+}

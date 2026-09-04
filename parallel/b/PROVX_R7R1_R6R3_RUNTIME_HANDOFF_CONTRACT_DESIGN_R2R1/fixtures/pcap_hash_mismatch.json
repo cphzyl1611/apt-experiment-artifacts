@@ -1,0 +1,9 @@
+{
+  "pcap_bytes_b64": "cGNhcC1ieXRlcw==",
+  "pcap_sha256": "1549c9d0f4c64a8dd4c0a1edeeccfe2c5dc8dcf364e50d9d2ba8e305d7aeb2a8",
+  "coverage_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "post_cleanup_sha256": "1549c9d0f4c64a8dd4c0a1edeeccfe2c5dc8dcf364e50d9d2ba8e305d7aeb2a8",
+  "hash_source_artifact_ids": ["r6_pcap", "r6_coverage_and_loss", "r6_post_cleanup"],
+  "provenance_only": true,
+  "used_as_graph_edge_source": false
+}

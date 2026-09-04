@@ -1,0 +1,36 @@
+{
+  "review_object": "PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2R1",
+  "pinned_artifact_commit": "11a5692effd70ab5fbcf75b4574c7c27338e49af",
+  "pinned_artifact_parent": "e3458d64ec94cf4b7b3e246103ce1c1c65b02261",
+  "pinned_artifact_commit_message": "materialize e0-b: PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2",
+  "pinned_commit_modifies_adapter": false,
+  "pinned_commit_modifies_frozen_32d_encoder": false,
+  "frozen_boundary_baselines": {
+    "parallel/b/PROVX_R7_NORMALIZED_TO_GRAPH_ADAPTER.py": "7e33886b9ac628e8c4f312317127d95c181e40bebc2c5059cc9022ed4555ad6e",
+    "parallel/b/PROVX_R4_ENCODER_IMPLEMENTATION.py": "013d9b77297308843144ccfce4c3eec4b03dc3cc5172dabd6eb3320e7bc46547"
+  },
+  "recomputed_pinned_commit_bytes_sha256": {
+    "parallel/b/PROVX_R7_NORMALIZED_TO_GRAPH_ADAPTER.py": "7e33886b9ac628e8c4f312317127d95c181e40bebc2c5059cc9022ed4555ad6e",
+    "parallel/b/PROVX_R4_ENCODER_IMPLEMENTATION.py": "013d9b77297308843144ccfce4c3eec4b03dc3cc5172dabd6eb3320e7bc46547"
+  },
+  "recomputed_pinned_worktree_bytes_sha256": {
+    "parallel/b/PROVX_R7_NORMALIZED_TO_GRAPH_ADAPTER.py": "7e33886b9ac628e8c4f312317127d95c181e40bebc2c5059cc9022ed4555ad6e",
+    "parallel/b/PROVX_R4_ENCODER_IMPLEMENTATION.py": "013d9b77297308843144ccfce4c3eec4b03dc3cc5172dabd6eb3320e7bc46547"
+  },
+  "primary_workspace_observation_not_used_as_pinned_baseline": {
+    "PROVX_R7_NORMALIZED_TO_GRAPH_ADAPTER.py": "d467359b5a54a1f6222e53f406153431e0223bc6a14d433fb492fc109ec6d1f5",
+    "PROVX_R4_ENCODER_IMPLEMENTATION.py": "013d9b77297308843144ccfce4c3eec4b03dc3cc5172dabd6eb3320e7bc46547"
+  },
+  "superseded_review_reference": {
+    "path": "../PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2_INDEPENDENT_REVIEW/ADAPTER_ENCODER_NON_MUTATION_AUTHENTICATION.json",
+    "recorded_adapter_sha256": "d467359b5a54a1f6222e53f406153431e0223bc6a14d433fb492fc109ec6d1f5",
+    "reason": "The previous review compared an unpinned primary-workspace copy with the pinned artifact worktree. The pinned artifact commit is the design object and its adapter baseline is 7e33886b9ac628e8c4f312317127d95c181e40bebc2c5059cc9022ed4555ad6e."
+  },
+  "r2r1_boundary_test_baselines": {
+    "adapter": "7e33886b9ac628e8c4f312317127d95c181e40bebc2c5059cc9022ed4555ad6e",
+    "frozen_32d_encoder": "013d9b77297308843144ccfce4c3eec4b03dc3cc5172dabd6eb3320e7bc46547"
+  },
+  "adapter_modified": false,
+  "encoder_modified": false,
+  "disposition": "PINNED_ARTIFACT_BOUNDARY_BASELINES_AUTHENTICATED"
+}
