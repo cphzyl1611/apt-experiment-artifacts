@@ -1,0 +1,32 @@
+{
+  "verification_date": "2026-09-04",
+  "status": "PASS",
+  "effective_design_includes_superseding_remediation": true,
+  "source_version_evidence_review_binding": "PASS",
+  "governance_decision_binding": "PASS",
+  "first_tranche24_scope_exactness": "PASS",
+  "candidate_reference_authentication": "PASS",
+  "acquisition_object_set_design": "PASS",
+  "acquisition_scope_widening_path": "ABSENT",
+  "acquisition_channel_policy": "PASS",
+  "acquisition_transaction_schema": "PASS",
+  "acquired_evidence_envelope_schema": "PASS",
+  "lineage_proof_schema": "PASS",
+  "owner_issuer_authorization_schema": "PASS",
+  "publication_or_accessibility_alone_sufficient": "NO",
+  "acquisition_state_machine": "PASS",
+  "acquisition_authentication_collapse": "ABSENT",
+  "source_authority_id_boundary": "PASS",
+  "effective_envelope_cross_field_gate": "PASS",
+  "basis": [
+    "The original 34-file design package validates independently with 19/19 historical negatives rejected and zero operational effect.",
+    "The remediation adds fail-closed cross-field authentication conditions without changing the acquisition transaction schema or acquisition state machine.",
+    "The corrected envelope schema rejects PASS with null or malformed execution references and rejects downstream eligibility for non-PASS status.",
+    "The five required source-version evidence classes remain unresolved pending the explicitly separate acquisition phase."
+  ],
+  "frozen_candidate": {
+    "resolution_state": "CANDIDATE_RESOLVED_VERSION_EVIDENCE_PENDING",
+    "reference": "03_frozen_lineage/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json#class_to_type_mapping[0]",
+    "type": "SOURCE_AUTHORITY_CANDIDATE_CLASS"
+  }
+}

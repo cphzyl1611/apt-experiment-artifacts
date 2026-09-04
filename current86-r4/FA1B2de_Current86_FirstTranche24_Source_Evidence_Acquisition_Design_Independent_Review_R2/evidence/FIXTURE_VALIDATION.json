@@ -1,0 +1,45 @@
+{
+  "verification_date": "2026-09-04",
+  "status": "PASS",
+  "static_validator": "PASS",
+  "draft_2020_12_meta_validation": "PASS",
+  "historical_negative_fixtures": "19/19 REJECTED",
+  "remediation_negative_fixtures": "5/5 REJECTED",
+  "negative_fixtures": "24/24 REJECTED",
+  "negative_results": [
+    {"id":"N1","fixture":"N1_pass_null_reference_downstream_eligible.json","result":"REJECTED","error_count":3},
+    {"id":"N2","fixture":"N2_pass_null_reference_not_eligible.json","result":"REJECTED","error_count":2},
+    {"id":"N3","fixture":"N3_nonpass_null_reference_downstream_eligible.json","result":"REJECTED","error_count":4},
+    {"id":"N4","fixture":"N4_nonpass_valid_reference_downstream_eligible.json","result":"REJECTED","error_count":2},
+    {"id":"N5","fixture":"N5_pass_malformed_reference_downstream_eligible.json","result":"REJECTED","error_count":3}
+  ],
+  "positive_fixtures": "2/2 ACCEPTED",
+  "positive_results": [
+    {
+      "id": "P1",
+      "fixture": "P1_acquisition_complete_authentication_pending.json",
+      "result": "ACCEPTED",
+      "semantics": "non-PASS/pending authentication status, null execution reference, non-eligible downstream state"
+    },
+    {
+      "id": "P2",
+      "fixture": "P2_authenticated_eligible_synthetic.json",
+      "result": "ACCEPTED",
+      "semantics": "PASS, valid non-null synthetic execution reference, DOWNSTREAM_ELIGIBLE",
+      "synthetic_static_only": true,
+      "real_authentication_evidence": "NO"
+    }
+  ],
+  "post_fix_counterexample_rejected": "YES",
+  "pass_with_null_auth_reference_accepted": "NO",
+  "downstream_eligible_without_auth_exec_reference_accepted": "NO",
+  "downstream_eligible_with_nonpass_auth_status_accepted": "NO",
+  "malformed_reference_rejected": "YES",
+  "unit_tests": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 python -m unittest FA1B2de_Current86_FirstTranche24_Source_Evidence_Acquisition_Design/tests/test_static_design.py FA1B2de_Current86_FirstTranche24_Source_Evidence_Acquisition_Design_Authentication_Gating_Remediation/tests/test_authentication_gating_remediation.py",
+    "tests_run": 4,
+    "failures": 0,
+    "errors": 0,
+    "result": "PASS"
+  }
+}

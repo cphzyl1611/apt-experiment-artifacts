@@ -1,0 +1,40 @@
+{
+  "verification_date": "2026-09-04",
+  "status": "PASS",
+  "schema": "FA1B2de_Current86_FirstTranche24_Source_Evidence_Acquisition_Design_Authentication_Gating_Remediation/ACQUIRED_EVIDENCE_ENVELOPE_SCHEMA.json",
+  "dialect": "DRAFT_2020_12",
+  "historical_allOf_clause_count": 2,
+  "corrected_allOf_clause_count": 5,
+  "schema_changes_outside_allOf": 0,
+  "historical_allOf_clauses_preserved": true,
+  "authentication_readiness_definition_preserved": true,
+  "opaque_reference_form_preserved": true,
+  "rules": {
+    "A_pass_requires_execution_reference": {
+      "status": "ENFORCED",
+      "location": "corrected allOf clause 3",
+      "assertion": "source_authentication_status = PASS requires authentication_execution_reference to be present, non-null, and a valid #/$defs/opaqueRef"
+    },
+    "B_downstream_eligible_requires_authenticated_reference": {
+      "status": "ENFORCED",
+      "location": "corrected allOf clause 4",
+      "assertion": "downstream_eligibility = DOWNSTREAM_ELIGIBLE requires source_authentication_status = PASS and a present, non-null, schema-valid authentication_execution_reference"
+    },
+    "C_null_reference_forbids_downstream_eligibility": {
+      "status": "ENFORCED",
+      "location": "corrected allOf clause 5",
+      "assertion": "authentication_execution_reference = null requires downstream_eligibility != DOWNSTREAM_ELIGIBLE"
+    },
+    "D_nonpass_forbids_downstream_eligibility": {
+      "status": "ENFORCED",
+      "location": "historical allOf clause 2 preserved and corrected allOf clause 4",
+      "assertion": "source_authentication_status != PASS cannot produce downstream_eligibility = DOWNSTREAM_ELIGIBLE"
+    }
+  },
+  "dependent_schema_review": {
+    "ACQUISITION_TRANSACTION_SCHEMA.json": "UNCHANGED_AND_PASS",
+    "reason": "The transaction schema retains design-only downstream_eligibility = NOT_ELIGIBLE and has no authentication_readiness fields."
+  },
+  "authentication_gating_invariant": "PASS",
+  "acquisition_authentication_collapse": "ABSENT"
+}

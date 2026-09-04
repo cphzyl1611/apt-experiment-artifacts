@@ -1,0 +1,28 @@
+{
+  "verification_date": "2026-09-04",
+  "status": "PASS",
+  "historical_blocker_reproduced": "YES",
+  "counterexample": {
+    "authentication_readiness.source_authentication_status": "PASS",
+    "authentication_readiness.authentication_execution_reference": null,
+    "downstream_eligibility": "DOWNSTREAM_ELIGIBLE"
+  },
+  "pre_fix_schema": "FA1B2de_Current86_FirstTranche24_Source_Evidence_Acquisition_Design/ACQUIRED_EVIDENCE_ENVELOPE_SCHEMA.json",
+  "pre_fix_schema_sha256": "dd1a42a5ee5d0786a0ee5a2d42bc7486b50b82d1a67a4e08ecd4342327bd4c0e",
+  "pre_fix_counterexample_accepted": "YES",
+  "pre_fix_schema_validation": "ACCEPTED",
+  "post_fix_schema": "FA1B2de_Current86_FirstTranche24_Source_Evidence_Acquisition_Design_Authentication_Gating_Remediation/ACQUIRED_EVIDENCE_ENVELOPE_SCHEMA.json",
+  "post_fix_schema_sha256": "4c1e0cd56b6a63fdee539e6b89ca695d3228ef794e2a7821c848ddb9d13a3b71",
+  "post_fix_counterexample_rejected": "YES",
+  "post_fix_schema_validation": "REJECTED",
+  "post_fix_error_count": 3,
+  "post_fix_error_paths": [
+    ["authentication_readiness", "authentication_execution_reference"],
+    ["authentication_readiness", "authentication_execution_reference"],
+    ["downstream_eligibility"]
+  ],
+  "historical_artifacts_modified": "NO",
+  "operating_mode": "SYNTHETIC_STATIC_ONLY",
+  "source_acquisition_performed": "NO",
+  "source_authentication_performed": "NO"
+}

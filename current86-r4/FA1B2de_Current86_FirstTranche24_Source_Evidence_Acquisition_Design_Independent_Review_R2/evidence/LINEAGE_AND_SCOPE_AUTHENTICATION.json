@@ -1,0 +1,51 @@
+{
+  "verification_date": "2026-09-04",
+  "status": "PASS",
+  "git_root": "/home/cph/fa1b2de-artifact-worktrees/binding",
+  "canonical_source_root": "/home/cph/fa1b2de-bso-a2-transition-r2-design-patch",
+  "binding_branch": "artifact/binding",
+  "live_remote_ref": "refs/heads/artifact/binding",
+  "local_binding_head": "b87b88ff56219ddb8fb1ff405d750a7840021a35",
+  "remote_tracking_binding_head": "b87b88ff56219ddb8fb1ff405d750a7840021a35",
+  "live_remote_binding_head": "b87b88ff56219ddb8fb1ff405d750a7840021a35",
+  "local_remote_live_equality": true,
+  "historical_acquisition_design_commit": "391c048fe132d308fa791dabef701e89be35fdcc",
+  "historical_acquisition_design_parent": "a67377396ae6d20e87c1870bddeed8700a6c871b",
+  "remediation_commit": "b87b88ff56219ddb8fb1ff405d750a7840021a35",
+  "remediation_parent": "391c048fe132d308fa791dabef701e89be35fdcc",
+  "remediation_commit_message": "materialize binding: FIRST_TRANCHE24_SOURCE_EVIDENCE_ACQUISITION_DESIGN_AUTHENTICATION_GATING_REMEDIATION",
+  "expected_lineage": [
+    "391c048fe132d308fa791dabef701e89be35fdcc",
+    "b87b88ff56219ddb8fb1ff405d750a7840021a35"
+  ],
+  "direct_parent_is_historical_design": true,
+  "unexplained_lineage_drift": false,
+  "source_workspace_is_not_required_to_be_git": true,
+  "commit_scope": {
+    "changed_path_count": 20,
+    "changed_path_statuses": "20 additions only",
+    "intended_remediation_prefix": "current86-r4/FA1B2de_Current86_FirstTranche24_Source_Evidence_Acquisition_Design_Authentication_Gating_Remediation/",
+    "all_changed_paths_within_intended_prefix": true,
+    "historical_package_rewrite": "NO",
+    "acquisition_object_set_change": "NO",
+    "acquisition_channel_policy_change": "NO",
+    "governance_mutation": "NO",
+    "candidate_mutation": "NO",
+    "source_version_evidence_mutation": "NO",
+    "live_acquired_object": "NO",
+    "live_source_authentication_result": "NO",
+    "source_authority_id": "NONE",
+    "activation_record": "NO",
+    "stage_a_or_b_artifact": "NO",
+    "field_pin": "NO",
+    "p0_or_p1_result": "NO",
+    "formal_benchmark_result": "NO",
+    "out_of_scope_mutation": "NO"
+  },
+  "git_metadata_commands": [
+    "git -C /home/cph/fa1b2de-artifact-worktrees/binding rev-parse HEAD",
+    "git -C /home/cph/fa1b2de-artifact-worktrees/binding rev-parse origin/artifact/binding",
+    "git -C /home/cph/fa1b2de-artifact-worktrees/binding ls-remote origin refs/heads/artifact/binding",
+    "git -C /home/cph/fa1b2de-artifact-worktrees/binding diff-tree --no-commit-id --name-status -r 391c048fe132d308fa791dabef701e89be35fdcc b87b88ff56219ddb8fb1ff405d750a7840021a35"
+  ]
+}
