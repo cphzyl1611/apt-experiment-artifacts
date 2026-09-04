@@ -1,0 +1,39 @@
+{
+  "record_type": "FIRST_TRANCHE24_SOURCE_VERSION_EVIDENCE_RESOLUTION_FIVE_CLASS_REVIEW",
+  "resolution_state": "VERSION_EVIDENCE_REQUIRES_SOURCE_ACQUISITION",
+  "classes": [
+    {
+      "name": "exact canonical artifact identity",
+      "classification": "MISSING_FROM_AUTHENTICATED_LOCAL_EVIDENCE",
+      "authenticated_basis": ["SOURCE_AUTHORITY_AND_OWNER_GAP_REPORT.json", "CANONICAL_SOURCE_MANIFEST_ENTRY_TEMPLATE.jsonl"],
+      "finding": "Zero eligible canonical artifact instances; located raw, C0, and scoring artifacts are excluded by class or governance constraints."
+    },
+    {
+      "name": "supported immutable version form bound to that artifact",
+      "classification": "MISSING_FROM_AUTHENTICATED_LOCAL_EVIDENCE",
+      "authenticated_basis": ["SOURCE_VERSION_POLICY_CONTRACT.md", "VERSION_POLICY_RESOLUTION.json"],
+      "finding": "Supported forms are defined but no artifact-bound form or immutable identifier is selected."
+    },
+    {
+      "name": "artifact content SHA-256",
+      "classification": "MISSING_FROM_AUTHENTICATED_LOCAL_EVIDENCE",
+      "authenticated_basis": ["CANONICAL_SOURCE_MANIFEST_ENTRY_TEMPLATE.jsonl", "SOURCE_AUTHORITY_AND_OWNER_GAP_REPORT.json"],
+      "finding": "No digest is bound to an eligible canonical artifact; excluded artifact digests cannot substitute."
+    },
+    {
+      "name": "authority-descriptor-to-artifact lineage proof",
+      "classification": "MISSING_FROM_AUTHENTICATED_LOCAL_EVIDENCE",
+      "authenticated_basis": ["AUTHORITY_DESCRIPTOR_ARTIFACT_LINEAGE.json", "SOURCE_AUTHORITY_AND_OWNER_GAP_REPORT.json"],
+      "finding": "Descriptor authentication stops at class/fact type and all three required lineage edges remain blocked."
+    },
+    {
+      "name": "source owner/issuer authorization",
+      "classification": "MISSING_FROM_AUTHENTICATED_LOCAL_EVIDENCE",
+      "authenticated_basis": ["SOURCE_OWNER_AUTHORIZATION_REQUIREMENTS.json", "SOURCE_AUTHORITY_AND_OWNER_GAP_REPORT.json"],
+      "finding": "Authorization requirements exist, but no exact artifact authorization subject or immutable authorization object is present."
+    }
+  ],
+  "no_local_evidence_omission": true,
+  "no_competing_plausible_eligible_artifact": true,
+  "classification_status": "PASS"
+}

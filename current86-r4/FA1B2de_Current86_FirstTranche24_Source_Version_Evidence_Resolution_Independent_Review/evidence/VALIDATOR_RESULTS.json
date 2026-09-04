@@ -1,0 +1,16 @@
+{
+  "record_type": "FIRST_TRANCHE24_SOURCE_VERSION_EVIDENCE_RESOLUTION_INDEPENDENT_REVIEW_VALIDATION",
+  "canonical_manifest_validation": "PASS",
+  "manifest_format": "canonical-v1",
+  "manifest_version": "1.0",
+  "manifest_track": "binding",
+  "manifest_task_id": "FIRST_TRANCHE24_SOURCE_VERSION_EVIDENCE_RESOLUTION",
+  "manifest_file_count": 27,
+  "version_evidence_inventory_consistency": "PASS",
+  "static_validator": "PASS",
+  "negative_fixtures": "12/12 REJECTED",
+  "negative_fixture_codes": ["ARTIFACT_IDENTITY_MISMATCH","AMBIGUOUS_ARTIFACT_IDENTITY","FLOATING_VERSION_REFERENCE","UNSUPPORTED_IMMUTABLE_VERSION_FORM","CONTENT_SHA_MISMATCH","DIGEST_FROM_WRONG_ARTIFACT","BROKEN_AUTHORITY_TO_ARTIFACT_LINEAGE","MISSING_OWNER_ISSUER_AUTHORIZATION","WRONG_GOVERNANCE_DECISION_BINDING","SCOPE_WIDENING","MIXED_ARTIFACT_VERSIONS","UNAUTHORIZED_FIELD"],
+  "package_tests": "4/4 PASS",
+  "source_acquisition_capability": false,
+  "activation_capability": false
+}

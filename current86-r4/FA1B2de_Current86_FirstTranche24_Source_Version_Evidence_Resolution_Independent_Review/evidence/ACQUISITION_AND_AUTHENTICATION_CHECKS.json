@@ -1,0 +1,27 @@
+{
+  "record_type": "FIRST_TRANCHE24_SOURCE_VERSION_EVIDENCE_RESOLUTION_ACQUISITION_AND_CHECK_SET_REVIEW",
+  "required_acquisition_object_set": "PASS",
+  "acquisition_object_minimality": "PASS",
+  "acquisition_object_sufficiency": "PASS",
+  "required_acquisition_objects": [
+    "one exact eligible canonical source artifact/object",
+    "one artifact-bound immutable identifier using CONTENT_DIGEST, GIT_COMMIT, or RELEASE_TAG_WITH_DIGEST",
+    "artifact bytes or authenticated evidence sufficient to recompute and bind the content SHA-256",
+    "authority-descriptor-to-artifact lineage record",
+    "owner/issuer authorization for the exact artifact/object and FIRST_TRANCHE24_ONLY"
+  ],
+  "required_authentication_check_set": "PASS",
+  "checks": [
+    {"check":"artifact identity and uniqueness","status":"PASS","basis":"resolution record and identity blocker reject zero/ambiguous eligible instances"},
+    {"check":"supported non-floating immutable version form","status":"PASS","basis":"activation design closes the three supported forms and rejects floating references"},
+    {"check":"recomputed artifact content SHA-256","status":"PASS","basis":"activation design requires recomputation; digest fixture rejects wrong/mismatched digests"},
+    {"check":"every descriptor/artifact/version/digest lineage edge","status":"PASS","basis":"three-edge lineage model is explicit and fail-closed"},
+    {"check":"owner/issuer relationship, scope, immutable authorization, revocation/supersession status, and independent verification","status":"PASS","basis":"owner requirements and activation preconditions cover all elements"},
+    {"check":"exact governance binding and FIRST_TRANCHE24 scope","status":"PASS","basis":"exact decision ID, transaction hash, ordered 24-ID set, and no scope extension"},
+    {"check":"stale, superseded, or conflicting evidence/candidates","status":"PASS","basis":"activation preconditions and fail-closed rules require rejection"},
+    {"check":"mixed-version or mixed-candidate evidence","status":"PASS","basis":"evidence_version_consistency plus mixed-version negative fixture"},
+    {"check":"unauthorized fields","status":"PASS","basis":"closed-key validation plus unauthorized-field negative fixture"},
+    {"check":"zero operational effect","status":"PASS","basis":"explicit zero-effect vector and static validator"}
+  ],
+  "sufficiency_conclusion": "The five objects are the smallest bounded set that can supply the five missing evidence classes; the checks cover identity, version, digest, lineage, authorization, governance, stale/superseded state, mixed evidence, unauthorized fields, and zero effect."
+}

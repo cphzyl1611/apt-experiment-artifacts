@@ -1,0 +1,20 @@
+{
+  "record_type": "FIRST_TRANCHE24_SOURCE_VERSION_EVIDENCE_RESOLUTION_GOVERNANCE_CANDIDATE_SCOPE_REVIEW",
+  "governance_decision_binding": "PASS",
+  "human_governance_decision": "APPROVE_BOTH_G1_AND_G2",
+  "governance_scope": "FIRST_TRANCHE24_ONLY",
+  "decision_id": "GOVDEC2-68ea814d1940bed4ec8b3e48b6a28f67f3e05c5e50e1c342a1fa2dc7db31f90f",
+  "transaction_hash": "b5601414918d6b7cc5c00ebaf24b98d93d2d477bcd4481de4de47b8ed0f7cd38",
+  "scope_ids": [110,273,210,98,147,277,188,301,143,250,233,287,146,293,114,284,291,215,88,182,300,218,115,148],
+  "scope_count": 24,
+  "scope_unique_count": 24,
+  "scope_extension_permitted": false,
+  "first_tranche24_scope_exactness": "PASS",
+  "candidate_reference_authentication": "PASS",
+  "candidate_resolution_state": "CANDIDATE_RESOLVED_VERSION_EVIDENCE_PENDING",
+  "resolved_candidate_reference": "03_frozen_lineage/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json#class_to_type_mapping[0]",
+  "resolved_candidate_type": "SOURCE_AUTHORITY_CANDIDATE_CLASS",
+  "authority_type": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+  "source_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+  "candidate_semantic_drift": 0
+}

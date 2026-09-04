@@ -1,0 +1,114 @@
+{
+  "review_type": "FIRST_TRANCHE24_SOURCE_VERSION_EVIDENCE_RESOLUTION_INDEPENDENT_REVIEW",
+  "review_date": "2026-09-04",
+  "terminal_verdict": "FIRST_TRANCHE24_SOURCE_VERSION_EVIDENCE_RESOLUTION_INDEPENDENT_REVIEW = PASS_READY_FOR_SOURCE_EVIDENCE_ACQUISITION_DESIGN",
+  "repository": "/home/cph/fa1b2de-review-artifacts",
+  "binding_branch": "artifact/binding",
+  "entry_binding_head": "6171a460ef527b99f2176eb047d51ca7082d067a",
+  "version_evidence_resolution_commit": "81c843c48619fd8e25983f68a7248d0273dc2192",
+  "version_evidence_resolution_parent": "6171a460ef527b99f2176eb047d51ca7082d067a",
+  "version_evidence_resolution_commit_message": "materialize binding: FIRST_TRANCHE24_SOURCE_VERSION_EVIDENCE_RESOLUTION",
+  "local_binding_head": "81c843c48619fd8e25983f68a7248d0273dc2192",
+  "remote_binding_head": "81c843c48619fd8e25983f68a7248d0273dc2192",
+  "live_remote_binding_head": "81c843c48619fd8e25983f68a7248d0273dc2192",
+  "lineage_authentication": {
+    "expected_shape": [
+      "6171a460ef527b99f2176eb047d51ca7082d067a",
+      "81c843c48619fd8e25983f68a7248d0273dc2192"
+    ],
+    "local_remote_live_equal": true,
+    "direct_parent_is_entry_head": true,
+    "unexplained_intervening_commit": false
+  },
+  "exact_commit_scope": {
+    "changed_path_count": 27,
+    "out_of_scope_changed_path_count": 0,
+    "scope_status": "PASS",
+    "forbidden_effect_artifacts_present_in_commit": false
+  },
+  "canonical_manifest": {
+    "validation": "PASS",
+    "format": "canonical-v1",
+    "version": "1.0",
+    "track": "binding",
+    "task_id": "FIRST_TRANCHE24_SOURCE_VERSION_EVIDENCE_RESOLUTION",
+    "file_count": 27
+  },
+  "payload_authentication": {
+    "source_manifest_hash_mismatch": 0,
+    "artifact_manifest_hash_mismatch": 0,
+    "source_artifact_byte_mismatch": 0,
+    "all_27_payloads_authenticated": true
+  },
+  "governance_binding": {
+    "status": "PASS",
+    "human_governance_decision": "APPROVE_BOTH_G1_AND_G2",
+    "governance_scope": "FIRST_TRANCHE24_ONLY",
+    "decision_id": "GOVDEC2-68ea814d1940bed4ec8b3e48b6a28f67f3e05c5e50e1c342a1fa2dc7db31f90f",
+    "transaction_hash": "b5601414918d6b7cc5c00ebaf24b98d93d2d477bcd4481de4de47b8ed0f7cd38"
+  },
+  "first_tranche24_scope_exactness": "PASS",
+  "candidate_reference_authentication": {
+    "status": "PASS",
+    "candidate_resolution_state": "CANDIDATE_RESOLVED_VERSION_EVIDENCE_PENDING",
+    "resolved_candidate_reference": "03_frozen_lineage/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json#class_to_type_mapping[0]",
+    "resolved_candidate_type": "SOURCE_AUTHORITY_CANDIDATE_CLASS",
+    "authority_type": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+    "source_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+    "candidate_semantic_drift": 0
+  },
+  "evidence_class_review": [
+    {
+      "class": "exact canonical artifact identity",
+      "status": "MISSING_FROM_AUTHENTICATED_LOCAL_EVIDENCE",
+      "basis": "No eligible canonical artifact instance or governed source-manifest entry exists; the three located artifacts are excluded by source class or canonical-governance constraints."
+    },
+    {
+      "class": "supported immutable version form bound to that artifact",
+      "status": "MISSING_FROM_AUTHENTICATED_LOCAL_EVIDENCE",
+      "basis": "The design supports CONTENT_DIGEST, GIT_COMMIT, and RELEASE_TAG_WITH_DIGEST, but no artifact-specific form or identifier is authenticated."
+    },
+    {
+      "class": "artifact content SHA-256",
+      "status": "MISSING_FROM_AUTHENTICATED_LOCAL_EVIDENCE",
+      "basis": "Existing digests are for excluded artifacts; the canonical source-manifest templates leave artifact_sha256 unresolved."
+    },
+    {
+      "class": "authority-descriptor-to-artifact lineage proof",
+      "status": "MISSING_FROM_AUTHENTICATED_LOCAL_EVIDENCE",
+      "basis": "The descriptor is authenticated only at class/fact-type level and every descriptor-to-artifact, artifact-to-version, and version-to-digest edge is blocked."
+    },
+    {
+      "class": "source owner/issuer authorization",
+      "status": "MISSING_FROM_AUTHENTICATED_LOCAL_EVIDENCE",
+      "basis": "Requirements are present, but no authorization subject or immutable authorization object covers an exact canonical artifact and FIRST_TRANCHE24_ONLY."
+    }
+  ],
+  "version_evidence_resolution_state": "VERSION_EVIDENCE_REQUIRES_SOURCE_ACQUISITION",
+  "version_evidence_resolution_state_validation": "PASS",
+  "required_acquisition_object_set": "PASS",
+  "required_authentication_check_set": "PASS",
+  "version_evidence_inventory_consistency": "PASS",
+  "static_validator": "PASS",
+  "negative_fixtures": "12/12 REJECTED",
+  "source_authority_id_derived": "NO",
+  "source_authority_id": "NONE",
+  "source_authority_id_state": "NONE",
+  "source_authority_activated": "NO",
+  "source_acquisition": "NO",
+  "source_auth_executed": "NO",
+  "stage_a_admissions": 0,
+  "stage_b_exposures": 0,
+  "field_pins": 0,
+  "operative_records": 0,
+  "p0_executed": "NO",
+  "p1_executed": "NO",
+  "formal_1796_experiment_executed": "NO",
+  "zero_operational_effect": "PASS",
+  "review_package_applied": false,
+  "review_package_committed": false,
+  "review_package_pushed": false,
+  "review_manifest_generated": true,
+  "review_manifest_validation": "PASS",
+  "next_phase": "FIRST_TRANCHE24_SOURCE_EVIDENCE_ACQUISITION_DESIGN"
+}
