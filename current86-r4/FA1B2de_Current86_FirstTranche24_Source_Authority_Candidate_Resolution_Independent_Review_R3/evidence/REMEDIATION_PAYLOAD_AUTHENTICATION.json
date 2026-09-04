@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "manifest_file_count": 31,
+  "entries_independently_checked": 31,
+  "source_manifest_hash_mismatch": 0,
+  "artifact_manifest_hash_mismatch": 0,
+  "source_artifact_byte_mismatch": 0,
+  "comparison_commit": "62c822589ac783c04a4a02af13ca0c4548892aac",
+  "comparison_method": "For every manifest entry, hash the source bytes, hash the committed blob at files[].destination, and compare source bytes to committed bytes exactly.",
+  "mismatching_entries": []
+}

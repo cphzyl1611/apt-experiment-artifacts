@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "parent": "1e30c69f167d9b57ac827e695c7c536dd4ee12da",
+  "commit": "62c822589ac783c04a4a02af13ca0c4548892aac",
+  "changed_file_count": 31,
+  "allowed_destination_scope": "current86-r4/FA1B2de_Current86_FirstTranche24_Source_Authority_Candidate_Resolution_Cross_Object_Hash_Remediation/",
+  "all_changed_paths_within_allowed_scope": true,
+  "out_of_scope_changes": [],
+  "historical_package_rewrite": false,
+  "candidate_semantic_redesign": false,
+  "governance_decision_mutation": false,
+  "source_or_version_acquisition": false,
+  "authority_activation": false,
+  "stage_a_or_stage_b_artifacts": false,
+  "field_pin_or_execution_artifacts": false,
+  "p0_p1_or_formal_benchmark_artifacts": false
+}

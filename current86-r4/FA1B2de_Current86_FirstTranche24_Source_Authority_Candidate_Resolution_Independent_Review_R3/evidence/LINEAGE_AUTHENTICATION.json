@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "repository": "/home/cph/fa1b2de-review-artifacts",
+  "binding_branch": "artifact/binding",
+  "local_binding_head": "62c822589ac783c04a4a02af13ca0c4548892aac",
+  "remote_tracking_binding_head": "62c822589ac783c04a4a02af13ca0c4548892aac",
+  "live_remote_head": "62c822589ac783c04a4a02af13ca0c4548892aac",
+  "live_remote_ref": "refs/heads/artifact/binding",
+  "pre_cross_object_remediation_head": "1e30c69f167d9b57ac827e695c7c536dd4ee12da",
+  "cross_object_remediation_commit": "62c822589ac783c04a4a02af13ca0c4548892aac",
+  "cross_object_remediation_parent": "1e30c69f167d9b57ac827e695c7c536dd4ee12da",
+  "cross_object_remediation_commit_message": "materialize binding: FIRST_TRANCHE24_SOURCE_AUTHORITY_CANDIDATE_RESOLUTION_CROSS_OBJECT_HASH_REMEDIATION",
+  "intervening_commit_count": 1,
+  "only_intervening_commit_is_expected": true,
+  "expected_parent_match": true,
+  "expected_message_match": true,
+  "local_remote_live_head_equality": true,
+  "unexplained_lineage_drift": false,
+  "step_1": "PASS"
+}

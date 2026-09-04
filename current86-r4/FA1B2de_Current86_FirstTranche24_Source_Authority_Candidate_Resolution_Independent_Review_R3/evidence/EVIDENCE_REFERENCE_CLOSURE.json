@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "corrected_reference_path": "FA1B2de_Current86_FirstTranche24_Source_Authority_Activation_Design_Independent_Review/evidence/GOVERNANCE_BINDING.json",
+  "corrected_reference_path_exists": "YES",
+  "corrected_reference_sha256": "081e68e5a042cb7ec2c53da49424fa0ae46a1abc9a9839b2f429db433853e705",
+  "corrected_reference_sha256_match": "YES",
+  "corrected_reference_authenticated_lineage": "PASS",
+  "corrected_reference_authentication_commit": "1e30c69f167d9b57ac827e695c7c536dd4ee12da",
+  "corrected_reference_authenticated_blob_sha256": "081e68e5a042cb7ec2c53da49424fa0ae46a1abc9a9839b2f429db433853e705",
+  "corrected_reference_semantic_support": "PASS",
+  "decision_record_id": "GOVDEC2-68ea814d1940bed4ec8b3e48b6a28f67f3e05c5e50e1c342a1fa2dc7db31f90f",
+  "governance_transaction_hash": "b5601414918d6b7cc5c00ebaf24b98d93d2d477bcd4481de4de47b8ed0f7cd38",
+  "governance_scope": "FIRST_TRANCHE24_ONLY",
+  "materialized_record_does_not_assert_source_object": true,
+  "materialized_record_does_not_activate_authority": true,
+  "stale_bad_reference_count": 0
+}

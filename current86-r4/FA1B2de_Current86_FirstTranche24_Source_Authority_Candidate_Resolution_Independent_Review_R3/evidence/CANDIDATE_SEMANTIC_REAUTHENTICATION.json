@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "candidate_reference_authentication": "PASS",
+  "candidate_type_validation": "PASS",
+  "authority_type_validation": "PASS",
+  "source_fact_type_validation": "PASS",
+  "candidate_class_uniqueness": "PASS",
+  "candidate_count": 3,
+  "resolved_candidate_reference": "03_frozen_lineage/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json#class_to_type_mapping[0]",
+  "resolved_candidate_type": "SOURCE_AUTHORITY_CANDIDATE_CLASS",
+  "authority_type": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+  "source_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+  "candidate_resolution_state": "CANDIDATE_RESOLVED_VERSION_EVIDENCE_PENDING",
+  "candidate_semantic_drift": 0,
+  "semantic_comparison": "Original candidate-resolution commit versus effective corrected package; only the authorized governance-reference correction and dependent candidate-set hash differ.",
+  "scope": "FIRST_TRANCHE24_ONLY"
+}

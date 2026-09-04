@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "validator_source_bytes_equal_original_validator": true,
+  "static_validator": "PASS",
+  "valid_resolution_fixture": "PASS",
+  "negative_fixtures": "10/10 REJECTED",
+  "negative_fixture_rejection_codes": [
+    "MULTIPLE_CANDIDATES_RESOLVED",
+    "ZERO_RESOLVED_CANDIDATES",
+    "WRONG_GOVERNANCE_DECISION_ID",
+    "WRONG_GOVERNANCE_TRANSACTION_HASH",
+    "SCOPE_WIDENING",
+    "PROVENANCE_REFERENCE_MISMATCH",
+    "VERSION_POLICY_INCOMPATIBILITY",
+    "UNAUTHORIZED_FIELD",
+    "MIXED_CANDIDATE_EVIDENCE",
+    "FAKE_ACTIVATED_STATE"
+  ],
+  "candidate_set_consistency": "PASS",
+  "provenance_evidence_map": "PASS",
+  "packaged_tests": "3/3 PASS",
+  "candidate_set_inconsistency_failure_recurred": false
+}

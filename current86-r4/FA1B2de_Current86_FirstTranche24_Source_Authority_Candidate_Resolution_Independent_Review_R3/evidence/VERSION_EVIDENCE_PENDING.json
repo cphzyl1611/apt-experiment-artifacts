@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "version_policy_resolution": "BLOCKED_PENDING_SOURCE_EVIDENCE",
+  "version_evidence_pending_state_drift": 0,
+  "version_evidence_pending_justified": "PASS",
+  "missing_version_evidence": [
+    "exact canonical artifact identity",
+    "one supported immutable version form selected from authenticated source evidence",
+    "content SHA-256 for that artifact",
+    "lineage proof connecting the authority descriptor to the artifact",
+    "source owner or issuer authorization"
+  ],
+  "source_or_version_evidence_acquired": false
+}

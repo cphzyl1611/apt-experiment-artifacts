@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "old_embedded_candidate_set_sha256": "75ef2657c0145990bf194651fb67c88e3b8c130c4332288fe8b2b28626c31082",
+  "corrected_candidate_set_sha256": "8a4581fbc1fa908430eb82661fbd61bba713f08511629058f02a0dc9c396aa11",
+  "recomputed_effective_candidate_set_sha256": "8a4581fbc1fa908430eb82661fbd61bba713f08511629058f02a0dc9c396aa11",
+  "resolved_record_embedded_candidate_set_sha256": "8a4581fbc1fa908430eb82661fbd61bba713f08511629058f02a0dc9c396aa11",
+  "candidate_set_hash_computation": "SHA-256 over exact CANDIDATE_SET.json bytes; no normalization or validator bypass",
+  "cross_object_candidate_set_hash_match": "PASS",
+  "candidate_set_inconsistency": "CLOSED",
+  "former_failure_recurred": false
+}

@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "manifest_path": "FA1B2de_Current86_FirstTranche24_Source_Authority_Candidate_Resolution_Cross_Object_Hash_Remediation/MATERIALIZATION_MANIFEST.json",
+  "manifest_format": "canonical-v1",
+  "version": "1.0",
+  "track": "binding",
+  "task_id": "FIRST_TRANCHE24_SOURCE_AUTHORITY_CANDIDATE_RESOLUTION_CROSS_OBJECT_HASH_REMEDIATION",
+  "file_count": 31,
+  "fa_materialize_validate": "PASS",
+  "fa_materialize_inspect": "PASS",
+  "canonical_fields_required": ["source", "destination", "sha256"],
+  "manifest_self_inclusion": false
+}

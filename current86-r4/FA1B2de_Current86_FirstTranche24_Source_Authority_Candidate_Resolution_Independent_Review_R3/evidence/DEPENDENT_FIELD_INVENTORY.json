@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "inventory_source": "FA1B2de_Current86_FirstTranche24_Source_Authority_Candidate_Resolution_Cross_Object_Hash_Remediation/DEPENDENCY_INVENTORY.json",
+  "dependent_fields_checked": [
+    "RESOLVED_CANDIDATE_RECORD.json#resolved_candidate.competing_candidate_disposition.candidate_set_reference",
+    "RESOLVED_CANDIDATE_RECORD.json#resolved_candidate.competing_candidate_disposition.candidate_set_sha256",
+    "CANDIDATE_RESOLUTION_DECISION.json#candidate_set_reference"
+  ],
+  "deterministically_recomputed_fields": ["RESOLVED_CANDIDATE_RECORD.json#resolved_candidate.competing_candidate_disposition.candidate_set_sha256"],
+  "candidate_set_reference_values_consistent": true,
+  "candidate_set_sha256_values_consistent": true,
+  "dependent_field_mismatch_count": 0,
+  "dependent_field_inventory": "PASS",
+  "stale_dependent_hash_or_id": false
+}
