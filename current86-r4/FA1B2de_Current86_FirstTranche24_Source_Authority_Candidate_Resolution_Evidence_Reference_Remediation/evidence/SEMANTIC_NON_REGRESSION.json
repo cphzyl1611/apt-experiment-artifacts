@@ -1,0 +1,19 @@
+{
+  "record_type": "FIRST_TRANCHE24_CANDIDATE_RESOLUTION_SEMANTIC_NON_REGRESSION",
+  "status": "PASS",
+  "candidate_semantic_drift": 0,
+  "allowed_change": "candidates[0].supporting_artifact_references[1].reference only",
+  "candidate_count": 3,
+  "candidate_class": "SOURCE_AUTHORITY_CANDIDATE_CLASS",
+  "resolved_candidate_reference": "03_frozen_lineage/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json#class_to_type_mapping[0]",
+  "resolved_candidate_type": "SOURCE_AUTHORITY_CANDIDATE_CLASS",
+  "authority_type": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+  "source_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+  "resolution_state": "CANDIDATE_RESOLVED_VERSION_EVIDENCE_PENDING",
+  "source_authority_id_derived": "NO",
+  "source_authority_id": "NONE",
+  "version_policy_resolution": "BLOCKED_PENDING_SOURCE_EVIDENCE",
+  "governance_decision_id": "GOVDEC2-68ea814d1940bed4ec8b3e48b6a28f67f3e05c5e50e1c342a1fa2dc7db31f90f",
+  "governance_transaction_hash": "b5601414918d6b7cc5c00ebaf24b98d93d2d477bcd4481de4de47b8ed0f7cd38",
+  "first_tranche24_scope": "FIRST_TRANCHE24_ONLY"
+}

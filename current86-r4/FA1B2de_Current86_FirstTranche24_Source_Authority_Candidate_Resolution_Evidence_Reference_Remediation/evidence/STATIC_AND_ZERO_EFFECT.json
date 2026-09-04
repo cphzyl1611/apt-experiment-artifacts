@@ -1,0 +1,23 @@
+{
+  "record_type": "FIRST_TRANCHE24_CANDIDATE_RESOLUTION_REMEDIATION_VALIDATION",
+  "status": "PASS",
+  "static_validator": "PASS",
+  "negative_fixtures": "10/10 REJECTED",
+  "valid_resolution_fixture": "NOT_PRESENT",
+  "governance_decision_binding": "PASS",
+  "first_tranche24_scope_exactness": "PASS",
+  "candidate_set_consistency": "PASS",
+  "provenance_evidence_map": "PASS",
+  "source_authority_id_derived": "NO",
+  "source_authority_activated": "NO",
+  "source_acquisition": "NO",
+  "source_auth_executed": "NO",
+  "stage_a_admissions": 0,
+  "stage_b_exposures": 0,
+  "field_pins": 0,
+  "operative_records": 0,
+  "p0_executed": "NO",
+  "p1_executed": "NO",
+  "formal_1796_experiment_executed": "NO",
+  "zero_operational_effect": "PASS"
+}

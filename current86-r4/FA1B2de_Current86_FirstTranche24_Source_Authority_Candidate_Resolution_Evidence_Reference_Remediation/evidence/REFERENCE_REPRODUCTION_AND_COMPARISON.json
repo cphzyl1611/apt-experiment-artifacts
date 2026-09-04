@@ -1,0 +1,29 @@
+{
+  "record_type": "FIRST_TRANCHE24_CANDIDATE_REFERENCE_REMEDIATION_COMPARISON",
+  "status": "PASS",
+  "historical_candidate_resolution_commit": "ae42a3e5625d42eea30854a62b1dbb63ef35fcbc",
+  "historical_candidate_resolution_parent": "e6e885e17e60f1b12af47a7ddb363b8d2934f8b7",
+  "historical_candidate_set": "FA1B2de_Current86_FirstTranche24_Source_Authority_Candidate_Resolution/CANDIDATE_SET.json",
+  "bad_reference_reproduced": "YES",
+  "before": {
+    "path": "FA1B2de_Current86_FirstTranche24_G1G2_Decision_Materialization_Independent_Review/evidence/GOVERNANCE_BINDING.json",
+    "path_exists": false,
+    "sha256": "081e68e5a042cb7ec2c53da49424fa0ae46a1abc9a9839b2f429db433853e705",
+    "evidence_role": "INDEPENDENT_GOVERNANCE_BINDING",
+    "authentication_status_recorded": "PASS"
+  },
+  "matching_existing_file": {
+    "path": "FA1B2de_Current86_FirstTranche24_Source_Authority_Activation_Design_Independent_Review/evidence/GOVERNANCE_BINDING.json",
+    "path_exists": true,
+    "sha256": "081e68e5a042cb7ec2c53da49424fa0ae46a1abc9a9839b2f429db433853e705",
+    "recorded_sha256_matches": true,
+    "unique_hash_match": true
+  },
+  "after": {
+    "path": "FA1B2de_Current86_FirstTranche24_Source_Authority_Activation_Design_Independent_Review/evidence/GOVERNANCE_BINDING.json",
+    "sha256": "081e68e5a042cb7ec2c53da49424fa0ae46a1abc9a9839b2f429db433853e705",
+    "path_exists": true,
+    "reference_only_change": true
+  },
+  "stale_bad_reference_count_in_active_corrected_candidate_set": 0
+}

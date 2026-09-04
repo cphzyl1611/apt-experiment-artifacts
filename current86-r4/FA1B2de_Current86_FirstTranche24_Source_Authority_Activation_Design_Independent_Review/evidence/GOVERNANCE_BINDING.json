@@ -1,0 +1,13 @@
+{
+  "decision_record_id": "GOVDEC2-68ea814d1940bed4ec8b3e48b6a28f67f3e05c5e50e1c342a1fa2dc7db31f90f",
+  "governance_transaction_hash": "b5601414918d6b7cc5c00ebaf24b98d93d2d477bcd4481de4de47b8ed0f7cd38",
+  "human_governance_decision": "APPROVE_BOTH_G1_AND_G2",
+  "governance_scope": "FIRST_TRANCHE24_ONLY",
+  "decision_materialization_commit": "3c5c014238b569377963c1cb20f3d7df2600f135",
+  "decision_materialization_parent": "c3e911e865f5287d46703e5d0d7398ee653151f7",
+  "decision_record_matches_materialized_record": true,
+  "materialized_record_does_not_assert_source_object": true,
+  "materialized_record_does_not_activate_authority": true,
+  "v1_circular_dependency_reintroduced": false,
+  "scope_extension_permitted": false
+}

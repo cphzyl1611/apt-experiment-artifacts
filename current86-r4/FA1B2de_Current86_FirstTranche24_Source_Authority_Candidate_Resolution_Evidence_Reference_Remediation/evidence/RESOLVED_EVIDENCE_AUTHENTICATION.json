@@ -1,0 +1,30 @@
+{
+  "record_type": "FIRST_TRANCHE24_RESOLVED_GOVERNANCE_BINDING_EVIDENCE_AUTHENTICATION",
+  "status": "PASS",
+  "resolved_evidence_path": "FA1B2de_Current86_FirstTranche24_Source_Authority_Activation_Design_Independent_Review/evidence/GOVERNANCE_BINDING.json",
+  "resolved_evidence_sha256": "081e68e5a042cb7ec2c53da49424fa0ae46a1abc9a9839b2f429db433853e705",
+  "recorded_sha256_matches_actual": true,
+  "authenticated_lineage": {
+    "source_review": "FA1B2de_Current86_FirstTranche24_Source_Authority_Activation_Design_Independent_Review/INDEPENDENT_REVIEW.json",
+    "source_review_sha256": "5cbe894bd210ab4d1e4beb3a304326654d790a5d23796511b3bcf17cf45c2f9b",
+    "source_materialization_manifest": "FA1B2de_Current86_FirstTranche24_Source_Authority_Activation_Design_Independent_Review/MATERIALIZATION_MANIFEST.json",
+    "source_materialization_manifest_sha256": "a18cb3255f92655e8cb21007c00a51c76b6e870fb9927ec1e83ac273ce430d6b",
+    "lineage_evidence": "FA1B2de_Current86_FirstTranche24_Source_Authority_Activation_Design_Independent_Review/evidence/LINEAGE_AUTHENTICATION.json",
+    "lineage_evidence_sha256": "9a0c2254a0aea8d6fcf20aed0df3879db216831d613da5bcf15c16e0126d86a5",
+    "binding_commit": "e6e885e17e60f1b12af47a7ddb363b8d2934f8b7",
+    "binding_parent": "10478b0961a601d0f684740b9564633a9930ebc9",
+    "review_verdict": "PASS_READY_FOR_SOURCE_AUTHORITY_CANDIDATE_RESOLUTION",
+    "manifest_entry_sha256_matches": true,
+    "authentication": "PASS"
+  },
+  "semantic_support": {
+    "decision_record_id": "GOVDEC2-68ea814d1940bed4ec8b3e48b6a28f67f3e05c5e50e1c342a1fa2dc7db31f90f",
+    "governance_transaction_hash": "b5601414918d6b7cc5c00ebaf24b98d93d2d477bcd4481de4de47b8ed0f7cd38",
+    "governance_scope": "FIRST_TRANCHE24_ONLY",
+    "human_governance_decision": "APPROVE_BOTH_G1_AND_G2",
+    "materialized_record_does_not_assert_source_object": true,
+    "materialized_record_does_not_activate_authority": true,
+    "supports_cited_governance_binding_claim": true,
+    "semantic_support": "PASS"
+  }
+}
