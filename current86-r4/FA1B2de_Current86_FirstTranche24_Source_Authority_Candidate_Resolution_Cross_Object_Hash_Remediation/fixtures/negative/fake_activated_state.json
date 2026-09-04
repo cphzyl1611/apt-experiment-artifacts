@@ -1,0 +1,7 @@
+{
+  "fixture": "fake_activated_state.json",
+  "base_fixture": "evidence/ZERO_OPERATIONAL_EFFECT.json",
+  "mutations": [
+    {"path":["SOURCE_AUTHORITY_ACTIVATED"],"operation":"replace","value":"YES"}
+  ]
+}

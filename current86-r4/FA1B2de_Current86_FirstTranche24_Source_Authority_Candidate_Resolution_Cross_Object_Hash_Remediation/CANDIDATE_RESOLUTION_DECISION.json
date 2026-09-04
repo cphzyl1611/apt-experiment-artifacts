@@ -1,0 +1,33 @@
+{
+  "record_type": "FIRST_TRANCHE24_SOURCE_AUTHORITY_CANDIDATE_RESOLUTION_DECISION",
+  "schema_version": "V1",
+  "task_id": "FIRST_TRANCHE24_SOURCE_AUTHORITY_CANDIDATE_RESOLUTION",
+  "decision": "CANDIDATE_RESOLVED_VERSION_EVIDENCE_PENDING",
+  "resolved_candidate_reference": "03_frozen_lineage/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json#class_to_type_mapping[0]",
+  "resolved_candidate_type": "SOURCE_AUTHORITY_CANDIDATE_CLASS",
+  "resolved_candidate_authority_type": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+  "resolved_candidate_source_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+  "resolved_candidate_source_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+  "candidate_set_reference": "CANDIDATE_SET.json",
+  "candidate_set_status": "ONE_RESOLVED_CLASS_ONLY_TWO_REJECTED_OBJECT_LEVEL_ALTERNATIVES",
+  "candidate_uniqueness_basis": "Exactly one admissible class-level candidate remains after authenticated elimination of the prospective scoring-wrapper and historical Current86 authority references. No concrete object-level candidate is selected.",
+  "version_policy_resolution": "BLOCKED_PENDING_SOURCE_EVIDENCE",
+  "source_authority_id_derived": "NO",
+  "source_authority_id": "NONE",
+  "source_authority_id_state": "NONE",
+  "activation_status": "NOT_ACTIVATED",
+  "governance_binding": {
+    "decision_record_id": "GOVDEC2-68ea814d1940bed4ec8b3e48b6a28f67f3e05c5e50e1c342a1fa2dc7db31f90f",
+    "governance_transaction_hash": "b5601414918d6b7cc5c00ebaf24b98d93d2d477bcd4481de4de47b8ed0f7cd38",
+    "governance_scope": "FIRST_TRANCHE24_ONLY",
+    "human_governance_decision": "APPROVE_BOTH_G1_AND_G2"
+  },
+  "missing_evidence_before_activation": [
+    "exact canonical source artifact or object reference",
+    "one immutable version-policy form and identifier",
+    "content SHA-256 and applicable commit/tree or release proof",
+    "source owner or issuer authorization",
+    "complete same-candidate provenance chain",
+    "independent recomputation of concrete authority identity"
+  ]
+}

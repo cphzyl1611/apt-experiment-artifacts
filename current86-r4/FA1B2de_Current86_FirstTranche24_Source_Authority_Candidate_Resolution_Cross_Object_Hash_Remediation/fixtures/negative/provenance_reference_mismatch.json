@@ -1,0 +1,7 @@
+{
+  "fixture": "provenance_reference_mismatch.json",
+  "base_fixture": "PROVENANCE_EVIDENCE_MAP.json",
+  "mutations": [
+    {"path":["claims",0,"artifact_sha256"],"operation":"replace","value":"0000000000000000000000000000000000000000000000000000000000000000"}
+  ]
+}

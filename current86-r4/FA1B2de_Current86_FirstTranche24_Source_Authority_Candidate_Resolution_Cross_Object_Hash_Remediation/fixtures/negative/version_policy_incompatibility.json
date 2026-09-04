@@ -1,0 +1,7 @@
+{
+  "fixture": "version_policy_incompatibility.json",
+  "base_fixture": "VERSION_POLICY_RESOLUTION.json",
+  "mutations": [
+    {"path":["selected_policy_form"],"operation":"replace","value":"GIT_COMMIT"}
+  ]
+}

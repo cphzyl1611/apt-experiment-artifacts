@@ -1,0 +1,14 @@
+{
+  "task_id": "FIRST_TRANCHE24_SOURCE_AUTHORITY_CANDIDATE_RESOLUTION_CROSS_OBJECT_HASH_REMEDIATION",
+  "effective_candidate_set": "FA1B2de_Current86_FirstTranche24_Source_Authority_Candidate_Resolution_Evidence_Reference_Remediation/CANDIDATE_SET.json",
+  "effective_candidate_set_sha256": "8a4581fbc1fa908430eb82661fbd61bba713f08511629058f02a0dc9c396aa11",
+  "effective_candidate_set_authentication": "PASS",
+  "authenticated_governance_binding_evidence_path": "FA1B2de_Current86_FirstTranche24_Source_Authority_Activation_Design_Independent_Review/evidence/GOVERNANCE_BINDING.json",
+  "authenticated_governance_binding_evidence_sha256": "081e68e5a042cb7ec2c53da49424fa0ae46a1abc9a9839b2f429db433853e705",
+  "stale_bad_reference_count": 0,
+  "candidate_set_semantic_drift": 0,
+  "candidate_set_structural_schema_checks": "PASS",
+  "candidate_set_candidate_uniqueness": "PASS",
+  "candidate_set_governance_binding": "PASS",
+  "first_tranche24_scope_exactness": "PASS"
+}

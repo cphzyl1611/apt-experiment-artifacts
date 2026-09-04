@@ -1,0 +1,47 @@
+{
+  "record_type": "FIRST_TRANCHE24_SOURCE_AUTHORITY_VERSION_POLICY_RESOLUTION",
+  "schema_version": "V1",
+  "task_id": "FIRST_TRANCHE24_SOURCE_AUTHORITY_CANDIDATE_RESOLUTION",
+  "candidate_reference": "03_frozen_lineage/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json#class_to_type_mapping[0]",
+  "version_policy_resolution": "BLOCKED_PENDING_SOURCE_EVIDENCE",
+  "required_policy_contract": {
+    "policy_version": "V1",
+    "supported_policy_forms": ["CONTENT_DIGEST", "GIT_COMMIT", "RELEASE_TAG_WITH_DIGEST"],
+    "exactly_one_form_required": true,
+    "floating_reference_allowed": false,
+    "update_policy": "NEW_ACTIVATION_REQUIRED",
+    "required_immutable_evidence": [
+      "immutable_identifier",
+      "content_sha256",
+      "lineage_evidence",
+      "owner_or_issuer_authorization"
+    ]
+  },
+  "selected_policy_form": "UNRESOLVED_PENDING_SOURCE_EVIDENCE",
+  "policy_id_status": "UNRESOLVED_PENDING_SOURCE_EVIDENCE",
+  "immutable_identifier_status": "UNRESOLVED_PENDING_SOURCE_EVIDENCE",
+  "content_sha256_status": "UNRESOLVED_PENDING_SOURCE_EVIDENCE",
+  "lineage_evidence_status": "UNRESOLVED_PENDING_SOURCE_EVIDENCE",
+  "owner_issuer_authorization_status": "UNRESOLVED_PENDING_SOURCE_EVIDENCE",
+  "resolution_basis_references": [
+    {
+      "reference": "FA1B2de_Current86_FirstTranche24_Source_Authority_Activation_Design/SOURCE_VERSION_POLICY_CONTRACT.md",
+      "sha256": "9c1ca6fa1b102cbaa79bd686aa65a47d78c1806ff50b01d116fa6a8d3fd7b769",
+      "evidence_role": "SUPPORTED_IMMUTABLE_POLICY_FORMS_AND_FAIL_CLOSED_RULES",
+      "authentication_status": "PASS"
+    },
+    {
+      "reference": "FA1B2de_Current86_FirstTranche24_StageA_Provenance_Acquisition_Preparation/SOURCE_AUTHORITY_AND_OWNER_GAP_REPORT.json",
+      "sha256": "4043a5e1239e1f0ecb969bf02eaf53233272311aa654141959149da52287a5bd",
+      "evidence_role": "CURRENT_IMMUTABLE_ARTIFACT_AND_OWNER_EVIDENCE_GAP",
+      "authentication_status": "PASS_BOUNDED_CLASS_ONLY"
+    }
+  ],
+  "missing_before_activation": [
+    "exact canonical artifact identity",
+    "one supported immutable version form selected from authenticated source evidence",
+    "content SHA-256 for that artifact",
+    "lineage proof connecting the authority descriptor to the artifact",
+    "source owner or issuer authorization"
+  ]
+}

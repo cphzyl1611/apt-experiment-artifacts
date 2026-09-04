@@ -1,0 +1,114 @@
+{
+  "record_type": "FIRST_TRANCHE24_SOURCE_AUTHORITY_CANDIDATE_RESOLUTION",
+  "schema_version": "V1",
+  "task_id": "FIRST_TRANCHE24_SOURCE_AUTHORITY_CANDIDATE_RESOLUTION",
+  "resolution_state": "CANDIDATE_RESOLVED_VERSION_EVIDENCE_PENDING",
+  "governance_binding": {
+    "decision_record_id": "GOVDEC2-68ea814d1940bed4ec8b3e48b6a28f67f3e05c5e50e1c342a1fa2dc7db31f90f",
+    "governance_transaction_hash": "b5601414918d6b7cc5c00ebaf24b98d93d2d477bcd4481de4de47b8ed0f7cd38",
+    "governance_scope": "FIRST_TRANCHE24_ONLY",
+    "human_governance_decision": "APPROVE_BOTH_G1_AND_G2"
+  },
+  "design_contract_binding": {
+    "design_materialization_commit": "e6e885e17e60f1b12af47a7ddb363b8d2934f8b7",
+    "design_materialization_parent": "10478b0961a601d0f684740b9564633a9930ebc9",
+    "design_materialization_commit_message": "materialize binding: FIRST_TRANCHE24_SOURCE_AUTHORITY_ACTIVATION_DESIGN",
+    "design_independent_review_verdict": "PASS_READY_FOR_SOURCE_AUTHORITY_CANDIDATE_RESOLUTION",
+    "design_contract_references": [
+      {
+        "reference": "FA1B2de_Current86_FirstTranche24_Source_Authority_Activation_Design/SOURCE_AUTHORITY_ACTIVATION_CONTRACT.md",
+        "sha256": "818b8aae990556a95f630c87db9987a467c9ac1ac549a7d4c79d882b0db373d9",
+        "role": "ACTIVATION_CONTRACT"
+      },
+      {
+        "reference": "FA1B2de_Current86_FirstTranche24_Source_Authority_Activation_Design/SOURCE_AUTHORITY_IDENTITY_PROCEDURE.md",
+        "sha256": "7e37f9fad7fcc76a6a4418021e0e81069dc66f9dcf08247f8d9fc8ff3e34edc0",
+        "role": "IDENTITY_PROCEDURE"
+      },
+      {
+        "reference": "FA1B2de_Current86_FirstTranche24_Source_Authority_Activation_Design/SOURCE_VERSION_POLICY_CONTRACT.md",
+        "sha256": "9c1ca6fa1b102cbaa79bd686aa65a47d78c1806ff50b01d116fa6a8d3fd7b769",
+        "role": "VERSION_POLICY_CONTRACT"
+      },
+      {
+        "reference": "FA1B2de_Current86_FirstTranche24_Source_Authority_Activation_Design/SOURCE_AUTHORITY_ACTIVATION_RECORD_SCHEMA.json",
+        "sha256": "f5a732e108a107e0fc60f2e56ebb23dca942ed9c30491d992388ebdef9678ee6",
+        "role": "ACTIVATION_RECORD_SCHEMA"
+      },
+      {
+        "reference": "FA1B2de_Current86_FirstTranche24_Source_Authority_Activation_Design_Independent_Review/INDEPENDENT_REVIEW.json",
+        "sha256": "5cbe894bd210ab4d1e4beb3a304326654d790a5d23796511b3bcf17cf45c2f9b",
+        "role": "INDEPENDENT_DESIGN_REVIEW"
+      }
+    ]
+  },
+  "scope_reference": {
+    "scope_id": "FIRST_TRANCHE24_ONLY",
+    "raw_ids": [110, 273, 210, 98, 147, 277, 188, 301, 143, 250, 233, 287, 146, 293, 114, 284, 291, 215, 88, 182, 300, 218, 115, 148],
+    "raw_count": 24,
+    "unique_raw_count": 24,
+    "scope_extension_requested": false
+  },
+  "resolved_candidate": {
+    "candidate_id_or_local_reference": "03_frozen_lineage/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json#class_to_type_mapping[0]",
+    "candidate_type": "SOURCE_AUTHORITY_CANDIDATE_CLASS",
+    "candidate_name_or_semantic_label": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE / PINNED_CANONICAL_INTRINSIC_FIELD",
+    "authority_type": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+    "source_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+    "source_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+    "candidate_status": "RESOLVED_CLASS_ONLY",
+    "identity_basis": {
+      "identity_procedure_id": "FIRST_TRANCHE24_SOURCE_AUTHORITY_IDENTITY_V1",
+      "identity_namespace": "fa1b2de.source-authority/current86/first-tranche24",
+      "authority_type": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "source_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "scope_id": "FIRST_TRANCHE24_ONLY",
+      "concrete_source_locator_status": "UNRESOLVED_PENDING_SOURCE_EVIDENCE",
+      "source_locator_type_status": "UNRESOLVED_PENDING_SOURCE_EVIDENCE",
+      "source_version_policy_id_status": "UNRESOLVED_PENDING_SOURCE_EVIDENCE",
+      "content_digest_status": "UNRESOLVED_PENDING_SOURCE_EVIDENCE",
+      "owner_issuer_identity_status": "UNRESOLVED_PENDING_SOURCE_EVIDENCE"
+    },
+    "resolution_basis_references": [
+      "FA1B2de_Current86_FirstTranche24_G1G2_Decision_Materialization/FIRST_TRANCHE24_GOVERNANCE_DECISION_RECORD_V2.json",
+      "FA1B2de_Current86_FirstTranche24_StageA_Provenance_Acquisition_Preparation/CANONICAL_SOURCE_COHORT_CLASSIFICATION.json",
+      "FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/AUTHORITATIVE_SOURCE_CLASS_POLICY.md"
+    ],
+    "competing_candidate_disposition": {
+      "candidate_set_reference": "CANDIDATE_SET.json",
+      "candidate_set_sha256": "8a4581fbc1fa908430eb82661fbd61bba713f08511629058f02a0dc9c396aa11",
+      "rejected_candidate_count": 2,
+      "plausible_unrejected_candidate_count": 0,
+      "uniqueness_basis": "The only admissible unresolved candidate is the exact governed class/fact-type pair; the concrete source object remains pending and all examined object-level alternatives are rejected by authenticated class, scope, or noncanonical-status evidence."
+    }
+  },
+  "version_policy_reference": {
+    "reference": "VERSION_POLICY_RESOLUTION.json",
+    "status": "BLOCKED_PENDING_SOURCE_EVIDENCE"
+  },
+  "provenance_evidence_reference": {
+    "reference": "PROVENANCE_EVIDENCE_MAP.json",
+    "status": "PASS_CLASS_ONLY",
+    "all_resolution_claims_mapped": true,
+    "concrete_source_provenance_authenticated": false
+  },
+  "source_authority_id_derivation": {
+    "source_authority_id_derived": false,
+    "source_authority_id": "NONE",
+    "source_authority_id_state": "NONE",
+    "derivation_boundary": "The reviewed design does not permit deriving a concrete authority ID from a class-only candidate without concrete immutable source locator, policy, content digest, and provenance evidence."
+  },
+  "activation_boundary": {
+    "candidate_resolution_only": true,
+    "source_authority_activated": "NO",
+    "source_acquisition": "NO",
+    "source_auth_executed": "NO",
+    "stage_a_admissions": 0,
+    "stage_b_exposures": 0,
+    "field_pins": 0,
+    "operative_records": 0,
+    "p0_executed": "NO",
+    "p1_executed": "NO",
+    "formal_1796_experiment_executed": "NO"
+  }
+}

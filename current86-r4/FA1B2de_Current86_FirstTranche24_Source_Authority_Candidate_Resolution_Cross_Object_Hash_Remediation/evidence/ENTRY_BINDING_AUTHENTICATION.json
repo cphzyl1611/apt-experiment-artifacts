@@ -1,0 +1,26 @@
+{
+  "record_type": "FIRST_TRANCHE24_CANDIDATE_RESOLUTION_ENTRY_BINDING_AUTHENTICATION",
+  "status": "PASS",
+  "binding_repository": "/home/cph/fa1b2de-review-artifacts",
+  "binding_worktree": "/home/cph/fa1b2de-artifact-worktrees/binding",
+  "binding_branch": "artifact/binding",
+  "local_binding_head_observed": "e6e885e17e60f1b12af47a7ddb363b8d2934f8b7",
+  "remote_tracking_binding_head_observed": "e6e885e17e60f1b12af47a7ddb363b8d2934f8b7",
+  "live_remote_head_from_authenticated_project_evidence": "e6e885e17e60f1b12af47a7ddb363b8d2934f8b7",
+  "head_equality": true,
+  "design_materialization_commit": "e6e885e17e60f1b12af47a7ddb363b8d2934f8b7",
+  "design_materialization_parent": "10478b0961a601d0f684740b9564633a9930ebc9",
+  "design_materialization_commit_message": "materialize binding: FIRST_TRANCHE24_SOURCE_AUTHORITY_ACTIVATION_DESIGN",
+  "design_independent_review_commit": "e6e885e17e60f1b12af47a7ddb363b8d2934f8b7",
+  "unexplained_lineage_drift": false,
+  "authenticated_project_evidence_reference": "FA1B2de_Current86_FirstTranche24_Source_Authority_Activation_Design_Independent_Review/evidence/LINEAGE_AUTHENTICATION.json",
+  "authenticated_project_evidence_sha256": "9a0c2254a0aea8d6fcf20aed0df3879db216831d613da5bcf15c16e0126d86a5",
+  "authentication_basis": [
+    "direct local Binding worktree HEAD observation",
+    "direct remote-tracking refs/heads/artifact/binding observation",
+    "previously authenticated live remote head evidence",
+    "exact design commit parent and commit-message match"
+  ],
+  "source_material_acquired": false,
+  "source_objects_authenticated": false
+}

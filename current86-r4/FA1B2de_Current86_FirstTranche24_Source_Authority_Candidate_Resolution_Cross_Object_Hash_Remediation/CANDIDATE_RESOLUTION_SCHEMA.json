@@ -1,0 +1,282 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/fa1b2de/current86/first-tranche24/source-authority-candidate-resolution-v1",
+  "title": "FIRST_TRANCHE24 source-authority candidate resolution package records",
+  "oneOf": [
+    {"$ref": "#/$defs/candidateSet"},
+    {"$ref": "#/$defs/resolvedCandidateRecord"},
+    {"$ref": "#/$defs/versionPolicyResolution"},
+    {"$ref": "#/$defs/provenanceEvidenceMap"},
+    {"$ref": "#/$defs/resolutionDecision"},
+    {"$ref": "#/$defs/entryBindingAuthentication"},
+    {"$ref": "#/$defs/zeroOperationalEffect"}
+  ],
+  "$defs": {
+    "sha256": {"type":"string", "pattern":"^[0-9a-f]{64}$"},
+    "commit": {"type":"string", "pattern":"^[0-9a-f]{40}$"},
+    "scope": {
+      "type":"object", "additionalProperties":false,
+      "required":["scope_id","raw_ids","raw_count","unique_raw_count","scope_extension_requested"],
+      "properties": {
+        "scope_id":{"const":"FIRST_TRANCHE24_ONLY"},
+        "raw_ids":{"const":[110,273,210,98,147,277,188,301,143,250,233,287,146,293,114,284,291,215,88,182,300,218,115,148]},
+        "raw_count":{"const":24},
+        "unique_raw_count":{"const":24},
+        "scope_extension_requested":{"const":false}
+      }
+    },
+    "scopeWithLabel": {
+      "type":"object", "additionalProperties":false,
+      "required":["scope_id","scope_label","raw_count"],
+      "properties": {
+        "scope_id":{"const":"34551e904bafa71fb2fb6db33162e94ad41a08eca6c747d429c83760e09c1306"},
+        "scope_label":{"const":"EXACT_CURRENT86_ONLY"},
+        "raw_count":{"const":86}
+      }
+    },
+    "evidenceRef": {
+      "type":"object", "additionalProperties":false,
+      "required":["reference","sha256","evidence_role","authentication_status"],
+      "properties": {
+        "reference":{"type":"string","minLength":1},
+        "sha256":{"$ref":"#/$defs/sha256"},
+        "evidence_role":{"type":"string","minLength":1},
+        "authentication_status":{"type":"string","minLength":1}
+      }
+    },
+    "supportingRef": {
+      "type":"object", "additionalProperties":false,
+      "required":["reference","sha256","evidence_role","authentication_status"],
+      "properties": {
+        "reference":{"type":"string","minLength":1},
+        "sha256":{"$ref":"#/$defs/sha256"},
+        "evidence_role":{"type":"string","minLength":1},
+        "authentication_status":{"type":"string","minLength":1}
+      }
+    },
+    "resolvedClassCandidate": {
+      "type":"object", "additionalProperties":false,
+      "required":["candidate_id_or_local_reference","candidate_type","candidate_name_or_semantic_label","scope","authority_type","source_class","source_fact_type","version_policy_form","provenance_references","supporting_artifact_references","identity_basis","resolution_status"],
+      "properties": {
+        "candidate_id_or_local_reference":{"const":"03_frozen_lineage/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json#class_to_type_mapping[0]"},
+        "candidate_type":{"const":"SOURCE_AUTHORITY_CANDIDATE_CLASS"},
+        "candidate_name_or_semantic_label":{"const":"AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE / PINNED_CANONICAL_INTRINSIC_FIELD"},
+        "scope":{"$ref":"#/$defs/scope"},
+        "authority_type":{"const":"AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE"},
+        "source_class":{"const":"AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE"},
+        "source_fact_type":{"const":"PINNED_CANONICAL_INTRINSIC_FIELD"},
+        "version_policy_form":{"const":"UNRESOLVED_PENDING_SOURCE_EVIDENCE"},
+        "provenance_references":{"type":"array","minItems":1,"items":{"$ref":"#/$defs/evidenceRef"}},
+        "supporting_artifact_references":{"type":"array","minItems":1,"items":{"$ref":"#/$defs/supportingRef"}},
+        "identity_basis":{
+          "type":"object","additionalProperties":false,
+          "required":["identity_procedure_id","identity_namespace","authority_type","source_class","scope_id","concrete_source_locator_status","source_locator_type_status","source_version_policy_id_status","content_digest_status","owner_issuer_identity_status","authority_id_derivation_status"],
+          "properties":{
+            "identity_procedure_id":{"const":"FIRST_TRANCHE24_SOURCE_AUTHORITY_IDENTITY_V1"},
+            "identity_namespace":{"const":"fa1b2de.source-authority/current86/first-tranche24"},
+            "authority_type":{"const":"AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE"},
+            "source_class":{"const":"AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE"},
+            "scope_id":{"const":"FIRST_TRANCHE24_ONLY"},
+            "concrete_source_locator_status":{"const":"UNRESOLVED_PENDING_SOURCE_EVIDENCE"},
+            "source_locator_type_status":{"const":"UNRESOLVED_PENDING_SOURCE_EVIDENCE"},
+            "source_version_policy_id_status":{"const":"UNRESOLVED_PENDING_SOURCE_EVIDENCE"},
+            "content_digest_status":{"const":"UNRESOLVED_PENDING_SOURCE_EVIDENCE"},
+            "owner_issuer_identity_status":{"const":"UNRESOLVED_PENDING_SOURCE_EVIDENCE"},
+            "authority_id_derivation_status":{"const":"NOT_DERIVED"}
+          }
+        },
+        "resolution_status":{"const":"RESOLVED_CLASS_ONLY_VERSION_PENDING"}
+      }
+    },
+    "rejectedWrapperCandidate": {
+      "type":"object", "additionalProperties":false,
+      "required":["candidate_id_or_local_reference","candidate_type","candidate_name_or_semantic_label","scope","source_class","source_fact_type","provenance_references","supporting_artifact_references","resolution_status","rejection_reason_if_rejected"],
+      "properties": {
+        "candidate_id_or_local_reference":{"const":"36831020b75a201420bd5cfce97a54ada12d44246f56a7812455bc21b99f9477"},
+        "candidate_type":{"const":"PROSPECTIVE_CURRENT86_BSO_A2_SCORING_WRAPPER_CANDIDATE"},
+        "candidate_name_or_semantic_label":{"const":"R2_PROSPECTIVE_BSO_A2_CANDIDATE_WRAPPER"},
+        "scope":{"$ref":"#/$defs/scopeWithLabel"},
+        "source_class":{"const":"AUTHENTICATED_SCORING_ROW_SOURCE"},
+        "source_fact_type":{"const":"PINNED_SCORING_ROW_FIELD"},
+        "provenance_references":{"type":"array","minItems":1,"items":{"$ref":"#/$defs/evidenceRef"}},
+        "supporting_artifact_references":{"type":"array","minItems":1,"items":{"$ref":"#/$defs/supportingRef"}},
+        "resolution_status":{"const":"REJECTED"},
+        "rejection_reason_if_rejected":{"type":"array","minItems":1,"items":{"type":"string","minLength":1}}
+      }
+    },
+    "rejectedHistoricalCandidate": {
+      "type":"object", "additionalProperties":false,
+      "required":["candidate_id_or_local_reference","candidate_type","candidate_name_or_semantic_label","scope","provenance_references","supporting_artifact_references","resolution_status","rejection_reason_if_rejected"],
+      "properties": {
+        "candidate_id_or_local_reference":{"const":"FA1B2de_Current86_BSO_A2_Authority_Candidate_PROSPECTIVE_R2/02_old_authority_reference.json#workflow_architecture_authority_hash"},
+        "candidate_type":{"const":"HISTORICAL_CURRENT86_BINDING_AUTHORITY_REFERENCE"},
+        "candidate_name_or_semantic_label":{"const":"FROZEN_HISTORICAL_BSO_EQ_AUTHORITY"},
+        "scope":{"$ref":"#/$defs/scopeWithLabel"},
+        "provenance_references":{"type":"array","minItems":1,"items":{"$ref":"#/$defs/evidenceRef"}},
+        "supporting_artifact_references":{"type":"array","minItems":1,"items":{"$ref":"#/$defs/supportingRef"}},
+        "resolution_status":{"const":"REJECTED"},
+        "rejection_reason_if_rejected":{"type":"array","minItems":1,"items":{"type":"string","minLength":1}}
+      }
+    },
+    "candidateSet": {
+      "type":"object", "additionalProperties":false,
+      "required":["record_type","schema_version","task_id","scope_reference","search_space","candidates","inventory_summary"],
+      "properties":{
+        "record_type":{"const":"FIRST_TRANCHE24_SOURCE_AUTHORITY_CANDIDATE_SET"},
+        "schema_version":{"const":"V1"},
+        "task_id":{"const":"FIRST_TRANCHE24_SOURCE_AUTHORITY_CANDIDATE_RESOLUTION"},
+        "scope_reference":{"$ref":"#/$defs/scope"},
+        "search_space":{
+          "type":"object","additionalProperties":false,
+          "required":["resolution_target","admissible_authority_type","admissible_source_class","admissible_source_fact_type","eligible_candidate_forms","search_space_basis_references"],
+          "properties":{
+            "resolution_target":{"const":"ONE_SOURCE_AUTHORITY_CANDIDATE_OBJECT_OR_CANDIDATE_CLASS"},
+            "admissible_authority_type":{"const":"AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE"},
+            "admissible_source_class":{"const":"AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE"},
+            "admissible_source_fact_type":{"const":"PINNED_CANONICAL_INTRINSIC_FIELD"},
+            "eligible_candidate_forms":{"const":["DIRECT_UPSTREAM_CANONICAL_INTRINSIC_OBJECT","DETERMINISTIC_CANONICAL_WRAPPER_OVER_AUTHORIZED_UPSTREAM_OBJECT","GOVERNED_PROJECT_CANONICAL_INTRINSIC_REGISTRY_OBJECT"]},
+            "search_space_basis_references":{"type":"array","minItems":1,"items":{"$ref":"#/$defs/evidenceRef"}}
+          }
+        },
+        "candidates":{"type":"array","minItems":1,"items":{"oneOf":[{"$ref":"#/$defs/resolvedClassCandidate"},{"$ref":"#/$defs/rejectedWrapperCandidate"},{"$ref":"#/$defs/rejectedHistoricalCandidate"}]}},
+        "inventory_summary":{
+          "type":"object","additionalProperties":false,
+          "required":["total_candidate_entries","resolved_class_entries","resolved_concrete_object_entries","rejected_entries","plausible_unrejected_entries","ambiguous_candidate_set","candidate_resolution_decision"],
+          "properties":{
+            "total_candidate_entries":{"type":"integer","minimum":0},
+            "resolved_class_entries":{"type":"integer","minimum":0},
+            "resolved_concrete_object_entries":{"const":0},
+            "rejected_entries":{"type":"integer","minimum":0},
+            "plausible_unrejected_entries":{"const":0},
+            "ambiguous_candidate_set":{"const":false},
+            "candidate_resolution_decision":{"const":"CANDIDATE_RESOLVED_VERSION_EVIDENCE_PENDING"}
+          }
+        }
+      }
+    },
+    "resolvedCandidateRecord": {
+      "type":"object","additionalProperties":false,
+      "required":["record_type","schema_version","task_id","resolution_state","governance_binding","design_contract_binding","scope_reference","resolved_candidate","version_policy_reference","provenance_evidence_reference","source_authority_id_derivation","activation_boundary"],
+      "properties":{
+        "record_type":{"const":"FIRST_TRANCHE24_SOURCE_AUTHORITY_CANDIDATE_RESOLUTION"},
+        "schema_version":{"const":"V1"},
+        "task_id":{"const":"FIRST_TRANCHE24_SOURCE_AUTHORITY_CANDIDATE_RESOLUTION"},
+        "resolution_state":{"const":"CANDIDATE_RESOLVED_VERSION_EVIDENCE_PENDING"},
+        "governance_binding":{"$ref":"#/$defs/governanceBinding"},
+        "design_contract_binding":{
+          "type":"object","additionalProperties":false,
+          "required":["design_materialization_commit","design_materialization_parent","design_materialization_commit_message","design_independent_review_verdict","design_contract_references"],
+          "properties":{
+            "design_materialization_commit":{"const":"e6e885e17e60f1b12af47a7ddb363b8d2934f8b7"},
+            "design_materialization_parent":{"const":"10478b0961a601d0f684740b9564633a9930ebc9"},
+            "design_materialization_commit_message":{"const":"materialize binding: FIRST_TRANCHE24_SOURCE_AUTHORITY_ACTIVATION_DESIGN"},
+            "design_independent_review_verdict":{"const":"PASS_READY_FOR_SOURCE_AUTHORITY_CANDIDATE_RESOLUTION"},
+            "design_contract_references":{"type":"array","minItems":1,"items":{"$ref":"#/$defs/designRef"}}
+          }
+        },
+        "scope_reference":{"$ref":"#/$defs/scope"},
+        "resolved_candidate":{
+          "type":"object","additionalProperties":false,
+          "required":["candidate_id_or_local_reference","candidate_type","candidate_name_or_semantic_label","authority_type","source_class","source_fact_type","candidate_status","identity_basis","resolution_basis_references","competing_candidate_disposition"],
+          "properties":{
+            "candidate_id_or_local_reference":{"const":"03_frozen_lineage/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json#class_to_type_mapping[0]"},
+            "candidate_type":{"const":"SOURCE_AUTHORITY_CANDIDATE_CLASS"},
+            "candidate_name_or_semantic_label":{"const":"AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE / PINNED_CANONICAL_INTRINSIC_FIELD"},
+            "authority_type":{"const":"AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE"},
+            "source_class":{"const":"AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE"},
+            "source_fact_type":{"const":"PINNED_CANONICAL_INTRINSIC_FIELD"},
+            "candidate_status":{"const":"RESOLVED_CLASS_ONLY"},
+            "identity_basis":{"$ref":"#/$defs/identityBasis"},
+            "resolution_basis_references":{"type":"array","minItems":1,"items":{"type":"string","minLength":1}},
+            "competing_candidate_disposition":{
+              "type":"object","additionalProperties":false,
+              "required":["candidate_set_reference","candidate_set_sha256","rejected_candidate_count","plausible_unrejected_candidate_count","uniqueness_basis"],
+              "properties":{
+                "candidate_set_reference":{"const":"CANDIDATE_SET.json"},
+                "candidate_set_sha256":{"$ref":"#/$defs/sha256"},
+                "rejected_candidate_count":{"const":2},
+                "plausible_unrejected_candidate_count":{"const":0},
+                "uniqueness_basis":{"type":"string","minLength":1}
+              }
+            }
+          }
+        },
+        "version_policy_reference":{
+          "type":"object","additionalProperties":false,"required":["reference","status"],
+          "properties":{"reference":{"const":"VERSION_POLICY_RESOLUTION.json"},"status":{"const":"BLOCKED_PENDING_SOURCE_EVIDENCE"}}
+        },
+        "provenance_evidence_reference":{
+          "type":"object","additionalProperties":false,"required":["reference","status","all_resolution_claims_mapped","concrete_source_provenance_authenticated"],
+          "properties":{"reference":{"const":"PROVENANCE_EVIDENCE_MAP.json"},"status":{"const":"PASS_CLASS_ONLY"},"all_resolution_claims_mapped":{"const":true},"concrete_source_provenance_authenticated":{"const":false}}
+        },
+        "source_authority_id_derivation":{
+          "type":"object","additionalProperties":false,"required":["source_authority_id_derived","source_authority_id","source_authority_id_state","derivation_boundary"],
+          "properties":{"source_authority_id_derived":{"const":false},"source_authority_id":{"const":"NONE"},"source_authority_id_state":{"const":"NONE"},"derivation_boundary":{"type":"string","minLength":1}}
+        },
+        "activation_boundary":{
+          "type":"object","additionalProperties":false,"required":["candidate_resolution_only","source_authority_activated","source_acquisition","source_auth_executed","stage_a_admissions","stage_b_exposures","field_pins","operative_records","p0_executed","p1_executed","formal_1796_experiment_executed"],
+          "properties":{"candidate_resolution_only":{"const":true},"source_authority_activated":{"const":"NO"},"source_acquisition":{"const":"NO"},"source_auth_executed":{"const":"NO"},"stage_a_admissions":{"const":0},"stage_b_exposures":{"const":0},"field_pins":{"const":0},"operative_records":{"const":0},"p0_executed":{"const":"NO"},"p1_executed":{"const":"NO"},"formal_1796_experiment_executed":{"const":"NO"}}
+        }
+      }
+    },
+    "identityBasis": {
+      "type":"object","additionalProperties":false,
+      "required":["identity_procedure_id","identity_namespace","authority_type","source_class","scope_id","concrete_source_locator_status","source_locator_type_status","source_version_policy_id_status","content_digest_status","owner_issuer_identity_status"],
+      "properties":{
+        "identity_procedure_id":{"const":"FIRST_TRANCHE24_SOURCE_AUTHORITY_IDENTITY_V1"},
+        "identity_namespace":{"const":"fa1b2de.source-authority/current86/first-tranche24"},
+        "authority_type":{"const":"AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE"},
+        "source_class":{"const":"AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE"},
+        "scope_id":{"const":"FIRST_TRANCHE24_ONLY"},
+        "concrete_source_locator_status":{"const":"UNRESOLVED_PENDING_SOURCE_EVIDENCE"},
+        "source_locator_type_status":{"const":"UNRESOLVED_PENDING_SOURCE_EVIDENCE"},
+        "source_version_policy_id_status":{"const":"UNRESOLVED_PENDING_SOURCE_EVIDENCE"},
+        "content_digest_status":{"const":"UNRESOLVED_PENDING_SOURCE_EVIDENCE"},
+        "owner_issuer_identity_status":{"const":"UNRESOLVED_PENDING_SOURCE_EVIDENCE"}
+      }
+    },
+    "governanceBinding": {
+      "type":"object","additionalProperties":false,"required":["decision_record_id","governance_transaction_hash","governance_scope","human_governance_decision"],
+      "properties":{"decision_record_id":{"const":"GOVDEC2-68ea814d1940bed4ec8b3e48b6a28f67f3e05c5e50e1c342a1fa2dc7db31f90f"},"governance_transaction_hash":{"const":"b5601414918d6b7cc5c00ebaf24b98d93d2d477bcd4481de4de47b8ed0f7cd38"},"governance_scope":{"const":"FIRST_TRANCHE24_ONLY"},"human_governance_decision":{"const":"APPROVE_BOTH_G1_AND_G2"}}
+    },
+    "designRef": {
+      "type":"object","additionalProperties":false,"required":["reference","sha256","role"],
+      "properties":{"reference":{"type":"string","minLength":1},"sha256":{"$ref":"#/$defs/sha256"},"role":{"type":"string","minLength":1}}
+    },
+    "versionPolicyResolution": {
+      "type":"object","additionalProperties":false,"required":["record_type","schema_version","task_id","candidate_reference","version_policy_resolution","required_policy_contract","selected_policy_form","policy_id_status","immutable_identifier_status","content_sha256_status","lineage_evidence_status","owner_issuer_authorization_status","resolution_basis_references","missing_before_activation"],
+      "properties":{
+        "record_type":{"const":"FIRST_TRANCHE24_SOURCE_AUTHORITY_VERSION_POLICY_RESOLUTION"},"schema_version":{"const":"V1"},"task_id":{"const":"FIRST_TRANCHE24_SOURCE_AUTHORITY_CANDIDATE_RESOLUTION"},"candidate_reference":{"const":"03_frozen_lineage/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json#class_to_type_mapping[0]"},"version_policy_resolution":{"const":"BLOCKED_PENDING_SOURCE_EVIDENCE"},
+        "required_policy_contract":{
+          "type":"object","additionalProperties":false,"required":["policy_version","supported_policy_forms","exactly_one_form_required","floating_reference_allowed","update_policy","required_immutable_evidence"],
+          "properties":{"policy_version":{"const":"V1"},"supported_policy_forms":{"const":["CONTENT_DIGEST","GIT_COMMIT","RELEASE_TAG_WITH_DIGEST"]},"exactly_one_form_required":{"const":true},"floating_reference_allowed":{"const":false},"update_policy":{"const":"NEW_ACTIVATION_REQUIRED"},"required_immutable_evidence":{"const":["immutable_identifier","content_sha256","lineage_evidence","owner_or_issuer_authorization"]}}
+        },
+        "selected_policy_form":{"const":"UNRESOLVED_PENDING_SOURCE_EVIDENCE"},"policy_id_status":{"const":"UNRESOLVED_PENDING_SOURCE_EVIDENCE"},"immutable_identifier_status":{"const":"UNRESOLVED_PENDING_SOURCE_EVIDENCE"},"content_sha256_status":{"const":"UNRESOLVED_PENDING_SOURCE_EVIDENCE"},"lineage_evidence_status":{"const":"UNRESOLVED_PENDING_SOURCE_EVIDENCE"},"owner_issuer_authorization_status":{"const":"UNRESOLVED_PENDING_SOURCE_EVIDENCE"},"resolution_basis_references":{"type":"array","minItems":1,"items":{"$ref":"#/$defs/evidenceRef"}},"missing_before_activation":{"type":"array","minItems":1,"items":{"type":"string","minLength":1}}
+      }
+    },
+    "provenanceClaim": {
+      "type":"object","additionalProperties":false,"required":["claim_id","claim_type","claim","candidate_reference","artifact_reference","artifact_sha256","commit","evidence_role","authentication_status","supports_resolved_candidate","limits_claim_to_class_only"],
+      "properties":{"claim_id":{"type":"string","pattern":"^CLAIM-[0-9]{3}$"},"claim_type":{"type":"string","minLength":1},"claim":{"type":"string","minLength":1},"candidate_reference":{"type":"string","minLength":1},"artifact_reference":{"type":"string","minLength":1},"artifact_sha256":{"$ref":"#/$defs/sha256"},"commit":{"$ref":"#/$defs/commit"},"evidence_role":{"type":"string","minLength":1},"authentication_status":{"type":"string","minLength":1},"supports_resolved_candidate":{"type":"boolean"},"limits_claim_to_class_only":{"type":"boolean"}}
+    },
+    "provenanceEvidenceMap": {
+      "type":"object","additionalProperties":false,"required":["record_type","schema_version","task_id","scope_id","resolved_candidate_reference","map_status","same_candidate_rule","claims","missing_concrete_candidate_evidence"],
+      "properties":{"record_type":{"const":"FIRST_TRANCHE24_SOURCE_AUTHORITY_CANDIDATE_PROVENANCE_EVIDENCE_MAP"},"schema_version":{"const":"V1"},"task_id":{"const":"FIRST_TRANCHE24_SOURCE_AUTHORITY_CANDIDATE_RESOLUTION"},"scope_id":{"const":"FIRST_TRANCHE24_ONLY"},"resolved_candidate_reference":{"const":"03_frozen_lineage/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json#class_to_type_mapping[0]"},"map_status":{"const":"PASS_CLASS_ONLY"},"same_candidate_rule":{"type":"string","minLength":1},"claims":{"type":"array","minItems":1,"items":{"$ref":"#/$defs/provenanceClaim"}},"missing_concrete_candidate_evidence":{"type":"array","minItems":1,"items":{"type":"string","minLength":1}}}
+    },
+    "resolutionDecision": {
+      "type":"object","additionalProperties":false,"required":["record_type","schema_version","task_id","decision","resolved_candidate_reference","resolved_candidate_type","resolved_candidate_authority_type","resolved_candidate_source_class","resolved_candidate_source_fact_type","candidate_set_reference","candidate_set_status","candidate_uniqueness_basis","version_policy_resolution","source_authority_id_derived","source_authority_id","source_authority_id_state","activation_status","governance_binding","missing_evidence_before_activation"],
+      "properties":{"record_type":{"const":"FIRST_TRANCHE24_SOURCE_AUTHORITY_CANDIDATE_RESOLUTION_DECISION"},"schema_version":{"const":"V1"},"task_id":{"const":"FIRST_TRANCHE24_SOURCE_AUTHORITY_CANDIDATE_RESOLUTION"},"decision":{"const":"CANDIDATE_RESOLVED_VERSION_EVIDENCE_PENDING"},"resolved_candidate_reference":{"const":"03_frozen_lineage/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json#class_to_type_mapping[0]"},"resolved_candidate_type":{"const":"SOURCE_AUTHORITY_CANDIDATE_CLASS"},"resolved_candidate_authority_type":{"const":"AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE"},"resolved_candidate_source_class":{"const":"AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE"},"resolved_candidate_source_fact_type":{"const":"PINNED_CANONICAL_INTRINSIC_FIELD"},"candidate_set_reference":{"const":"CANDIDATE_SET.json"},"candidate_set_status":{"const":"ONE_RESOLVED_CLASS_ONLY_TWO_REJECTED_OBJECT_LEVEL_ALTERNATIVES"},"candidate_uniqueness_basis":{"type":"string","minLength":1},"version_policy_resolution":{"const":"BLOCKED_PENDING_SOURCE_EVIDENCE"},"source_authority_id_derived":{"const":"NO"},"source_authority_id":{"const":"NONE"},"source_authority_id_state":{"const":"NONE"},"activation_status":{"const":"NOT_ACTIVATED"},"governance_binding":{"$ref":"#/$defs/fullGovernanceBinding"},"missing_evidence_before_activation":{"type":"array","minItems":1,"items":{"type":"string","minLength":1}}}
+    },
+    "fullGovernanceBinding": {
+      "type":"object","additionalProperties":false,"required":["decision_record_id","governance_transaction_hash","governance_scope","human_governance_decision"],
+      "properties":{"decision_record_id":{"const":"GOVDEC2-68ea814d1940bed4ec8b3e48b6a28f67f3e05c5e50e1c342a1fa2dc7db31f90f"},"governance_transaction_hash":{"const":"b5601414918d6b7cc5c00ebaf24b98d93d2d477bcd4481de4de47b8ed0f7cd38"},"governance_scope":{"const":"FIRST_TRANCHE24_ONLY"},"human_governance_decision":{"const":"APPROVE_BOTH_G1_AND_G2"}}
+    },
+    "entryBindingAuthentication": {
+      "type":"object","additionalProperties":false,"required":["record_type","status","binding_repository","binding_worktree","binding_branch","local_binding_head_observed","remote_tracking_binding_head_observed","live_remote_head_from_authenticated_project_evidence","head_equality","design_materialization_commit","design_materialization_parent","design_materialization_commit_message","design_independent_review_commit","unexplained_lineage_drift","authenticated_project_evidence_reference","authenticated_project_evidence_sha256","authentication_basis","source_material_acquired","source_objects_authenticated"],
+      "properties":{"record_type":{"const":"FIRST_TRANCHE24_CANDIDATE_RESOLUTION_ENTRY_BINDING_AUTHENTICATION"},"status":{"const":"PASS"},"binding_repository":{"type":"string","minLength":1},"binding_worktree":{"type":"string","minLength":1},"binding_branch":{"const":"artifact/binding"},"local_binding_head_observed":{"const":"e6e885e17e60f1b12af47a7ddb363b8d2934f8b7"},"remote_tracking_binding_head_observed":{"const":"e6e885e17e60f1b12af47a7ddb363b8d2934f8b7"},"live_remote_head_from_authenticated_project_evidence":{"const":"e6e885e17e60f1b12af47a7ddb363b8d2934f8b7"},"head_equality":{"const":true},"design_materialization_commit":{"const":"e6e885e17e60f1b12af47a7ddb363b8d2934f8b7"},"design_materialization_parent":{"const":"10478b0961a601d0f684740b9564633a9930ebc9"},"design_materialization_commit_message":{"const":"materialize binding: FIRST_TRANCHE24_SOURCE_AUTHORITY_ACTIVATION_DESIGN"},"design_independent_review_commit":{"const":"e6e885e17e60f1b12af47a7ddb363b8d2934f8b7"},"unexplained_lineage_drift":{"const":false},"authenticated_project_evidence_reference":{"type":"string","minLength":1},"authenticated_project_evidence_sha256":{"$ref":"#/$defs/sha256"},"authentication_basis":{"type":"array","minItems":1,"items":{"type":"string","minLength":1}},"source_material_acquired":{"const":false},"source_objects_authenticated":{"const":false}}
+    },
+    "zeroOperationalEffect": {
+      "type":"object","additionalProperties":false,"required":["record_type","status","task_id","human_governance_decision_materialized","human_governance_decision","governance_scope","governance_decision_changed","NEW_SOURCE_AUTHORITY_ID_CREATED","SOURCE_AUTHORITY_ACTIVATED","SOURCE_ACQUISITION","SOURCE_AUTH_EXECUTED","STAGE_A_ADMISSIONS","STAGE_B_EXPOSURES","FIELD_PINS","OPERATIVE_RECORDS","P0_EXECUTED","P1_EXECUTED","FORMAL_1796_EXPERIMENT_EXECUTED","candidate_resolution_only","source_authority_id_derived","zero_operational_effect"],
+      "properties":{"record_type":{"const":"FIRST_TRANCHE24_SOURCE_AUTHORITY_CANDIDATE_RESOLUTION_ZERO_OPERATIONAL_EFFECT"},"status":{"const":"PASS"},"task_id":{"const":"FIRST_TRANCHE24_SOURCE_AUTHORITY_CANDIDATE_RESOLUTION"},"human_governance_decision_materialized":{"const":"YES"},"human_governance_decision":{"const":"APPROVE_BOTH_G1_AND_G2"},"governance_scope":{"const":"FIRST_TRANCHE24_ONLY"},"governance_decision_changed":{"const":false},"NEW_SOURCE_AUTHORITY_ID_CREATED":{"const":0},"SOURCE_AUTHORITY_ACTIVATED":{"const":"NO"},"SOURCE_ACQUISITION":{"const":"NO"},"SOURCE_AUTH_EXECUTED":{"const":"NO"},"STAGE_A_ADMISSIONS":{"const":0},"STAGE_B_EXPOSURES":{"const":0},"FIELD_PINS":{"const":0},"OPERATIVE_RECORDS":{"const":0},"P0_EXECUTED":{"const":"NO"},"P1_EXECUTED":{"const":"NO"},"FORMAL_1796_EXPERIMENT_EXECUTED":{"const":"NO"},"candidate_resolution_only":{"const":true},"source_authority_id_derived":{"const":"NO"},"zero_operational_effect":{"const":"PASS"}}
+    }
+  }
+}

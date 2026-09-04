@@ -1,0 +1,41 @@
+{
+  "task_id": "FIRST_TRANCHE24_SOURCE_AUTHORITY_CANDIDATE_RESOLUTION_CROSS_OBJECT_HASH_REMEDIATION",
+  "contract_basis": "The existing static validator requires resolved_candidate.competing_candidate_disposition.candidate_set_sha256 to equal the exact SHA-256 of CANDIDATE_SET.json; the schema requires candidate_set_reference to be CANDIDATE_SET.json.",
+  "candidate_set_dependent_fields": [
+    {
+      "artifact": "RESOLVED_CANDIDATE_RECORD.json",
+      "field_path": "resolved_candidate.competing_candidate_disposition.candidate_set_reference",
+      "dependency_kind": "cross_object_reference",
+      "before": "CANDIDATE_SET.json",
+      "after": "CANDIDATE_SET.json",
+      "changed": false
+    },
+    {
+      "artifact": "RESOLVED_CANDIDATE_RECORD.json",
+      "field_path": "resolved_candidate.competing_candidate_disposition.candidate_set_sha256",
+      "dependency_kind": "exact_content_hash_binding",
+      "before": "75ef2657c0145990bf194651fb67c88e3b8c130c4332288fe8b2b28626c31082",
+      "after": "8a4581fbc1fa908430eb82661fbd61bba713f08511629058f02a0dc9c396aa11",
+      "changed": true
+    },
+    {
+      "artifact": "CANDIDATE_RESOLUTION_DECISION.json",
+      "field_path": "candidate_set_reference",
+      "dependency_kind": "cross_object_reference",
+      "before": "CANDIDATE_SET.json",
+      "after": "CANDIDATE_SET.json",
+      "changed": false
+    }
+  ],
+  "derived_ids_or_hashes": [],
+  "cross_object_references": [
+    "RESOLVED_CANDIDATE_RECORD.json#resolved_candidate.competing_candidate_disposition.candidate_set_reference",
+    "RESOLVED_CANDIDATE_RECORD.json#resolved_candidate.competing_candidate_disposition.candidate_set_sha256",
+    "CANDIDATE_RESOLUTION_DECISION.json#candidate_set_reference"
+  ],
+  "deterministic_dependent_fields_recomputed": [
+    "RESOLVED_CANDIDATE_RECORD.json#resolved_candidate.competing_candidate_disposition.candidate_set_sha256"
+  ],
+  "dependency_contract_ambiguous": false,
+  "dependent_field_inventory": "PASS"
+}

@@ -1,0 +1,7 @@
+{
+  "fixture": "multiple_candidates_resolved.json",
+  "base_fixture": "CANDIDATE_SET.json",
+  "mutations": [
+    {"path":["candidates",1,"resolution_status"],"operation":"replace","value":"RESOLVED_CLASS_ONLY_VERSION_PENDING"}
+  ]
+}

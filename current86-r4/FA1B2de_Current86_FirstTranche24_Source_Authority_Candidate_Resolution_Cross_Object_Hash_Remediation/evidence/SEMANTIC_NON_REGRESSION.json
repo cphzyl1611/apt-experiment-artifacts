@@ -1,0 +1,22 @@
+{
+  "task_id": "FIRST_TRANCHE24_SOURCE_AUTHORITY_CANDIDATE_RESOLUTION_CROSS_OBJECT_HASH_REMEDIATION",
+  "candidate_semantic_drift": 0,
+  "comparand_before": "FA1B2de_Current86_FirstTranche24_Source_Authority_Candidate_Resolution",
+  "comparand_after": "FA1B2de_Current86_FirstTranche24_Source_Authority_Candidate_Resolution_Cross_Object_Hash_Remediation",
+  "required_zero_drift_fields": {
+    "candidate_count": 0,
+    "candidate_resolution_state": 0,
+    "resolved_candidate_reference": 0,
+    "resolved_candidate_type": 0,
+    "authority_type": 0,
+    "source_fact_type": 0,
+    "source_authority_id_state": 0,
+    "version_policy_resolution_state": 0,
+    "governance_decision_id": 0,
+    "governance_transaction_hash": 0,
+    "first_tranche24_scope": 0
+  },
+  "only_allowed_change": "Cross-object candidate-set content hash in the resolved-candidate record, plus package materialization metadata and explanatory remediation evidence.",
+  "candidate_set_internal_semantic_diff": "Only the previously stale governance-binding evidence reference was already corrected by the authenticated superseding evidence-reference remediation; no candidate, scope, status, authority, fact-type, identity, or policy semantics changed.",
+  "version_evidence_pending_state_drift": 0
+}

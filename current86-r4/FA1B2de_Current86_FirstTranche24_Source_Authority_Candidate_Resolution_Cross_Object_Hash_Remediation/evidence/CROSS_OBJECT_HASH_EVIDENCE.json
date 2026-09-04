@@ -1,0 +1,13 @@
+{
+  "task_id": "FIRST_TRANCHE24_SOURCE_AUTHORITY_CANDIDATE_RESOLUTION_CROSS_OBJECT_HASH_REMEDIATION",
+  "historical_candidate_set_path": "FA1B2de_Current86_FirstTranche24_Source_Authority_Candidate_Resolution/CANDIDATE_SET.json",
+  "effective_corrected_candidate_set_path": "FA1B2de_Current86_FirstTranche24_Source_Authority_Candidate_Resolution_Evidence_Reference_Remediation/CANDIDATE_SET.json",
+  "historical_resolved_candidate_record_path": "FA1B2de_Current86_FirstTranche24_Source_Authority_Candidate_Resolution/RESOLVED_CANDIDATE_RECORD.json",
+  "old_embedded_candidate_set_sha256": "75ef2657c0145990bf194651fb67c88e3b8c130c4332288fe8b2b28626c31082",
+  "historical_candidate_set_sha256": "75ef2657c0145990bf194651fb67c88e3b8c130c4332288fe8b2b28626c31082",
+  "effective_corrected_candidate_set_sha256": "8a4581fbc1fa908430eb82661fbd61bba713f08511629058f02a0dc9c396aa11",
+  "cross_object_hash_mismatch_reproduced": "YES",
+  "historical_validator_result": "CANDIDATE_SET_INCONSISTENCY: candidate-set hash mismatch",
+  "reproduction_method": "Copied the historical package to an isolated temporary project, substituted only the authenticated corrected candidate set bytes, and ran the unmodified historical static validator.",
+  "reproduction_validator_exit_code": 1
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": "V1",
+  "fixtures": [
+    {"fixture":"multiple_candidates_resolved.json","target":"CANDIDATE_SET.json","expected_rejection":"MULTIPLE_CANDIDATES_RESOLVED"},
+    {"fixture":"zero_candidates_resolved.json","target":"CANDIDATE_SET.json","expected_rejection":"ZERO_RESOLVED_CANDIDATES"},
+    {"fixture":"wrong_governance_decision_id.json","target":"CANDIDATE_RESOLUTION_DECISION.json","expected_rejection":"WRONG_GOVERNANCE_DECISION_ID"},
+    {"fixture":"wrong_transaction_hash.json","target":"CANDIDATE_RESOLUTION_DECISION.json","expected_rejection":"WRONG_GOVERNANCE_TRANSACTION_HASH"},
+    {"fixture":"scope_widening.json","target":"CANDIDATE_RESOLUTION_DECISION.json","expected_rejection":"SCOPE_WIDENING"},
+    {"fixture":"provenance_reference_mismatch.json","target":"PROVENANCE_EVIDENCE_MAP.json","expected_rejection":"PROVENANCE_REFERENCE_MISMATCH"},
+    {"fixture":"version_policy_incompatibility.json","target":"VERSION_POLICY_RESOLUTION.json","expected_rejection":"VERSION_POLICY_INCOMPATIBILITY"},
+    {"fixture":"unauthorized_field.json","target":"CANDIDATE_RESOLUTION_DECISION.json","expected_rejection":"UNAUTHORIZED_FIELD"},
+    {"fixture":"mixed_candidate_evidence.json","target":"PROVENANCE_EVIDENCE_MAP.json","expected_rejection":"MIXED_CANDIDATE_EVIDENCE"},
+    {"fixture":"fake_activated_state.json","target":"evidence/ZERO_OPERATIONAL_EFFECT.json","expected_rejection":"FAKE_ACTIVATED_STATE"}
+  ]
+}

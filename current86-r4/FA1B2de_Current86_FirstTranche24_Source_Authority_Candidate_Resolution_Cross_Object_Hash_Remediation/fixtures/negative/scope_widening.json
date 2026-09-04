@@ -1,0 +1,7 @@
+{
+  "fixture": "scope_widening.json",
+  "base_fixture": "CANDIDATE_RESOLUTION_DECISION.json",
+  "mutations": [
+    {"path":["governance_binding","governance_scope"],"operation":"replace","value":"CURRENT86_WIDE"}
+  ]
+}

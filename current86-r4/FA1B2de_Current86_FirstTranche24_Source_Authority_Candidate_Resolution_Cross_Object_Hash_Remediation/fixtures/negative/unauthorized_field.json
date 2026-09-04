@@ -1,0 +1,7 @@
+{
+  "fixture": "unauthorized_field.json",
+  "base_fixture": "CANDIDATE_RESOLUTION_DECISION.json",
+  "mutations": [
+    {"path":["unauthorized_field"],"operation":"add","value":true}
+  ]
+}

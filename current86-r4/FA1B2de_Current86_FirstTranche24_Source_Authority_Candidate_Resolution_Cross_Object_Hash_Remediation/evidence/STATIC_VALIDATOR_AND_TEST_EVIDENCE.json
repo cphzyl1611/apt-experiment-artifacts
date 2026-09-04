@@ -1,0 +1,23 @@
+{
+  "task_id": "FIRST_TRANCHE24_SOURCE_AUTHORITY_CANDIDATE_RESOLUTION_CROSS_OBJECT_HASH_REMEDIATION",
+  "static_validator_command": "python FA1B2de_Current86_FirstTranche24_Source_Authority_Candidate_Resolution_Cross_Object_Hash_Remediation/tools/validate_candidate_resolution.py",
+  "static_validator": "PASS",
+  "negative_fixtures": "10/10 REJECTED",
+  "negative_fixture_rejection_codes": [
+    "MULTIPLE_CANDIDATES_RESOLVED",
+    "ZERO_RESOLVED_CANDIDATES",
+    "WRONG_GOVERNANCE_DECISION_ID",
+    "WRONG_GOVERNANCE_TRANSACTION_HASH",
+    "SCOPE_WIDENING",
+    "PROVENANCE_REFERENCE_MISMATCH",
+    "VERSION_POLICY_INCOMPATIBILITY",
+    "UNAUTHORIZED_FIELD",
+    "MIXED_CANDIDATE_EVIDENCE",
+    "FAKE_ACTIVATED_STATE"
+  ],
+  "valid_resolution_fixture": "PASS",
+  "valid_resolution_fixture_basis": "The corrected effective package itself is the positive resolution fixture and passes the unmodified historical validator and all packaged tests.",
+  "packaged_test_command": "python -m unittest discover -s FA1B2de_Current86_FirstTranche24_Source_Authority_Candidate_Resolution_Cross_Object_Hash_Remediation/tests -v",
+  "packaged_tests": "3/3 PASS",
+  "candidate_set_inconsistency": "CLOSED"
+}

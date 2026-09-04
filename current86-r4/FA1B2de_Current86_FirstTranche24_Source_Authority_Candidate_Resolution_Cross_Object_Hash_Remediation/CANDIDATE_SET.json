@@ -1,0 +1,197 @@
+{
+  "record_type": "FIRST_TRANCHE24_SOURCE_AUTHORITY_CANDIDATE_SET",
+  "schema_version": "V1",
+  "task_id": "FIRST_TRANCHE24_SOURCE_AUTHORITY_CANDIDATE_RESOLUTION",
+  "scope_reference": {
+    "scope_id": "FIRST_TRANCHE24_ONLY",
+    "raw_ids": [110, 273, 210, 98, 147, 277, 188, 301, 143, 250, 233, 287, 146, 293, 114, 284, 291, 215, 88, 182, 300, 218, 115, 148],
+    "raw_count": 24,
+    "unique_raw_count": 24,
+    "scope_extension_requested": false
+  },
+  "search_space": {
+    "resolution_target": "ONE_SOURCE_AUTHORITY_CANDIDATE_OBJECT_OR_CANDIDATE_CLASS",
+    "admissible_authority_type": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+    "admissible_source_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+    "admissible_source_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+    "eligible_candidate_forms": [
+      "DIRECT_UPSTREAM_CANONICAL_INTRINSIC_OBJECT",
+      "DETERMINISTIC_CANONICAL_WRAPPER_OVER_AUTHORIZED_UPSTREAM_OBJECT",
+      "GOVERNED_PROJECT_CANONICAL_INTRINSIC_REGISTRY_OBJECT"
+    ],
+    "search_space_basis_references": [
+      {
+        "reference": "FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/AUTHORITATIVE_SOURCE_CLASS_POLICY.md",
+        "sha256": "e4c953b5167a71e88910d7659294096dde8403070f4ec5d0712baee0eb2b32d3",
+        "evidence_role": "ELIGIBLE_CANONICAL_SOURCE_FORMS_AND_EXCLUSIONS",
+        "authentication_status": "PASS"
+      },
+      {
+        "reference": "03_frozen_lineage/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json",
+        "sha256": "3df4262faa4137996d2ff8d163bcc665d5bed76b3d719e6ff66cf4154252d72f",
+        "evidence_role": "CLASS_TO_FACT_TYPE_REGISTRY",
+        "authentication_status": "PASS"
+      },
+      {
+        "reference": "FA1B2de_Current86_FirstTranche24_Source_Authority_Activation_Design/SOURCE_AUTHORITY_ACTIVATION_CONTRACT.md",
+        "sha256": "818b8aae990556a95f630c87db9987a467c9ac1ac549a7d4c79d882b0db373d9",
+        "evidence_role": "ACTIVATION_CANDIDATE_AND_EVIDENCE_RULES",
+        "authentication_status": "PASS"
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "candidate_id_or_local_reference": "03_frozen_lineage/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json#class_to_type_mapping[0]",
+      "candidate_type": "SOURCE_AUTHORITY_CANDIDATE_CLASS",
+      "candidate_name_or_semantic_label": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE / PINNED_CANONICAL_INTRINSIC_FIELD",
+        "scope": {
+          "scope_id": "FIRST_TRANCHE24_ONLY",
+          "raw_ids": [110, 273, 210, 98, 147, 277, 188, 301, 143, 250, 233, 287, 146, 293, 114, 284, 291, 215, 88, 182, 300, 218, 115, 148],
+          "raw_count": 24,
+          "unique_raw_count": 24,
+          "scope_extension_requested": false
+        },
+      "authority_type": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "source_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "source_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+      "version_policy_form": "UNRESOLVED_PENDING_SOURCE_EVIDENCE",
+      "provenance_references": [
+        {
+          "reference": "FA1B2de_Current86_FirstTranche24_G1G2_Decision_Materialization/FIRST_TRANCHE24_GOVERNANCE_DECISION_RECORD_V2.json",
+          "sha256": "1e688e1076a0ab64da2839fb38562eedca6b62c1a2d6120b3d8a8b0416c3b31f",
+          "evidence_role": "GOVERNANCE_AUTHORIZES_CLASS_FACT_TYPE_AND_SCOPE",
+          "authentication_status": "PASS"
+        },
+        {
+          "reference": "FA1B2de_Current86_FirstTranche24_StageA_Provenance_Acquisition_Preparation/CANONICAL_SOURCE_COHORT_CLASSIFICATION.json",
+          "sha256": "a873292269d6a08ceb485cf56d861711d9d47b9a2e319743038af1addcaad4e7",
+          "evidence_role": "ALL_24_TARGETS_SHARE_CLASS_AND_NO_EXCEPTION",
+          "authentication_status": "PASS"
+        },
+        {
+          "reference": "FA1B2de_Current86_FirstTranche24_StageA_Provenance_Acquisition_Preparation/SOURCE_AUTHORITY_AND_OWNER_GAP_REPORT.json",
+          "sha256": "4043a5e1239e1f0ecb969bf02eaf53233272311aa654141959149da52287a5bd",
+          "evidence_role": "CONCRETE_OBJECT_AND_OWNER_EVIDENCE_MISSING",
+          "authentication_status": "PASS_BOUNDED_CLASS_ONLY"
+        }
+      ],
+      "supporting_artifact_references": [
+        {
+          "reference": "FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/AUTHORITATIVE_SOURCE_CLASS_POLICY.md",
+          "sha256": "e4c953b5167a71e88910d7659294096dde8403070f4ec5d0712baee0eb2b32d3",
+          "evidence_role": "CLASS_QUALIFICATION_AND_EXCLUSION_RULE",
+          "authentication_status": "PASS"
+        },
+        {
+          "reference": "FA1B2de_Current86_FirstTranche24_Source_Authority_Activation_Design_Independent_Review/evidence/GOVERNANCE_BINDING.json",
+          "sha256": "081e68e5a042cb7ec2c53da49424fa0ae46a1abc9a9839b2f429db433853e705",
+          "evidence_role": "INDEPENDENT_GOVERNANCE_BINDING",
+          "authentication_status": "PASS"
+        }
+      ],
+      "identity_basis": {
+        "identity_procedure_id": "FIRST_TRANCHE24_SOURCE_AUTHORITY_IDENTITY_V1",
+        "identity_namespace": "fa1b2de.source-authority/current86/first-tranche24",
+        "authority_type": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+        "source_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+        "scope_id": "FIRST_TRANCHE24_ONLY",
+        "concrete_source_locator_status": "UNRESOLVED_PENDING_SOURCE_EVIDENCE",
+        "source_locator_type_status": "UNRESOLVED_PENDING_SOURCE_EVIDENCE",
+        "source_version_policy_id_status": "UNRESOLVED_PENDING_SOURCE_EVIDENCE",
+        "content_digest_status": "UNRESOLVED_PENDING_SOURCE_EVIDENCE",
+        "owner_issuer_identity_status": "UNRESOLVED_PENDING_SOURCE_EVIDENCE",
+        "authority_id_derivation_status": "NOT_DERIVED"
+      },
+      "resolution_status": "RESOLVED_CLASS_ONLY_VERSION_PENDING"
+    },
+    {
+      "candidate_id_or_local_reference": "36831020b75a201420bd5cfce97a54ada12d44246f56a7812455bc21b99f9477",
+      "candidate_type": "PROSPECTIVE_CURRENT86_BSO_A2_SCORING_WRAPPER_CANDIDATE",
+      "candidate_name_or_semantic_label": "R2_PROSPECTIVE_BSO_A2_CANDIDATE_WRAPPER",
+      "scope": {
+        "scope_id": "34551e904bafa71fb2fb6db33162e94ad41a08eca6c747d429c83760e09c1306",
+        "scope_label": "EXACT_CURRENT86_ONLY",
+        "raw_count": 86
+      },
+      "source_class": "AUTHENTICATED_SCORING_ROW_SOURCE",
+      "source_fact_type": "PINNED_SCORING_ROW_FIELD",
+      "provenance_references": [
+        {
+          "reference": "FA1B2de_Current86_BSO_A2_Authority_Candidate_PROSPECTIVE_R2/01_transition_manifest.json",
+          "sha256": "4810a1b5336d1672290e46f55eae056f0d1a963f4972548f5d097d1c7dd3baae",
+          "evidence_role": "PROSPECTIVE_CANDIDATE_ID_AND_NON_ACTIVE_STATUS",
+          "authentication_status": "PASS"
+        },
+        {
+          "reference": "FA1B2de_Current86_BSO_A2_Authority_Candidate_R2_Independent_Verification/FA1B2de_Current86_BSO_A2_Authority_Candidate_R2_Independent_Verification.json",
+          "sha256": "2a4b1dfbf3b384c5a3db79d045c052a76836eb13cbeda3643a1dcdee4b165cfa",
+          "evidence_role": "INDEPENDENTLY_VERIFIED_AS_PROSPECTIVE_CURRENT86_CANDIDATE_ONLY",
+          "authentication_status": "PASS"
+        }
+      ],
+      "supporting_artifact_references": [
+        {
+          "reference": "FA1B2de_Current86_Exact317_SourceAuth_Binding_R8_Fresh_Independent_Review/R8_FRESH_REVIEW_CLASSIFICATION_AUDIT.json",
+          "sha256": "91ec2428e843188d138c8e780c83e8100a7d0e02b6fe4cdb01c614a332f426f4",
+          "evidence_role": "CANDIDATE_WRAPPER_POINTERS_ARE_NONCANONICAL_AND_MULTIPLE",
+          "authentication_status": "PASS"
+        }
+      ],
+      "resolution_status": "REJECTED",
+      "rejection_reason_if_rejected": [
+        "source class is AUTHENTICATED_SCORING_ROW_SOURCE, not the required AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+        "candidate is scoped to EXACT_CURRENT86_ONLY, not FIRST_TRANCHE24_ONLY",
+        "independent verification marks it PROSPECTIVE_NOT_ACTIVE and requires a separate activation decision",
+        "wrapper and field-pin evidence do not identify an admitted canonical source object"
+      ]
+    },
+    {
+      "candidate_id_or_local_reference": "FA1B2de_Current86_BSO_A2_Authority_Candidate_PROSPECTIVE_R2/02_old_authority_reference.json#workflow_architecture_authority_hash",
+      "candidate_type": "HISTORICAL_CURRENT86_BINDING_AUTHORITY_REFERENCE",
+      "candidate_name_or_semantic_label": "FROZEN_HISTORICAL_BSO_EQ_AUTHORITY",
+      "scope": {
+        "scope_id": "34551e904bafa71fb2fb6db33162e94ad41a08eca6c747d429c83760e09c1306",
+        "scope_label": "EXACT_CURRENT86_ONLY",
+        "raw_count": 86
+      },
+      "provenance_references": [
+        {
+          "reference": "FA1B2de_Current86_BSO_A2_Authority_Candidate_PROSPECTIVE_R2/02_old_authority_reference.json",
+          "sha256": "7b39f68fe1550285c9aaf3446904dd37a6e0cd32670a4adbfc66669aa05a3a47",
+          "evidence_role": "HISTORICAL_AUTHORITY_STATUS_AND_CURRENT86_SCOPE",
+          "authentication_status": "PASS"
+        },
+        {
+          "reference": "FA1B2de_Current86_FirstTranche24_Source_Authority_Activation_Design_Independent_Review/evidence/SCOPE_ZERO_OPERATIONAL_EFFECT.json",
+          "sha256": "d7b5130b30454436437aa664043925814f1f502f25d507bae8895e80d66bc60d",
+          "evidence_role": "OLD_AUTHORITY_PRESERVED_AND_NO_NEW_AUTHORITY_CREATED",
+          "authentication_status": "PASS"
+        }
+      ],
+      "supporting_artifact_references": [
+        {
+          "reference": "FA1B2de_Current86_Authoritative_Canonical_Field_Mapping_Evidence_Design_R1R1/AUTHORITATIVE_SOURCE_CLASS_POLICY.md",
+          "sha256": "e4c953b5167a71e88910d7659294096dde8403070f4ec5d0712baee0eb2b32d3",
+          "evidence_role": "OLD_OR_HISTORICAL_REFERENCE_NOT_A_NEW_CANONICAL_SOURCE_OBJECT",
+          "authentication_status": "PASS"
+        }
+      ],
+      "resolution_status": "REJECTED",
+      "rejection_reason_if_rejected": [
+        "historical authority is not the later FIRST_TRANCHE24 source-authority candidate",
+        "scope is EXACT_CURRENT86_ONLY and cannot be narrowed by this task",
+        "reusing it would bypass the required candidate adjudication and immutable source evidence"
+      ]
+    }
+  ],
+  "inventory_summary": {
+    "total_candidate_entries": 3,
+    "resolved_class_entries": 1,
+    "resolved_concrete_object_entries": 0,
+    "rejected_entries": 2,
+    "plausible_unrejected_entries": 0,
+    "ambiguous_candidate_set": false,
+    "candidate_resolution_decision": "CANDIDATE_RESOLVED_VERSION_EVIDENCE_PENDING"
+  }
+}

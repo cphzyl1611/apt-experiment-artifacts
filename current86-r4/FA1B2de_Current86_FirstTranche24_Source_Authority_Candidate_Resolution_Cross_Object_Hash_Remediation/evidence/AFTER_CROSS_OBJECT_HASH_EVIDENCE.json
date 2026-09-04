@@ -1,0 +1,10 @@
+{
+  "task_id": "FIRST_TRANCHE24_SOURCE_AUTHORITY_CANDIDATE_RESOLUTION_CROSS_OBJECT_HASH_REMEDIATION",
+  "corrected_candidate_set_path": "CANDIDATE_SET.json",
+  "corrected_resolved_candidate_record_path": "RESOLVED_CANDIDATE_RECORD.json",
+  "corrected_candidate_set_sha256": "8a4581fbc1fa908430eb82661fbd61bba713f08511629058f02a0dc9c396aa11",
+  "resolved_record_embedded_candidate_set_sha256": "8a4581fbc1fa908430eb82661fbd61bba713f08511629058f02a0dc9c396aa11",
+  "cross_object_candidate_set_hash_match": "PASS",
+  "candidate_set_consistency": "PASS",
+  "candidate_set_inconsistency": "CLOSED"
+}

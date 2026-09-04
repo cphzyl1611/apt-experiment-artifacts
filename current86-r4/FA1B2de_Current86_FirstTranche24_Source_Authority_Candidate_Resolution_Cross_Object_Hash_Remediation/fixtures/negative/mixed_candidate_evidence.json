@@ -1,0 +1,7 @@
+{
+  "fixture": "mixed_candidate_evidence.json",
+  "base_fixture": "PROVENANCE_EVIDENCE_MAP.json",
+  "mutations": [
+    {"path":["claims",0,"candidate_reference"],"operation":"replace","value":"36831020b75a201420bd5cfce97a54ada12d44246f56a7812455bc21b99f9477"}
+  ]
+}
