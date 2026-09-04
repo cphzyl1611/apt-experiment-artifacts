@@ -1,0 +1,26 @@
+{
+  "verification_date": "2026-09-04",
+  "SOURCE_AUTHORITY_ID_DERIVED": "NO",
+  "SOURCE_AUTHORITY_ID": "NONE",
+  "SOURCE_AUTHORITY_ACTIVATED": "NO",
+  "SOURCE_ACQUISITION": "NO",
+  "SOURCE_AUTH_EXECUTED": "NO",
+  "STAGE_A_ADMISSIONS": 0,
+  "STAGE_B_EXPOSURES": 0,
+  "FIELD_PINS": 0,
+  "OPERATIVE_RECORDS": 0,
+  "P0_EXECUTED": "NO",
+  "P1_EXECUTED": "NO",
+  "FORMAL_1796_EXPERIMENT_EXECUTED": "NO",
+  "LIVE_ENDPOINT_EVIDENCE_INTRODUCED": "NO",
+  "CREDENTIAL_OR_TOKEN_INTRODUCED": "NO",
+  "REAL_AUTHENTICATION_EXECUTION_REFERENCE_CREATED": "NO",
+  "SOURCE_OBJECT_ACQUIRED": "NO",
+  "ZERO_OPERATIONAL_EFFECT": "PASS",
+  "basis": [
+    "All envelope fixtures are SYNTHETIC_TEST_ONLY.",
+    "All acquisition provenance fixtures are SIMULATED_ONLY.",
+    "P2 uses only urn:synthetic:static-only:authentication-execution-reference and is not real authentication evidence.",
+    "No live endpoint values, credentials, tokens, source objects, runtime receipts, or authentication outputs were introduced."
+  ]
+}

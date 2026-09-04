@@ -1,0 +1,9 @@
+{
+  "fixture_id": "N2",
+  "fixture_descriptor": "PASS status with a null execution reference remains invalid even when not eligible",
+  "base_fixture": "../positive/P1_acquisition_complete_authentication_pending.json",
+  "expected_schema_validation": "REJECTED",
+  "mutations": [
+    {"operation": "replace", "path": ["authentication_readiness", "source_authentication_status"], "value": "PASS"}
+  ]
+}

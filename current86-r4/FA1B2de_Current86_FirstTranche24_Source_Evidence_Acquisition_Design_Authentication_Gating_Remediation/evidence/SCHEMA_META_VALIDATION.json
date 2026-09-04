@@ -1,0 +1,23 @@
+{
+  "verification_date": "2026-09-04",
+  "DRAFT_2020_12_META_VALIDATION": "PASS",
+  "affected_schemas": [
+    {
+      "path": "ACQUIRED_EVIDENCE_ENVELOPE_SCHEMA.json",
+      "dialect": "DRAFT_2020_12",
+      "validation": "PASS",
+      "historical_allOf_clause_count": 2,
+      "corrected_allOf_clause_count": 5,
+      "schema_changes_outside_allOf": 0,
+      "opaque_reference_form_preserved": true,
+      "authentication_readiness_definition_preserved": true
+    }
+  ],
+  "inspected_unchanged_dependent_schema": {
+    "path": "FA1B2de_Current86_FirstTranche24_Source_Evidence_Acquisition_Design/ACQUISITION_TRANSACTION_SCHEMA.json",
+    "dialect": "DRAFT_2020_12",
+    "validation": "PASS",
+    "modified": false
+  },
+  "dialect_drift": "NONE"
+}

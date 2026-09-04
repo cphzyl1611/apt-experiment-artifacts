@@ -1,0 +1,40 @@
+{
+  "verification_date": "2026-09-04",
+  "STATIC_VALIDATOR": "PASS",
+  "historical_static_validator": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 python FA1B2de_Current86_FirstTranche24_Source_Evidence_Acquisition_Design/tools/validate_design.py",
+    "result": "PASS",
+    "negative_fixtures": "19/19 REJECTED",
+    "schema_meta_validation": "PASS",
+    "zero_operational_effect": "PASS"
+  },
+  "remediation_static_validator": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 python FA1B2de_Current86_FirstTranche24_Source_Evidence_Acquisition_Design_Authentication_Gating_Remediation/tools/validate_remediation.py",
+    "result": "PASS",
+    "negative_fixtures": "24/24 REJECTED",
+    "positive_fixtures": "2/2 ACCEPTED",
+    "authentication_gating_invariant": "PASS",
+    "acquisition_authentication_collapse": "ABSENT",
+    "semantic_drift": 0,
+    "zero_operational_effect": "PASS"
+  },
+  "unit_tests": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 python -m unittest FA1B2de_Current86_FirstTranche24_Source_Evidence_Acquisition_Design/tests/test_static_design.py FA1B2de_Current86_FirstTranche24_Source_Evidence_Acquisition_Design_Authentication_Gating_Remediation/tests/test_authentication_gating_remediation.py",
+    "result": "PASS",
+    "tests_run": 4,
+    "failures": 0,
+    "errors": 0
+  },
+  "targeted_negative_fixture_results": {
+    "N1": "REJECTED",
+    "N2": "REJECTED",
+    "N3": "REJECTED",
+    "N4": "REJECTED",
+    "N5": "REJECTED"
+  },
+  "targeted_positive_fixture_results": {
+    "P1": "ACCEPTED",
+    "P2": "ACCEPTED"
+  },
+  "P2_semantics": "Synthetic static-only fixture; it does not claim that real source authentication occurred."
+}

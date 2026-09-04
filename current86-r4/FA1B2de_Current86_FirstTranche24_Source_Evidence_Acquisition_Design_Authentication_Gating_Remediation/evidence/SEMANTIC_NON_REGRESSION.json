@@ -1,0 +1,32 @@
+{
+  "verification_date": "2026-09-04",
+  "ACQUISITION_DESIGN_SEMANTIC_DRIFT": 0,
+  "SOURCE_VERSION_EVIDENCE_REVIEW_BINDING": "PASS",
+  "GOVERNANCE_DECISION_BINDING": "PASS",
+  "FIRST_TRANCHE24_SCOPE_EXACTNESS": "PASS",
+  "ACQUISITION_OBJECT_SET_DESIGN": "PASS",
+  "ACQUISITION_CHANNEL_POLICY": "PASS",
+  "OWNER_ISSUER_AUTHORIZATION_SCHEMA": "PASS",
+  "LINEAGE_PROOF_SCHEMA": "PASS",
+  "ACQUISITION_TRANSACTION_SCHEMA": "PASS",
+  "ACQUISITION_STATE_MACHINE": "PASS",
+  "CANDIDATE_REFERENCE": "PASS",
+  "historical_acquisition_design_commit": "391c048fe132d308fa791dabef701e89be35fdcc",
+  "historical_acquisition_design_parent": "a67377396ae6d20e87c1870bddeed8700a6c871b",
+  "historical_envelope_schema_sha256": "dd1a42a5ee5d0786a0ee5a2d42bc7486b50b82d1a67a4e08ecd4342327bd4c0e",
+  "corrected_envelope_schema_sha256": "4c1e0cd56b6a63fdee539e6b89ca695d3228ef794e2a7821c848ddb9d13a3b71",
+  "schema_change_scope": "Three additive allOf clauses only; historical allOf clauses, $defs, and all fields outside allOf are preserved.",
+  "protected_historical_artifacts": {
+    "ACQUISITION_CHANNEL_POLICY.json": "6666852d7d3c72793ccba822f27f7210208a69b1ececb152ada90af2d2d26f2a",
+    "ACQUISITION_STATE_MACHINE.json": "0c68b0c1993eee976c650b92b4851355d27d30141925864428016feb70664826",
+    "ACQUISITION_TRANSACTION_SCHEMA.json": "2a094d541d28f901437842206ceed7194175c725d5cc8c066404eadc22094b88",
+    "LINEAGE_PROOF_SCHEMA.json": "3d6f6a19943dcd9986e9b0fdf3da0b760c0b8fa27a0dfaf9ec305dc67d363f14",
+    "OWNER_ISSUER_AUTHORIZATION_SCHEMA.json": "e2ab446665c737d675ed8451b70083c1484f1a1af1bf4d8e7bf5ad51aee96b90"
+  },
+  "historical_package_rewritten_in_place": "NO",
+  "acquisition_object_set_changed": "NO",
+  "acquisition_channel_policy_changed": "NO",
+  "lineage_semantics_changed": "NO",
+  "owner_issuer_authorization_semantics_changed": "NO",
+  "acquisition_state_machine_changed": "NO"
+}

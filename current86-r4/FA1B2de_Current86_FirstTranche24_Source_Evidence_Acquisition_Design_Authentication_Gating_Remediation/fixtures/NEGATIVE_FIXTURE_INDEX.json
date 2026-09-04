@@ -1,0 +1,11 @@
+{
+  "fixture_type": "FIRST_TRANCHE24_AUTHENTICATION_GATING_REMEDIATION_NEGATIVE_FIXTURES",
+  "base_fixture": "positive/P1_acquisition_complete_authentication_pending.json",
+  "vectors": [
+    {"id": "N1", "fixture": "negative/N1_pass_null_reference_downstream_eligible.json", "expected_schema_validation": "REJECTED"},
+    {"id": "N2", "fixture": "negative/N2_pass_null_reference_not_eligible.json", "expected_schema_validation": "REJECTED"},
+    {"id": "N3", "fixture": "negative/N3_nonpass_null_reference_downstream_eligible.json", "expected_schema_validation": "REJECTED"},
+    {"id": "N4", "fixture": "negative/N4_nonpass_valid_reference_downstream_eligible.json", "expected_schema_validation": "REJECTED"},
+    {"id": "N5", "fixture": "negative/N5_pass_malformed_reference_downstream_eligible.json", "expected_schema_validation": "REJECTED"}
+  ]
+}

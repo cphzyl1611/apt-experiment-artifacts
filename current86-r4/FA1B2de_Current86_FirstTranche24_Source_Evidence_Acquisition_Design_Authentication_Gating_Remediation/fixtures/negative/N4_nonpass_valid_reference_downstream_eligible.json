@@ -1,0 +1,11 @@
+{
+  "fixture_id": "N4",
+  "fixture_descriptor": "a syntactically valid reference cannot make a non-PASS status downstream eligible",
+  "base_fixture": "../positive/P1_acquisition_complete_authentication_pending.json",
+  "expected_schema_validation": "REJECTED",
+  "mutations": [
+    {"operation": "replace", "path": ["authentication_readiness", "source_authentication_status"], "value": "FAIL"},
+    {"operation": "replace", "path": ["authentication_readiness", "authentication_execution_reference"], "value": "urn:synthetic:static-only:authentication-execution-reference"},
+    {"operation": "replace", "path": ["downstream_eligibility"], "value": "DOWNSTREAM_ELIGIBLE"}
+  ]
+}

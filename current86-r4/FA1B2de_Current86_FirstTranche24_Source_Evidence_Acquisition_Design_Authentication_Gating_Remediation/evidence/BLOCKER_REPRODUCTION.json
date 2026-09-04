@@ -1,0 +1,26 @@
+{
+  "verification_date": "2026-09-04",
+  "BLOCKER_REPRODUCED": "YES",
+  "COUNTEREXAMPLE_PATH": "/home/cph/fa1b2de-bso-a2-transition-r2-design-patch/FA1B2de_Current86_FirstTranche24_Source_Evidence_Acquisition_Design_Authentication_Gating_Remediation/BLOCKER_COUNTEREXAMPLE.json",
+  "COUNTEREXAMPLE_FIELDS": {
+    "authentication_readiness.source_authentication_status": "PASS",
+    "authentication_readiness.authentication_execution_reference": null,
+    "downstream_eligibility": "DOWNSTREAM_ELIGIBLE"
+  },
+  "PRE_FIX_SCHEMA_PATH": "/home/cph/fa1b2de-bso-a2-transition-r2-design-patch/FA1B2de_Current86_FirstTranche24_Source_Evidence_Acquisition_Design/ACQUIRED_EVIDENCE_ENVELOPE_SCHEMA.json",
+  "PRE_FIX_SCHEMA_SHA256": "dd1a42a5ee5d0786a0ee5a2d42bc7486b50b82d1a67a4e08ecd4342327bd4c0e",
+  "PRE_FIX_COUNTEREXAMPLE_ACCEPTED": "YES",
+  "PRE_FIX_SCHEMA_VALIDATION": "ACCEPTED",
+  "POST_FIX_SCHEMA_PATH": "/home/cph/fa1b2de-bso-a2-transition-r2-design-patch/FA1B2de_Current86_FirstTranche24_Source_Evidence_Acquisition_Design_Authentication_Gating_Remediation/ACQUIRED_EVIDENCE_ENVELOPE_SCHEMA.json",
+  "POST_FIX_SCHEMA_SHA256": "4c1e0cd56b6a63fdee539e6b89ca695d3228ef794e2a7821c848ddb9d13a3b71",
+  "POST_FIX_COUNTEREXAMPLE_REJECTED": "YES",
+  "POST_FIX_SCHEMA_VALIDATION": "REJECTED",
+  "POST_FIX_ERROR_PATHS": [
+    ["authentication_readiness", "authentication_execution_reference"],
+    ["authentication_readiness", "authentication_execution_reference"],
+    ["downstream_eligibility"]
+  ],
+  "OPERATING_MODE": "SYNTHETIC_STATIC_ONLY",
+  "SOURCE_ACQUISITION_PERFORMED": "NO",
+  "SOURCE_AUTHENTICATION_PERFORMED": "NO"
+}

@@ -1,0 +1,10 @@
+{
+  "fixture_id": "N1",
+  "fixture_descriptor": "PASS status, null execution reference, and downstream eligibility",
+  "base_fixture": "../positive/P1_acquisition_complete_authentication_pending.json",
+  "expected_schema_validation": "REJECTED",
+  "mutations": [
+    {"operation": "replace", "path": ["authentication_readiness", "source_authentication_status"], "value": "PASS"},
+    {"operation": "replace", "path": ["downstream_eligibility"], "value": "DOWNSTREAM_ELIGIBLE"}
+  ]
+}

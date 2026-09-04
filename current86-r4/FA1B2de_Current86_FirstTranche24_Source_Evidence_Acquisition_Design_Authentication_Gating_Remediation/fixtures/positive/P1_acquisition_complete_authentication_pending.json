@@ -1,0 +1,208 @@
+{
+  "record_type": "FIRST_TRANCHE24_ACQUIRED_SOURCE_EVIDENCE_ENVELOPE",
+  "schema_version": "V1",
+  "envelope_mode": "SYNTHETIC_TEST_ONLY",
+  "envelope_identity": {
+    "envelope_id": "SENV-FIRST_TRANCHE24_SOURCE_EVIDENCE_ACQUISITION_V1-1111111111111111111111111111111111111111111111111111111111111111",
+    "transaction_id": "SAETX-FIRST_TRANCHE24_SOURCE_EVIDENCE_ACQUISITION_V1-0000000000000000000000000000000000000000000000000000000000000000",
+    "canonicalization_profile": "RFC8785_LIKE_UTF8_SORTED_JSON_V1"
+  },
+  "governance_binding": {
+    "decision_record_id": "GOVDEC2-68ea814d1940bed4ec8b3e48b6a28f67f3e05c5e50e1c342a1fa2dc7db31f90f",
+    "governance_transaction_hash": "b5601414918d6b7cc5c00ebaf24b98d93d2d477bcd4481de4de47b8ed0f7cd38",
+    "human_governance_decision": "APPROVE_BOTH_G1_AND_G2",
+    "governance_scope": "FIRST_TRANCHE24_ONLY",
+    "version_evidence_resolution_commit": "81c843c48619fd8e25983f68a7248d0273dc2192",
+    "version_evidence_resolution_parent": "6171a460ef527b99f2176eb047d51ca7082d067a",
+    "review_materialization_commit": "a67377396ae6d20e87c1870bddeed8700a6c871b",
+    "review_materialization_parent": "81c843c48619fd8e25983f68a7248d0273dc2192",
+    "review_materialization_message": "materialize binding: FIRST_TRANCHE24_SOURCE_VERSION_EVIDENCE_RESOLUTION_INDEPENDENT_REVIEW"
+  },
+  "scope_binding": {
+    "scope_id": "FIRST_TRANCHE24_ONLY",
+    "raw_ids": [110,273,210,98,147,277,188,301,143,250,233,287,146,293,114,284,291,215,88,182,300,218,115,148],
+    "raw_count": 24,
+    "unique_raw_count": 24,
+    "scope_binding_mode": "LITERAL_ORDERED_SET",
+    "scope_extension_permitted": false
+  },
+  "candidate_reference": {
+    "reference": "03_frozen_lineage/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json#class_to_type_mapping[0]",
+    "resolution_state": "CANDIDATE_RESOLVED_VERSION_EVIDENCE_PENDING",
+    "candidate_type": "SOURCE_AUTHORITY_CANDIDATE_CLASS",
+    "authority_type": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+    "source_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD"
+  },
+  "artifact_identity": {
+    "artifact_id": "artifact:synthetic:first-tranche24-canonical-v1",
+    "artifact_class": "CANONICAL_SOURCE_ARTIFACT",
+    "canonical_locator": "urn:synthetic:first-tranche24-canonical-v1",
+    "artifact_kind": "CONTENT_ADDRESSED_BLOB",
+    "artifact_identity_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "eligible_artifact_count": 1,
+    "uniqueness_status": "UNIQUE_ELIGIBLE_ARTIFACT",
+    "uniqueness_evidence_reference": "urn:synthetic:evidence:unique-artifact"
+  },
+  "immutable_version_representation": {
+    "policy_id": "SVP-SYNTHETIC_CONTENT_DIGEST_V1",
+    "policy_version": "V1",
+    "policy_form": "CONTENT_DIGEST",
+    "immutable_identifier": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "floating_reference_allowed": false,
+    "reference": {
+      "reference_kind": "CONTENT_URI",
+      "locator": "urn:synthetic:version:SVP-SYNTHETIC_CONTENT_DIGEST_V1",
+      "repository": null,
+      "commit": null,
+      "tree": null,
+      "release": null,
+      "tag": null
+    },
+    "artifact_id": "artifact:synthetic:first-tranche24-canonical-v1",
+    "content_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "version_identity_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+  },
+  "content_digest_evidence": {
+    "artifact_id": "artifact:synthetic:first-tranche24-canonical-v1",
+    "policy_id": "SVP-SYNTHETIC_CONTENT_DIGEST_V1",
+    "digest_algorithm": "SHA-256",
+    "content_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "bytes_evidence_reference": "urn:synthetic:bytes:first-tranche24-canonical-v1",
+    "bytes_evidence_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "recomputed_content_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "recomputation_method": "SHA256_OVER_EXACT_RETRIEVED_BYTES",
+    "byte_length": 1024,
+    "digest_binding_status": "PASS_SAME_ARTIFACT_AND_VERSION"
+  },
+  "lineage_proof": {
+    "lineage_record_id": "LIN-SYNTHETIC_FIRST_TRANCHE24",
+    "candidate_reference": "03_frozen_lineage/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json#class_to_type_mapping[0]",
+    "artifact_id": "artifact:synthetic:first-tranche24-canonical-v1",
+    "policy_id": "SVP-SYNTHETIC_CONTENT_DIGEST_V1",
+    "content_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "edges": [
+      {
+        "edge_id": "DESCRIPTOR_TO_ARTIFACT",
+        "from_reference": "urn:synthetic:authority-descriptor",
+        "to_reference": "artifact:synthetic:first-tranche24-canonical-v1",
+        "evidence_reference": "urn:synthetic:evidence:descriptor-artifact",
+        "edge_sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+        "edge_authentication_status": "SYNTHETIC_PASS"
+      },
+      {
+        "edge_id": "ARTIFACT_TO_IMMUTABLE_VERSION",
+        "from_reference": "artifact:synthetic:first-tranche24-canonical-v1",
+        "to_reference": "urn:synthetic:version:SVP-SYNTHETIC_CONTENT_DIGEST_V1",
+        "evidence_reference": "urn:synthetic:evidence:artifact-version",
+        "edge_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+        "edge_authentication_status": "SYNTHETIC_PASS"
+      },
+      {
+        "edge_id": "IMMUTABLE_VERSION_TO_CONTENT_DIGEST",
+        "from_reference": "urn:synthetic:version:SVP-SYNTHETIC_CONTENT_DIGEST_V1",
+        "to_reference": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "evidence_reference": "urn:synthetic:evidence:version-digest",
+        "edge_sha256": "9999999999999999999999999999999999999999999999999999999999999999",
+        "edge_authentication_status": "SYNTHETIC_PASS"
+      }
+    ],
+    "proof_status": "SYNTHETIC_PASS",
+    "mixed_lineage_allowed": false
+  },
+  "owner_issuer_authorization": {
+    "record_type": "OWNER_ISSUER_AUTHORIZATION_PROOF",
+    "schema_version": "V1",
+    "owner_or_issuer_identity": {
+      "identity_type": "SOURCE_OWNER",
+      "canonical_name": "Synthetic Owner For Static Fixture",
+      "identity_reference": "urn:synthetic:owner:first-tranche24",
+      "relationship_to_artifact": "OWNS",
+      "identity_evidence_reference": "urn:synthetic:evidence:owner-identity"
+    },
+    "artifact_identity": {
+      "artifact_id": "artifact:synthetic:first-tranche24-canonical-v1",
+      "canonical_locator": "urn:synthetic:first-tranche24-canonical-v1",
+      "artifact_class": "CANONICAL_SOURCE_ARTIFACT",
+      "artifact_identity_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    },
+    "immutable_version_binding": {
+      "policy_id": "SVP-SYNTHETIC_CONTENT_DIGEST_V1",
+      "policy_form": "CONTENT_DIGEST",
+      "immutable_identifier": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "content_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "floating_reference_allowed": false,
+      "version_evidence_reference": "urn:synthetic:evidence:version"
+    },
+    "authorization_scope": {
+      "scope_id": "FIRST_TRANCHE24_ONLY",
+      "raw_ids": [110,273,210,98,147,277,188,301,143,250,233,287,146,293,114,284,291,215,88,182,300,218,115,148],
+      "raw_count": 24,
+      "unique_raw_count": 24,
+      "scope_digest": "6666666666666666666666666666666666666666666666666666666666666666",
+      "scope_binding_mode": "LITERAL_ORDERED_SET",
+      "permitted_use": "SOURCE_AUTHENTICATION_INPUT_ONLY",
+      "scope_extension_permitted": false
+    },
+    "authorization_status": "ACTIVE",
+    "issuance_effective_metadata": {
+      "authorization_id": "AUTH-SYNTHETIC_FIRST_TRANCHE24",
+      "issued_at": "2026-09-04T05:00:00Z",
+      "effective_at": "2026-09-04T05:00:00Z",
+      "expires_at": null,
+      "revoked_at": null,
+      "superseded_by": null,
+      "status_as_of": "2026-09-04T05:02:00Z"
+    },
+    "evidence_reference": {
+      "evidence_id": "EVID-SYNTHETIC_OWNER_AUTHORIZATION",
+      "evidence_kind": "SIGNED_OWNER_AUTHORIZATION",
+      "evidence_locator": "urn:synthetic:evidence:owner-authorization",
+      "evidence_sha256": "7777777777777777777777777777777777777777777777777777777777777777",
+      "attestation_status": "SYNTHETIC_PASS",
+      "signature_or_proof_method": "SYNTHETIC_DETERMINISTIC"
+    },
+    "authentication_procedure": {
+      "procedure_id": "FIRST_TRANCHE24_OWNER_ISSUER_AUTHENTICATION_V1",
+      "checks": [
+        "authenticate_owner_or_issuer_identity",
+        "authenticate_relationship_to_exact_artifact",
+        "authenticate_immutable_version_binding",
+        "authenticate_exact_first_tranche24_scope",
+        "authenticate_active_non_revoked_non_superseded_status",
+        "authenticate_evidence_reference_and_proof"
+      ],
+      "publication_accessibility_substitute_allowed": false
+    },
+    "public_accessibility_not_authorization": true
+  },
+  "acquisition_provenance": {
+    "provenance_record_id": "PROV-SYNTHETIC_FIRST_TRANCHE24",
+    "acquisition_attempt_id": "ATTEMPT-SYNTHETIC_FIRST_TRANCHE24",
+    "channel_class": "CONTENT_ADDRESSED_OBJECT_HANDOFF",
+    "channel_policy_version": "V1",
+    "channel_instance_reference": "urn:synthetic:channel:content-addressed",
+    "request_descriptor_sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+    "requested_candidate_reference": "03_frozen_lineage/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json#class_to_type_mapping[0]",
+    "requested_scope_id": "FIRST_TRANCHE24_ONLY",
+    "started_at": "2026-09-04T05:01:00Z",
+    "completed_at": "2026-09-04T05:02:00Z",
+    "returned_object_count": 1,
+    "selected_object_count": 1,
+    "selection_rule": "EXACTLY_ONE_ELIGIBLE_ARTIFACT_AND_ONE_CONSISTENT_EVIDENCE_SET",
+    "selected_object_reference": "artifact:synthetic:first-tranche24-canonical-v1",
+    "response_metadata_sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+    "retrieval_event_sha256": "3333333333333333333333333333333333333333333333333333333333333333",
+    "credential_material_recorded": false,
+    "acquisition_execution_status": "SIMULATED_ONLY",
+    "provenance_status": "DETERMINISTIC_SYNTHETIC_PASS"
+  },
+  "authentication_readiness": {
+    "source_authentication_status": "NOT_EXECUTED",
+    "authentication_required": true,
+    "authentication_procedure_reference": "FIRST_TRANCHE24_SOURCE_AUTHENTICATION_V1",
+    "authentication_execution_reference": null,
+    "authentication_gate_boundary": "NO_DOWNSTREAM_CONSUMPTION_BEFORE_SOURCE_AUTHENTICATION_PASS"
+  },
+  "downstream_eligibility": "NOT_ELIGIBLE",
+  "authority_activation_status": "NOT_ACTIVATED"
+}

@@ -1,0 +1,11 @@
+{
+  "fixture_id": "N5",
+  "fixture_descriptor": "PASS status and eligibility require the exact opaque-reference syntax",
+  "base_fixture": "../positive/P1_acquisition_complete_authentication_pending.json",
+  "expected_schema_validation": "REJECTED",
+  "mutations": [
+    {"operation": "replace", "path": ["authentication_readiness", "source_authentication_status"], "value": "PASS"},
+    {"operation": "replace", "path": ["authentication_readiness", "authentication_execution_reference"], "value": " malformed authentication reference"},
+    {"operation": "replace", "path": ["downstream_eligibility"], "value": "DOWNSTREAM_ELIGIBLE"}
+  ]
+}
