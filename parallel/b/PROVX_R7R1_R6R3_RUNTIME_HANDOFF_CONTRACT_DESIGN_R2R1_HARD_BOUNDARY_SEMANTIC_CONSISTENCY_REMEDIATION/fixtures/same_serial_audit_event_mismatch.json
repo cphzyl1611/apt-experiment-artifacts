@@ -1,0 +1,12 @@
+{
+  "event": {
+    "raw_serial": 17,
+    "syscall_record_serial": 17,
+    "path_record_serial": 18,
+    "same_serial_linkage": "PASS",
+    "raw_bundle_assertions": {"audit_key_exact": true, "path_exact": true}
+  },
+  "raw_records": [
+    {"serial": 17, "record_types": ["SYSCALL", "PATH"]}
+  ]
+}

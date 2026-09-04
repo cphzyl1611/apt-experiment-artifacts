@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "authoritative_canonical_value": true,
+  "field": "hard_boundaries.pcap_is_not_graph_edge_source",
+  "contradicting_component": "validator",
+  "evidence": [
+    {
+      "path": "PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2.md",
+      "lines": "36-37",
+      "meaning": "PCAP is provenance/authentication only and never a graph-edge source"
+    },
+    {
+      "path": "PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2R1/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2R1.md",
+      "lines": "36-37",
+      "meaning": "R2R1 preserves the same PCAP graph-edge prohibition"
+    },
+    {
+      "path": "PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2/R6R3_RUNTIME_HANDOFF_SCHEMA_R2.json",
+      "lines": "670-682",
+      "meaning": "hard-boundary inverse guard has const true"
+    },
+    {
+      "path": "PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2R1/R6R3_RUNTIME_HANDOFF_SCHEMA_R2R1.json",
+      "lines": "710-722",
+      "meaning": "R2R1 schema requires const true"
+    },
+    {
+      "path": "PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2/r2_contract_validator.py",
+      "lines": "409-425",
+      "meaning": "paired PCAP guard uses provenance_only true and used_as_graph_edge_source false"
+    },
+    {
+      "path": "R2R1 baseline commit 31bc08d3ddd0c836a4b610b53714cadea084172f:r2r1_contract_validator.py",
+      "lines": "1192-1198",
+      "meaning": "defective universal-false boundary check"
+    },
+    {
+      "path": "PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2R1/r2r1_contract_validator.py",
+      "lines": "1192-1211",
+      "meaning": "corrected polarity-aware boundary check"
+    }
+  ],
+  "semantic_authority_unique": true,
+  "root_cause_authentication": "PASS"
+}

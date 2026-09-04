@@ -1,0 +1,5 @@
+{
+  "schema": "PROVX_R7R1_R6R3_AUTHENTICATED_RUNTIME_HANDOFF_R2R1",
+  "runtime_evidence_present": true,
+  "operator_references": ["operator_that_is_not_registered"]
+}

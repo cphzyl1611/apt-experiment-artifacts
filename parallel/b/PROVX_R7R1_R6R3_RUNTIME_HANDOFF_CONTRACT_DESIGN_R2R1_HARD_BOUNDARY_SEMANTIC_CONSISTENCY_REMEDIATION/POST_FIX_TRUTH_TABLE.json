@@ -1,0 +1,25 @@
+{
+  "phase": "post_fix",
+  "source_commit": "31bc08d3ddd0c836a4b610b53714cadea084172f",
+  "field": "hard_boundaries.pcap_is_not_graph_edge_source",
+  "schema_path": "R6R3_RUNTIME_HANDOFF_SCHEMA_R2R1.json#$defs.hardBoundaries",
+  "validator_path": "r2r1_contract_validator.py::_check_hard_boundaries",
+  "results": [
+    {
+      "value": true,
+      "schema": "ACCEPT",
+      "validator": "ACCEPT",
+      "satisfies_both": true
+    },
+    {
+      "value": false,
+      "schema": "REJECT",
+      "schema_error": "True was expected",
+      "validator": "REJECT",
+      "validator_error": "HANDOFF_SCOPE_BOUNDARY_VIOLATED",
+      "satisfies_both": false
+    }
+  ],
+  "satisfying_value_count": 1,
+  "consistency_status": "PASS"
+}

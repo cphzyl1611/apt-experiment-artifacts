@@ -1,0 +1,15 @@
+{
+  "AUTHENTICATED_R6_RUNTIME_INPUT": "ABSENT",
+  "R2_PRIVILEGED_EXECUTION_RECEIPT": "ABSENT",
+  "SOURCE_LINEAGE_AUTHENTICATED": "NO",
+  "PROVX_TRAINING": "NO",
+  "PROVX_INFERENCE": "NO",
+  "FORMAL_1796_EXPERIMENT_EXECUTED": "NO",
+  "PRODUCER_RECEIPT_EMISSION_NOT_IMPLEMENTED": "OPEN",
+  "SOURCE_LINEAGE_NOT_AUTHENTICATED": "OPEN",
+  "privileged_runtime_executed": false,
+  "mininet_executed": false,
+  "runtime_receipt_emitted": false,
+  "pcap_created": false,
+  "runtime_artifacts_created": false
+}

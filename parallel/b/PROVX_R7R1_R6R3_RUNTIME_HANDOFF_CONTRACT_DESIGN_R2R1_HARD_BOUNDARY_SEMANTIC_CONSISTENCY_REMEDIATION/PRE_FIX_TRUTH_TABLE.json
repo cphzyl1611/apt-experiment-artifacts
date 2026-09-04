@@ -1,0 +1,26 @@
+{
+  "phase": "pre_fix",
+  "baseline_commit": "31bc08d3ddd0c836a4b610b53714cadea084172f",
+  "baseline_parent": "11a5692effd70ab5fbcf75b4574c7c27338e49af",
+  "field": "hard_boundaries.pcap_is_not_graph_edge_source",
+  "schema_path": "R6R3_RUNTIME_HANDOFF_SCHEMA_R2R1.json#$defs.hardBoundaries",
+  "validator_path": "r2r1_contract_validator.py::_check_hard_boundaries",
+  "results": [
+    {
+      "value": true,
+      "schema": "ACCEPT",
+      "validator": "REJECT",
+      "validator_error": "HANDOFF_SCOPE_BOUNDARY_VIOLATED",
+      "satisfies_both": false
+    },
+    {
+      "value": false,
+      "schema": "REJECT",
+      "schema_error": "True was expected",
+      "validator": "ACCEPT",
+      "satisfies_both": false
+    }
+  ],
+  "satisfying_value_count": 0,
+  "reproduction_status": "PASS"
+}

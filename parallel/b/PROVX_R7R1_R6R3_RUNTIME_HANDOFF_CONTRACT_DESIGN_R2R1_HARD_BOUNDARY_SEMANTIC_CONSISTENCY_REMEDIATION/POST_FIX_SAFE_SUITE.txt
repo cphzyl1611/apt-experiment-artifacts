@@ -1,0 +1,8 @@
+Command: PYTHONDONTWRITEBYTECODE=1 python -m unittest test_r2r1_contract.py
+Working directory: self-contained remediation package
+
+.................................................
+----------------------------------------------------------------------
+Ran 49 tests
+
+OK

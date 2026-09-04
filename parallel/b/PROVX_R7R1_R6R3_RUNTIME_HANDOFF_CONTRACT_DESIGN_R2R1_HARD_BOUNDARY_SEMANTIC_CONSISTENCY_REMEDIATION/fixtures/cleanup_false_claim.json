@@ -1,0 +1,38 @@
+{
+  "pre_state": {
+    "baseline_rule_dump_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "persistent_rule_files_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+  },
+  "rule_remediation_journal": {
+    "entries": [
+      {"rule_id": "rule-a", "operation": "ADD", "result": "SUCCESS"},
+      {"rule_id": "rule-b", "operation": "ADD", "result": "SUCCESS"},
+      {"rule_id": "rule-a", "operation": "DELETE", "result": "SUCCESS"}
+    ],
+    "successful_add_ids": ["rule-a", "rule-b"],
+    "successful_delete_ids": ["rule-a"],
+    "global_delete_observed": false
+  },
+  "transient_rule_contract": {"allowed_rule_ids": ["rule-a", "rule-b"]},
+  "residual_remediation_evidence": {
+    "remaining_transient_rules": [],
+    "baseline_rule_dump_sha256_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "persistent_rule_files_sha256_after": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "run_owned_children_remaining": 0,
+    "reserved_test_interfaces_remaining": 0,
+    "reserved_test_ovs_objects_remaining": 0,
+    "tcpdump_process_remaining": 0,
+    "topology_residue_zero": true,
+    "child_residue_zero": true,
+    "tcpdump_residue_zero": true
+  },
+  "post_cleanup_revalidation": {
+    "performed_after_all_reads": true,
+    "audit_lost_events": 0,
+    "audit_backlog": 0
+  },
+  "claimed": {
+    "inverse_complete": true,
+    "baseline_restored": true
+  }
+}

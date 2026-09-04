@@ -1,0 +1,9 @@
+{
+  "normalized_rows": [
+    {"event_id": "e1", "join_key": ["run-1", "h1", 42, 100, 200, "child"]}
+  ],
+  "join_rows": [
+    {"join_key": ["run-1", "h1", 42, 100, 200, "child"], "join_status": "JOINED"},
+    {"join_key": ["run-1", "h1", 42, 100, 200, "child"], "join_status": "JOINED"}
+  ]
+}

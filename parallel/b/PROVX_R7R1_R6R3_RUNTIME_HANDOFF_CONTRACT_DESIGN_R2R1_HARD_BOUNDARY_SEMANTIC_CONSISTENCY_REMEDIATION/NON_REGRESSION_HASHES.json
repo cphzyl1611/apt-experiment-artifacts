@@ -1,0 +1,20 @@
+{
+  "pinned_r2_payload_match": "31/31",
+  "r7r1_adapter": {
+    "path": "/home/cph/fa1b2de-artifact-worktrees/e0-b/parallel/b/PROVX_R7_NORMALIZED_TO_GRAPH_ADAPTER.py",
+    "sha256": "7e33886b9ac628e8c4f312317127d95c181e40bebc2c5059cc9022ed4555ad6e",
+    "frozen_sha256": "7e33886b9ac628e8c4f312317127d95c181e40bebc2c5059cc9022ed4555ad6e",
+    "hash_drift": 0,
+    "modified": false
+  },
+  "encoder": {
+    "path": "/home/cph/fa1b2de-artifact-worktrees/e0-b/parallel/b/PROVX_R4_ENCODER_IMPLEMENTATION.py",
+    "sha256": "013d9b77297308843144ccfce4c3eec4b03dc3cc5172dabd6eb3320e7bc46547",
+    "frozen_sha256": "013d9b77297308843144ccfce4c3eec4b03dc3cc5172dabd6eb3320e7bc46547",
+    "hash_drift": 0,
+    "modified": false
+  },
+  "r7r1_adapter_hash_drift": 0,
+  "encoder_hash_drift": 0,
+  "source_authentication": "existing authenticated R2R1 evidence; no adapter or encoder modification performed"
+}

@@ -1,0 +1,23 @@
+--- R2R1 baseline: r2r1_contract_validator.py:1192-1198
++++ corrected: r2r1_contract_validator.py:1192-1211
+@@
+ def _check_hard_boundaries(candidate: dict[str, Any]) -> dict[str, Any]:
+     boundaries = candidate["hard_boundaries"]
+-    if not isinstance(boundaries, dict) or any(value is not False for value in boundaries.values()):
++    forbidden_operation_fields = (
++        "r7r1_adapter_changed",
++        "frozen_32d_encoder_changed",
++        "detector_trained",
++        "provx_inference_executed",
++        "formal_experiment_executed",
++        "privileged_commands_executed_by_e0b",
++        "runtime_data_fabricated",
++    )
++    if not isinstance(boundaries, dict) or any(
++        boundaries.get(field) is not False for field in forbidden_operation_fields
++    ):
+         raise ContractError("HANDOFF_SCOPE_BOUNDARY_VIOLATED")
++    if boundaries.get("pcap_is_not_graph_edge_source") is not True:
++        raise ContractError("HANDOFF_SCOPE_BOUNDARY_VIOLATED")
+     if candidate["pcap_authentication"].get("used_as_graph_edge_source") is not False:
+         raise ContractError("PCAP_GRAPH_SOURCE_BOUNDARY")

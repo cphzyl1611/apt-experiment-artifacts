@@ -1,0 +1,26 @@
+{
+  "targeted_semantic_consistency_tests": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 python -m unittest test_r2r1_contract.HardBoundarySemanticConsistencyTests",
+    "result": "2/2 PASS"
+  },
+  "full_r2r1_safe_suite": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 python -m unittest test_r2r1_contract.py",
+    "result": "49/49 PASS",
+    "historical_tests": 47,
+    "new_tests": 2,
+    "failed": 0
+  },
+  "static_validation": {
+    "result": "PASS",
+    "operator_count": 22,
+    "rule_count": 17,
+    "rule_ids": "H001-H017"
+  },
+  "draft_2020_12_meta_validation": {
+    "result": "9/9 PASS",
+    "documents_validated": 9,
+    "documents_failed": 0
+  },
+  "hard_boundary_semantic_consistency": "PASS",
+  "schema_validator_satisfying_value_count": 1
+}

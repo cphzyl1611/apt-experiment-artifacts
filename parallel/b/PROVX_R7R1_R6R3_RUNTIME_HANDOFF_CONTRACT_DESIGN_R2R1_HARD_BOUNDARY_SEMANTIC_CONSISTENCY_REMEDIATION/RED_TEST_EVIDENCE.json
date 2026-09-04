@@ -1,0 +1,23 @@
+{
+  "red_test_observed": "YES",
+  "command": "PYTHONDONTWRITEBYTECODE=1 python -m unittest test_r2r1_contract.HardBoundarySemanticConsistencyTests",
+  "baseline_source": "authenticated R2R1 commit 31bc08d3ddd0c836a4b610b53714cadea084172f",
+  "baseline_fixture_setup": "Temporary copy of the authenticated baseline package with the remediation focused test file applied; no source repository files changed.",
+  "exit_status": 1,
+  "tests_run": 2,
+  "failures": 1,
+  "errors": 1,
+  "observed_failures": [
+    {
+      "test": "test_inverse_pcap_guard_true_is_schema_and_validator_accepted",
+      "result": "ERROR",
+      "error": "ContractError: HANDOFF_SCOPE_BOUNDARY_VIOLATED"
+    },
+    {
+      "test": "test_inverse_pcap_guard_false_remains_schema_invalid",
+      "result": "FAIL",
+      "error": "AssertionError: ContractError not raised"
+    }
+  ],
+  "interpretation": "The authoritative focused tests fail against the defective validator in both polarity directions, proving the contradiction before the patch."
+}
