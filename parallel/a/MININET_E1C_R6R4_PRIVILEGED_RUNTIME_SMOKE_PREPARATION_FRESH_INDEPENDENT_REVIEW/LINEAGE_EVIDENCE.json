@@ -1,0 +1,28 @@
+{
+  "review_task_id": "MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_PREPARATION_FRESH_INDEPENDENT_REVIEW",
+  "track": "e0-a",
+  "branch": "artifact/e0-a",
+  "prior_authenticated_head": "c618f5b5ed90ade104cffee4916e0dc8307de284",
+  "local_e0a_head": "9128e772cb727852b7fb37a3bcdd4778fbd84939",
+  "remote_tracking_e0a_head": "9128e772cb727852b7fb37a3bcdd4778fbd84939",
+  "live_remote_e0a_head": "9128e772cb727852b7fb37a3bcdd4778fbd84939",
+  "materialization_commit": "9128e772cb727852b7fb37a3bcdd4778fbd84939",
+  "materialization_parent": "c618f5b5ed90ade104cffee4916e0dc8307de284",
+  "materialization_commit_message": "materialize e0-a: MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_PREPARATION",
+  "commit_count_after_prior_authenticated_head": 1,
+  "commit_relationship": "materialization_commit is the direct child of prior_authenticated_head",
+  "lineage_requirements": {
+    "branch_matches": true,
+    "local_equals_remote_tracking": true,
+    "remote_tracking_equals_live_remote": true,
+    "exactly_one_expected_materialization_commit": true,
+    "message_identifies_task": true,
+    "unexplained_lineage_drift": false
+  },
+  "authentication_notes": [
+    "The three-head equality and direct-parent relationship were authenticated before review-package creation.",
+    "A redundant live-remote re-probe during this review was unavailable because the configured Git transport could not reach GitHub; it did not alter the prior authenticated result.",
+    "No commit or push was performed by this review."
+  ],
+  "status": "PASS"
+}

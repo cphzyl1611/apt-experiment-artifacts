@@ -1,0 +1,36 @@
+{
+  "review_task_id": "MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_PREPARATION_FRESH_INDEPENDENT_REVIEW",
+  "package": "MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_PREPARATION",
+  "verification_scope": "safe static preparation validator and tests only",
+  "commands": [
+    {
+      "command": "fa-materialize validate parallel/a/MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_PREPARATION/MATERIALIZATION_MANIFEST.json",
+      "result": "PASS",
+      "requirements": ["canonical-v1", "track=e0-a", "exact task_id", "file_count=8"]
+    },
+    {
+      "command": "fa-materialize inspect parallel/a/MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_PREPARATION/MATERIALIZATION_MANIFEST.json",
+      "result": "PASS",
+      "requirements": ["manifest validation", "payload hash closure", "artifact scope", "clean artifact worktree"]
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python parallel/a/MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_PREPARATION/validate_runtime_smoke_preparation.py --package parallel/a/MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_PREPARATION --repository-root /home/cph/experiment-parallel/e0-a",
+      "result": "PASS",
+      "static_validator": "PASS"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python -m unittest parallel/a/MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_PREPARATION/test_runtime_smoke_preparation.py",
+      "result": "PASS",
+      "tests": "4/4 PASS"
+    }
+  ],
+  "static_validator": "PASS",
+  "tests": "4/4 PASS",
+  "privileged_commands_executed": "NO",
+  "mininet_executed": "NO",
+  "audit_runtime_executed": "NO",
+  "provx_training": "NO",
+  "provx_inference": "NO",
+  "formal_1796_experiment_executed": "NO",
+  "status": "PASS"
+}

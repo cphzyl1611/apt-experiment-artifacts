@@ -1,0 +1,118 @@
+{
+  "review_task_id": "MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_PREPARATION_FRESH_INDEPENDENT_REVIEW",
+  "package": "MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_PREPARATION",
+  "canonical_source_root": "/home/cph/experiment-parallel/e0-a",
+  "artifact_worktree_root": "/home/cph/fa1b2de-artifact-worktrees/e0-a",
+  "source_manifest": {
+    "path": "parallel/a/MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_PREPARATION/MATERIALIZATION_MANIFEST.json",
+    "sha256": "8863bcdb03ff2769bf0a369f0572be968cd809c23644d9a87d78b9a340f4b043",
+    "manifest_format": "canonical-v1",
+    "track": "e0-a",
+    "task_id": "MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_PREPARATION",
+    "file_count": 8
+  },
+  "artifact_manifest": {
+    "path": "parallel/a/MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_PREPARATION/MATERIALIZATION_MANIFEST.json",
+    "sha256": "8863bcdb03ff2769bf0a369f0572be968cd809c23644d9a87d78b9a340f4b043",
+    "manifest_format": "canonical-v1",
+    "track": "e0-a",
+    "task_id": "MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_PREPARATION",
+    "file_count": 8
+  },
+  "payloads": [
+    {
+      "path": "parallel/a/MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_PREPARATION/EVIDENCE_COLLECTION_REQUIREMENTS.md",
+      "source_sha256": "d3fcfbe247564887949b35436a1ec6fe2202767d49ac136e9006760ec1b34ae6",
+      "manifest_sha256": "d3fcfbe247564887949b35436a1ec6fe2202767d49ac136e9006760ec1b34ae6",
+      "artifact_sha256": "d3fcfbe247564887949b35436a1ec6fe2202767d49ac136e9006760ec1b34ae6",
+      "source_bytes": 2518,
+      "artifact_bytes": 2518,
+      "byte_equal": true
+    },
+    {
+      "path": "parallel/a/MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_PREPARATION/EXECUTION_BOUNDARY.md",
+      "source_sha256": "bb1f9bd032557363240415fbc23caeb1a96d03542adf71278f2b62c69494d7d8",
+      "manifest_sha256": "bb1f9bd032557363240415fbc23caeb1a96d03542adf71278f2b62c69494d7d8",
+      "artifact_sha256": "bb1f9bd032557363240415fbc23caeb1a96d03542adf71278f2b62c69494d7d8",
+      "source_bytes": 1755,
+      "artifact_bytes": 1755,
+      "byte_equal": true
+    },
+    {
+      "path": "parallel/a/MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_PREPARATION/EXPECTED_RUNTIME_RECEIPT_SCHEMA.json",
+      "source_sha256": "d6a0e833eb8c7bcf4c6963c0938d01b6f863dc03cb8972ff668e8df9f5d548ef",
+      "manifest_sha256": "d6a0e833eb8c7bcf4c6963c0938d01b6f863dc03cb8972ff668e8df9f5d548ef",
+      "artifact_sha256": "d6a0e833eb8c7bcf4c6963c0938d01b6f863dc03cb8972ff668e8df9f5d548ef",
+      "source_bytes": 6375,
+      "artifact_bytes": 6375,
+      "byte_equal": true
+    },
+    {
+      "path": "parallel/a/MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_PREPARATION/FAIL_CLOSED_CONDITIONS.json",
+      "source_sha256": "481a13713d26a7d9a86c470ba6130107e62b121c269b627425bd9f0ebc06e72a",
+      "manifest_sha256": "481a13713d26a7d9a86c470ba6130107e62b121c269b627425bd9f0ebc06e72a",
+      "artifact_sha256": "481a13713d26a7d9a86c470ba6130107e62b121c269b627425bd9f0ebc06e72a",
+      "source_bytes": 3134,
+      "artifact_bytes": 3134,
+      "byte_equal": true
+    },
+    {
+      "path": "parallel/a/MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_PREPARATION/INDEPENDENT_REVIEW_PACKAGE.md",
+      "source_sha256": "fcd5debd37d1bcc8787727d63834f1706be5ea701c0e26cb6fd8212f4ec0cf8b",
+      "manifest_sha256": "fcd5debd37d1bcc8787727d63834f1706be5ea701c0e26cb6fd8212f4ec0cf8b",
+      "artifact_sha256": "fcd5debd37d1bcc8787727d63834f1706be5ea701c0e26cb6fd8212f4ec0cf8b",
+      "source_bytes": 2794,
+      "artifact_bytes": 2794,
+      "byte_equal": true
+    },
+    {
+      "path": "parallel/a/MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_PREPARATION/RUNTIME_SMOKE_PREPARATION_CONTRACT.json",
+      "source_sha256": "97d6684fe9f2ef6d1dfc6e96adaa584726f1ee2033939d31ed46d58d4e53b748",
+      "manifest_sha256": "97d6684fe9f2ef6d1dfc6e96adaa584726f1ee2033939d31ed46d58d4e53b748",
+      "artifact_sha256": "97d6684fe9f2ef6d1dfc6e96adaa584726f1ee2033939d31ed46d58d4e53b748",
+      "source_bytes": 3112,
+      "artifact_bytes": 3112,
+      "byte_equal": true
+    },
+    {
+      "path": "parallel/a/MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_PREPARATION/test_runtime_smoke_preparation.py",
+      "source_sha256": "139311320da0421d3465b34cc3d63dc684e18cc4377ebd2b16776d1e523a147a",
+      "manifest_sha256": "139311320da0421d3465b34cc3d63dc684e18cc4377ebd2b16776d1e523a147a",
+      "artifact_sha256": "139311320da0421d3465b34cc3d63dc684e18cc4377ebd2b16776d1e523a147a",
+      "source_bytes": 4923,
+      "artifact_bytes": 4923,
+      "byte_equal": true
+    },
+    {
+      "path": "parallel/a/MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_PREPARATION/validate_runtime_smoke_preparation.py",
+      "source_sha256": "0a3369fbe89c059a597a8a0e9875326e2ae1fb781940809d43dbbf430d859797",
+      "manifest_sha256": "0a3369fbe89c059a597a8a0e9875326e2ae1fb781940809d43dbbf430d859797",
+      "artifact_sha256": "0a3369fbe89c059a597a8a0e9875326e2ae1fb781940809d43dbbf430d859797",
+      "source_bytes": 20713,
+      "artifact_bytes": 20713,
+      "byte_equal": true
+    }
+  ],
+  "required_payload_filenames": [
+    "EVIDENCE_COLLECTION_REQUIREMENTS.md",
+    "EXECUTION_BOUNDARY.md",
+    "EXPECTED_RUNTIME_RECEIPT_SCHEMA.json",
+    "FAIL_CLOSED_CONDITIONS.json",
+    "INDEPENDENT_REVIEW_PACKAGE.md",
+    "RUNTIME_SMOKE_PREPARATION_CONTRACT.json",
+    "test_runtime_smoke_preparation.py",
+    "validate_runtime_smoke_preparation.py"
+  ],
+  "scope_checks": {
+    "payload_count": 8,
+    "payload_count_matches": true,
+    "manifest_not_payload": true,
+    "no_pycache": true,
+    "no_pyc": true,
+    "source_manifest_hash_mismatch": 0,
+    "artifact_manifest_hash_mismatch": 0,
+    "source_artifact_byte_mismatch": 0,
+    "authenticated_payloads": "8/8"
+  },
+  "status": "PASS"
+}
