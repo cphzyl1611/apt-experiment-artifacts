@@ -1,0 +1,177 @@
+{
+  "schema": "MININET_E1C_R6R4_EXPECTED_PRIVILEGED_RUNTIME_SMOKE_RECEIPT_V1",
+  "classification": "FUTURE_RUNTIME_RECEIPT_REQUIREMENTS_ONLY_NOT_RUNTIME_EVIDENCE",
+  "receipt": {
+    "required_top_level_fields": [
+      "schema",
+      "receipt_id",
+      "run_id",
+      "decision",
+      "privileged_result_review",
+      "artifacts",
+      "normalized_to_raw_link_summary",
+      "file_read_or_write",
+      "pid_netns_logical_host_join",
+      "coverage_and_loss",
+      "post_cleanup",
+      "declared_runtime_claims"
+    ],
+    "decision_requirement": "PASS only when every required artifact, linkage, closure, loss, deadline, and cleanup condition is authenticated. Any missing, inconsistent, or unverifiable field is BLOCKED.",
+    "run_id_policy": "One nonempty immutable run_id must be identical in the receipt, privileged result/review, every artifact descriptor, every raw record, every normalized event, every PID/netns join record, coverage/loss output, PCAP hash source, and post-cleanup proof. Omitted row-level run_id is BLOCKED.",
+    "required_artifacts": [
+      "privileged_result_review",
+      "raw_audit_jsonl",
+      "normalized_events_jsonl",
+      "pid_netns_join_jsonl",
+      "coverage_and_loss_json",
+      "pcap",
+      "pcap_hash_source",
+      "post_cleanup_proof"
+    ],
+    "artifact_descriptor_required_fields": [
+      "relative_path",
+      "bytes",
+      "sha256",
+      "run_id"
+    ],
+    "artifact_hash_policy": "Each required artifact descriptor must name a relative path below the one declared receipt root, a positive byte count except where an empty file is explicitly prohibited, and a lowercase 64-hex SHA-256 matching the received bytes. The PCAP hash source is separate and mandatory.",
+    "normalized_to_raw_link_summary_required_fields": [
+      "raw_record_count",
+      "normalized_event_count",
+      "unique_raw_serials",
+      "all_normalized_rows_linked",
+      "decoded_raw_bytes_sha256_links_valid",
+      "raw_event_sha256_links_valid",
+      "link_failures"
+    ]
+  },
+  "raw_audit_record": {
+    "required_fields": [
+      "run_id",
+      "serial",
+      "records",
+      "raw_bytes_b64",
+      "raw_sha256"
+    ],
+    "serial_policy": "serial is an exact integer audit serial and is unique within the raw audit JSONL.",
+    "raw_bytes_policy": "raw_bytes_b64 must strict-decode. The SHA-256 of decoded bytes must equal raw_sha256. No rendered-text substitute is accepted."
+  },
+  "normalized_event": {
+    "required_common_fields": [
+      "run_id",
+      "event_id",
+      "event_type",
+      "raw_serial",
+      "raw_event_bytes_b64",
+      "raw_event_sha256",
+      "pid",
+      "pid_start_time_ticks",
+      "logical_host_id",
+      "netns_inode",
+      "join_status"
+    ],
+    "raw_link_policy": "raw_serial must select exactly one raw record. Decoded normalized raw_event_bytes_b64 must equal that raw record decoded bytes, and raw_event_sha256 must equal both decoded-byte SHA-256 values."
+  },
+  "file_read_or_write": {
+    "event_type": "FILE_READ_OR_WRITE",
+    "minimum_count": 1,
+    "required_same_serial_raw_record_types": [
+      "SYSCALL",
+      "PATH"
+    ],
+    "required_syscall_fields": [
+      "syscall",
+      "success",
+      "key"
+    ],
+    "supported_underlying_syscalls": [
+      "openat",
+      "openat2",
+      "read",
+      "write",
+      "pread64",
+      "pwrite64",
+      "readv",
+      "writev",
+      "pwritev2"
+    ],
+    "required_success_value": "yes",
+    "required_path_field": "name",
+    "required_evidence_basis": "AUDIT_FILESYSTEM_PERMISSION_FILTER",
+    "required_normalized_fields": [
+      "watched_path",
+      "requested_access",
+      "underlying_syscall",
+      "evidence_basis"
+    ],
+    "require_exact_same_serial_key_and_watched_path": true,
+    "require_supported_underlying_syscall": true,
+    "require_authenticated_raw_bytes_and_sha256_link": true,
+    "require_pid_netns_logical_host_join": true,
+    "path_identity_policy": "The normalized watched_path must equal the exact PATH name from the same raw audit serial and must be present in the normalized file identity."
+  },
+  "pid_netns_logical_host_join": {
+    "required_fields": [
+      "run_id",
+      "logical_host_id",
+      "netns_inode",
+      "join_status",
+      "process"
+    ],
+    "process_required_fields": [
+      "pid",
+      "start_ticks"
+    ],
+    "required_join_status": "JOINED",
+    "match_policy": "Every normalized event must match exactly one join record on run_id, logical_host_id, pid, pid_start_time_ticks/start_ticks, and netns_inode. No host identity may be inferred."
+  },
+  "coverage_and_loss": {
+    "required_fields": [
+      "run_id",
+      "normalized_audit_class_counts",
+      "missing_required_classes",
+      "audit_loss_count",
+      "audit_backlog_count",
+      "ausearch"
+    ],
+    "required_zero_fields": [
+      "audit_loss_count",
+      "audit_backlog_count"
+    ],
+    "ausearch_required_fields": [
+      "deadline_expired",
+      "returncode"
+    ],
+    "ausearch_required_values": {
+      "deadline_expired": false,
+      "returncode": 0
+    },
+    "required_class_count": {
+      "FILE_READ_OR_WRITE": "positive integer"
+    }
+  },
+  "pcap_authentication": {
+    "pcap_hash_source_must_be_explicitly_bound": true,
+    "required_hash_field": "pcap_sha256",
+    "match_policy": "The PCAP SHA-256 must appear in the declared PCAP hash-source artifact and equal the hash of the PCAP bytes. A filename-only, review-only, or inferred binding is BLOCKED."
+  },
+  "post_cleanup": {
+    "required_fields": [
+      "run_id",
+      "audit_baseline_restored_after_r6",
+      "AUDIT_BASELINE_RESTORED_AFTER_R6",
+      "rule_removal",
+      "baseline_rule_dump_sha256_before",
+      "baseline_rule_dump_sha256_after"
+    ],
+    "required_values": {
+      "audit_baseline_restored_after_r6": true,
+      "AUDIT_BASELINE_RESTORED_AFTER_R6": "YES"
+    },
+    "restoration_policy": "Only rules proven added by the same run may be removed. The post-cleanup baseline hash must exactly equal the pre-run baseline hash."
+  },
+  "consumer_boundary": {
+    "provx_r7r1_adapter_invocation": "PROHIBITED_IN_THIS_PHASE",
+    "future_consumer_rule": "A future independent consumer must re-hash receipt artifacts, recompute raw/normalized serial and decoded-byte links, reject broken joins, require positive FILE_READ_OR_WRITE evidence, and not synthesize a file event."
+  }
+}

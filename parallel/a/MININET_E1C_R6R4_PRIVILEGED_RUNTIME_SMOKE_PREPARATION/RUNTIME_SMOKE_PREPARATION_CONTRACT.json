@@ -1,0 +1,59 @@
+{
+  "schema": "MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_PREPARATION_CONTRACT_V1",
+  "prepared_on": "2026-09-03",
+  "phase_input": "MININET_E1C_R6R4_TARGETED_FRESH_REVIEW = PASS_READY_FOR_PRIVILEGED_RUNTIME_SMOKE_PREPARATION",
+  "package_mode": "STATIC_PREPARATION_AND_REVIEW_ONLY",
+  "purpose": "Define the sole admissible evidence contract and independent review inputs for a future human-authorized privileged runtime smoke. This package performs neither authorization nor execution.",
+  "preservation_requirements": {
+    "r6r4_artifacts_modified": "NO",
+    "provx_r7r1_adapter_modified": "NO",
+    "runtime_evidence_generated": "NO",
+    "audit_configuration_modified": "NO",
+    "formal_experiment_executed": "NO"
+  },
+  "upstream_authentication": {
+    "R6R4_TARGETED_FRESH_REVIEW_REPORT.md": {
+      "path": "parallel/a/MININET_E1C_R6R4_TARGETED_FRESH_REVIEW/R6R4_TARGETED_FRESH_REVIEW_REPORT.md",
+      "sha256": "1a47b0365f073bb88b8f01addceb9897688aeec2b1b5cb8b92ad5c16a6ade6b9"
+    },
+    "PINNED_COMMIT_AND_PAYLOAD_AUTHENTICATION.json": {
+      "path": "parallel/a/MININET_E1C_R6R4_TARGETED_FRESH_REVIEW/PINNED_COMMIT_AND_PAYLOAD_AUTHENTICATION.json",
+      "sha256": "02d3f0a85047ee0bc91962dd4a144977f3b6701799a796c4c1998b1f9144acc4"
+    },
+    "STRICT_RAW_AUDIT_ACCEPTANCE_CONTRACT.json": {
+      "path": "parallel/a/MININET_E1C_R6R4_PRODUCTION_PATH_AND_EVIDENCE_REMEDIATION/STRICT_RAW_AUDIT_ACCEPTANCE_CONTRACT.json",
+      "sha256": "c791334a9324543ea76582cbd104d0ab92d14086d6672a3a217a4a2f3c5e97be"
+    },
+    "MININET_E1C_R6_PRE_RUN_CONTRACT.json": {
+      "path": "parallel/a/MININET_E1C_R6_PRE_RUN_CONTRACT.json",
+      "sha256": "01e7e9a9ed0ee6c506e31b22b5b8ec2ff7a7c7aacb93b1d0ec3e9ef6d2508409"
+    },
+    "PROVX_R7R1_R6_INTERFACE_REMEDIATION_TARGETED_FRESH_REVIEW.md": {
+      "path": "parallel/b/PROVX_R7R1_R6_INTERFACE_REMEDIATION_TARGETED_FRESH_REVIEW/PROVX_R7R1_R6_INTERFACE_REMEDIATION_TARGETED_FRESH_REVIEW.md",
+      "sha256": "235d5436981232f9a471b7c70b5377f8258bdd689787a96e5b6c586511e0a6ff"
+    },
+    "PROVX_R7_NORMALIZED_TO_GRAPH_ADAPTER.py": {
+      "path": "parallel/b/PROVX_R7_NORMALIZED_TO_GRAPH_ADAPTER.py",
+      "sha256": "7e33886b9ac628e8c4f312317127d95c181e40bebc2c5059cc9022ed4555ad6e"
+    }
+  },
+  "required_deliverables": [
+    "EXECUTION_BOUNDARY.md",
+    "EXPECTED_RUNTIME_RECEIPT_SCHEMA.json",
+    "EVIDENCE_COLLECTION_REQUIREMENTS.md",
+    "FAIL_CLOSED_CONDITIONS.json",
+    "INDEPENDENT_REVIEW_PACKAGE.md"
+  ],
+  "materialization_rule": {
+    "manifest_path": "MATERIALIZATION_MANIFEST.json",
+    "creation_condition": "The static validator returns PASS for every required package, upstream-authentication, execution-boundary, receipt-schema, evidence-requirements, fail-closed, and independent-review check.",
+    "on_any_failure": "Do not create, update, or retain a materialization manifest."
+  },
+  "terminal_state": {
+    "PRIVILEGED_RUNTIME_SMOKE_EXECUTED": "NO",
+    "FILE_READ_OR_WRITE_RUNTIME_CLOSURE": "NOT_PROVEN",
+    "FORMAL_1796_EXPERIMENT_EXECUTED": "NO",
+    "NEXT_ACTION": "HUMAN_REVIEW_OF_STATIC_PREPARATION_PACKAGE",
+    "STOP": true
+  }
+}

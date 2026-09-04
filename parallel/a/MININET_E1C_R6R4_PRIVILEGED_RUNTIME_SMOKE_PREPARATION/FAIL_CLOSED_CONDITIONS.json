@@ -1,0 +1,67 @@
+{
+  "schema": "MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_FAIL_CLOSED_CONDITIONS_V1",
+  "default_decision": "BLOCKED",
+  "rule": "No partial, inferred, repaired, or convenience-parser evidence may satisfy a required closure condition.",
+  "conditions": [
+    {
+      "id": "RECEIPT_MALFORMED_OR_INCOMPLETE",
+      "decision": "BLOCKED",
+      "condition": "Any required receipt, artifact, raw, normalized, join, coverage, PCAP, or cleanup field is missing, malformed, duplicated where uniqueness is required, or outside its declared receipt root."
+    },
+    {
+      "id": "RUN_ID_MISMATCH",
+      "decision": "BLOCKED",
+      "condition": "Any receipt component or JSONL row has a missing or different run_id."
+    },
+    {
+      "id": "ARTIFACT_HASH_OR_PCAP_BINDING_FAILURE",
+      "decision": "BLOCKED",
+      "condition": "Any artifact hash or byte count mismatches, the PCAP hash source is absent, or its pcap_sha256 does not authenticate the exact PCAP bytes."
+    },
+    {
+      "id": "RAW_NORMALIZED_LINK_FAILURE",
+      "decision": "BLOCKED",
+      "condition": "A raw serial is missing or duplicated, decoded raw bytes differ, raw SHA-256 differs, or a normalized event lacks the exact authenticated raw record."
+    },
+    {
+      "id": "PID_NETNS_LOGICAL_HOST_JOIN_FAILURE",
+      "decision": "BLOCKED",
+      "condition": "A normalized event lacks one exact JOINED PID, start-ticks, netns-inode, and logical-host record."
+    },
+    {
+      "id": "FILE_RW_PERMISSION_FILTER_INCOMPLETE",
+      "decision": "BLOCKED",
+      "condition": "A FILE_READ_OR_WRITE event lacks same-serial SYSCALL and PATH records, supported syscall, success=yes, exact audit key, exact watched path, evidence basis, requested access, or underlying syscall."
+    },
+    {
+      "id": "FILE_RW_ABSENT_OR_ZERO",
+      "decision": "BLOCKED",
+      "condition": "FILE_READ_OR_WRITE is absent from normalized evidence or its authenticated count is zero."
+    },
+    {
+      "id": "AUDIT_LOSS_OR_BACKLOG_NONZERO",
+      "decision": "BLOCKED",
+      "condition": "Audit loss or backlog is nonzero, unknown, non-numeric, or not explicitly reported."
+    },
+    {
+      "id": "AUSEARCH_DEADLINE_OR_RETURN_FAILURE",
+      "decision": "BLOCKED",
+      "condition": "Evidence collection occurs after the finite deadline, the deadline status is absent, or the collector return code is nonzero."
+    },
+    {
+      "id": "POST_CLEANUP_RESTORATION_FAILURE",
+      "decision": "BLOCKED",
+      "condition": "Post-cleanup proof is absent, its baseline is not restored, its before/after baseline hashes differ, or cleanup removes a rule not proven added by the same run."
+    },
+    {
+      "id": "PREPARATION_PACKAGE_RUNTIME_CLAIM",
+      "decision": "BLOCKED",
+      "condition": "This preparation package creates, embeds, or claims any privileged runtime result, raw audit record, normalized event, PCAP, cleanup proof, or formal experiment evidence."
+    },
+    {
+      "id": "PROVX_ADAPTER_MUTATION_OR_EXECUTION",
+      "decision": "BLOCKED",
+      "condition": "The package modifies or invokes PROVX-R7R1 adapter logic in this preparation phase."
+    }
+  ]
+}
