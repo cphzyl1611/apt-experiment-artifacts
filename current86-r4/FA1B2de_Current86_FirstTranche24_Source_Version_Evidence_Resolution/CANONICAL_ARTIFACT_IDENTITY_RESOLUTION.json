@@ -1,0 +1,41 @@
+{
+  "record_type": "FIRST_TRANCHE24_CANONICAL_ARTIFACT_IDENTITY_RESOLUTION",
+  "candidate_reference": "03_frozen_lineage/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json#class_to_type_mapping[0]",
+  "required_source_artifact_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+  "required_source_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+  "CANONICAL_ARTIFACT_IDENTITY_STATUS": "MISSING",
+  "CANONICAL_ARTIFACT_IDENTITY": "NONE",
+  "identity_bearing_elements": {
+    "canonical_locator": "NONE",
+    "locator_type": "NONE",
+    "artifact_name_or_namespace": "NONE",
+    "owner_or_issuer_identity": "NONE"
+  },
+  "eligible_artifact_instances_found": 0,
+  "excluded_artifact_instances": [
+    {
+      "artifact_identity": "AUTHENTICATED_RAW_SOURCE_RECORD_SET",
+      "content_sha256": "53c85157f9fd0849ae19b1cf403333ad0d0af2a7d761b0498540dd92d66c1e93",
+      "declared_class": "AUTHENTICATED_RAW_SOURCE_RECORD",
+      "exclusion": "WRONG_SOURCE_CLASS"
+    },
+    {
+      "artifact_identity": "C0_TYPED_OPERATION_SEMANTICS:0036c42fb02026182274a7ac2a33b103b03b1e527856eb33b5ad650ceddd5c32",
+      "content_sha256": "0036c42fb02026182274a7ac2a33b103b03b1e527856eb33b5ad650ceddd5c32",
+      "declared_class": "NONE",
+      "exclusion": "NONCANONICAL_NO_GOVERNED_MANIFEST_ENTRY"
+    },
+    {
+      "artifact_identity": "AUTHENTICATED_SCORING_ROW_SOURCE_SET",
+      "content_sha256": "748a3808290f9e78f71c18d4553c77ae208517fd31d163fc2b3008cfcb57f1bb",
+      "declared_class": "AUTHENTICATED_SCORING_ROW_SOURCE",
+      "exclusion": "WRONG_SOURCE_CLASS_NONCANONICAL_CANDIDATE_EVIDENCE"
+    }
+  ],
+  "ambiguity_status": "NOT_AMBIGUOUS_NO_ELIGIBLE_INSTANCE",
+  "resolution_basis_references": [
+    "FA1B2de_Current86_FirstTranche24_StageA_Provenance_Acquisition_Preparation/SOURCE_AUTHORITY_AND_OWNER_GAP_REPORT.json",
+    "FA1B2de_Current86_FirstTranche24_StageA_Provenance_Acquisition_Preparation/CANONICAL_SOURCE_COHORT_CLASSIFICATION.json",
+    "FA1B2de_Current86_FirstTranche24_Governance_and_Canonical_Source_Manifest_Preparation/CANONICAL_SOURCE_MANIFEST_ENTRY_TEMPLATE.jsonl"
+  ]
+}

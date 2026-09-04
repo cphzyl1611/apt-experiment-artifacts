@@ -1,0 +1,8 @@
+{
+  "fixture": "floating_version_reference.json",
+  "base_fixture": "IMMUTABLE_VERSION_POLICY_RESOLUTION.json",
+  "mutations": [
+    {"operation": "replace", "path": ["FLOATING_REFERENCE"], "value": "YES"},
+    {"operation": "replace", "path": ["IMMUTABLE_VERSION_IDENTIFIER"], "value": "latest"}
+  ]
+}

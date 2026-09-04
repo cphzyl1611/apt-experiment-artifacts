@@ -1,0 +1,23 @@
+{
+  "record_type": "FIRST_TRANCHE24_IMMUTABLE_VERSION_POLICY_RESOLUTION",
+  "candidate_reference": "03_frozen_lineage/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json#class_to_type_mapping[0]",
+  "policy_contract_reference": "FA1B2de_Current86_FirstTranche24_Source_Authority_Activation_Design/SOURCE_VERSION_POLICY_CONTRACT.md",
+  "policy_version": "V1",
+  "design_supported_forms": [
+    "CONTENT_DIGEST",
+    "GIT_COMMIT",
+    "RELEASE_TAG_WITH_DIGEST"
+  ],
+  "IMMUTABLE_VERSION_FORM": "NONE",
+  "IMMUTABLE_VERSION_IDENTIFIER": "NONE",
+  "VERSION_FORM_SUPPORTED_BY_DESIGN": "NO",
+  "VERSION_FORM_AUTHENTICATED_BY_EVIDENCE": "NO",
+  "FLOATING_REFERENCE": "NO",
+  "VERSION_POLICY_RESOLUTION": "BLOCKED_PENDING_SOURCE_ACQUISITION",
+  "elimination_logic": [
+    "No eligible canonical artifact identity exists to bind a version form.",
+    "Existing project commit and artifact hashes belong to project evidence or excluded source classes, not to the unresolved canonical artifact.",
+    "Selecting one of the three supported forms without artifact-specific evidence would invent a version policy."
+  ],
+  "required_acquisition": "One artifact-bound immutable identifier using exactly one design-supported form, with its form-specific proof and content SHA-256."
+}

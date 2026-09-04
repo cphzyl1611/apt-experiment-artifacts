@@ -1,0 +1,7 @@
+{
+  "fixture": "broken_authority_to_artifact_lineage.json",
+  "base_fixture": "AUTHORITY_DESCRIPTOR_ARTIFACT_LINEAGE.json",
+  "mutations": [
+    {"operation": "replace", "path": ["lineage_edges", 0, "status"], "value": "BROKEN"}
+  ]
+}

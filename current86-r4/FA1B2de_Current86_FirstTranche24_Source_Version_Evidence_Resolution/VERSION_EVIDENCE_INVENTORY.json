@@ -1,0 +1,89 @@
+{
+  "record_type": "FIRST_TRANCHE24_VERSION_EVIDENCE_INVENTORY",
+  "schema_version": "V1",
+  "task_id": "FIRST_TRANCHE24_SOURCE_VERSION_EVIDENCE_RESOLUTION",
+  "candidate_reference": "03_frozen_lineage/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json#class_to_type_mapping[0]",
+  "scope": "FIRST_TRANCHE24_ONLY",
+  "evidence_classes": {
+    "canonical_artifact_identity": {
+      "status": "MISSING",
+      "items": [
+        {
+          "evidence_id_or_reference": "FA1B2de_Current86_FirstTranche24_StageA_Provenance_Acquisition_Preparation/SOURCE_AUTHORITY_AND_OWNER_GAP_REPORT.json",
+          "evidence_type": "BOUNDED_GAP_REPORT",
+          "artifact_path_or_reference": "FA1B2de_Current86_FirstTranche24_StageA_Provenance_Acquisition_Preparation/SOURCE_AUTHORITY_AND_OWNER_GAP_REPORT.json",
+          "commit_or_lineage_reference": "409d22b4a697ac5a758ac51f5d27db7837c78d0c",
+          "sha256_if_applicable": "4043a5e1239e1f0ecb969bf02eaf53233272311aa654141959149da52287a5bd",
+          "claim_supported": "The canonical source object and source-manifest entry are missing; current pinned corpora are not an eligible canonical-intrinsic artifact.",
+          "authentication_status": "PASS_BOUNDED_GAP_EVIDENCE"
+        }
+      ]
+    },
+    "immutable_version_form": {
+      "status": "MISSING",
+      "items": [
+        {
+          "evidence_id_or_reference": "FA1B2de_Current86_FirstTranche24_Source_Authority_Activation_Design/SOURCE_VERSION_POLICY_CONTRACT.md",
+          "evidence_type": "NORMATIVE_VERSION_POLICY_CONTRACT",
+          "artifact_path_or_reference": "FA1B2de_Current86_FirstTranche24_Source_Authority_Activation_Design/SOURCE_VERSION_POLICY_CONTRACT.md",
+          "commit_or_lineage_reference": "e6e885e17e60f1b12af47a7ddb363b8d2934f8b7",
+          "sha256_if_applicable": "9c1ca6fa1b102cbaa79bd686aa65a47d78c1806ff50b01d116fa6a8d3fd7b769",
+          "claim_supported": "The design permits CONTENT_DIGEST, GIT_COMMIT, or RELEASE_TAG_WITH_DIGEST, but does not select a source-specific form.",
+          "authentication_status": "PASS_POLICY_ONLY"
+        },
+        {
+          "evidence_id_or_reference": "FA1B2de_Current86_FirstTranche24_Source_Authority_Candidate_Resolution_Cross_Object_Hash_Remediation/VERSION_POLICY_RESOLUTION.json",
+          "evidence_type": "REVIEWED_PENDING_VERSION_POLICY",
+          "artifact_path_or_reference": "FA1B2de_Current86_FirstTranche24_Source_Authority_Candidate_Resolution_Cross_Object_Hash_Remediation/VERSION_POLICY_RESOLUTION.json",
+          "commit_or_lineage_reference": "62c822589ac783c04a4a02af13ca0c4548892aac",
+          "sha256_if_applicable": "16b377e7b6494775c15e32808677eb52f9e27092a54f3129684aec58cc93fc47",
+          "claim_supported": "The candidate-resolution package explicitly leaves the selected form and immutable identifier pending source evidence.",
+          "authentication_status": "PASS"
+        }
+      ]
+    },
+    "content_digest": {
+      "status": "MISSING",
+      "items": [
+        {
+          "evidence_id_or_reference": "FA1B2de_Current86_FirstTranche24_Governance_and_Canonical_Source_Manifest_Preparation/CANONICAL_SOURCE_MANIFEST_ENTRY_TEMPLATE.jsonl",
+          "evidence_type": "UNRESOLVED_MANIFEST_TEMPLATE",
+          "artifact_path_or_reference": "FA1B2de_Current86_FirstTranche24_Governance_and_Canonical_Source_Manifest_Preparation/CANONICAL_SOURCE_MANIFEST_ENTRY_TEMPLATE.jsonl",
+          "commit_or_lineage_reference": "b5bb121fb57e6f4f2170976e3d811a84e6e9adf6",
+          "sha256_if_applicable": "12347b706ff26b52c57f3a18e30a7b081ca084050f18cba9ac85458b98c970b5",
+          "claim_supported": "The exact canonical artifact SHA-256 is unresolved for all 24 target templates.",
+          "authentication_status": "PASS_BOUNDED_GAP_EVIDENCE"
+        }
+      ]
+    },
+    "authority_descriptor_artifact_lineage": {
+      "status": "MISSING",
+      "items": [
+        {
+          "evidence_id_or_reference": "FA1B2de_Current86_FirstTranche24_Source_Version_Evidence_Resolution/AUTHORITY_DESCRIPTOR_ARTIFACT_LINEAGE.json",
+          "evidence_type": "LINEAGE_RESOLUTION_RECORD",
+          "artifact_path_or_reference": "AUTHORITY_DESCRIPTOR_ARTIFACT_LINEAGE.json",
+          "commit_or_lineage_reference": "LOCAL_UNCOMMITTED_RESOLUTION_PACKAGE",
+          "sha256_if_applicable": "COMPUTED_AT_MATERIALIZATION",
+          "claim_supported": "The descriptor-to-artifact, artifact-to-version, and version-to-digest edges are blocked because source-specific evidence is absent.",
+          "authentication_status": "PASS_BOUNDED_BLOCKER"
+        }
+      ]
+    },
+    "owner_issuer_authorization": {
+      "status": "MISSING",
+      "items": [
+        {
+          "evidence_id_or_reference": "FA1B2de_Current86_FirstTranche24_Governance_and_Canonical_Source_Manifest_Preparation/SOURCE_OWNER_AUTHORIZATION_REQUIREMENTS.json",
+          "evidence_type": "AUTHORIZATION_REQUIREMENTS_ONLY",
+          "artifact_path_or_reference": "FA1B2de_Current86_FirstTranche24_Governance_and_Canonical_Source_Manifest_Preparation/SOURCE_OWNER_AUTHORIZATION_REQUIREMENTS.json",
+          "commit_or_lineage_reference": "b5bb121fb57e6f4f2170976e3d811a84e6e9adf6",
+          "sha256_if_applicable": "9243d83083341482f28e32993e8bc1af55f0f935373eb4ac927291fc9ce71c42",
+          "claim_supported": "The project defines the minimum authorization evidence but contains no authorization for an exact source artifact/object.",
+          "authentication_status": "PASS_REQUIREMENTS_ONLY"
+        }
+      ]
+    }
+  },
+  "VERSION_EVIDENCE_INVENTORY_CONSISTENCY": "PASS"
+}

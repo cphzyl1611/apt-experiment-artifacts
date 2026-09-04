@@ -1,0 +1,21 @@
+{
+  "record_type": "FIRST_TRANCHE24_SOURCE_VERSION_EVIDENCE_ENTRY_BINDING_AUTHENTICATION",
+  "status": "PASS",
+  "binding_repository": "/home/cph/fa1b2de-review-artifacts",
+  "binding_worktree": "/home/cph/fa1b2de-artifact-worktrees/binding",
+  "binding_branch": "artifact/binding",
+  "local_binding_head": "6171a460ef527b99f2176eb047d51ca7082d067a",
+  "remote_binding_head": "6171a460ef527b99f2176eb047d51ca7082d067a",
+  "live_remote_binding_head": "6171a460ef527b99f2176eb047d51ca7082d067a",
+  "previous_remote_head": "62c822589ac783c04a4a02af13ca0c4548892aac",
+  "transition_commit": "6171a460ef527b99f2176eb047d51ca7082d067a",
+  "transition_parent": "62c822589ac783c04a4a02af13ca0c4548892aac",
+  "transition_commit_message": "materialize binding: FIRST_TRANCHE24_SOURCE_AUTHORITY_CANDIDATE_RESOLUTION_INDEPENDENT_REVIEW_R3",
+  "transition_payload_scope": "CANDIDATE_RESOLUTION_INDEPENDENT_REVIEW_R3_ONLY",
+  "head_equality": true,
+  "direct_parent_transition": true,
+  "unexplained_lineage_drift": false,
+  "authenticated_at_date": "2026-09-04",
+  "source_acquisition_performed": false,
+  "external_source_objects_fetched": false
+}

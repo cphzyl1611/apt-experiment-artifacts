@@ -1,0 +1,7 @@
+{
+  "fixture": "digest_from_wrong_artifact.json",
+  "base_fixture": "CONTENT_DIGEST_RESOLUTION.json",
+  "mutations": [
+    {"operation": "replace", "path": ["digest_binding_status"], "value": "WRONG_ARTIFACT"}
+  ]
+}

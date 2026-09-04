@@ -1,0 +1,9 @@
+{
+  "fixture": "ambiguous_artifact_identity.json",
+  "base_fixture": "CANONICAL_ARTIFACT_IDENTITY_RESOLUTION.json",
+  "mutations": [
+    {"operation": "replace", "path": ["CANONICAL_ARTIFACT_IDENTITY_STATUS"], "value": "AMBIGUOUS"},
+    {"operation": "replace", "path": ["eligible_artifact_instances_found"], "value": 2},
+    {"operation": "replace", "path": ["ambiguity_status"], "value": "AMBIGUOUS_MULTIPLE_ELIGIBLE_INSTANCES"}
+  ]
+}

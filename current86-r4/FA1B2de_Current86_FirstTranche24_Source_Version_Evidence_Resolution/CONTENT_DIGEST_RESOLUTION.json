@@ -1,0 +1,29 @@
+{
+  "record_type": "FIRST_TRANCHE24_CONTENT_DIGEST_RESOLUTION",
+  "candidate_reference": "03_frozen_lineage/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json#class_to_type_mapping[0]",
+  "canonical_artifact_identity": "NONE",
+  "CONTENT_SHA256_RESOLVED": "NO",
+  "CONTENT_SHA256": "NONE",
+  "digest_algorithm_required": "SHA-256",
+  "digest_binding_status": "BLOCKED_NO_CANONICAL_ARTIFACT",
+  "evidence_version_consistency": "PASS_SINGLE_PENDING_VERSION_STATE",
+  "excluded_digests": [
+    {
+      "sha256": "53c85157f9fd0849ae19b1cf403333ad0d0af2a7d761b0498540dd92d66c1e93",
+      "artifact_identity": "AUTHENTICATED_RAW_SOURCE_RECORD_SET",
+      "reason": "WRONG_SOURCE_CLASS"
+    },
+    {
+      "sha256": "0036c42fb02026182274a7ac2a33b103b03b1e527856eb33b5ad650ceddd5c32",
+      "artifact_identity": "C0_TYPED_OPERATION_SEMANTICS:0036c42fb02026182274a7ac2a33b103b03b1e527856eb33b5ad650ceddd5c32",
+      "reason": "NONCANONICAL_NO_GOVERNED_MANIFEST_ENTRY"
+    },
+    {
+      "sha256": "748a3808290f9e78f71c18d4553c77ae208517fd31d163fc2b3008cfcb57f1bb",
+      "artifact_identity": "AUTHENTICATED_SCORING_ROW_SOURCE_SET",
+      "reason": "WRONG_SOURCE_CLASS_NONCANONICAL_CANDIDATE_EVIDENCE"
+    }
+  ],
+  "provenance_reference": "FA1B2de_Current86_FirstTranche24_StageA_Provenance_Acquisition_Preparation/SOURCE_AUTHORITY_AND_OWNER_GAP_REPORT.json",
+  "required_acquisition": "Exact canonical artifact bytes plus an independently recomputed SHA-256 bound to the resolved artifact identity and immutable version."
+}

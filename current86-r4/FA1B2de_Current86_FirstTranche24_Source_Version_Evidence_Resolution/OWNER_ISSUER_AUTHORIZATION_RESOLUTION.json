@@ -1,0 +1,22 @@
+{
+  "record_type": "FIRST_TRANCHE24_OWNER_ISSUER_AUTHORIZATION_RESOLUTION",
+  "candidate_reference": "03_frozen_lineage/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json#class_to_type_mapping[0]",
+  "OWNER_ISSUER_AUTHORIZATION": "MISSING",
+  "authorization_subject": "NONE",
+  "authorization_object_or_artifact": "NONE",
+  "authorization_scope": "NONE",
+  "authorization_evidence_reference": "FA1B2de_Current86_FirstTranche24_Governance_and_Canonical_Source_Manifest_Preparation/SOURCE_OWNER_AUTHORIZATION_REQUIREMENTS.json",
+  "authentication_status": "MISSING",
+  "required_authorization_elements": [
+    "owner_or_issuer_identity",
+    "authoritative_relationship_to_exact_artifact_and_object",
+    "explicit_immutable_version_scope",
+    "canonical_semantics_authority",
+    "immutable_authorization_record",
+    "revocation_and_supersession_status",
+    "independent_verifier",
+    "exact_FIRST_TRANCHE24_scope_binding"
+  ],
+  "negative_evidence_reference": "FA1B2de_Current86_FirstTranche24_StageA_Provenance_Acquisition_Preparation/SOURCE_AUTHORITY_AND_OWNER_GAP_REPORT.json",
+  "reason": "The project corpus contains requirements for owner/issuer authorization but no authorization subject or immutable authorization object for the exact canonical artifact."
+}

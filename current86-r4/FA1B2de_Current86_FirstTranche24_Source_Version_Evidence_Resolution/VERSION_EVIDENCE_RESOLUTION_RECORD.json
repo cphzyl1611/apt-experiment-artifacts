@@ -1,0 +1,75 @@
+{
+  "record_type": "FIRST_TRANCHE24_SOURCE_VERSION_EVIDENCE_RESOLUTION_RECORD",
+  "schema_version": "V1",
+  "task_id": "FIRST_TRANCHE24_SOURCE_VERSION_EVIDENCE_RESOLUTION",
+  "resolution_state": "VERSION_EVIDENCE_REQUIRES_SOURCE_ACQUISITION",
+  "candidate_resolution_state": "CANDIDATE_RESOLVED_VERSION_EVIDENCE_PENDING",
+  "candidate_reference": "03_frozen_lineage/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json#class_to_type_mapping[0]",
+  "resolved_candidate_type": "SOURCE_AUTHORITY_CANDIDATE_CLASS",
+  "authority_type": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+  "source_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+  "governance_binding": {
+    "decision_record_id": "GOVDEC2-68ea814d1940bed4ec8b3e48b6a28f67f3e05c5e50e1c342a1fa2dc7db31f90f",
+    "governance_transaction_hash": "b5601414918d6b7cc5c00ebaf24b98d93d2d477bcd4481de4de47b8ed0f7cd38",
+    "governance_scope": "FIRST_TRANCHE24_ONLY",
+    "human_governance_decision": "APPROVE_BOTH_G1_AND_G2",
+    "raw_ids": [110, 273, 210, 98, 147, 277, 188, 301, 143, 250, 233, 287, 146, 293, 114, 284, 291, 215, 88, 182, 300, 218, 115, 148],
+    "scope_extension_permitted": false
+  },
+  "evidence_requirements": {
+    "canonical_artifact_identity": "MISSING",
+    "immutable_version_form": "MISSING",
+    "content_digest": "MISSING",
+    "authority_descriptor_artifact_lineage": "MISSING",
+    "owner_issuer_authorization": "MISSING"
+  },
+  "source_authority_id_derived": "NO",
+  "source_authority_id": "NONE",
+  "source_authority_id_state": "NONE",
+  "activation_boundary": {
+    "SOURCE_AUTHORITY_ACTIVATED": "NO",
+    "SOURCE_ACQUISITION": "NO",
+    "SOURCE_AUTH_EXECUTED": "NO",
+    "STAGE_A_ADMISSIONS": 0,
+    "STAGE_B_EXPOSURES": 0,
+    "FIELD_PINS": 0,
+    "OPERATIVE_RECORDS": 0,
+    "P0_EXECUTED": "NO",
+    "P1_EXECUTED": "NO",
+    "FORMAL_1796_EXPERIMENT_EXECUTED": "NO"
+  },
+  "missing_evidence": [
+    "exact canonical artifact identity",
+    "one supported immutable version form selected from authenticated source evidence",
+    "content SHA-256 for that artifact",
+    "lineage proof connecting the authority descriptor to the artifact",
+    "source owner or issuer authorization"
+  ],
+  "required_acquisition_objects": [
+    "one exact canonical source artifact/object for the AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE class",
+    "one artifact-bound immutable identifier using CONTENT_DIGEST, GIT_COMMIT, or RELEASE_TAG_WITH_DIGEST",
+    "content bytes or an authenticated artifact digest that can be recomputed and bound to that exact artifact",
+    "authority-descriptor-to-artifact lineage record",
+    "source-owner or issuer authorization record covering the exact artifact/object and FIRST_TRANCHE24_ONLY scope"
+  ],
+  "required_authentication_checks": [
+    "verify exact canonical artifact identity and uniqueness",
+    "verify exactly one design-supported immutable version form and reject floating references",
+    "recompute the full artifact content SHA-256 and bind it to the exact artifact identity",
+    "verify every lineage edge from descriptor to artifact to version to digest",
+    "verify owner/issuer subject, relationship, scope, immutable authorization, status, and independent verification",
+    "recompute authority identity only if the reviewed procedure and complete identity-bearing evidence permit it",
+    "independently verify exact FIRST_TRANCHE24 governance binding and zero downstream effect"
+  ],
+  "SOURCE_AUTHORITY_ACTIVATED": "NO",
+  "SOURCE_ACQUISITION": "NO",
+  "SOURCE_AUTH_EXECUTED": "NO",
+  "STAGE_A_ADMISSIONS": 0,
+  "STAGE_B_EXPOSURES": 0,
+  "FIELD_PINS": 0,
+  "OPERATIVE_RECORDS": 0,
+  "P0_EXECUTED": "NO",
+  "P1_EXECUTED": "NO",
+  "FORMAL_1796_EXPERIMENT_EXECUTED": "NO",
+  "ZERO_OPERATIONAL_EFFECT": "PASS"
+}

@@ -1,0 +1,7 @@
+{
+  "fixture": "missing_owner_issuer_authorization.json",
+  "base_fixture": "VERSION_EVIDENCE_RESOLUTION_RECORD.json",
+  "mutations": [
+    {"operation": "replace", "path": ["resolution_state"], "value": "VERSION_EVIDENCE_RESOLVED"}
+  ]
+}

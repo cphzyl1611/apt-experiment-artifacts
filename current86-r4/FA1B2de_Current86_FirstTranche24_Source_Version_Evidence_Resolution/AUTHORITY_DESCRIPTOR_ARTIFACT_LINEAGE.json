@@ -1,0 +1,38 @@
+{
+  "record_type": "FIRST_TRANCHE24_AUTHORITY_DESCRIPTOR_ARTIFACT_LINEAGE",
+  "candidate_reference": "03_frozen_lineage/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json#class_to_type_mapping[0]",
+  "authority_descriptor": {
+    "reference": "03_frozen_lineage/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json#class_to_type_mapping[0]",
+    "descriptor_identity": "SOURCE_AUTHORITY_CANDIDATE_CLASS",
+    "source_class": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+    "source_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+    "authentication_reference": "FA1B2de_Current86_FirstTranche24_Source_Authority_Candidate_Resolution_Independent_Review_R3/evidence/CANDIDATE_SEMANTIC_REAUTHENTICATION.json",
+    "authentication_status": "PASS_CLASS_ONLY"
+  },
+  "lineage_edges": [
+    {
+      "from": "resolved authority descriptor",
+      "to": "exact canonical source artifact",
+      "status": "BLOCKED",
+      "evidence_reference": "FA1B2de_Current86_FirstTranche24_StageA_Provenance_Acquisition_Preparation/SOURCE_AUTHORITY_AND_OWNER_GAP_REPORT.json",
+      "reason": "No canonical source artifact or operative source-manifest entry is identified; the descriptor resolves only the class/fact type."
+    },
+    {
+      "from": "exact canonical source artifact",
+      "to": "immutable version representation",
+      "status": "BLOCKED",
+      "evidence_reference": "FA1B2de_Current86_FirstTranche24_Source_Authority_Candidate_Resolution_Cross_Object_Hash_Remediation/VERSION_POLICY_RESOLUTION.json",
+      "reason": "The reviewed candidate record leaves the immutable identifier and selected policy form unresolved."
+    },
+    {
+      "from": "immutable version representation",
+      "to": "content digest",
+      "status": "BLOCKED",
+      "evidence_reference": "FA1B2de_Current86_FirstTranche24_Governance_and_Canonical_Source_Manifest_Preparation/CANONICAL_SOURCE_MANIFEST_ENTRY_TEMPLATE.jsonl",
+      "reason": "All 24 manifest templates leave artifact SHA-256 and immutable release/version/commit/tree identity unresolved."
+    }
+  ],
+  "AUTHORITY_TO_ARTIFACT_LINEAGE": "BLOCKED",
+  "lineage_proof_complete": false,
+  "lineage_not_inferred_from_naming": true
+}

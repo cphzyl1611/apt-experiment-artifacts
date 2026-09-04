@@ -1,0 +1,7 @@
+{
+  "fixture": "scope_widening.json",
+  "base_fixture": "VERSION_EVIDENCE_RESOLUTION_RECORD.json",
+  "mutations": [
+    {"operation": "add", "path": ["governance_binding", "raw_ids", 24], "value": 999}
+  ]
+}

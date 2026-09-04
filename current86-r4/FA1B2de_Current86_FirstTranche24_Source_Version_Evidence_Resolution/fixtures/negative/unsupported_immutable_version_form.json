@@ -1,0 +1,8 @@
+{
+  "fixture": "unsupported_immutable_version_form.json",
+  "base_fixture": "IMMUTABLE_VERSION_POLICY_RESOLUTION.json",
+  "mutations": [
+    {"operation": "replace", "path": ["IMMUTABLE_VERSION_FORM"], "value": "SEMVER_RANGE"},
+    {"operation": "replace", "path": ["VERSION_FORM_SUPPORTED_BY_DESIGN"], "value": "YES"}
+  ]
+}

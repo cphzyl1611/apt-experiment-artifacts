@@ -1,0 +1,7 @@
+{
+  "fixture": "mixed_evidence_from_different_artifact_versions.json",
+  "base_fixture": "CONTENT_DIGEST_RESOLUTION.json",
+  "mutations": [
+    {"operation": "replace", "path": ["evidence_version_consistency"], "value": "MIXED_ARTIFACT_VERSIONS"}
+  ]
+}

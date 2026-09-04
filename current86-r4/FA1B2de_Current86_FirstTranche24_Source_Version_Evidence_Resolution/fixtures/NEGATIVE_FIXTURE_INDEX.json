@@ -1,0 +1,17 @@
+{
+  "record_type": "FIRST_TRANCHE24_VERSION_EVIDENCE_NEGATIVE_FIXTURE_INDEX",
+  "fixtures": [
+    {"fixture": "artifact_identity_mismatch.json", "target": "CANONICAL_ARTIFACT_IDENTITY_RESOLUTION.json", "expected_rejection": "ARTIFACT_IDENTITY_MISMATCH"},
+    {"fixture": "ambiguous_artifact_identity.json", "target": "CANONICAL_ARTIFACT_IDENTITY_RESOLUTION.json", "expected_rejection": "AMBIGUOUS_ARTIFACT_IDENTITY"},
+    {"fixture": "floating_version_reference.json", "target": "IMMUTABLE_VERSION_POLICY_RESOLUTION.json", "expected_rejection": "FLOATING_VERSION_REFERENCE"},
+    {"fixture": "unsupported_immutable_version_form.json", "target": "IMMUTABLE_VERSION_POLICY_RESOLUTION.json", "expected_rejection": "UNSUPPORTED_IMMUTABLE_VERSION_FORM"},
+    {"fixture": "content_sha_mismatch.json", "target": "CONTENT_DIGEST_RESOLUTION.json", "expected_rejection": "CONTENT_SHA_MISMATCH"},
+    {"fixture": "digest_from_wrong_artifact.json", "target": "CONTENT_DIGEST_RESOLUTION.json", "expected_rejection": "DIGEST_FROM_WRONG_ARTIFACT"},
+    {"fixture": "broken_authority_to_artifact_lineage.json", "target": "AUTHORITY_DESCRIPTOR_ARTIFACT_LINEAGE.json", "expected_rejection": "BROKEN_AUTHORITY_TO_ARTIFACT_LINEAGE"},
+    {"fixture": "missing_owner_issuer_authorization.json", "target": "VERSION_EVIDENCE_RESOLUTION_RECORD.json", "expected_rejection": "MISSING_OWNER_ISSUER_AUTHORIZATION"},
+    {"fixture": "wrong_governance_decision_binding.json", "target": "VERSION_EVIDENCE_RESOLUTION_RECORD.json", "expected_rejection": "WRONG_GOVERNANCE_DECISION_BINDING"},
+    {"fixture": "scope_widening.json", "target": "VERSION_EVIDENCE_RESOLUTION_RECORD.json", "expected_rejection": "SCOPE_WIDENING"},
+    {"fixture": "mixed_evidence_from_different_artifact_versions.json", "target": "CONTENT_DIGEST_RESOLUTION.json", "expected_rejection": "MIXED_ARTIFACT_VERSIONS"},
+    {"fixture": "unauthorized_field.json", "target": "VERSION_EVIDENCE_RESOLUTION_RECORD.json", "expected_rejection": "UNAUTHORIZED_FIELD"}
+  ]
+}

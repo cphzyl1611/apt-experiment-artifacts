@@ -1,0 +1,92 @@
+{
+  "record_type": "FIRST_TRANCHE24_SOURCE_VERSION_EVIDENCE_AUTHENTICATED_SOURCE_INDEX",
+  "binding_head": "6171a460ef527b99f2176eb047d51ca7082d067a",
+  "sources": [
+    {
+      "reference": "03_frozen_lineage/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json",
+      "sha256": "3df4262faa4137996d2ff8d163bcc665d5bed76b3d719e6ff66cf4154252d72f",
+      "commit_or_lineage_reference": "6171a460ef527b99f2176eb047d51ca7082d067a:FA1B2de_Current86_FirstTranche24_Source_Authority_Candidate_Resolution_Independent_Review_R3/evidence/CANDIDATE_SEMANTIC_REAUTHENTICATION.json",
+      "claim_supported": "The frozen registry mapping at class_to_type_mapping[0] resolves only the canonical-intrinsic source class and pinned intrinsic field fact type.",
+      "authentication_status": "PASS"
+    },
+    {
+      "reference": "FA1B2de_Current86_FirstTranche24_Source_Authority_Activation_Design/SOURCE_VERSION_POLICY_CONTRACT.md",
+      "sha256": "9c1ca6fa1b102cbaa79bd686aa65a47d78c1806ff50b01d116fa6a8d3fd7b769",
+      "commit_or_lineage_reference": "e6e885e17e60f1b12af47a7ddb363b8d2934f8b7",
+      "claim_supported": "The only supported immutable forms are CONTENT_DIGEST, GIT_COMMIT, and RELEASE_TAG_WITH_DIGEST; floating references are prohibited.",
+      "authentication_status": "PASS"
+    },
+    {
+      "reference": "FA1B2de_Current86_FirstTranche24_Source_Authority_Activation_Design/SOURCE_AUTHORITY_IDENTITY_PROCEDURE.md",
+      "sha256": "7e37f9fad7fcc76a6a4418021e0e81069dc66f9dcf08247f8d9fc8ff3e34edc0",
+      "commit_or_lineage_reference": "e6e885e17e60f1b12af47a7ddb363b8d2934f8b7",
+      "claim_supported": "A concrete locator, policy ID, and content digest are identity-bearing and are absent at design time.",
+      "authentication_status": "PASS"
+    },
+    {
+      "reference": "FA1B2de_Current86_FirstTranche24_Source_Authority_Activation_Design/SOURCE_AUTHORITY_ACTIVATION_CONTRACT.md",
+      "sha256": "818b8aae990556a95f630c87db9987a467c9ac1ac549a7d4c79d882b0db373d9",
+      "commit_or_lineage_reference": "e6e885e17e60f1b12af47a7ddb363b8d2934f8b7",
+      "claim_supported": "Typed, hash-bearing artifact, version, digest, lineage, and adjudication evidence are required before activation.",
+      "authentication_status": "PASS"
+    },
+    {
+      "reference": "FA1B2de_Current86_FirstTranche24_Source_Authority_Activation_Design/GOVERNANCE_TO_AUTHORITY_BINDING.json",
+      "sha256": "fe1ae3214ca7a0b1c1f116d16f6d06ce4cac3f53c2ebd9532ac4cfad77f5fc73",
+      "commit_or_lineage_reference": "e6e885e17e60f1b12af47a7ddb363b8d2934f8b7",
+      "claim_supported": "The approved governance tuple is exact, scope extension is forbidden, and the decision contains no source authority ID or version policy.",
+      "authentication_status": "PASS"
+    },
+    {
+      "reference": "FA1B2de_Current86_FirstTranche24_G1G2_Decision_Materialization/FIRST_TRANCHE24_GOVERNANCE_DECISION_RECORD_V2.json",
+      "sha256": "1e688e1076a0ab64da2839fb38562eedca6b62c1a2d6120b3d8a8b0416c3b31f",
+      "commit_or_lineage_reference": "3c5c014238b569377963c1cb20f3d7df2600f135",
+      "claim_supported": "Governance authorizes the class, fact type, and future process but explicitly does not assert that a source object exists and still requires source-owner authorization.",
+      "authentication_status": "PASS"
+    },
+    {
+      "reference": "FA1B2de_Current86_FirstTranche24_Governance_and_Canonical_Source_Manifest_Preparation/SOURCE_OWNER_AUTHORIZATION_REQUIREMENTS.json",
+      "sha256": "9243d83083341482f28e32993e8bc1af55f0f935373eb4ac927291fc9ce71c42",
+      "commit_or_lineage_reference": "b5bb121fb57e6f4f2170976e3d811a84e6e9adf6",
+      "claim_supported": "Owner or issuer identity, artifact relationship, immutable version scope, canonical semantics authority, immutable authorization, status, independent verification, and exact tranche binding are required.",
+      "authentication_status": "PASS"
+    },
+    {
+      "reference": "FA1B2de_Current86_FirstTranche24_Governance_and_Canonical_Source_Manifest_Preparation/CANONICAL_SOURCE_MANIFEST_ENTRY_TEMPLATE.jsonl",
+      "sha256": "12347b706ff26b52c57f3a18e30a7b081ca084050f18cba9ac85458b98c970b5",
+      "commit_or_lineage_reference": "b5bb121fb57e6f4f2170976e3d811a84e6e9adf6",
+      "claim_supported": "All 24 manifest templates leave source authority, owner, artifact identity, immutable version, artifact digest, and acquisition proof unresolved.",
+      "authentication_status": "PASS"
+    },
+    {
+      "reference": "FA1B2de_Current86_FirstTranche24_StageA_Provenance_Acquisition_Preparation/SOURCE_AUTHORITY_AND_OWNER_GAP_REPORT.json",
+      "sha256": "4043a5e1239e1f0ecb969bf02eaf53233272311aa654141959149da52287a5bd",
+      "commit_or_lineage_reference": "409d22b4a697ac5a758ac51f5d27db7837c78d0c",
+      "claim_supported": "No eligible canonical source object or owner authorization is identified; three pinned project artifacts are explicitly noncanonical or the wrong source class.",
+      "authentication_status": "PASS_BOUNDED_GAP_EVIDENCE"
+    },
+    {
+      "reference": "FA1B2de_Current86_FirstTranche24_StageA_Provenance_Acquisition_Preparation/CANONICAL_SOURCE_COHORT_CLASSIFICATION.json",
+      "sha256": "a873292269d6a08ceb485cf56d861711d9d47b9a2e319743038af1addcaad4e7",
+      "commit_or_lineage_reference": "409d22b4a697ac5a758ac51f5d27db7837c78d0c",
+      "claim_supported": "All 24 targets have the class identified but the canonical source object and owner authorization missing, with no cohort exception.",
+      "authentication_status": "PASS_BOUNDED_GAP_EVIDENCE"
+    },
+    {
+      "reference": "FA1B2de_Current86_FirstTranche24_Source_Authority_Candidate_Resolution_Cross_Object_Hash_Remediation/VERSION_POLICY_RESOLUTION.json",
+      "sha256": "16b377e7b6494775c15e32808677eb52f9e27092a54f3129684aec58cc93fc47",
+      "commit_or_lineage_reference": "62c822589ac783c04a4a02af13ca0c4548892aac",
+      "claim_supported": "The reviewed candidate state leaves all five exact version/source evidence requirements unresolved.",
+      "authentication_status": "PASS"
+    },
+    {
+      "reference": "FA1B2de_Current86_FirstTranche24_Source_Authority_Candidate_Resolution_Independent_Review_R3/INDEPENDENT_REVIEW.json",
+      "sha256": "5116303e95b7c553e262e464cff90cd4cc4950e14330abd7b1980ad0e07162cc",
+      "commit_or_lineage_reference": "6171a460ef527b99f2176eb047d51ca7082d067a",
+      "claim_supported": "Independent review passed the class-only candidate and confirmed the five version/source evidence items remain pending.",
+      "authentication_status": "PASS"
+    }
+  ],
+  "external_sources_queried": false,
+  "source_objects_acquired": false
+}

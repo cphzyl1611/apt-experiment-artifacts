@@ -1,0 +1,7 @@
+{
+  "fixture": "wrong_governance_decision_binding.json",
+  "base_fixture": "VERSION_EVIDENCE_RESOLUTION_RECORD.json",
+  "mutations": [
+    {"operation": "replace", "path": ["governance_binding", "decision_record_id"], "value": "GOVDEC2-0000000000000000000000000000000000000000000000000000000000000000"}
+  ]
+}

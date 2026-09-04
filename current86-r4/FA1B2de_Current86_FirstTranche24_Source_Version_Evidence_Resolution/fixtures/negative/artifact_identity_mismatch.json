@@ -1,0 +1,7 @@
+{
+  "fixture": "artifact_identity_mismatch.json",
+  "base_fixture": "CANONICAL_ARTIFACT_IDENTITY_RESOLUTION.json",
+  "mutations": [
+    {"operation": "replace", "path": ["CANONICAL_ARTIFACT_IDENTITY"], "value": "urn:unauthenticated:artifact"}
+  ]
+}
