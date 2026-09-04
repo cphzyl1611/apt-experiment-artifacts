@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:fa1b2de:first-tranche24:descriptor-artifact-lineage-proof:v1",
+  "title": "FIRST_TRANCHE24 descriptor-to-artifact lineage proof",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["record_type", "schema_version", "candidate_reference", "authority_descriptor", "artifact_node", "immutable_version_node", "content_digest_node", "edges", "proof_status", "mixed_lineage_allowed"],
+  "properties": {
+    "record_type": {"const": "DESCRIPTOR_ARTIFACT_LINEAGE_PROOF"},
+    "schema_version": {"const": "V1"},
+    "candidate_reference": {"const": "03_frozen_lineage/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json#class_to_type_mapping[0]"},
+    "authority_descriptor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["descriptor_reference", "descriptor_identity", "authority_type", "source_fact_type", "descriptor_evidence_reference", "descriptor_sha256"],
+      "properties": {
+        "descriptor_reference": {"type": "string", "minLength": 1, "pattern": "^[^\\u0000-\\u001f]+$"},
+        "descriptor_identity": {"const": "SOURCE_AUTHORITY_CANDIDATE_CLASS"},
+        "authority_type": {"const": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE"},
+        "source_fact_type": {"const": "PINNED_CANONICAL_INTRINSIC_FIELD"},
+        "descriptor_evidence_reference": {"type": "string", "minLength": 1, "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/#@+\\-]{0,255}$"},
+        "descriptor_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "artifact_node": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "artifact_class", "canonical_locator", "artifact_identity_sha256"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1, "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/#@+\\-]{0,255}$"},
+        "artifact_class": {"const": "CANONICAL_SOURCE_ARTIFACT"},
+        "canonical_locator": {"type": "string", "minLength": 1, "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/#@+\\-]{0,255}$"},
+        "artifact_identity_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "immutable_version_node": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["policy_id", "policy_form", "immutable_identifier", "floating_reference_allowed", "version_identity_sha256"],
+      "properties": {
+        "policy_id": {"type": "string", "pattern": "^SVP-[A-Z0-9_]+$"},
+        "policy_form": {"enum": ["CONTENT_DIGEST", "GIT_COMMIT", "RELEASE_TAG_WITH_DIGEST"]},
+        "immutable_identifier": {"type": "string", "minLength": 1, "pattern": "^[^\\u0000-\\u001f]+$"},
+        "floating_reference_allowed": {"const": false},
+        "version_identity_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "content_digest_node": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["algorithm", "content_sha256", "digest_evidence_reference", "digest_identity_sha256"],
+      "properties": {
+        "algorithm": {"const": "SHA-256"},
+        "content_sha256": {"$ref": "#/$defs/sha256"},
+        "digest_evidence_reference": {"type": "string", "minLength": 1, "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/#@+\\-]{0,255}$"},
+        "digest_identity_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "edges": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "prefixItems": [
+        {"$ref": "#/$defs/descriptorToArtifactEdge"},
+        {"$ref": "#/$defs/artifactToVersionEdge"},
+        {"$ref": "#/$defs/versionToDigestEdge"}
+      ],
+      "items": false
+    },
+    "proof_status": {"enum": ["PASS", "SYNTHETIC_PASS", "INCOMPLETE", "REJECTED"]},
+    "mixed_lineage_allowed": {"const": false}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "edgeBase": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["edge_id", "from_node", "to_node", "from_identity_sha256", "to_identity_sha256", "evidence_reference", "evidence_sha256", "authentication_procedure_id", "authentication_status"],
+      "properties": {
+        "edge_id": {"type": "string"},
+        "from_node": {"type": "string"},
+        "to_node": {"type": "string"},
+        "from_identity_sha256": {"$ref": "#/$defs/sha256"},
+        "to_identity_sha256": {"$ref": "#/$defs/sha256"},
+        "evidence_reference": {"type": "string", "minLength": 1, "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/#@+\\-\\[\\]]{0,255}$"},
+        "evidence_sha256": {"$ref": "#/$defs/sha256"},
+        "authentication_procedure_id": {"const": "FIRST_TRANCHE24_LINEAGE_EDGE_AUTHENTICATION_V1"},
+        "authentication_status": {"enum": ["PASS", "SYNTHETIC_PASS", "FAIL", "NOT_EXECUTED"]}
+      }
+    },
+    "descriptorToArtifactEdge": {
+      "allOf": [
+        {"$ref": "#/$defs/edgeBase"},
+        {"properties": {"edge_id": {"const": "DESCRIPTOR_TO_ARTIFACT"}, "from_node": {"const": "AUTHORITY_DESCRIPTOR"}, "to_node": {"const": "CANONICAL_SOURCE_ARTIFACT"}}}
+      ]
+    },
+    "artifactToVersionEdge": {
+      "allOf": [
+        {"$ref": "#/$defs/edgeBase"},
+        {"properties": {"edge_id": {"const": "ARTIFACT_TO_IMMUTABLE_VERSION"}, "from_node": {"const": "CANONICAL_SOURCE_ARTIFACT"}, "to_node": {"const": "IMMUTABLE_VERSION"}}}
+      ]
+    },
+    "versionToDigestEdge": {
+      "allOf": [
+        {"$ref": "#/$defs/edgeBase"},
+        {"properties": {"edge_id": {"const": "IMMUTABLE_VERSION_TO_CONTENT_DIGEST"}, "from_node": {"const": "IMMUTABLE_VERSION"}, "to_node": {"const": "CONTENT_DIGEST"}}}
+      ]
+    }
+  }
+}

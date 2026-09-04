@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:fa1b2de:first-tranche24:owner-issuer-authorization:v1",
+  "title": "FIRST_TRANCHE24 owner or issuer authorization evidence",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "record_type",
+    "schema_version",
+    "owner_or_issuer_identity",
+    "artifact_identity",
+    "immutable_version_binding",
+    "authorization_scope",
+    "authorization_status",
+    "issuance_effective_metadata",
+    "evidence_reference",
+    "authentication_procedure",
+    "public_accessibility_not_authorization"
+  ],
+  "properties": {
+    "record_type": {"const": "OWNER_ISSUER_AUTHORIZATION_PROOF"},
+    "schema_version": {"const": "V1"},
+    "owner_or_issuer_identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["identity_type", "canonical_name", "identity_reference", "relationship_to_artifact", "identity_evidence_reference"],
+      "properties": {
+        "identity_type": {"enum": ["SOURCE_OWNER", "SOURCE_ISSUER", "AUTHORIZED_DELEGATE"]},
+        "canonical_name": {"type": "string", "minLength": 1, "pattern": "^[^\\u0000-\\u001f]+$"},
+        "identity_reference": {"type": "string", "minLength": 1, "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/#@+\\-]{0,255}$"},
+        "relationship_to_artifact": {"enum": ["OWNS", "ISSUED", "DELEGATED_BY_OWNER_OR_ISSUER"]},
+        "identity_evidence_reference": {"type": "string", "minLength": 1, "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/#@+\\-]{0,255}$"}
+      }
+    },
+    "artifact_identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "canonical_locator", "artifact_class", "artifact_identity_sha256"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1, "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/#@+\\-]{0,255}$"},
+        "canonical_locator": {"type": "string", "minLength": 1, "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/#@+\\-]{0,255}$"},
+        "artifact_class": {"const": "CANONICAL_SOURCE_ARTIFACT"},
+        "artifact_identity_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "immutable_version_binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["policy_id", "policy_form", "immutable_identifier", "content_sha256", "floating_reference_allowed", "version_evidence_reference"],
+      "properties": {
+        "policy_id": {"type": "string", "pattern": "^SVP-[A-Z0-9_]+$"},
+        "policy_form": {"enum": ["CONTENT_DIGEST", "GIT_COMMIT", "RELEASE_TAG_WITH_DIGEST"]},
+        "immutable_identifier": {"type": "string", "minLength": 1, "pattern": "^[^\\u0000-\\u001f]+$"},
+        "content_sha256": {"$ref": "#/$defs/sha256"},
+        "floating_reference_allowed": {"const": false},
+        "version_evidence_reference": {"type": "string", "minLength": 1, "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/#@+\\-]{0,255}$"}
+      }
+    },
+    "authorization_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["scope_id", "raw_ids", "raw_count", "unique_raw_count", "scope_digest", "scope_binding_mode", "permitted_use", "scope_extension_permitted"],
+      "properties": {
+        "scope_id": {"const": "FIRST_TRANCHE24_ONLY"},
+        "raw_ids": {"const": [110,273,210,98,147,277,188,301,143,250,233,287,146,293,114,284,291,215,88,182,300,218,115,148]},
+        "raw_count": {"const": 24},
+        "unique_raw_count": {"const": 24},
+        "scope_digest": {"$ref": "#/$defs/sha256"},
+        "scope_binding_mode": {"const": "LITERAL_ORDERED_SET"},
+        "permitted_use": {"const": "SOURCE_AUTHENTICATION_INPUT_ONLY"},
+        "scope_extension_permitted": {"const": false}
+      }
+    },
+    "authorization_status": {"enum": ["ACTIVE", "EXPIRED", "REVOKED", "SUPERSEDED", "NOT_FOUND", "CONFLICTING"]},
+    "issuance_effective_metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["authorization_id", "issued_at", "effective_at", "expires_at", "revoked_at", "superseded_by", "status_as_of"],
+      "properties": {
+        "authorization_id": {"type": "string", "pattern": "^AUTH-[A-Z0-9_]+$"},
+        "issued_at": {"type": "string", "format": "date-time"},
+        "effective_at": {"type": "string", "format": "date-time"},
+        "expires_at": {"anyOf": [{"type": "null"}, {"type": "string", "format": "date-time"}]},
+        "revoked_at": {"anyOf": [{"type": "null"}, {"type": "string", "format": "date-time"}]},
+        "superseded_by": {"anyOf": [{"type": "null"}, {"type": "string", "pattern": "^AUTH-[A-Z0-9_]+$"}]},
+        "status_as_of": {"type": "string", "format": "date-time"}
+      }
+    },
+    "evidence_reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["evidence_id", "evidence_kind", "evidence_locator", "evidence_sha256", "attestation_status", "signature_or_proof_method"],
+      "properties": {
+        "evidence_id": {"type": "string", "pattern": "^EVID-[A-Z0-9_]+$"},
+        "evidence_kind": {"enum": ["SIGNED_OWNER_AUTHORIZATION", "SIGNED_ISSUER_AUTHORIZATION", "DELEGATION_RECORD"]},
+        "evidence_locator": {"type": "string", "minLength": 1, "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/#@+\\-]{0,255}$"},
+        "evidence_sha256": {"$ref": "#/$defs/sha256"},
+        "attestation_status": {"enum": ["PASS", "SYNTHETIC_PASS"]},
+        "signature_or_proof_method": {"enum": ["SIGNED_RECORD", "CERTIFICATE_CHAIN", "AUTHENTICATED_PROVIDER_PROOF", "SYNTHETIC_DETERMINISTIC"]}
+      }
+    },
+    "authentication_procedure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["procedure_id", "checks", "publication_accessibility_substitute_allowed"],
+      "properties": {
+        "procedure_id": {"const": "FIRST_TRANCHE24_OWNER_ISSUER_AUTHENTICATION_V1"},
+        "checks": {
+          "type": "array",
+          "const": [
+            "authenticate_owner_or_issuer_identity",
+            "authenticate_relationship_to_exact_artifact",
+            "authenticate_immutable_version_binding",
+            "authenticate_exact_first_tranche24_scope",
+            "authenticate_active_non_revoked_non_superseded_status",
+            "authenticate_evidence_reference_and_proof"
+          ]
+        },
+        "publication_accessibility_substitute_allowed": {"const": false}
+      }
+    },
+    "public_accessibility_not_authorization": {"const": true}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

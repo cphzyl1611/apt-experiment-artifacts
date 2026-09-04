@@ -1,0 +1,72 @@
+{
+  "record_type": "FIRST_TRANCHE24_SOURCE_EVIDENCE_ACQUISITION_TRANSACTION",
+  "schema_version": "V1",
+  "record_mode": "DESIGN_ONLY_TEMPLATE",
+  "transaction_identity": {
+    "transaction_type": "FIRST_TRANCHE24_SOURCE_EVIDENCE_ACQUISITION",
+    "request_id": "REQ-DESIGN_ONLY_FIRST_TRANCHE24",
+    "transaction_id": null,
+    "transaction_hash": null,
+    "canonical_preimage_sha256": null,
+    "replay_key": null,
+    "created_at": "2026-09-04T05:00:00Z",
+    "design_only": true
+  },
+  "governance_binding": {
+    "decision_record_id": "GOVDEC2-68ea814d1940bed4ec8b3e48b6a28f67f3e05c5e50e1c342a1fa2dc7db31f90f",
+    "governance_transaction_hash": "b5601414918d6b7cc5c00ebaf24b98d93d2d477bcd4481de4de47b8ed0f7cd38",
+    "human_governance_decision": "APPROVE_BOTH_G1_AND_G2",
+    "governance_scope": "FIRST_TRANCHE24_ONLY",
+    "version_evidence_resolution_commit": "81c843c48619fd8e25983f68a7248d0273dc2192",
+    "version_evidence_resolution_parent": "6171a460ef527b99f2176eb047d51ca7082d067a",
+    "review_materialization_commit": "a67377396ae6d20e87c1870bddeed8700a6c871b",
+    "review_materialization_parent": "81c843c48619fd8e25983f68a7248d0273dc2192",
+    "review_materialization_message": "materialize binding: FIRST_TRANCHE24_SOURCE_VERSION_EVIDENCE_RESOLUTION_INDEPENDENT_REVIEW",
+    "scope_extension_permitted": false
+  },
+  "scope_binding": {
+    "scope_id": "FIRST_TRANCHE24_ONLY",
+    "raw_ids": [110,273,210,98,147,277,188,301,143,250,233,287,146,293,114,284,291,215,88,182,300,218,115,148],
+    "raw_count": 24,
+    "unique_raw_count": 24,
+    "scope_binding_mode": "LITERAL_ORDERED_SET",
+    "scope_extension_requested": false
+  },
+  "candidate_reference": {
+    "reference": "03_frozen_lineage/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json#class_to_type_mapping[0]",
+    "resolution_state": "CANDIDATE_RESOLVED_VERSION_EVIDENCE_PENDING",
+    "candidate_type": "SOURCE_AUTHORITY_CANDIDATE_CLASS",
+    "authority_type": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+    "source_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD"
+  },
+  "requested_artifact_identity": {
+    "requested_artifact_class": "CANONICAL_SOURCE_ARTIFACT",
+    "requested_authority_type": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+    "requested_source_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+    "resolution_rule": "EXACTLY_ONE_ELIGIBLE_CANONICAL_ARTIFACT",
+    "resolution_status": "PENDING_EXACT_RESOLUTION",
+    "resolved_artifact": null
+  },
+  "acquisition_channel": null,
+  "acquisition_provenance": null,
+  "retrieved_artifact_reference": null,
+  "immutable_version_representation": null,
+  "content_digest": null,
+  "descriptor_to_artifact_lineage_evidence": null,
+  "owner_issuer_authorization_evidence": null,
+  "acquisition_status": "DESIGN_ONLY",
+  "failure_reason": null,
+  "downstream_eligibility": "NOT_ELIGIBLE",
+  "operational_boundary": {
+    "source_authority_activated": "NO",
+    "source_acquisition": "NO",
+    "source_auth_executed": "NO",
+    "stage_a_admissions": 0,
+    "stage_b_exposures": 0,
+    "field_pins": 0,
+    "operative_records": 0,
+    "p0_executed": "NO",
+    "p1_executed": "NO",
+    "formal_1796_experiment_executed": "NO"
+  }
+}

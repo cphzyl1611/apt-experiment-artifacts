@@ -1,0 +1,5 @@
+{
+  "fixture_descriptor": "unsupported_immutable_version_form",
+  "base_fixture": "valid_envelope.json",
+  "materialized_by": "NEGATIVE_FIXTURE_INDEX.json"
+}

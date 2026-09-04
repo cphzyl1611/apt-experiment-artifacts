@@ -1,0 +1,35 @@
+{
+  "state_machine_id": "FIRST_TRANCHE24_SOURCE_EVIDENCE_ACQUISITION_V1",
+  "version": "V1",
+  "initial_state": "DESIGN_ONLY",
+  "terminal_states": ["REJECTED", "PENDING_AUTHENTICATION"],
+  "states": [
+    "DESIGN_ONLY",
+    "REQUEST_PREPARED",
+    "ACQUISITION_ATTEMPTED",
+    "ARTIFACT_ACQUIRED",
+    "EVIDENCE_ENVELOPE_ASSEMBLED",
+    "PENDING_AUTHENTICATION",
+    "REJECTED"
+  ],
+  "transitions": [
+    {"from": "DESIGN_ONLY", "event": "PREPARE_REQUEST", "to": "REQUEST_PREPARED", "guard": "exact_governance_scope_candidate_and_channel_policy_are_bound", "effect": "record_request_without_retrieval"},
+    {"from": "REQUEST_PREPARED", "event": "BEGIN_ATTEMPT", "to": "ACQUISITION_ATTEMPTED", "guard": "request_is_immutable_and_provenance_capture_is_ready", "effect": "open_one_bounded_attempt"},
+    {"from": "ACQUISITION_ATTEMPTED", "event": "SELECT_UNIQUE_ARTIFACT", "to": "ARTIFACT_ACQUIRED", "guard": "exactly_one_eligible_artifact_is_selected", "effect": "place_object_in_read_only_quarantine"},
+    {"from": "ARTIFACT_ACQUIRED", "event": "ASSEMBLE_ENVELOPE", "to": "EVIDENCE_ENVELOPE_ASSEMBLED", "guard": "version_digest_lineage_and_authorization_evidence_are_present_and_consistent", "effect": "assemble_closed_envelope"},
+    {"from": "EVIDENCE_ENVELOPE_ASSEMBLED", "event": "QUEUE_FOR_AUTHENTICATION", "to": "PENDING_AUTHENTICATION", "guard": "envelope_is_not_authenticated_and_not_downstream_eligible", "effect": "handoff_to_separate_source_authentication_gate"},
+    {"from": "REQUEST_PREPARED", "event": "FAIL_CLOSED", "to": "REJECTED", "guard": "any_request_or_policy_check_fails", "effect": "record_failure_without_handoff"},
+    {"from": "ACQUISITION_ATTEMPTED", "event": "FAIL_CLOSED", "to": "REJECTED", "guard": "retrieval_or_uniqueness_check_fails", "effect": "quarantine_or_discard_without_handoff"},
+    {"from": "ARTIFACT_ACQUIRED", "event": "FAIL_CLOSED", "to": "REJECTED", "guard": "identity_version_or_digest_check_fails", "effect": "block_envelope_assembly"},
+    {"from": "EVIDENCE_ENVELOPE_ASSEMBLED", "event": "FAIL_CLOSED", "to": "REJECTED", "guard": "lineage_authorization_provenance_or_scope_check_fails", "effect": "block_authentication_handoff"}
+  ],
+  "invariants": [
+    "ACQUISITION_IS_NOT_AUTHENTICATION",
+    "AUTHENTICATION_IS_NOT_AUTHORITY_ACTIVATION",
+    "AUTHORITY_ACTIVATION_IS_NOT_STAGE_A_ADMISSION",
+    "NO_STATE_HAS_AUTHORITY_ACTIVATED_TRANSITION",
+    "NO_STATE_MAKES_EVIDENCE_DOWNSTREAM_ELIGIBLE",
+    "PENDING_AUTHENTICATION_REQUIRES_SOURCE_AUTHENTICATION_GATE",
+    "REJECTED_IS_FAIL_CLOSED_AND_NON_OPERATIVE"
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "policy_type": "FIRST_TRANCHE24_SOURCE_EVIDENCE_ACQUISITION_CHANNEL_POLICY",
+  "policy_version": "V1",
+  "scope_id": "FIRST_TRANCHE24_ONLY",
+  "allowed_object_classes": [
+    "CANONICAL_SOURCE_ARTIFACT",
+    "IMMUTABLE_VERSION_EVIDENCE",
+    "ARTIFACT_CONTENT_DIGEST_EVIDENCE",
+    "DESCRIPTOR_ARTIFACT_LINEAGE_PROOF",
+    "OWNER_ISSUER_AUTHORIZATION_PROOF"
+  ],
+  "allowed_channel_classes": [
+    {
+      "channel_class": "CONTENT_ADDRESSED_OBJECT_HANDOFF",
+      "may_supply_object_classes": ["CANONICAL_SOURCE_ARTIFACT", "ARTIFACT_CONTENT_DIGEST_EVIDENCE"],
+      "version_forms": ["CONTENT_DIGEST"],
+      "deterministic_provenance_required": true,
+      "selection_constraint": "EXACTLY_ONE_ELIGIBLE_ARTIFACT_AND_ONE_CONSISTENT_EVIDENCE_SET",
+      "live_endpoint_value_embedded": false
+    },
+    {
+      "channel_class": "GIT_COMMIT_TREE_SNAPSHOT_HANDOFF",
+      "may_supply_object_classes": ["CANONICAL_SOURCE_ARTIFACT", "IMMUTABLE_VERSION_EVIDENCE", "ARTIFACT_CONTENT_DIGEST_EVIDENCE"],
+      "version_forms": ["GIT_COMMIT"],
+      "deterministic_provenance_required": true,
+      "selection_constraint": "EXACTLY_ONE_ELIGIBLE_ARTIFACT_AND_ONE_CONSISTENT_EVIDENCE_SET",
+      "live_endpoint_value_embedded": false
+    },
+    {
+      "channel_class": "RELEASE_ARTIFACT_WITH_DIGEST_HANDOFF",
+      "may_supply_object_classes": ["CANONICAL_SOURCE_ARTIFACT", "IMMUTABLE_VERSION_EVIDENCE", "ARTIFACT_CONTENT_DIGEST_EVIDENCE"],
+      "version_forms": ["RELEASE_TAG_WITH_DIGEST"],
+      "deterministic_provenance_required": true,
+      "selection_constraint": "EXACTLY_ONE_ELIGIBLE_ARTIFACT_AND_ONE_CONSISTENT_EVIDENCE_SET",
+      "live_endpoint_value_embedded": false
+    },
+    {
+      "channel_class": "SIGNED_DESCRIPTOR_AUTHORIZATION_BUNDLE_HANDOFF",
+      "may_supply_object_classes": ["IMMUTABLE_VERSION_EVIDENCE", "DESCRIPTOR_ARTIFACT_LINEAGE_PROOF", "OWNER_ISSUER_AUTHORIZATION_PROOF"],
+      "version_forms": ["CONTENT_DIGEST", "GIT_COMMIT", "RELEASE_TAG_WITH_DIGEST"],
+      "deterministic_provenance_required": true,
+      "selection_constraint": "EXACTLY_ONE_ELIGIBLE_ARTIFACT_AND_ONE_CONSISTENT_EVIDENCE_SET",
+      "live_endpoint_value_embedded": false
+    }
+  ],
+  "prohibited_channel_classes": [
+    "FLOATING_BRANCH_OR_HEAD",
+    "MUTABLE_TAG_WITHOUT_DIGEST",
+    "LATEST_OR_DATE_ONLY_REFERENCE",
+    "PUBLIC_ACCESSIBILITY_ONLY",
+    "UNAUTHENTICATED_WEB_PAGE_OR_LISTING",
+    "GENERIC_CORPUS_MIRROR_OR_BULK_EXPORT",
+    "UNSCOPED_MULTI_ARTIFACT_RETRIEVAL",
+    "USER_SUPPLIED_UNVERIFIED_OBJECT",
+    "LIVE_CREDENTIAL_OR_SECRET_PAYLOAD"
+  ],
+  "required_provenance_fields": [
+    "acquisition_attempt_id",
+    "channel_class",
+    "channel_policy_version",
+    "request_descriptor_sha256",
+    "requested_candidate_reference",
+    "requested_scope_id",
+    "started_at",
+    "completed_at",
+    "returned_object_count",
+    "selected_object_count",
+    "selection_rule",
+    "selected_object_reference",
+    "response_metadata_sha256",
+    "retrieval_event_sha256",
+    "credential_material_recorded"
+  ],
+  "credential_handling": {
+    "credential_material_may_be_embedded": false,
+    "credential_material_may_be_retained": false,
+    "credential_material_must_be_redacted": true,
+    "credential_provider_reference_allowed": true
+  },
+  "selection_rules": {
+    "artifact_count_must_equal": 1,
+    "unique_resolution_required": true,
+    "mixed_object_lineage_allowed": false,
+    "scope_extension_allowed": false,
+    "floating_reference_allowed": false
+  },
+  "fail_closed_default": "REJECT_UNLESS_ALL_POLICY_FIELDS_AND_PROVENANCE_CHECKS_PASS"
+}

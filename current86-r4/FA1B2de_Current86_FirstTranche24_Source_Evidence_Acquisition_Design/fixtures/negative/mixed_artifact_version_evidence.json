@@ -1,0 +1,5 @@
+{
+  "fixture_descriptor": "mixed_artifact_version_evidence",
+  "base_fixture": "valid_envelope.json",
+  "materialized_by": "NEGATIVE_FIXTURE_INDEX.json"
+}

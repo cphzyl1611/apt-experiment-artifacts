@@ -1,0 +1,5 @@
+{
+  "fixture_descriptor": "missing_owner_issuer_authorization",
+  "base_fixture": "valid_envelope.json",
+  "materialized_by": "NEGATIVE_FIXTURE_INDEX.json"
+}

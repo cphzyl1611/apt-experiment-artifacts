@@ -1,0 +1,5 @@
+{
+  "fixture_descriptor": "stale_revoked_authorization",
+  "base_fixture": "valid_envelope.json",
+  "materialized_by": "NEGATIVE_FIXTURE_INDEX.json"
+}

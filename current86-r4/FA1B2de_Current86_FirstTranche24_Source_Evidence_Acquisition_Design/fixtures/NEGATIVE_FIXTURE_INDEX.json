@@ -1,0 +1,25 @@
+{
+  "fixture_type": "FIRST_TRANCHE24_SOURCE_EVIDENCE_ACQUISITION_NEGATIVE_FIXTURES",
+  "base_fixture": "valid_envelope.json",
+  "vectors": [
+    {"fixture": "missing_governance_binding.json", "expected_rejection": "MISSING_GOVERNANCE_BINDING", "mutation": {"operation": "remove", "path": ["governance_binding"]}},
+    {"fixture": "scope_widening.json", "expected_rejection": "SCOPE_WIDENING", "mutation": {"operation": "replace", "path": ["scope_binding", "raw_ids"], "value": [110,273,210,98,147,277,188,301,143,250,233,287,146,293,114,284,291,215,88,182,300,218,115,148,999]}},
+    {"fixture": "multiple_artifacts_without_unique_resolution.json", "expected_rejection": "MULTIPLE_ELIGIBLE_ARTIFACTS", "mutation": {"operation": "replace", "path": ["artifact_identity", "eligible_artifact_count"], "value": 2}},
+    {"fixture": "floating_version.json", "expected_rejection": "FLOATING_VERSION", "mutation": {"operation": "replace", "path": ["immutable_version_representation", "floating_reference_allowed"], "value": true}},
+    {"fixture": "digest_absent.json", "expected_rejection": "DIGEST_ABSENT", "mutation": {"operation": "remove", "path": ["content_digest_evidence"]}},
+    {"fixture": "digest_mismatch.json", "expected_rejection": "DIGEST_MISMATCH", "mutation": {"operation": "replace", "path": ["content_digest_evidence", "recomputed_content_sha256"], "value": "9999999999999999999999999999999999999999999999999999999999999999"}},
+    {"fixture": "lineage_edge_missing.json", "expected_rejection": "LINEAGE_EDGE_MISSING", "mutation": {"operation": "remove", "path": ["lineage_proof", "edges", 2]}},
+    {"fixture": "mixed_artifact_version_evidence.json", "expected_rejection": "MIXED_ARTIFACT_VERSION_EVIDENCE", "mutation": {"operation": "replace", "path": ["content_digest_evidence", "artifact_id"], "value": "artifact:synthetic:other-object"}},
+    {"fixture": "missing_owner_issuer_authorization.json", "expected_rejection": "MISSING_OWNER_ISSUER_AUTHORIZATION", "mutation": {"operation": "remove", "path": ["owner_issuer_authorization"]}},
+    {"fixture": "authorization_scope_mismatch.json", "expected_rejection": "AUTHORIZATION_SCOPE_MISMATCH", "mutation": {"operation": "replace", "path": ["owner_issuer_authorization", "authorization_scope", "scope_id"], "value": "CURRENT86"}},
+    {"fixture": "stale_revoked_authorization.json", "expected_rejection": "STALE_REVOKED_OR_SUPERSEDED_AUTHORIZATION", "mutation": {"operation": "replace", "path": ["owner_issuer_authorization", "authorization_status"], "value": "REVOKED"}},
+    {"fixture": "unauthorized_field.json", "expected_rejection": "UNAUTHORIZED_FIELD", "mutation": {"operation": "add", "path": ["unauthorized_field"], "value": true}},
+    {"fixture": "authenticated_without_authentication.json", "expected_rejection": "ACQUISITION_MARKED_AUTHENTICATED_WITHOUT_AUTHENTICATION", "mutation": {"operation": "replace", "path": ["authentication_readiness", "source_authentication_status"], "value": "PASS"}},
+    {"fixture": "authority_activated.json", "expected_rejection": "ACQUISITION_MARKED_AUTHORITY_ACTIVATED", "mutation": {"operation": "replace", "path": ["authority_activation_status"], "value": "ACTIVATED"}},
+    {"fixture": "live_credential_embedded.json", "expected_rejection": "LIVE_CREDENTIAL_EMBEDDED", "mutation": {"operation": "add", "path": ["credential_token"], "value": "SYNTHETIC_FORBIDDEN_CREDENTIAL_MATERIAL"}},
+    {"fixture": "broken_lineage.json", "expected_rejection": "BROKEN_LINEAGE", "mutation": {"operation": "replace", "path": ["lineage_proof", "edges", 0, "to_reference"], "value": "artifact:synthetic:other-object"}},
+    {"fixture": "owner_issuer_mismatch.json", "expected_rejection": "OWNER_ISSUER_MISMATCH", "mutation": {"operation": "replace", "path": ["owner_issuer_authorization", "artifact_identity", "artifact_id"], "value": "artifact:synthetic:other-object"}},
+    {"fixture": "ambiguous_acquisition_provenance.json", "expected_rejection": "AMBIGUOUS_ACQUISITION_PROVENANCE", "mutation": {"operation": "replace", "path": ["acquisition_provenance", "returned_object_count"], "value": 2}},
+    {"fixture": "unsupported_immutable_version_form.json", "expected_rejection": "UNSUPPORTED_IMMUTABLE_VERSION_FORM", "mutation": {"operation": "replace", "path": ["immutable_version_representation", "policy_form"], "value": "FLOATING_BRANCH"}}
+  ]
+}

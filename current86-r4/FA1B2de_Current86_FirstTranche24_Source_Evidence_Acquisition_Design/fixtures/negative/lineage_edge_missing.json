@@ -1,0 +1,5 @@
+{
+  "fixture_descriptor": "lineage_edge_missing",
+  "base_fixture": "valid_envelope.json",
+  "materialized_by": "NEGATIVE_FIXTURE_INDEX.json"
+}
