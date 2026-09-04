@@ -1,0 +1,1 @@
+{"base_fixture":"P3_unique_handoff.json","mutations":[{"operation":"add","path":["acquired_artifact_bytes"],"value":"base64:synthetic-bytes"}]}

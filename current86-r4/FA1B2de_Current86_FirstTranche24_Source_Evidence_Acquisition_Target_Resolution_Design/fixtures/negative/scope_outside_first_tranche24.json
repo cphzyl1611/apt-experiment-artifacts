@@ -1,0 +1,1 @@
+{"base_fixture":"P3_unique_transaction.json","mutations":[{"operation":"replace","path":["scope_binding","scope_id"],"value":"CURRENT86_ONLY"}]}

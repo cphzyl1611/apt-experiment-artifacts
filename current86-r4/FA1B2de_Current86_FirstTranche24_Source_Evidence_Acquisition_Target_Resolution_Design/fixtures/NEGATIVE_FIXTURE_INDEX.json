@@ -1,0 +1,25 @@
+{
+  "schema": "TARGET_RESOLUTION_NEGATIVE_FIXTURE_INDEX_V1",
+  "fixtures": [
+    {"fixture":"missing_governance_binding.json","base_fixture":"P3_unique_transaction.json","expected_rejection":"MISSING_GOVERNANCE_BINDING"},
+    {"fixture":"scope_outside_first_tranche24.json","base_fixture":"P3_unique_transaction.json","expected_rejection":"SCOPE_WIDENING"},
+    {"fixture":"class_mismatch.json","base_fixture":"P3_unique_candidate_set.json","expected_rejection":"CLASS_MISMATCH"},
+    {"fixture":"fact_type_mismatch.json","base_fixture":"P3_unique_candidate_set.json","expected_rejection":"FACT_TYPE_MISMATCH"},
+    {"fixture":"generic_search_result_promoted.json","base_fixture":"P3_unique_candidate_set.json","expected_rejection":"GENERIC_SEARCH_RESULT_PROMOTED"},
+    {"fixture":"floating_latest_only_target.json","base_fixture":"P3_unique_candidate_set.json","expected_rejection":"FLOATING_VERSION_CLAIM"},
+    {"fixture":"arbitrary_winner_for_two_candidates.json","base_fixture":"P2_ambiguous_candidate_set.json","expected_rejection":"ARBITRARY_TIE_BREAK"},
+    {"fixture":"silent_candidate_deletion.json","base_fixture":"P2_ambiguous_candidate_set.json","expected_rejection":"SILENT_CANDIDATE_DROPPED"},
+    {"fixture":"mirror_without_relationship_evidence.json","base_fixture":"P3_unique_candidate_set.json","expected_rejection":"MIRROR_RELATIONSHIP_UNPROVEN"},
+    {"fixture":"official_looking_domain_as_authority.json","base_fixture":"P3_unique_candidate_set.json","expected_rejection":"PUBLIC_OR_OFFICIAL_LOOKING_IS_NOT_AUTHORITY"},
+    {"fixture":"selected_target_without_candidate_set_reference.json","base_fixture":"P3_unique_transaction.json","expected_rejection":"MISSING_CANDIDATE_SET_REFERENCE"},
+    {"fixture":"unauthorized_acquisition_channel.json","base_fixture":"P3_unique_transaction.json","expected_rejection":"UNAUTHORIZED_ACQUISITION_CHANNEL"},
+    {"fixture":"unique_state_null_selected.json","base_fixture":"P3_unique_transaction.json","expected_rejection":"UNIQUE_TARGET_REQUIRES_SELECTION"},
+    {"fixture":"unique_state_multiple_selected.json","base_fixture":"P3_unique_transaction.json","expected_rejection":"MULTIPLE_SELECTED_CANDIDATES"},
+    {"fixture":"governance_required_downstream_eligible.json","base_fixture":"P2_ambiguous_transaction.json","expected_rejection":"GOVERNANCE_REQUIRED_NOT_ELIGIBLE"},
+    {"fixture":"target_claims_authentication_pass.json","base_fixture":"P3_unique_handoff.json","expected_rejection":"SOURCE_AUTHENTICATION_CLAIM"},
+    {"fixture":"target_claims_authority_activation.json","base_fixture":"P3_unique_handoff.json","expected_rejection":"AUTHORITY_ACTIVATION_CLAIM"},
+    {"fixture":"acquired_artifact_bytes_present.json","base_fixture":"P3_unique_handoff.json","expected_rejection":"ACQUIRED_ARTIFACT_BYTES"},
+    {"fixture":"unauthorized_field.json","base_fixture":"P3_unique_transaction.json","expected_rejection":"UNAUTHORIZED_FIELD"},
+    {"fixture":"scope_widening_current86_1796.json","base_fixture":"P3_unique_transaction.json","expected_rejection":"SCOPE_WIDENING"}
+  ]
+}

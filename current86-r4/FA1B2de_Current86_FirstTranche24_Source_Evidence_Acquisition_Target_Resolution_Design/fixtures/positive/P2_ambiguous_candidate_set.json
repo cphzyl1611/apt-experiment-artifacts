@@ -1,0 +1,94 @@
+{
+  "record_type": "FIRST_TRANCHE24_TARGET_CANDIDATE_SET",
+  "schema_version": "1.0",
+  "task_id": "FIRST_TRANCHE24_SOURCE_EVIDENCE_ACQUISITION_TARGET_RESOLUTION_DESIGN",
+  "record_mode": "SYNTHETIC_STATIC_FIXTURE",
+  "candidate_set_id": "TCS-P2-AMBIGUOUS",
+  "governance_binding": {
+    "human_governance_decision": "APPROVE_BOTH_G1_AND_G2",
+    "governance_scope": "FIRST_TRANCHE24_ONLY",
+    "governance_decision_id": "GOVDEC2-68ea814d1940bed4ec8b3e48b6a28f67f3e05c5e50e1c342a1fa2dc7db31f90f",
+    "governance_transaction_hash": "b5601414918d6b7cc5c00ebaf24b98d93d2d477bcd4481de4de47b8ed0f7cd38"
+  },
+  "scope_binding": {
+    "scope_id": "FIRST_TRANCHE24_ONLY",
+    "ordered_target_ids": [110, 273, 210, 98, 147, 277, 188, 301, 143, 250, 233, 287, 146, 293, 114, 284, 291, 215, 88, 182, 300, 218, 115, 148],
+    "raw_count": 24,
+    "unique_raw_count": 24,
+    "scope_extension_permitted": false,
+    "scope_widening": false
+  },
+  "target_binding": {
+    "candidate_reference": "03_frozen_lineage/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json#class_to_type_mapping[0]",
+    "candidate_type": "SOURCE_AUTHORITY_CANDIDATE_CLASS",
+    "authority_type": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+    "source_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD"
+  },
+  "candidate_population": {
+    "target_discovery_executed": "NO",
+    "target_candidates_discovered": 0,
+    "candidate_records_in_fixture": 2,
+    "candidate_records_are_operational": false,
+    "candidate_records_are_claims_only": true
+  },
+  "candidates": [
+    {
+      "candidate_id": "TC-SYNTH-A",
+      "candidate_class": "DIRECT_CANONICAL_INTRINSIC_OBJECT",
+      "authority_type": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "source_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+      "artifact_identity_claim": {"claim_status": "CLAIM_ONLY", "claimed_artifact_id": "synthetic-artifact-a", "identity_namespace": "fixture://p2", "identity_basis": "PROJECT_ARTIFACT_ID", "concrete": true},
+      "artifact_locator_claim": {"claim_status": "CLAIM_ONLY", "locator": "synthetic://canonical/a", "locator_kind": "PROJECT_ARTIFACT_PATH", "floating_locator": false},
+      "discovery_channel": "AUTHENTICATED_PROJECT_INDEX",
+      "discovery_provenance": {"claim_status": "CLAIM_ONLY", "source_class": "AUTHENTICATED_PROJECT_INDEX", "provenance_strength": "ADMISSIBLE", "evidence_refs": [{"reference": "fixture://p2/project-index/a", "evidence_role": "candidate-index-claim", "claim_status": "CLAIM_ONLY"}], "sole_basis_for_selection": false, "operation_executed": false},
+      "issuer_or_owner_claim": {"claim_status": "CLAIM_ONLY", "subject_claim": "synthetic-owner-a", "relationship_claim": "OWNS", "authority_basis": "OWNER_ISSUER_CLAIM", "later_authorization_evidence_path": true, "authentication_status": "NOT_EXECUTED"},
+      "version_form_claim": {"claim_status": "CLAIM_ONLY", "claimed_form": "CONTENT_DIGEST", "immutable_identifier_claim": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "floating_reference": false, "later_version_evidence_path": true},
+      "lineage_claims": [
+        {"claim_status": "CLAIM_ONLY", "edge_type": "DESCRIPTOR_TO_ARTIFACT", "from_claim": "descriptor:class-0", "to_claim": "synthetic-artifact-a", "evidence_refs": [{"reference": "fixture://p2/lineage/a1", "evidence_role": "lineage-claim", "claim_status": "CLAIM_ONLY"}], "later_lineage_evidence_path": true, "authentication_status": "NOT_EXECUTED"},
+        {"claim_status": "CLAIM_ONLY", "edge_type": "ARTIFACT_TO_VERSION", "from_claim": "synthetic-artifact-a", "to_claim": "version:a", "evidence_refs": [{"reference": "fixture://p2/lineage/a2", "evidence_role": "lineage-claim", "claim_status": "CLAIM_ONLY"}], "later_lineage_evidence_path": true, "authentication_status": "NOT_EXECUTED"},
+        {"claim_status": "CLAIM_ONLY", "edge_type": "VERSION_TO_DIGEST", "from_claim": "version:a", "to_claim": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "evidence_refs": [{"reference": "fixture://p2/lineage/a3", "evidence_role": "lineage-claim", "claim_status": "CLAIM_ONLY"}], "later_lineage_evidence_path": true, "authentication_status": "NOT_EXECUTED"}
+      ],
+      "authorization_claims": {"claim_status": "CLAIM_ONLY", "scope_id": "FIRST_TRANCHE24_ONLY", "exact_scope_claimed": true, "exact_artifact_bound_claimed": true, "exact_version_bound_claimed": true, "later_authorization_evidence_path": true, "authentication_status": "NOT_EXECUTED"},
+      "eligibility_evidence_refs": ["fixture://p2/eligibility/a"],
+      "identity_relationship_claim": {"claim_status": "CLAIM_ONLY", "relation_type": "NONE", "related_candidate_ids": [], "relationship_status": "NOT_APPLICABLE", "relationship_evidence_refs": [], "canonical_representative_claim": true},
+      "candidate_status": "ELIGIBLE_CLAIM_ONLY"
+    },
+    {
+      "candidate_id": "TC-SYNTH-B",
+      "candidate_class": "GOVERNED_PROJECT_CANONICAL_REGISTRY_OBJECT",
+      "authority_type": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+      "source_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD",
+      "artifact_identity_claim": {"claim_status": "CLAIM_ONLY", "claimed_artifact_id": "synthetic-artifact-b", "identity_namespace": "fixture://p2", "identity_basis": "GOVERNED_REGISTRY_ENTRY", "concrete": true},
+      "artifact_locator_claim": {"claim_status": "CLAIM_ONLY", "locator": "synthetic://canonical/b", "locator_kind": "GOVERNED_REGISTRY_PATH", "floating_locator": false},
+      "discovery_channel": "GOVERNED_MANIFEST_INDEX",
+      "discovery_provenance": {"claim_status": "CLAIM_ONLY", "source_class": "GOVERNED_MANIFEST_INDEX", "provenance_strength": "ADMISSIBLE", "evidence_refs": [{"reference": "fixture://p2/manifest-index/b", "evidence_role": "candidate-index-claim", "claim_status": "CLAIM_ONLY"}], "sole_basis_for_selection": false, "operation_executed": false},
+      "issuer_or_owner_claim": {"claim_status": "CLAIM_ONLY", "subject_claim": "synthetic-issuer-b", "relationship_claim": "ISSUED", "authority_basis": "GOVERNED_PROJECT_AUTHORITY_CLAIM", "later_authorization_evidence_path": true, "authentication_status": "NOT_EXECUTED"},
+      "version_form_claim": {"claim_status": "CLAIM_ONLY", "claimed_form": "GIT_COMMIT", "immutable_identifier_claim": "git-commit:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb", "floating_reference": false, "later_version_evidence_path": true},
+      "lineage_claims": [
+        {"claim_status": "CLAIM_ONLY", "edge_type": "DESCRIPTOR_TO_ARTIFACT", "from_claim": "descriptor:class-0", "to_claim": "synthetic-artifact-b", "evidence_refs": [{"reference": "fixture://p2/lineage/b1", "evidence_role": "lineage-claim", "claim_status": "CLAIM_ONLY"}], "later_lineage_evidence_path": true, "authentication_status": "NOT_EXECUTED"},
+        {"claim_status": "CLAIM_ONLY", "edge_type": "ARTIFACT_TO_VERSION", "from_claim": "synthetic-artifact-b", "to_claim": "version:b", "evidence_refs": [{"reference": "fixture://p2/lineage/b2", "evidence_role": "lineage-claim", "claim_status": "CLAIM_ONLY"}], "later_lineage_evidence_path": true, "authentication_status": "NOT_EXECUTED"},
+        {"claim_status": "CLAIM_ONLY", "edge_type": "VERSION_TO_DIGEST", "from_claim": "version:b", "to_claim": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb", "evidence_refs": [{"reference": "fixture://p2/lineage/b3", "evidence_role": "lineage-claim", "claim_status": "CLAIM_ONLY"}], "later_lineage_evidence_path": true, "authentication_status": "NOT_EXECUTED"}
+      ],
+      "authorization_claims": {"claim_status": "CLAIM_ONLY", "scope_id": "FIRST_TRANCHE24_ONLY", "exact_scope_claimed": true, "exact_artifact_bound_claimed": true, "exact_version_bound_claimed": true, "later_authorization_evidence_path": true, "authentication_status": "NOT_EXECUTED"},
+      "eligibility_evidence_refs": ["fixture://p2/eligibility/b"],
+      "identity_relationship_claim": {"claim_status": "CLAIM_ONLY", "relation_type": "NONE", "related_candidate_ids": [], "relationship_status": "NOT_APPLICABLE", "relationship_evidence_refs": [], "canonical_representative_claim": true},
+      "candidate_status": "ELIGIBLE_CLAIM_ONLY"
+    }
+  ],
+  "enumerated_candidate_ids": ["TC-SYNTH-A", "TC-SYNTH-B"],
+  "dispositioned_candidate_ids": ["TC-SYNTH-A", "TC-SYNTH-B"],
+  "candidate_inventory": {"candidate_count_in_record": 2, "enumerated_count": 2, "dispositioned_count": 2, "no_silent_candidate_drop": true, "all_candidates_have_disposition": true},
+  "deduplication_result": {
+    "policy_reference": "TARGET_DEDUPLICATION_AND_ALIAS_POLICY.json",
+    "groups": [
+      {"group_id": "DG-P2-A", "member_candidate_ids": ["TC-SYNTH-A"], "representative_candidate_id": "TC-SYNTH-A", "relationship_status": "NOT_APPLICABLE", "disposition": "SEPARATE_ELIGIBLE"},
+      {"group_id": "DG-P2-B", "member_candidate_ids": ["TC-SYNTH-B"], "representative_candidate_id": "TC-SYNTH-B", "relationship_status": "NOT_APPLICABLE", "disposition": "SEPARATE_ELIGIBLE"}
+    ],
+    "candidate_relationship_unknown_fails_closed": true,
+    "mirror_requires_relationship_evidence": true
+  },
+  "eligibility_result": {"policy_reference": "TARGET_ELIGIBILITY_POLICY.json", "evaluated_candidate_ids": ["TC-SYNTH-A", "TC-SYNTH-B"], "eligible_candidate_ids": ["TC-SYNTH-A", "TC-SYNTH-B"], "rejected_candidates": [], "final_authentication_required": false, "eligibility_is_claim_only": true},
+  "ambiguity_result": {"ambiguity_state": "MULTIPLE_EQUALLY_ELIGIBLE", "ambiguous_candidate_ids": ["TC-SYNTH-A", "TC-SYNTH-B"], "reason": "two equally eligible canonical claims remain and no frozen precedence rule exists"},
+  "resolution_result": {"resolution_state": "REQUIRES_GOVERNANCE_ADJUDICATION", "selected_candidate_id": null, "selected_acquisition_channel_class": null, "uniqueness_proof": {"eligible_candidate_count": 2, "distinct_canonical_representative_count": 2, "proof_status": "NOT_UNIQUE", "precedence_applied": false, "tie_breaker_used": false}, "precedence_policy": "NO_AUTOMATIC_PRECEDENCE", "governance_adjudication_required": true, "automation_model": "AUTOMATIC_WHEN_UNIQUE_BY_FROZEN_RULES"},
+  "operational_boundary": {"target_discovery_executed": "NO", "target_candidates_discovered": 0, "target_selected": "NO", "source_acquisition": "NO", "artifact_acquisition_attempted": "NO", "source_auth_executed": "NO", "source_authority_id": "NONE", "source_authority_activated": "NO", "stage_a_admissions": 0, "stage_b_exposures": 0, "field_pins": 0, "operative_records": 0, "p0_executed": "NO", "p1_executed": "NO", "formal_1796_experiment_executed": "NO", "zero_operational_effect": "PASS"}
+}

@@ -1,0 +1,17 @@
+{
+  "record_type": "FIRST_TRANCHE24_TARGET_RESOLUTION_DESIGN_STATIC_VALIDATION_REPORT",
+  "task_id": "FIRST_TRANCHE24_SOURCE_EVIDENCE_ACQUISITION_TARGET_RESOLUTION_DESIGN",
+  "schema_meta_validation": "PASS",
+  "static_validator": "PASS",
+  "governance_decision_binding": "PASS",
+  "first_tranche24_scope_exactness": "PASS",
+  "automation_model": "AUTOMATIC_WHEN_UNIQUE_BY_FROZEN_RULES",
+  "positive_fixture_totals": {"scenarios": 3, "documents_accepted": 7},
+  "negative_fixture_total": 20,
+  "negative_fixture_rejection": "20/20 REJECTED",
+  "zero_operational_effect": "PASS",
+  "external_discovery_executed": "NO",
+  "source_acquisition_executed": "NO",
+  "source_authentication_executed": "NO",
+  "authority_activation_executed": "NO"
+}

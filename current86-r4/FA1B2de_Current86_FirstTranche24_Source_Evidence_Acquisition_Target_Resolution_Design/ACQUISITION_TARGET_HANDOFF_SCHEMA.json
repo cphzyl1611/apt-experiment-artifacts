@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/fa1b2de/first-tranche24/acquisition-target-handoff-v1",
+  "title": "FIRST_TRANCHE24 acquisition target handoff",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "record_type",
+    "handoff_id",
+    "task_id",
+    "record_mode",
+    "transaction_reference",
+    "candidate_set_reference",
+    "governance_binding",
+    "scope_binding",
+    "resolved_target_claim",
+    "selected_acquisition_channel",
+    "provenance",
+    "downstream_acquisition_eligibility",
+    "downstream_boundary"
+  ],
+  "properties": {
+    "record_type": {"const": "FIRST_TRANCHE24_ACQUISITION_TARGET_HANDOFF"},
+    "handoff_id": {"type": "string", "pattern": "^HANDOFF-TARGET-[A-Z0-9][A-Z0-9._:-]+$"},
+    "task_id": {"const": "FIRST_TRANCHE24_SOURCE_EVIDENCE_ACQUISITION_TARGET_RESOLUTION_DESIGN"},
+    "record_mode": {"const": "SYNTHETIC_STATIC_FIXTURE"},
+    "transaction_reference": {"type": "string", "minLength": 1},
+    "candidate_set_reference": {"type": "string", "minLength": 1},
+    "governance_binding": {"$ref": "#/$defs/governanceBinding"},
+    "scope_binding": {"$ref": "#/$defs/scopeBinding"},
+    "resolved_target_claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["candidate_id", "candidate_class", "authority_type", "source_fact_type", "artifact_identity_claim", "artifact_locator_claim", "resolution_basis"],
+      "properties": {
+        "candidate_id": {"type": "string", "minLength": 1},
+        "candidate_class": {"type": "string", "minLength": 1},
+        "authority_type": {"const": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE"},
+        "source_fact_type": {"const": "PINNED_CANONICAL_INTRINSIC_FIELD"},
+        "artifact_identity_claim": {"type": "string", "minLength": 1},
+        "artifact_locator_claim": {"type": "string", "minLength": 1},
+        "resolution_basis": {"const": "ONE_ELIGIBLE_CANDIDATE_BY_FROZEN_RULES"}
+      }
+    },
+    "selected_acquisition_channel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["channel_class", "channel_policy_reference", "selection_basis", "channel_status"],
+      "properties": {
+        "channel_class": {"type": "string", "enum": ["CONTENT_ADDRESSED_OBJECT_HANDOFF", "GIT_COMMIT_TREE_SNAPSHOT_HANDOFF", "RELEASE_ARTIFACT_WITH_DIGEST_HANDOFF", "SIGNED_DESCRIPTOR_AUTHORIZATION_BUNDLE_HANDOFF"]},
+        "channel_policy_reference": {"const": "TARGET_PRECEDENCE_POLICY.json"},
+        "selection_basis": {"const": "VERSION_FORM_TO_CHANNEL_MAP_PENDING_LATER_EVIDENCE"},
+        "channel_status": {"const": "DESIGNATED_FOR_LATER_ACQUISITION_ONLY"}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["candidate_set_reference", "transaction_reference", "provenance_status", "candidate_records_are_claims_only"],
+      "properties": {
+        "candidate_set_reference": {"type": "string", "minLength": 1},
+        "transaction_reference": {"type": "string", "minLength": 1},
+        "provenance_status": {"const": "DESIGN_ONLY_DETERMINISTIC"},
+        "candidate_records_are_claims_only": {"const": true}
+      }
+    },
+    "downstream_acquisition_eligibility": {"const": true},
+    "downstream_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_acquisition", "artifact_acquisition_attempted", "source_authentication_status", "source_authority_activated", "source_authority_id", "stage_a_admissions", "stage_b_exposures", "field_pins", "operative_records", "p0_executed", "p1_executed", "formal_1796_experiment_executed"],
+      "properties": {
+        "source_acquisition": {"const": "NO"},
+        "artifact_acquisition_attempted": {"const": "NO"},
+        "source_authentication_status": {"const": "NOT_EXECUTED"},
+        "source_authority_activated": {"const": "NO"},
+        "source_authority_id": {"const": "NONE"},
+        "stage_a_admissions": {"const": 0},
+        "stage_b_exposures": {"const": 0},
+        "field_pins": {"const": 0},
+        "operative_records": {"const": 0},
+        "p0_executed": {"const": "NO"},
+        "p1_executed": {"const": "NO"},
+        "formal_1796_experiment_executed": {"const": "NO"}
+      }
+    }
+  },
+  "$defs": {
+    "governanceBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["human_governance_decision", "governance_scope", "governance_decision_id", "governance_transaction_hash"],
+      "properties": {
+        "human_governance_decision": {"const": "APPROVE_BOTH_G1_AND_G2"},
+        "governance_scope": {"const": "FIRST_TRANCHE24_ONLY"},
+        "governance_decision_id": {"const": "GOVDEC2-68ea814d1940bed4ec8b3e48b6a28f67f3e05c5e50e1c342a1fa2dc7db31f90f"},
+        "governance_transaction_hash": {"const": "b5601414918d6b7cc5c00ebaf24b98d93d2d477bcd4481de4de47b8ed0f7cd38"}
+      }
+    },
+    "scopeBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["scope_id", "ordered_target_ids", "raw_count", "unique_raw_count", "scope_extension_permitted", "scope_widening"],
+      "properties": {
+        "scope_id": {"const": "FIRST_TRANCHE24_ONLY"},
+        "ordered_target_ids": {"const": [110, 273, 210, 98, 147, 277, 188, 301, 143, 250, 233, 287, 146, 293, 114, 284, 291, 215, 88, 182, 300, 218, 115, 148]},
+        "raw_count": {"const": 24},
+        "unique_raw_count": {"const": 24},
+        "scope_extension_permitted": {"const": false},
+        "scope_widening": {"const": false}
+      }
+    }
+  }
+}

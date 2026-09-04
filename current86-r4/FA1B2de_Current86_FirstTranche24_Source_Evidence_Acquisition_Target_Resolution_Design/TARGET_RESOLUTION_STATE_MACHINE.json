@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/fa1b2de/first-tranche24/target-resolution-state-machine-v1",
+  "title": "FIRST_TRANCHE24 target resolution state machine",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["machine_id", "scope", "initial_state", "states", "terminal_states", "transitions", "state_effect_rules", "excluded_operational_state_categories"],
+  "properties": {
+    "machine_id": {"const": "TARGET_RESOLUTION_STATE_MACHINE_FIRST_TRANCHE24_V1"},
+    "scope": {"const": "FIRST_TRANCHE24_ONLY"},
+    "initial_state": {"const": "DESIGN_ONLY"},
+    "states": {
+      "const": [
+        "DESIGN_ONLY",
+        "DISCOVERY_REQUEST_PREPARED",
+        "CANDIDATE_SET_ASSEMBLED",
+        "ELIGIBILITY_EVALUATED",
+        "UNIQUENESS_EVALUATED",
+        "AMBIGUOUS",
+        "UNIQUE_TARGET_RESOLVED",
+        "REQUIRES_GOVERNANCE_ADJUDICATION",
+        "REJECTED"
+      ]
+    },
+    "terminal_states": {"const": ["UNIQUE_TARGET_RESOLVED", "REQUIRES_GOVERNANCE_ADJUDICATION", "REJECTED"]},
+    "transitions": {
+      "type": "array",
+      "const": [
+        {"from": "DESIGN_ONLY", "to": "DISCOVERY_REQUEST_PREPARED", "guard": "design is bound to exact governance and scope"},
+        {"from": "DISCOVERY_REQUEST_PREPARED", "to": "CANDIDATE_SET_ASSEMBLED", "guard": "candidate records are enumerated without execution"},
+        {"from": "CANDIDATE_SET_ASSEMBLED", "to": "ELIGIBILITY_EVALUATED", "guard": "each enumerated candidate receives an eligibility outcome"},
+        {"from": "ELIGIBILITY_EVALUATED", "to": "UNIQUENESS_EVALUATED", "guard": "deduplication and eligibility outputs are complete"},
+        {"from": "UNIQUENESS_EVALUATED", "to": "UNIQUE_TARGET_RESOLVED", "guard": "exactly one eligible canonical representative and policy-consistent channel"},
+        {"from": "UNIQUENESS_EVALUATED", "to": "AMBIGUOUS", "guard": "multiple eligible representatives or unproven relationship remains"},
+        {"from": "AMBIGUOUS", "to": "REQUIRES_GOVERNANCE_ADJUDICATION", "guard": "ambiguity packet is complete and selection remains null"},
+        {"from": "UNIQUENESS_EVALUATED", "to": "REJECTED", "guard": "no eligible candidate or hard policy failure"}
+      ]
+    },
+    "state_effect_rules": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["design_only", "unique_resolution", "governance_required", "rejected"],
+      "properties": {
+        "design_only": {"const": "no discovery, acquisition, authentication, activation, or downstream mutation"},
+        "unique_resolution": {"const": "selected claim and channel may be handed to later acquisition; no source object is acquired"},
+        "governance_required": {"const": "selection is null and later acquisition eligibility is false"},
+        "rejected": {"const": "selection is null and later acquisition eligibility is false"}
+      }
+    },
+    "excluded_operational_state_categories": {
+      "const": ["SOURCE_OBJECT_RESULT", "SOURCE_AUTHENTICATION_RESULT", "SOURCE_AUTHORITY_RESULT", "STAGE_A_RESULT", "STAGE_B_RESULT", "FIELD_PIN_RESULT", "EXPERIMENT_RESULT"]
+    }
+  }
+}

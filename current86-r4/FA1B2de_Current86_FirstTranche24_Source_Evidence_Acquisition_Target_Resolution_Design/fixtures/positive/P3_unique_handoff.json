@@ -1,0 +1,15 @@
+{
+  "record_type": "FIRST_TRANCHE24_ACQUISITION_TARGET_HANDOFF",
+  "handoff_id": "HANDOFF-TARGET-P3-UNIQUE",
+  "task_id": "FIRST_TRANCHE24_SOURCE_EVIDENCE_ACQUISITION_TARGET_RESOLUTION_DESIGN",
+  "record_mode": "SYNTHETIC_STATIC_FIXTURE",
+  "transaction_reference": "fixtures/positive/P3_unique_transaction.json",
+  "candidate_set_reference": "fixtures/positive/P3_unique_candidate_set.json",
+  "governance_binding": {"human_governance_decision": "APPROVE_BOTH_G1_AND_G2", "governance_scope": "FIRST_TRANCHE24_ONLY", "governance_decision_id": "GOVDEC2-68ea814d1940bed4ec8b3e48b6a28f67f3e05c5e50e1c342a1fa2dc7db31f90f", "governance_transaction_hash": "b5601414918d6b7cc5c00ebaf24b98d93d2d477bcd4481de4de47b8ed0f7cd38"},
+  "scope_binding": {"scope_id": "FIRST_TRANCHE24_ONLY", "ordered_target_ids": [110, 273, 210, 98, 147, 277, 188, 301, 143, 250, 233, 287, 146, 293, 114, 284, 291, 215, 88, 182, 300, 218, 115, 148], "raw_count": 24, "unique_raw_count": 24, "scope_extension_permitted": false, "scope_widening": false},
+  "resolved_target_claim": {"candidate_id": "TC-SYNTH-UNIQUE", "candidate_class": "DIRECT_CANONICAL_INTRINSIC_OBJECT", "authority_type": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE", "source_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD", "artifact_identity_claim": "synthetic-unique-artifact", "artifact_locator_claim": "synthetic://canonical/unique", "resolution_basis": "ONE_ELIGIBLE_CANDIDATE_BY_FROZEN_RULES"},
+  "selected_acquisition_channel": {"channel_class": "CONTENT_ADDRESSED_OBJECT_HANDOFF", "channel_policy_reference": "TARGET_PRECEDENCE_POLICY.json", "selection_basis": "VERSION_FORM_TO_CHANNEL_MAP_PENDING_LATER_EVIDENCE", "channel_status": "DESIGNATED_FOR_LATER_ACQUISITION_ONLY"},
+  "provenance": {"candidate_set_reference": "fixtures/positive/P3_unique_candidate_set.json", "transaction_reference": "fixtures/positive/P3_unique_transaction.json", "provenance_status": "DESIGN_ONLY_DETERMINISTIC", "candidate_records_are_claims_only": true},
+  "downstream_acquisition_eligibility": true,
+  "downstream_boundary": {"source_acquisition": "NO", "artifact_acquisition_attempted": "NO", "source_authentication_status": "NOT_EXECUTED", "source_authority_activated": "NO", "source_authority_id": "NONE", "stage_a_admissions": 0, "stage_b_exposures": 0, "field_pins": 0, "operative_records": 0, "p0_executed": "NO", "p1_executed": "NO", "formal_1796_experiment_executed": "NO"}
+}

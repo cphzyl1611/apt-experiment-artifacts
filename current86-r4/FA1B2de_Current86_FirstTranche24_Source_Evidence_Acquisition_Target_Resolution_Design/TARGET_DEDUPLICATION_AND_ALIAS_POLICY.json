@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/fa1b2de/first-tranche24/target-deduplication-policy-v1",
+  "title": "FIRST_TRANCHE24 target deduplication and alias policy",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "policy_id",
+    "policy_version",
+    "scope",
+    "normalization_rules",
+    "relationship_classes",
+    "disposition_rules",
+    "fail_closed_rules",
+    "no_silent_candidate_drop"
+  ],
+  "properties": {
+    "policy_id": {"const": "TARGET_DEDUPLICATION_AND_ALIAS_POLICY_FIRST_TRANCHE24_V1"},
+    "policy_version": {"const": "1.0"},
+    "scope": {"const": "FIRST_TRANCHE24_ONLY"},
+    "normalization_rules": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_identity_comparison",
+        "locator_comparison",
+        "unicode_normalization",
+        "fuzzy_matching",
+        "query_parameter_reordering"
+      ],
+      "properties": {
+        "artifact_identity_comparison": {"const": "exact_byte_and_token_equality_after_schema_parsing"},
+        "locator_comparison": {"const": "lowercase_scheme_and_host_remove_default_port_resolve_dot_segments_normalize_unreserved_percent_encoding_preserve_path_case_and_fragment"},
+        "unicode_normalization": {"const": "NONE_FOR_ARTIFACT_IDENTITY_OR_PATH"},
+        "fuzzy_matching": {"const": "PROHIBITED"},
+        "query_parameter_reordering": {"const": "PROHIBITED_UNLESS_EXPLICITLY_GOVERNED_BY_CHANNEL"}
+      }
+    },
+    "relationship_classes": {
+      "type": "array",
+      "const": [
+        {
+          "relationship": "EXACT_DUPLICATE",
+          "definition": "same canonical artifact identity claim and same version-form claim; repeated locator or record only",
+          "canonical_representative_rule": "retain one representative and preserve every duplicate candidate disposition",
+          "evidence_required": "exact identity and version equality"
+        },
+        {
+          "relationship": "ALIAS",
+          "definition": "different locator or naming token explicitly declared to identify the same artifact by governed evidence",
+          "canonical_representative_rule": "retain the explicitly identified canonical representative; never infer from naming",
+          "evidence_required": "explicit alias relation evidence"
+        },
+        {
+          "relationship": "MIRROR",
+          "definition": "copy hosted at a different locator with an explicit origin-to-mirror relationship",
+          "canonical_representative_rule": "mirror is noncanonical unless a governed relationship identifies the canonical origin",
+          "evidence_required": "explicit origin, mirror, and same-version relationship evidence"
+        },
+        {
+          "relationship": "FORK_OR_COPY",
+          "definition": "related project or copied object with a distinct identity, owner, lineage, or modification history",
+          "canonical_representative_rule": "retain as distinct; reject as canonical unless governed authority explicitly binds it",
+          "evidence_required": "fork or copy lineage evidence"
+        },
+        {
+          "relationship": "DERIVATIVE",
+          "definition": "transformed, filtered, repackaged, or generated output derived from another artifact",
+          "canonical_representative_rule": "retain as distinct derivative and do not collapse into the source artifact",
+          "evidence_required": "derivation evidence when relation is claimed"
+        },
+        {
+          "relationship": "VERSION_VARIANT",
+          "definition": "same artifact identity with a different immutable version claim",
+          "canonical_representative_rule": "retain each version separately; do not choose a version in target resolution",
+          "evidence_required": "artifact identity equality and version distinction"
+        },
+        {
+          "relationship": "UNRELATED_LOOKALIKE",
+          "definition": "similar name, topic, layout, domain, or content without an explicit identity relationship",
+          "canonical_representative_rule": "retain as separate and reject from canonical resolution unless independently eligible",
+          "evidence_required": "none; lack of relation is sufficient"
+        }
+      ]
+    },
+    "disposition_rules": {
+      "type": "array",
+      "const": [
+        "exact duplicates may collapse only after exact identity and version equality",
+        "aliases and mirrors may collapse only after explicit relationship evidence",
+        "forks, copies, derivatives, and version variants remain distinct candidates",
+        "unrelated lookalikes remain distinct candidates",
+        "every enumerated candidate receives an explicit disposition and reason",
+        "a disposition cannot convert a noncanonical mirror into canonical authority"
+      ]
+    },
+    "fail_closed_rules": {
+      "type": "array",
+      "const": [
+        "unproven relationship is not deduplication",
+        "unproven mirror or alias relationship remains separate and cannot be selected as canonical",
+        "normalization equality alone is not authority evidence",
+        "no candidate may be deleted from the set without a recorded disposition",
+        "a relationship conflict or multiple representatives prevents automatic uniqueness"
+      ]
+    },
+    "no_silent_candidate_drop": {"const": true}
+  }
+}

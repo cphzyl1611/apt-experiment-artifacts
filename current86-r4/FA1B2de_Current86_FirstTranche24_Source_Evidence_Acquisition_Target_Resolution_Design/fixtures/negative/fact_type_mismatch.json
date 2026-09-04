@@ -1,0 +1,1 @@
+{"base_fixture":"P3_unique_candidate_set.json","mutations":[{"operation":"replace","path":["candidates",0,"source_fact_type"],"value":"PINNED_RAW_SOURCE_FIELD"}]}

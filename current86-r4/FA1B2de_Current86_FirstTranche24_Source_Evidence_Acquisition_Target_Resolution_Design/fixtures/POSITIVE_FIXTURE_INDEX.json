@@ -1,0 +1,8 @@
+{
+  "schema": "TARGET_RESOLUTION_POSITIVE_FIXTURE_INDEX_V1",
+  "fixtures": [
+    {"fixture_id": "P1", "documents": ["P1_no_candidates_design_only.json"]},
+    {"fixture_id": "P2", "documents": ["P2_ambiguous_candidate_set.json", "P2_ambiguous_transaction.json", "P2_governance_adjudication_handoff.json"]},
+    {"fixture_id": "P3", "documents": ["P3_unique_candidate_set.json", "P3_unique_transaction.json", "P3_unique_handoff.json"]}
+  ]
+}

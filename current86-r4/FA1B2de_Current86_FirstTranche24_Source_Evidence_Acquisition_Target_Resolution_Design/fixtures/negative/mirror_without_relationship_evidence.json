@@ -1,0 +1,1 @@
+{"base_fixture":"P3_unique_candidate_set.json","mutations":[{"operation":"replace","path":["candidates",0,"identity_relationship_claim","relation_type"],"value":"MIRROR"},{"operation":"replace","path":["candidates",0,"identity_relationship_claim","relationship_status"],"value":"UNPROVEN"}]}

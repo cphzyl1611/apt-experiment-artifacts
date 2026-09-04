@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/fa1b2de/first-tranche24/target-eligibility-policy-v1",
+  "title": "FIRST_TRANCHE24 target eligibility policy",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "policy_id",
+    "policy_version",
+    "scope",
+    "target_binding",
+    "admissible_candidate_classes",
+    "admissible_discovery_source_classes",
+    "lead_only_discovery_source_classes",
+    "minimum_eligibility_criteria",
+    "exclusion_criteria",
+    "later_acquisition_channel_classes",
+    "final_authentication_required",
+    "eligibility_output_semantics"
+  ],
+  "properties": {
+    "policy_id": {"const": "TARGET_ELIGIBILITY_POLICY_FIRST_TRANCHE24_V1"},
+    "policy_version": {"const": "1.0"},
+    "scope": {"const": "FIRST_TRANCHE24_ONLY"},
+    "target_binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["candidate_reference", "authority_type", "source_fact_type"],
+      "properties": {
+        "candidate_reference": {"const": "03_frozen_lineage/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json#class_to_type_mapping[0]"},
+        "authority_type": {"const": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE"},
+        "source_fact_type": {"const": "PINNED_CANONICAL_INTRINSIC_FIELD"}
+      }
+    },
+    "admissible_candidate_classes": {
+      "const": [
+        "DIRECT_CANONICAL_INTRINSIC_OBJECT",
+        "DETERMINISTIC_CANONICAL_WRAPPER",
+        "GOVERNED_PROJECT_CANONICAL_REGISTRY_OBJECT"
+      ]
+    },
+    "admissible_discovery_source_classes": {
+      "const": [
+        "AUTHENTICATED_PROJECT_INDEX",
+        "GOVERNED_MANIFEST_INDEX",
+        "SIGNED_DESCRIPTOR_INDEX",
+        "VERSIONED_PROJECT_METADATA"
+      ]
+    },
+    "lead_only_discovery_source_classes": {
+      "const": [
+        "GENERIC_SEARCH_RESULT",
+        "OFFICIAL_LOOKING_DOMAIN",
+        "USER_SUPPLIED_REFERENCE"
+      ]
+    },
+    "minimum_eligibility_criteria": {
+      "type": "array",
+      "const": [
+        "candidate authority_type exactly matches AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+        "candidate source_fact_type exactly matches PINNED_CANONICAL_INTRINSIC_FIELD",
+        "candidate_class is one of the three admissible canonical forms",
+        "discovery provenance contains an admissible source class and is not lead-only",
+        "artifact identity claim is concrete, non-empty, and claim-only",
+        "artifact locator claim is concrete, non-floating, and claim-only",
+        "candidate has a viable later path to immutable-version and content-digest evidence",
+        "candidate has a viable later path to descriptor-artifact-lineage evidence",
+        "candidate has a viable later path to exact owner-or-issuer authorization evidence",
+        "candidate has no unresolved mirror, alias, fork, derivative, or lookalike relationship that affects canonical identity",
+        "candidate does not use search rank, popularity, public availability, or official-looking presentation as authority"
+      ]
+    },
+    "exclusion_criteria": {
+      "type": "array",
+      "const": [
+        "class mismatch",
+        "fact-type mismatch",
+        "generic search result used as the sole selection basis",
+        "floating, latest-only, branch-only, head-only, or date-only identity",
+        "missing concrete artifact identity or locator",
+        "unproven canonical relationship for an alias or mirror",
+        "public availability or official-looking domain used as authority",
+        "missing path to immutable version, digest, lineage, or owner-issuer evidence",
+        "candidate record claims authentication PASS, authority activation, or acquired bytes"
+      ]
+    },
+    "later_acquisition_channel_classes": {
+      "const": [
+        "CONTENT_ADDRESSED_OBJECT_HANDOFF",
+        "GIT_COMMIT_TREE_SNAPSHOT_HANDOFF",
+        "RELEASE_ARTIFACT_WITH_DIGEST_HANDOFF",
+        "SIGNED_DESCRIPTOR_AUTHORIZATION_BUNDLE_HANDOFF"
+      ]
+    },
+    "final_authentication_required": {"const": false},
+    "eligibility_output_semantics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate_records_are_claims_only",
+        "eligibility_is_not_source_authority",
+        "eligibility_is_not_authentication",
+        "eligibility_is_not_activation",
+        "eligibility_is_not_stage_a_admission",
+        "downstream_acquisition_only_after_unique_resolution"
+      ],
+      "properties": {
+        "candidate_records_are_claims_only": {"const": true},
+        "eligibility_is_not_source_authority": {"const": true},
+        "eligibility_is_not_authentication": {"const": true},
+        "eligibility_is_not_activation": {"const": true},
+        "eligibility_is_not_stage_a_admission": {"const": true},
+        "downstream_acquisition_only_after_unique_resolution": {"const": true}
+      }
+    }
+  }
+}

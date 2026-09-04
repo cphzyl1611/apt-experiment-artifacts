@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/fa1b2de/first-tranche24/target-resolution-transaction-v1",
+  "title": "FIRST_TRANCHE24 target resolution transaction",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "record_type",
+    "transaction_id",
+    "task_id",
+    "record_mode",
+    "governance_binding",
+    "scope_binding",
+    "candidate_reference",
+    "authority_type",
+    "source_fact_type",
+    "candidate_set_reference",
+    "eligibility_policy",
+    "deduplication_policy",
+    "precedence_policy",
+    "eligible_candidate_ids",
+    "rejected_candidate_ids",
+    "ambiguous_candidate_ids",
+    "selected_candidate_id",
+    "selected_acquisition_channel_class",
+    "resolution_state",
+    "governance_escalation_requirement",
+    "downstream_acquisition_eligibility",
+    "operational_boundary"
+  ],
+  "properties": {
+    "record_type": {"const": "FIRST_TRANCHE24_TARGET_RESOLUTION_TRANSACTION"},
+    "transaction_id": {"type": "string", "pattern": "^TRX-TARGET-[A-Z0-9][A-Z0-9._:-]+$"},
+    "task_id": {"const": "FIRST_TRANCHE24_SOURCE_EVIDENCE_ACQUISITION_TARGET_RESOLUTION_DESIGN"},
+    "record_mode": {"const": "SYNTHETIC_STATIC_FIXTURE"},
+    "governance_binding": {"$ref": "#/$defs/governanceBinding"},
+    "scope_binding": {"$ref": "#/$defs/scopeBinding"},
+    "candidate_reference": {"const": "03_frozen_lineage/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json#class_to_type_mapping[0]"},
+    "authority_type": {"const": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE"},
+    "source_fact_type": {"const": "PINNED_CANONICAL_INTRINSIC_FIELD"},
+    "candidate_set_reference": {"type": "string", "minLength": 1},
+    "eligibility_policy": {"const": "TARGET_ELIGIBILITY_POLICY.json"},
+    "deduplication_policy": {"const": "TARGET_DEDUPLICATION_AND_ALIAS_POLICY.json"},
+    "precedence_policy": {"const": "TARGET_PRECEDENCE_POLICY.json"},
+    "eligible_candidate_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "rejected_candidate_ids": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["candidate_id", "reasons"],
+        "properties": {
+          "candidate_id": {"type": "string", "minLength": 1},
+          "reasons": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+        }
+      }
+    },
+    "ambiguous_candidate_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "selected_candidate_id": {"type": ["string", "null"]},
+    "selected_acquisition_channel_class": {
+      "type": ["string", "null"],
+      "enum": [null, "CONTENT_ADDRESSED_OBJECT_HANDOFF", "GIT_COMMIT_TREE_SNAPSHOT_HANDOFF", "RELEASE_ARTIFACT_WITH_DIGEST_HANDOFF", "SIGNED_DESCRIPTOR_AUTHORIZATION_BUNDLE_HANDOFF"]
+    },
+    "resolution_state": {
+      "type": "string",
+      "enum": ["NO_CANDIDATES", "CANDIDATES_DISCOVERED", "ELIGIBILITY_EVALUATED", "AMBIGUOUS", "REQUIRES_GOVERNANCE_ADJUDICATION", "UNIQUE_TARGET_RESOLVED", "REJECTED"]
+    },
+    "governance_escalation_requirement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required", "handoff_reference", "question", "scope"],
+      "properties": {
+        "required": {"type": "boolean"},
+        "handoff_reference": {"type": ["string", "null"]},
+        "question": {"type": ["string", "null"]},
+        "scope": {"const": "FIRST_TRANCHE24_ONLY"}
+      }
+    },
+    "downstream_acquisition_eligibility": {"type": "boolean"},
+    "operational_boundary": {"$ref": "#/$defs/operationalBoundary"}
+  },
+  "$defs": {
+    "governanceBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["human_governance_decision", "governance_scope", "governance_decision_id", "governance_transaction_hash"],
+      "properties": {
+        "human_governance_decision": {"const": "APPROVE_BOTH_G1_AND_G2"},
+        "governance_scope": {"const": "FIRST_TRANCHE24_ONLY"},
+        "governance_decision_id": {"const": "GOVDEC2-68ea814d1940bed4ec8b3e48b6a28f67f3e05c5e50e1c342a1fa2dc7db31f90f"},
+        "governance_transaction_hash": {"const": "b5601414918d6b7cc5c00ebaf24b98d93d2d477bcd4481de4de47b8ed0f7cd38"}
+      }
+    },
+    "scopeBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["scope_id", "ordered_target_ids", "raw_count", "unique_raw_count", "scope_extension_permitted", "scope_widening"],
+      "properties": {
+        "scope_id": {"const": "FIRST_TRANCHE24_ONLY"},
+        "ordered_target_ids": {"const": [110, 273, 210, 98, 147, 277, 188, 301, 143, 250, 233, 287, 146, 293, 114, 284, 291, 215, 88, 182, 300, 218, 115, 148]},
+        "raw_count": {"const": 24},
+        "unique_raw_count": {"const": 24},
+        "scope_extension_permitted": {"const": false},
+        "scope_widening": {"const": false}
+      }
+    },
+    "operationalBoundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["target_discovery_executed", "target_candidates_discovered", "target_selected", "source_acquisition", "artifact_acquisition_attempted", "source_auth_executed", "source_authority_id", "source_authority_activated", "stage_a_admissions", "stage_b_exposures", "field_pins", "operative_records", "p0_executed", "p1_executed", "formal_1796_experiment_executed", "zero_operational_effect"],
+      "properties": {
+        "target_discovery_executed": {"const": "NO"},
+        "target_candidates_discovered": {"const": 0},
+        "target_selected": {"const": "NO"},
+        "source_acquisition": {"const": "NO"},
+        "artifact_acquisition_attempted": {"const": "NO"},
+        "source_auth_executed": {"const": "NO"},
+        "source_authority_id": {"const": "NONE"},
+        "source_authority_activated": {"const": "NO"},
+        "stage_a_admissions": {"const": 0},
+        "stage_b_exposures": {"const": 0},
+        "field_pins": {"const": 0},
+        "operative_records": {"const": 0},
+        "p0_executed": {"const": "NO"},
+        "p1_executed": {"const": "NO"},
+        "formal_1796_experiment_executed": {"const": "NO"},
+        "zero_operational_effect": {"const": "PASS"}
+      }
+    }
+  }
+}

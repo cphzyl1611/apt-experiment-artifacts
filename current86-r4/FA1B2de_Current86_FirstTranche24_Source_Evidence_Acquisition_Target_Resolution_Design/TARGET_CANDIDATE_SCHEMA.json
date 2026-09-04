@@ -1,0 +1,375 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/fa1b2de/first-tranche24/target-candidate-v1",
+  "title": "FIRST_TRANCHE24 target candidate claim",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "candidate_id",
+    "candidate_class",
+    "authority_type",
+    "source_fact_type",
+    "artifact_identity_claim",
+    "artifact_locator_claim",
+    "discovery_channel",
+    "discovery_provenance",
+    "issuer_or_owner_claim",
+    "version_form_claim",
+    "lineage_claims",
+    "authorization_claims",
+    "eligibility_evidence_refs",
+    "identity_relationship_claim",
+    "candidate_status"
+  ],
+  "properties": {
+    "candidate_id": {
+      "type": "string",
+      "pattern": "^TC-[A-Z0-9][A-Z0-9._:-]+$"
+    },
+    "candidate_class": {
+      "type": "string",
+      "enum": [
+        "DIRECT_CANONICAL_INTRINSIC_OBJECT",
+        "DETERMINISTIC_CANONICAL_WRAPPER",
+        "GOVERNED_PROJECT_CANONICAL_REGISTRY_OBJECT"
+      ]
+    },
+    "authority_type": {
+      "const": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE"
+    },
+    "source_fact_type": {
+      "const": "PINNED_CANONICAL_INTRINSIC_FIELD"
+    },
+    "artifact_identity_claim": {
+      "$ref": "#/$defs/artifactIdentityClaim"
+    },
+    "artifact_locator_claim": {
+      "$ref": "#/$defs/artifactLocatorClaim"
+    },
+    "discovery_channel": {
+      "type": "string",
+      "enum": [
+        "AUTHENTICATED_PROJECT_INDEX",
+        "GOVERNED_MANIFEST_INDEX",
+        "SIGNED_DESCRIPTOR_INDEX",
+        "VERSIONED_PROJECT_METADATA",
+        "GENERIC_SEARCH_RESULT",
+        "OFFICIAL_LOOKING_DOMAIN",
+        "USER_SUPPLIED_REFERENCE"
+      ]
+    },
+    "discovery_provenance": {
+      "$ref": "#/$defs/discoveryProvenance"
+    },
+    "issuer_or_owner_claim": {
+      "$ref": "#/$defs/issuerOrOwnerClaim"
+    },
+    "version_form_claim": {
+      "$ref": "#/$defs/versionFormClaim"
+    },
+    "lineage_claims": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "$ref": "#/$defs/lineageClaim"
+      }
+    },
+    "authorization_claims": {
+      "$ref": "#/$defs/authorizationClaims"
+    },
+    "eligibility_evidence_refs": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "identity_relationship_claim": {
+      "$ref": "#/$defs/identityRelationshipClaim"
+    },
+    "candidate_status": {
+      "type": "string",
+      "enum": [
+        "DISCOVERED_CLAIM_ONLY",
+        "ELIGIBLE_CLAIM_ONLY",
+        "REJECTED",
+        "DEDUPLICATED_ALIAS",
+        "DEDUPLICATED_MIRROR",
+        "AMBIGUOUS_CLAIM_ONLY"
+      ]
+    }
+  },
+  "$defs": {
+    "claimStatus": {
+      "const": "CLAIM_ONLY"
+    },
+    "evidenceRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reference", "evidence_role", "claim_status"],
+      "properties": {
+        "reference": {"type": "string", "minLength": 1},
+        "evidence_role": {"type": "string", "minLength": 1},
+        "claim_status": {"const": "CLAIM_ONLY"}
+      }
+    },
+    "artifactIdentityClaim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claim_status",
+        "claimed_artifact_id",
+        "identity_namespace",
+        "identity_basis",
+        "concrete"
+      ],
+      "properties": {
+        "claim_status": {"$ref": "#/$defs/claimStatus"},
+        "claimed_artifact_id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^(?!NONE$).+"
+        },
+        "identity_namespace": {"type": "string", "minLength": 1},
+        "identity_basis": {
+          "type": "string",
+          "enum": [
+            "PROJECT_ARTIFACT_ID",
+            "CONTENT_ADDRESS",
+            "COMMIT_TREE",
+            "RELEASE_ARTIFACT",
+            "GOVERNED_REGISTRY_ENTRY"
+          ]
+        },
+        "concrete": {"const": true}
+      }
+    },
+    "artifactLocatorClaim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claim_status",
+        "locator",
+        "locator_kind",
+        "floating_locator"
+      ],
+      "properties": {
+        "claim_status": {"$ref": "#/$defs/claimStatus"},
+        "locator": {"type": "string", "minLength": 1},
+        "locator_kind": {
+          "type": "string",
+          "enum": [
+            "PROJECT_ARTIFACT_PATH",
+            "CONTENT_URI",
+            "COMMIT_TREE_URI",
+            "RELEASE_ARTIFACT_URI",
+            "GOVERNED_REGISTRY_PATH"
+          ]
+        },
+        "floating_locator": {"const": false}
+      }
+    },
+    "discoveryProvenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claim_status",
+        "source_class",
+        "provenance_strength",
+        "evidence_refs",
+        "sole_basis_for_selection",
+        "operation_executed"
+      ],
+      "properties": {
+        "claim_status": {"$ref": "#/$defs/claimStatus"},
+        "source_class": {
+          "type": "string",
+          "enum": [
+            "AUTHENTICATED_PROJECT_INDEX",
+            "GOVERNED_MANIFEST_INDEX",
+            "SIGNED_DESCRIPTOR_INDEX",
+            "VERSIONED_PROJECT_METADATA",
+            "GENERIC_SEARCH_RESULT",
+            "OFFICIAL_LOOKING_DOMAIN",
+            "USER_SUPPLIED_REFERENCE"
+          ]
+        },
+        "provenance_strength": {
+          "type": "string",
+          "enum": ["ADMISSIBLE", "LEAD_ONLY", "INADMISSIBLE"]
+        },
+        "evidence_refs": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/evidenceRef"}
+        },
+        "sole_basis_for_selection": {"type": "boolean"},
+        "operation_executed": {"const": false}
+      }
+    },
+    "issuerOrOwnerClaim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claim_status",
+        "subject_claim",
+        "relationship_claim",
+        "authority_basis",
+        "later_authorization_evidence_path",
+        "authentication_status"
+      ],
+      "properties": {
+        "claim_status": {"$ref": "#/$defs/claimStatus"},
+        "subject_claim": {"type": "string", "minLength": 1},
+        "relationship_claim": {
+          "type": "string",
+          "enum": ["OWNS", "ISSUED", "DELEGATED", "UNRESOLVED"]
+        },
+        "authority_basis": {
+          "type": "string",
+          "enum": [
+            "OWNER_ISSUER_CLAIM",
+            "GOVERNED_PROJECT_AUTHORITY_CLAIM",
+            "OFFICIAL_LOOKING_DOMAIN_ONLY",
+            "PUBLIC_AVAILABILITY_ONLY",
+            "UNRESOLVED"
+          ]
+        },
+        "later_authorization_evidence_path": {"const": true},
+        "authentication_status": {"const": "NOT_EXECUTED"}
+      }
+    },
+    "versionFormClaim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claim_status",
+        "claimed_form",
+        "immutable_identifier_claim",
+        "floating_reference",
+        "later_version_evidence_path"
+      ],
+      "properties": {
+        "claim_status": {"$ref": "#/$defs/claimStatus"},
+        "claimed_form": {
+          "type": "string",
+          "enum": [
+            "CONTENT_DIGEST",
+            "GIT_COMMIT",
+            "RELEASE_TAG_WITH_DIGEST",
+            "UNRESOLVED"
+          ]
+        },
+        "immutable_identifier_claim": {
+          "type": ["string", "null"],
+          "minLength": 1
+        },
+        "floating_reference": {"const": false},
+        "later_version_evidence_path": {"const": true}
+      }
+    },
+    "lineageClaim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claim_status",
+        "edge_type",
+        "from_claim",
+        "to_claim",
+        "evidence_refs",
+        "later_lineage_evidence_path",
+        "authentication_status"
+      ],
+      "properties": {
+        "claim_status": {"$ref": "#/$defs/claimStatus"},
+        "edge_type": {
+          "type": "string",
+          "enum": [
+            "DESCRIPTOR_TO_ARTIFACT",
+            "ARTIFACT_TO_VERSION",
+            "VERSION_TO_DIGEST"
+          ]
+        },
+        "from_claim": {"type": "string", "minLength": 1},
+        "to_claim": {"type": "string", "minLength": 1},
+        "evidence_refs": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/evidenceRef"}
+        },
+        "later_lineage_evidence_path": {"const": true},
+        "authentication_status": {"const": "NOT_EXECUTED"}
+      }
+    },
+    "authorizationClaims": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claim_status",
+        "scope_id",
+        "exact_scope_claimed",
+        "exact_artifact_bound_claimed",
+        "exact_version_bound_claimed",
+        "later_authorization_evidence_path",
+        "authentication_status"
+      ],
+      "properties": {
+        "claim_status": {"$ref": "#/$defs/claimStatus"},
+        "scope_id": {"const": "FIRST_TRANCHE24_ONLY"},
+        "exact_scope_claimed": {"const": true},
+        "exact_artifact_bound_claimed": {"const": true},
+        "exact_version_bound_claimed": {"const": true},
+        "later_authorization_evidence_path": {"const": true},
+        "authentication_status": {"const": "NOT_EXECUTED"}
+      }
+    },
+    "identityRelationshipClaim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claim_status",
+        "relation_type",
+        "related_candidate_ids",
+        "relationship_status",
+        "relationship_evidence_refs",
+        "canonical_representative_claim"
+      ],
+      "properties": {
+        "claim_status": {"$ref": "#/$defs/claimStatus"},
+        "relation_type": {
+          "type": "string",
+          "enum": [
+            "NONE",
+            "EXACT_DUPLICATE",
+            "ALIAS",
+            "MIRROR",
+            "FORK_OR_COPY",
+            "DERIVATIVE",
+            "VERSION_VARIANT",
+            "UNRELATED_LOOKALIKE",
+            "UNPROVEN"
+          ]
+        },
+        "related_candidate_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "relationship_status": {
+          "type": "string",
+          "enum": ["NOT_APPLICABLE", "EXPLICIT", "UNPROVEN", "CLAIM_ONLY"]
+        },
+        "relationship_evidence_refs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/evidenceRef"}
+        },
+        "canonical_representative_claim": {"type": "boolean"}
+      }
+    }
+  }
+}

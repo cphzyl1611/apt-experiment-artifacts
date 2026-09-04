@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/fa1b2de/first-tranche24/governance-adjudication-handoff-v1",
+  "title": "FIRST_TRANCHE24 target ambiguity governance handoff",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "record_type",
+    "packet_id",
+    "task_id",
+    "record_mode",
+    "governance_binding",
+    "scope_binding",
+    "candidate_set_reference",
+    "ambiguous_candidate_ids",
+    "uniqueness_failure_reason",
+    "distinguishing_evidence",
+    "exact_governance_question",
+    "permitted_decision_vocabulary",
+    "decision_record_reference",
+    "decision_created",
+    "downstream_acquisition_eligibility"
+  ],
+  "properties": {
+    "record_type": {"const": "FIRST_TRANCHE24_GOVERNANCE_ADJUDICATION_HANDOFF"},
+    "packet_id": {"type": "string", "pattern": "^GOV-PACKET-TARGET-[A-Z0-9][A-Z0-9._:-]+$"},
+    "task_id": {"const": "FIRST_TRANCHE24_SOURCE_EVIDENCE_ACQUISITION_TARGET_RESOLUTION_DESIGN"},
+    "record_mode": {"const": "SYNTHETIC_STATIC_FIXTURE"},
+    "governance_binding": {"$ref": "#/$defs/governanceBinding"},
+    "scope_binding": {"$ref": "#/$defs/scopeBinding"},
+    "candidate_set_reference": {"type": "string", "minLength": 1},
+    "ambiguous_candidate_ids": {"type": "array", "minItems": 2, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "uniqueness_failure_reason": {"const": "MULTIPLE_EQUALLY_ELIGIBLE_CANDIDATES_WITH_NO_FROZEN_PRECEDENCE"},
+    "distinguishing_evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["candidate_id", "evidence_refs", "distinguishing_dimension"],
+        "properties": {
+          "candidate_id": {"type": "string", "minLength": 1},
+          "evidence_refs": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+          "distinguishing_dimension": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "exact_governance_question": {"const": "Which, if any, of the equally eligible candidate claims is the canonical FIRST_TRANCHE24 acquisition target, and which policy-authorized acquisition channel class should be bound?"},
+    "permitted_decision_vocabulary": {
+      "const": [
+        "SELECT_ONE_CANDIDATE_AND_BIND_CHANNEL",
+        "REJECT_ALL_CANDIDATES_AND_REQUEST_NEW_DISCOVERY",
+        "RETURN_FOR_MORE_CANDIDATE_PROVENANCE",
+        "DEFER_WITH_NO_SELECTION"
+      ]
+    },
+    "decision_record_reference": {"const": null},
+    "decision_created": {"const": false},
+    "downstream_acquisition_eligibility": {"const": false}
+  },
+  "$defs": {
+    "governanceBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["human_governance_decision", "governance_scope", "governance_decision_id", "governance_transaction_hash"],
+      "properties": {
+        "human_governance_decision": {"const": "APPROVE_BOTH_G1_AND_G2"},
+        "governance_scope": {"const": "FIRST_TRANCHE24_ONLY"},
+        "governance_decision_id": {"const": "GOVDEC2-68ea814d1940bed4ec8b3e48b6a28f67f3e05c5e50e1c342a1fa2dc7db31f90f"},
+        "governance_transaction_hash": {"const": "b5601414918d6b7cc5c00ebaf24b98d93d2d477bcd4481de4de47b8ed0f7cd38"}
+      }
+    },
+    "scopeBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["scope_id", "ordered_target_ids", "raw_count", "unique_raw_count", "scope_extension_permitted", "scope_widening"],
+      "properties": {
+        "scope_id": {"const": "FIRST_TRANCHE24_ONLY"},
+        "ordered_target_ids": {"const": [110, 273, 210, 98, 147, 277, 188, 301, 143, 250, 233, 287, 146, 293, 114, 284, 291, 215, 88, 182, 300, 218, 115, 148]},
+        "raw_count": {"const": 24},
+        "unique_raw_count": {"const": 24},
+        "scope_extension_permitted": {"const": false},
+        "scope_widening": {"const": false}
+      }
+    }
+  }
+}

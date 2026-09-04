@@ -1,0 +1,96 @@
+{
+  "record_type": "FIRST_TRANCHE24_TARGET_CANDIDATE_SET",
+  "schema_version": "1.0",
+  "task_id": "FIRST_TRANCHE24_SOURCE_EVIDENCE_ACQUISITION_TARGET_RESOLUTION_DESIGN",
+  "record_mode": "SYNTHETIC_STATIC_FIXTURE",
+  "candidate_set_id": "TCS-P1-NONE",
+  "governance_binding": {
+    "human_governance_decision": "APPROVE_BOTH_G1_AND_G2",
+    "governance_scope": "FIRST_TRANCHE24_ONLY",
+    "governance_decision_id": "GOVDEC2-68ea814d1940bed4ec8b3e48b6a28f67f3e05c5e50e1c342a1fa2dc7db31f90f",
+    "governance_transaction_hash": "b5601414918d6b7cc5c00ebaf24b98d93d2d477bcd4481de4de47b8ed0f7cd38"
+  },
+  "scope_binding": {
+    "scope_id": "FIRST_TRANCHE24_ONLY",
+    "ordered_target_ids": [110, 273, 210, 98, 147, 277, 188, 301, 143, 250, 233, 287, 146, 293, 114, 284, 291, 215, 88, 182, 300, 218, 115, 148],
+    "raw_count": 24,
+    "unique_raw_count": 24,
+    "scope_extension_permitted": false,
+    "scope_widening": false
+  },
+  "target_binding": {
+    "candidate_reference": "03_frozen_lineage/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json#class_to_type_mapping[0]",
+    "candidate_type": "SOURCE_AUTHORITY_CANDIDATE_CLASS",
+    "authority_type": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE",
+    "source_fact_type": "PINNED_CANONICAL_INTRINSIC_FIELD"
+  },
+  "candidate_population": {
+    "target_discovery_executed": "NO",
+    "target_candidates_discovered": 0,
+    "candidate_records_in_fixture": 0,
+    "candidate_records_are_operational": false,
+    "candidate_records_are_claims_only": true
+  },
+  "candidates": [],
+  "enumerated_candidate_ids": [],
+  "dispositioned_candidate_ids": [],
+  "candidate_inventory": {
+    "candidate_count_in_record": 0,
+    "enumerated_count": 0,
+    "dispositioned_count": 0,
+    "no_silent_candidate_drop": true,
+    "all_candidates_have_disposition": true
+  },
+  "deduplication_result": {
+    "policy_reference": "TARGET_DEDUPLICATION_AND_ALIAS_POLICY.json",
+    "groups": [],
+    "candidate_relationship_unknown_fails_closed": true,
+    "mirror_requires_relationship_evidence": true
+  },
+  "eligibility_result": {
+    "policy_reference": "TARGET_ELIGIBILITY_POLICY.json",
+    "evaluated_candidate_ids": [],
+    "eligible_candidate_ids": [],
+    "rejected_candidates": [],
+    "final_authentication_required": false,
+    "eligibility_is_claim_only": true
+  },
+  "ambiguity_result": {
+    "ambiguity_state": "NONE",
+    "ambiguous_candidate_ids": [],
+    "reason": "no candidate records are present"
+  },
+  "resolution_result": {
+    "resolution_state": "NO_CANDIDATES",
+    "selected_candidate_id": null,
+    "selected_acquisition_channel_class": null,
+    "uniqueness_proof": {
+      "eligible_candidate_count": 0,
+      "distinct_canonical_representative_count": 0,
+      "proof_status": "NOT_EVALUATED",
+      "precedence_applied": false,
+      "tie_breaker_used": false
+    },
+    "precedence_policy": "NO_AUTOMATIC_PRECEDENCE",
+    "governance_adjudication_required": false,
+    "automation_model": "AUTOMATIC_WHEN_UNIQUE_BY_FROZEN_RULES"
+  },
+  "operational_boundary": {
+    "target_discovery_executed": "NO",
+    "target_candidates_discovered": 0,
+    "target_selected": "NO",
+    "source_acquisition": "NO",
+    "artifact_acquisition_attempted": "NO",
+    "source_auth_executed": "NO",
+    "source_authority_id": "NONE",
+    "source_authority_activated": "NO",
+    "stage_a_admissions": 0,
+    "stage_b_exposures": 0,
+    "field_pins": 0,
+    "operative_records": 0,
+    "p0_executed": "NO",
+    "p1_executed": "NO",
+    "formal_1796_experiment_executed": "NO",
+    "zero_operational_effect": "PASS"
+  }
+}

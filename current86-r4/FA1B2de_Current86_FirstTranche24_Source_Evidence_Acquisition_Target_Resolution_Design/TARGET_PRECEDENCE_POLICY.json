@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/fa1b2de/first-tranche24/target-precedence-policy-v1",
+  "title": "FIRST_TRANCHE24 target precedence policy",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "policy_id",
+    "policy_version",
+    "scope",
+    "precedence_policy",
+    "automatic_precedence_supported",
+    "frozen_precedence_rules",
+    "ranking_prohibited",
+    "tie_handling",
+    "acquisition_channel_binding",
+    "automation_model"
+  ],
+  "properties": {
+    "policy_id": {"const": "TARGET_PRECEDENCE_POLICY_FIRST_TRANCHE24_V1"},
+    "policy_version": {"const": "1.0"},
+    "scope": {"const": "FIRST_TRANCHE24_ONLY"},
+    "precedence_policy": {"const": "NO_AUTOMATIC_PRECEDENCE"},
+    "automatic_precedence_supported": {"const": false},
+    "frozen_precedence_rules": {"const": []},
+    "ranking_prohibited": {"const": true},
+    "tie_handling": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "equally_eligible_candidates",
+        "arbitrary_winner_prohibited",
+        "required_state",
+        "permitted_resolution"
+      ],
+      "properties": {
+        "equally_eligible_candidates": {"const": "FAIL_CLOSED"},
+        "arbitrary_winner_prohibited": {"const": true},
+        "required_state": {"const": "REQUIRES_GOVERNANCE_ADJUDICATION"},
+        "permitted_resolution": {"const": "human_governance_may_select_one_or_reject_all_using_a_new_decision_record"}
+      }
+    },
+    "acquisition_channel_binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mapping_basis", "version_form_to_channel", "allowed_channel_classes"],
+      "properties": {
+        "mapping_basis": {"const": "FROZEN_VERSION_FORM_TO_CHANNEL_CLASS_MAP"},
+        "version_form_to_channel": {
+          "const": {
+            "CONTENT_DIGEST": "CONTENT_ADDRESSED_OBJECT_HANDOFF",
+            "GIT_COMMIT": "GIT_COMMIT_TREE_SNAPSHOT_HANDOFF",
+            "RELEASE_TAG_WITH_DIGEST": "RELEASE_ARTIFACT_WITH_DIGEST_HANDOFF"
+          }
+        },
+        "allowed_channel_classes": {
+          "const": [
+            "CONTENT_ADDRESSED_OBJECT_HANDOFF",
+            "GIT_COMMIT_TREE_SNAPSHOT_HANDOFF",
+            "RELEASE_ARTIFACT_WITH_DIGEST_HANDOFF",
+            "SIGNED_DESCRIPTOR_AUTHORIZATION_BUNDLE_HANDOFF"
+          ]
+        }
+      }
+    },
+    "automation_model": {"const": "AUTOMATIC_WHEN_UNIQUE_BY_FROZEN_RULES"}
+  }
+}

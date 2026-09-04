@@ -1,0 +1,354 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/fa1b2de/first-tranche24/target-candidate-set-v1",
+  "title": "FIRST_TRANCHE24 target candidate set",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "record_type",
+    "schema_version",
+    "task_id",
+    "record_mode",
+    "candidate_set_id",
+    "governance_binding",
+    "scope_binding",
+    "target_binding",
+    "candidate_population",
+    "candidates",
+    "enumerated_candidate_ids",
+    "dispositioned_candidate_ids",
+    "candidate_inventory",
+    "deduplication_result",
+    "eligibility_result",
+    "ambiguity_result",
+    "resolution_result",
+    "operational_boundary"
+  ],
+  "properties": {
+    "record_type": {"const": "FIRST_TRANCHE24_TARGET_CANDIDATE_SET"},
+    "schema_version": {"const": "1.0"},
+    "task_id": {"const": "FIRST_TRANCHE24_SOURCE_EVIDENCE_ACQUISITION_TARGET_RESOLUTION_DESIGN"},
+    "record_mode": {"const": "SYNTHETIC_STATIC_FIXTURE"},
+    "candidate_set_id": {
+      "type": "string",
+      "pattern": "^TCS-[A-Z0-9][A-Z0-9._:-]+$"
+    },
+    "governance_binding": {"$ref": "#/$defs/governanceBinding"},
+    "scope_binding": {"$ref": "#/$defs/scopeBinding"},
+    "target_binding": {"$ref": "#/$defs/targetBinding"},
+    "candidate_population": {"$ref": "#/$defs/candidatePopulation"},
+    "candidates": {
+      "type": "array",
+      "minItems": 0,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "required": [
+          "candidate_id",
+          "candidate_class",
+          "authority_type",
+          "source_fact_type",
+          "artifact_identity_claim",
+          "artifact_locator_claim",
+          "discovery_channel",
+          "discovery_provenance",
+          "issuer_or_owner_claim",
+          "version_form_claim",
+          "lineage_claims",
+          "authorization_claims",
+          "eligibility_evidence_refs",
+          "identity_relationship_claim",
+          "candidate_status"
+        ],
+        "properties": {
+          "candidate_id": {"type": "string", "minLength": 1},
+          "candidate_class": {"type": "string", "minLength": 1},
+          "authority_type": {"type": "string", "minLength": 1},
+          "source_fact_type": {"type": "string", "minLength": 1},
+          "artifact_identity_claim": {"type": "object"},
+          "artifact_locator_claim": {"type": "object"},
+          "discovery_channel": {"type": "string", "minLength": 1},
+          "discovery_provenance": {"type": "object"},
+          "issuer_or_owner_claim": {"type": "object"},
+          "version_form_claim": {"type": "object"},
+          "lineage_claims": {"type": "array"},
+          "authorization_claims": {"type": "object"},
+          "eligibility_evidence_refs": {"type": "array"},
+          "identity_relationship_claim": {"type": "object"},
+          "candidate_status": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": false
+      }
+    },
+    "enumerated_candidate_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "dispositioned_candidate_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "candidate_inventory": {"$ref": "#/$defs/candidateInventory"},
+    "deduplication_result": {"$ref": "#/$defs/deduplicationResult"},
+    "eligibility_result": {"$ref": "#/$defs/eligibilityResult"},
+    "ambiguity_result": {"$ref": "#/$defs/ambiguityResult"},
+    "resolution_result": {"$ref": "#/$defs/resolutionResult"},
+    "operational_boundary": {"$ref": "#/$defs/operationalBoundary"}
+  },
+  "$defs": {
+    "governanceBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "human_governance_decision",
+        "governance_scope",
+        "governance_decision_id",
+        "governance_transaction_hash"
+      ],
+      "properties": {
+        "human_governance_decision": {"const": "APPROVE_BOTH_G1_AND_G2"},
+        "governance_scope": {"const": "FIRST_TRANCHE24_ONLY"},
+        "governance_decision_id": {
+          "const": "GOVDEC2-68ea814d1940bed4ec8b3e48b6a28f67f3e05c5e50e1c342a1fa2dc7db31f90f"
+        },
+        "governance_transaction_hash": {
+          "const": "b5601414918d6b7cc5c00ebaf24b98d93d2d477bcd4481de4de47b8ed0f7cd38"
+        }
+      }
+    },
+    "scopeBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scope_id",
+        "ordered_target_ids",
+        "raw_count",
+        "unique_raw_count",
+        "scope_extension_permitted",
+        "scope_widening"
+      ],
+      "properties": {
+        "scope_id": {"const": "FIRST_TRANCHE24_ONLY"},
+        "ordered_target_ids": {
+          "const": [110, 273, 210, 98, 147, 277, 188, 301, 143, 250, 233, 287, 146, 293, 114, 284, 291, 215, 88, 182, 300, 218, 115, 148]
+        },
+        "raw_count": {"const": 24},
+        "unique_raw_count": {"const": 24},
+        "scope_extension_permitted": {"const": false},
+        "scope_widening": {"const": false}
+      }
+    },
+    "targetBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate_reference",
+        "candidate_type",
+        "authority_type",
+        "source_fact_type"
+      ],
+      "properties": {
+        "candidate_reference": {
+          "const": "03_frozen_lineage/FA1B2de_BSO_EQ_Current86_Source_Class_Fact_Type_Registry_R2.json#class_to_type_mapping[0]"
+        },
+        "candidate_type": {"const": "SOURCE_AUTHORITY_CANDIDATE_CLASS"},
+        "authority_type": {"const": "AUTHENTICATED_CANONICAL_INTRINSIC_SOURCE"},
+        "source_fact_type": {"const": "PINNED_CANONICAL_INTRINSIC_FIELD"}
+      }
+    },
+    "candidatePopulation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "target_discovery_executed",
+        "target_candidates_discovered",
+        "candidate_records_in_fixture",
+        "candidate_records_are_operational",
+        "candidate_records_are_claims_only"
+      ],
+      "properties": {
+        "target_discovery_executed": {"const": "NO"},
+        "target_candidates_discovered": {"const": 0},
+        "candidate_records_in_fixture": {"type": "integer", "minimum": 0},
+        "candidate_records_are_operational": {"const": false},
+        "candidate_records_are_claims_only": {"const": true}
+      }
+    },
+    "candidateInventory": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate_count_in_record",
+        "enumerated_count",
+        "dispositioned_count",
+        "no_silent_candidate_drop",
+        "all_candidates_have_disposition"
+      ],
+      "properties": {
+        "candidate_count_in_record": {"type": "integer", "minimum": 0},
+        "enumerated_count": {"type": "integer", "minimum": 0},
+        "dispositioned_count": {"type": "integer", "minimum": 0},
+        "no_silent_candidate_drop": {"const": true},
+        "all_candidates_have_disposition": {"const": true}
+      }
+    },
+    "deduplicationResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "policy_reference",
+        "groups",
+        "candidate_relationship_unknown_fails_closed",
+        "mirror_requires_relationship_evidence"
+      ],
+      "properties": {
+        "policy_reference": {"const": "TARGET_DEDUPLICATION_AND_ALIAS_POLICY.json"},
+        "groups": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "group_id",
+              "member_candidate_ids",
+              "representative_candidate_id",
+              "relationship_status",
+              "disposition"
+            ],
+            "properties": {
+              "group_id": {"type": "string", "minLength": 1},
+              "member_candidate_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+              "representative_candidate_id": {"type": ["string", "null"]},
+              "relationship_status": {"type": "string", "enum": ["NOT_APPLICABLE", "EXPLICIT", "UNPROVEN"]},
+              "disposition": {"type": "string", "enum": ["SEPARATE_ELIGIBLE", "EXACT_DUPLICATE_COLLAPSED", "ALIAS_COLLAPSED", "MIRROR_RETAINED_NONCANONICAL", "RELATIONSHIP_UNPROVEN_RETAINED", "REJECTED"]}
+            }
+          }
+        },
+        "candidate_relationship_unknown_fails_closed": {"const": true},
+        "mirror_requires_relationship_evidence": {"const": true}
+      }
+    },
+    "eligibilityResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "policy_reference",
+        "evaluated_candidate_ids",
+        "eligible_candidate_ids",
+        "rejected_candidates",
+        "final_authentication_required",
+        "eligibility_is_claim_only"
+      ],
+      "properties": {
+        "policy_reference": {"const": "TARGET_ELIGIBILITY_POLICY.json"},
+        "evaluated_candidate_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "eligible_candidate_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "rejected_candidates": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["candidate_id", "reasons"],
+            "properties": {
+              "candidate_id": {"type": "string", "minLength": 1},
+              "reasons": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+            }
+          }
+        },
+        "final_authentication_required": {"const": false},
+        "eligibility_is_claim_only": {"const": true}
+      }
+    },
+    "ambiguityResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ambiguity_state", "ambiguous_candidate_ids", "reason"],
+      "properties": {
+        "ambiguity_state": {"type": "string", "enum": ["NONE", "MULTIPLE_EQUALLY_ELIGIBLE", "RELATIONSHIP_UNPROVEN", "NO_UNIQUE_REPRESENTATIVE", "NOT_EVALUATED"]},
+        "ambiguous_candidate_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "reason": {"type": "string", "minLength": 1}
+      }
+    },
+    "resolutionResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "resolution_state",
+        "selected_candidate_id",
+        "selected_acquisition_channel_class",
+        "uniqueness_proof",
+        "precedence_policy",
+        "governance_adjudication_required",
+        "automation_model"
+      ],
+      "properties": {
+        "resolution_state": {
+          "type": "string",
+          "enum": ["NO_CANDIDATES", "CANDIDATES_DISCOVERED", "ELIGIBILITY_EVALUATED", "AMBIGUOUS", "REQUIRES_GOVERNANCE_ADJUDICATION", "UNIQUE_TARGET_RESOLVED", "REJECTED"]
+        },
+        "selected_candidate_id": {"type": ["string", "null"]},
+        "selected_acquisition_channel_class": {
+          "type": ["string", "null"],
+          "enum": [null, "CONTENT_ADDRESSED_OBJECT_HANDOFF", "GIT_COMMIT_TREE_SNAPSHOT_HANDOFF", "RELEASE_ARTIFACT_WITH_DIGEST_HANDOFF", "SIGNED_DESCRIPTOR_AUTHORIZATION_BUNDLE_HANDOFF"]
+        },
+        "uniqueness_proof": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["eligible_candidate_count", "distinct_canonical_representative_count", "proof_status", "precedence_applied", "tie_breaker_used"],
+          "properties": {
+            "eligible_candidate_count": {"type": "integer", "minimum": 0},
+            "distinct_canonical_representative_count": {"type": "integer", "minimum": 0},
+            "proof_status": {"type": "string", "enum": ["NOT_UNIQUE", "UNIQUE_BY_CARDINALITY", "NOT_EVALUATED"]},
+            "precedence_applied": {"const": false},
+            "tie_breaker_used": {"const": false}
+          }
+        },
+        "precedence_policy": {"const": "NO_AUTOMATIC_PRECEDENCE"},
+        "governance_adjudication_required": {"type": "boolean"},
+        "automation_model": {"const": "AUTOMATIC_WHEN_UNIQUE_BY_FROZEN_RULES"}
+      }
+    },
+    "operationalBoundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "target_discovery_executed",
+        "target_candidates_discovered",
+        "target_selected",
+        "source_acquisition",
+        "artifact_acquisition_attempted",
+        "source_auth_executed",
+        "source_authority_id",
+        "source_authority_activated",
+        "stage_a_admissions",
+        "stage_b_exposures",
+        "field_pins",
+        "operative_records",
+        "p0_executed",
+        "p1_executed",
+        "formal_1796_experiment_executed",
+        "zero_operational_effect"
+      ],
+      "properties": {
+        "target_discovery_executed": {"const": "NO"},
+        "target_candidates_discovered": {"const": 0},
+        "target_selected": {"const": "NO"},
+        "source_acquisition": {"const": "NO"},
+        "artifact_acquisition_attempted": {"const": "NO"},
+        "source_auth_executed": {"const": "NO"},
+        "source_authority_id": {"const": "NONE"},
+        "source_authority_activated": {"const": "NO"},
+        "stage_a_admissions": {"const": 0},
+        "stage_b_exposures": {"const": 0},
+        "field_pins": {"const": 0},
+        "operative_records": {"const": 0},
+        "p0_executed": {"const": "NO"},
+        "p1_executed": {"const": "NO"},
+        "formal_1796_experiment_executed": {"const": "NO"},
+        "zero_operational_effect": {"const": "PASS"}
+      }
+    }
+  }
+}

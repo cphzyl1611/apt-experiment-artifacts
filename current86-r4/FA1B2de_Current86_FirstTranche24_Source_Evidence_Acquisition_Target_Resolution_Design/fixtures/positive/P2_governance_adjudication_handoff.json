@@ -1,0 +1,17 @@
+{
+  "record_type": "FIRST_TRANCHE24_GOVERNANCE_ADJUDICATION_HANDOFF",
+  "packet_id": "GOV-PACKET-TARGET-P2-AMBIGUOUS",
+  "task_id": "FIRST_TRANCHE24_SOURCE_EVIDENCE_ACQUISITION_TARGET_RESOLUTION_DESIGN",
+  "record_mode": "SYNTHETIC_STATIC_FIXTURE",
+  "governance_binding": {"human_governance_decision": "APPROVE_BOTH_G1_AND_G2", "governance_scope": "FIRST_TRANCHE24_ONLY", "governance_decision_id": "GOVDEC2-68ea814d1940bed4ec8b3e48b6a28f67f3e05c5e50e1c342a1fa2dc7db31f90f", "governance_transaction_hash": "b5601414918d6b7cc5c00ebaf24b98d93d2d477bcd4481de4de47b8ed0f7cd38"},
+  "scope_binding": {"scope_id": "FIRST_TRANCHE24_ONLY", "ordered_target_ids": [110, 273, 210, 98, 147, 277, 188, 301, 143, 250, 233, 287, 146, 293, 114, 284, 291, 215, 88, 182, 300, 218, 115, 148], "raw_count": 24, "unique_raw_count": 24, "scope_extension_permitted": false, "scope_widening": false},
+  "candidate_set_reference": "fixtures/positive/P2_ambiguous_candidate_set.json",
+  "ambiguous_candidate_ids": ["TC-SYNTH-A", "TC-SYNTH-B"],
+  "uniqueness_failure_reason": "MULTIPLE_EQUALLY_ELIGIBLE_CANDIDATES_WITH_NO_FROZEN_PRECEDENCE",
+  "distinguishing_evidence": [{"candidate_id": "TC-SYNTH-A", "evidence_refs": ["fixture://p2/eligibility/a"], "distinguishing_dimension": "direct canonical object claim"}, {"candidate_id": "TC-SYNTH-B", "evidence_refs": ["fixture://p2/eligibility/b"], "distinguishing_dimension": "governed project registry object claim"}],
+  "exact_governance_question": "Which, if any, of the equally eligible candidate claims is the canonical FIRST_TRANCHE24 acquisition target, and which policy-authorized acquisition channel class should be bound?",
+  "permitted_decision_vocabulary": ["SELECT_ONE_CANDIDATE_AND_BIND_CHANNEL", "REJECT_ALL_CANDIDATES_AND_REQUEST_NEW_DISCOVERY", "RETURN_FOR_MORE_CANDIDATE_PROVENANCE", "DEFER_WITH_NO_SELECTION"],
+  "decision_record_reference": null,
+  "decision_created": false,
+  "downstream_acquisition_eligibility": false
+}

@@ -1,0 +1,1 @@
+{"base_fixture":"P3_unique_candidate_set.json","mutations":[{"operation":"replace","path":["candidates",0,"issuer_or_owner_claim","authority_basis"],"value":"OFFICIAL_LOOKING_DOMAIN_ONLY"}]}
