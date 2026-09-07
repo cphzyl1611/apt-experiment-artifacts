@@ -1,0 +1,28 @@
+{
+  "LIVE_REMOTE_E0B_HEAD": "3bf4c83216ed934306f875f4f60a3a945f59e52b",
+  "LOCAL_E0B_HEAD": "3bf4c83216ed934306f875f4f60a3a945f59e52b",
+  "REMEDIATION_COMMIT": "3bf4c83216ed934306f875f4f60a3a945f59e52b",
+  "REMEDIATION_COMMIT_MESSAGE": "materialize e0-b: PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2R1_HARD_BOUNDARY_SEMANTIC_CONSISTENCY_REMEDIATION",
+  "REMEDIATION_PARENT": "31bc08d3ddd0c836a4b610b53714cadea084172f",
+  "REMOTE_E0B_HEAD": "3bf4c83216ed934306f875f4f60a3a945f59e52b",
+  "artifact_branch": "artifact/e0-b",
+  "authentication_status": "PASS",
+  "descends_from_historical_baseline": true,
+  "evidence_commands": [
+    "git -C /home/cph/fa1b2de-artifact-worktrees/e0-b branch --show-current",
+    "git -C /home/cph/fa1b2de-artifact-worktrees/e0-b rev-parse HEAD",
+    "git -C /home/cph/fa1b2de-artifact-worktrees/e0-b rev-parse origin/artifact/e0-b",
+    "git -C /home/cph/fa1b2de-artifact-worktrees/e0-b ls-remote origin refs/heads/artifact/e0-b",
+    "git -C /home/cph/fa1b2de-artifact-worktrees/e0-b log --format=%H%x09%P%x09%s 31bc08d3ddd0c836a4b610b53714cadea084172f..HEAD",
+    "git -C /home/cph/fa1b2de-artifact-worktrees/e0-b merge-base --is-ancestor 31bc08d3ddd0c836a4b610b53714cadea084172f HEAD"
+  ],
+  "historical_r2r1_baseline": "31bc08d3ddd0c836a4b610b53714cadea084172f",
+  "historical_r2r1_parent": "11a5692effd70ab5fbcf75b4574c7c27338e49af",
+  "intervening_commit_count": 1,
+  "intervening_commits": [
+    "3bf4c83216ed934306f875f4f60a3a945f59e52b\t31bc08d3ddd0c836a4b610b53714cadea084172f\tmaterialize e0-b: PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2R1_HARD_BOUNDARY_SEMANTIC_CONSISTENCY_REMEDIATION"
+  ],
+  "local_cached_live_equal": true,
+  "review_task": "PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2R1_INDEPENDENT_REVIEW",
+  "unexplained_lineage_drift": false
+}

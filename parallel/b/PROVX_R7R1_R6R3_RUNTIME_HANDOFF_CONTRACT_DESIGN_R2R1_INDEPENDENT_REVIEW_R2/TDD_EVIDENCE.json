@@ -1,0 +1,14 @@
+{
+  "RED_TEST_OBSERVED": "YES",
+  "post_fix_targeted_command": "/home/cph/miniconda3/bin/python3 -m unittest test_r2r1_contract.HardBoundarySemanticConsistencyTests",
+  "post_fix_targeted_output": "..\n----------------------------------------------------------------------\nRan 2 tests in 0.001s\n\nOK\n",
+  "post_fix_targeted_returncode": 0,
+  "post_fix_targeted_tests_run": 2,
+  "red_command": "/home/cph/miniconda3/bin/python3 -m unittest test_r2r1_contract.HardBoundarySemanticConsistencyTests",
+  "red_cwd": "/tmp/e0b-review-r2-pucau913/baseline/parallel/b/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2R1",
+  "red_returncode": 1,
+  "red_stderr": "FE\n======================================================================\nERROR: test_inverse_pcap_guard_true_is_schema_and_validator_accepted (test_r2r1_contract.HardBoundarySemanticConsistencyTests.test_inverse_pcap_guard_true_is_schema_and_validator_accepted)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/e0b-review-r2-pucau913/baseline/parallel/b/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2R1/test_r2r1_contract.py\", line 195, in test_inverse_pcap_guard_true_is_schema_and_validator_accepted\n    _check_hard_boundaries({\n    ~~~~~~~~~~~~~~~~~~~~~~^^\n        \"hard_boundaries\": boundaries,\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        \"pcap_authentication\": {\"used_as_graph_edge_source\": False},\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    }),\n    ^^\n  File \"/tmp/e0b-review-r2-pucau913/baseline/parallel/b/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2R1/r2r1_contract_validator.py\", line 1195, in _check_hard_boundaries\n    raise ContractError(\"HANDOFF_SCOPE_BOUNDARY_VIOLATED\")\nr2r1_contract_validator.ContractError: HANDOFF_SCOPE_BOUNDARY_VIOLATED\n\n======================================================================\nFAIL: test_inverse_pcap_guard_false_remains_schema_invalid (test_r2r1_contract.HardBoundarySemanticConsistencyTests.test_inverse_pcap_guard_false_remains_schema_invalid)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/e0b-review-r2-pucau913/baseline/parallel/b/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2R1/test_r2r1_contract.py\", line 209, in test_inverse_pcap_guard_false_remains_schema_invalid\n    with self.assertRaisesRegex(ContractError, \"HANDOFF_SCOPE_BOUNDARY_VIOLATED\"):\n         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ContractError not raised\n\n----------------------------------------------------------------------\nRan 2 tests in 0.002s\n\nFAILED (failures=1, errors=1)\n",
+  "red_stdout": "",
+  "red_tests_run": 2,
+  "status": "PASS"
+}

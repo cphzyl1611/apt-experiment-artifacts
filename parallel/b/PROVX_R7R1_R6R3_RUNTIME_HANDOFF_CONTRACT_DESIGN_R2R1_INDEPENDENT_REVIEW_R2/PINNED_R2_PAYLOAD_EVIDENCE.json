@@ -1,0 +1,198 @@
+{
+  "PINNED_R2_PAYLOAD_MATCH": "31/31",
+  "baseline_commit": "11a5692effd70ab5fbcf75b4574c7c27338e49af",
+  "files": [
+    {
+      "baseline_sha256": "1268bb76055e270568011527cfc1301c61b0dc8936c989983228618405d6ff70",
+      "byte_equal": true,
+      "path": "parallel/b/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2.md",
+      "r2r1_sha256": "1268bb76055e270568011527cfc1301c61b0dc8936c989983228618405d6ff70"
+    },
+    {
+      "baseline_sha256": "ef087068fcad6e63c566eeb4f4c27e4b2506d922a5783f9907f0f8fe6617ccea",
+      "byte_equal": true,
+      "path": "parallel/b/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2/R1_TO_R2_BLOCKER_REMEDIATION_MAP.json",
+      "r2r1_sha256": "ef087068fcad6e63c566eeb4f4c27e4b2506d922a5783f9907f0f8fe6617ccea"
+    },
+    {
+      "baseline_sha256": "2987545e1bc2deaee7b6284acf55dc30efeabb2790cce0e4c1c68d9eacf2b949",
+      "byte_equal": true,
+      "path": "parallel/b/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2/R6R3_CLEANUP_RECOMPUTATION_CONTRACT_R2.json",
+      "r2r1_sha256": "2987545e1bc2deaee7b6284acf55dc30efeabb2790cce0e4c1c68d9eacf2b949"
+    },
+    {
+      "baseline_sha256": "c80f7fcb255d01eb6e97e572f447a2dfcb3c09672d49aeebff3e0f789a131216",
+      "byte_equal": true,
+      "path": "parallel/b/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2/R6R3_EXACT_PATH_SEMANTICS_R2.md",
+      "r2r1_sha256": "c80f7fcb255d01eb6e97e572f447a2dfcb3c09672d49aeebff3e0f789a131216"
+    },
+    {
+      "baseline_sha256": "0eef2df9fcb453b6237271486012c33192fd6e8c977da10be08131c836465883",
+      "byte_equal": true,
+      "path": "parallel/b/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2/R6R3_JOIN_IDENTITY_AND_ROUNDTRIP_CONTRACT_R2.json",
+      "r2r1_sha256": "0eef2df9fcb453b6237271486012c33192fd6e8c977da10be08131c836465883"
+    },
+    {
+      "baseline_sha256": "1e38baa8a1442bae8daeb3d94175e240af5bea8b3a8a05542779b28fff7907ff",
+      "byte_equal": true,
+      "path": "parallel/b/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2/R6R3_PRIVILEGED_EXECUTION_RECEIPT_SCHEMA_R2.json",
+      "r2r1_sha256": "1e38baa8a1442bae8daeb3d94175e240af5bea8b3a8a05542779b28fff7907ff"
+    },
+    {
+      "baseline_sha256": "9e6efe0acb59fad5ed23b681f256786831b839071c1a01661358686d183efd52",
+      "byte_equal": true,
+      "path": "parallel/b/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2/R6R3_REQUIRED_ARTIFACT_PATH_BINDINGS_R2.json",
+      "r2r1_sha256": "9e6efe0acb59fad5ed23b681f256786831b839071c1a01661358686d183efd52"
+    },
+    {
+      "baseline_sha256": "4ebbc7836b519de016714cf2890bccbabb568a7b5a77bd500a972ca81151e59c",
+      "byte_equal": true,
+      "path": "parallel/b/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2/R6R3_RUNTIME_ARTIFACT_CONTENT_SCHEMAS_R2.json",
+      "r2r1_sha256": "4ebbc7836b519de016714cf2890bccbabb568a7b5a77bd500a972ca81151e59c"
+    },
+    {
+      "baseline_sha256": "b6e2ff77e1d724142123091b421f1738384ea26b2dfb9ef5245ad433acaf634c",
+      "byte_equal": true,
+      "path": "parallel/b/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2/R6R3_RUNTIME_HANDOFF_AUTHENTICATION_RULES_R2.json",
+      "r2r1_sha256": "b6e2ff77e1d724142123091b421f1738384ea26b2dfb9ef5245ad433acaf634c"
+    },
+    {
+      "baseline_sha256": "aa651ee690f91a061e645ccde466ccdbd2e1a14212ce3fea35e2518b65f98087",
+      "byte_equal": true,
+      "path": "parallel/b/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2/R6R3_RUNTIME_HANDOFF_OPERATOR_SEMANTICS_R2.json",
+      "r2r1_sha256": "aa651ee690f91a061e645ccde466ccdbd2e1a14212ce3fea35e2518b65f98087"
+    },
+    {
+      "baseline_sha256": "50be7809a028d7ef6cca2971c4946765ff7738267cf0247bbd89027761281f92",
+      "byte_equal": true,
+      "path": "parallel/b/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2/R6R3_RUNTIME_HANDOFF_SCHEMA_R2.json",
+      "r2r1_sha256": "50be7809a028d7ef6cca2971c4946765ff7738267cf0247bbd89027761281f92"
+    },
+    {
+      "baseline_sha256": "4c01bc24d5fcfca436f416c72b740998bd1d1f1bf9aa588bade11b6d6bc08acc",
+      "byte_equal": true,
+      "path": "parallel/b/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2/R6R3_SOURCE_LINEAGE_AUTHENTICATION_R2.md",
+      "r2r1_sha256": "4c01bc24d5fcfca436f416c72b740998bd1d1f1bf9aa588bade11b6d6bc08acc"
+    },
+    {
+      "baseline_sha256": "5c22a0cf70a88417e39b357fcfdbfdbe0e4621c3dc631637f228764e45dec3f6",
+      "byte_equal": true,
+      "path": "parallel/b/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2/fixtures/ambiguous_join.json",
+      "r2r1_sha256": "5c22a0cf70a88417e39b357fcfdbfdbe0e4621c3dc631637f228764e45dec3f6"
+    },
+    {
+      "baseline_sha256": "75c9d6a23dea93c22e5ab9580b3765d50b7fd729ccf4a8e475c24656acbd3d6f",
+      "byte_equal": true,
+      "path": "parallel/b/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2/fixtures/cleanup_false_claim.json",
+      "r2r1_sha256": "75c9d6a23dea93c22e5ab9580b3765d50b7fd729ccf4a8e475c24656acbd3d6f"
+    },
+    {
+      "baseline_sha256": "61ae374434d1ec1f01a4d8a824a253dbb6fd6094591603fad4353ad2e3a753f5",
+      "byte_equal": true,
+      "path": "parallel/b/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2/fixtures/cross_root_artifact.json",
+      "r2r1_sha256": "61ae374434d1ec1f01a4d8a824a253dbb6fd6094591603fad4353ad2e3a753f5"
+    },
+    {
+      "baseline_sha256": "d8e3ca834eb476cf1c6b23a2da362bc58d053e0c4e96edf8db122b5ae5814009",
+      "byte_equal": true,
+      "path": "parallel/b/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2/fixtures/duplicate_key.json",
+      "r2r1_sha256": "d8e3ca834eb476cf1c6b23a2da362bc58d053e0c4e96edf8db122b5ae5814009"
+    },
+    {
+      "baseline_sha256": "7dd1298c38b5234a8f8dfc341b7b9f4b074414b7ac389520a56cab07a09a79a4",
+      "byte_equal": true,
+      "path": "parallel/b/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2/fixtures/lineage_mismatch.json",
+      "r2r1_sha256": "7dd1298c38b5234a8f8dfc341b7b9f4b074414b7ac389520a56cab07a09a79a4"
+    },
+    {
+      "baseline_sha256": "d3931193d258adfa39b02f3418cbd061db0a943a94220f4d2eb007175df70757",
+      "byte_equal": true,
+      "path": "parallel/b/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2/fixtures/malformed_jsonl.jsonl",
+      "r2r1_sha256": "d3931193d258adfa39b02f3418cbd061db0a943a94220f4d2eb007175df70757"
+    },
+    {
+      "baseline_sha256": "c99765960ef2411a38ac2f6468d98be75c4ae741b407bebbdcff55509443d3e0",
+      "byte_equal": true,
+      "path": "parallel/b/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2/fixtures/nonfinite_number.json",
+      "r2r1_sha256": "c99765960ef2411a38ac2f6468d98be75c4ae741b407bebbdcff55509443d3e0"
+    },
+    {
+      "baseline_sha256": "c2c7903ae5f58308977d7d8773f0813d6696f765dedccdd9b7a947ed55739cd8",
+      "byte_equal": true,
+      "path": "parallel/b/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2/fixtures/path_traversal.json",
+      "r2r1_sha256": "c2c7903ae5f58308977d7d8773f0813d6696f765dedccdd9b7a947ed55739cd8"
+    },
+    {
+      "baseline_sha256": "ad4bcd77fca54086f589759e951923c1e687f147843a5de3a0a67755eff0422a",
+      "byte_equal": true,
+      "path": "parallel/b/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2/fixtures/pcap_hash_mismatch.json",
+      "r2r1_sha256": "ad4bcd77fca54086f589759e951923c1e687f147843a5de3a0a67755eff0422a"
+    },
+    {
+      "baseline_sha256": "12c1c5e4bbec87a7fa54f8258675d880e9c9c96486b630d92f407a37710ba695",
+      "byte_equal": true,
+      "path": "parallel/b/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2/fixtures/producer_receipt_unimplemented.json",
+      "r2r1_sha256": "12c1c5e4bbec87a7fa54f8258675d880e9c9c96486b630d92f407a37710ba695"
+    },
+    {
+      "baseline_sha256": "d4b57a7c78d41da14056e8d3e60b69c428ce05ce588e4672754018690bed81fc",
+      "byte_equal": true,
+      "path": "parallel/b/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2/fixtures/receipt_malformed.json",
+      "r2r1_sha256": "d4b57a7c78d41da14056e8d3e60b69c428ce05ce588e4672754018690bed81fc"
+    },
+    {
+      "baseline_sha256": "41b727b03d7f5b42ab4e3421aa5ba6ce496bab7b68ab188d88b01a531085f529",
+      "byte_equal": true,
+      "path": "parallel/b/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2/fixtures/receipt_multi_invocation.json",
+      "r2r1_sha256": "41b727b03d7f5b42ab4e3421aa5ba6ce496bab7b68ab188d88b01a531085f529"
+    },
+    {
+      "baseline_sha256": "21fdc852520833e0c728622380c76bfc5116328998628094836fdd6bd52501e4",
+      "byte_equal": true,
+      "path": "parallel/b/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2/fixtures/receipt_unbound_manifest.json",
+      "r2r1_sha256": "21fdc852520833e0c728622380c76bfc5116328998628094836fdd6bd52501e4"
+    },
+    {
+      "baseline_sha256": "2b7fb36cdfdf4edfdb767302ee42f57d64b78291ec189002eb32f476ed02ed15",
+      "byte_equal": true,
+      "path": "parallel/b/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2/fixtures/record_lineage_mismatch.json",
+      "r2r1_sha256": "2b7fb36cdfdf4edfdb767302ee42f57d64b78291ec189002eb32f476ed02ed15"
+    },
+    {
+      "baseline_sha256": "12ea0a415b095e86705b9e29896933eb5aeeae74872979a65ef32162567c0006",
+      "byte_equal": true,
+      "path": "parallel/b/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2/fixtures/same_serial_audit_event_mismatch.json",
+      "r2r1_sha256": "12ea0a415b095e86705b9e29896933eb5aeeae74872979a65ef32162567c0006"
+    },
+    {
+      "baseline_sha256": "9cf99aa9c0e5ef6b65293a15e085b478dc207823282e765dd27d3ea35d663ba2",
+      "byte_equal": true,
+      "path": "parallel/b/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2/fixtures/symlink_substitution.json",
+      "r2r1_sha256": "9cf99aa9c0e5ef6b65293a15e085b478dc207823282e765dd27d3ea35d663ba2"
+    },
+    {
+      "baseline_sha256": "8cb2884e311234798598109effb419d53e31de44c86bef9ee9759f7551bb401c",
+      "byte_equal": true,
+      "path": "parallel/b/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2/fixtures/unknown_operator.json",
+      "r2r1_sha256": "8cb2884e311234798598109effb419d53e31de44c86bef9ee9759f7551bb401c"
+    },
+    {
+      "baseline_sha256": "18736912fdafca321c8281afc041e42656a0527b4b507ef81390d701c3e4bb8b",
+      "byte_equal": true,
+      "path": "parallel/b/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2/r2_contract_validator.py",
+      "r2r1_sha256": "18736912fdafca321c8281afc041e42656a0527b4b507ef81390d701c3e4bb8b"
+    },
+    {
+      "baseline_sha256": "74bad743c78049a63a4e1db38b94859a96739b018fcd5d78159c43b40773d161",
+      "byte_equal": true,
+      "path": "parallel/b/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2/test_r2_contract.py",
+      "r2r1_sha256": "74bad743c78049a63a4e1db38b94859a96739b018fcd5d78159c43b40773d161"
+    }
+  ],
+  "method": "Compare the 31 R2 payload files byte-for-byte between the authenticated R2 and R2R1 commits.",
+  "mismatch_count": 0,
+  "pinned_payload_expected": 31,
+  "pinned_payload_matched": 31,
+  "r2r1_commit": "31bc08d3ddd0c836a4b610b53714cadea084172f",
+  "status": "PASS"
+}

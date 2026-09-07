@@ -1,0 +1,61 @@
+{
+  "AUTHORITATIVE_CANONICAL_VALUE": true,
+  "CONTRADICTING_COMPONENT": "validator",
+  "ROOT_CAUSE_AUTHENTICATION": "PASS",
+  "basis_is_independent_of_remediation_report": true,
+  "conclusion": "The inverse guard's authoritative value is true; the contradictory component in the historical R2R1 package is the validator's universal-false dispatch.",
+  "evidence": [
+    {
+      "lines": "36-37",
+      "meaning": "Authenticated design prose defines PCAP as provenance/authentication only and never a graph-edge source.",
+      "path": "parallel/b/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2.md",
+      "source_commit": "11a5692effd70ab5fbcf75b4574c7c27338e49af",
+      "text": "- **Network evidence:** exact PCAP bytes and cross-file hashes. PCAP is\n  provenance/authentication only and is never a graph-edge source."
+    },
+    {
+      "lines": "36-37",
+      "meaning": "R2R1 preserves the same graph-edge prohibition.",
+      "path": "parallel/b/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2R1/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2R1.md",
+      "source_commit": "31bc08d3ddd0c836a4b610b53714cadea084172f",
+      "text": "- **Network evidence:** exact PCAP bytes and cross-file hashes. PCAP is\n  provenance/authentication only and is never a graph-edge source."
+    },
+    {
+      "lines": "670-682",
+      "meaning": "The R2 hard-boundary schema requires the inverse PCAP guard to be true and the seven operation flags to be false.",
+      "path": "parallel/b/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2/R6R3_RUNTIME_HANDOFF_SCHEMA_R2.json",
+      "source_commit": "11a5692effd70ab5fbcf75b4574c7c27338e49af",
+      "text": "    \"hardBoundaries\": {\n      \"type\": \"object\",\n      \"additionalProperties\": false,\n      \"required\": [\"r7r1_adapter_changed\", \"frozen_32d_encoder_changed\", \"detector_trained\", \"provx_inference_executed\", \"formal_experiment_executed\", \"privileged_commands_executed_by_e0b\", \"runtime_data_fabricated\", \"pcap_is_not_graph_edge_source\"],\n      \"properties\": {\n        \"r7r1_adapter_changed\": {\"const\": false},\n        \"frozen_32d_encoder_changed\": {\"const\": false},\n        \"detector_trained\": {\"const\": false},\n        \"provx_inference_executed\": {\"const\": false},\n        \"formal_experiment_executed\": {\"const\": false},\n        \"privileged_commands_executed_by_e0b\": {\"const\": false},\n        \"runtime_data_fabricated\": {\"const\": false},\n        \"pcap_is_not_graph_edge_source\": {\"const\": true}"
+    },
+    {
+      "lines": "710-722",
+      "meaning": "The R2R1 schema preserves const true for pcap_is_not_graph_edge_source.",
+      "path": "parallel/b/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2R1/R6R3_RUNTIME_HANDOFF_SCHEMA_R2R1.json",
+      "source_commit": "31bc08d3ddd0c836a4b610b53714cadea084172f",
+      "text": "    \"hardBoundaries\": {\n      \"type\": \"object\",\n      \"additionalProperties\": false,\n      \"required\": [\"r7r1_adapter_changed\", \"frozen_32d_encoder_changed\", \"detector_trained\", \"provx_inference_executed\", \"formal_experiment_executed\", \"privileged_commands_executed_by_e0b\", \"runtime_data_fabricated\", \"pcap_is_not_graph_edge_source\"],\n      \"properties\": {\n        \"r7r1_adapter_changed\": {\"const\": false},\n        \"frozen_32d_encoder_changed\": {\"const\": false},\n        \"detector_trained\": {\"const\": false},\n        \"provx_inference_executed\": {\"const\": false},\n        \"formal_experiment_executed\": {\"const\": false},\n        \"privileged_commands_executed_by_e0b\": {\"const\": false},\n        \"runtime_data_fabricated\": {\"const\": false},\n        \"pcap_is_not_graph_edge_source\": {\"const\": true}"
+    },
+    {
+      "lines": "409-425",
+      "meaning": "The paired PCAP authentication fields use provenance_only true and used_as_graph_edge_source false.",
+      "path": "parallel/b/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2/r2_contract_validator.py",
+      "source_commit": "11a5692effd70ab5fbcf75b4574c7c27338e49af",
+      "text": "def check_pcap_binding(document: dict[str, Any]) -> dict[str, Any]:\n    \"\"\"Recompute exact PCAP bytes and require all declared sources to match.\"\"\"\n\n    try:\n        pcap_bytes = _decode_b64(document[\"pcap_bytes_b64\"])\n        actual = hashlib.sha256(pcap_bytes).hexdigest()\n        source_ids = document[\"hash_source_artifact_ids\"]\n        hashes = [document[\"pcap_sha256\"], document[\"coverage_sha256\"], document[\"post_cleanup_sha256\"]]\n    except (KeyError, TypeError) as exc:\n        raise ContractError(\"PCAP_BINDING_INPUT_MISSING\") from exc\n    if source_ids != [\"r6_pcap\", \"r6_coverage_and_loss\", \"r6_post_cleanup\"]:\n        raise ContractError(\"PCAP_HASH_SOURCE_SET_MISMATCH\")\n    if any(value != actual for value in hashes):\n        raise ContractError(\"PCAP_HASH_MISMATCH\")\n    if document.get(\"provenance_only\") is not True or document.get(\"used_as_graph_edge_source\") is not False:\n        raise ContractError(\"PCAP_GRAPH_SOURCE_BOUNDARY\")\n    return {\"status\": \"PASS\", \"sha256\": actual}"
+    },
+    {
+      "lines": "1192-1198",
+      "meaning": "The historical validator universally required every hard-boundary value to be false, contradicting the inverse guard.",
+      "path": "parallel/b/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2R1/r2r1_contract_validator.py",
+      "source_commit": "31bc08d3ddd0c836a4b610b53714cadea084172f",
+      "text": "def _check_hard_boundaries(candidate: dict[str, Any]) -> dict[str, Any]:\n    boundaries = candidate[\"hard_boundaries\"]\n    if not isinstance(boundaries, dict) or any(value is not False for value in boundaries.values()):\n        raise ContractError(\"HANDOFF_SCOPE_BOUNDARY_VIOLATED\")\n    if candidate[\"pcap_authentication\"].get(\"used_as_graph_edge_source\") is not False:\n        raise ContractError(\"PCAP_GRAPH_SOURCE_BOUNDARY\")\n    return {\"status\": \"PASS\"}"
+    },
+    {
+      "lines": "1192-1211",
+      "meaning": "The corrected validator dispatches polarity by semantic field and retains the paired false graph-edge-use check.",
+      "path": "parallel/b/PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2R1_HARD_BOUNDARY_SEMANTIC_CONSISTENCY_REMEDIATION/r2r1_contract_validator.py",
+      "source_commit": "3bf4c83216ed934306f875f4f60a3a945f59e52b",
+      "text": "def _check_hard_boundaries(candidate: dict[str, Any]) -> dict[str, Any]:\n    boundaries = candidate[\"hard_boundaries\"]\n    forbidden_operation_fields = (\n        \"r7r1_adapter_changed\",\n        \"frozen_32d_encoder_changed\",\n        \"detector_trained\",\n        \"provx_inference_executed\",\n        \"formal_experiment_executed\",\n        \"privileged_commands_executed_by_e0b\",\n        \"runtime_data_fabricated\",\n    )\n    if not isinstance(boundaries, dict) or any(\n        boundaries.get(field) is not False for field in forbidden_operation_fields\n    ):\n        raise ContractError(\"HANDOFF_SCOPE_BOUNDARY_VIOLATED\")\n    if boundaries.get(\"pcap_is_not_graph_edge_source\") is not True:\n        raise ContractError(\"HANDOFF_SCOPE_BOUNDARY_VIOLATED\")\n    if candidate[\"pcap_authentication\"].get(\"used_as_graph_edge_source\") is not False:\n        raise ContractError(\"PCAP_GRAPH_SOURCE_BOUNDARY\")\n    return {\"status\": \"PASS\"}"
+    }
+  ],
+  "field": "hard_boundaries.pcap_is_not_graph_edge_source",
+  "semantic_authority_unique": true,
+  "status": "PASS"
+}

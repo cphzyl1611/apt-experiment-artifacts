@@ -1,0 +1,49 @@
+{
+  "baseline_commit": "31bc08d3ddd0c836a4b610b53714cadea084172f",
+  "baseline_file_count": 35,
+  "baseline_only_files": [
+    "ADAPTER_ENCODER_NON_MUTATION_AUTHENTICATION_R2R1.json",
+    "PROVX_R7R1_R6R3_RUNTIME_HANDOFF_CONTRACT_DESIGN_R2R1.md",
+    "R2R1_INDEPENDENT_REMEDIATION_REPORT.md",
+    "R2R1_REMEDIATION_DECISION.json",
+    "R2R1_SAFE_VALIDATION_RESULTS.json",
+    "R6R3_EXACT_PATH_SEMANTICS_R2R1.md",
+    "R6R3_SOURCE_LINEAGE_AUTHENTICATION_R2R1.md"
+  ],
+  "common_content_differences": [
+    "r2r1_contract_validator.py",
+    "test_r2r1_contract.py"
+  ],
+  "common_file_count": 28,
+  "effective_behavior_source_changes": [
+    "r2r1_contract_validator.py",
+    "test_r2r1_contract.py"
+  ],
+  "evidence_only_additions_are_non_behavioral": true,
+  "fixture_byte_identity": true,
+  "fixture_count": 17,
+  "fixture_differences": [],
+  "focused_test_diff_sha256": "c4e39e4712181c2598d8697d5fc62219d71029c938d27e56918f18b486c59a6a",
+  "interpretation": "The remediation replay package changes only the contradictory validator and the two focused tests among shared executable/test content; the R2R1 schema and all fixtures are byte-identical.",
+  "remediation_artifact_file_count": 41,
+  "remediation_commit": "3bf4c83216ed934306f875f4f60a3a945f59e52b",
+  "remediation_only_evidence_files": [
+    "AUTHORITATIVE_SEMANTIC_EVIDENCE.json",
+    "AUTHORITATIVE_SEMANTIC_EVIDENCE.md",
+    "COMPONENT_DIFF.patch",
+    "CONTRACT_CONTEXT_R2R1.md",
+    "NON_REGRESSION_HASHES.json",
+    "POST_FIX_SAFE_SUITE.txt",
+    "POST_FIX_TRUTH_TABLE.json",
+    "PRE_FIX_TRUTH_TABLE.json",
+    "RED_TEST_EVIDENCE.json",
+    "REMEDIATION_REPORT.json",
+    "REMEDIATION_REPORT.md",
+    "RUNTIME_BOUNDARY_EVIDENCE.json",
+    "VERIFICATION_EVIDENCE.json"
+  ],
+  "schema_byte_identity": true,
+  "schema_semantic_drift": false,
+  "status": "PASS",
+  "validator_diff_sha256": "af4313e02115e8a4efb1b3addf829b54a91c09be110d2c8ee068d544d3d44a64"
+}

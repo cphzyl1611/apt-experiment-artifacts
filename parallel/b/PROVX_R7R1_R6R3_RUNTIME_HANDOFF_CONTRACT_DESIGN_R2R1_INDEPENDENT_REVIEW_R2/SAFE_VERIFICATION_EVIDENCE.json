@@ -1,0 +1,81 @@
+{
+  "DRAFT_2020_12_META_VALIDATION": "9/9 PASS",
+  "SAFE_SUITE": "49/49 PASS",
+  "STATIC_VALIDATION": "PASS",
+  "draft_2020_12_meta_validation": {
+    "count": 9,
+    "documents": [
+      "R1_TO_R2R1_BLOCKER_REMEDIATION_MAP.json",
+      "R6R3_CLEANUP_RECOMPUTATION_CONTRACT_R2R1.json",
+      "R6R3_JOIN_IDENTITY_AND_ROUNDTRIP_CONTRACT_R2R1.json",
+      "R6R3_PRIVILEGED_EXECUTION_RECEIPT_SCHEMA_R2R1.json",
+      "R6R3_REQUIRED_ARTIFACT_PATH_BINDINGS_R2R1.json",
+      "R6R3_RUNTIME_ARTIFACT_CONTENT_SCHEMAS_R2R1.json",
+      "R6R3_RUNTIME_HANDOFF_AUTHENTICATION_RULES_R2R1.json",
+      "R6R3_RUNTIME_HANDOFF_OPERATOR_SEMANTICS_R2R1.json",
+      "R6R3_RUNTIME_HANDOFF_SCHEMA_R2R1.json"
+    ],
+    "status": "PASS"
+  },
+  "safe_suite_command": "/home/cph/miniconda3/bin/python3 -m unittest test_r2r1_contract.py",
+  "safe_suite_output": ".................................................\n----------------------------------------------------------------------\nRan 49 tests in 0.496s\n\nOK\n",
+  "safe_suite_returncode": 0,
+  "safe_suite_tests_run": 49,
+  "static_validation": {
+    "known_operator_count": 22,
+    "required_artifact_ids": [
+      "r6_privileged_result",
+      "r6_audit_pre_state",
+      "r6_lineage",
+      "r6_static_audit",
+      "r6_pre_run_contract",
+      "r6_transient_rule_contract",
+      "r6_rule_remediation_journal",
+      "r6_residual_remediation",
+      "r6_raw_audit",
+      "r6_normalized_events",
+      "r6_pid_netns_join",
+      "r6_strace_oracle_comparison",
+      "r6_coverage_and_loss",
+      "r6_post_cleanup",
+      "r6_child_state_transitions",
+      "r6_child_process_evidence",
+      "r6_early_child_failures",
+      "r6_audit_smoke_report",
+      "r6_pcap",
+      "r6_privileged_execution_receipt"
+    ],
+    "schema_meta_validated": [
+      "R1_TO_R2R1_BLOCKER_REMEDIATION_MAP.json",
+      "R6R3_CLEANUP_RECOMPUTATION_CONTRACT_R2R1.json",
+      "R6R3_JOIN_IDENTITY_AND_ROUNDTRIP_CONTRACT_R2R1.json",
+      "R6R3_PRIVILEGED_EXECUTION_RECEIPT_SCHEMA_R2R1.json",
+      "R6R3_REQUIRED_ARTIFACT_PATH_BINDINGS_R2R1.json",
+      "R6R3_RUNTIME_ARTIFACT_CONTENT_SCHEMAS_R2R1.json",
+      "R6R3_RUNTIME_HANDOFF_AUTHENTICATION_RULES_R2R1.json",
+      "R6R3_RUNTIME_HANDOFF_OPERATOR_SEMANTICS_R2R1.json",
+      "R6R3_RUNTIME_HANDOFF_SCHEMA_R2R1.json"
+    ],
+    "status": "PASS",
+    "validated_rule_ids": [
+      "H001_PACKAGE_SHAPE_AND_SCHEMA",
+      "H002_MANIFEST_CANONICAL_HASH",
+      "H003_MANIFEST_ENTRY_UNIQUENESS_AND_COMPLETENESS",
+      "H004_EXACT_PATH_AND_FILE_HASH_BINDING",
+      "H005_SOURCE_COMMIT_AND_CONTRACT_LINEAGE",
+      "H006_EXPLICIT_PRIVILEGED_EXECUTION",
+      "H007_RUN_ID_CLOSURE",
+      "H008_RAW_RECORD_INTEGRITY",
+      "H009_NORMALIZED_RECORD_INTEGRITY",
+      "H010_RAW_NORMALIZED_SAME_SERIAL_AND_BYTE_LINK",
+      "H011_FILE_READ_OR_WRITE_STRICT_EVIDENCE",
+      "H012_PID_START_TICKS_NETNS_LOGICAL_HOST_JOIN",
+      "H013_EVENT_CLASS_COVERAGE_AND_LOSS_CLOSURE",
+      "H014_PCAP_AUTHENTICATION",
+      "H015_CLEANUP_INVERSE_RULE_AND_BASELINE_RESTORATION",
+      "H016_HARD_BOUNDARIES",
+      "H017_FINAL_CANONICAL_RECHECK"
+    ]
+  },
+  "status": "PASS"
+}

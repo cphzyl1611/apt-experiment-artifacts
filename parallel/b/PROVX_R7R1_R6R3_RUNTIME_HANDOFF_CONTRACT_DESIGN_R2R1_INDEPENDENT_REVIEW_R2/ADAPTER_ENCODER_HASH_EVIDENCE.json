@@ -1,0 +1,28 @@
+{
+  "ENCODER_HASH_DRIFT": 0,
+  "R7R1_ADAPTER_HASH_DRIFT": 0,
+  "method": "Compare authenticated R2 frozen boundary bytes with remediation-commit Git blobs and artifact-worktree bytes.",
+  "records": [
+    {
+      "committed_matches_frozen": true,
+      "committed_sha256": "7e33886b9ac628e8c4f312317127d95c181e40bebc2c5059cc9022ed4555ad6e",
+      "frozen_sha256": "7e33886b9ac628e8c4f312317127d95c181e40bebc2c5059cc9022ed4555ad6e",
+      "hash_drift": 0,
+      "name": "r7r1_adapter",
+      "path": "parallel/b/PROVX_R7_NORMALIZED_TO_GRAPH_ADAPTER.py",
+      "worktree_matches_frozen": true,
+      "worktree_sha256": "7e33886b9ac628e8c4f312317127d95c181e40bebc2c5059cc9022ed4555ad6e"
+    },
+    {
+      "committed_matches_frozen": true,
+      "committed_sha256": "013d9b77297308843144ccfce4c3eec4b03dc3cc5172dabd6eb3320e7bc46547",
+      "frozen_sha256": "013d9b77297308843144ccfce4c3eec4b03dc3cc5172dabd6eb3320e7bc46547",
+      "hash_drift": 0,
+      "name": "encoder",
+      "path": "parallel/b/PROVX_R4_ENCODER_IMPLEMENTATION.py",
+      "worktree_matches_frozen": true,
+      "worktree_sha256": "013d9b77297308843144ccfce4c3eec4b03dc3cc5172dabd6eb3320e7bc46547"
+    }
+  ],
+  "status": "PASS"
+}

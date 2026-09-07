@@ -1,0 +1,29 @@
+{
+  "baseline_parent": "11a5692effd70ab5fbcf75b4574c7c27338e49af",
+  "commit": "31bc08d3ddd0c836a4b610b53714cadea084172f",
+  "field": "hard_boundaries.pcap_is_not_graph_edge_source",
+  "independent_method": "Import validator and schema from a temporary extraction of authenticated baseline commit; evaluate both boolean values.",
+  "phase": "pre_fix_recomputed",
+  "reproduction_status": "PASS",
+  "results": [
+    {
+      "satisfies_both": false,
+      "schema": "ACCEPT",
+      "schema_errors": [],
+      "validator": "REJECT",
+      "validator_error": "HANDOFF_SCOPE_BOUNDARY_VIOLATED",
+      "value": true
+    },
+    {
+      "satisfies_both": false,
+      "schema": "REJECT",
+      "schema_errors": [
+        "True was expected"
+      ],
+      "validator": "ACCEPT",
+      "validator_error": null,
+      "value": false
+    }
+  ],
+  "satisfying_value_count": 0
+}
