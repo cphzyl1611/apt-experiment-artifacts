@@ -1,0 +1,274 @@
+{
+  "captured_at_utc": {
+    "end": "2026-09-07T11:35:41.424076+00:00",
+    "start": "2026-09-07T11:35:41.240869+00:00"
+  },
+  "collector_service_state": {
+    "auditd_proc_present": true,
+    "auditd_unit_is_active": {
+      "argv": [
+        "/usr/bin/systemctl",
+        "is-active",
+        "auditd"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "active\n",
+      "stdout_bytes": 7,
+      "stdout_sha256": "45df5ad5e0ecfa54d3226343e0e6857337494ba6e32f189d1174070665d8c659"
+    },
+    "auditd_unit_is_enabled": {
+      "argv": [
+        "/usr/bin/systemctl",
+        "is-enabled",
+        "auditd"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "enabled\n",
+      "stdout_bytes": 8,
+      "stdout_sha256": "e056a35db086947e2f5969d747f0a7517bff00c7ffff1f9e7b47b72bfac9d948"
+    },
+    "note": "auditctl -l/-s require root and are recorded in the prerequisite matrix"
+  },
+  "git": {
+    "artifact_branch": "artifact/e0-a",
+    "artifact_head": "edee49c3a1eb84b040e4734ad9e58f8490882dc0",
+    "artifact_remote_head": "edee49c3a1eb84b040e4734ad9e58f8490882dc0",
+    "artifact_remote_tracking_ref": "origin/artifact/e0-a",
+    "artifact_status_short": "",
+    "artifact_worktree": "/home/cph/fa1b2de-artifact-worktrees/e0-a",
+    "runtime_workspace": "/home/cph/experiment-parallel/e0-a",
+    "runtime_workspace_dot_git_entries": [],
+    "runtime_workspace_git": {
+      "argv": [
+        "/usr/bin/git",
+        "-C",
+        "/home/cph/experiment-parallel/e0-a",
+        "rev-parse",
+        "HEAD"
+      ],
+      "returncode": 128,
+      "stderr": "fatal: not a git repository (or any of the parent directories): .git\n",
+      "stdout": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "identity": {
+    "current_user": "uid=1000(cph) gid=1000(cph) groups=1000(cph),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),122(lpadmin),135(lxd),136(sambashare)",
+    "euid": 1000,
+    "exact_time_local": "2026-09-07T07:35:41.245618-04:00",
+    "exact_time_utc": "2026-09-07T11:35:41.245607+00:00",
+    "hostname": "UBU-MONITOR01",
+    "kernel": "Linux UBU-MONITOR01 6.8.0-138-generic #138~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Fri Aug  7 13:43:15 UTC  x86_64 x86_64 x86_64 GNU/Linux",
+    "working_directory": "/home/cph/experiment-parallel/e0-a"
+  },
+  "network": {
+    "all_listening_tcp": "LISTEN 0      4096        127.0.0.53%lo:53    0.0.0.0:*\nLISTEN 0      128             127.0.0.1:631   0.0.0.0:*\nLISTEN 0      128               0.0.0.0:1515  0.0.0.0:*\nLISTEN 0      128               0.0.0.0:1514  0.0.0.0:*\nLISTEN 0      2048              0.0.0.0:55000 0.0.0.0:*\nLISTEN 0      511               0.0.0.0:443   0.0.0.0:*\nLISTEN 0      128               0.0.0.0:22    0.0.0.0:*\nLISTEN 0      4096   [::ffff:127.0.0.1]:9200        *:*\nLISTEN 0      128                 [::1]:631      [::]:*\nLISTEN 0      2048                 [::]:55000    [::]:*\nLISTEN 0      128                  [::]:22       [::]:*\nLISTEN 0      4096   [::ffff:127.0.0.1]:9300        *:*\n",
+    "ip_link_show": "1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000\\    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00\n2: ens33: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000\\    link/ether 00:0c:29:ea:62:cc brd ff:ff:ff:ff:ff:ff\\    altname enp2s1\n",
+    "listening_port_18080": "",
+    "netns_list": {
+      "argv": [
+        "/usr/sbin/ip",
+        "netns",
+        "list"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "proc_self_netns": "net:[4026531840]",
+    "reserved_interfaces_present": {
+      "h1-eth0": false,
+      "h2-eth0": false,
+      "s1": false,
+      "s1-eth1": false,
+      "s1-eth2": false
+    }
+  },
+  "privilege_level": "NON_PRIVILEGED",
+  "process_state": {
+    "matched_processes": [
+      "43 kauditd         [kauditd]",
+      "841 ovsdb-server    ovsdb-server /etc/openvswitch/conf.db -vconsole:emer -vsyslog:err -vfile:info --remote=punix:/var/run/openvswitch/db.sock --private-key=db:Open_vSwitch,SSL,private_key --certificate=db:Open_vSwitch,SSL,certificate --bootstrap-ca-cert=db:Open_vSwitch,SSL,ca_cert --no-chdir --log-file=/var/log/openvswitch/ovsdb-server.log --pidfile=/var/run/openvswitch/ovsdb-server.pid --detach",
+      "907 ovs-vswitchd    ovs-vswitchd unix:/var/run/openvswitch/db.sock -vconsole:emer -vsyslog:err -vfile:info --mlockall --no-chdir --log-file=/var/log/openvswitch/ovs-vswitchd.log --pidfile=/var/run/openvswitch/ovs-vswitchd.pid --detach",
+      "573176 auditd          /sbin/auditd"
+    ],
+    "mininet_mn_process_count": 0,
+    "note": "non-privileged ps matched on exact comm; full-visibility privileged ps is collected in the prerequisite matrix",
+    "tcpdump_process_count": 0,
+    "watched_comms": [
+      "auditd",
+      "kauditd",
+      "mn",
+      "ovs-vswitchd",
+      "ovsdb-server",
+      "tcpdump"
+    ]
+  },
+  "runtime_directories": {
+    "e0_a_root_entries": [
+      ".agents",
+      ".codex",
+      ".git",
+      "AGENTS.md",
+      "EXP_E0_A_ENVIRONMENT_PRECHECK.json",
+      "EXP_E0_A_ENVIRONMENT_PRECHECK.md",
+      "EXP_E0_A_EXISTING_ASSET_INVENTORY.json",
+      "EXP_E0_A_PROVX_MININET_HOST_SUBSTRATE_RECOMMENDATION.md",
+      "MATERIALIZATION_MANIFEST.json",
+      "MININET_E1A_ATTRIBUTION_FEASIBILITY_REPORT.md",
+      "MININET_E1A_PACKET_CORRELATION.json",
+      "MININET_E1A_POST_CLEANUP_AUDIT.json",
+      "MININET_E1A_PRE_STATE.json",
+      "MININET_E1A_PROCESS_NETNS_ATTRIBUTION.jsonl",
+      "MININET_E1A_R2_ATTRIBUTION_FEASIBILITY_REPORT.md",
+      "MININET_E1A_R2_HARNESS_STATIC_AUDIT.json",
+      "MININET_E1A_R2_PRE_RUN_CONTRACT.json",
+      "MININET_E1A_R2_RUNTIME_EVIDENCE_VALIDATION.json",
+      "MININET_E1A_TOPOLOGY_AND_RUN_MANIFEST.json",
+      "MININET_E1B_BENIGN_EVENT_CONTRACT.json",
+      "MININET_E1B_COLLECTOR_COMPARISON.json",
+      "MININET_E1B_COLLECTOR_INVENTORY.json",
+      "MININET_E1B_GRAPH_CONVERSION_PREREQUISITES.json",
+      "MININET_E1B_HUMAN_INSTALL_COMMAND.txt",
+      "MININET_E1B_PRIMARY_COLLECTOR_DECISION.md",
+      "MININET_E1C_HARNESS_STATIC_AUDIT.json",
+      "MININET_E1C_HUMAN_COMMAND.txt",
+      "MININET_E1C_PRE_RUN_CONTRACT.json",
+      "MININET_E1C_R6R3_FRESH_REVIEW_BLOCKER_REMEDIATION",
+      "MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE",
+      "MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_20260904T110543Z",
+      "MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_20260907T113419Z",
+      "MININET_E1C_R6R4_PRODUCTION_PATH_AND_EVIDENCE_REMEDIATION",
+      "MININET_E1C_R6R4_TARGETED_FRESH_REVIEW",
+      "MININET_E1C_R6_AUDIT_FILE_ACCESS_SEMANTICS.json",
+      "MININET_E1C_R6_PRE_RUN_CONTRACT.json",
+      "MININET_E1C_R6_R5_FILE_RW_ROOT_CAUSE.md",
+      "MININET_E1C_R6_RAW_LINK_RED_EVIDENCE.json",
+      "MININET_E1C_R6_STATIC_AUDIT.json",
+      "Prompt_1_EXP_E0_A_Mininet_PROVX_Environment_Preflight.md",
+      "Prompt_2_MININET_E1C_R3_Harness_Repair_and_Residual_Rule_Recovery.md",
+      "Prompt_2_MININET_E1C_R4_Delete_Argv_Defect_Fix_and_Preparation.md",
+      "Prompt_2_MININET_E1C_R6_File_Access_Collector_Closure_Preparation.md",
+      "Prompt_2_MININET_E1C_R6_Privileged_Path_Fresh_Review_and_Wiring_Closure.md",
+      "Prompt_3_MININET_E1A_LogicalHost_Provenance_Attribution_Feasibility.md",
+      "Prompt_3_MININET_E1A_R2_Privileged_Harness_Preparation.md",
+      "Prompt_3_MININET_E1B_Provenance_Collector_Selection.md",
+      "Prompt_3_MININET_E1C_Auditd_Bounded_Benign_Smoke.md",
+      "Prompt_MININET_E1C_R2_Cleanup_and_Corrected_Smoke.md",
+      "docs",
+      "e1a-r2-run-20260830",
+      "e1a-r2-run-20260830T060231Z",
+      "e1a-run-20260829",
+      "e1c-r2-run-20260831T061204Z",
+      "e1c-r3-run-20260831T075356Z",
+      "e1c-r4-run-20260831T105503Z",
+      "e1c-r5-run-20260831T111849Z",
+      "e1c-r6-run-20260901T060350Z",
+      "e1c-run-20260831T050028Z",
+      "parallel"
+    ],
+    "pcap_exists": false,
+    "pcap_path": "/home/cph/experiment-parallel/e0-a/e1c-r6-run-20260901T060350Z/MININET_E1C_R6_SMOKE.pcap",
+    "receipt_root": "/home/cph/experiment-parallel/e0-a/MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_20260907T113419Z",
+    "receipt_root_entries": [
+      "02_PRE_RUNTIME_ENVIRONMENT_SNAPSHOT.json"
+    ],
+    "run_dir": "/home/cph/experiment-parallel/e0-a/e1c-r6-run-20260901T060350Z",
+    "run_dir_entries": [
+      "mininet_e1c_r6_file_access_closure_smoke.py",
+      "test_e1c_r6_harness.py"
+    ],
+    "run_dir_file_hashes": {
+      "mininet_e1c_r6_file_access_closure_smoke.py": "8b0db6eab7c2a9d720a9a9d0624ebbe4ba93859f2151fc338f0e0303321e78cc",
+      "test_e1c_r6_harness.py": "4392694ab6505548fa07d3e6a3f802b105ce065c80619aa955026ce7b6e9e058"
+    },
+    "temp_events_dir": "/home/cph/experiment-parallel/e0-a/e1c-r6-run-20260901T060350Z/temp-events",
+    "temp_events_dir_exists": false
+  },
+  "schema": "MININET_E1C_R6R4_PRE_RUNTIME_ENVIRONMENT_SNAPSHOT_V1",
+  "task_id": "MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE",
+  "versions": {
+    "auditctl_binary_sha256": "9d43e5571d5c2e0684fe72db7ef75766e7a7c26b54358cada56db6ce4b666e5e",
+    "ausearch_binary_sha256": "8f331486a82bbb899c9d678f7024cd98c9a22fc9434de0744650886c7075ce24",
+    "dpkg_packages": {
+      "argv": [
+        "/usr/bin/dpkg-query",
+        "-W",
+        "-f=${Package}=${Version}\n",
+        "auditd",
+        "mininet",
+        "openvswitch-switch",
+        "openvswitch-common",
+        "tcpdump"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "auditd=1:3.0.7-1build1\nmininet=2.3.0-1ubuntu1\nopenvswitch-common=2.17.9-0ubuntu0.22.04.2\nopenvswitch-switch=2.17.9-0ubuntu0.22.04.2\ntcpdump=4.99.1-3ubuntu0.2\n",
+      "stdout_bytes": 158,
+      "stdout_sha256": "c620cc4f7ee3172cf2e55a50ed11d84efdcbf0938cb6f2af273d79124c5ed7d6"
+    },
+    "mininet_import": {
+      "argv": [
+        "/usr/bin/python3",
+        "-c",
+        "from mininet.net import Mininet; from mininet.node import OVSSwitch; print('MININET_IMPORT_OK')"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "MININET_IMPORT_OK\n",
+      "stdout_bytes": 18,
+      "stdout_sha256": "905e4bbcef21b1c86ec6bcb43635fdd0d98d412d80957739bdd55822282851d6"
+    },
+    "mn_version_stdout_and_stderr": {
+      "argv": [
+        "/bin/sh",
+        "-c",
+        "/usr/bin/mn --version 2>&1"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "2.3.0\n",
+      "stdout_bytes": 6,
+      "stdout_sha256": "a42caf4a54bbbe27aa45b6efbc6356c5e299b19763e728b6cdb7201b02ebbe36"
+    },
+    "ovs_vsctl": {
+      "argv": [
+        "/usr/bin/ovs-vsctl",
+        "--version"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "ovs-vsctl (Open vSwitch) 2.17.9\nDB Schema 8.3.0\n",
+      "stdout_bytes": 48,
+      "stdout_sha256": "0bf303d2b6c01541741008135bda894406c6ca26ea8fa965401bf231bc4c11b6"
+    },
+    "python3": {
+      "argv": [
+        "/usr/bin/python3",
+        "--version"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "Python 3.10.12\n",
+      "stdout_bytes": 15,
+      "stdout_sha256": "f6b75e07f1488db28a89724a522725e3e01af3dc78f6fd365f17eb4059e41056"
+    },
+    "tcpdump": {
+      "argv": [
+        "/bin/sh",
+        "-c",
+        "/usr/bin/tcpdump --version 2>&1"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "tcpdump version 4.99.1\nlibpcap version 1.10.1 (with TPACKET_V3)\nOpenSSL 3.0.2 15 Mar 2022\n",
+      "stdout_bytes": 90,
+      "stdout_sha256": "ea952fdb82d7887bc9028cc203e6a059a7f1087c5639d3297f1b405c17508f49"
+    }
+  }
+}

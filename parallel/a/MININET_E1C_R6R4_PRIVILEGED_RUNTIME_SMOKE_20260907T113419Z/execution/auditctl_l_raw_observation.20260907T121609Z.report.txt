@@ -1,0 +1,9 @@
+returncode: 0
+stdout_bytes: 9
+stdout_sha256: 61501e69a61dbbc1a41605ea15c34807e6b1d3992bee195dde36a7ebdd95dd87
+frozen_expected_sha256: 61501e69a61dbbc1a41605ea15c34807e6b1d3992bee195dde36a7ebdd95dd87  (= sha256 of 'No rules\n')
+--- stdout, cat -A ---
+No rules$
+--- stdout, xxd ---
+00000000: 4e6f 2072 756c 6573 0a                   No rules.
+--- stderr ---

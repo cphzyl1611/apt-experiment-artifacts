@@ -1,0 +1,38 @@
+{
+  "RUNTIME_RECEIPT_SCHEMA_VALIDATION": "BLOCKED",
+  "artifact_descriptor_fields": "PASS (relative_path, bytes, sha256, run_id)",
+  "artifact_hashes_recomputed": "PASS",
+  "ausearch_required_values": "PASS (deadline_expired false, returncode 0)",
+  "coverage_required_zero_fields": "PASS (audit_loss_count 0, audit_backlog_count 0)",
+  "issues": [
+    {
+      "expected": "records",
+      "field": "raw_audit_record.records",
+      "id": "RECEIPT_MALFORMED_OR_INCOMPLETE",
+      "observed": "record_types",
+      "severity": "BLOCKING"
+    },
+    {
+      "expected": "positive integer",
+      "field": "coverage_and_loss.required_class_count.FILE_READ_OR_WRITE",
+      "id": "FILE_RW_ABSENT_OR_ZERO",
+      "observed": 0,
+      "severity": "BLOCKING"
+    }
+  ],
+  "json_parse_all_artifacts": "PASS",
+  "normalized_event_required_fields": "PASS",
+  "normalized_to_raw_link_policy": "PASS",
+  "pcap_authentication": "PASS",
+  "pid_netns_join_policy": "PASS",
+  "post_cleanup": "PASS",
+  "raw_audit_record_required_fields": "BLOCKED",
+  "receipt_required_top_level_fields": "PASS",
+  "required_artifacts_present": "PASS (8/8)",
+  "required_class_count_FILE_READ_OR_WRITE": "BLOCKED",
+  "run_id": "e1c-r6-run-20260901T060350Z",
+  "run_id_uniform": "PASS",
+  "schema": "MININET_E1C_R6R4_RUNTIME_RECEIPT_SCHEMA_VALIDATION_V1",
+  "task_id": "MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE",
+  "validated_against": "parallel/a/MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_PREPARATION/EXPECTED_RUNTIME_RECEIPT_SCHEMA.json @ edee49c3"
+}

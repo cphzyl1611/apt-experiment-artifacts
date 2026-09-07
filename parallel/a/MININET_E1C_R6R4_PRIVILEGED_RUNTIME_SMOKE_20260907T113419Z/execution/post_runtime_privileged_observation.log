@@ -1,0 +1,402 @@
+### auditctl -l
+No rules
+### auditctl -s
+enabled 1
+failure 1
+pid 573176
+rate_limit 0
+backlog_limit 8192
+lost 0
+backlog 0
+backlog_wait_time 60000
+backlog_wait_time_actual 0
+loginuid_immutable 0 unlocked
+### ovs-vsctl list-br
+### ip link show
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000\    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: ens33: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000\    link/ether 00:0c:29:ea:62:cc brd ff:ff:ff:ff:ff:ff\    altname enp2s1
+### ip netns list
+### ps
+      1 systemd         /sbin/init auto noprompt splash
+      2 kthreadd        [kthreadd]
+      3 pool_workqueue_ [pool_workqueue_release]
+      4 kworker/R-rcu_g [kworker/R-rcu_g]
+      5 kworker/R-rcu_p [kworker/R-rcu_p]
+      6 kworker/R-slub_ [kworker/R-slub_]
+      7 kworker/R-netns [kworker/R-netns]
+     11 kworker/R-mm_pe [kworker/R-mm_pe]
+     12 rcu_tasks_kthre [rcu_tasks_kthread]
+     13 rcu_tasks_rude_ [rcu_tasks_rude_kthread]
+     14 rcu_tasks_trace [rcu_tasks_trace_kthread]
+     16 ksoftirqd/0     [ksoftirqd/0]
+     17 rcu_preempt     [rcu_preempt]
+     18 migration/0     [migration/0]
+     19 idle_inject/0   [idle_inject/0]
+     20 cpuhp/0         [cpuhp/0]
+     21 cpuhp/1         [cpuhp/1]
+     22 idle_inject/1   [idle_inject/1]
+     23 migration/1     [migration/1]
+     24 ksoftirqd/1     [ksoftirqd/1]
+     27 cpuhp/2         [cpuhp/2]
+     28 idle_inject/2   [idle_inject/2]
+     29 migration/2     [migration/2]
+     30 ksoftirqd/2     [ksoftirqd/2]
+     33 cpuhp/3         [cpuhp/3]
+     34 idle_inject/3   [idle_inject/3]
+     35 migration/3     [migration/3]
+     36 ksoftirqd/3     [ksoftirqd/3]
+     41 kdevtmpfs       [kdevtmpfs]
+     42 kworker/R-inet_ [kworker/R-inet_]
+     43 kauditd         [kauditd]
+     45 khungtaskd      [khungtaskd]
+     47 oom_reaper      [oom_reaper]
+     49 kworker/R-write [kworker/R-write]
+     50 kcompactd0      [kcompactd0]
+     51 ksmd            [ksmd]
+     52 khugepaged      [khugepaged]
+     53 kworker/R-kinte [kworker/R-kinte]
+     54 kworker/R-kbloc [kworker/R-kbloc]
+     55 kworker/R-blkcg [kworker/R-blkcg]
+     56 irq/9-acpi      [irq/9-acpi]
+     59 kworker/R-tpm_d [kworker/R-tpm_d]
+     60 kworker/R-ata_s [kworker/R-ata_s]
+     61 kworker/R-md    [kworker/R-md]
+     62 kworker/R-md_bi [kworker/R-md_bi]
+     63 kworker/R-edac- [kworker/R-edac-]
+     64 kworker/R-devfr [kworker/R-devfr]
+     65 watchdogd       [watchdogd]
+     67 kworker/R-quota [kworker/R-quota]
+     70 kswapd0         [kswapd0]
+     71 ecryptfs-kthrea [ecryptfs-kthread]
+     72 kworker/R-kthro [kworker/R-kthro]
+     73 irq/24-pciehp   [irq/24-pciehp]
+     74 irq/25-pciehp   [irq/25-pciehp]
+     75 irq/26-pciehp   [irq/26-pciehp]
+     76 irq/27-pciehp   [irq/27-pciehp]
+     77 irq/28-pciehp   [irq/28-pciehp]
+     78 irq/29-pciehp   [irq/29-pciehp]
+     79 irq/30-pciehp   [irq/30-pciehp]
+     80 irq/31-pciehp   [irq/31-pciehp]
+     81 irq/32-pciehp   [irq/32-pciehp]
+     82 irq/33-pciehp   [irq/33-pciehp]
+     83 irq/34-pciehp   [irq/34-pciehp]
+     84 irq/35-pciehp   [irq/35-pciehp]
+     85 irq/36-pciehp   [irq/36-pciehp]
+     86 irq/37-pciehp   [irq/37-pciehp]
+     87 irq/38-pciehp   [irq/38-pciehp]
+     88 irq/39-pciehp   [irq/39-pciehp]
+     89 irq/40-pciehp   [irq/40-pciehp]
+     90 irq/41-pciehp   [irq/41-pciehp]
+     91 irq/42-pciehp   [irq/42-pciehp]
+     92 irq/43-pciehp   [irq/43-pciehp]
+     93 irq/44-pciehp   [irq/44-pciehp]
+     94 irq/45-pciehp   [irq/45-pciehp]
+     95 irq/46-pciehp   [irq/46-pciehp]
+     96 irq/47-pciehp   [irq/47-pciehp]
+     97 irq/48-pciehp   [irq/48-pciehp]
+     98 irq/49-pciehp   [irq/49-pciehp]
+     99 irq/50-pciehp   [irq/50-pciehp]
+    100 irq/51-pciehp   [irq/51-pciehp]
+    101 irq/52-pciehp   [irq/52-pciehp]
+    102 irq/53-pciehp   [irq/53-pciehp]
+    103 irq/54-pciehp   [irq/54-pciehp]
+    104 irq/55-pciehp   [irq/55-pciehp]
+    105 kworker/R-acpi_ [kworker/R-acpi_]
+    107 scsi_eh_0       [scsi_eh_0]
+    108 kworker/R-scsi_ [kworker/R-scsi_]
+    109 scsi_eh_1       [scsi_eh_1]
+    110 kworker/R-scsi_ [kworker/R-scsi_]
+    114 kworker/R-mld   [kworker/R-mld]
+    115 kworker/R-ipv6_ [kworker/R-ipv6_]
+    124 kworker/R-kstrp [kworker/R-kstrp]
+    126 kworker/u259:0  [kworker/u259:0]
+    141 kworker/R-charg [kworker/R-charg]
+    193 kworker/R-mpt_p [kworker/R-mpt_p]
+    194 kworker/R-mpt/0 [kworker/R-mpt/0]
+    200 scsi_eh_2       [scsi_eh_2]
+    202 kworker/R-scsi_ [kworker/R-scsi_]
+    206 scsi_eh_3       [scsi_eh_3]
+    207 kworker/R-scsi_ [kworker/R-scsi_]
+    208 scsi_eh_4       [scsi_eh_4]
+    209 kworker/R-scsi_ [kworker/R-scsi_]
+    210 scsi_eh_5       [scsi_eh_5]
+    211 kworker/R-scsi_ [kworker/R-scsi_]
+    212 scsi_eh_6       [scsi_eh_6]
+    213 kworker/R-scsi_ [kworker/R-scsi_]
+    214 scsi_eh_7       [scsi_eh_7]
+    215 kworker/R-scsi_ [kworker/R-scsi_]
+    216 scsi_eh_8       [scsi_eh_8]
+    217 kworker/R-scsi_ [kworker/R-scsi_]
+    218 scsi_eh_9       [scsi_eh_9]
+    219 kworker/R-scsi_ [kworker/R-scsi_]
+    220 scsi_eh_10      [scsi_eh_10]
+    221 kworker/R-scsi_ [kworker/R-scsi_]
+    222 scsi_eh_11      [scsi_eh_11]
+    223 kworker/R-scsi_ [kworker/R-scsi_]
+    224 scsi_eh_12      [scsi_eh_12]
+    225 kworker/R-scsi_ [kworker/R-scsi_]
+    226 scsi_eh_13      [scsi_eh_13]
+    227 kworker/R-scsi_ [kworker/R-scsi_]
+    228 scsi_eh_14      [scsi_eh_14]
+    229 kworker/R-scsi_ [kworker/R-scsi_]
+    230 scsi_eh_15      [scsi_eh_15]
+    231 kworker/R-scsi_ [kworker/R-scsi_]
+    232 scsi_eh_16      [scsi_eh_16]
+    233 kworker/R-scsi_ [kworker/R-scsi_]
+    234 scsi_eh_17      [scsi_eh_17]
+    235 kworker/R-scsi_ [kworker/R-scsi_]
+    236 scsi_eh_18      [scsi_eh_18]
+    237 kworker/R-scsi_ [kworker/R-scsi_]
+    238 scsi_eh_19      [scsi_eh_19]
+    239 kworker/R-scsi_ [kworker/R-scsi_]
+    240 scsi_eh_20      [scsi_eh_20]
+    241 kworker/R-scsi_ [kworker/R-scsi_]
+    242 scsi_eh_21      [scsi_eh_21]
+    243 kworker/R-scsi_ [kworker/R-scsi_]
+    244 scsi_eh_22      [scsi_eh_22]
+    245 kworker/R-scsi_ [kworker/R-scsi_]
+    246 scsi_eh_23      [scsi_eh_23]
+    247 kworker/R-scsi_ [kworker/R-scsi_]
+    248 scsi_eh_24      [scsi_eh_24]
+    249 kworker/R-scsi_ [kworker/R-scsi_]
+    250 scsi_eh_25      [scsi_eh_25]
+    251 kworker/R-scsi_ [kworker/R-scsi_]
+    252 scsi_eh_26      [scsi_eh_26]
+    253 kworker/R-scsi_ [kworker/R-scsi_]
+    254 scsi_eh_27      [scsi_eh_27]
+    255 kworker/R-scsi_ [kworker/R-scsi_]
+    256 scsi_eh_28      [scsi_eh_28]
+    257 kworker/R-scsi_ [kworker/R-scsi_]
+    258 scsi_eh_29      [scsi_eh_29]
+    259 kworker/R-scsi_ [kworker/R-scsi_]
+    260 scsi_eh_30      [scsi_eh_30]
+    261 kworker/R-scsi_ [kworker/R-scsi_]
+    262 scsi_eh_31      [scsi_eh_31]
+    263 kworker/R-scsi_ [kworker/R-scsi_]
+    290 scsi_eh_32      [scsi_eh_32]
+    291 kworker/R-scsi_ [kworker/R-scsi_]
+    318 jbd2/sda3-8     [jbd2/sda3-8]
+    319 kworker/R-ext4- [kworker/R-ext4-]
+    359 systemd-journal /lib/systemd/systemd-journald
+    392 vmware-vmblock- vmware-vmblock-fuse /run/vmblock-fuse -o rw,subtype=vmware-vmblock,default_permissions,allow_other,dev,suid
+    396 irq/16-vmwgfx   [irq/16-vmwgfx]
+    397 kworker/R-ttm   [kworker/R-ttm]
+    562 irq/57-vmw_vmci [irq/57-vmw_vmci]
+    564 irq/58-vmw_vmci [irq/58-vmw_vmci]
+    565 irq/59-vmw_vmci [irq/59-vmw_vmci]
+    662 kworker/R-crypt [kworker/R-crypt]
+    683 systemd-oomd    /lib/systemd/systemd-oomd
+    704 systemd-resolve /lib/systemd/systemd-resolved
+    710 systemd-timesyn /lib/systemd/systemd-timesyncd
+    815 VGAuthService   /usr/bin/VGAuthService
+    818 vmtoolsd        /usr/bin/vmtoolsd
+    841 ovsdb-server    ovsdb-server /etc/openvswitch/conf.db -vconsole:emer -vsyslog:err -vfile:info --remote=punix:/var/run/openvswitch/db.sock --private-key=db:Open_vSwitch,SSL,private_key --certificate=db:Open_vSwitch,SSL,certificate --bootstrap-ca-cert=db:Open_vSwitch,SSL,ca_cert --no-chdir --log-file=/var/log/openvswitch/ovsdb-server.log --pidfile=/var/run/openvswitch/ovsdb-server.pid --detach
+    907 ovs-vswitchd    ovs-vswitchd unix:/var/run/openvswitch/db.sock -vconsole:emer -vsyslog:err -vfile:info --mlockall --no-chdir --log-file=/var/log/openvswitch/ovs-vswitchd.log --pidfile=/var/run/openvswitch/ovs-vswitchd.pid --detach
+    954 accounts-daemon /usr/libexec/accounts-daemon
+    955 acpid           /usr/sbin/acpid
+    958 avahi-daemon    avahi-daemon: running [UBU-MONITOR01.local]
+    959 cron            /usr/sbin/cron -f -P
+    961 dbus-daemon     @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+    965 NetworkManager  /usr/sbin/NetworkManager --no-daemon
+    973 irqbalance      /usr/sbin/irqbalance --foreground
+    976 networkd-dispat /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+    980 polkitd         /usr/libexec/polkitd --no-debug
+    981 power-profiles- /usr/libexec/power-profiles-daemon
+    984 rsyslogd        /usr/sbin/rsyslogd -n -iNONE
+    994 switcheroo-cont /usr/libexec/switcheroo-control
+   1000 systemd-logind  /lib/systemd/systemd-logind
+   1003 udisksd         /usr/libexec/udisks2/udisksd
+   1012 node            /usr/share/wazuh-dashboard/node/bin/node --no-warnings --max-http-header-size=65536 --unhandled-rejections=warn /usr/share/wazuh-dashboard/src/cli/dist
+   1016 wpa_supplicant  /sbin/wpa_supplicant -u -s -O /run/wpa_supplicant
+   1033 avahi-daemon    avahi-daemon: chroot helper
+   1057 ModemManager    /usr/sbin/ModemManager
+   1102 unattended-upgr /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+   1114 gdm3            /usr/sbin/gdm3
+   1182 filebeat        /usr/share/filebeat/bin/filebeat --environment systemd -c /etc/filebeat/filebeat.yml --path.home /usr/share/filebeat --path.config /etc/filebeat --path.data /var/lib/filebeat --path.logs /var/log/filebeat
+   1189 java            /usr/share/wazuh-indexer/jdk/bin/java -Xshare:auto -Dopensearch.networkaddress.cache.ttl=60 -Dopensearch.networkaddress.cache.negative.ttl=10 -XX:+AlwaysPreTouch -Xss1m -Djava.awt.headless=true -Dfile.encoding=UTF-8 -Djna.nosys=true -XX:-OmitStackTraceInFastThrow -XX:+ShowCodeDetailsInExceptionMessages -Dio.netty.noUnsafe=true -Dio.netty.noKeySetOptimization=true -Dio.netty.recycler.maxCapacityPerThread=0 -Dio.netty.allocator.numDirectArenas=0 -Dlog4j.shutdownHookEnabled=false -Dlog4j2.disable.jmx=true -Djava.security.manager=allow -Djava.locale.providers=SPI,COMPAT -Xms1024m -Xmx1024m -XX:+UseG1GC -XX:G1ReservePercent=25 -XX:InitiatingHeapOccupancyPercent=30 -Djava.io.tmpdir=/tmp/opensearch-5200924368550124937 -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/var/lib/wazuh-indexer -XX:ErrorFile=/var/log/wazuh-indexer/hs_err_pid%p.log -Xlog:gc*,gc+age=trace,safepoint:file=/var/log/wazuh-indexer/gc.log:utctime,pid,tags:filecount=32,filesize=64m -Djava.security.manager=allow --add-modules=jdk.incubator.vector -Djava.util.concurrent.ForkJoinPool.common.threadFactory=org.opensearch.secure_sm.SecuredForkJoinWorkerThreadFactory -Dclk.tck=100 -Djdk.attach.allowAttachSelf=true -Djava.security.policy=file:///etc/wazuh-indexer/opensearch-performance-analyzer/opensearch_security.policy --add-opens=jdk.attach/sun.tools.attach=ALL-UNNAMED -XX:MaxDirectMemorySize=536870912 -Dopensearch.path.home=/usr/share/wazuh-indexer -Dopensearch.path.conf=/etc/wazuh-indexer -Dopensearch.distribution.type=deb -Dopensearch.bundled_jdk=true -cp /usr/share/wazuh-indexer/lib/* org.opensearch.bootstrap.OpenSearch -p /run/wazuh-indexer/wazuh-indexer.pid --quiet
+   1245 kerneloops      /usr/sbin/kerneloops --test
+   1267 kerneloops      /usr/sbin/kerneloops
+   1306 rtkit-daemon    /usr/libexec/rtkit-daemon
+   1577 upowerd         /usr/libexec/upowerd
+   1595 packagekitd     /usr/libexec/packagekitd
+   1789 colord          /usr/libexec/colord
+   1913 python3         /var/ossec/framework/python/bin/python3 /var/ossec/api/scripts/wazuh_apid.py
+   1914 python3         /var/ossec/framework/python/bin/python3 /var/ossec/api/scripts/wazuh_apid.py
+   1915 python3         /var/ossec/framework/python/bin/python3 /var/ossec/api/scripts/wazuh_apid.py
+   1918 python3         /var/ossec/framework/python/bin/python3 /var/ossec/api/scripts/wazuh_apid.py
+   1921 python3         /var/ossec/framework/python/bin/python3 /var/ossec/api/scripts/wazuh_apid.py
+   1978 wazuh-authd     /var/ossec/bin/wazuh-authd
+   1996 wazuh-db        /var/ossec/bin/wazuh-db
+   2037 wazuh-execd     /var/ossec/bin/wazuh-execd
+   2051 wazuh-analysisd /var/ossec/bin/wazuh-analysisd
+   2111 wazuh-syscheckd /var/ossec/bin/wazuh-syscheckd
+   2132 wazuh-remoted   /var/ossec/bin/wazuh-remoted
+   2170 wazuh-logcollec /var/ossec/bin/wazuh-logcollector
+   2190 wazuh-monitord  /var/ossec/bin/wazuh-monitord
+   2215 wazuh-modulesd  /var/ossec/bin/wazuh-modulesd
+   4292 gdm-session-wor gdm-session-worker [pam/gdm-password]
+   4395 systemd         /lib/systemd/systemd --user
+   4396 (sd-pam)        (sd-pam)
+   4404 pipewire        /usr/bin/pipewire
+   4405 pipewire-media- /usr/bin/pipewire-media-session
+   4406 pulseaudio      /usr/bin/pulseaudio --daemonize=no --log-target=journal
+   4415 gnome-keyring-d /usr/bin/gnome-keyring-daemon --daemonize --login
+   4438 dbus-daemon     /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+   4439 xdg-document-po /usr/libexec/xdg-document-portal
+   4442 xdg-permission- /usr/libexec/xdg-permission-store
+   4449 fusermount3     fusermount3 -o rw,nosuid,nodev,fsname=portal,auto_unmount,subtype=portal -- /run/user/1000/doc
+   4475 gdm-x-session   /usr/libexec/gdm-x-session --run-script env GNOME_SHELL_SESSION_MODE=ubuntu /usr/bin/gnome-session --session=ubuntu
+   4477 Xorg            /usr/lib/xorg/Xorg vt2 -displayfd 3 -auth /run/user/1000/gdm/Xauthority -nolisten tcp -background none -noreset -keeptty -novtswitch -verbose 3
+   4545 gnome-session-b /usr/libexec/gnome-session-binary --session=ubuntu
+   4628 at-spi-bus-laun /usr/libexec/at-spi-bus-launcher
+   4634 dbus-daemon     /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 11 --address=unix:path=/run/user/1000/at-spi/bus_0
+   4650 gnome-session-c /usr/libexec/gnome-session-ctl --monitor
+   4661 gvfsd           /usr/libexec/gvfsd
+   4668 gvfsd-fuse      /usr/libexec/gvfsd-fuse /run/user/1000/gvfs -f
+   4670 gnome-session-b /usr/libexec/gnome-session-binary --systemd-service --session=ubuntu
+   4699 gnome-shell     /usr/bin/gnome-shell
+   4736 gnome-shell-cal /usr/libexec/gnome-shell-calendar-server
+   4746 evolution-sourc /usr/libexec/evolution-source-registry
+   4754 goa-daemon      /usr/libexec/goa-daemon
+   4755 dconf-service   /usr/libexec/dconf-service
+   4760 evolution-calen /usr/libexec/evolution-calendar-factory
+   4761 gvfs-udisks2-vo /usr/libexec/gvfs-udisks2-volume-monitor
+   4770 gvfs-goa-volume /usr/libexec/gvfs-goa-volume-monitor
+   4781 goa-identity-se /usr/libexec/goa-identity-service
+   4787 gvfs-gphoto2-vo /usr/libexec/gvfs-gphoto2-volume-monitor
+   4795 evolution-addre /usr/libexec/evolution-addressbook-factory
+   4800 gvfs-afc-volume /usr/libexec/gvfs-afc-volume-monitor
+   4810 gvfs-mtp-volume /usr/libexec/gvfs-mtp-volume-monitor
+   4826 gvfsd-trash     /usr/libexec/gvfsd-trash --spawner :1.21 /org/gtk/gvfs/exec_spaw/0
+   4837 gjs             /usr/bin/gjs /usr/share/gnome-shell/org.gnome.Shell.Notifications
+   4840 at-spi2-registr /usr/libexec/at-spi2-registryd --use-gnome-session
+   4857 sh              sh -c /usr/bin/ibus-daemon --panel disable $([ "$XDG_SESSION_TYPE" = "x11" ] && echo "--xim")
+   4859 gsd-a11y-settin /usr/libexec/gsd-a11y-settings
+   4865 gsd-color       /usr/libexec/gsd-color
+   4869 gsd-datetime    /usr/libexec/gsd-datetime
+   4872 ibus-daemon     /usr/bin/ibus-daemon --panel disable --xim
+   4876 gsd-housekeepin /usr/libexec/gsd-housekeeping
+   4877 gsd-keyboard    /usr/libexec/gsd-keyboard
+   4878 gsd-media-keys  /usr/libexec/gsd-media-keys
+   4890 gsd-power       /usr/libexec/gsd-power
+   4892 gsd-print-notif /usr/libexec/gsd-print-notifications
+   4897 gsd-rfkill      /usr/libexec/gsd-rfkill
+   4901 gsd-screensaver /usr/libexec/gsd-screensaver-proxy
+   4903 ibus-memconf    /usr/libexec/ibus-memconf
+   4908 ibus-extension- /usr/libexec/ibus-extension-gtk3
+   4909 gsd-sharing     /usr/libexec/gsd-sharing
+   4915 gsd-smartcard   /usr/libexec/gsd-smartcard
+   4927 gsd-sound       /usr/libexec/gsd-sound
+   4932 gsd-wacom       /usr/libexec/gsd-wacom
+   4933 gsd-disk-utilit /usr/libexec/gsd-disk-utility-notify
+   4937 gsd-xsettings   /usr/libexec/gsd-xsettings
+   4939 ibus-x11        /usr/libexec/ibus-x11 --kill-daemon
+   4940 vmtoolsd        /usr/bin/vmtoolsd -n vmusr --blockFd 3
+   4946 ibus-portal     /usr/libexec/ibus-portal
+   4952 evolution-alarm /usr/libexec/evolution-data-server/evolution-alarm-notify
+   4967 xdg-desktop-por /usr/libexec/xdg-desktop-portal
+   5016 xdg-desktop-por /usr/libexec/xdg-desktop-portal-gnome
+   5024 gsd-printer     /usr/libexec/gsd-printer
+   5054 snap-store      /snap/snap-store/1216/usr/bin/snap-store --gapplication-service
+   5071 ibus-engine-sim /usr/libexec/ibus-engine-simple
+   5104 gjs             /usr/bin/gjs /usr/share/gnome-shell/org.gnome.ScreenSaver
+   5121 gvfsd-metadata  /usr/libexec/gvfsd-metadata
+   5128 tracker-miner-f /usr/libexec/tracker-miner-fs-3
+   5234 xdg-desktop-por /usr/libexec/xdg-desktop-portal-gtk
+   5280 gjs             gjs /usr/share/gnome-shell/extensions/ding@rastersoft.com/ding.js -E -P /usr/share/gnome-shell/extensions/ding@rastersoft.com -M 0 -D 0:0:1676:966:1:27:0:70:0:0
+   5513 user-session-he /snap/snapd-desktop-integration/391/usr/bin/user-session-helper /snap/snapd-desktop-integration/391/usr/bin/snapd-desktop-integration
+   5615 snapd-desktop-i /snap/snapd-desktop-integration/391/usr/bin/snapd-desktop-integration
+   6659 nautilus        /usr/bin/nautilus --gapplication-service
+   7684 update-notifier update-notifier
+  13911 gvfsd-network   /usr/libexec/gvfsd-network --spawner :1.21 /org/gtk/gvfs/exec_spaw/1
+  13935 gvfsd-recent    /usr/libexec/gvfsd-recent --spawner :1.21 /org/gtk/gvfs/exec_spaw/3
+  13970 gvfsd-dnssd     /usr/libexec/gvfsd-dnssd --spawner :1.21 /org/gtk/gvfs/exec_spaw/4
+ 339260 systemd-udevd   /lib/systemd/systemd-udevd
+ 515245 gnome-terminal- /usr/libexec/gnome-terminal-server
+ 515267 bash            bash
+ 531279 file-roller     file-roller /home/cph/FA1B2de_four_parallel_prompts.zip
+ 531361 bash            bash
+ 536474 bash            bash
+ 561355 bash            bash
+ 573176 auditd          /sbin/auditd
+ 575785 audit_prune_tre [audit_prune_tree]
+ 584190 snap            /snap/snapd/current/usr/bin/snap userd
+ 584460 gvfsd-http      /usr/libexec/gvfsd-http --spawner :1.21 /org/gtk/gvfs/exec_spaw/5
+ 756257 update-manager  /usr/bin/python3 /usr/bin/update-manager --no-update --no-focus-on-map
+ 765803 cc-switch       cc-switch
+ 765815 WebKitNetworkPr /usr/lib/x86_64-linux-gnu/webkit2gtk-4.1/WebKitNetworkProcess 1 19 21
+ 765822 WebKitWebProces /usr/lib/x86_64-linux-gnu/webkit2gtk-4.1/WebKitWebProcess 4 26 29
+ 800984 node            node /home/cph/.nvm/versions/node/v22.23.1/bin/codex --yolo
+ 800991 codex           /home/cph/.nvm/versions/node/v22.23.1/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex --yolo
+ 910519 node            node /home/cph/.nvm/versions/node/v22.23.1/bin/codex
+ 910526 codex           /home/cph/.nvm/versions/node/v22.23.1/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex
+ 932427 node            node /home/cph/.nvm/versions/node/v22.23.1/bin/codex
+ 932434 codex           /home/cph/.nvm/versions/node/v22.23.1/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex
+ 964904 sshd            sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+1306701 cupsd           /usr/sbin/cupsd -l
+1306702 cups-browsed    /usr/sbin/cups-browsed
+1331593 kworker/u261:12 [kworker/u261:12-ttm]
+1334428 kworker/u256:0- [kworker/u256:0-ext4-rsv-conversion]
+1334538 bash            bash
+1350813 snapd           /snap/snapd/current/usr/lib/snapd/snapd
+1353496 kworker/1:2-rcu [kworker/1:2-rcu_par_gp]
+1355266 node            node /home/cph/.nvm/versions/node/v22.23.1/bin/codex
+1355273 codex           /home/cph/.nvm/versions/node/v22.23.1/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex
+1358989 gedit           /usr/bin/gedit --gapplication-service
+1359481 bash            bash
+1361184 kworker/3:2H-kb [kworker/3:2H-kblockd]
+1362129 kworker/u257:1- [kworker/u257:1-events_freezable_power_]
+1362132 kworker/u257:6- [kworker/u257:6-iou_exit]
+1362590 kworker/u260:1- [kworker/u260:1-ttm]
+1363474 kworker/u258:2- [kworker/u258:2-events_unbound]
+1363915 kworker/u258:4- [kworker/u258:4-events_unbound]
+1364603 kworker/u257:0- [kworker/u257:0-events_power_efficient]
+1366756 kworker/3:1-rcu [kworker/3:1-rcu_par_gp]
+1366917 kworker/2:0-rcu [kworker/2:0-rcu_par_gp]
+1367118 kworker/u261:0- [kworker/u261:0-ttm]
+1367120 kworker/u260:0- [kworker/u260:0-ttm]
+1367158 watch           watch -n 10  echo "=== newest reconstruction files ===" find MER_E1_AUTHORITATIVE_FINAL_SUCCESSOR_RECONSTRUCTION \   -type f \   -printf "%TY-%Tm-%Td %TH:%TM:%TS %s %p\n" 2>/dev/null \   | sort | tail -15 
+1367240 kworker/0:0H-kb [kworker/0:0H-kblockd]
+1367307 kworker/1:3-ine [kworker/1:3-inet_frag_wq]
+1367313 kworker/2:3-mpt [kworker/2:3-mpt_poll_0]
+1367339 kworker/1:1H-kb [kworker/1:1H-kblockd]
+1367373 kworker/0:3-ine [kworker/0:3-inet_frag_wq]
+1367428 kworker/2:0H    [kworker/2:0H]
+1367470 kworker/u258:3- [kworker/u258:3-events_unbound]
+1367826 kworker/3:0-eve [kworker/3:0-events]
+1368904 kworker/0:0-rcu [kworker/0:0-rcu_par_gp]
+1369185 kworker/3:2-rcu [kworker/3:2-rcu_par_gp]
+1369216 kworker/u258:0- [kworker/u258:0-flush-8:0]
+1369427 kworker/1:0-rcu [kworker/1:0-rcu_par_gp]
+1369488 kworker/u256:1- [kworker/u256:1-ext4-rsv-conversion]
+1369609 kworker/1:1-eve [kworker/1:1-events]
+1370368 kworker/2:2H-kb [kworker/2:2H-kblockd]
+1370369 kworker/3:0H    [kworker/3:0H]
+1370370 kworker/0:1H-kb [kworker/0:1H-kblockd]
+1370371 kworker/1:0H    [kworker/1:0H]
+1370510 kworker/u257:2- [kworker/u257:2-events_power_efficient]
+1370890 kworker/u258:1- [kworker/u258:1-events_unbound]
+1370984 kworker/0:1-eve [kworker/0:1-events]
+1371048 kworker/2:2-rcu [kworker/2:2-rcu_par_gp]
+1372110 kworker/1:4-rcu [kworker/1:4-rcu_par_gp]
+1373283 kworker/u256:2  [kworker/u256:2]
+1374476 kworker/u258:5  [kworker/u258:5]
+1374598 bash            bash /tmp/claude-1000/-home-cph-experiment-parallel-e0-a/8ffd76de-29d9-4174-bd53-8fcd383546b8/scratchpad/e0a_r6r4_privileged_window.sh
+1374678 kworker/0:2H    [kworker/0:2H]
+1374763 kworker/u257:3  [kworker/u257:3]
+1375785 sudo            sudo -n /bin/ps -eo pid=,comm=,args=
+1375840 sudo            sudo -n /bin/ps -eo pid=,comm=,args=
+1375841 ps              /bin/ps -eo pid=,comm=,args=
+### ss -Hltnp
+LISTEN 0      4096        127.0.0.53%lo:53    0.0.0.0:* users:(("systemd-resolve",pid=704,fd=14))
+LISTEN 0      128             127.0.0.1:631   0.0.0.0:* users:(("cupsd",pid=1306701,fd=7))       
+LISTEN 0      128               0.0.0.0:1515  0.0.0.0:* users:(("wazuh-authd",pid=1978,fd=6))    
+LISTEN 0      128               0.0.0.0:1514  0.0.0.0:* users:(("wazuh-remoted",pid=2132,fd=4))  
+LISTEN 0      2048              0.0.0.0:55000 0.0.0.0:* users:(("python3",pid=1913,fd=46))       
+LISTEN 0      511               0.0.0.0:443   0.0.0.0:* users:(("node",pid=1012,fd=19))          
+LISTEN 0      128               0.0.0.0:22    0.0.0.0:* users:(("sshd",pid=964904,fd=3))         
+LISTEN 0      4096   [::ffff:127.0.0.1]:9200        *:* users:(("java",pid=1189,fd=622))         
+LISTEN 0      128                 [::1]:631      [::]:* users:(("cupsd",pid=1306701,fd=6))       
+LISTEN 0      2048                 [::]:55000    [::]:* users:(("python3",pid=1913,fd=48))       
+LISTEN 0      128                  [::]:22       [::]:* users:(("sshd",pid=964904,fd=4))         
+LISTEN 0      4096   [::ffff:127.0.0.1]:9300        *:* users:(("java",pid=1189,fd=620))         

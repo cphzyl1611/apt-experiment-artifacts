@@ -1,0 +1,68 @@
+{
+  "artifact_worktree_git": {
+    "E0A_BRANCH": "artifact/e0-a",
+    "E0A_LOCAL_HEAD": "edee49c3a1eb84b040e4734ad9e58f8490882dc0",
+    "E0A_REMOTE_HEAD": "edee49c3a1eb84b040e4734ad9e58f8490882dc0",
+    "E0A_REMOTE_TRACKING_REF": "origin/artifact/e0-a",
+    "E0A_WORKTREE_STATUS_PRE": "",
+    "head_equals_remote_head": true,
+    "path": "/home/cph/fa1b2de-artifact-worktrees/e0-a"
+  },
+  "bound_at_utc": "2026-09-07T11:41:22.558267+00:00",
+  "frozen_contract_binding": {
+    "EXACT_PREEXISTING_RUNTIME_SMOKE_CONTRACT_FOUND": "YES",
+    "FRESH_REVIEW_MATERIALIZATION_BINDING": "PASS",
+    "contract_artifact_sha256": {
+      "EXPECTED_RUNTIME_RECEIPT_SCHEMA.json": "d6a0e833eb8c7bcf4c6963c0938d01b6f863dc03cb8972ff668e8df9f5d548ef",
+      "FAIL_CLOSED_CONDITIONS.json": "481a13713d26a7d9a86c470ba6130107e62b121c269b627425bd9f0ebc06e72a",
+      "RUNTIME_SMOKE_PREPARATION_CONTRACT.json": "97d6684fe9f2ef6d1dfc6e96adaa584726f1ee2033939d31ed46d58d4e53b748"
+    },
+    "contract_artifacts": {
+      "EVIDENCE_COLLECTION_REQUIREMENTS.md": "parallel/a/MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_PREPARATION/EVIDENCE_COLLECTION_REQUIREMENTS.md",
+      "EXECUTION_BOUNDARY.md": "parallel/a/MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_PREPARATION/EXECUTION_BOUNDARY.md",
+      "EXPECTED_RUNTIME_RECEIPT_SCHEMA.json": "parallel/a/MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_PREPARATION/EXPECTED_RUNTIME_RECEIPT_SCHEMA.json",
+      "FAIL_CLOSED_CONDITIONS.json": "parallel/a/MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_PREPARATION/FAIL_CLOSED_CONDITIONS.json",
+      "MININET_E1C_R6_PRE_RUN_CONTRACT.json": "/home/cph/experiment-parallel/e0-a/MININET_E1C_R6_PRE_RUN_CONTRACT.json",
+      "RUNTIME_SMOKE_PREPARATION_CONTRACT.json": "parallel/a/MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_PREPARATION/RUNTIME_SMOKE_PREPARATION_CONTRACT.json"
+    },
+    "exact_smoke_command": "sudo /usr/bin/python3 /home/cph/experiment-parallel/e0-a/e1c-r6-run-20260901T060350Z/mininet_e1c_r6_file_access_closure_smoke.py --run-privileged",
+    "exact_smoke_command_source": "MININET_E1C_R6_PRE_RUN_CONTRACT.json exact_human_command / terminal.EXACT_SUDO_COMMAND",
+    "fresh_review_materialization_commit": "edee49c3a1eb84b040e4734ad9e58f8490882dc0",
+    "fresh_review_verdict": "MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_PREPARATION_FRESH_INDEPENDENT_REVIEW = PASS_READY_FOR_PRIVILEGED_RUNTIME_SMOKE",
+    "harness_path": "/home/cph/experiment-parallel/e0-a/e1c-r6-run-20260901T060350Z/mininet_e1c_r6_file_access_closure_smoke.py",
+    "harness_sha256_committed": "8b0db6eab7c2a9d720a9a9d0624ebbe4ba93859f2151fc338f0e0303321e78cc",
+    "harness_sha256_workspace": "8b0db6eab7c2a9d720a9a9d0624ebbe4ba93859f2151fc338f0e0303321e78cc",
+    "harness_static_self_check": "PASS",
+    "harness_workspace_equals_committed_bytes": true,
+    "preparation_commit": "9128e772cb727852b7fb37a3bcdd4778fbd84939"
+  },
+  "hard_boundaries": {
+    "ACCEPTED_BINDING_COUNT_CHANGE": "NO",
+    "BINDING_PUBLICATION": "NO",
+    "CURRENT86_P0_EXECUTED": "NO",
+    "CURRENT86_P1_EXECUTED": "NO",
+    "FIELD_PINS_CREATED": 0,
+    "FORMAL_1796_EXPERIMENT_EXECUTED": "NO",
+    "GIT_COMMIT_CREATED": "NO",
+    "GIT_PUSH_EXECUTED": "NO",
+    "GIT_REF_MUTATION": "NO",
+    "PROVX_INFERENCE": "NO",
+    "PROVX_TRAINING": "NO",
+    "SOURCE_AUTH_EXECUTED": "NO"
+  },
+  "receipt_root": "/home/cph/experiment-parallel/e0-a/MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_20260907T113419Z",
+  "runtime_workspace": {
+    "dot_git_present_but_empty": true,
+    "git_rev_parse_head": {
+      "returncode": 128,
+      "stderr": "fatal: not a git repository (or any of the parent directories): .git"
+    },
+    "is_git_repository": false,
+    "note": "The E0-A runtime workspace carries an empty .git directory and is not a git repository. This exactly reproduces MININET_E1C_R6_PRE_RUN_CONTRACT.json review_authentication.workspace_git_rev_parse = NOT_A_GIT_REPOSITORY. Git identity for E0-A is carried by the separate artifact worktree below.",
+    "path": "/home/cph/experiment-parallel/e0-a"
+  },
+  "schema": "MININET_E1C_R6R4_TASK_AND_BASELINE_BINDING_V1",
+  "task_id": "MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE",
+  "task_mode": "BOUNDED_PRIVILEGED_RUNTIME_SMOKE_AND_EVIDENCE_MATERIALIZATION_ONLY",
+  "track": "e0-a"
+}

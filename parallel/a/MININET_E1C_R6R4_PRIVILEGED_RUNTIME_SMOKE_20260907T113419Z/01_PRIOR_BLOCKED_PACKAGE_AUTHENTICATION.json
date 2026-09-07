@@ -1,0 +1,57 @@
+{
+  "PRIOR_BLOCKED_PACKAGE_AUTHENTICATION": "PASS",
+  "PRIOR_RUNTIME_EXECUTED": "NO",
+  "STALE_RUNTIME_RECEIPT_REUSE_RISK": "NONE",
+  "authenticated_at_utc": "2026-09-07T11:41:22.599345+00:00",
+  "json_parse_results": {
+    "CLEANUP_EVIDENCE.json": "PARSE_OK",
+    "CLOSURE_EVALUATION.json": "PARSE_OK",
+    "PRE_RUNTIME_PREREQUISITES.json": "PARSE_OK",
+    "PROVENANCE.json": "PARSE_OK",
+    "RUNTIME_SMOKE_REPORT.json": "PARSE_OK"
+  },
+  "prior_blocked_package_file_sha256": {
+    "CLEANUP_EVIDENCE.json": "5a872c13169114771e865159876760779acd0247f8e56c654761dd7214ead9a9",
+    "CLOSURE_EVALUATION.json": "919bcc0acd25411c19656f7888573c28cdb641bbe7407c8d1d955a42c3aa1097",
+    "PRE_RUNTIME_PREREQUISITES.json": "9a6215a274975e65eda6814497c1a1ed19877d1ccbd61868601fc72fce7e235a",
+    "PROVENANCE.json": "ad9faa6c37c519e90e4faad063e99c8409780424cf43f736225ee2004efa3c21",
+    "RUNTIME_SMOKE_REPORT.json": "ed3811980cc88052f452df6849895b34e713c4f1b8a65bea162ab05c06484d2c",
+    "RUNTIME_SMOKE_REPORT.md": "fbf4418a7bc8abd0548bc1ace60549c324036bc285f993b27019d5f27887f19a",
+    "SHA256SUMS.txt": "1b6e3db6687c49762393190ad782699b47374707e8ed154cb09b49b357ea0e1b"
+  },
+  "prior_blocked_package_files": [
+    "CLEANUP_EVIDENCE.json",
+    "CLOSURE_EVALUATION.json",
+    "PRE_RUNTIME_PREREQUISITES.json",
+    "PROVENANCE.json",
+    "RUNTIME_SMOKE_REPORT.json",
+    "RUNTIME_SMOKE_REPORT.md",
+    "SHA256SUMS.txt"
+  ],
+  "prior_blocked_package_path": "/home/cph/experiment-parallel/e0-a/MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_20260904T110543Z",
+  "prior_package_preserved_unmodified": true,
+  "prior_terminal_claims": {
+    "blocked_at": "PRE_RUNTIME_PREREQUISITES",
+    "blocker": "REQUIRED_PRIVILEGES_UNAVAILABLE",
+    "exact_smoke_command_executed": "NO",
+    "file_read_or_write_runtime_closure": "NOT_PROVEN",
+    "historical_or_stale_runtime_evidence_used": "NO",
+    "privileged_runtime_smoke_executed": "NO",
+    "runtime_evidence_generated": "NO",
+    "runtime_receipt_generated": "NO",
+    "runtime_receipt_schema_validation": "BLOCKED_NOT_GENERATED",
+    "status": "BLOCKED"
+  },
+  "run_dir_contains_any_runtime_output": [],
+  "run_dir_pre_runtime_entries": [
+    "mininet_e1c_r6_file_access_closure_smoke.py",
+    "test_e1c_r6_harness.py"
+  ],
+  "schema": "MININET_E1C_R6R4_PRIOR_BLOCKED_PACKAGE_AUTHENTICATION_V1",
+  "sha256sums_c_all_ok": true,
+  "sha256sums_c_returncode": 0,
+  "sha256sums_c_stdout": "MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_20260904T110543Z/CLEANUP_EVIDENCE.json: OK\nMININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_20260904T110543Z/CLOSURE_EVALUATION.json: OK\nMININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_20260904T110543Z/PRE_RUNTIME_PREREQUISITES.json: OK\nMININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_20260904T110543Z/PROVENANCE.json: OK\nMININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_20260904T110543Z/RUNTIME_SMOKE_REPORT.json: OK\nMININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_20260904T110543Z/RUNTIME_SMOKE_REPORT.md: OK\n",
+  "stale_materialization_manifest_in_prior_package": false,
+  "stale_reuse_basis": "The frozen harness writes every runtime artifact into e1c-r6-run-20260901T060350Z/. That directory contains only the two frozen .py sources, so no prior R6 runtime receipt, raw/normalized JSONL, PCAP, or cleanup proof exists that could be reused. The prior blocked package contains no MATERIALIZATION_MANIFEST.json and claims no runtime execution.",
+  "task_id": "MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE"
+}

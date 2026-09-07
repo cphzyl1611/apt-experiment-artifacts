@@ -1,0 +1,49 @@
+{
+  "POST_RUNTIME_RESIDUAL_STATE": "CLEAN",
+  "allowed_evidence_artifacts_not_residual": [
+    "MININET_E1C_R6_AUDITD_SMOKE_REPORT.md",
+    "MININET_E1C_R6_AUDIT_PRE_STATE.json",
+    "MININET_E1C_R6_CHILD_PROCESS_EVIDENCE.json",
+    "MININET_E1C_R6_CHILD_STATE_TRANSITIONS.jsonl",
+    "MININET_E1C_R6_COVERAGE_AND_LOSS_AUDIT.json",
+    "MININET_E1C_R6_EARLY_CHILD_FAILURES.jsonl",
+    "MININET_E1C_R6_NORMALIZED_EVENTS.jsonl",
+    "MININET_E1C_R6_PID_NETNS_JOIN.jsonl",
+    "MININET_E1C_R6_POST_CLEANUP_AUDIT.json",
+    "MININET_E1C_R6_PRIVILEGED_RUN_RESULT.json",
+    "MININET_E1C_R6_RAW_AUDIT_EVIDENCE.jsonl",
+    "MININET_E1C_R6_RESIDUAL_REMEDIATION.json",
+    "MININET_E1C_R6_RULE_REMEDIATION_JOURNAL.jsonl",
+    "MININET_E1C_R6_SMOKE.pcap",
+    "MININET_E1C_R6_STRACE_ORACLE_COMPARISON.json",
+    "MININET_E1C_R6_TRANSIENT_RULE_CONTRACT.json",
+    "child-h1-states.jsonl",
+    "child-h2-states.jsonl"
+  ],
+  "audit_rules_after": "No rules",
+  "audit_rules_after_equals_pre_run_baseline": true,
+  "compared_against": "02_PRE_RUNTIME_ENVIRONMENT_SNAPSHOT.json",
+  "harness_reported": {
+    "RESERVED_TEST_INTERFACES_REMAINING": 0,
+    "RESERVED_TEST_OVS_OBJECTS_REMAINING": 0,
+    "RUN_OWNED_CHILDREN_REMAINING": 0,
+    "TCPDUMP_PROCESS_REMAINING": 0
+  },
+  "netns_after": [],
+  "ovs_bridges_after": [],
+  "post_runtime_privileged_observation": "execution/post_runtime_privileged_observation.log",
+  "privileged_test_artifact_outside_allowed_paths": "NONE",
+  "reserved_interfaces_after": {
+    "h1-eth0": false,
+    "h2-eth0": false,
+    "s1": false,
+    "s1-eth1": false,
+    "s1-eth2": false
+  },
+  "residual_objects": [],
+  "run_id": "e1c-r6-run-20260901T060350Z",
+  "schema": "MININET_E1C_R6R4_POST_RUNTIME_RESIDUAL_STATE_V1",
+  "task_id": "MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE",
+  "temp_runtime_state_remaining": [],
+  "veth_pairs_remaining": 0
+}

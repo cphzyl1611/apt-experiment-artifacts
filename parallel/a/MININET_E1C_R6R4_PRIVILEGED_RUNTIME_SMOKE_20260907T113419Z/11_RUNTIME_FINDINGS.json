@@ -1,0 +1,90 @@
+{
+  "BLOCKING_FINDING_COUNT": 2,
+  "deficiency_classification": {
+    "cleanup_residual_deficiency": "NO -- 62/62 rules removed rc=0, baseline hash identical before and after, zero residual objects",
+    "evidence_receipt_deficiency": "YES -- F2 (raw_audit_record.records absent)",
+    "file_read_write_closure_deficiency": "YES -- F1 causes normalized FILE_READ_OR_WRITE = 0; raw bytes independently authenticate 6 events",
+    "harness_reporting_defect": "YES -- F1 (blocking), F3 (latent)",
+    "mininet_specific_closure_deficiency": "NO -- topology built and torn down cleanly, 4/4 PID/netns joins JOINED, pcap captured and hash-bound",
+    "runtime_behavior_failure": "NO -- runtime_error null, all 8 required classes exercised, both hosts completed the TCP exchange, namespace assertions pass, post-exec identity pass, 0 early child failures"
+  },
+  "findings": [
+    {
+      "category": "HARNESS_REPORTING_DEFECT",
+      "causal_chain": [
+        "parse_raw_audit_event_bundles loses the item=1 PATH record",
+        "_strict_raw_file_access_event exact_path check fails -> returns None",
+        "strict_permission_events has no entry for that serial",
+        "normalize_audit_record sees permission_candidate=True with strict_permission_event=None and returns None, dropping the record entirely",
+        "normalized FILE_READ_OR_WRITE count = 0",
+        "coverage missing_required_classes = ['FILE_READ_OR_WRITE']",
+        "classify() returns PARTIAL_MISSING_REQUIRED_EVENT_CLASS -> exit 3"
+      ],
+      "component": "mininet_e1c_r6_file_access_closure_smoke.py :: parse_raw_audit_event_bundles (lines 227-268)",
+      "defect": "The function decodes the ausearch bytes to text and then zips two independently computed line lists: raw_lines = raw.splitlines(keepends=True) over BYTES, and text.splitlines(keepends=True) over STR. bytes.splitlines() breaks only on \\r, \\n and \\r\\n; str.splitlines() additionally breaks on \\x0b \\x0c \\x1c \\x1d \\x1e \\x85 \\u2028 \\u2029. auditd's ausearch --raw output embeds \\x1d (GROUP SEPARATOR) between each record body and its interpreted suffix, so str yields roughly twice as many lines as bytes, zip() truncates to the shorter list, and every pair after the first \\x1d is misaligned.",
+      "harness_sha256_unmodified": "8b0db6eab7c2a9d720a9a9d0624ebbe4ba93859f2151fc338f0e0303321e78cc",
+      "id": "F1_FROZEN_HARNESS_BUNDLE_PARSER_SPLITLINES_MISALIGNMENT",
+      "not_a": "runtime behavior failure. The kernel emitted the records, the rules were installed on the exact paths and PIDs, and the children performed the read and write.",
+      "proof_from_exact_bytes": {
+        "bundle": "raw serial 3879 (h1 openat on the watched path)",
+        "bytes_splitlines_lines": 5,
+        "captured_PATH_record": "item=0 nametype=PARENT name=.../temp-events/  (the parent directory)",
+        "control_same_function_with_0x1d_stripped": {
+          "_strict_raw_file_access_event": "EVENT (FILE_READ_OR_WRITE, AUDIT_FILESYSTEM_PERMISSION_FILTER, openat, success=yes, key matches, pid 1375151)",
+          "records_captured": [
+            "SYSCALL",
+            "CWD",
+            "PATH",
+            "PATH",
+            "PROCTITLE"
+          ]
+        },
+        "dropped_PATH_record": "item=1 nametype=NORMAL name=.../temp-events/h1.txt  (the watched file)",
+        "group_separator_occurrences": 5,
+        "records_actually_present": [
+          "SYSCALL",
+          "CWD",
+          "PATH",
+          "PATH",
+          "PROCTITLE"
+        ],
+        "records_captured_by_frozen_parser": [
+          "SYSCALL",
+          "CWD",
+          "PATH"
+        ],
+        "str_splitlines_lines": 10
+      },
+      "remediation_owner": "a separate, separately reviewed harness remediation cycle; the harness is frozen and byte-authenticated at edee49c3 and was NOT modified here",
+      "severity": "BLOCKING"
+    },
+    {
+      "category": "EVIDENCE_RECEIPT_DEFICIENCY",
+      "component": "parse_audit_groups() output written to MININET_E1C_R6_RAW_AUDIT_EVIDENCE.jsonl",
+      "defect": "The frozen EXPECTED_RUNTIME_RECEIPT_SCHEMA.raw_audit_record.required_fields lists 'records'. The emitted rows carry 'record_types' (a list of type names) and 'source_line_numbers' instead. parse_raw_audit_event_bundles produces a 'records' list, but that function's output is not what is serialised.",
+      "fail_closed_condition": "RECEIPT_MALFORMED_OR_INCOMPLETE",
+      "id": "F2_RAW_AUDIT_RECORD_MISSING_records_FIELD",
+      "note": "Independent of F1; would block the receipt even if FILE_READ_OR_WRITE were populated.",
+      "severity": "BLOCKING"
+    },
+    {
+      "category": "HARNESS_REPORTING_DEFECT",
+      "component": "normalize_audit_record() requested_access derivation",
+      "defect": "Open flags come from the audit a2 field, which auditd renders in hex without a 0x prefix. int(flags, 0) parses it as DECIMAL. For this run both radices yield the same access class for all six events, so nothing is misreported here, but the derivation is radix-unsound in general.",
+      "id": "F3_OPEN_FLAG_RADIX_LATENT",
+      "impact_on_this_run": "NONE (verified: decimal and hex parses agree on all 6 events)",
+      "severity": "NON_BLOCKING_LATENT"
+    },
+    {
+      "category": "EVIDENCE_HANDLING",
+      "defect": "An earlier preflight run's matrix was overwritten in place before preservation; see 03A_PREFLIGHT_DEFECT_REPRODUCTION_AND_REMEDIATION.json.",
+      "id": "F4_PREFLIGHT_MATRIX_OVERWRITTEN",
+      "remediation": "The remediated preflight writes an immutable per-run copy; all surviving failed evidence is preserved under failed_preflight_evidence/.",
+      "severity": "EVIDENCE_LOSS_REMEDIATED"
+    }
+  ],
+  "generated_at_utc": "2026-09-07T12:28:14.067936+00:00",
+  "run_id": "e1c-r6-run-20260901T060350Z",
+  "schema": "MININET_E1C_R6R4_RUNTIME_FINDINGS_V1",
+  "task_id": "MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE"
+}

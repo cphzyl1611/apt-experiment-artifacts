@@ -1,0 +1,205 @@
+{
+  "FILE_READ_OR_WRITE_RUNTIME_CLOSURE": "NOT_PROVEN",
+  "FILE_READ_RUNTIME_EVIDENCE": "NOT_PROVEN",
+  "FILE_READ_RUNTIME_EVIDENCE_RAW_BYTES": "PRESENT_2_EVENTS_SERIALS_3871_3881",
+  "FILE_WRITE_RUNTIME_EVIDENCE": "NOT_PROVEN",
+  "FILE_WRITE_RUNTIME_EVIDENCE_RAW_BYTES": "PRESENT_4_EVENTS_SERIALS_3869_3870_3879_3880",
+  "blocking_defect": "FROZEN_HARNESS_parse_raw_audit_event_bundles_SPLITLINES_MISALIGNMENT",
+  "closure_reason": "The frozen contract locates closure in the normalized evidence and the coverage count, both of which are zero. Promoting the raw-byte proof into the receipt would require regenerating normalized evidence outside the frozen collector, which the contract forbids. The PARTIAL result is preserved.",
+  "evaluated_at_utc": "2026-09-07T12:27:36.143003+00:00",
+  "evaluation_rule": "Evaluated strictly against the frozen EXPECTED_RUNTIME_RECEIPT_SCHEMA.file_read_or_write and FAIL_CLOSED_CONDITIONS.json. Closure is NOT inferred from static inspection, a synthetic fixture, an exit code, file existence, or a receipt field claiming PASS.",
+  "independent_raw_byte_verification": {
+    "all_exact_audit_key": true,
+    "all_join_consistent": true,
+    "all_raw_bytes_authenticated": true,
+    "all_same_serial_have_SYSCALL_and_PATH": true,
+    "all_success_yes": true,
+    "all_supported_syscall": true,
+    "authenticated_event_count": 6,
+    "events": [
+      {
+        "audit_key": "e1c600493b1e40a2",
+        "evidence_basis": "AUDIT_FILESYSTEM_PERMISSION_FILTER",
+        "join_consistent": true,
+        "join_logical_host_id": "h2",
+        "join_netns_inode": 4026532828,
+        "join_run_id": "e1c-r6-run-20260901T060350Z",
+        "join_start_ticks": 47775528,
+        "join_status": "JOINED",
+        "logical_host_id": "h2",
+        "pid": 1375152,
+        "raw_bytes_b64_decodes_and_matches_sha256": true,
+        "raw_bytes_sha256": "d9674dff5923db4f52dedf255a0ffde0be4352d8dba66bad37399182df5b1cd1",
+        "raw_serial": 3869,
+        "requested_access": "w",
+        "same_serial_record_types": [
+          "SYSCALL",
+          "CWD",
+          "PATH",
+          "PATH",
+          "PROCTITLE"
+        ],
+        "success": "yes",
+        "underlying_syscall": "openat",
+        "watched_path": "/home/cph/experiment-parallel/e0-a/e1c-r6-run-20260901T060350Z/temp-events/h2.txt"
+      },
+      {
+        "audit_key": "e1c600493b1e40a2",
+        "evidence_basis": "AUDIT_FILESYSTEM_PERMISSION_FILTER",
+        "join_consistent": true,
+        "join_logical_host_id": "h2",
+        "join_netns_inode": 4026532828,
+        "join_run_id": "e1c-r6-run-20260901T060350Z",
+        "join_start_ticks": 47775528,
+        "join_status": "JOINED",
+        "logical_host_id": "h2",
+        "pid": 1375152,
+        "raw_bytes_b64_decodes_and_matches_sha256": true,
+        "raw_bytes_sha256": "67a6e6e49607fc63720581e4e4ac406deb4c1f80e1daf850ce4664b56c1e0ddc",
+        "raw_serial": 3870,
+        "requested_access": "w",
+        "same_serial_record_types": [
+          "SYSCALL",
+          "CWD",
+          "PATH",
+          "PATH",
+          "PROCTITLE"
+        ],
+        "success": "yes",
+        "underlying_syscall": "openat",
+        "watched_path": "/home/cph/experiment-parallel/e0-a/e1c-r6-run-20260901T060350Z/temp-events/h2.txt"
+      },
+      {
+        "audit_key": "e1c600493b1e40a2",
+        "evidence_basis": "AUDIT_FILESYSTEM_PERMISSION_FILTER",
+        "join_consistent": true,
+        "join_logical_host_id": "h2",
+        "join_netns_inode": 4026532828,
+        "join_run_id": "e1c-r6-run-20260901T060350Z",
+        "join_start_ticks": 47775528,
+        "join_status": "JOINED",
+        "logical_host_id": "h2",
+        "pid": 1375152,
+        "raw_bytes_b64_decodes_and_matches_sha256": true,
+        "raw_bytes_sha256": "1927046d79a53c34c6cfb940ec8fa513f0eca9c0540579706278f95b2e689040",
+        "raw_serial": 3871,
+        "requested_access": "r",
+        "same_serial_record_types": [
+          "SYSCALL",
+          "CWD",
+          "PATH",
+          "PROCTITLE"
+        ],
+        "success": "yes",
+        "underlying_syscall": "openat",
+        "watched_path": "/home/cph/experiment-parallel/e0-a/e1c-r6-run-20260901T060350Z/temp-events/h2.txt"
+      },
+      {
+        "audit_key": "e1c600493b1e40a2",
+        "evidence_basis": "AUDIT_FILESYSTEM_PERMISSION_FILTER",
+        "join_consistent": true,
+        "join_logical_host_id": "h1",
+        "join_netns_inode": 4026532667,
+        "join_run_id": "e1c-r6-run-20260901T060350Z",
+        "join_start_ticks": 47775528,
+        "join_status": "JOINED",
+        "logical_host_id": "h1",
+        "pid": 1375151,
+        "raw_bytes_b64_decodes_and_matches_sha256": true,
+        "raw_bytes_sha256": "fc8ff995425784fe76a26a6bea7bacb2f83101b8aebcd59a85af3d919472563a",
+        "raw_serial": 3879,
+        "requested_access": "w",
+        "same_serial_record_types": [
+          "SYSCALL",
+          "CWD",
+          "PATH",
+          "PATH",
+          "PROCTITLE"
+        ],
+        "success": "yes",
+        "underlying_syscall": "openat",
+        "watched_path": "/home/cph/experiment-parallel/e0-a/e1c-r6-run-20260901T060350Z/temp-events/h1.txt"
+      },
+      {
+        "audit_key": "e1c600493b1e40a2",
+        "evidence_basis": "AUDIT_FILESYSTEM_PERMISSION_FILTER",
+        "join_consistent": true,
+        "join_logical_host_id": "h1",
+        "join_netns_inode": 4026532667,
+        "join_run_id": "e1c-r6-run-20260901T060350Z",
+        "join_start_ticks": 47775528,
+        "join_status": "JOINED",
+        "logical_host_id": "h1",
+        "pid": 1375151,
+        "raw_bytes_b64_decodes_and_matches_sha256": true,
+        "raw_bytes_sha256": "1d95f000bc4b711b5505534c2545acc386757c05216575b3cf28f69fc1370c18",
+        "raw_serial": 3880,
+        "requested_access": "w",
+        "same_serial_record_types": [
+          "SYSCALL",
+          "CWD",
+          "PATH",
+          "PATH",
+          "PROCTITLE"
+        ],
+        "success": "yes",
+        "underlying_syscall": "openat",
+        "watched_path": "/home/cph/experiment-parallel/e0-a/e1c-r6-run-20260901T060350Z/temp-events/h1.txt"
+      },
+      {
+        "audit_key": "e1c600493b1e40a2",
+        "evidence_basis": "AUDIT_FILESYSTEM_PERMISSION_FILTER",
+        "join_consistent": true,
+        "join_logical_host_id": "h1",
+        "join_netns_inode": 4026532667,
+        "join_run_id": "e1c-r6-run-20260901T060350Z",
+        "join_start_ticks": 47775528,
+        "join_status": "JOINED",
+        "logical_host_id": "h1",
+        "pid": 1375151,
+        "raw_bytes_b64_decodes_and_matches_sha256": true,
+        "raw_bytes_sha256": "7c7738c0da2073b3b5bbb39515b5a012062f1d4fbce414134ab7935f13ed358f",
+        "raw_serial": 3881,
+        "requested_access": "r",
+        "same_serial_record_types": [
+          "SYSCALL",
+          "CWD",
+          "PATH",
+          "PROCTITLE"
+        ],
+        "success": "yes",
+        "underlying_syscall": "openat",
+        "watched_path": "/home/cph/experiment-parallel/e0-a/e1c-r6-run-20260901T060350Z/temp-events/h1.txt"
+      }
+    ],
+    "hosts_covered": [
+      "h1",
+      "h2"
+    ],
+    "method": "Re-read the run's own raw audit bytes with a parser that splits only on real byte line breaks and strips the 0x1d interpreted-suffix separator. No bytes were modified, added, or synthesized.",
+    "read_evidence_serials": [
+      3871,
+      3881
+    ],
+    "verdict": "SUFFICIENT_AUTHENTIC_RAW_EVIDENCE_PRESENT",
+    "write_evidence_serials": [
+      3869,
+      3870,
+      3879,
+      3880
+    ]
+  },
+  "receipt_bearing_artifacts": {
+    "coverage_missing_required_classes": [
+      "FILE_READ_OR_WRITE"
+    ],
+    "coverage_normalized_class_count": 0,
+    "fail_closed_condition": "FILE_RW_ABSENT_OR_ZERO",
+    "minimum_required": 1,
+    "normalized_FILE_READ_OR_WRITE_count": 0,
+    "verdict": "NOT_PROVEN"
+  },
+  "run_id": "e1c-r6-run-20260901T060350Z",
+  "schema": "MININET_E1C_R6R4_FILE_READ_OR_WRITE_CLOSURE_EVALUATION_V1",
+  "task_id": "MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE"
+}

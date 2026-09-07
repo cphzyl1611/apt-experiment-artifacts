@@ -1,0 +1,176 @@
+{
+  "boundaries": {
+    "BINDING_PUBLICATION": "NO",
+    "CURRENT86_P0_EXECUTED": "NO",
+    "CURRENT86_P1_EXECUTED": "NO",
+    "FORMAL_1796_EXPERIMENT_EXECUTED": "NO",
+    "FROZEN_HARNESS_MODIFIED": "NO",
+    "GIT_COMMIT_CREATED": "NO",
+    "GIT_PUSH_EXECUTED": "NO",
+    "GIT_REF_MUTATION": "NO",
+    "PRIVILEGED_RUNTIME_SMOKE_EXECUTED": "NO",
+    "PROVX_INFERENCE": "NO",
+    "PROVX_TRAINING": "NO",
+    "SMOKE_REDESIGNED": "NO",
+    "SOURCE_AUTH_EXECUTED": "NO"
+  },
+  "created_at_utc": "2026-09-07T12:09:15.917702+00:00",
+  "defects": [
+    {
+      "as_reported": true,
+      "defective_behaviour": "Tokenised on '=' only; auditd 3.0.7 emits `key value` lines, so the parser produced {} and AUDIT_LOSS_AND_BACKLOG_ZERO_PRE_RUN=BLOCKED despite lost 0 / backlog 0 being present.",
+      "fix": "parse_audit_status_text() accepts `key value` and `key=value`, requires integer values, and drops any key whose occurrences disagree so the gate fails closed.",
+      "frozen_contract_basis": "Matches the frozen harness parse_audit_status(), which already used the space-delimited form rf'\\\\b{key}\\\\s+(\\\\d+)'. The defective preflight was out of parity with the harness it gates; the fix restores parity rather than inventing a rule.",
+      "id": "D1_AUDIT_STATUS_PARSER_FALSE_NEGATIVE",
+      "observed_command": [
+        "sudo",
+        "-n",
+        "/usr/sbin/auditctl",
+        "-s"
+      ],
+      "observed_returncode": 0,
+      "observed_stdout": "enabled 1\nfailure 1\npid 573176\nrate_limit 0\nbacklog_limit 8192\nlost 0\nbacklog 0\nbacklog_wait_time 60000\nbacklog_wait_time_actual 0\nloginuid_immutable 0 unlocked\n",
+      "observed_stdout_sha256": "e188c63540af613918fcbf112fc9f9d3b5cf477efd7d0162d76e936af2790fcd",
+      "parity_test": "TestFrozenHarnessParity.test_matches_frozen_parse_audit_status",
+      "reproduced_from": "failed_preflight_evidence/03_...RUN2_20260907T115524Z.FAILED.json commands.audit_status",
+      "reproduction": {
+        "defective_gate": "BLOCKED",
+        "defective_parsed": {},
+        "remediated_gate": "PASS",
+        "remediated_parsed_backlog": 0,
+        "remediated_parsed_lost": 0
+      },
+      "status": "CONFIRMED_AND_FIXED"
+    },
+    {
+      "actual_evidence": {
+        "command": [
+          "sudo",
+          "-n",
+          "/usr/sbin/auditctl",
+          "-l"
+        ],
+        "returncode": null,
+        "stderr": "PermissionError: [Errno 1] Operation not permitted",
+        "stdout": "",
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "as_reported": false,
+      "conclusion": "No observation of auditctl -l output exists for this host, so the premise that the textual empty-rule dump is unstable is unsupported by this evidence.",
+      "contract_check": {
+        "action_taken": "Per the standing instruction to stop rather than weaken a contract-mandated literal, the empty-rule predicate is UNCHANGED. Relaxing it would have produced a preflight PASS in front of a smoke that fails closed on the same constant.",
+        "answer": "LITERAL_HASH_EXPLICITLY_REQUIRED",
+        "citations": [
+          "mininet_e1c_r6_file_access_closure_smoke.py:41 HISTORICAL_EMPTY_HASH = '61501e69a61dbbc1a41605ea15c34807e6b1d3992bee195dde36a7ebdd95dd87'",
+          "mininet_e1c_r6_file_access_closure_smoke.py:463 _audit_baseline_clean(): returns False unless sha256(auditctl -l stdout) == HISTORICAL_EMPTY_HASH",
+          "mininet_e1c_r6_file_access_closure_smoke.py:1729 verify_clean_root_baseline(): status BLOCKED_NONEMPTY_OR_UNEXPECTED_BASELINE unless baseline_rule_dump_sha256 == HISTORICAL_EMPTY_HASH",
+          "static_self_check() clean_root_baseline_fail_closed requires the HISTORICAL_EMPTY_HASH token to be present in the harness source",
+          "MININET_E1C_R6_PRE_RUN_CONTRACT.json micro_probe_gate[0]: 'verify exact clean no-rules baseline'"
+        ],
+        "question": "Does the frozen contract require the literal hash or the semantic invariant?",
+        "verified_preimage": "sha256(b'No rules\\n') == 61501e69a61dbbc1a41605ea15c34807e6b1d3992bee195dde36a7ebdd95dd87"
+      },
+      "finding": "auditctl -l never executed. returncode is null and stderr is the Python wrapper's exception text 'PermissionError: [Errno 1] Operation not permitted', which is the except branch of run(), not auditctl output. stdout '' is that branch's hardcoded default and e3b0c442...b855 is sha256(b''), the hash of nothing -- not an alternative rendering of an empty rule set. observed_rule_lines=[] is likewise an artifact of the non-execution.",
+      "fix": "None to the predicate. The raw dump hash and rule lines are retained as evidence, and the gate now reports why it blocked (AUDITCTL_LIST_NOT_EXECUTED vs PREEXISTING_AUDIT_RULES_PRESENT vs RULE_DUMP_HASH_NOT_FROZEN_EMPTY_BASELINE) instead of collapsing every cause into one hash mismatch.",
+      "id": "D2_EMPTY_AUDIT_RULE_BASELINE_REPRESENTATION",
+      "open_question": "Whether this host's auditctl -l actually emits 'No rules\\n' is still unobserved and is what the remediated re-run must establish.",
+      "reported_claim": "observed_rule_dump_sha256 e3b0c442... shows this host renders an empty rule set as empty stdout, so the literal 'No rules\\n' hash is not a stable predicate.",
+      "status": "NOT_CONFIRMED_PREDICATE_DELIBERATELY_UNCHANGED"
+    },
+    {
+      "as_reported": false,
+      "defective_behaviour": "run() returns returncode=None when the subprocess raises. Predicates written as `returncode != 0` (interfaces_clean, clean_ovs) evaluate None != 0 as True, so a command that never executed was scored as positive evidence of a clean host.",
+      "discovered_during": "root-cause analysis of D2",
+      "fix": "Every command record now carries executed:bool. command_executed(), device_absent(), ovs_bridge_absent(), audit_status_gate() and empty_rule_baseline_gate() all require proof of execution and fail closed without it.",
+      "historical_reach": "The same pattern is present in the prior blocked package's PRE_RUNTIME_PREREQUISITES.json, where ovs_bridge and tcpdump_processes both recorded PermissionError with returncode null while reserved_interfaces_clean and ovs_bridge_s1_absent were reported true.",
+      "id": "D3_NON_EXECUTED_COMMAND_SCORED_AS_CLEAN",
+      "reproduction": {
+        "defective_device_absent": true,
+        "non_executed_probe_returncode": null,
+        "remediated_device_absent": false
+      },
+      "severity": "FAIL_OPEN",
+      "status": "CONFIRMED_AND_FIXED"
+    }
+  ],
+  "evidence_preservation": {
+    "integrity_finding": {
+      "detail": "Two preflight runs occurred. The wrapper run (execution/preflight_timing.json) ran 11:45:33Z-11:47:09Z rc=2 and its stdout is preserved as preflight_stdout.RUN1_20260907T114709Z.log. A second run at 11:54:48Z-11:55:24Z overwrote 03_PRE_RUNTIME_PREREQUISITE_MATRIX.json in place, so RUN1's matrix bytes no longer exist. The two surviving records disagree: RUN1 stdout reports REQUIRED_PRIVILEGES_AVAILABLE=BLOCKED / CLEAN_PRE_RUNTIME_STATE=PASS, RUN2 JSON reports REQUIRED_PRIVILEGES_AVAILABLE=PASS / CLEAN_PRE_RUNTIME_STATE=BLOCKED.",
+      "id": "PREFLIGHT_MATRIX_OVERWRITTEN_BEFORE_PRESERVATION",
+      "remediation": "The remediated preflight now writes an immutable per-run copy under failed_preflight_evidence/03_PRE_RUNTIME_PREREQUISITE_MATRIX.RUN_<utc>.json in addition to the canonical 03_ file.",
+      "severity": "EVIDENCE_LOSS",
+      "unrecoverable": true
+    },
+    "policy": "The failed preflight evidence is preserved verbatim; nothing was overwritten during remediation.",
+    "preserved": {
+      "03_PRE_RUNTIME_PREREQUISITE_MATRIX.RUN2_20260907T115524Z.FAILED.json": {
+        "bytes": 33502,
+        "sha256": "4e0a7f8205c59151ed8a322f6453687c03e8c9f399419c321505bbc77f142720"
+      },
+      "e0a_r6r4_preflight.DEFECTIVE.py": {
+        "bytes": 9054,
+        "sha256": "b33f4f2461b0bcb45ecae766165c36b460c5a84f132e1d521ad41b9e11dcfc67"
+      },
+      "preflight_stderr.RUN1_20260907T114709Z.log": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "preflight_stdout.RUN1_20260907T114709Z.log": {
+        "bytes": 333,
+        "sha256": "946b0d8add2a770768577211914bcdab5988172bdf38c627973c9e3586157865"
+      },
+      "preflight_timing.RUN1_20260907T114709Z.json": {
+        "bytes": 99,
+        "sha256": "a451cd2fc92d6dd5d4a5ee15e3b33f814fe204d827a28e3bd7293978721d73fa"
+      }
+    }
+  },
+  "focused_tests": {
+    "module_sha256": "f21b48b46f618cfcca9dc47000e058664a0ab9fad109a560eaee7cc70e1d2c30",
+    "module_under_test": "preflight_gates.py",
+    "path": "test_preflight_gates.py",
+    "required_cases_covered": {
+      "auditctl failure / nonzero rc": "test_auditctl_nonzero_returncode_blocks, test_not_executed_blocks_and_never_reads_as_clean",
+      "empty rules as 'No rules\\n'": "test_no_rules_sentinel_is_the_frozen_clean_baseline",
+      "empty rules as empty stdout": "test_empty_stdout_is_not_the_frozen_clean_baseline (BLOCKED, frozen-contract conformant)",
+      "lost 0 / backlog 0": "test_space_delimited_lost_and_backlog_zero",
+      "lost=0 / backlog=0": "test_key_equals_value_form_supported",
+      "malformed/missing audit status": "test_malformed_status_blocks, test_missing_keys_block",
+      "nonzero backlog": "test_nonzero_backlog_blocks",
+      "nonzero lost": "test_nonzero_lost_blocks",
+      "one or more real audit rules": "test_one_real_rule_blocks, test_several_real_rules_block"
+    },
+    "result": "PASS",
+    "returncode": 0,
+    "sha256": "1a58a8e374b40ae0c4bf5a8b12bfcc2f450f0d897507050a6272a0862dc6782b",
+    "summary": "Ran 22 tests in 0.062s"
+  },
+  "frozen_artifacts_modified": "NONE",
+  "next_action": "HUMAN_SUDO_WINDOW_RUN_REMEDIATED_PREFLIGHT_ONLY",
+  "remediated_preflight": {
+    "defective_sha256": "b33f4f2461b0bcb45ecae766165c36b460c5a84f132e1d521ad41b9e11dcfc67",
+    "path": "e0a_r6r4_preflight.py",
+    "sha256": "4886f70ed65043d10ac5415c8deea3f2fca4336e1d86f55f97dd0d6f6a09c16e"
+  },
+  "remediation_id": "MININET_E1C_R6R4_PREFLIGHT_DEFECT_REMEDIATION_20260907",
+  "schema": "MININET_E1C_R6R4_PREFLIGHT_DEFECT_REPRODUCTION_AND_REMEDIATION_V1",
+  "scope": "PREFLIGHT_ONLY -- the frozen R6 harness, smoke contract, receipt schema and package workflow are untouched.",
+  "task_id": "MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE",
+  "unchanged_constants": {
+    "EXPECTED_AUDITD_VERSION": "auditd=1:3.0.7-1build1",
+    "EXPECTED_EMPTY_RULE_HASH": "61501e69a61dbbc1a41605ea15c34807e6b1d3992bee195dde36a7ebdd95dd87",
+    "EXPECTED_HARNESS_SHA256": "8b0db6eab7c2a9d720a9a9d0624ebbe4ba93859f2151fc338f0e0303321e78cc"
+  },
+  "unchanged_predicates": [
+    "MININET_AVAILABLE",
+    "AUDIT_TOOLING_AVAILABLE",
+    "RUNTIME_BINARIES_AVAILABLE",
+    "REQUIRED_PRIVILEGES_AVAILABLE",
+    "AUDITD_VERSION_EXACT",
+    "HARNESS_LINEAGE_AUTHENTICATED",
+    "TCP_PORT_18080_FREE",
+    "clean_tcpdump",
+    "clean_run_dir",
+    "port_free"
+  ]
+}

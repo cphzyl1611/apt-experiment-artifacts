@@ -1,0 +1,101 @@
+{
+  "PRIVILEGED_RUNTIME_SMOKE_EXECUTED": "YES",
+  "commands": [
+    {
+      "cleanup_obligation": "sudo timestamp expires on its own; none created",
+      "command": "sudo -v",
+      "end_utc": "2026-09-07T12:16:16.520556Z",
+      "exit_status": 0,
+      "privileged": true,
+      "purpose": "cache an interactive sudo credential on the operator tty",
+      "seq": 1,
+      "start_utc": "2026-09-07T12:16:09.095473Z",
+      "stdout_stderr_evidence": "execution/privilege_acquisition.20260907T121609Z.json"
+    },
+    {
+      "cleanup_obligation": "none",
+      "command": "sudo -n true",
+      "end_utc": "2026-09-07T12:16:16.541374Z",
+      "exit_status": 0,
+      "privileged": true,
+      "purpose": "non-interactive verification of the cached credential",
+      "seq": 2,
+      "start_utc": "2026-09-07T12:16:16.521989Z",
+      "stdout_stderr_evidence": "execution/privilege_acquisition.20260907T121609Z.json"
+    },
+    {
+      "cleanup_obligation": "none",
+      "command": "sudo -n /usr/bin/id -u",
+      "exit_status": 0,
+      "observed_stdout": "0",
+      "privileged": true,
+      "purpose": "prove effective uid 0",
+      "seq": 3,
+      "stdout_stderr_evidence": "execution/privilege_acquisition.20260907T121609Z.json"
+    },
+    {
+      "cleanup_obligation": "read-only; none",
+      "command": "sudo -n /usr/sbin/auditctl -l",
+      "exit_status": 0,
+      "privileged": true,
+      "purpose": "raw pre-run audit rule baseline observation (settles empty-dump rendering)",
+      "seq": 4,
+      "stdout_stderr_evidence": "execution/auditctl_l_raw_observation.20260907T121609Z.{stdout,stderr,report.txt}"
+    },
+    {
+      "cleanup_obligation": "read-only; none",
+      "command": "sudo -n /usr/sbin/auditctl -s",
+      "exit_status": 0,
+      "privileged": true,
+      "purpose": "raw pre-run audit status observation (lost/backlog)",
+      "seq": 5,
+      "stdout_stderr_evidence": "execution/auditctl_s_raw_observation.20260907T121609Z.stdout"
+    },
+    {
+      "cleanup_obligation": "none",
+      "command": "PYTHONDONTWRITEBYTECODE=1 /usr/bin/python3 e0a_r6r4_preflight.py <receipt-root>",
+      "end_utc": "2026-09-07T12:16:37.370188Z",
+      "exit_status": 0,
+      "note": "issues bounded `sudo -n` read-only probes internally",
+      "privileged": false,
+      "purpose": "pre-runtime prerequisite gate; fails closed before the smoke",
+      "seq": 6,
+      "start_utc": "2026-09-07T12:16:16.594742Z",
+      "stdout_stderr_evidence": "execution/preflight_{stdout,stderr}.20260907T121609Z.log"
+    },
+    {
+      "cleanup_obligation": "62 transient audit rules, 1 Mininet topology (s1,h1,h2), 2 child processes, 1 tcpdump, temp-events files -- all discharged by the harness's own finally block; see 09_CLEANUP_EXECUTION_RECEIPT.json",
+      "command": "sudo /usr/bin/python3 /home/cph/experiment-parallel/e0-a/e1c-r6-run-20260901T060350Z/mininet_e1c_r6_file_access_closure_smoke.py --run-privileged",
+      "end_utc": "2026-09-07T12:16:51.762491Z",
+      "exit_status": 3,
+      "exit_status_meaning": "3 = PARTIAL (frozen EXIT_CODES)",
+      "privileged": true,
+      "purpose": "the exact frozen R6R4 privileged runtime smoke",
+      "seq": 7,
+      "start_utc": "2026-09-07T12:16:37.372772Z",
+      "stdout_stderr_evidence": "execution/smoke_{stdout,stderr}.log"
+    },
+    {
+      "cleanup_obligation": "read-only; none",
+      "command": "sudo -n auditctl -l / auditctl -s / ovs-vsctl list-br / ip -o link show / ip netns list / ps -eo / ss -Hltnp",
+      "exit_status": 0,
+      "privileged": true,
+      "purpose": "post-runtime residual observation",
+      "seq": 8,
+      "stdout_stderr_evidence": "execution/post_runtime_privileged_observation.log"
+    },
+    {
+      "cleanup_obligation": "none; content unchanged",
+      "command": "sudo -n /bin/chown -R <uid>:<gid> /home/cph/experiment-parallel/e0-a/e1c-r6-run-20260901T060350Z",
+      "exit_status": 0,
+      "privileged": true,
+      "purpose": "return ownership of root-written evidence to the operator for hashing/packaging",
+      "seq": 9,
+      "stdout_stderr_evidence": "execution/post_runtime_privileged_observation.log"
+    }
+  ],
+  "run_stamp": "20260907T121609Z",
+  "schema": "MININET_E1C_R6R4_PRIVILEGED_RUNTIME_COMMAND_LEDGER_V1",
+  "secrets_redacted": "NO_SENSITIVE_VALUE_ENCOUNTERED",
+  "task_id": "MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE"
+}

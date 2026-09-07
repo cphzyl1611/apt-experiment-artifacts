@@ -1,0 +1,178 @@
+{
+  "RUNTIME_RECEIPT_FRESHNESS": "PASS",
+  "RUNTIME_RECEIPT_LINEAGE_BINDING": "PASS",
+  "artifacts": [
+    {
+      "artifact": "privileged_result_review",
+      "bytes": 250,
+      "relative_path": "artifacts/MININET_E1C_R6_PRIVILEGED_RUN_RESULT.json",
+      "run_id": "e1c-r6-run-20260901T060350Z",
+      "sha256": "2759370fdb13b4fb991f8ca0d7cdc1107d41babbed426ce80addce021a732351"
+    },
+    {
+      "artifact": "raw_audit_jsonl",
+      "bytes": 264761,
+      "relative_path": "artifacts/MININET_E1C_R6_RAW_AUDIT_EVIDENCE.jsonl",
+      "run_id": "e1c-r6-run-20260901T060350Z",
+      "sha256": "26f08cbc08024c0fab6c4f0f1c2df6900719e888e14ff97aa262a7500622d19b"
+    },
+    {
+      "artifact": "normalized_events_jsonl",
+      "bytes": 54542,
+      "relative_path": "artifacts/MININET_E1C_R6_NORMALIZED_EVENTS.jsonl",
+      "run_id": "e1c-r6-run-20260901T060350Z",
+      "sha256": "a09e808e1e2cf862e53d299960e658ba8401d79e626752eac9279c1adc553999"
+    },
+    {
+      "artifact": "pid_netns_join_jsonl",
+      "bytes": 9892,
+      "relative_path": "artifacts/MININET_E1C_R6_PID_NETNS_JOIN.jsonl",
+      "run_id": "e1c-r6-run-20260901T060350Z",
+      "sha256": "0db3daf9a48f3a0d6fa8f45a09749d69d7b936895abc9a87cb44c2a59784e056"
+    },
+    {
+      "artifact": "coverage_and_loss_json",
+      "bytes": 15007,
+      "relative_path": "artifacts/MININET_E1C_R6_COVERAGE_AND_LOSS_AUDIT.json",
+      "run_id": "e1c-r6-run-20260901T060350Z",
+      "sha256": "58886f3538c139c3c268f3efedd02d2958604b9c6d85940f032f46968529bf6d"
+    },
+    {
+      "artifact": "pcap",
+      "bytes": 547,
+      "relative_path": "artifacts/MININET_E1C_R6_SMOKE.pcap",
+      "run_id": "e1c-r6-run-20260901T060350Z",
+      "sha256": "f2993a2f9e75e9fb5299af71d3cebe7b798300262e7e94adbe2abc54ddc9ed89"
+    },
+    {
+      "artifact": "pcap_hash_source",
+      "bytes": 15007,
+      "relative_path": "artifacts/MININET_E1C_R6_COVERAGE_AND_LOSS_AUDIT.json",
+      "run_id": "e1c-r6-run-20260901T060350Z",
+      "sha256": "58886f3538c139c3c268f3efedd02d2958604b9c6d85940f032f46968529bf6d"
+    },
+    {
+      "artifact": "post_cleanup_proof",
+      "bytes": 31409,
+      "relative_path": "artifacts/MININET_E1C_R6_POST_CLEANUP_AUDIT.json",
+      "run_id": "e1c-r6-run-20260901T060350Z",
+      "sha256": "a2beb52c8954e5451aa3ccd56c2cc826cbc91690b28702a9c3520688ff61f1dc"
+    }
+  ],
+  "coverage_and_loss": {
+    "audit_backlog_count": 0,
+    "audit_loss_count": 0,
+    "ausearch": {
+      "basis": "collect_production_audit_evidence() raises on any failure_reason or nonzero returncode; the run completed with runtime_error null, so the bounded ausearch returned 0 inside the deadline.",
+      "deadline_expired": false,
+      "returncode": 0
+    },
+    "missing_required_classes": [
+      "FILE_READ_OR_WRITE"
+    ],
+    "normalized_audit_class_counts": {
+      "FILE_CREATE_OR_OPEN": 2,
+      "FILE_DELETE": 2,
+      "FILE_READ_OR_WRITE": 0,
+      "PROCESS_EXIT": 4,
+      "PROCESS_START_OR_EXEC": 10,
+      "SOCKET_ACCEPT": 1,
+      "SOCKET_BIND": 4,
+      "SOCKET_CONNECT": 1
+    },
+    "run_id": "e1c-r6-run-20260901T060350Z"
+  },
+  "decision": "BLOCKED",
+  "decision_basis": "FAIL_CLOSED_CONDITIONS.json FILE_RW_ABSENT_OR_ZERO: the normalized evidence and coverage output carry FILE_READ_OR_WRITE count 0. A second deficiency (RECEIPT_MALFORMED_OR_INCOMPLETE) applies to the raw record shape. Neither is repaired or synthesized here.",
+  "declared_runtime_claims": {
+    "BINDING_PUBLICATION": "NO",
+    "FORMAL_1796_EXPERIMENT_EXECUTED": "NO",
+    "GIT_COMMIT_CREATED": "NO",
+    "GIT_PUSH_EXECUTED": "NO",
+    "GIT_REF_MUTATION": "NO",
+    "HARNESS_MODIFIED": "NO",
+    "HISTORICAL_OR_STALE_RUNTIME_EVIDENCE_USED": "NO",
+    "PRIVILEGED_RUNTIME_SMOKE_EXECUTED": "YES",
+    "PROVX_INFERENCE": "NO",
+    "PROVX_R7R1_ADAPTER_INVOKED": "NO",
+    "PROVX_TRAINING": "NO",
+    "RUNTIME_EVIDENCE_SYNTHESIZED": "NO",
+    "SMOKE_REDESIGNED": "NO",
+    "SOURCE_AUTH_EXECUTED": "NO"
+  },
+  "distinguished_from": [
+    "synthetic schema fixtures",
+    "static preparation review artifacts",
+    "historical diagnostics",
+    "the prior blocked package"
+  ],
+  "evidence_classification": "NEW_RUNTIME_EVIDENCE_FROM_THIS_RUN",
+  "file_read_or_write": {
+    "authenticated_count_in_normalized_evidence": 0,
+    "coverage_missing_required_classes": [
+      "FILE_READ_OR_WRITE"
+    ],
+    "event_type": "FILE_READ_OR_WRITE",
+    "minimum_count_required": 1,
+    "note": "The frozen receipt requires the normalized event and a positive coverage count. Both are zero because of a defect in the frozen collector's bundle parser, not because the runtime lacked the access. The raw bytes are retained unmodified.",
+    "raw_evidence_reference": "07_FILE_READ_WRITE_RUNTIME_CLOSURE.json",
+    "raw_evidence_sufficiency": "PROVEN_INDEPENDENTLY_FROM_RAW_BYTES",
+    "status": "NOT_PROVEN_IN_RECEIPT_ARTIFACTS"
+  },
+  "generated_at_utc": "2026-09-07T12:26:30.594248+00:00",
+  "normalized_to_raw_link_summary": {
+    "all_normalized_rows_linked": true,
+    "decoded_raw_bytes_sha256_links_valid": true,
+    "duplicate_raw_serials": 0,
+    "link_failures": [],
+    "normalized_event_count": 24,
+    "raw_event_sha256_links_valid": true,
+    "raw_record_count": 92,
+    "unique_raw_serials": 92
+  },
+  "pcap_authentication": {
+    "hash_source_artifact": "artifacts/MININET_E1C_R6_COVERAGE_AND_LOSS_AUDIT.json",
+    "hash_source_field": "tcpdump.pcap_sha256",
+    "hash_source_value": "f2993a2f9e75e9fb5299af71d3cebe7b798300262e7e94adbe2abc54ddc9ed89",
+    "pcap_sha256": "f2993a2f9e75e9fb5299af71d3cebe7b798300262e7e94adbe2abc54ddc9ed89",
+    "recomputed_matches_both_sources": true,
+    "secondary_hash_source": "artifacts/MININET_E1C_R6_POST_CLEANUP_AUDIT.json:pcap_sha256",
+    "secondary_value": "f2993a2f9e75e9fb5299af71d3cebe7b798300262e7e94adbe2abc54ddc9ed89",
+    "status": "PASS"
+  },
+  "pid_netns_logical_host_join": {
+    "all_joined": true,
+    "failure_count": 0,
+    "join_records": 4,
+    "post_exec_identity_all_pass": true,
+    "required_join_status": "JOINED",
+    "success_count": 4
+  },
+  "post_cleanup": {
+    "AUDIT_BASELINE_RESTORED_AFTER_R6": "YES",
+    "audit_baseline_restored_after_r6": true,
+    "baseline_rule_dump_sha256_after": "61501e69a61dbbc1a41605ea15c34807e6b1d3992bee195dde36a7ebdd95dd87",
+    "baseline_rule_dump_sha256_before": "61501e69a61dbbc1a41605ea15c34807e6b1d3992bee195dde36a7ebdd95dd87",
+    "before_equals_after": true,
+    "persistent_rule_files_unchanged": true,
+    "rule_removal_all_zero_rc": true,
+    "rule_removal_count": 62,
+    "run_id": "e1c-r6-run-20260901T060350Z",
+    "status": "PASS"
+  },
+  "privileged_result_review": {
+    "classification": "PARTIAL_MISSING_REQUIRED_EVENT_CLASS",
+    "exit_code_meaning": "PARTIAL",
+    "formal_experiment_executed": false,
+    "harness_states": "CLEAN_BASELINE_VERIFIED,FILE_PRECREATED,RULE_ADDED,BENIGN_READ_WRITE_PERFORMED,AUDIT_EVIDENCE_PASS,RULE_REMOVED_BASELINE_RESTORED,MININET_EXECUTED,CLEANUP,BASELINE_RESTORED",
+    "run_id": "e1c-r6-run-20260901T060350Z",
+    "runtime_error": null,
+    "schema": "MININET_E1C_R6_PRIVILEGED_RUN_RESULT_V1",
+    "smoke_exit_code": 3,
+    "status": "COMPLETED"
+  },
+  "receipt_id": "MININET_E1C_R6R4_RUNTIME_RECEIPT_20260907T121609Z",
+  "receipt_root": "/home/cph/experiment-parallel/e0-a/MININET_E1C_R6R4_PRIVILEGED_RUNTIME_SMOKE_20260907T113419Z",
+  "run_id": "e1c-r6-run-20260901T060350Z",
+  "schema": "MININET_E1C_R6R4_EXPECTED_PRIVILEGED_RUNTIME_SMOKE_RECEIPT_V1"
+}
