@@ -1,0 +1,155 @@
+{
+  "authority": {
+    "approval_reference": null,
+    "authority_reference": "fixture://e0c/authority/deferred",
+    "authority_type": "OWNER_ADJUDICATOR",
+    "decision_materialized": false,
+    "independent_review_reference": "fixture://e0c/review/deferred",
+    "owner_reference": "fixture://e0c/owner/deferred",
+    "transaction_bundle_reference": null
+  },
+  "decision_id": "fixture-decision-deferred",
+  "decision_status": "DEFERRED",
+  "design_only": true,
+  "disposition": "DEFER_TO_OWNER_ADJUDICATION",
+  "downstream_eligibility": {
+    "eligible_for_denominator_change": false,
+    "eligible_for_formal_1796_experiment": false,
+    "eligible_for_future_transaction": false,
+    "eligible_for_split_execution": false,
+    "eligible_for_status_mutation": false
+  },
+  "evidence_references": {
+    "evidence_manifest": [
+      "fixture://e0c/evidence-manifest/deferred"
+    ],
+    "governance": [
+      "fixture://e0c/governance/deferred"
+    ],
+    "identity_provenance": [
+      "fixture://e0c/identity/deferred"
+    ],
+    "independent_review": [
+      "fixture://e0c/independent-review/deferred"
+    ],
+    "partition": [
+      "fixture://e0c/partition/deferred"
+    ],
+    "safety_reset": [
+      "fixture://e0c/safety-reset/deferred"
+    ],
+    "source_semantics": [
+      "fixture://e0c/source-semantics/deferred"
+    ]
+  },
+  "exact12_identity": {
+    "blocked31_overlap": 0,
+    "crosswalk_byte_drift": 0,
+    "independent_review_materialization_commit": "dc870e0506bd3d83ccb73dad73d817d01ea9089f",
+    "independent_review_task_id": "E0C_EXACT12_SPLIT_RESOLUTION_DESIGN_R2R2_INDEPENDENT_REVIEW",
+    "independent_review_verdict": "PASS_READY_FOR_GOVERNED_SPLIT_RESOLUTION_NEXT_PHASE",
+    "reviewed_materialization_commit": "ce5c43d344b42c38d88b0503160228312a5cf9ea",
+    "reviewed_materialization_parent": "86dfd43c96303d6e74504706d5f7cc68744e15a1",
+    "task_id": "E0C_EXACT12_SPLIT_RESOLUTION_GOVERNED_DECISION_DESIGN",
+    "template_count": 12,
+    "union_hash": "ffeb2704a1c971b89129e1959ae721bbc9ef159153a5f0a20f8abda13edb441a",
+    "unique_raw_member_count": 203
+  },
+  "governance_reference_identity": {
+    "governance_reference": "fixture://e0c/governance-identity/deferred",
+    "grammar_pattern": "^(?:[A-Za-z][A-Za-z0-9+.-]*://[^\\s]+|[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.:/#-]+)*(?:#[A-Za-z0-9_.:/-]+)?)$",
+    "independent_review_materialization_commit": "dc870e0506bd3d83ccb73dad73d817d01ea9089f",
+    "independent_review_verdict": "PASS_READY_FOR_GOVERNED_SPLIT_RESOLUTION_NEXT_PHASE",
+    "reference_kind": "EXACT12_GOVERNANCE_REFERENCE",
+    "review_task_id": "E0C_EXACT12_SPLIT_RESOLUTION_DESIGN_R2R2_INDEPENDENT_REVIEW",
+    "reviewed_materialization_commit": "ce5c43d344b42c38d88b0503160228312a5cf9ea"
+  },
+  "proposed_split_structure": null,
+  "rationale": {
+    "missing_evidence_questions": [
+      "Owner adjudication remains pending."
+    ],
+    "summary": "Synthetic deferred governed-decision fixture; no operative human decision is created."
+  },
+  "record_type": "E0C_EXACT12_GOVERNED_DECISION",
+  "schema_version": "e0c-governed-decision-v1",
+  "subject": {
+    "current_state": {
+      "applied_split": false,
+      "current_split_status": "NO_CURRENT_SPLIT",
+      "denominator_change": "NO",
+      "formal_execution_authorized": false,
+      "planning_status": "MANUAL_DESIGN_REQUIRED",
+      "resolution_state": "REQUEST_MORE_EVIDENCE",
+      "source_human_decision": "REQUEST_SPLIT_OR_MORE_EVIDENCE",
+      "status_mutations": 0
+    },
+    "frozen_order": 1,
+    "member_count": 49,
+    "member_keys": [
+      "6000003::S03::A001",
+      "6000003::S03::A008",
+      "6000006::S04::A001",
+      "6000006::S04::A002",
+      "6000007::S03::A003",
+      "6000007::S03::A007",
+      "6000007::S11::A003",
+      "6000008::S03::A003",
+      "6000008::S03::A006",
+      "6000008::S05::A003",
+      "6000008::S09::A001",
+      "6000008::S09::A005",
+      "6000009::S03::A003",
+      "6000010::S03::A004",
+      "6000011::S10::A003",
+      "6000013::S03::A007",
+      "6000013::S04::A002",
+      "6000013::S04::A004",
+      "6000014::S03::A006",
+      "6000015::S04::A004",
+      "6000015::S04::A006",
+      "6000016::S04::A002",
+      "6000016::S04::A004",
+      "6000019::S04::A002",
+      "6000019::S08::A005",
+      "6000020::S04::A001",
+      "6000020::S07::A004",
+      "6000021::S09::A002",
+      "6000024::S04::A002",
+      "6000024::S09::A001",
+      "6000026::S05::A001",
+      "6000027::S04::A001",
+      "6000031::S05::A005",
+      "6000039::S04::A003",
+      "6000042::S02::A004",
+      "6000042::S04::A001",
+      "6000043::S03::A002",
+      "6000044::S03::A004",
+      "6000046::S03::A002",
+      "6000047::S05::A003",
+      "6000047::S08::A002",
+      "6000048::S05::A001",
+      "6000049::S03::A003",
+      "6000051::S04::A001",
+      "6000051::S04::A002",
+      "6000060::S07::A001",
+      "6000062::S03::A001",
+      "6000062::S07::A004",
+      "6000063::S04::A001"
+    ],
+    "member_set_reference": "E0C_R8_HUMAN_DECISION_PACKET.json#/templates/0/member_keys",
+    "member_set_sha256": "3ceca8928cf0c95f4006ffbf91d677cf3cee9287d7beea4996adfa752703bc33",
+    "subject_granularity": "EXACT12_TEMPLATE_WITH_FROZEN_MEMBER_SCOPE",
+    "template_id": "r4-template-120-process_command_execution"
+  },
+  "unauthorized_field": true,
+  "zero_mutation_assertions": {
+    "applied_splits": 0,
+    "crosswalk_byte_drift": 0,
+    "denominator_mutations": 0,
+    "execution_authorizations": 0,
+    "formal_1796_experiment_executed": "NO",
+    "human_decisions_created": 0,
+    "status_mutations": 0
+  }
+}

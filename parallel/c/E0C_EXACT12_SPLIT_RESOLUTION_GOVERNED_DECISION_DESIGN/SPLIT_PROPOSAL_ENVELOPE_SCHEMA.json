@@ -1,0 +1,310 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://e0c.invalid/schemas/e0c-exact12-split-proposal-envelope-v1",
+  "title": "E0-C Exact12 Split Proposal Envelope",
+  "description": "Strict, non-operative envelope for a complete Exact12 child partition.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "record_type",
+    "schema_version",
+    "proposal_id",
+    "parent_subject",
+    "partition_basis",
+    "partition_predicate",
+    "child_partition_ids",
+    "child_partitions",
+    "membership_assertions",
+    "conservation_assertions",
+    "evidence_references",
+    "rationale",
+    "governance_reference",
+    "zero_mutation_assertions"
+  ],
+  "properties": {
+    "record_type": {"const": "E0C_EXACT12_SPLIT_PROPOSAL_ENVELOPE"},
+    "schema_version": {"const": "e0c-split-proposal-envelope-v1"},
+    "proposal_id": {"$ref": "#/$defs/identifier"},
+    "parent_subject": {"$ref": "#/$defs/parentSubject"},
+    "partition_basis": {"$ref": "#/$defs/partitionBasis"},
+    "partition_predicate": {"$ref": "#/$defs/partitionPredicate"},
+    "child_partition_ids": {
+      "type": "array",
+      "minItems": 2,
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/identifier"}
+    },
+    "child_partitions": {
+      "type": "array",
+      "minItems": 2,
+      "items": {"$ref": "#/$defs/childPartition"}
+    },
+    "membership_assertions": {"$ref": "#/$defs/membershipAssertions"},
+    "conservation_assertions": {"$ref": "#/$defs/conservationAssertions"},
+    "evidence_references": {"$ref": "#/$defs/evidenceReferences"},
+    "rationale": {"$ref": "#/$defs/rationale"},
+    "governance_reference": {"$ref": "#/$defs/governanceReference"},
+    "zero_mutation_assertions": {"$ref": "#/$defs/zeroMutationAssertions"}
+  },
+  "$defs": {
+    "proposal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "record_type",
+        "schema_version",
+        "proposal_id",
+        "parent_subject",
+        "partition_basis",
+        "partition_predicate",
+        "child_partition_ids",
+        "child_partitions",
+        "membership_assertions",
+        "conservation_assertions",
+        "evidence_references",
+        "rationale",
+        "governance_reference",
+        "zero_mutation_assertions"
+      ],
+      "properties": {
+        "record_type": {"const": "E0C_EXACT12_SPLIT_PROPOSAL_ENVELOPE"},
+        "schema_version": {"const": "e0c-split-proposal-envelope-v1"},
+        "proposal_id": {"$ref": "#/$defs/identifier"},
+        "parent_subject": {"$ref": "#/$defs/parentSubject"},
+        "partition_basis": {"$ref": "#/$defs/partitionBasis"},
+        "partition_predicate": {"$ref": "#/$defs/partitionPredicate"},
+        "child_partition_ids": {
+          "type": "array",
+          "minItems": 2,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/identifier"}
+        },
+        "child_partitions": {
+          "type": "array",
+          "minItems": 2,
+          "items": {"$ref": "#/$defs/childPartition"}
+        },
+        "membership_assertions": {"$ref": "#/$defs/membershipAssertions"},
+        "conservation_assertions": {"$ref": "#/$defs/conservationAssertions"},
+        "evidence_references": {"$ref": "#/$defs/evidenceReferences"},
+        "rationale": {"$ref": "#/$defs/rationale"},
+        "governance_reference": {"$ref": "#/$defs/governanceReference"},
+        "zero_mutation_assertions": {"$ref": "#/$defs/zeroMutationAssertions"}
+      }
+    },
+    "identifier": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+    },
+    "reference": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?:[A-Za-z][A-Za-z0-9+.-]*://[^\\s]+|[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.:/#-]+)*(?:#[A-Za-z0-9_.:/-]+)?)$"
+    },
+    "governanceReference": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?:[A-Za-z][A-Za-z0-9+.-]*://[^\\s]+|[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.:/#-]+)*(?:#[A-Za-z0-9_.:/-]+)?)$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "parentSubject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "subject_granularity",
+        "template_id",
+        "frozen_order",
+        "member_count",
+        "member_keys",
+        "member_set_sha256",
+        "member_set_reference"
+      ],
+      "properties": {
+        "subject_granularity": {"const": "EXACT12_TEMPLATE_WITH_FROZEN_MEMBER_SCOPE"},
+        "template_id": {"type": "string", "minLength": 1},
+        "frozen_order": {"type": "integer", "minimum": 1, "maximum": 12},
+        "member_count": {"type": "integer", "minimum": 1},
+        "member_keys": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "member_set_sha256": {"$ref": "#/$defs/sha256"},
+        "member_set_reference": {"$ref": "#/$defs/reference"}
+      }
+    },
+    "partitionBasis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["basis_type", "rationale"],
+      "properties": {
+        "basis_type": {"const": "SOURCE_GROUNDED_DETERMINISTIC_PARTITION"},
+        "rationale": {"type": "string", "minLength": 1}
+      }
+    },
+    "partitionPredicate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "predicate_id",
+        "expression",
+        "input_fields",
+        "source_grounded_reference",
+        "deterministic",
+        "source_grounded",
+        "unknown_treatment"
+      ],
+      "properties": {
+        "predicate_id": {"$ref": "#/$defs/identifier"},
+        "expression": {"type": "string", "minLength": 1},
+        "input_fields": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "source_grounded_reference": {"$ref": "#/$defs/reference"},
+        "deterministic": {"const": true},
+        "source_grounded": {"const": true},
+        "unknown_treatment": {"const": "UNKNOWN_IS_NOT_A_BOUNDARY"}
+      }
+    },
+    "childPartition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "child_id",
+        "child_order",
+        "member_keys",
+        "member_count",
+        "member_set_sha256",
+        "member_set_reference",
+        "child_evidence_reference"
+      ],
+      "properties": {
+        "child_id": {"$ref": "#/$defs/identifier"},
+        "child_order": {"type": "integer", "minimum": 1},
+        "member_keys": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "member_count": {"type": "integer", "minimum": 1},
+        "member_set_sha256": {"$ref": "#/$defs/sha256"},
+        "member_set_reference": {"$ref": "#/$defs/reference"},
+        "child_evidence_reference": {"$ref": "#/$defs/reference"}
+      }
+    },
+    "membershipAssertions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "complete",
+        "exclusive",
+        "no_duplication",
+        "no_member_outside_parent",
+        "no_denominator_loss_or_gain",
+        "parent_member_set_immutable"
+      ],
+      "properties": {
+        "complete": {"const": true},
+        "exclusive": {"const": true},
+        "no_duplication": {"const": true},
+        "no_member_outside_parent": {"const": true},
+        "no_denominator_loss_or_gain": {"const": true},
+        "parent_member_set_immutable": {"const": true}
+      }
+    },
+    "conservationAssertions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "parent_member_count",
+        "child_member_count_sum",
+        "union_equals_parent",
+        "pairwise_overlap_count",
+        "unassigned_member_count",
+        "duplicate_member_count",
+        "blocked31_overlap_count",
+        "denominator_delta",
+        "denominator_mutation",
+        "crosswalk_byte_drift",
+        "union_hash"
+      ],
+      "properties": {
+        "parent_member_count": {"type": "integer", "minimum": 1},
+        "child_member_count_sum": {"type": "integer", "minimum": 1},
+        "union_equals_parent": {"type": "boolean"},
+        "pairwise_overlap_count": {"type": "integer", "minimum": 0},
+        "unassigned_member_count": {"type": "integer", "minimum": 0},
+        "duplicate_member_count": {"type": "integer", "minimum": 0},
+        "blocked31_overlap_count": {"type": "integer", "minimum": 0},
+        "denominator_delta": {"const": 0},
+        "denominator_mutation": {"const": "NO"},
+        "crosswalk_byte_drift": {"const": 0},
+        "union_hash": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "evidenceReferences": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "identity_provenance",
+        "source_semantics",
+        "partition",
+        "safety_reset",
+        "governance",
+        "independent_review",
+        "evidence_manifest"
+      ],
+      "properties": {
+        "identity_provenance": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/reference"}},
+        "source_semantics": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/reference"}},
+        "partition": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/reference"}},
+        "safety_reset": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/reference"}},
+        "governance": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/reference"}},
+        "independent_review": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/reference"}},
+        "evidence_manifest": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/reference"}}
+      }
+    },
+    "rationale": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["summary", "source_grounded", "deterministic", "unknown_treatment"],
+      "properties": {
+        "summary": {"type": "string", "minLength": 1},
+        "source_grounded": {"const": true},
+        "deterministic": {"const": true},
+        "unknown_treatment": {"const": "UNKNOWN_IS_NOT_A_BOUNDARY"}
+      }
+    },
+    "zeroMutationAssertions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "applied_splits",
+        "status_mutations",
+        "denominator_mutations",
+        "human_decisions_created",
+        "formal_1796_experiment_executed",
+        "execution_authorizations",
+        "crosswalk_byte_drift"
+      ],
+      "properties": {
+        "applied_splits": {"const": 0},
+        "status_mutations": {"const": 0},
+        "denominator_mutations": {"const": 0},
+        "human_decisions_created": {"const": 0},
+        "formal_1796_experiment_executed": {"const": "NO"},
+        "execution_authorizations": {"const": 0},
+        "crosswalk_byte_drift": {"const": 0}
+      }
+    }
+  }
+}

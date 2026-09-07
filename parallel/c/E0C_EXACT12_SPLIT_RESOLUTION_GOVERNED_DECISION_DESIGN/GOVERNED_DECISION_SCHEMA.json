@@ -1,0 +1,435 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://e0c.invalid/schemas/e0c-exact12-governed-decision-v1",
+  "title": "E0-C Exact12 Governed Decision Design Record",
+  "description": "Strict, design-only decision record. It cannot represent split application or operational mutation.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "record_type",
+    "schema_version",
+    "decision_id",
+    "design_only",
+    "exact12_identity",
+    "subject",
+    "governance_reference_identity",
+    "evidence_references",
+    "proposed_split_structure",
+    "rationale",
+    "disposition",
+    "authority",
+    "decision_status",
+    "downstream_eligibility",
+    "zero_mutation_assertions"
+  ],
+  "properties": {
+    "record_type": {"const": "E0C_EXACT12_GOVERNED_DECISION"},
+    "schema_version": {"const": "e0c-governed-decision-v1"},
+    "decision_id": {"$ref": "#/$defs/identifier"},
+    "design_only": {"const": true},
+    "exact12_identity": {"$ref": "#/$defs/exact12Identity"},
+    "subject": {"$ref": "#/$defs/subject"},
+    "governance_reference_identity": {"$ref": "#/$defs/governanceReferenceIdentity"},
+    "evidence_references": {"$ref": "#/$defs/evidenceReferences"},
+    "proposed_split_structure": {
+      "anyOf": [
+        {"type": "null"},
+        {"$ref": "https://e0c.invalid/schemas/e0c-exact12-split-proposal-envelope-v1#/$defs/proposal"}
+      ]
+    },
+    "rationale": {"$ref": "#/$defs/decisionRationale"},
+    "disposition": {
+      "type": ["string", "null"],
+      "enum": [
+        null,
+        "KEEP_UNSPLIT_REQUEST_MORE_EVIDENCE",
+        "APPROVE_SPLIT_DESIGN_ONLY",
+        "APPROVE_SPECIFIC_SPLIT_TRANSACTION",
+        "REJECT_PROPOSED_SPLIT",
+        "DEFER_TO_OWNER_ADJUDICATION"
+      ]
+    },
+    "authority": {
+      "anyOf": [
+        {"type": "null"},
+        {"$ref": "#/$defs/authority"}
+      ]
+    },
+    "decision_status": {
+      "enum": [
+        "DESIGN_ONLY",
+        "PROPOSAL_PREPARED",
+        "PENDING_GOVERNANCE",
+        "APPROVED_FOR_FUTURE_TRANSACTION",
+        "REJECTED",
+        "DEFERRED"
+      ]
+    },
+    "downstream_eligibility": {"$ref": "#/$defs/downstreamEligibility"},
+    "zero_mutation_assertions": {"$ref": "#/$defs/zeroMutationAssertions"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"decision_status": {"const": "DESIGN_ONLY"}}},
+      "then": {
+        "properties": {
+          "disposition": {"const": null},
+          "authority": {"type": "null"},
+          "proposed_split_structure": {"type": "null"},
+          "downstream_eligibility": {"$ref": "#/$defs/noEligibility"}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"decision_status": {"enum": ["PROPOSAL_PREPARED", "PENDING_GOVERNANCE"]}}},
+      "then": {
+        "required": ["proposed_split_structure"],
+        "properties": {
+          "proposed_split_structure": {"type": "object"},
+          "downstream_eligibility": {"$ref": "#/$defs/noEligibility"}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"decision_status": {"const": "APPROVED_FOR_FUTURE_TRANSACTION"}}},
+      "then": {
+        "required": ["proposed_split_structure", "authority"],
+        "properties": {
+          "proposed_split_structure": {"type": "object"},
+          "authority": {
+            "type": "object",
+            "properties": {
+              "authority_reference": {"type": "string", "minLength": 1},
+              "owner_reference": {"type": "string", "minLength": 1},
+              "independent_review_reference": {"type": "string", "minLength": 1},
+              "approval_reference": {"type": "string", "minLength": 1},
+              "transaction_bundle_reference": {"type": "string", "minLength": 1}
+            }
+          },
+          "evidence_references": {"$ref": "#/$defs/completeEvidenceReferences"},
+          "downstream_eligibility": {
+            "type": "object",
+            "properties": {
+              "eligible_for_future_transaction": {"const": true},
+              "eligible_for_split_execution": {"const": false},
+              "eligible_for_status_mutation": {"const": false},
+              "eligible_for_denominator_change": {"const": false},
+              "eligible_for_formal_1796_experiment": {"const": false}
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {"properties": {"decision_status": {"const": "REJECTED"}}},
+      "then": {
+        "required": ["authority"],
+        "properties": {
+          "disposition": {"const": "REJECT_PROPOSED_SPLIT"},
+          "authority": {"type": "object"},
+          "downstream_eligibility": {"$ref": "#/$defs/noEligibility"}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"decision_status": {"const": "DEFERRED"}}},
+      "then": {
+        "required": ["authority"],
+        "properties": {
+          "disposition": {"const": "DEFER_TO_OWNER_ADJUDICATION"},
+          "authority": {"type": "object"},
+          "downstream_eligibility": {"$ref": "#/$defs/noEligibility"}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"disposition": {"const": "APPROVE_SPLIT_DESIGN_ONLY"}}},
+      "then": {
+        "required": ["proposed_split_structure"],
+        "properties": {
+          "decision_status": {"enum": ["PROPOSAL_PREPARED", "PENDING_GOVERNANCE"]}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"disposition": {"const": "APPROVE_SPECIFIC_SPLIT_TRANSACTION"}}},
+      "then": {
+        "required": ["proposed_split_structure"],
+        "properties": {
+          "decision_status": {"enum": ["PENDING_GOVERNANCE", "APPROVED_FOR_FUTURE_TRANSACTION"]}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"disposition": {"const": "KEEP_UNSPLIT_REQUEST_MORE_EVIDENCE"}}},
+      "then": {
+        "properties": {
+          "decision_status": {"enum": ["PENDING_GOVERNANCE", "DEFERRED", "REJECTED"]}
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "identifier": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+    },
+    "reference": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?:[A-Za-z][A-Za-z0-9+.-]*://[^\\s]+|[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.:/#-]+)*(?:#[A-Za-z0-9_.:/-]+)?)$"
+    },
+    "governanceReference": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?:[A-Za-z][A-Za-z0-9+.-]*://[^\\s]+|[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.:/#-]+)*(?:#[A-Za-z0-9_.:/-]+)?)$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "exact12Identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "task_id",
+        "reviewed_materialization_commit",
+        "reviewed_materialization_parent",
+        "independent_review_task_id",
+        "independent_review_materialization_commit",
+        "independent_review_verdict",
+        "template_count",
+        "unique_raw_member_count",
+        "blocked31_overlap",
+        "union_hash",
+        "crosswalk_byte_drift"
+      ],
+      "properties": {
+        "task_id": {"const": "E0C_EXACT12_SPLIT_RESOLUTION_GOVERNED_DECISION_DESIGN"},
+        "reviewed_materialization_commit": {"const": "ce5c43d344b42c38d88b0503160228312a5cf9ea"},
+        "reviewed_materialization_parent": {"const": "86dfd43c96303d6e74504706d5f7cc68744e15a1"},
+        "independent_review_task_id": {"const": "E0C_EXACT12_SPLIT_RESOLUTION_DESIGN_R2R2_INDEPENDENT_REVIEW"},
+        "independent_review_materialization_commit": {"const": "dc870e0506bd3d83ccb73dad73d817d01ea9089f"},
+        "independent_review_verdict": {"const": "PASS_READY_FOR_GOVERNED_SPLIT_RESOLUTION_NEXT_PHASE"},
+        "template_count": {"const": 12},
+        "unique_raw_member_count": {"const": 203},
+        "blocked31_overlap": {"const": 0},
+        "union_hash": {"const": "ffeb2704a1c971b89129e1959ae721bbc9ef159153a5f0a20f8abda13edb441a"},
+        "crosswalk_byte_drift": {"const": 0}
+      }
+    },
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "subject_granularity",
+        "template_id",
+        "frozen_order",
+        "member_count",
+        "member_keys",
+        "member_set_sha256",
+        "member_set_reference",
+        "current_state"
+      ],
+      "properties": {
+        "subject_granularity": {"const": "EXACT12_TEMPLATE_WITH_FROZEN_MEMBER_SCOPE"},
+        "template_id": {"type": "string", "minLength": 1},
+        "frozen_order": {"type": "integer", "minimum": 1, "maximum": 12},
+        "member_count": {"type": "integer", "minimum": 1},
+        "member_keys": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "member_set_sha256": {"$ref": "#/$defs/sha256"},
+        "member_set_reference": {"$ref": "#/$defs/reference"},
+        "current_state": {"$ref": "#/$defs/frozenCurrentState"}
+      }
+    },
+    "frozenCurrentState": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_human_decision",
+        "resolution_state",
+        "planning_status",
+        "current_split_status",
+        "applied_split",
+        "status_mutations",
+        "denominator_change",
+        "formal_execution_authorized"
+      ],
+      "properties": {
+        "source_human_decision": {"const": "REQUEST_SPLIT_OR_MORE_EVIDENCE"},
+        "resolution_state": {"const": "REQUEST_MORE_EVIDENCE"},
+        "planning_status": {"const": "MANUAL_DESIGN_REQUIRED"},
+        "current_split_status": {"const": "NO_CURRENT_SPLIT"},
+        "applied_split": {"const": false},
+        "status_mutations": {"const": 0},
+        "denominator_change": {"const": "NO"},
+        "formal_execution_authorized": {"const": false}
+      }
+    },
+    "governanceReferenceIdentity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reference_kind",
+        "governance_reference",
+        "review_task_id",
+        "reviewed_materialization_commit",
+        "independent_review_materialization_commit",
+        "independent_review_verdict",
+        "grammar_pattern"
+      ],
+      "properties": {
+        "reference_kind": {"const": "EXACT12_GOVERNANCE_REFERENCE"},
+        "governance_reference": {"$ref": "#/$defs/reference"},
+        "review_task_id": {"const": "E0C_EXACT12_SPLIT_RESOLUTION_DESIGN_R2R2_INDEPENDENT_REVIEW"},
+        "reviewed_materialization_commit": {"const": "ce5c43d344b42c38d88b0503160228312a5cf9ea"},
+        "independent_review_materialization_commit": {"const": "dc870e0506bd3d83ccb73dad73d817d01ea9089f"},
+        "independent_review_verdict": {"const": "PASS_READY_FOR_GOVERNED_SPLIT_RESOLUTION_NEXT_PHASE"},
+        "grammar_pattern": {"const": "^(?:[A-Za-z][A-Za-z0-9+.-]*://[^\\s]+|[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.:/#-]+)*(?:#[A-Za-z0-9_.:/-]+)?)$"}
+      }
+    },
+    "evidenceReferences": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "identity_provenance",
+        "source_semantics",
+        "partition",
+        "safety_reset",
+        "governance",
+        "independent_review",
+        "evidence_manifest"
+      ],
+      "properties": {
+        "identity_provenance": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/reference"}},
+        "source_semantics": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/reference"}},
+        "partition": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/reference"}},
+        "safety_reset": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/reference"}},
+        "governance": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/reference"}},
+        "independent_review": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/reference"}},
+        "evidence_manifest": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/reference"}}
+      }
+    },
+    "completeEvidenceReferences": {
+      "allOf": [
+        {"$ref": "#/$defs/evidenceReferences"},
+        {
+          "type": "object",
+          "properties": {
+            "identity_provenance": {"minItems": 1},
+            "source_semantics": {"minItems": 1},
+            "partition": {"minItems": 1},
+            "safety_reset": {"minItems": 1},
+            "governance": {"minItems": 1},
+            "independent_review": {"minItems": 1},
+            "evidence_manifest": {"minItems": 1}
+          }
+        }
+      ]
+    },
+    "decisionRationale": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["summary", "missing_evidence_questions"],
+      "properties": {
+        "summary": {"type": "string", "minLength": 1},
+        "missing_evidence_questions": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "authority_type",
+        "authority_reference",
+        "owner_reference",
+        "independent_review_reference",
+        "approval_reference",
+        "transaction_bundle_reference",
+        "decision_materialized"
+      ],
+      "properties": {
+        "authority_type": {
+          "enum": ["GOVERNANCE_OWNER", "OWNER_ADJUDICATOR", "INDEPENDENT_REVIEWER"]
+        },
+        "authority_reference": {"$ref": "#/$defs/reference"},
+        "owner_reference": {"$ref": "#/$defs/reference"},
+        "independent_review_reference": {"$ref": "#/$defs/reference"},
+        "approval_reference": {
+          "anyOf": [{"$ref": "#/$defs/reference"}, {"type": "null"}]
+        },
+        "transaction_bundle_reference": {
+          "anyOf": [{"$ref": "#/$defs/reference"}, {"type": "null"}]
+        },
+        "decision_materialized": {"const": false}
+      }
+    },
+    "downstreamEligibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "eligible_for_future_transaction",
+        "eligible_for_split_execution",
+        "eligible_for_status_mutation",
+        "eligible_for_denominator_change",
+        "eligible_for_formal_1796_experiment"
+      ],
+      "properties": {
+        "eligible_for_future_transaction": {"type": "boolean"},
+        "eligible_for_split_execution": {"const": false},
+        "eligible_for_status_mutation": {"const": false},
+        "eligible_for_denominator_change": {"const": false},
+        "eligible_for_formal_1796_experiment": {"const": false}
+      }
+    },
+    "noEligibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "eligible_for_future_transaction",
+        "eligible_for_split_execution",
+        "eligible_for_status_mutation",
+        "eligible_for_denominator_change",
+        "eligible_for_formal_1796_experiment"
+      ],
+      "properties": {
+        "eligible_for_future_transaction": {"const": false},
+        "eligible_for_split_execution": {"const": false},
+        "eligible_for_status_mutation": {"const": false},
+        "eligible_for_denominator_change": {"const": false},
+        "eligible_for_formal_1796_experiment": {"const": false}
+      }
+    },
+    "zeroMutationAssertions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "applied_splits",
+        "status_mutations",
+        "denominator_mutations",
+        "human_decisions_created",
+        "formal_1796_experiment_executed",
+        "execution_authorizations",
+        "crosswalk_byte_drift"
+      ],
+      "properties": {
+        "applied_splits": {"const": 0},
+        "status_mutations": {"const": 0},
+        "denominator_mutations": {"const": 0},
+        "human_decisions_created": {"const": 0},
+        "formal_1796_experiment_executed": {"const": "NO"},
+        "execution_authorizations": {"const": 0},
+        "crosswalk_byte_drift": {"const": 0}
+      }
+    }
+  }
+}

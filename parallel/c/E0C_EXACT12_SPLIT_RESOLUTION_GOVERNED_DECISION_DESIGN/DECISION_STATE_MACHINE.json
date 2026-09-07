@@ -1,0 +1,46 @@
+{
+  "record_type": "E0C_EXACT12_DECISION_STATE_MACHINE",
+  "schema_version": "e0c-decision-state-machine-v1",
+  "design_only": true,
+  "states": [
+    "DESIGN_ONLY",
+    "PROPOSAL_PREPARED",
+    "PENDING_GOVERNANCE",
+    "APPROVED_FOR_FUTURE_TRANSACTION",
+    "REJECTED",
+    "DEFERRED"
+  ],
+  "initial_state": "DESIGN_ONLY",
+  "terminal_states": [
+    "APPROVED_FOR_FUTURE_TRANSACTION",
+    "REJECTED",
+    "DEFERRED"
+  ],
+  "transitions": [
+    {"from": "DESIGN_ONLY", "to": "PROPOSAL_PREPARED", "requires": ["static_design_record"]},
+    {"from": "PROPOSAL_PREPARED", "to": "PENDING_GOVERNANCE", "requires": ["proposal_envelope", "evidence_references"]},
+    {"from": "PENDING_GOVERNANCE", "to": "APPROVED_FOR_FUTURE_TRANSACTION", "requires": ["full_governance_authority", "full_evidence", "independent_review", "zero_mutation_assertions"]},
+    {"from": "PENDING_GOVERNANCE", "to": "REJECTED", "requires": ["owner_authority", "rationale"]},
+    {"from": "PENDING_GOVERNANCE", "to": "DEFERRED", "requires": ["owner_reference", "rationale"]},
+    {"from": "PROPOSAL_PREPARED", "to": "DEFERRED", "requires": ["owner_reference", "rationale"]}
+  ],
+  "invariants": [
+    "SPLIT_APPLIED is not a state",
+    "A state transition never applies a split",
+    "A state transition never mutates status",
+    "A state transition never changes denominator membership",
+    "A state transition never authorizes formal 1796 execution",
+    "APPROVED_FOR_FUTURE_TRANSACTION is not execution authorization",
+    "Each subject may receive an independent disposition",
+    "Raw members remain conserved membership units under the frozen parent"
+  ],
+  "forbidden_states": ["SPLIT_APPLIED"],
+  "forbidden_operations": [
+    "apply_split",
+    "materialize_human_decision",
+    "mutate_scoring_or_binding_status",
+    "change_denominator_membership",
+    "execute_runtime",
+    "execute_formal_1796_experiment"
+  ]
+}
